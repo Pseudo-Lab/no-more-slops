@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+<style>
+  /* 가독성 규칙: 한 장 = 메시지 하나 / 제목 80px+ / 본문 42px+ 2줄 이내 / 글자 뒤는 단색 / 강조는 노랑 형광펜 + 검정 글씨 / 왼쪽 정렬
+     ?t=A|B|C (시안) &d=intro|lesson &s=번호 */
+  :root { --yellow: #f7ee5e; --coral: #f0502f; --sans: 'Pretendard', -apple-system, sans-serif; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body { font-family: var(--sans); -webkit-font-smoothing: antialiased; word-break: keep-all; }
+  #slide { position: absolute; inset: 0; overflow: hidden; background: var(--bg); color: var(--fg); }
+
+  .text { position: absolute; left: 80px; right: 80px; top: 120px; display: grid; gap: 34px; z-index: 2; }
+  .kicker { font-size: 34px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
+  .title { font-size: 86px; font-weight: 800; line-height: 1.2; letter-spacing: -0.045em; }
+  .body { font-size: 44px; font-weight: 500; line-height: 1.5; letter-spacing: -0.025em; color: var(--sub); }
+  mark { background: linear-gradient(transparent 14%, var(--yellow) 14%, var(--yellow) 90%, transparent 90%); color: #111; padding: 0 8px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .visual { position: absolute; left: 80px; right: 80px; bottom: 90px; top: var(--vtop, 720px); display: flex; align-items: flex-end; justify-content: center; gap: 30px; }
+  .count { position: absolute; right: 80px; top: 60px; font-size: 30px; font-weight: 800; color: var(--sub); z-index: 3; }
+  .brand { position: absolute; left: 80px; bottom: 70px; display: flex; align-items: center; gap: 14px; font-size: 34px; font-weight: 800; letter-spacing: -0.03em; z-index: 3; }
+  .brand svg { width: 50px; height: 50px; }
+
+  /* 시각 요소 */
+  .phone { height: 100%; aspect-ratio: 375 / 812; border-radius: 52px; overflow: hidden; border: 12px solid #151515; box-shadow: 0 30px 70px rgb(0 0 0 / 0.22); flex: none; }
+  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: blur(1px); }
+  .card { height: 100%; aspect-ratio: 4 / 3.4; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 70px rgb(0 0 0 / 0.18); }
+  .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .chars { display: flex; gap: 18px; align-items: flex-end; }
+  .chars img { width: 210px; height: 210px; border-radius: 50%; background: var(--chipbg); }
+  .rows { width: 100%; align-self: flex-start; display: grid; }
+  .rows div { display: flex; justify-content: space-between; align-items: center; padding: 34px 6px; border-bottom: 3px solid var(--line); font-size: 46px; font-weight: 700; }
+  .rows div:first-child { border-top: 3px solid var(--line); }
+  .rows b { font-weight: 800; }
+  .rows .on { color: var(--accent); } .rows .off { color: var(--muted); }
+  .quote { align-self: flex-start; width: 100%; padding: 50px 54px; border-radius: 34px; background: var(--chipbg); font-size: 50px; font-weight: 800; line-height: 1.4; letter-spacing: -0.03em; color: var(--fg); }
+  .rank { align-self: flex-start; width: 100%; padding: 44px 50px; border-radius: 34px; background: var(--chipbg); display: grid; gap: 26px; }
+  .rank p { font-size: 34px; font-weight: 700; color: var(--sub); }
+  .rank div { display: flex; align-items: center; gap: 26px; font-size: 52px; font-weight: 800; }
+  .rank img { width: 130px; height: 130px; border-radius: 50%; background: var(--bg); }
+  .rank span.empty { color: var(--muted); font-size: 40px; font-weight: 600; }
+  .list { width: 100%; align-self: flex-start; display: grid; gap: 0; counter-reset: c; list-style: none; padding: 0; }
+  .list li { counter-increment: c; display: grid; grid-template-columns: 90px 1fr; padding: 28px 0; border-bottom: 3px solid var(--line); font-size: 46px; font-weight: 700; line-height: 1.3; }
+  .list li::before { content: counter(c, decimal-leading-zero); color: var(--accent); font-weight: 800; }
+
+  /* 줄글 장: 표지 다음부터는 이야기하듯 이어지는 문단 */
+  .prose { position: absolute; left: 90px; right: 90px; top: 50%; transform: translateY(-50%); display: grid; gap: 44px; }
+  .prose .kicker { margin-bottom: -20px; }
+  .prose .head { font-size: 68px; font-weight: 800; line-height: 1.25; letter-spacing: -0.04em; margin-bottom: 10px; }
+  .tC .prose .head { font-weight: 900; font-size: 74px; }
+  .prose p { font-size: 44px; font-weight: 500; line-height: 1.72; letter-spacing: -0.025em; color: var(--fg); }
+  .prose mark { font-weight: 700; }
+  .tC .prose p { font-size: 46px; font-weight: 600; }
+  /* 밈 사진이 있는 장: 글은 위에서부터, 남는 자리를 사진이 채운다 */
+  .prose.meme { top: 130px; bottom: 150px; transform: none; display: flex; flex-direction: column; gap: 30px; }
+  .prose.meme .kicker { margin-bottom: -10px; }
+  .meme-img { flex: 1; min-height: 0; width: 100%; object-fit: cover; object-position: 50% 30%; border-radius: 28px; margin-top: 10px; }
+
+  /* 사진 표지 (B, C) */
+  .photo { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .photo + .fade { position: absolute; inset: 0; }
+
+  /* ---------- A: 브랜드형 (크림 + 코랄) ---------- */
+  .tA { --bg: #fbf7f2; --fg: #171514; --sub: #4a4541; --muted: #aaa29b; --accent: #f0502f; --chipbg: #f1e9df; --line: #2a2522; }
+  .tA.dark { --bg: #161413; --fg: #fff; --sub: #d9d4cf; --muted: #77716b; --accent: #ff8a6b; --chipbg: #262220; --line: #fff; }
+  .tA.coral { --bg: #f0502f; --fg: #fff; --sub: #ffe7df; --accent: #fff; --chipbg: #ff7a5c; --line: #fff; }
+
+  /* ---------- B: 에디토리얼 (흰 바탕 + 사진) ---------- */
+  .tB { --bg: #ffffff; --fg: #111; --sub: #3c3c3c; --muted: #b0b0b0; --accent: #f0502f; --chipbg: #f4f2ee; --line: #111; }
+  .tB .title { font-weight: 800; }
+  .tB.cover .text { top: auto; bottom: 150px; }
+  .tB.cover .title { color: #fff; font-size: 92px; text-shadow: 0 2px 24px rgb(0 0 0 / 0.3); }
+  .tB.cover .fade { background: linear-gradient(180deg, rgb(0 0 0 / 0) 40%, rgb(0 0 0 / 0.75)); }
+  .tB.cover .brand { color: #fff; }
+  .tag { position: absolute; background: #fff; color: #111; font-size: 34px; font-weight: 700; padding: 14px 24px; box-shadow: 0 8px 22px rgb(0 0 0 / 0.18); z-index: 2; }
+
+  /* ---------- C: 후킹형 (검정·노랑) ---------- */
+  .tC { --bg: #0f0f0f; --fg: #fff; --sub: #d6d6d6; --muted: #777; --accent: #f7ee5e; --chipbg: #1f1f1f; --line: #fff; }
+  .tC.y { --bg: #f7ee5e; --fg: #111; --sub: #2e2c16; --muted: #8f8a3a; --accent: #111; --chipbg: #fff7a8; --line: #111; }
+  .tC .title { font-weight: 900; font-size: 96px; letter-spacing: -0.05em; }
+  .tC.y mark { background: linear-gradient(transparent 14%, #fff 14%, #fff 90%, transparent 90%); }
+  .tC.cover .title { color: #fff; font-size: 116px; }
+  .tC.cover .fade { background: linear-gradient(180deg, rgb(0 0 0 / 0.78) 0%, rgb(0 0 0 / 0.15) 60%, rgb(0 0 0 / 0.55)); }
+  .tC.cover .brand { color: #fff; }
+  .swipe { position: absolute; right: 80px; bottom: 70px; font-size: 34px; font-weight: 800; color: var(--yellow); z-index: 3; }
+</style>
+</head>
+<body>
+<div id="slide"></div>
+<svg width="0" height="0" style="position:absolute"><symbol id="mark" viewBox="0 0 32 32"><rect width="32" height="32" rx="9.5" fill="#f0502f"/><g transform="rotate(-12 16 17)" fill="#fff"><path d="M16 14.6c-3.2 0-6.6 4.3-6.6 7 0 2.1 1.7 2.9 3.4 2.9 1.3 0 2.1-.7 3.2-.7s1.9.7 3.2.7c1.7 0 3.4-.8 3.4-2.9 0-2.7-3.4-7-6.6-7z"/><ellipse cx="8.9" cy="13.6" rx="1.9" ry="2.5" transform="rotate(-22 8.9 13.6)"/><ellipse cx="13.1" cy="9.4" rx="2" ry="2.7" transform="rotate(-8 13.1 9.4)"/><ellipse cx="18.9" cy="9.4" rx="2" ry="2.7" transform="rotate(8 18.9 9.4)"/><ellipse cx="23.1" cy="13.6" rx="1.9" ry="2.5" transform="rotate(22 23.1 13.6)"/></g></symbol></svg>
+<script>
+const q = new URLSearchParams(location.search);
+const T = q.get('t') || 'A', D = q.get('d') || 'intro', S = +(q.get('s') || 1);
+const brand = '<span class="brand"><svg><use href="#mark"/></svg>Pawstamp</span>';
+const chars = (...n) => `<div class="chars">${n.map((x) => `<img src="c-${x}.png" alt="" />`).join('')}</div>`;
+const phone = (src) => `<div class="phone" style="position:relative"><img src="${src}" alt="" />${src === 'place.jpg' ? '<span style="position:absolute;left:3%;top:26%;width:55%;height:5.5%;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);background:rgb(255 255 255 / .4);border-radius:8px"></span>' : ''}</div>`;
+
+// 공통 카피. cover/cta 는 시안마다 레이아웃이 다르다
+const DECK = {
+  intro: [
+    { kind: 'cover' },
+    { kicker: '어떻게 쓰나요?', title: '사진 한 장<br />올리면 끝', body: '위치는 사진에서 알아서 찾아줘요.', visual: phone('place.jpg'), vtop: 600 },
+    { kicker: '지도 보는 재미', title: '멀리서 보면<br /><mark>견종 캐릭터</mark>', body: '가까이 가면 친구들 사진으로 바뀌어요.', visual: phone('map.jpg'), vtop: 600 },
+    { kicker: '우리 동네 친구들', title: '하트 누르고<br />"우리도 왔어요"', body: '같은 곳에 다녀간 친구들과 꼬순내를 나눠요.', visual: chars('maltese', 'shiba', 'poodle', 'corgi'), vtop: 820 },
+    { kicker: '강아지가 아니어도', title: '길에서 만난<br /><mark>고양이</mark>도 남겨요', body: '위치는 100m 흐리게.<br />길고양이를 지키려고요.', visual: phone('cat.jpg'), vtop: 720 },
+    { kind: 'cta' },
+  ],
+  lesson: [
+    { kind: 'cover' },
+    { kicker: 'Lesson 1', head: '조립 과정에서 커지는<br />비즈니스가 있다', prose: [
+      '개인·조직 공유용으로만 사이트를 배포해 왔었는데, 사용자가 업로드한 사진과 콘텐츠를 저장하려면 별도 연동이 필요했어요(Supabase). 퀄리티 높은 지도를 넣기 위해선 카카오맵 API 연동도 했고요.',
+      '결국 남의 서비스를 빌려서 조립하는 건데, <mark>이렇게 조립을 도와주는 인프라(API·BaaS) 사업이 잘되겠다</mark> 싶더라고요.',
+    ] },
+    { kicker: 'Lesson 2', head: '제일 쉬운 길을<br />우선 찾는 AI', prose: [
+      '최초 지도 연동 시 그야말로 <mark>밤티 지도</mark>를 붙이더라고요.',
+      '정보는 오래됐고 UI 매력도 떨어졌어요.',
+    ] },
+    { kicker: 'Lesson 3', head: '쌓여야 보이는 기능은<br />뒤로 미루기', prose: [
+      '아이디어를 가시화하니 추가하고 싶은 기능들이 떠올랐어요. 우리 동네에서 가장 많이 돌아다니는 강아지라던가, 인기 장소라던가..',
+      '<mark>데이터가 쌓여야 구현할 수 있는 기능은 자연스럽게 우선순위를 뒤로 미뤘어요.</mark>',
+      '회사에서 사용하던 의사결정 기준이 혼자 구현할 때도 직관적으로 적용할 수 있어서 재밌었어요.',
+    ] },
+    { kicker: 'Lesson 4', head: '엣지 케이스 대응', prose: [
+      '동생한테 데이터를 넣으라고 링크를 줬더니, 바로 욕을 넣어버리더라고요 🥹',
+      '1시간 안에 만드느라 생각도 못 했던 케이스인데, <mark>욕설 필터를 넣고 얼굴 어뷰징도 없게끔</mark> 추가했어요.',
+      '길고양이 안전을 위해 의도적으로 위치를 조정한 것도 같은 맥락이에요.',
+    ] },
+    { kicker: '마치며', head: '30분 목표, 결국 1시간', prose: [
+      '30분을 목표하던 MVP 배포는 결국 1시간이 걸렸어요.',
+      '꼭 해보고 싶었던 실험은 아직 남아 있어요. 어떤 퍼널로 이 서비스를 알리고 바이럴시킬지, 그리고 배포 비용은 어떻게 관리할지.',
+      '그래도 <mark>여전히 PM의 관점에서 의사결정할 수 있는 맥락이 남아 있구나</mark>를 배울 수 있었어요. 조금 더 디벨롭해서 위 실험 결과도 공유할게요!',
+    ] },
+  ],
+};
+
+const COVERS = {
+  A: {
+    intro: { cls: 'coral', html: `<div class="text"><span class="kicker" style="opacity:.85">Pawstamp</span><h1 class="title" style="font-size:96px">강아지랑<br />다녀온 곳에<br />꼬순내 남기기</h1></div><div class="visual" style="--vtop:740px">${phone('map.jpg')}</div>` },
+    lesson: { cls: 'dark', html: `<span style="position:absolute;right:44px;bottom:28px;z-index:3;font-size:20px;font-weight:500;color:rgb(255 255 255 / 0.4)">photo | charliecat_ (Pinterest)</span><div class="photo" style="background-image:url(cover-work.jpg);background-position:50% 50%"></div><div class="fade" style="background:linear-gradient(180deg, rgb(22 20 19 / 0.92) 0%, rgb(22 20 19 / 0.55) 45%, rgb(22 20 19 / 0.2) 70%, rgb(22 20 19 / 0.6) 100%)"></div><div class="text"><span class="kicker" style="font-size:72px;line-height:1.2;letter-spacing:-0.04em">쉬었음 PM<br />서비스 런칭기 #1</span><h1 class="title" style="font-size:96px;margin-top:70px">Pawstamp<br />한 시간 동안<br />만들고 <mark>레슨런</mark></h1></div>${brand}` },
+    cta: { cls: 'dark', html: `<div class="text"><h2 class="title" style="font-size:96px">우리 동네에<br />첫 꼬순내를<br />남겨주세요</h2><p class="body">설치 없이 링크로 바로 열려요.</p><span style="display:inline-block;width:max-content;margin-top:20px;background:var(--coral);color:#fff;font-size:48px;font-weight:800;padding:26px 42px;border-radius:999px">pawstamp.vercel.app</span></div><div class="visual" style="--vtop:960px">${chars('poodle', 'samoyed', 'corgi', 'frenchie')}</div>` },
+  },
+  B: {
+    intro: { cls: 'cover', html: `<div class="photo" style="background-image:url(photo0.jpg);background-position:50% 40%"></div><div class="fade"></div><span class="tag" style="left:80px;top:120px">11살 보스턴테리어</span><span class="tag" style="right:80px;top:250px">9월엔 꽃 보러 산책</span><div class="text"><h1 class="title">우리 강아지가 다녀간 곳,<br />지도에 남겨두기</h1></div>${brand}` },
+    lesson: { cls: 'cover', html: `<span style="position:absolute;right:44px;bottom:28px;z-index:3;font-size:20px;font-weight:500;color:rgb(255 255 255 / 0.4)">photo | charliecat_ (Pinterest)</span><div class="photo" style="background-image:url(cover-work.jpg);background-position:50% 50%"></div><div class="fade" style="background:linear-gradient(180deg, rgb(0 0 0 / 0.1) 30%, rgb(0 0 0 / 0.85))"></div><span class="tag" style="left:80px;top:120px;font-size:50px;font-weight:800;padding:18px 30px">쉬었음 PM 서비스 런칭기 #1</span><div class="text"><h1 class="title">Pawstamp<br />한 시간 동안 만들고<br />레슨런</h1></div>${brand}` },
+    cta: { cls: 'cover', html: `<div class="photo" style="background-image:url(photo6.jpg);background-position:60% 40%"></div><div class="fade"></div><span class="tag" style="left:80px;top:120px">설치 없이, 링크로 바로</span><div class="text"><h1 class="title">우리 동네에<br />첫 꼬순내를 남겨주세요</h1><span style="display:inline-block;width:max-content;background:#fff;color:#111;font-size:46px;font-weight:800;padding:20px 34px">pawstamp.vercel.app</span></div>` },
+  },
+  C: {
+    intro: { cls: 'cover', html: `<div class="photo" style="background-image:url(photo1.jpg);background-position:45% 40%"></div><div class="fade"></div><div class="text"><h1 class="title">산책 사진,<br />사진첩에서<br /><mark>잠자고</mark> 있죠?</h1></div>${brand}<span class="swipe">넘겨보세요 →</span>` },
+    lesson: { cls: 'cover', html: `<span style="position:absolute;right:44px;bottom:28px;z-index:3;font-size:20px;font-weight:500;color:rgb(255 255 255 / 0.4)">photo | charliecat_ (Pinterest)</span><div class="photo" style="background-image:url(cover-work.jpg);background-position:50% 50%"></div><div class="fade" style="background:linear-gradient(180deg, rgb(0 0 0 / 0.88) 0%, rgb(0 0 0 / 0.55) 50%, rgb(0 0 0 / 0.3) 75%, rgb(0 0 0 / 0.6) 100%)"></div><div class="text"><h1 class="title" style="font-size:104px">쉬었음 PM<br />서비스 런칭기 #1</h1><p class="title" style="font-size:72px">Pawstamp<br /><mark>한 시간 동안 만들고 레슨런</mark></p></div>${brand}<span class="swipe">넘겨보세요 →</span>` },
+    cta: { cls: 'cover', html: `<div class="photo" style="background-image:url(photo6.jpg);background-position:60% 40%"></div><div class="fade"></div><div class="text"><h1 class="title" style="font-size:104px">우리 동네<br />첫 꼬순내,<br /><mark>너로 정했다</mark></h1></div><span style="position:absolute;left:80px;bottom:160px;background:var(--coral);color:#fff;font-size:48px;font-weight:800;padding:24px 40px;border-radius:999px;z-index:3">pawstamp.vercel.app</span>${brand}` },
+  },
+};
+
+const s = DECK[D][S - 1];
+const el = document.getElementById('slide');
+let cls = `t${T}`;
+if (s.kind) {
+  const c = COVERS[T][s.kind === 'cover' ? D : 'cta'];
+  cls += ` ${c.cls}`;
+  el.innerHTML = c.html;
+} else {
+  // 시안별 배경 리듬: A는 크림/검정 교차(레슨), C는 검정/노랑 교차
+  if (T === 'A' && D === 'lesson') cls += S % 2 ? ' dark' : '';
+  if (T === 'C') cls += S % 2 ? '' : ' y';
+  el.innerHTML = s.prose
+    ? `<span class="count">${String(S).padStart(2, '0')}</span>
+      <div class="prose${s.meme ? ' meme' : ''}"><span class="kicker">${s.kicker}</span>${s.head ? `<h2 class="head">${s.head}</h2>` : ''}${s.prose.map((t) => `<p>${t}</p>`).join('')}${s.meme ? `<img class="meme-img" src="${s.meme}" alt="" />` : ''}</div>
+      ${D === 'lesson' && S === DECK.lesson.length ? brand : ''}`
+    : `<span class="count">${String(S).padStart(2, '0')}</span>
+    <div class="text">${s.kicker ? `<span class="kicker">${s.kicker}</span>` : ''}<h2 class="title">${s.title}</h2>${s.body ? `<p class="body">${s.body}</p>` : ''}</div>
+    <div class="visual" style="--vtop:${s.vtop}px">${s.visual}</div>`;
+}
+el.className = cls;
+// 표지 사진 바꿔 끼우기: ?cover=top|window|walk (기본 work)
+const COVER_PHOTOS = {
+  work: ['cover-work.jpg', 'photo | charliecat_ (Pinterest)'],
+  top: ['cover-top.jpg', 'photo | Pinterest'],
+  window: ['cover-window.jpg', 'photo | Julia_arb (Pinterest)'],
+  walk: ['cover-walk.jpg', 'photo | Eltunnovruzov (Pinterest)'],
+  office: ['cover-office.jpg', 'photo | Lakshithagowda (Pinterest)'],
+  nap: ['cover-nap.jpg', 'photo | Sandra (Pinterest)'],
+  zen: ['cover-zen.jpg', 'photo | Rosario Katherine (Pinterest)', '22% 50%'],
+  sofa: ['cover-sofa.jpg', 'photo | Jordan Patrice (Pinterest)'],
+};
+const pick = COVER_PHOTOS[q.get('cover') || 'work'];
+el.innerHTML = el.innerHTML.replaceAll('cover-work.jpg', pick[0]).replace('photo | charliecat_ (Pinterest)', pick[1]);
+if (pick[2]) el.querySelector('.photo')?.style.setProperty('background-position', pick[2]);
+</script>
+</body>
+</html>
