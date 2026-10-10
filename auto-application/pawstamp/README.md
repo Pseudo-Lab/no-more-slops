@@ -29,7 +29,7 @@ app/
   src/breeds.js       견종·고양이 프리셋과 캐릭터 이미지
   supabase/schema.sql 테이블, RLS, 하트·수정 RPC, 욕설 트리거
 CHARACTER_PROMPTS.md  견종 캐릭터 이미지 생성 프롬프트 27종
-content/              인스타 레슨런 카드뉴스 HTML 템플릿과 최종 카피
+content/              인스타 카드뉴스 HTML 템플릿(레슨런, 감성 소개), 최종 카피, 릴스 영상 스크립트
 LESSONS.md            만들면서 배운 것 (상세)
 DECISIONS.md          로그인·얼굴 처리 의사결정 메모
 ```
@@ -51,7 +51,13 @@ npm run dev          # .env 없으면 브라우저 저장소 모드로 바로 �
 3. `.env.example`을 `.env`로 복사해 세 값 입력 (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_KAKAO_MAP_KEY`)
 4. `npx vercel deploy --prod`
 
-카드뉴스: `content/deck.html?t=A&d=lesson&s=1`을 1080×1350으로 열어 캡처 (헤드리스 크롬 `--screenshot` 사용). 사진·캐릭터 이미지는 저작권 때문에 포함하지 않았다.
+카드뉴스와 릴스:
+
+1. `content/deck.html?t=A&d=lesson&s=1`(레슨런), `content/deck-intro-emotional.html?s=1`(소개)을 1080×1350으로 캡처 (헤드리스 크롬 `--screenshot`)
+2. `python3 content/reel/frames.py <폴더> '#161413' slide1.png:2.5 slide2.png:6 ...` 로 9:16 프레임과 목록 생성
+3. `swiftc content/reel/mkvideo.swift -o mkvideo && ./mkvideo <폴더>/manifest.txt reel.mp4` (ffmpeg 없이 macOS AVFoundation으로 mp4 생성)
+
+사진·캐릭터 이미지는 저작권·개인정보 때문에 포함하지 않았다.
 
 ## 지표 (2026-10-10 기준, 지인 대상 공개 첫날)
 
