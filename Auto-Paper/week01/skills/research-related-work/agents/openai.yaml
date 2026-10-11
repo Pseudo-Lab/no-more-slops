@@ -1,0 +1,4 @@
+interface:
+  display_name: "선행연구 조사"
+  short_description: "주제별 최신 논문 검색·원문 검증·차별성 분석과 출처 정리"
+  default_prompt: "$research-related-work 주제: [연구 주제]. 최근 5년 선행연구를 조사하고 핵심 논문 비교, 차별성 검토, 출처와 BibTeX를 정리해 줘."
