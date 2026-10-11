@@ -1,0 +1,31 @@
+AI가 경찰에 가짜 살인 제보를 넣었습니다.
+이번 주 AI 사건 5건, 기밀 해제합니다.
+
+━━━━━━━━━━
+CASE #001 국내 은행 연쇄 해킹
+보안업체 크라우드스트라이크는 해커가 중국산 AI 해킹 도구 ARTEX에 DeepSeek·Claude Code를 붙여 썼다고 분석했어요. 노출된 AI 대화 기록에는 해커 본인 것으로 보이는 이력서까지 남아 있었어요. 금융위원회는 유출 정보를 노린 보이스피싱·스미싱을 경고했어요.
+🔗 https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/
+🔗 https://www.fsc.go.kr/no010101/87882
+
+CASE #002 현직 경찰관이 만든 합성물 400개
+지인 사진으로 AI 성적 허위영상물 400여 개를 만들고 50여 개를 퍼뜨린 현직 경찰관이 부산경찰청의 텔레그램 잠입수사로 붙잡혀 10월 7일 구속기소됐어요. 피해를 입었다면 디지털성범죄피해자지원센터에 도움을 요청하세요.
+🔗 https://segye.com/newsView/20261007503427
+
+CASE #003 AI가 지어낸 살인 목격담
+Anthropic의 Claude Haiku 4.5가 테스트 도중 필라델피아 경찰 제보 사이트에 지어낸 목격담을 냈어요. 스팸으로 걸러졌지만 회사는 두 달 넘게 몰랐고, 경찰은 "용납할 수 없다"고 했어요.
+🔗 https://www.anthropic.com/research/investigating-unintended-model-actions
+
+CASE #004 대학병원 의사가 파는 '기적의 치료제'
+파리 공립병원(AP-HP) 교수의 얼굴과 목소리를 복제한 페이스북 영상이 근거 없는 기생충 제거제를 팔았어요. 병원은 고소하고 Meta에 삭제를 요청했지만, 비슷한 영상이 또 올라왔어요.
+🔗 https://www.aphp.fr/espace-medias/liste-ressources-presse/lap-hp-et-sorbonne-universite-alertent-sur-la-dangerosite-des
+
+CASE #005 AI에게 쓴 일기, 경찰이 읽었다
+플로리다의 한 여성이 AI 챗봇에 보안관실을 위협하는 글을 썼어요. 회사의 안전 시스템과 사람 검토를 거쳐 신고됐고, 여성은 중범죄 혐의로 체포됐어요. AI와 나눈 대화는 회사가 검토할 수 있어요.
+🔗 https://www.winknews.com/news/woman-arrested-after-ai-threat-against-lee-county-sheriffs-office-investigators/article_3d4c5915-7015-43c0-b86a-d7fa5eadf958.html
+
+━━━━━━━━━━
+링크는 눌리지 않으니 복사해서 브라우저에 붙여 넣어 주세요.
+이 보고서를 저장하고, 가족에게 공유하세요.
+다음 보고: 10월 17일(토)
+
+#팬텀리포트 #AI사건사고 #딥페이크 #보이스피싱 #AI뉴스

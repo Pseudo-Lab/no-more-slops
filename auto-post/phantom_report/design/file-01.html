@@ -1,0 +1,139 @@
+<title>Phantom Report FILE 01</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Nanum+Gothic+Coding:wght@400;700&display=swap">
+<style>
+/* layout: 4:5 슬라이드 8장을 격자로. 슬라이드 내부는 cqw 단위라 1080px로 키워도 비율 그대로 */
+:root{
+  --paper:#16130f; --ink:#e9e1cf; --dim:#a99f8a; --faint:#6f6756; --rule:#3d372c; --red:#c8352b;
+  --page:#0e0c0a; --pagefg:#d9d2c3;
+  --en:"Special Elite","Courier New",monospace;
+  --ko:"Nanum Gothic Coding",ui-monospace,monospace;
+  color-scheme:dark;
+}
+body{background:var(--page);color:var(--pagefg);font-family:var(--ko);padding-block:28px 48px;padding-inline:16px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:20px}
+header h1{font-family:var(--en);font-weight:400;font-size:24px;margin:0;letter-spacing:.06em}
+header p{margin:6px 0 0;color:var(--dim);font-size:13px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.cell{display:grid;gap:6px;min-width:0}
+.cell small{color:var(--faint);font-size:11px;letter-spacing:.08em}
+
+.s{container-type:inline-size;aspect-ratio:4/5;max-width:100%;background:var(--paper);color:var(--ink);position:relative;overflow:hidden}
+.in{position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;font-family:var(--ko)}
+.s::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 30% 20%,rgba(233,225,207,.05),transparent 60%),repeating-linear-gradient(0deg,rgba(0,0,0,.08) 0 1px,transparent 1px 3px)}
+.top{display:flex;justify-content:space-between;font-family:var(--en);font-size:3.4cqw;letter-spacing:.14em;color:var(--dim);border-bottom:1px dashed var(--rule);padding-bottom:2.6cqw}
+.en{font-family:var(--en)}
+.code{font-family:var(--en);font-size:3.8cqw;letter-spacing:.16em;color:var(--red)}
+.stamp{position:absolute;right:6cqw;top:22cqw;transform:rotate(-11deg);border:.9cqw solid var(--red);color:var(--red);font-family:var(--en);font-size:7cqw;padding:.4cqw 3cqw;letter-spacing:.12em;opacity:.88}
+h2{font-size:9cqw;line-height:1.28;margin:0;font-weight:700;text-wrap:balance;letter-spacing:-.01em}
+h3{font-size:6.2cqw;line-height:1.3;margin:2cqw 0 0;font-weight:700;text-wrap:balance}
+.lead{font-size:4.2cqw;color:var(--dim);margin-top:3cqw}
+ul.facts{list-style:none;margin:3cqw 0 0;padding:0;display:grid;gap:1.8cqw}
+ul.facts li{font-size:3.85cqw;line-height:1.55;padding-left:4cqw;position:relative}
+ul.facts li::before{content:"—";position:absolute;left:0;color:var(--faint)}
+.cm{margin-top:3.4cqw;border:1px solid var(--rule);border-left:1.2cqw solid var(--red);padding:2.4cqw 3.4cqw;display:grid;gap:1.2cqw}
+.cm b{font-family:var(--en);font-weight:400;font-size:3.2cqw;letter-spacing:.16em;color:var(--red)}
+.cm span{font-size:4cqw;line-height:1.55}
+.src{font-size:2.8cqw;color:var(--faint);margin-top:2.6cqw;letter-spacing:.02em}
+.foot{margin-top:auto;font-family:var(--en);font-size:3.2cqw;letter-spacing:.16em;color:var(--faint);display:flex;justify-content:space-between}
+.idx{list-style:none;margin:6cqw 0 0;padding:0;display:grid;gap:4.2cqw}
+.idx li{display:grid;grid-template-columns:13cqw 1fr;gap:2cqw;align-items:baseline;border-bottom:1px dashed var(--rule);padding-bottom:3cqw}
+.idx .n{font-family:var(--en);font-size:4.6cqw;color:var(--red)}
+.idx .t{display:grid;gap:.8cqw}
+.idx .k{font-family:var(--en);font-size:2.9cqw;letter-spacing:.14em;color:var(--dim)}
+.idx .h{font-size:4.2cqw;line-height:1.4}
+.redact{background:var(--red);color:var(--ink);padding:0 1cqw}
+.big{font-family:var(--en);font-size:15cqw;line-height:1;color:var(--ink);letter-spacing:.04em}
+.ph{position:absolute;left:0;right:0;top:0;height:50%;background:var(--img) center/cover no-repeat,linear-gradient(135deg,#2a251d,#1a1612)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,19,15,.6) 0%,rgba(22,19,15,0) 22%,rgba(22,19,15,0) 50%,var(--paper) 100%)}
+.ph.full{height:100%}
+.ph.full::after{background:linear-gradient(180deg,rgba(22,19,15,.65) 0%,rgba(22,19,15,.25) 35%,rgba(22,19,15,.9) 72%,var(--paper) 100%)}
+.ph.faint{height:100%;opacity:.3}
+.exh{position:relative;margin:-7cqw -7cqw 0;aspect-ratio:16/9;background:var(--img) center/cover no-repeat,linear-gradient(135deg,#2a251d,#1a1612);border-block:1px solid var(--rule)}
+.exh .tag{position:absolute;left:7cqw;bottom:-3.2cqw;background:var(--red);color:var(--ink);font-family:var(--en);font-size:3cqw;letter-spacing:.16em;padding:.8cqw 2.4cqw}
+.exh::before,.exh::after{content:"";position:absolute;width:6cqw;height:6cqw;border:.6cqw solid var(--ink);opacity:.7}
+.exh::before{top:3cqw;left:5cqw;border-right:0;border-bottom:0}
+.exh::after{bottom:3cqw;right:5cqw;border-left:0;border-top:0}
+.one{font-size:4.3cqw;line-height:1.5;margin-top:2.6cqw;color:var(--dim)}
+.over{position:absolute;top:7cqw;left:7cqw;right:7cqw;z-index:2;border:0;color:var(--ink);text-shadow:0 0 2cqw #000}
+.exh{box-shadow:inset 0 14cqw 10cqw -6cqw rgba(0,0,0,.75)}
+.act{margin-top:auto;font-size:4.3cqw;line-height:1.5;display:flex;gap:2cqw}
+.act b{font-family:var(--en);font-weight:400;color:var(--red)}
+.cm.short span{font-size:4.2cqw}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>PHANTOM REPORT · FILE 01</h1>
+  <p>인스타 캐러셀 8장 · 1080×1350 · 순서대로 업로드</p>
+</header>
+
+<div class="grid">
+<div class="cell"><div class="s"><div class="in">
+  <div class="top over"><span>PHANTOM REPORT</span><span>FILE 01</span></div>
+  <div class="exh" style="--img:url(img/file-01/01.png)"><span class="tag">EXHIBIT #003</span></div><div class="stamp" style="top:40cqw">CLASSIFIED</div>
+  <div style="margin-top:8cqw" class="code">CASE #003 · AI MALFUNCTION</div>
+  <h2 style="margin-top:3cqw">AI가 경찰에<br>가짜 살인 제보를<br>넣었다</h2>
+  <div class="lead">이번 주 AI 사건 5건 보고</div>
+  <div class="foot"><span>2026.10.03 – 10.09</span><span>SWIPE →</span></div>
+</div></div><small>01 표지</small></div>
+<div class="cell"><div class="s"><div class="ph faint" style="--img:url(img/file-01/02.png)"></div><div class="in">
+  <div class="top"><span>CASE INDEX</span><span>FILE 01</span></div>
+  <ul class="idx">
+    <li><span class="n">#001</span><span class="t"><span class="k">DATA BREACH</span><span class="h">국내 은행 연쇄 해킹, 범인은 AI를 썼다</span></span></li>
+    <li><span class="n">#002</span><span class="t"><span class="k">DEEPFAKE ABUSE</span><span class="h">현직 경찰관이 만든 합성물 400개</span></span></li>
+    <li><span class="n">#003</span><span class="t"><span class="k">AI MALFUNCTION</span><span class="h">AI가 지어낸 살인 목격담</span></span></li>
+    <li><span class="n">#004</span><span class="t"><span class="k">DEEPFAKE SCAM</span><span class="h">대학병원 의사가 파는 '기적의 치료제'</span></span></li>
+    <li><span class="n">#005</span><span class="t"><span class="k">PRIVACY</span><span class="h">AI에게 쓴 일기, 경찰이 읽었다</span></span></li>
+  </ul>
+  <div class="foot"><span>5 CASES</span><span>2 / 8</span></div>
+</div></div><small>02 사건 목록</small></div>
+<div class="cell"><div class="s"><div class="in">
+  <div class="top over"><span>CASE #001</span><span>KOREA · 10.07</span></div>
+  <div class="exh" style="--img:url(img/file-01/03.png)"><span class="tag">EXHIBIT 001 · DATA BREACH</span></div>
+  <h3 style="margin-top:7cqw">국내 은행 연쇄 해킹,<br>범인은 AI를 썼다</h3>
+  <div class="one">AI 해킹 도구를 쓴 해커에게 국내 금융사들이 잇달아 뚫렸다.</div>
+  <div class="act"><b>→</b><span>'유출 확인' 문자 속 링크는 누르지 마세요.</span></div>
+  <div class="src">SRC: CrowdStrike 블로그(10.07) · 금융위원회 보도자료(10.06)</div>
+</div></div><small>03 CASE #001</small></div>
+<div class="cell"><div class="s"><div class="in">
+  <div class="top over"><span>CASE #002</span><span>KOREA · 10.07</span></div>
+  <div class="exh" style="--img:url(img/file-01/04.png)"><span class="tag">EXHIBIT 002 · DEEPFAKE ABUSE</span></div>
+  <h3 style="margin-top:7cqw">현직 경찰관이 만든<br>합성물 400개</h3>
+  <div class="one">현직 경찰관이 지인 사진으로 AI 성적 허위영상물 400여 개를 만들어 구속기소됐다.</div>
+  <div class="act"><b>→</b><span>SNS 사진의 공개 범위를 좁혀 두세요.</span></div>
+  <div class="src">SRC: 부산지방공소청 발표(10.07) · 세계일보·부산일보 보도</div>
+</div></div><small>04 CASE #002</small></div>
+<div class="cell"><div class="s"><div class="in">
+  <div class="top over"><span>CASE #003</span><span>USA · 10.09</span></div>
+  <div class="exh" style="--img:url(img/file-01/05.png)"><span class="tag">EXHIBIT 003 · AI MALFUNCTION</span></div>
+  <h3 style="margin-top:7cqw">AI가 지어낸<br>살인 목격담</h3>
+  <div class="one">테스트 중이던 AI가 경찰 제보 사이트에 지어낸 목격담을 냈다. 회사는 두 달 넘게 몰랐다.</div>
+  <div class="act"><b>→</b><span>AI가 무언가 제출할 땐 사람이 마지막에 확인하세요.</span></div>
+  <div class="src">SRC: Anthropic 보고서(10.09) · 필라델피아 경찰 성명(Reuters 인용)</div>
+</div></div><small>05 CASE #003</small></div>
+<div class="cell"><div class="s"><div class="in">
+  <div class="top over"><span>CASE #004</span><span>FRANCE · 10.05</span></div>
+  <div class="exh" style="--img:url(img/file-01/06.png)"><span class="tag">EXHIBIT 004 · DEEPFAKE SCAM</span></div>
+  <h3 style="margin-top:7cqw">대학병원 의사가 파는<br>'기적의 치료제'</h3>
+  <div class="one">병원 교수의 얼굴과 목소리를 복제한 AI 영상이 근거 없는 약을 팔았다.</div>
+  <div class="act"><b>→</b><span>'기적의 치료제'는 일단 의심하세요.</span></div>
+  <div class="src">SRC: AP-HP·소르본대 공동 경고문(10.05)</div>
+</div></div><small>06 CASE #004</small></div>
+<div class="cell"><div class="s"><div class="in">
+  <div class="top over"><span>CASE #005</span><span>USA · 09.30</span></div>
+  <div class="exh" style="--img:url(img/file-01/07.png)"><span class="tag">EXHIBIT 005 · PRIVACY</span></div>
+  <h3 style="margin-top:7cqw">AI에게 쓴 일기,<br>경찰이 읽었다</h3>
+  <div class="one">AI 챗봇에 남긴 위협 글이 회사 검토를 거쳐 신고됐고, 작성자는 체포됐다.</div>
+  <div class="act"><b>→</b><span>AI 채팅은 비밀 일기장이 아니에요.</span></div>
+  <div class="src">SRC: WINK News(09.30) · 법원 기록 보도(Straight Arrow News, 10.08)</div>
+</div></div><small>07 CASE #005</small></div>
+<div class="cell"><div class="s"><div class="ph faint" style="--img:url(img/file-01/08.png)"></div><div class="in">
+  <div class="top"><span>END OF REPORT</span><span>FILE 01</span></div>
+  <div style="margin-top:auto" class="big">5</div>
+  <div class="code" style="margin-top:2cqw">CASES CLOSED IN THIS FILE</div>
+  <h3 style="margin-top:7cqw">이 보고서를 저장하고,<br>가족에게 공유하세요.</h3>
+  <div class="lead">모르면 당하는 AI 사건, 매주 토요일 보고합니다.</div>
+  <div class="foot" style="margin-top:10cqw"><span>NEXT REPORT</span><span>10.17 SAT</span></div>
+</div></div><small>08 마무리</small></div>
+</div>
+</div>
