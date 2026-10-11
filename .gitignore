@@ -1,0 +1,3 @@
+__pycache__/
+.claude/settings.local.json
+out/*/*.png
