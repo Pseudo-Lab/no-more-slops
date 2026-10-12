@@ -1,6 +1,6 @@
 ---
 name: research-pipeline
-description: Run the complete research planning pipeline from research-question extraction through benchmark research, prior-work checking, feasibility at a user-specified experience level against a user-specified project duration, experiment planning, and an easiest-to-hardest project schedule.
+description: Run the complete research planning pipeline as a proactive research designer (Discover → Diagnose → Design → Scope → Evaluate → Refine → Select). It covers research-question extraction or broad discovery from user-named sources; benchmark research; diagnosing the strongest comparable baseline's documented weaknesses; designing and scoping technically meaningful interventions with at least one redesign before any rejection; prior-work checking; verified-requirements feasibility at a user-specified experience level against a user-specified duration; experiment planning; and an easiest-to-hardest project schedule.
 ---
 
 # Research Pipeline
@@ -15,7 +15,9 @@ This skill coordinates:
    provisionally confirmed, the benchmark-centered prior-work archive —
    Step 2c)
 3. research-readiness-advisor (after benchmark-finder identifies candidate
-   benchmarks, before slots are fixed; its execution fit is confirmed after
+   benchmarks, before slots are fixed; includes the mandatory
+   Negative-Result Interpretability Review, confirmed before FINAL
+   CONFIRMED in Step 2c; its execution fit is confirmed after
    compute-planner)
 4. prior-work-checker (called after benchmark-finder and the advisor;
    loops back to benchmark-finder on FAIL)
@@ -29,6 +31,118 @@ Use them in the order defined below.
 
 Optimize for benchmark-centered, experimentally executable research
 directions, NOT for preserving the user's original ideas.
+
+Act as a **research designer, not a feasibility filter**. Shared
+definitions are in
+`~/.claude/skills/research-pipeline/references/research_design_principles.md`.
+Read it first: it defines Beginner, technical depth, SOTA potential vs
+achievement, D-day feasibility, research redesign and the mandatory
+gates. Every coordinated skill uses the same definitions.
+
+The prior-work, novelty and SOTA-evidence procedure is
+[prior_work_novelty_sota_review.md](../prior-work-checker/references/prior_work_novelty_sota_review.md),
+owned by prior-work-checker. It defines:
+- the three-stage literature investigation;
+- the novelty classification and its mapping onto the PASS / FAIL gate;
+- the Prior-Work Evidence Report that every downstream step reads.
+
+This pipeline enforces that procedure through Step 2b and the
+pre-implementation evidence gate (Step 5b). It never runs its own
+novelty review.
+
+Skills coordinated (workflow transitions, not recursive calls):
+- [benchmark-finder](../benchmark-finder/SKILL.md)
+- [prior-work-checker](../prior-work-checker/SKILL.md)
+- [research-readiness-advisor](../research-readiness-advisor/SKILL.md)
+- [compute-planner](../compute-planner/SKILL.md)
+- [research-planner](../research-planner/SKILL.md)
+
+Process every candidate through:
+
+**Discover → Diagnose → Design → Scope → Evaluate → Refine → Select**
+
+| Stage | What happens |
+|---|---|
+| Discover | Use the user's file and/or user-named sources (e.g. leaderboards, recent papers, public repositories; safety sources such as Shallow Review or Inspect Evals only when named). The scope is any area of AI/ML; technical AI safety is not required (shared definitions §1d). Screen at least 10–15 benchmarks across at least six subfields, then rank them and select three **before** any research question (benchmark-screening stage, §1c). Apply the anti-fixation rules (§1b). Output: a ranked benchmark screening table and three selected benchmarks. |
+| Diagnose | Run the baseline-maturity audit (§4d.1). Then find the strongest existing baseline, its documented weaknesses and the benchmark's open questions. Write the research question and causal hypothesis **before naming any method** (§1a). |
+| Design | Choose or design a method that tests that causal hypothesis and targets the cause of the weakness (§1a step 3, §4e). |
+| Scope | Build a minimal viable research design. Separate essential from optional work. Reuse released code, models, outputs and activations. |
+| Evaluate | Apply the mandatory gates. Rate SOTA potential (S1–S4), technical depth and verified-requirements feasibility. |
+| Refine | Attempt at least one meaningful redesign before rejecting anything. |
+| Select | Rank and select. |
+
+The primary research objective is a **credible path to outperforming the
+strongest comparable baseline** (SOTA), with meaningful technical depth.
+Rules for that objective:
+- Do not guarantee SOTA before the experiment.
+- Do not reject a candidate because its outcome is uncertain.
+- Never present a narrow-slice result as overall SOTA.
+- Do not repeatedly recommend extending the deadline or lowering
+  standards without first optimizing scope.
+
+## Discovery Order and Anti-Fixation (mandatory)
+
+**Discovery order: Benchmark → Research Question → Method**
+(shared definitions §1a).
+- benchmark-finder outputs benchmarks with their mature baseline map,
+  documented failures and open questions.
+- The research question and its causal hypothesis are then written from
+  one documented failure.
+- Only then is a method chosen (advisor Step 5).
+- Every slot's report contains a three-line **Discovery record** that
+  shows this order: Benchmark → Question + hypothesis → Method.
+- A method-first candidate is sent back to the question step.
+
+**Benchmark-screening stage** (shared definitions §1c; mandatory, in this
+order):
+1. Screen at least 10–15 diverse public benchmarks across AI/ML
+   subfields.
+2. For each, record the strongest existing methods and their published
+   numbers.
+3. Record the documented failure modes and the realistic headroom.
+4. Rank the benchmarks by SOTA-improvement potential, then by
+   feasibility.
+5. Select the three most promising benchmarks.
+6. Only then formulate research questions.
+7. Propose methods last, after checking prior work.
+
+Apply the **early kill check**: before investing heavily in one idea,
+verify that no stronger existing method already solves the problem and
+that the method itself is not already published. This is prior-work-checker
+**Stage 1 (rapid screening)**:
+- run it on every candidate;
+- KILL clearly unsuitable ones before any Stage 2 effort;
+- run Stage 2 (focused investigation) only for shortlisted candidates;
+- run Stage 3 (final verification) only for candidates about to receive
+  GO, plus backups.
+
+The literature stages are part of the planning budget. Promising
+candidates are never verified less thoroughly to save time.
+
+**Anti-fixation** (shared definitions §1b):
+- Cover at least six AI/ML subfields (any area of AI/ML, not only AI
+  safety), with at least two benchmark candidates each, before
+  shortlisting. Include the coverage table and the screening table in
+  the report.
+- Concentration caps: at most one final slot per benchmark and per
+  subfield, and no more than 40% of the shortlist from one subfield.
+- **Before discovery**, read this user's previous two discovery reports
+  in the working directory. List every benchmark, subfield and mechanism
+  they selected or proposed as GO/REVISE as **previously explored**,
+  with its recorded failure reason.
+  - These are excluded by default.
+  - One may return only with new verified evidence, dated after that
+    report, that removes its failure reason.
+  - Prior archives and memory notes are never seeds for new topics.
+- Immature benchmarks (< 3 months old, or author-only baselines) hold at
+  most one slot, and only after the maturity audit.
+
+**Defensible contribution** (shared definitions §4e): every candidate
+records the following, and confirmatory engineering fails the depth gate:
+- the finding if positive;
+- the finding if negative;
+- the predictability test;
+- the reviewer pre-mortem.
 
 ## Research Question Format Rule
 
@@ -72,12 +186,17 @@ questions/ideas (CLEAR and POSSIBLE together).
 research-question-parser does NOT determine N. CLEAR / POSSIBLE
 classifications are metadata only.
 
-The pipeline must return exactly N output slots.
+The pipeline reports exactly N output slots, but only slots that pass
+every gate are **GO**. Never pad: a slot that does not pass is reported as
+UNRESOLVED or NO-GO with its reason, never as a "GO (conditional)".
+The only allowed GO condition is unconfirmed compute allocation.
+Shortfalls are stated explicitly.
 
 - If parsed ideas m > N: select the N most promising starting points, based
   primarily on exact benchmark availability and research feasibility, using
   research-readiness-advisor's benchmark fit, preliminary execution fit,
-  and short-paper readiness to inform the choice.
+  negative-result readiness, and short-paper readiness to inform the
+  choice.
   Report the unselected ideas (by RQ identifier) as "not selected".
 - If parsed ideas m < N: generate additional candidate directions,
   preferably near the user's broad research themes, until N
@@ -89,17 +208,77 @@ Original ideas do not need to be preserved.
 
 Priority:
 
-1. Exactly N output slots
+1. Exactly N output slots reported (GO only if every gate passes; never
+   padded)
 2. Exact established benchmark
 3. Established baseline and metric
 4. Clear narrow literature gap
 5. Feasible experiment
 6. Similarity to the original ideas
 
-Priorities 2–5 are hard gates (exact benchmark and validity, prior-work
-PASS, FITS DURATION). Among candidates for a slot that pass every gate,
-prefer HIGH or MEDIUM original-question preservation as rated by
-research-readiness-advisor. Do not replace a direction merely because an
+The mandatory gates are those in shared definitions §7. They are never
+traded off against the ranking below:
+1. exact benchmark and validity;
+2. no data leakage;
+3. fair baseline comparison;
+4. prior-work PASS as the minimum novelty requirement;
+5. reproducibility;
+6. statistical rigor;
+7. research integrity;
+8. technical depth PASS, including the defensible-contribution test
+   (§4e);
+9. a credible SOTA path, meaning SOTA potential of at least MEDIUM,
+   rated under the evidence rules (§4d);
+10. FITS DURATION;
+11. discovery process: the Benchmark → Question → Method order, and the
+    anti-fixation rules (§1a, §1b).
+
+On gate 9: the user may raise it to "HIGH required" or waive it for an
+explicitly scientific-diagnostic goal.
+
+A candidate that fails a gate is redesigned (shared definitions §6)
+before it is rejected.
+
+Topic-ranking order (among candidates for a slot that pass every gate;
+defined in shared definitions §8 and research-readiness-advisor Step 5c,
+and applied identically by research-planner):
+
+1. **Credible SOTA potential (PRIMARY, pre-experiment):** an
+   evidence-supported opportunity to outperform the strongest *existing*
+   baseline on the named task and metric. It is rated with the S1–S4
+   rubric (§4b) under the evidence rules (§4d):
+   - S1 documented weakness and headroom, **after the baseline-maturity
+     audit**; a weak or incomplete baseline set is not headroom;
+   - S2 mechanism targeting that weakness, needing **cause evidence**, not
+     only lever evidence;
+   - S3 fair, reproducible test, with the expected margin ≥ the MDE;
+   - S4 feasible minimal design.
+
+   HIGH needs all four STRONG on facts verified now. There is no
+   conditional HIGH. Speculation is never enough. HIGH ranks above
+   MEDIUM.
+2. **Four-day feasibility margin, given the user's skills:** contingency
+   left; verified rather than estimated requirements.
+3. **Benchmark and evaluation strength:** public benchmark,
+   reproducible baselines, reliable evaluation (§8 item 3).
+4. **Clear, measurable contribution (§4e):** a non-obvious finding in
+   at least one outcome, the strength of the pre-mortem answer, and
+   technical depth.
+5. **Novelty strength.** Important but secondary. Modest novelty is
+   acceptable when 1–4 are strong.
+6. **Negative-result readiness.**
+7. **Original-question preservation** (final tie-breaker).
+
+Topic area is never a ranking criterion. AI/ML topics unrelated to AI
+safety compete on equal terms (§1d).
+
+Each criterion applies only when candidates are comparable on the higher
+ones. Never prefer a highly novel topic with weak SOTA potential over a
+topic with a credible path to SOTA when both pass every gate. This
+ranking selects candidates and drives the Recommendation; it never sets
+project order (that is research-planner's difficulty ordering).
+
+Do not replace a direction merely because an
 unrelated benchmark project is easier; replace it only when no
 sufficiently aligned, feasible, benchmark-backed version can be found.
 Preservation never overrides a hard gate. (Where `research_advice.md`
@@ -201,9 +380,17 @@ Reasoning order:
 2. For each parsed idea, search for established benchmark tasks; then
    select or generate starting points so there are exactly N slots.
 3. Verify the benchmark itself.
-4. Identify established baseline methods/results.
-5. Identify a narrow gap in existing work.
-6. Propose the smallest method/change that addresses that gap.
+4. Identify established baseline methods/results, and determine the
+   strongest comparable baseline (shared definitions §4a).
+5. Diagnose that baseline's documented weaknesses: failure categories,
+   subsets, error modes, and the authors' own stated limitations. Prefer
+   evidence from released results or per-item outputs. Identify the
+   narrow, verified gap in existing work.
+6. Design a technically meaningful intervention that targets the cause of
+   the diagnosed weakness (technical depth, §3). Scope it into a minimal
+   viable research design: one isolated intervention, a pre-specified
+   slice if justified, reused assets, and essential vs optional work
+   separated.
 7. Run prior-work-checker on the resulting research question; on FAIL,
    return to benchmark-finder for a new question for the same slot and
    re-check, until the slot PASSES. The slot's benchmark is then
@@ -217,11 +404,15 @@ Reasoning order:
    user-specified experience level L can finish the full workflow within
    the user-specified per-project duration D, plus level-L
    difficulty (compute-planner).
-10. Filter: re-check benchmark validity on the final question, reject
-    duplicated directions across slots, and redesign any direction that
-    does not fit D at level L (simplify → simpler benchmark/baseline →
-    smaller reformulated question → replace) until it fits
-    (research-planner).
+10. Refine and filter (research-planner):
+    - re-check benchmark validity on the final question;
+    - reject duplicated directions across slots;
+    - redesign any direction that fails a gate (feasibility, depth or
+      SOTA path) with the scope levers (§6) first: narrow to the
+      documented failure slice → reuse code → reuse models, outputs or
+      activations → cut optional scope → smaller intervention that keeps
+      the mechanism → better benchmark or setting. Only then
+      reformulate, and only then replace, until the direction passes.
 11. Only after all slots are evaluated, order the projects that fit D at
     level L strictly from easiest/fastest to hardest/slowest for a
     researcher at level L and assign their schedule windows
@@ -229,11 +420,12 @@ Reasoning order:
 
 i.e.
 
-benchmark → task → metric → baseline → literature gap → proposed
-modification → research question → prior-work check (loop) → experiment
-→ user-specified duration D and experience level L → filter/redesign →
-keep only projects that fit D at level L → order by level-L difficulty →
-assign order/schedule windows
+benchmark → task → metric → strongest comparable baseline → diagnosed
+weakness → literature gap → designed intervention → scoped MVRD →
+research question → prior-work check (loop) → experiment → user-specified
+duration D and experience level L (verified-requirements estimate) →
+refine/redesign → keep only projects that pass every gate → order by
+level-L difficulty → assign order/schedule windows
 
 rather than: research question → search for something vaguely
 benchmark-like.
@@ -254,7 +446,7 @@ D. First attempt a benchmark-centered redesign that preserves the original
    under the same slot ID, with a research problem that passes
    exact-benchmark validation: exact established benchmark, reproducible
    baselines, a clear metric, a plausible literature gap, and room for a
-   small method modification or controlled experiment.
+   targeted, technically meaningful intervention or controlled experiment.
 E. If necessary, move substantially away from the original topic. Do NOT
    lower the benchmark standard to preserve topical similarity.
 
@@ -280,10 +472,30 @@ Rules:
   level and never estimate at a more experienced level than L.
 - Preserve compute-planner's UNKNOWN judgments when hardware access is
   genuinely unknown.
+- Every stage resolves compute only from the global
+  `~/.claude/skills/compute-planner/references/compute.md` (single source
+  of truth). A project-local `compute.md` is never required and never a
+  fallback; a missing or empty local copy never implies missing GPU
+  access.
 - Keep the benchmark classification separate from Benchmark Readiness.
 
 For short durations, optimize for the probability of obtaining a
-COMPLETE, INTERPRETABLE RESULT, not for maximizing conceptual novelty.
+COMPLETE, INTERPRETABLE RESULT from a technically meaningful intervention
+with a credible SOTA path, not for maximizing conceptual novelty. Do this
+by scoping (shared definitions §6), not by lowering technical depth.
+Beginner never excludes GPU, fine-tuning, activation analysis,
+mechanistic interpretability or white-box work (§2). Those approaches
+are judged on verified tooling and a scoped design.
+- Unconfirmed GPU access is recorded as a RISK with a mitigation, not as
+  a rejection, and never by itself lowers S4 or SOTA potential.
+- Unverified allocation and unknown queue time are UNKNOWN, never
+  UNAVAILABLE. Do not assume unrestricted access or guaranteed
+  scheduling either.
+- GPU-based research, including single-GPU 7B–8B experiments on H100,
+  H200, A40 or V100, is considered by default. Never prefer a CPU-only or
+  API-only design solely because GPU allocation is unverified.
+- The "UNKNOWN" judgments above stay UNKNOWN; they are never treated as
+  a FAIL.
 
 ### Fixed-Topic Mode
 
@@ -358,7 +570,8 @@ Number of research directions: 5
 A single "Time budget" given without further qualification is the
 per-project duration D (here, each project must fit in 4 weeks).
 
-If no input file is provided, ask the user which file to analyze.
+If no input file and no discovery sources are provided, ask the user
+which file or sources to use.
 
 If no duration is provided, ask the user for one before performing any
 duration-feasibility analysis. Never assume one.
@@ -366,7 +579,18 @@ duration-feasibility analysis. Never assume one.
 If no experience level is provided, ask the user for one before performing
 any duration-feasibility or difficulty analysis. Never assume one.
 
-Use only the file specified by the user as the primary source of research questions and ideas unless the user explicitly asks to include other files.
+Use only the file specified by the user as the primary source of research
+questions and ideas, unless the user explicitly asks to include other
+files or names other discovery sources. Examples of such sources:
+- URLs such as Shallow Review or Inspect Evals;
+- "recent literature";
+- "any area of AI/ML" (the default scope; technical AI safety is
+  optional, not required).
+
+When discovery sources are named, run the Discover stage across them. Turn
+the strongest benchmark-backed opportunities into candidate slots
+(identifiers RQ1, RQ2, ...), each recording its source. The input file
+is then optional.
 
 ## Workflow
 
@@ -397,10 +621,19 @@ Use benchmark-finder on each parsed idea (RQ1 ... RQm), then
 research-readiness-advisor on each candidate (Step 2a), then fix exactly N
 output slots:
 
-- m > N: keep the N most promising starting points, chosen primarily by
-  exact benchmark availability and research feasibility, informed by the
-  advisor's benchmark fit, preliminary execution fit, short-paper
-  readiness, and preservation; list the rest as "not selected".
+- m > N: among starting points with exact benchmark availability that
+  plausibly pass the gates (after the advisor's design and scoping), keep
+  the N best by the topic-ranking order (shared definitions §8),
+  applied to the advisor's preliminary ratings:
+  1. SOTA potential;
+  2. feasibility margin;
+  3. benchmark and evaluation strength;
+  4. defensible contribution and technical depth;
+  5. novelty strength;
+  6. negative-result readiness;
+  7. preservation.
+
+  Check short-paper readiness, and list the rest as "not selected".
 - m < N: ask benchmark-finder for additional benchmark-backed directions
   near the user's broad research themes (identifiers RQm+1, ...) until N
   are available.
@@ -425,7 +658,15 @@ For each of the N slots, obtain from benchmark-finder:
 - Benchmark Readiness, including training required, evaluation type,
   external dependencies, repository maturity, and typical conditions/seeds
 - Relevant prior work and literature coverage
-- Candidate small gaps around the benchmark
+- Candidate gaps around the benchmark
+- The strongest comparable baseline, with its number, source, task, slice,
+  metric and access class
+- That baseline's documented weaknesses (failure categories, subsets,
+  error modes, stated limitations), with their sources
+- Reusable assets, VERIFIED in the actual repository or model hub:
+  - code and configs;
+  - released models and adapters;
+  - released outputs, per-item scores and activations
 
 Do not infer verification fields. If a critical benchmark property cannot be
 verified, keep it UNKNOWN and do not let the direction be ranked as a strong
@@ -447,16 +688,46 @@ that follows the Research Question Format Rule (rules 1–6).
 
 After benchmark-finder has identified candidate benchmarks and before the
 N slots are fixed, run research-readiness-advisor on each candidate with
-the user's goal, D, and experience level L. Obtain: benchmark fit,
-preliminary execution fit, original-question preservation, project type,
-the YES/NO readiness checks, prior-work traceability, short-paper
-readiness (READY / NEEDS REDESIGN / NOT READY), main reason, and
-recommended redesign.
+the user's goal, D, and experience level L. The advisor acts as a
+designer first: it diagnoses the strongest comparable baseline's
+weakness, and designs and scopes the intervention. Obtain:
+- strongest comparable baseline;
+- documented weakness;
+- proposed mechanism;
+- technical depth PASS / FAIL with the depth case (advisor Step 5d);
+- refinement history (advisor Step 7);
+- benchmark fit;
+- preliminary execution fit;
+- original-question preservation;
+- pre-experiment SOTA potential S1–S4 and novelty strength (advisor
+  Step 5c, PRELIMINARY);
+- project type;
+the YES/NO readiness checks, prior-work traceability, the
+Negative-Result Interpretability Review (advisor Step 5b: positive-result
+contribution, negative-result contribution, inconclusive-result risk,
+independent scientific value, required controls, and negative-result
+readiness PASS / CONDITIONAL / FAIL, PRELIMINARY at this stage),
+short-paper readiness (READY / NEEDS REDESIGN / NOT READY), main reason,
+and recommended redesign.
+
+The review is mandatory for every candidate, including regenerated ones.
+It does not re-check benchmark validity V3 (benchmark-finder) or decide
+novelty (prior-work-checker); it consumes their outputs. For CONDITIONAL
+or FAIL, apply the advisor's minimal negative-result fixes (Step 7 a–d)
+before considering replacement. The review is mandatory, but its rating
+is the sixth ranking criterion (shared definitions §8, criterion 6), not
+a gate; a FAIL remains eligible
+(labeled performance-dependent, with its inconclusive-result risk stated).
 
 The advisor informs benchmark and research-question selection; it does
 not override benchmark-finder's verification, prior-work-checker's
 verdict, compute-planner's feasibility, or research-planner's final
 design and ordering.
+
+No candidate is rejected (NOT READY, or dropped for feasibility, depth or
+SOTA potential) until the advisor has recorded at least one meaningful
+redesign attempt using the scope levers (advisor Step 7; shared
+definitions §6) and re-evaluated it.
 
 If the advisor rates a candidate NEEDS REDESIGN or NOT READY, first send it
 back to benchmark-finder for a benchmark-centered redesign that preserves
@@ -478,10 +749,22 @@ with an EXACT / DIRECT benchmark:
 research question → relevant benchmark → trace prior work and baselines
 that use that benchmark → identify the research gap → PASS / FAIL
 
+This is prior-work-checker **Stage 2 (focused investigation)**. Besides
+the benchmark-centered trace, it runs:
+- the multi-source, multi-strategy search (Q1–Q9);
+- the combination analysis for multi-component methods;
+- the three-closest-papers table;
+- the novelty classification, mapped onto PASS / FAIL.
+
+It writes the Prior-Work Evidence Report
+(`prior_work_evidence_<run-tag>_<RQk>.md`, status DRAFT). Downstream
+steps read that report instead of repeating the review.
+
 - PASS: the slot proceeds to Step 3 with the traced prior-work table, the
   extracted published baseline number, the novelty search coverage
-  (N1–N5), the closest prior work and what remains untested, and the gap
-  statement.
+  (N1–N5 and Q1–Q9), the closest prior work and what remains untested,
+  the gap statement, the novelty classification and the Evidence Report
+  path.
 - FAIL: send the slot back to benchmark-finder with the FAIL reason, the
   blocking prior work, and all previously failed questions for that slot.
   benchmark-finder generates a new research question for the SAME slot ID,
@@ -531,7 +814,17 @@ benchmark FINAL CONFIRMED → compute-planner → research-planner
    slot, using the archive evidence (advisor "Archive re-evaluation").
    Re-evaluate benchmark fit, original-question preservation, baseline
    choice, main-table feasibility, ablation/control feasibility, prior-work
-   traceability, remaining contribution, and short-paper readiness.
+   traceability, remaining contribution, SOTA potential and novelty
+   strength (re-rated with the archive's baseline map, current best
+   result, collision verdict and gap), negative-result readiness (item 6,
+   novelty of the positive and negative finding, confirmed against the
+   archive), and short-paper readiness.
+   This is the final topic-confirmation point: a slot is not FINAL
+   CONFIRMED until the Negative-Result Interpretability Review is
+   completed (with any CONDITIONAL conditions written into the design and
+   a minimal redesign attempted for FAIL) and SOTA potential and novelty
+   strength have been re-rated. If a gate-passing alternative for the slot
+   ranks higher by the topic-ranking order, prefer it.
    - READY: the benchmark becomes FINAL CONFIRMED; continue to Step 3 and
      then compute-planner.
    - NEEDS REDESIGN or NOT READY: the benchmark is not final confirmed.
@@ -565,6 +858,8 @@ Specify only the minimum necessary information, such as:
 - Training vs. inference
 - Number of experimental conditions
 - Approximate number of runs or seeds
+- Any minimal controls, pilot power check, or extra seeds required by the
+  Negative-Result Interpretability Review (CONDITIONAL conditions)
 - API / closed-model dependencies and LLM-judge calls, if any
 - Whether evaluation is automatic
 - Public repository and baseline code (from Benchmark Readiness)
@@ -626,18 +921,37 @@ estimate includes both the pre-experiment full provisional paper draft and
 the post-experiment result insertion and revision, as parts of the same
 writing budget; writing is not counted twice.
 
+The paper is drafted primarily by AI (paper-writer). The writing bucket
+therefore budgets only human review and verification, about 0.5 day at
+Beginner (range 0.5–0.75; shared definitions §5):
+- checking numbers against output files;
+- checking citations against sources;
+- checking that claims match the evidence and the pre-registered
+  criteria;
+- figures, captions and limitations;
+- a final read.
+
+Verification time is never cut to make a project fit.
+
 Do not independently override compute-planner's feasibility or difficulty
 assessment.
 
-Do not infer user-accessible GPUs from cluster-wide hardware. If exact user
-GPU access is unknown, keep User Feasibility = UNKNOWN and state what
-information is missing, but still evaluate Hardware Fit for the smallest
-plausible experiment. Do not reject a direction solely because user-specific
-GPU access is UNKNOWN.
+Do not infer confirmed user allocations from cluster-wide hardware. If exact
+user GPU access is unknown, keep User Feasibility = UNKNOWN and state what
+information is missing, but still evaluate Hardware Fit and Documented
+Access (global `compute.md`) for the smallest plausible experiment. Do not
+reject a direction, lower S4, or prefer a CPU-only design solely because
+user-specific GPU access or queue time is UNKNOWN; record it as a RISK with
+the mitigations in the global `compute.md`.
 
 After compute-planner, have research-readiness-advisor CONFIRM its
-execution fit and short-paper readiness using compute-planner's verdict
-(DOES NOT FIT DURATION means execution fit LOW). For READY projects, the
+execution fit, SOTA potential criterion S4 (feasibility), and
+short-paper readiness using compute-planner's verdict (DOES NOT FIT
+DURATION means execution fit LOW; a weakened S4 means SOTA potential is
+re-rated). If the review's required
+controls make the project not fit D, the advisor narrows the question
+(Step 7 d) rather than dropping the controls or extending D; a CONDITIONAL
+whose conditions cannot fit D stays CONDITIONAL (§8 ranking criterion 6). For READY projects, the
 advisor writes the full provisional paper draft before the experiment
 (advisor Step 8): all sections including the Conclusion, written under the
 working hypothesis, with every unmeasured numerical cell TBD.
@@ -659,11 +973,13 @@ Provide research-planner with:
 - Benchmark validity answers (V1–V4)
 - research-readiness-advisor output (confirmed): benchmark fit, execution
   fit, original-question preservation, project type, readiness checks,
-  short-paper readiness, recommended redesign, provisional paper draft,
-  and pivot guidance
+  Negative-Result Interpretability Review (all six fields, SESOI and
+  outcome classification), short-paper readiness, recommended redesign,
+  provisional paper draft, and pivot guidance
 - prior-work-checker output: prior-work table, traced baseline number,
-  novelty search coverage (N1–N5), closest prior work and what remains
-  untested, gap statement, iteration history
+  novelty search coverage (N1–N5, Q1–Q9), closest prior work and what
+  remains untested, gap statement, iteration history, novelty
+  classification and the Prior-Work Evidence Report path
 - Prior-work archive summary (Step 2c): archive file path, selected
   baseline, closest prior work, collision verdict, and final gap
 - Compute-planner findings at level L, including the workflow estimate,
@@ -679,9 +995,9 @@ these, the new question goes back through Step 2b.
 The plan should follow:
 
 existing benchmark
-+ established baseline
-+ clearly identified limitation/gap
-+ one small modification
++ strongest comparable baseline
++ documented limitation/gap
++ one targeted, technically meaningful intervention
 + controlled comparison
 
 and be able to produce a conventional benchmark results table (published
@@ -696,8 +1012,71 @@ baseline. These may only be secondary analyses.
 
 Do not expand the experiment merely to make the project appear more novel.
 
-Prefer the smallest experiment capable of producing a meaningful and
-interpretable result.
+Prefer the smallest experiment capable of producing a meaningful,
+interpretable and technically deep result. Separate the essential
+experiments from optional extensions, and schedule only the essential
+ones inside D.
+
+research-planner also returns its candidate comparison matrix (planner
+Step 8b), which feeds Step 5b.
+
+---
+
+### Step 5b: Pre-implementation prior-work, novelty and SOTA evidence gate (mandatory)
+
+**When it runs.** After the research question and candidates have been
+formulated, designed and costed (Steps 2–5), and **before** any
+implementation, any expensive experiment, or any hand-off to paper-writer
+or experiment-runner. It respects the discovery order (Benchmark →
+Question → Method). It never runs before the method has been proposed and
+checked.
+
+**What it does first.** It triggers prior-work-checker **Stage 3 (final
+verification)** for every candidate proposed for GO, and for its backups.
+This turns the Evidence Report from DRAFT into FINAL.
+
+**How it checks.** It does not re-judge anything. For each check it reads
+the authoritative output and verifies that the output exists, is final,
+and passes:
+
+| # | Check | Authoritative source | Passes when |
+|---|---|---|---|
+| 1 | Literature search sufficiently complete | Evidence Report search log and coverage report | Every source in resource §2a was probed this session and is WORKING or covered by another rung of the fallback ladder (§2a-1, §2a-2); the completeness checklist (§2b) is all DONE; Q1–Q9 and N1–N5 were used; the Stage 3 recency search was done. Hit or query counts never satisfy this check |
+| 2 | Closest prior work identified | Evidence Report §4 table and paper ledger | Three closest papers (or fewer, with the reason), every one READ at FULL-TEXT level (§2a-3), bibliographic identity verified; "Remaining uncertainty affecting GO / NO-GO" lists no open item that could flip the classification or the gate |
+| 3 | Novelty verdict evidence-supported | Evidence Report | The classification has its six-point explanation; evidence quality is not Unverified; the report is FINAL |
+| 4 | Existing novelty PASS requirement satisfied | prior-work-checker gate + archive re-check (Step 2c) | PASS, consistent with the classification → gate mapping; the archive verdict is not STRONG OVERLAP or ALREADY TESTED |
+| 5 | Strongest comparable baseline identified | Evidence Report + mature baseline map (benchmark-finder) | Number, source location and access class are recorded; UNMEASURED systems are listed |
+| 6 | Expected improvement mechanism credible | Advisor Step 5c items 2–4 | S2 at least PARTIAL, with cause evidence named; for combinations, a complementarity argument |
+| 7 | SOTA potential meets the user's threshold | Advisor Step 5c | At least MEDIUM by default; HIGH if the user required it; waived only by an explicit scientific-diagnostic instruction (gate 9) |
+| 8 | Technical depth passes | Advisor Step 5d | PASS, including the defensible-contribution test and the multi-signal rule |
+| 9 | Benchmark validity passes | benchmark-finder; planner Step 1 | EXACT / DIRECT, SAME-TASK, comparability, and V1–V4 on the final question |
+| 10 | Fits four working days (or the user's D) | compute-planner | FITS DURATION at level L |
+| 11 | Evaluation supports a meaningful scientific conclusion | Advisor Step 5b; advisor Step 5c item 7; planner Step 8b | Required controls, SESOI and MDE are in the design; the expected effect is at least the MDE (or S3 is rated accordingly); the expected contribution type (A–D) is supported by its evidence |
+
+**Outcome.**
+- **All 11 pass:** the candidate may be GO. The only permitted condition
+  is unconfirmed compute allocation.
+- **Any check fails:** the candidate is **not GO**. A positive readiness
+  rating, high novelty strength, or a favourable matrix row never
+  overrides a failed check. Route the candidate by the check that
+  failed:
+  - checks 1–5 → prior-work-checker. Resolve it in Stage 3 if possible;
+    otherwise FAIL, then benchmark-finder regeneration (Step 2b loop);
+  - checks 6–8 and 11 → research-readiness-advisor redesign (advisor
+    Step 7; shared definitions §6);
+  - check 9 → benchmark-finder;
+  - check 10 → the planner Step 6 redesign sequence.
+
+  Every redesign re-enters the normal flow (Steps 2a–5) and comes back to
+  this gate.
+- **Redesign cannot resolve it:** the candidate is NO-GO. The slot follows
+  the existing replacement search. If that also fails, the slot is
+  UNRESOLVED. Never force a GO, and never pad (Cardinality Rule).
+
+**Budget.** Stage 3 verification is part of the planning budget. It is
+run only for GO candidates and backups (see the early kill check). The
+human reading that verifying the Evidence Report needs during the project
+counts in compute-planner's "Understanding / reading" phase, inside D.
 
 ---
 
@@ -717,20 +1096,40 @@ This guarantees that, before output:
    slots are duplicates of each other (research-planner Step 1b).
 3. Every project in the final portfolio FITS the user-specified duration D
    for a researcher at the user-specified experience level L across the
-   FULL workflow (compute-planner): its standalone total budget
-   (conservative work + separately stated contingency) fits D, without
-   counting setup reused from another project. Projects that did not fit were
-   redesigned in order (simplify → simpler established benchmark/baseline →
-   smaller reformulated question → replacement by an actively searched,
-   different benchmark-centered question), never kept as "risky" and never
-   fitted by extending D. Every replacement passed Benchmark Validity, the
-   prior-work check, and FITS DURATION.
+   FULL workflow (compute-planner; shared definitions §5):
+   - expected active work plus contingency is at most D;
+   - the conservative work bound is at most D;
+   - the critical-path wall-clock is at most D;
+   - every line is labelled VERIFIED, ESTIMATE or RISK;
+   - no setup from another planned project is counted.
+
+   Projects that did not fit were redesigned in this order, never kept as
+   "risky" and never fitted by extending D:
+   - the scope levers: narrow to the documented failure slice → reuse
+     code → reuse models, outputs or activations → cut optional scope →
+     smaller intervention that keeps the mechanism → better benchmark or
+     setting;
+   - then a smaller reformulated question;
+   - then replacement by an actively searched, different
+     benchmark-centered question.
+
+   Every replacement passed every mandatory gate.
+3b. Every project in the final portfolio passes technical depth (§3) and
+   has a credible SOTA path (pre-experiment SOTA potential of at least
+   MEDIUM, or HIGH if the user required it), unless the user waived that
+   gate. Every SOTA statement names the task, slice, baseline, metric and
+   access class, and a slice result is never presented as overall SOTA.
 4. Feasible projects are ordered Project 1 ... strictly from
    easiest/fastest to hardest/slowest for a researcher at level L (not a
    generic researcher), only after all slots were evaluated, each with its
    schedule window of length D.
 
-The pipeline must actively try to return N valid projects. A slot is never
+The pipeline must actively try to return N valid projects, but it never
+pads: a slot that fails any gate is reported as NO-GO or UNRESOLVED,
+never as a conditional GO (except for unconfirmed compute allocation).
+Replacement search obeys the anti-fixation rules (§1b): no second slot on
+the same benchmark or subfield, and no previously explored direction
+without new evidence. A slot is never
 left UNRESOLVED merely because the original question or its nearby
 variants fail; it is first redesigned and then replaced through an active
 search for alternative research questions (research-planner Step 6). Only
@@ -755,27 +1154,42 @@ analysis, figures/tables, and writing the required paper.
 
 All feasibility and time estimates are made at the user-specified
 experience level L (Beginner / Intermediate / Advanced, defined in
-compute-planner). The level materially changes the estimate (learning
-overhead, setup and reproduction overhead, uncertainty for
-experience-sensitive factors). A project that would fit for a more
-experienced researcher but not at level L is DOES NOT FIT DURATION for
-this run. Never shrink an estimate to make a project fit.
+compute-planner).
+- The level changes the estimate through learning overhead for genuinely
+  unfamiliar tools, sized from verified documentation.
+- The level never decides eligibility. Beginner describes experience, not
+  the technical ceiling (shared definitions §2).
+- A project that would fit for a more experienced researcher but not at
+  level L is DOES NOT FIT DURATION for this run.
+- Never shrink an estimate to make a project fit, and never inflate one
+  by stacking pessimistic assumptions.
 
-A project FITS DURATION only if its STANDALONE total budget required — the
-conservative upper bound of estimated work for the complete workflow at
-level L, plus a separately stated required contingency sized to the
-project's risks — fits within D, i.e. it can realistically and reliably be
-completed within D, not merely theoretically finished. No fixed percentage
-or fixed buffer is used. Contingency is never counted as planned work, and
-setup reused from another project never makes a project fit (a reuse
-estimate may be shown as information only). D is in working days (1 week =
-5 working days unless the user states otherwise). When D is 5 working days,
-a Beginner project's expected work should normally be at most about 3.5–4
-days; a conservative workload of about 5 days is normally DOES NOT FIT
-DURATION unless unusually low execution risk is explicitly justified.
-Estimates are realistic, project-specific, and rounded to 0.25 or 0.5 day;
-compute-planner holds the detailed phase rules (including Beginner defaults
-for reproduction, analysis, and writing).
+A project FITS DURATION (shared definitions §5) when all three hold:
+- its STANDALONE total budget (expected active work for the complete
+  workflow at level L, plus a separately stated contingency sized to the
+  one or two most likely risks) is at most D;
+- its conservative work bound is at most D;
+- its critical-path wall-clock is at most D.
+
+Further rules:
+- Contingency is never counted as planned work.
+- Estimates use five buckets: essential implementation, compute (active
+  vs wall-clock), evaluation and statistics, paper writing, contingency.
+  Every line is labelled VERIFIED, ESTIMATE or RISK.
+- A speculative failure is a RISK with a mitigation, not added work.
+- Verified existing assets (public code, released models, outputs or
+  activations; the user's verified local environment, caches or compute
+  allocation) count toward the standalone estimate. Setup from another
+  *planned* project never makes a project fit.
+- D is in working days (1 week = 5 working days unless the user states
+  otherwise). The user's current standard sprint is D = 4 working days:
+  expected work of about 3–3.5 days plus 0.5–1 day of contingency.
+- Paper writing is AI-drafted; budget about 0.5 day of human review and
+  verification (shared definitions §5), not human drafting. The time
+  freed goes to the diagnostic, controls and pre-mortem experiment
+  (§4e).
+- Estimates are realistic, project-specific, and rounded to 0.25 or
+  0.5 day. compute-planner holds the detailed phase rules.
 
 Per-project feasibility is estimated by compute-planner (Step 6 of that
 skill) and enforced by research-planner (its Step 6). Do not re-estimate it
@@ -784,7 +1198,11 @@ here. Short GPU runtime never implies that a project fits D.
 If the user also gives an overall time budget shorter than N × D, report
 the conflict instead of shortening D.
 
-Prefer the smallest meaningful experiment that fits comfortably within D.
+Prefer the smallest **scope** that still delivers a technically
+meaningful contribution and fits comfortably within D. Before concluding
+DOES NOT FIT, apply the scope levers (shared definitions §6). If a design
+still does not fit, report the minimum verified additional time or
+resource rather than generic advice to extend D.
 
 ---
 
@@ -812,6 +1230,13 @@ the concise block below with a reference to the archive file:
 Original question: (or "Generated — inspired by <theme / RQ>")
 Preserved / Modified / Replaced / Generated / UNRESOLVED:
 (If rejected: "Original direction rejected: no exact established benchmark found.")
+
+Discovery record (shared definitions §1a; the order must be visible):
+1. Benchmark: (with its mature baseline map and its documented failures
+   and open questions)
+2. Research question + causal hypothesis: (written before the method;
+   which documented failure it comes from)
+3. Method: (how it tests that hypothesis)
 
 Final research question:
 (One interrogative sentence ending with "?", naming the change, baseline,
@@ -846,11 +1271,40 @@ Prior work (concise; the full inventory is in the archive file):
 - Prior-work archive: `prior_work_<benchmark_name>.md`
 - Prior-work check: PASS at iteration n (earlier failed questions listed
   only by question and FAIL reason)
+- Novelty classification: NOVEL / PARTIAL OVERLAP (from the Evidence
+  Report; ALREADY STUDIED and UNCERTAIN never reach the final report as GO)
+- Prior-Work Evidence Report: `prior_work_evidence_<run-tag>_<RQk>.md`
+  (FINAL; evidence quality)
+- Expected contribution type: A / B / C / D, with its supporting evidence
+  (research-planner Step 8b)
+- Pre-implementation evidence gate (Step 5b): 11/11 PASS, or the failed
+  check and its routing
 
 Do not reproduce the full prior-work inventory, search log, or benchmark
 history in the main report.
 
+Strongest comparable baseline:
+(Name, number, source, task, slice, metric, access class; also the
+strongest method on the benchmark overall.)
+
+Documented weakness of that baseline:
+(Failure category, subset or error mode, with its source.)
+
 Proposed method/change:
+(The mechanism, and why it targets the cause of the documented weakness.)
+
+Technical depth:
+(PASS, with a one- or two-sentence depth case: the mechanism or
+hypothesis, and the insight a positive or negative result gives.)
+
+Defensible contribution (shared definitions §4e):
+- Finding if positive:
+- Finding if negative:
+- Predictability test: (would an expert predict the outcome? If success
+  is predictable, explain why the negative outcome is informative, or
+  the depth gate fails)
+- Reviewer pre-mortem: (the most likely rejection reason, and the
+  experiment inside D that answers it)
 
 Main experiment:
 
@@ -860,11 +1314,62 @@ Describe exactly what rows and columns would appear.
 Minimum ablation/control:
 
 Smallest viable experiment:
+(The MVRD. Mark each experiment ESSENTIAL or OPTIONAL. Only ESSENTIAL
+experiments are scheduled inside D.)
+
+Refinement history:
+(Each redesign attempt: the lever used, what changed, and the
+re-evaluated ratings.)
 
 Research readiness (from research-readiness-advisor, confirmed):
 (Benchmark fit, Execution fit, Original-question preservation, Project type
 (Performance-oriented / Scientific-diagnostic), Short-paper readiness, and
 the full provisional paper draft with all unmeasured numerical cells TBD.)
+
+Topic ranking (advisor Step 5c, confirmed; criteria and numbering from
+shared definitions §8; S1–S4 from §4b):
+- Pre-experiment SOTA potential (§8 criterion 1): HIGH / MEDIUM / LOW /
+  UNKNOWN.
+  Rate each criterion STRONG / PARTIAL / WEAK / UNVERIFIED, with its
+  evidence:
+  - S1 documented weakness and headroom (baseline number, sourced, with
+    its table/figure). Include the **baseline-maturity audit**: systems
+    released after the benchmark, and which are UNMEASURED (§4d.1–2).
+  - S2 mechanism targeting the weakness. Give the **cause evidence**
+    (diagnostic or error analysis) and the lever evidence separately
+    (§4d.3).
+  - S3 fair, reproducible test. Give the **expected effect size, its
+    basis, and the MDE** (§4d.5).
+  - S4 feasible MVRD.
+  - Calibration note: any similar past design and its measured outcome
+    (§4d.6).
+
+  HIGH only if all four are STRONG on facts verified now; there is no
+  conditional HIGH. This is never a claim of achieved SOTA; that is
+  classified only after the experiment (§4c).
+- Four-day feasibility margin (§8 criterion 2).
+- Benchmark and evaluation strength (§8 criterion 3): public benchmark,
+  reproducible baselines, reliable evaluation.
+- Clear, measurable contribution and technical depth (§8 criterion 4):
+  PASS (gate), the significance of the finding, and the contribution
+  type A–D (research-planner Step 8b).
+- Novelty strength (§8 criterion 5): HIGH / MEDIUM / LOW. Modest is
+  acceptable.
+- Negative-result readiness (§8 criterion 6): see the review table
+  below.
+- Original-question preservation (§8 criterion 7, tie-breaker).
+
+Negative-Result Interpretability Review (from research-readiness-advisor
+Step 5b, confirmed):
+
+| Field | Result |
+|---|---|
+| Positive-result contribution | What a successful result would establish |
+| Negative-result contribution | What a sufficiently precise negative result would establish |
+| Inconclusive-result risk | Why the experiment might fail to support either conclusion |
+| Independent scientific value | Findings beyond benchmark improvement |
+| Required controls | Minimum controls (incl. SESOI and power / MDE check) needed for interpretation |
+| Negative-result readiness (§8 criterion 6) | PASS / CONDITIONAL (conditions adopted) / FAIL (performance-dependent) |
 
 Project plan order:
 benchmark + baseline selection → method selection → full provisional paper
@@ -888,10 +1393,18 @@ to 0.25 or 0.5, estimated from this project rather than a template):
 - Experiment time:
 - Analysis/sanity-check time:
 - Figure/table time:
-- Writing/revision time: (if writing-first, the split of the same budget)
+- Writing/revision time: (AI-drafted paper; human review and verification
+  only, about 0.5 day at Beginner; if writing-first, the split of the
+  same budget)
 - External dependency time:
 - Required contingency: (not work time; which plausible failure it covers)
-- Total budget required: (e.g. "up to 5 days")
+- Total budget required: (expected active work + contingency, e.g. "up to 4 days";
+  the conservative work bound and the critical-path wall-clock must also be <= D)
+- Five-bucket summary (shared definitions §5): essential implementation /
+  compute (active vs wall-clock) / evaluation and statistics / paper writing /
+  contingency. Label each line VERIFIED, ESTIMATE or RISK.
+- Risks: each with its probability and mitigation (a speculative failure is a
+  RISK, not added work)
 - Main uncertainty drivers:
 - Level-specific difficulty, learning overhead, setup/reproduction risk,
   main reason for the estimate:
@@ -916,6 +1429,8 @@ Stop/Pivot Criterion:
 Minimum Result Worth Writing Up:
 
 What a negative result would mean:
+(Consistent with the review above; distinguish a meaningful negative from
+an inconclusive result.)
 
 Main Risk:
 
@@ -925,8 +1440,8 @@ Recommended Scope:
 
 ### Project Schedule
 
-| Project | Schedule Window | Slot (RQk) | Final Research Question | Preserved / Modified / Replaced / Generated / UNRESOLVED | Exact Benchmark | Baseline | Metric | Validity (V1–V4) | Collision Verdict | Gap | Prior-Work Archive | Proposed Change | Short-Paper Readiness | Preservation | Experience Level | Standalone Expected Work | Conservative Work Range | Contingency | Total Budget Required | Execution Risk | Duration Feasibility (standalone, vs. D, at L) | Hardware Fit | User Compute Feasibility |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Project | Schedule Window | Slot (RQk) | Final Research Question | Preserved / Modified / Replaced / Generated / UNRESOLVED | Exact Benchmark | Baseline | Metric | Validity (V1–V4) | Collision Verdict | Gap | Prior-Work Archive | Proposed Change | SOTA Potential | Novelty Strength | Negative-Result Readiness | Short-Paper Readiness | Preservation | Experience Level | Standalone Expected Work | Conservative Work Range | Contingency | Total Budget Required | Execution Risk | Duration Feasibility (standalone, vs. D, at L) | Hardware Fit | User Compute Feasibility |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 
 The table must contain exactly N rows, one per output slot: feasible
 projects sorted by Project order (easiest/fastest first), then UNRESOLVED
@@ -942,6 +1457,33 @@ within the user-specified duration D?" rather than "Which of the user's
 original ideas is best?"
 
 Explain briefly why each recommended direction is stronger than the
-alternatives. The recommendation does not change the project order.
+alternatives, using the topic-ranking order (shared definitions §8):
+1. SOTA potential;
+2. feasibility margin;
+3. benchmark and evaluation strength;
+4. defensible contribution and technical depth (credible A/B above C/D);
+5. novelty strength;
+6. negative-result readiness;
+7. preservation.
+
+Include research-planner's candidate comparison matrix. The
+recommendation does not change the project order. Only candidates that
+passed the Step 5b evidence gate may be recommended as GO.
+
+For the selected primary project and each backup, explain:
+- the technical contribution;
+- the strongest baseline;
+- the documented performance gap;
+- the proposed mechanism and why it could improve performance;
+- SOTA potential (S1–S4);
+- the D-day execution plan, with VERIFIED / ESTIMATE / RISK labels and
+  the five buckets;
+- the risks with their mitigations.
+
+If no project qualifies after genuine redesign attempts, report NO
+SUITABLE TOPIC FOUND. Name the remaining unavoidable constraints and the
+minimum verified change (time, compute or scope) that would make the best
+design qualify. Do not simply recommend extending D or lowering the
+standards.
 
 Do not recommend a direction solely because it appears novel.

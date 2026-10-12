@@ -10,7 +10,96 @@ description: Find established benchmarks, datasets, prior work, and literature g
 `references/research_advice.md` (in this skill's directory) is the PRIMARY
 and HIGHEST-PRIORITY research-planning reference for this project.
 
-Read it before benchmark search and selection.
+Read it before benchmark search and selection, together with its
+interpretation note and the shared definitions in
+`~/.claude/skills/research-pipeline/references/research_design_principles.md`.
+The shared definitions cover Beginner, technical depth, SOTA potential vs
+achievement, D-day feasibility, research redesign and the mandatory gates.
+They never weaken this skill's exact-benchmark and validity standards.
+
+benchmark-finder supports the Discover and Diagnose stages. Beyond
+finding benchmarks, it identifies:
+- the strongest comparable baseline;
+- that baseline's documented weaknesses;
+- the reusable assets verified in the actual repository or model hub.
+
+The designer skills (research-readiness-advisor, research-planner) can
+then build technically meaningful interventions on top of these.
+
+### Discovery order and anti-fixation (mandatory; shared definitions §1a–§1b)
+
+benchmark-finder owns **step 1 (Benchmark)** and supplies the inputs for
+**step 2 (Research Question)** of the order Benchmark → Research Question
+→ Method.
+- It never proposes or presumes a method.
+- Each benchmark candidate is reported with:
+  - (a) its mature baseline map (below);
+  - (b) its documented failure modes, each with a source and a
+    table/figure location;
+  - (c) its open questions, extracted from the benchmark paper's
+    limitations, future-work and discussion sections and from at least
+    two follow-up or competing papers, read from downloaded text.
+- The research question is then derived from (b) or (c), with a causal
+  hypothesis for the failure, **before** any method is named.
+
+In broad-discovery mode:
+- **Scope.** Any area of AI/ML. Technical AI safety is optional, not
+  required (shared definitions §1d).
+- **Coverage.** Screen at least 10–15 public benchmarks across at least
+  six distinct AI/ML subfields, with at least two benchmark candidates
+  each, before any shortlist. Report a coverage table: subfield →
+  candidates → outcome and reason.
+- **Screening table (shared definitions §1c).** For every screened
+  benchmark, record:
+  - the strongest existing method(s) and their published numbers (source
+    and table);
+  - documented failure modes;
+  - realistic headroom (saturation, label-noise ceiling, crowding);
+  - feasibility within D.
+
+  Rank the benchmarks by SOTA-improvement potential, then feasibility.
+  Hand the top three to the next step. Write research questions only
+  for those three, and only after this table exists.
+- **Early kill check.** Before investing in a direction, confirm that no
+  stronger existing method already solves it on that benchmark.
+- **Exclusions.** First read the user's previous two discovery reports in
+  the working directory. List their selected or GO/REVISE benchmarks,
+  subfields and mechanisms as "previously explored".
+  - Exclude them unless new verified evidence, dated after that report,
+    removes the recorded failure reason. Cite that evidence.
+  - Prior `prior_work_*.md` archives and memory notes are background,
+    never seeds.
+- **Concentration.**
+  - At most one shortlisted slot per benchmark.
+  - At most one per subfield.
+  - At most 40% of the shortlist from one subfield.
+- **Immature benchmarks.** A benchmark less than 3 months old, or with
+  only its authors' baselines, is flagged IMMATURE. It holds at most one
+  slot.
+- **Query diversity.** Do not iterate queries only around the first
+  promising hit. For each subfield, search for:
+  - recent benchmark papers;
+  - recent method papers that report limitations;
+  - follow-up or re-evaluation papers.
+
+### Baseline-maturity audit (mandatory before reporting the strongest baseline)
+
+The strongest comparable baseline must be the strongest *existing*
+applicable system, not only the strongest one in the benchmark paper.
+For each benchmark:
+1. Search for methods, open models, guard/detector models and follow-up
+   papers released after the benchmark that plausibly apply.
+2. Record each one's published number on the benchmark, with its source,
+   or mark it **UNMEASURED**.
+3. Note any standard method class the published baseline set omits.
+   Examples: input moderation, a modern guard model, a strong open LLM,
+   a published follow-up.
+
+Report this as the "Mature baseline map". Downstream S1 rating
+(shared definitions §4d) depends on it:
+- S1 cannot be STRONG while a plausibly stronger system is UNMEASURED.
+- S1 is WEAK when the headroom exists only because a standard method
+  class is missing from the baselines.
 
 When there is a conflict between preserving an original research idea, the
 default behavior of this skill, or general project-planning heuristics, and
@@ -253,7 +342,8 @@ For each idea or slot:
    problem in the same target behavior → same broad research area →
    adjacent areas) until a direction passes exact-benchmark validation,
    with reproducible baselines, a clear metric, a plausible literature gap,
-   and room for a small method modification or controlled experiment.
+   and room for a targeted, technically meaningful intervention or
+   controlled experiment.
 5. Report one best replacement benchmark per slot under the SAME slot ID
    (alternatives may be listed as backups), and the problem it directly
    evaluates.
@@ -265,10 +355,27 @@ Prioritize benchmarks with:
 - reproducible baseline
 - minimal preprocessing
 - minimal custom infrastructure
-- accessible compute requirements
+- accessible compute requirements (judged against the global
+  `~/.claude/skills/compute-planner/references/compute.md`; GPUs that are
+  documented as available on all-account partitions count as accessible
+  even before an allocation is confirmed)
 - short baseline reproduction time
-- room for one small, interpretable modification
+- room for one isolated, interpretable, technically meaningful
+  intervention (isolated means small in scope, not trivial)
+- a strongest baseline with documented weaknesses (failure categories,
+  subsets, error modes) that leave verified headroom
+- released models, adapters, outputs, per-item scores or activations that
+  make GPU, fine-tuning or white-box work feasible (an enabler, never an
+  exclusion criterion)
 - interpretable positive AND negative results
+
+Ease-of-execution items (minimal preprocessing, minimal infrastructure,
+short reproduction) are **tie-breakers among benchmarks that support a
+credible, evidence-based SOTA path**. They are never the reason a
+benchmark is preferred over one with a mature baseline set, documented
+cause evidence and open questions. A benchmark whose only advantage is
+ease of execution, or whose headroom comes from an immature or
+incomplete baseline set, is not shortlisted.
 
 Do not treat "closest conceptual match to the original question" as the
 best benchmark. A benchmark that is EXACT for a nearby problem and highly
@@ -492,8 +599,22 @@ For each entry, report:
 - Literature Relationship
 - Main Evidence Gap
 - Benchmark Readiness (see below)
-- Candidate Small Gaps Around This Benchmark (verified against literature;
+- Candidate Gaps Around This Benchmark (verified against literature;
   no novelty claims)
+- Strongest Comparable Baseline (number, source, task, slice, metric,
+  access class) and the strongest method overall
+- Mature Baseline Map (baseline-maturity audit: systems released after the
+  benchmark, published numbers or UNMEASURED, omitted method classes)
+- Benchmark Maturity: MATURE / IMMATURE (< 3 months old or author-only
+  baselines)
+- Documented Weaknesses of that baseline (failure categories, subsets,
+  error modes, stated limitations; each with its source and table/figure
+  location, preferably from released results or per-item outputs)
+- Cause Evidence: any documented diagnostic, ablation or error analysis
+  showing *why* the baseline fails, kept separate from the weakness itself
+- Open Questions (from limitations, future-work and discussion sections
+  and follow-up papers, each with its source); the research question is
+  derived from these or from the weaknesses, before any method
 
 Benchmark Readiness (a practical assessment, separate from the scientific
 classification above; report factually from verified sources and do not
@@ -512,6 +633,11 @@ turn it into compute-feasibility judgments or experiment design):
 - External Dependencies (APIs, closed models, judge models, gated data)
 - Repository Maturity (official, maintained, documented run command?)
 - Typical Number of Conditions / Seeds in prior work
+- Reusable Assets (VERIFIED by inspecting the actual repository, branches,
+  model hub or dataset card; never assumed): code and configs, released
+  models and adapters, released outputs, per-item scores, cached
+  activations, evaluation scripts. Record the location of each (repo,
+  branch, path). Mark anything not inspected as UNVERIFIED.
 - Experience-sensitive factors present (YES / NO each, factual): multi-GPU
   or model-parallel execution; 70B-class models; activation hooks or
   mechanistic interpretability tooling; external judge / API pipeline;
@@ -532,6 +658,8 @@ Also include a concise benchmark search trace:
 5. Replacement search for nearby problems (if needed)
 6. Broader literature search
 7. Final benchmark classification and verification status
+8. Subfield coverage table and "previously explored" exclusions (broad
+   discovery)
 
 
 ### Step 5: Benchmark-centered prior-work archive (provisionally confirmed benchmarks only)
@@ -661,7 +789,10 @@ original benchmark → important baselines → major improvements → current
 strong methods → relevant analyses / criticisms
 
 ## 5. Closest prior work — <RQk>
-(one subsection per project using this benchmark)
+(One subsection per project using this benchmark. Link the slot's
+Prior-Work Evidence Report, `prior_work_evidence_<run-tag>_<RQk>.md`,
+written by prior-work-checker. Do not copy that report's
+three-closest-papers table or combination analysis here.)
 | Paper | What they tested | How it differs from the proposed project | Proposed contribution still distinct? |
 |---|---|---|---|
 
@@ -710,6 +841,17 @@ using it. Sections 5–8 are per project (one subsection per RQk).
 
 These correspond to prior-work-checker's SAME COMPARISON, FUNCTIONALLY
 EQUIVALENT / SUBSTANTIALLY ANSWERED, PARTIAL, and no overlap.
+
+They also map onto prior-work-checker's novelty classification:
+- STRONG OVERLAP and ALREADY TESTED → ALREADY STUDIED;
+- PARTIAL OVERLAP → PARTIAL OVERLAP;
+- NO EVIDENCE FOUND → NOVEL or PARTIAL OVERLAP, as prior-work-checker
+  classifies it. NO EVIDENCE FOUND alone never implies NOVEL.
+
+See [prior_work_novelty_sota_review.md](../prior-work-checker/references/prior_work_novelty_sota_review.md)
+§6. benchmark-finder records the collision verdict; prior-work-checker
+alone issues the novelty classification and gate. If the two disagree,
+the stricter one applies.
 
 Do not call something a gap merely because the exact wording of the
 question has not appeared in a paper.
