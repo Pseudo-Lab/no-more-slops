@@ -47,6 +47,7 @@ Research Forge의 연구 진행 스킬을 중심으로 기존 논문 최적화·
 
 - 실제 소비된 skill/context hash와 실패 trace를 확인한다. 반복 가능한 실패와 검증 사례가 없으면 규칙을 늘리지 않는다.
 - 후보는 작은 diff와 context 선택 변경으로 만들고 기대 효과·악화 가능 지표·failure ID·재생 과제를 연결한다. 활성 스킬과 원본 실행을 덮어쓰지 않는다.
+- optimizer가 평가기, 권한 경계, 최종 평가 정답을 고치게 하지 않는다.
 - skill-only, context-only, joint를 같은 예산에서 baseline과 비교한다. train/dev 실패 기억으로 후보를 만들고 별도 validation에서 평가한다.
 - 최종 test는 후보군을 동결한 뒤 한 번만 사용한다. test 결과를 다음 후보 선택에 쓰면 validation으로 전환하고 새 test를 준비한다.
 - 과거 회귀, 유효 주장 보존, 비용·망각을 함께 확인한다. 빈 분모는 unknown/NA로 남긴다. 결과·독립 평가가 없거나 개선이 없으면 candidate_only로 유지한다.
