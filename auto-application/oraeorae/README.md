@@ -5,7 +5,7 @@
 - **서비스**: https://oraeorae.kro.kr (카카오 로그인, 모바일 우선)
 - **기간**: 2026-10-07 ~ 10-12 (1주차)
 - **스택**: Next.js 16 App Router · Supabase(서울, RLS) · Vercel · OpenAI Responses API · GA4
-- **코드**: `app/` — 개발은 비공개 저장소에서 하고, 제출 때마다 `git archive origin/main`으로 스냅샷을 이 폴더에 미러한다.
+- **코드**: 비공개 저장소(건강정보 서비스라 소스는 제출하지 않음). 이 폴더에는 문서, 발표 자료, 스킬만 둔다.
 
 ## 문제
 부모님 검진 결과는 종이와 PDF로 흩어져 있고, 걱정하는 자녀가 모아서 보기 어렵다. 공공 앱(나의건강기록)은 본인 열람용이라 성인 가족끼리 계속 함께 보는 기능이 없다.
@@ -19,15 +19,6 @@
 3. 기록만, 진단 안 함: 판정·H/L·참고치는 결과지에 인쇄된 것만 옮긴다.
 4. 경계 보안: RLS + security definer RPC, service-role 클라이언트 없음.
 5. 가장 작은 배포 단위: 이슈 1 = 브랜치 1 = spec 1 = PR 1, 매번 운영 URL 확인.
-
-## 재현 방법
-```bash
-cd app && npm install
-cp .env.example .env.local        # Supabase URL·publishable key (OPENAI_API_KEY 없으면 예시 값 모드)
-npx supabase start                # 로컬 DB + 마이그레이션 8개 (Docker 필요)
-npm run dev                       # http://localhost:3200
-```
-카카오 로그인은 Kakao Developers 앱의 REST API 키·Client Secret을 `supabase/.env`에 넣고 Redirect URI `http://127.0.0.1:54321/auth/v1/callback`을 등록해야 동작한다. 자세한 것은 `app/README.md`.
 
 ## 써 보기
 1. https://oraeorae.kro.kr 에서 카카오 로그인 → 동의 → 가족 만들기.
@@ -71,7 +62,7 @@ npm run dev                       # http://localhost:3200
 제작 지표: 커밋 53, PR 16, 이슈 32, spec 10, 스킬 9, 판독 비용 ≈ 25원/건.
 
 ## 문서
-- `app/` — 서비스 전체(소스, Supabase 마이그레이션, spec-kit 헌법·spec 9개, 이슈 노트)
+- [presentation-week1.pdf](presentation-week1.pdf) — 1주차 발표 슬라이드 15장(5분): 불편 한 줄 → 원칙 → 뼈대 → 아키텍처 · 호출 순서 → 판독 파이프라인 · 모델 실측 → 배포 · 퍼널 → 역할 분담 · 스킬 9개
 - [ARCHITECTURE.md](ARCHITECTURE.md) — 기능 흐름·시스템·데이터 모델·판독 파이프라인·운영 경계 다이어그램
 - [PROCESS.md](PROCESS.md) — 1주 제작 트랙: 단계별로 사람이 한 것 / Claude가 스킬·CLI·MCP로 한 것
 - `skills/micro-saas-week/SKILL.md` — 위 트랙을 스킬 8개의 **조합**으로 쓴 것. 단계 스킬 7개를 순서대로 호출하고 매 단계 끝을 `ship-loop`로 닫는다
