@@ -23,6 +23,8 @@
 - 고정 너비(`frame(width:)`)를 텍스트에 걸지 않는다. 버튼 라벨은 두 줄을 허용하고(`.fixedSize(horizontal: false, vertical: true)`), `minimumScaleFactor`는 숫자처럼 짧은 값에만 쓴다.
 - 가로로 나란한 탭은 "다 들어가면 펼치고, 안 들어가면 가로 스크롤"로 만든다. `ViewThatFits`는 자식의 이상적 크기가 들어가는 첫 번째 것을 고른다. 칸을 고르게 나누는 레이아웃은 이상적 너비를 "모든 단어 너비의 합 + 간격"으로 알려 줘야 긴 언어에서 스크롤로 넘어간다.
 
+![탭 겹침 수정 전후](../assets/tab-overflow-fix.jpg)
+
 ```swift
 var body: some View {
     // Spread across the width while every word fits, otherwise a scrolling row.

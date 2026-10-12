@@ -28,6 +28,9 @@ description: "iOS 앱이 '동작한다'를 말이 아니라 결과로 확인할 
    ```
    - NO-OP: 아무것도 안 바뀐 기능. 반드시 원인을 찾는다.
    - WEAK: 바뀌었지만 폰에서 보기 어려운 기능. 비교 이미지(원본 | 결과 | 변화 ×4와 변화 범위 상자)를 열어 보고, 범위 상자가 엉뚱한 곳(팔 도구가 얼굴을 바꿈)이면 그것도 버그로 본다.
+
+   ![무변화 감사 비교 이미지](assets/noop-audit-sample.jpg)
+
 3. **실기기:**
    ```sh
    scripts/device_run.sh -p App.xcodeproj -s App -b com.example.app -d <기기 ID> -a "-perfReport" -f Documents/perf.txt -o out/

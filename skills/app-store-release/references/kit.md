@@ -13,6 +13,12 @@ docs/app-store/
   paste-sheet.html      paste_sheet.py가 만든다
 ```
 
+같은 홈 화면을 언어별로 찍은 결과(`capture_screenshots.py`)와 붙여넣기 시트(`paste_sheet.py`)는 이렇게 나온다.
+
+![언어별 스크린샷](../assets/locale-screenshots.jpg)
+
+![붙여넣기 시트](../assets/paste-sheet-preview.jpg)
+
 ## kit.json
 
 | 키 | 내용 |
