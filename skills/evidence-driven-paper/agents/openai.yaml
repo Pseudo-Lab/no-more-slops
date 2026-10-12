@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence-driven Paper"
+  short_description: "Draft and revise papers with traceable claims and checks"
+  default_prompt: "Use $evidence-driven-paper to revise this manuscript from reviewer feedback, verify its comparisons, and prepare the requested submission files."
