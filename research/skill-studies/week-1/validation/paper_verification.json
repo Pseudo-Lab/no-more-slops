@@ -1,0 +1,69 @@
+{
+  "SkillMerge": {
+    "pages": 4,
+    "source_sha256": "faae0f4de7979db7cbaaa070f00de52912c779072fe394de9c251510e50f8dfd",
+    "pdf_sha256": "5ff2613a52bb9f3798b4a3a9906e8f9375615cd2fd14121762b36d706af6a3e6",
+    "prose_items_verified": 54,
+    "prose_omitted": 0,
+    "reference_urls": 8,
+    "embedded_fonts": [
+      "YZZMZD+NewCM10-Bold-Identity-H",
+      "PYEDIN+NewCM10-Regular-Identity-H",
+      "TTRXAY+NewCMMath-Book-Identity-H"
+    ],
+    "semantic_pages_match": true,
+    "page_characters": [
+      3318,
+      2842,
+      3111,
+      3017
+    ],
+    "text_inside_pages": true,
+    "scientific_performance": "NR"
+  },
+  "SecondChance": {
+    "pages": 4,
+    "source_sha256": "bad1427ffc50609f76d807833334cae1ff514a46f76327eea0e33b42e84c94a6",
+    "pdf_sha256": "5097a3a0ab73f0148d0d5fc16002b597538e87da4401f66094db1157708b41f1",
+    "prose_items_verified": 60,
+    "prose_omitted": 0,
+    "reference_urls": 8,
+    "embedded_fonts": [
+      "IYGPTJ+NewCM10-Bold-Identity-H",
+      "MUIFTI+NewCM10-Regular-Identity-H",
+      "NUQVXM+NewCMMath-Book-Identity-H",
+      "XXJMAS+LibertinusSerif-Regular-Identity-H"
+    ],
+    "semantic_pages_match": true,
+    "page_characters": [
+      3618,
+      3575,
+      3285,
+      3062
+    ],
+    "text_inside_pages": true,
+    "scientific_performance": "NR"
+  },
+  "ProbeFlow": {
+    "pages": 4,
+    "source_sha256": "8e00eb50a12d4f0511a9c9915254c2da6d16e0fe62dc89d01d8728c1bd7722d4",
+    "pdf_sha256": "09e355db59b269f7a30be78a5e49de6b5e56db6154265cfcdae9349d24105a0f",
+    "prose_items_verified": 57,
+    "prose_omitted": 0,
+    "reference_urls": 9,
+    "embedded_fonts": [
+      "IHMVQU+NewCM10-Bold-Identity-H",
+      "OAEFBC+NewCM10-Regular-Identity-H",
+      "RJQWWP+NewCMMath-Book-Identity-H"
+    ],
+    "semantic_pages_match": true,
+    "page_characters": [
+      3765,
+      2810,
+      2921,
+      3774
+    ],
+    "text_inside_pages": true,
+    "scientific_performance": "NR"
+  }
+}

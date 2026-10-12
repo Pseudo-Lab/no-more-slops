@@ -1,0 +1,5 @@
+# Preserve the validated document and source bytes across platform checkouts.
+* -text whitespace=cr-at-eol
+*.pdf binary
+# Two trailing spaces are intentional Markdown hard line breaks.
+*.md whitespace=cr-at-eol,-blank-at-eol

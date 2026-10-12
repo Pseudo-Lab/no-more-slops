@@ -1,0 +1,530 @@
+{
+  "schema": "rf.probeflow.methods.v5",
+  "study": "ProbeFlow",
+  "date": "2026-10-12",
+  "status": "first_week_research_design",
+  "locked": false,
+  "industrial_results": "NR",
+  "causal_target": "effect of acquisition/stopping policy under a common frozen predictor, numerical evidence bank, information rights, and realized ledger",
+  "hypothesis": "non-myopic resource-aware selection helps only in supported shared-source/complementarity/failure strata; superiority is unverified",
+  "current_evidence": {
+    "v3_kernel": "trusted standard-library authored finite reference; source/cache/disclosure separation and replay",
+    "v3_tests": "existing 25-test receipt inspected, not rerun in this v5 writing task",
+    "authored_worlds": 16,
+    "authored_generator_families": 1,
+    "independent_scientific_groups": 0,
+    "terminal_trials": 1152,
+    "v4_raw": "separate root download and selected-channel schema audit",
+    "archive_bytes": 76601704,
+    "archive_sha256": "24128aad2ee45eea7e6b63ebbd9992cdf25d0483a2cebefbfc13bc69079af1f2",
+    "cycles": 2205,
+    "physical_channels_prepared": 3,
+    "physical_channels_total": 14,
+    "adjacent_condition_runs": 194,
+    "adjacent_runs_are_independent_groups": false,
+    "grouping": "unknown independent blocks",
+    "industrial_fitted_predictors": 0,
+    "industrial_learned_policies": 0,
+    "industrial_calibration_artifacts": 0,
+    "industrial_model_invocations": 0
+  },
+  "task": {
+    "endpoint": "recorded-cycle categorical component condition prediction",
+    "heads": [
+      {
+        "name": "cooler",
+        "classes": [
+          3,
+          20,
+          100
+        ]
+      },
+      {
+        "name": "valve",
+        "classes": [
+          73,
+          80,
+          90,
+          100
+        ]
+      },
+      {
+        "name": "pump_internal_leakage",
+        "classes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "accumulator",
+        "classes": [
+          90,
+          100,
+          115,
+          130
+        ]
+      }
+    ],
+    "class_encoding": "explicit train/final class map; numerical codes treated as categories, not a distance scale",
+    "primary_loss": "mean four-head 0/1 error",
+    "diagnose": "four committed predicted class codes",
+    "abstain": "one terminal withholding decision with fixed penalty",
+    "terminal_loss": "component loss if diagnose, lambda_A if abstain",
+    "lambda_A": null,
+    "physical_rootcause_validation": false,
+    "equipment_control": false,
+    "second_chance_or_skill_evolution": false,
+    "participant_contributed_analysis_modules": 0,
+    "primary_decision_time": "end of a completed archived cycle",
+    "online_prefix_variant": "separate protocol; all sample stops <= declared decision time; not currently evaluated"
+  },
+  "notation": {
+    "z": "only disclosed typed numerical values",
+    "m": "successful observation mask; value zero is distinct from unseen",
+    "O": "acquired exact raw source identities in current episode",
+    "C": "computed exact module/version/input identities",
+    "v": "publicly declared availability",
+    "b": "remaining evidence units",
+    "h_public": "required action/failure provenance; do not expose raw values through errors",
+    "q_phi": "frozen predictor distribution; parameters fixed, output changes with z,m and allowed status",
+    "p_theta": "separate conditional acquisition-outcome forecast; classifier probabilities alone do not define it",
+    "rho": "model-expected best allowed terminal loss including abstention",
+    "alpha": "optional normalized acquisition penalty in objective, separate from hard budget",
+    "V": "optimal model-expected continuation value for the stated finite process"
+  },
+  "state_sufficiency": {
+    "proposed": "(z,m,O,C,v,b,h_public) or proved equivalent history/quote representation",
+    "sufficient_only_if": "state determines future observation probabilities, legal actions and resource transitions",
+    "cache_reconstructible_case": "fixed deterministic DAG, all requests succeed, identical empty initial cache, no externally warmed resource state, full request provenance encoded by m",
+    "reconstructible_formula": "O=union R(a), C=union dependency closure(a), over every disclosed requested action",
+    "insufficiency_case": "failures retain acquired resources but no returned values; or explicitly declared warm-cache provenance",
+    "missing_history": "value-dependent failure can change beliefs; public failure outcome needs predictor/outcome-model treatment",
+    "no_universal_claim": "cache is not always mathematically necessary; current quote API may encode equivalent information"
+  },
+  "registry": {
+    "version": "frozen before final test",
+    "DAG_fields": [
+      "module_id",
+      "version",
+      "prerequisite_modules",
+      "raw_source_requirements",
+      "window",
+      "unit",
+      "sampling",
+      "output_schema",
+      "failure_schema",
+      "implementation_hash"
+    ],
+    "v3_source_identity": [
+      "dataset_version",
+      "episode",
+      "channel",
+      "start",
+      "stop",
+      "resolution"
+    ],
+    "proposed_extended_identity": [
+      "archive_hash",
+      "raw_file_hash",
+      "opaque_episode",
+      "channel",
+      "start",
+      "stop",
+      "sampling",
+      "unit",
+      "resolution",
+      "transform_version"
+    ],
+    "exact_reuse_only": true,
+    "partially_overlapping_windows": "charged as distinct exact keys until interval-union behavior is implemented and tested",
+    "raw_cache_is_not_disclosure": true,
+    "internal_prerequisite_output_is_not_disclosure": true,
+    "legal_action_checks": [
+      "allowlisted module",
+      "known DAG",
+      "available prerequisites",
+      "matching units/rate/version",
+      "permitted window",
+      "incremental reservation <= remaining evidence budget"
+    ],
+    "preflight_rejection": "no values; rejected-call time logged",
+    "post_acquisition_failure": "already spent reads/computations retained; public error typed; no automatic retry refund",
+    "current_boundary": "trusted same-process API; not hostile-code isolation",
+    "virtual_channels_excluded": [
+      "CE",
+      "CP",
+      "SE"
+    ],
+    "protected_metadata": [
+      "profile labels",
+      "stable flag",
+      "condition-coded IDs",
+      "future sample values",
+      "unrequested prerequisite outputs"
+    ]
+  },
+  "cost": {
+    "v3_hard_budget": "declared fixture read plus compute units; cache overhead zero by convention",
+    "v3_read_units": {
+      "pressure": 6,
+      "flow": 5,
+      "temperature": 4
+    },
+    "v3_compute_units": {
+      "pressure_mean": 1,
+      "pressure_delta": 2,
+      "flow_mean": 1,
+      "temperature_mean": 1,
+      "balance": 1
+    },
+    "v3_worked_accounting": {
+      "shared": 9,
+      "duplicate_reads": 15,
+      "kind": "mechanics not policy advantage"
+    },
+    "industrial_proposed_hard_budget": "actual count of newly approved exact source-window values; initial evidence convention unresolved",
+    "industrial_sample_example": {
+      "pressure": 6000,
+      "flow": 600,
+      "temperature": 60,
+      "naive_total": 12660,
+      "shared_total": 6660,
+      "kind": "educational identity accounting, not transport or efficiency measurement"
+    },
+    "industrial_compute_budget": "not defined; computation and planning are separate actual records until upper-bound/overrun rules locked",
+    "raw_resource_fields": [
+      "requested_source_keys",
+      "new_value_count",
+      "serialized_payload_bytes_if_instrumented",
+      "actual_file_read_bytes_if_instrumented",
+      "parse_ns",
+      "module_ns",
+      "retrieval_ns",
+      "predictor_ns",
+      "planning_ns",
+      "cache_lookup_ns",
+      "request_ns",
+      "failure_cost"
+    ],
+    "byte_scope": "v3 encoded source bytes are in-memory encoding, not OS/network I/O",
+    "cold_warm_strata": [
+      "empty logical cache with declared process/storage warm state",
+      "retained logical source/module cache with recorded prewarm provenance and cost"
+    ],
+    "no_posthoc_cache_discount": true,
+    "normalized_weights": null,
+    "walltime_caps": null,
+    "initial_evidence_charged": null,
+    "policy_expected_cost_is_realized_cost": false,
+    "comparator_charges": "identical actual marginal cost function for all valid primary policies"
+  },
+  "formal_examples": [
+    {
+      "id": "PF-V5-XOR",
+      "kind": "analytic authored counterexample",
+      "variables": "X1,X2 independent Bernoulli(0.5); Y=X1 XOR X2",
+      "prior_world_count": 4,
+      "cost_per_query": 1,
+      "budget": 2,
+      "abstain_penalty": 0.3,
+      "mutual_information_bits": {
+        "I_Y_X1": 0,
+        "I_Y_X2": 0,
+        "I_Y_X2_given_X1": 1
+      },
+      "terminal_losses": {
+        "initial": 0.3,
+        "one_bit": 0.3,
+        "both_bits": 0
+      },
+      "conclusion": "conditional terminal gain increases after observing a complementary bit; positive-gain-only greedy can stop prematurely",
+      "not_implied": [
+        "all greedy variants fail",
+        "new XOR discovery",
+        "industrial effect size",
+        "adaptive-submodular assumptions hold"
+      ]
+    },
+    {
+      "id": "PF-V5-NOISY-PROXY",
+      "kind": "analytic authored counterexample",
+      "variables": "add Z=Y XOR E, E independent Bernoulli(0.2)",
+      "cost_per_query": 1,
+      "budget": 2,
+      "abstain_penalty": 0.3,
+      "terminal_losses": {
+        "Z_then_stop": 0.2,
+        "X1_then_X2": 0
+      },
+      "alpha_example": 0.05,
+      "combined_objectives": {
+        "greedy_Z": 0.25,
+        "pair_X1_X2": 0.1,
+        "initial_abstain": 0.3
+      },
+      "conclusion": "strictly positive immediate benefit can distract greedy; not solely zero-gain tie handling"
+    },
+    {
+      "id": "PF-V5-FAILURE-CACHE",
+      "kind": "analytic conditional state counterexample",
+      "setup": "two value-independent failed probes cost 5 each and disclose no values; source pressure versus flow retained",
+      "initial_budget": 8,
+      "spent": 5,
+      "remaining": 3,
+      "target_read": 4,
+      "target_compute": 1,
+      "next_pressure_cost": {
+        "pressure_cached": 1,
+        "flow_cached": 5
+      },
+      "same_state_fields": [
+        "z empty",
+        "m zero",
+        "v",
+        "b",
+        "q_phi confidence"
+      ],
+      "differing_fields": [
+        "O",
+        "public action provenance"
+      ],
+      "conclusion": "feature/mask/budget alone omit cost-relevant history; whole history or correct quote state can repair it",
+      "scope": "constructed equal-read-cost environment, not v3 default pressure6/flow5 fixture"
+    }
+  ],
+  "bellman_and_certificate": {
+    "theorem_kind": "elementary finite-model recurrence and relaxation argument, not novel industrial theorem",
+    "assumptions": [
+      "correct known finite joint prior over outcomes and labels",
+      "finite observation outcomes",
+      "deterministic nonnegative marginal charges",
+      "Markov-complete state including cache/history",
+      "finite fresh actions; zero-cost cached outputs cannot cause cycles",
+      "per-instance feasible-action budget",
+      "Bayes terminal decision for stated model or explicit allowed terminal rule"
+    ],
+    "objective": "expected terminal loss + alpha * expected evidence units under hard per-instance budget",
+    "recurrence": "V(s,b)=min(rho(s),min_a(alpha*c(a|s)+E[V(T(s,a,o),b-c(a|s))]))",
+    "v3_actual_objective": "alpha=0; expected evidence cost breaks equal-loss ties lexicographically",
+    "v3_caps": {
+      "actions": 8,
+      "worlds": 32
+    },
+    "industrial_outcome_kernel": "not fitted or verified",
+    "lower_bound": "L_free: expected Bayes terminal risk after all currently available evidence at zero acquisition cost with unrestricted decision rule",
+    "inequality": "L_free <= V <= rho, for alpha>=0 under stated known model",
+    "stopping_certificate": "rho-L_free<=epsilon implies epsilon-optimal model-expected stopping",
+    "invalid_substitute": "fixed all-input teacher score is not L_free and is not guaranteed below partial-input loss",
+    "not_transferred": [
+      "true industrial optimality",
+      "large-state polynomial runtime",
+      "policy safety",
+      "calibration under shift",
+      "realized individual episode correctness"
+    ]
+  },
+  "preparation_pipeline": [
+    {
+      "step": 1,
+      "tools": "existing local stdlib intake/receipt verifier",
+      "output": "pinned raw inventory; no new acquisition in v5"
+    },
+    {
+      "step": 2,
+      "tools": "CSV/TSV parser, finite-value and profile-class validators",
+      "output": "private labels/opaque episodes/source identity sidecars"
+    },
+    {
+      "step": 3,
+      "tools": "group provenance and disjoint split checker",
+      "output": "train/dev/calibration/final hashes; blocked when independent group unknown"
+    },
+    {
+      "step": 4,
+      "tools": "frozen numerical module registry",
+      "output": "typed train-only summaries and feasible trajectory masks; raw labels never policy-visible"
+    },
+    {
+      "step": 5,
+      "tools": "proposed four multinomial logistic regressions on scaled value+mask/status",
+      "output": "training-only preprocessing and fixed categorical predictor; not implemented/fitted"
+    },
+    {
+      "step": 6,
+      "tools": "dev-selected simple/pair-lookahead/direct risk-to-go candidate",
+      "output": "frozen policy/configuration; strong AFA adapters separately audited"
+    },
+    {
+      "step": 7,
+      "tools": "separate episode/group calibration runner",
+      "output": "confidence/abstention artifact with explicit mask/population assumptions; not fitted"
+    },
+    {
+      "step": 8,
+      "tools": "trusted evidence executor + protected evaluator",
+      "output": "raw action/terminal/resource records and recomputable metrics"
+    }
+  ],
+  "prediction_contract": {
+    "proposed_numerical_baseline": "four head-specific multinomial logistic models; no new architecture claim",
+    "input": "training-standardized disclosed values, explicit observation mask, declared failure/status indicators",
+    "training_masks": "feasible action histories, not arbitrary masks that violate registry rules; declare random/history-mixture weights",
+    "no_zero_imputation_confusion": true,
+    "freeze": [
+      "class map",
+      "feature list",
+      "training-only scaling",
+      "predictor weights",
+      "confidence function",
+      "calibration information",
+      "module bank"
+    ],
+    "per_head_point_prediction": "argmax class probability",
+    "model_mean_error_score": "mean_k(1-max_j q_phi,k(j|z,m))",
+    "vector_confidence": "do not multiply head maxima without justified joint dependence model",
+    "outcome_forecast_candidate": "training-only empirical episode/neighbor outcomes or separate coherent model; no forecast artifact exists",
+    "outcomes_must_share_raw_dependencies": "no independently imputed mean/slope values inconsistent with their one source",
+    "fullbank_teacher": "offline reference privilege only; full14 bank not currently prepared; no oracle upper-bound claim"
+  },
+  "policy_contrasts": {
+    "primary": "policy-only common predictor/rights/actual ledger",
+    "simple": [
+      "initial_only",
+      "fixed_expert_order",
+      "random_feasible",
+      "actual_cost_greedy_terminal_gain",
+      "pair_lookahead"
+    ],
+    "learned": [
+      "documented L2M acquisition adapter",
+      "documented NM-PPG adapter",
+      "documented BRiG-style risk-to-go adapter"
+    ],
+    "baseline_adapter_rules": [
+      "native objectives/predictors documented",
+      "same real ledger and evidence rights for policy-only adapters",
+      "altered native methods named adaptations, not exact reproductions",
+      "native-system comparison and training costs separate"
+    ],
+    "state_ablation": "suppress chosen ledger representation but preserve real executor charges and specify quote/history information remaining",
+    "horizon_ablation": "same estimator/predictor/training capacity, one step versus matched longer horizon",
+    "independent_source_control": "preserve output values while giving separate exact raw identities with declared alternative costs; separate interface intervention",
+    "mechanism_2x2": {
+      "charge": [
+        "naive_duplicate",
+        "deduplicated"
+      ],
+      "disclosure": [
+        "correct_requested_only",
+        "free_derived_leak"
+      ],
+      "purpose": "diagnose evaluator sensitivity to accounting and information corruption",
+      "scientific_policy_score": false,
+      "leaky_treatment": "intentional invalid diagnostic case; cannot be promoted as a successful method",
+      "no_mixing_with_primary": true
+    }
+  },
+  "llm_optional": {
+    "status": "unrun",
+    "role": "action proposal only; numerical predictor and calibration remain fixed external tools",
+    "allowed_input": [
+      "module contract and DAG",
+      "public availability/source/cache identities",
+      "already returned typed evidence IDs and values",
+      "fixed predictor confidence output",
+      "current budget and legal quotes"
+    ],
+    "forbidden_input": [
+      "hidden raw windows",
+      "labels",
+      "profile/stable metadata",
+      "unrequested derived values",
+      "test feedback"
+    ],
+    "output": "single allowlisted module ID or diagnose/abstain proposal; terminal numeric prediction comes from fixed predictor",
+    "rationale": "untrusted optional text; not score/label/certification",
+    "required_before_calls": [
+      "exact model ID/version",
+      "endpoint",
+      "input transfer scope",
+      "prompt hash",
+      "call/token/cost/time limits",
+      "failure/retry rule"
+    ],
+    "executor": "validates every proposal; cannot bypass prerequisites or cost",
+    "total_system_comparison": "planning/invocation cost recorded separately; no model calls authorized by writing this contract"
+  },
+  "splits_and_calibration": {
+    "group_unit": "independently audited Hydraulic experiment block, not cycle row or adjacent same-target run",
+    "current_status": "BLOCKED independent-block provenance",
+    "four_way_split": "whole groups assigned before masking/features/normalization",
+    "within_rig_sensitivity": "separate descriptive chronology/gap test, same-rig only; no independent generalization claim",
+    "withheld_combinations": "known per-head levels/new combinations; not unseen-equipment transfer",
+    "complete_cycle_vs_online_prefix": "separate endpoint and future-cut audit",
+    "stable_flag": "audit/filter rule preregistered; no post-result exclusion",
+    "calibration_fit": "separate groups after development policy freeze; treatment-specific threshold versus common gate choices documented",
+    "policy_only_gate": "primary policy ranking uses one frozen terminal score and common penalty/gate convention",
+    "policy_specific_calibration": "separate complete calibrated-system comparison; no covert threshold advantage",
+    "adaptive_mask_warning": "random-mask or full-input calibration need not cover on-policy selected masks",
+    "confidence_coverage_claim": "NR; no arbitrary shift or unknown-cluster guarantee",
+    "conformal": "optional future method with exchangeability or shift assumptions stated; not mechanically guaranteed by library/API success"
+  },
+  "scoring": {
+    "unit": "eligible unique recorded cycle, nested in a verified block when available",
+    "trial_unit": "cycle x initial mask x budget x policy x repetition",
+    "metrics": {
+      "coverage": "N_diagnose/N_eligible",
+      "selective_vector_risk": "N_diagnose_with_any_head_error/N_diagnose",
+      "diagnosed_component_error": "sum diagnosed head mistakes/(4*N_diagnose)",
+      "terminal_loss": "(sum diagnosed component loss+lambda_A*N_abstain)/N_eligible",
+      "actual_cost": "all-eligible mean read/compute/planning, retaining failures and abstentions",
+      "invalid_and_failure_rates": "declared attempted-action or eligible-episode denominator",
+      "per_head_class_support": "counts with fixed class encoding",
+      "empty_diagnosed_denominator": "NA/null with reason zero_denominator"
+    },
+    "coverage_risk_curve": "descriptive common-confidence threshold sweep, not automatic certification; eligible mask/episode count unchanged",
+    "uncertainty": "paired group-level analysis only after independent groups audited; unknown group dependence => descriptive/no independent-sample CI",
+    "nested_trials_do_not_increase_independence": true,
+    "external_tasks": "SKAB/MetroPT/Paderborn endpoints separate; no pooled four-head accuracy"
+  },
+  "falsification": {
+    "primary_margin": null,
+    "primary_budget": null,
+    "primary_comparator": null,
+    "multiplicity_plan": null,
+    "retry_rule": null,
+    "policy_claim_rejected_if": [
+      "strongest matched comparator equal/better within locked practical margin",
+      "gain disappears when predictor/rights/cost/planning matched",
+      "gain requires duplicate competitor charges or hidden derived outputs"
+    ],
+    "mechanism_weakened_if": [
+      "no declared failure-cache/state effect",
+      "no complementarity/horizon effect",
+      "unchanged advantage in independent-source control"
+    ],
+    "boundary_invalidates_if": [
+      "label/metadata/future leak",
+      "wrong source identity",
+      "over-budget accepted request",
+      "hidden failure cost",
+      "empty denominator marked success",
+      "unsupported certificate or fabricated industrial result"
+    ],
+    "negative_findings": "equivalence, no_gain, cost regression, unavailable inputs and abstention retained"
+  },
+  "pending_decisions": [
+    "independent blocks",
+    "full14 versus restricted3 sensor bank",
+    "primary budget and useful-effect margin",
+    "abstention penalty",
+    "compute/planning caps",
+    "initial evidence cost",
+    "predictor/forecast artifacts",
+    "calibration procedure and support",
+    "baseline adapters",
+    "multiplicity/retry rules"
+  ],
+  "writing_scope": "four v5 files only; preserves all v3/v4 runs, core Forge, original ZIP, active skills and existing PR"
+}

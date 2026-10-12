@@ -1,0 +1,74 @@
+{
+  "origin": "author_constructed_mathematical_and_contract_examples",
+  "scientific_performance": "NR",
+  "model_calls": 0,
+  "tests": 15,
+  "failures": 0,
+  "errors": 0,
+  "skillmerge": {
+    "simple_strict_witness": {
+      "state_order": [
+        "S0",
+        "A",
+        "B",
+        "AB"
+      ],
+      "outputs_won": [
+        2000,
+        2000,
+        2000,
+        2000000
+      ],
+      "passes": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "independent_gain_qualified": false,
+      "origin": "author_constructed_interface_example_not_natural_failure_prevalence"
+    },
+    "manuscript_three_input_pass_counts": [
+      1,
+      2,
+      2,
+      0,
+      3
+    ],
+    "scope": "toy mathematical mean gains and adapter correctness, not empirical Q-qualified histories"
+  },
+  "second_chance": {
+    "left_step_rauc_example": "14/25 = 0.56",
+    "genuine_correction_histories": 0,
+    "closure_claim": "declared dependency reachability only, not minimal semantic repair certificate"
+  },
+  "probeflow": {
+    "xor_terminal_risks": {
+      "none": "3/10",
+      "x": "3/10",
+      "y": "3/10",
+      "xy": "0"
+    },
+    "shared_samples": 6660,
+    "naive_separate_samples": 12660,
+    "failure_cache_counterexample": {
+      "same_empty_observation_mask": true,
+      "same_remaining_budget": 3,
+      "next_pressure_costs": [
+        1,
+        5
+      ],
+      "condition": "source retained after value-independent analysis failures",
+      "scope": "compressed feature/mask/budget state is insufficient in this admitted case; not always insufficient"
+    },
+    "noisy_proxy_example": {
+      "noise_rate": "1/5",
+      "proxy_plus_one_bit_risk": "1/5",
+      "two_bits_risk": "0",
+      "unit_costs": true,
+      "budget": 2,
+      "scope": "author analytic example, not new greedy impossibility theorem"
+    },
+    "scope": "exact constructed finite examples; no industrial policy benefit measured"
+  }
+}
