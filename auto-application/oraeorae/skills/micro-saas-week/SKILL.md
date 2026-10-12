@@ -44,6 +44,9 @@ description: 아이디어 한 문장에서 상용 배포까지 1주. 단계 스�
 ## 산출물
 운영 URL, 도메인, 퍼널 정의, `constitution.md`, `specs/NNN-*`, 아키텍처 노트(mermaid).
 
+## 평가
+트랙이 끝나면 `micro-saas-audit`로 단계별 산출물이 실제로 있는지 채점한다(`EVALUATION.md`). 실패 항목은 해당 단계 스킬로 되돌아가 `ship-loop`로 닫는다.
+
 ## 아직 없는 것
 - 단계별 프롬프트 템플릿(spec 본문, PR 본문)
 - 결제 단계(사업자 등록·PG 심사) — 2주차에 `payments-first-sale`로 추가 예정
