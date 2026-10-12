@@ -68,13 +68,14 @@ npm run dev                       # http://localhost:3200
 | 저장 | `exam_save` / `exam_save_error` |
 | 초대(확산) | `invite_share` / `invite_copy` |
 
-제작 지표: 커밋 43, PR 13, 이슈 30, spec 9, 판독 비용 ≈ 25원/건.
+제작 지표: 커밋 53, PR 16, 이슈 32, spec 10, 스킬 9, 판독 비용 ≈ 25원/건.
 
 ## 문서
 - `app/` — 서비스 전체(소스, Supabase 마이그레이션, spec-kit 헌법·spec 9개, 이슈 노트)
 - [ARCHITECTURE.md](ARCHITECTURE.md) — 기능 흐름·시스템·데이터 모델·판독 파이프라인·운영 경계 다이어그램
 - [PROCESS.md](PROCESS.md) — 1주 제작 트랙: 단계별로 사람이 한 것 / Claude가 스킬·CLI·MCP로 한 것
-- [skills/micro-saas-week/SKILL.md](skills/micro-saas-week/SKILL.md) — 위 트랙을 스킬로 옮긴 초안
+- `skills/micro-saas-week/SKILL.md` — 위 트랙을 스킬 8개의 **조합**으로 쓴 것. 단계 스킬 7개를 순서대로 호출하고 매 단계 끝을 `ship-loop`로 닫는다
+- 단계 스킬: [`constitution-first`](skills/constitution-first/SKILL.md) → [`skeleton-on-prod`](skills/skeleton-on-prod/SKILL.md) → [`launch-basics`](skills/launch-basics/SKILL.md) → [`core-feature-with-review`](skills/core-feature-with-review/SKILL.md) → [`model-bakeoff`](skills/model-bakeoff/SKILL.md) → [`glance-and-guardrails`](skills/glance-and-guardrails/SKILL.md) → [`env-split`](skills/env-split/SKILL.md), 공통 [`ship-loop`](skills/ship-loop/SKILL.md). 각각 입력 / 절차 / 멈추는 지점(사람 몫) / 산출물이 있어 단독으로도 쓴다
 
 ## 다음 주
 - 결제: 토스페이먼츠로 크레딧 구매(5회 3,000원 / 10회 5,000원), 사업자·통신판매업 신고 선행
