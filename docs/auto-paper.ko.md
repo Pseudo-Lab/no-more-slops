@@ -3,7 +3,12 @@
 이 스킬은 반복적인 논문 심사 대응에서 재사용할 수 있는 작업 절차를 정리합니다.
 방법 전체의 개선을 특정 구성 요소의 효과로 오인하는 문제, 튜닝 조건이 다른
 비교, 작은 수치 차이의 과해석, 압축된 승패 표현과 제출 파일 불일치를 다룹니다.
-특정 논문의 원고·실험 데이터는 포함하지 않습니다.
+스킬 패키지는 특정 논문의 원고·실험 데이터 없이 독립적으로 사용할 수 있습니다.
+
+## 논문 결과물
+
+이 작업에서 정리한 최종 4쪽 논문 [paper.pdf](../artifacts/auto-paper/shared-regularization/paper.pdf)를 함께 제공합니다.
+논문 제목은 **How Shared Regularization Changes Calibration: A Case Study with Splines**입니다.
 
 ## 사용하기
 
