@@ -9,21 +9,22 @@ import { Skeleton } from "../../skeleton";
 import { BottomButton, Card } from "../../ui";
 import { ExamView } from "./exam-view";
 
-// Constraint: with cacheComponents, params must be awaited inside Suspense so the shell can prerender.
-export default function MemberPage({ params }: PageProps<"/member/[id]">) {
+// Constraint: with cacheComponents, params/searchParams must be awaited inside Suspense so the shell can prerender.
+export default function MemberPage({ params, searchParams }: PageProps<"/member/[id]">) {
   return (
     <Suspense fallback={<Skeleton />}>
-      <MemberContent params={params} />
+      <MemberContent params={params} searchParams={searchParams} />
     </Suspense>
   );
 }
 
-async function MemberContent({ params }: Pick<PageProps<"/member/[id]">, "params">) {
-  const { id } = await params;
+async function MemberContent({ params, searchParams }: Pick<PageProps<"/member/[id]">, "params" | "searchParams">) {
+  const [{ id }, { exam: examId }] = await Promise.all([params, searchParams]);
   const { members, meId } = await requireFamily();
   const member = members.find((m) => m.id === id);
   if (!member) notFound();
-  const exam = latest(member);
+  // A past exam opens from the "지난 검진" list; anything else (missing, stale, someone else's id) falls back to the latest.
+  const exam = member.exams.find((e) => e.id === examId) ?? latest(member);
 
   return (
     <main className="space-y-3 px-5 pt-6 md:px-0 md:pt-10">
@@ -41,6 +42,12 @@ async function MemberContent({ params }: Pick<PageProps<"/member/[id]">, "params
       {exam ? (
         <div className="grid items-start gap-3 md:grid-cols-[1fr_300px]">
           <div className="space-y-3">
+            {exam !== latest(member) && (
+              <p className="flex items-center justify-between rounded-2xl bg-warn-soft px-4 py-3 text-sm">
+                <span>{formatDate(exam.date)} 검진을 보고 있어요</span>
+                <Link href={`/member/${member.id}`} className="font-semibold text-primary">최근 검진</Link>
+              </p>
+            )}
             <ExamView member={member} exam={exam} />
           </div>
           <Card>
@@ -48,7 +55,7 @@ async function MemberContent({ params }: Pick<PageProps<"/member/[id]">, "params
             <ul className="mt-2 divide-y divide-line">
               {[...member.exams].reverse().map((e) => (
                 <li key={e.id} className="flex items-center gap-3 py-3 text-[15px]">
-                  <span className="flex-1">{formatDate(e.date)}</span>
+                  <Link href={`/member/${member.id}?exam=${e.id}`} className={`flex-1 ${e === exam ? "font-bold" : "text-primary"}`}>{formatDate(e.date)}</Link>
                   <span className="text-muted">주의 {flagged(e).length}개</span>
                   <form action={deleteExam.bind(null, member.id, e.id)}>
                     <ConfirmButton label="삭제" title={`${formatDate(e.date)} 검진 기록을 삭제할까요?`} description="삭제하면 되돌릴 수 없어요" confirmLabel="삭제" className="text-xs text-muted" />

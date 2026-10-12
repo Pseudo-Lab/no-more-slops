@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { track } from "@/lib/analytics";
 import type { Member } from "@/lib/health";
 import { extractSheet, type ExtractResult } from "./extract";
@@ -16,13 +16,23 @@ export function UploadForm({ members, initialMemberId, credits }: { members: Pic
   const [error, setError] = useState("");
   const [result, setResult] = useState<Extract<ExtractResult, { items: unknown }> | null>(null);
   const [reading, startReading] = useTransition();
+  const [stage, setStage] = useState<"file" | "ai">("file");
+  const [seconds, setSeconds] = useState(0);
+  // A long PDF takes about a minute to read; a ticking counter shows the wait is alive, not stuck.
+  useEffect(() => {
+    if (!reading) return;
+    const t = setInterval(() => setSeconds((s) => s + 1), 1000);
+    return () => clearInterval(t);
+  }, [reading]);
 
   function read() {
     if (!file) return;
     track("upload_submit");
     setError("");
+    setStage("file");
+    setSeconds(0);
     startReading(async () => {
-      const out = await readSheet(file);
+      const out = await readSheet(file, setStage);
       if ("error" in out) {
         track("extract_error");
         setError(out.error);
@@ -31,6 +41,28 @@ export function UploadForm({ members, initialMemberId, credits }: { members: Pic
         scrollTo(0, 0);
       }
     });
+  }
+
+  if (reading) {
+    return (
+      <>
+        <header className="mb-5 px-1">
+          <h1 className="text-[26px] font-bold leading-tight">결과지를<br />읽고 있어요</h1>
+          <p className="mt-2 text-sm text-muted">
+            {stage === "file" ? "파일을 준비하고 있어요" : "AI가 결과지를 읽고 있어요 · 사진은 10초, 긴 PDF는 1분쯤 걸려요"} · {seconds}초
+          </p>
+        </header>
+        <section aria-busy="true" aria-label="판독 중" className="space-y-4 rounded-3xl bg-card p-5">
+          {Array.from({ length: 6 }, (_, n) => (
+            <div key={n} className="flex items-center gap-3">
+              <div className="h-4 flex-1 animate-pulse rounded-lg bg-background" />
+              <div className="h-9 w-24 animate-pulse rounded-xl bg-background" />
+            </div>
+          ))}
+        </section>
+        <p className="px-1 text-xs leading-relaxed text-muted">이 화면을 닫지 말고 기다려 주세요. 결과지 원본은 저장하지 않아요.</p>
+      </>
+    );
   }
 
   if (result) {
@@ -115,7 +147,7 @@ export function UploadForm({ members, initialMemberId, credits }: { members: Pic
 }
 
 // PDFs become the whole report's text plus page images; photos are just shrunk.
-async function readSheet(file: File): Promise<ExtractResult> {
+async function readSheet(file: File, onStage: (s: "file" | "ai") => void): Promise<ExtractResult> {
   const form = new FormData();
   try {
     if (file.type === "application/pdf") {
@@ -137,5 +169,6 @@ async function readSheet(file: File): Promise<ExtractResult> {
   }
   const bytes = form.getAll("file").reduce((sum, f) => sum + (f as Blob).size, 0) + new Blob([String(form.get("text") ?? "")]).size;
   if (bytes > MAX_BYTES) return { error: "파일이 너무 커요. 결과지를 사진으로 찍어 올려 주세요" };
+  onStage("ai");
   return extractSheet(form).catch(() => ({ error: "연결이 끊겼어요. 잠시 후 다시 눌러 주세요" }));
 }

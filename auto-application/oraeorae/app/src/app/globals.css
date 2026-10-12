@@ -13,6 +13,9 @@
   --primary-soft: #e8f3ff;
   --warn-soft: #fff4e0;
   --danger-soft: #ffeeee;
+  /* "모두 정상" glance dot: the one place the app shows green (UI reference 2026-10-12). */
+  --ok: #1f9d55;
+  --ok-soft: #e6f6ec;
   color-scheme: light;
 }
 
@@ -30,6 +33,8 @@
     --primary-soft: #1d2b42;
     --warn-soft: #3a2e17;
     --danger-soft: #3d2023;
+    --ok: #4fc27d;
+    --ok-soft: #173126;
     color-scheme: dark;
   }
 }
@@ -46,6 +51,8 @@
   --color-primary-soft: var(--primary-soft);
   --color-warn-soft: var(--warn-soft);
   --color-danger-soft: var(--danger-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
   --font-sans: "Pretendard Variable", Pretendard, system-ui, sans-serif;
 }
 

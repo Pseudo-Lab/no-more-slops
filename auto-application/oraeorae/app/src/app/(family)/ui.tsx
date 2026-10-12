@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Judgement } from "@/lib/health";
+import { rangeBar, type Judgement, type Level } from "@/lib/health";
 
 const BADGE: Record<Judgement, string> = {
   정상: "bg-primary-soft text-primary",
@@ -35,5 +35,24 @@ export function BottomButton({ href, children }: { href: string; children: React
         <Link href={href} className="block rounded-2xl bg-primary py-4 text-center text-[17px] font-semibold text-white">{children}</Link>
       </div>
     </div>
+  );
+}
+
+const DOT: Record<Level, string> = { danger: "bg-danger", warn: "bg-warn", ok: "bg-ok", none: "bg-muted" };
+// The glance colour next to a person's name; same scale as the badges so one colour means one thing everywhere.
+export function StatusDot({ level, className = "" }: { level: Level; className?: string }) {
+  return <span aria-hidden className={`inline-block h-3 w-3 shrink-0 rounded-full ${DOT[level]} ${className}`} />;
+}
+
+// Where the value sits against the printed reference: band = the reference, dot = this value. Draws nothing when the
+// reference isn't a number range, so the text reference next to it is never contradicted.
+export function RangeBar({ value, reference, level }: { value: number | null; reference: string | null; level: Level }) {
+  const bar = value === null ? null : rangeBar(value, reference);
+  if (!bar) return null;
+  return (
+    <span aria-hidden className="relative block h-1.5 w-full rounded-full bg-line">
+      <span className="absolute inset-y-0 rounded-full bg-ok-soft" style={{ left: `${bar.band[0]}%`, width: `${bar.band[1] - bar.band[0]}%` }} />
+      <span className={`absolute -top-[3px] h-3 w-3 -translate-x-1/2 rounded-full border-2 border-card ${DOT[level]}`} style={{ left: `${bar.pos}%` }} />
+    </span>
   );
 }

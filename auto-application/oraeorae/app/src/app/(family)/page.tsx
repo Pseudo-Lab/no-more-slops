@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { requireFamily } from "@/lib/family";
-import { flagged, formatDate, latest, printed, severity } from "@/lib/health";
+import { flagged, formatDate, glance, latest } from "@/lib/health";
 import { Skeleton } from "./skeleton";
-import { Badge, BottomButton, Card } from "./ui";
+import { BottomButton, Card, StatusDot } from "./ui";
 
 export default function Home() {
   return (
@@ -68,43 +68,27 @@ async function HomeContent() {
         <h2 className="text-[17px] font-bold">가족</h2>
         <Link href="/invite" className="text-sm font-semibold text-primary">+ 초대하기</Link>
       </div>
-      <div className="grid gap-3 md:grid-cols-2">
-        {members.map((m) => {
-          const exam = latest(m);
-          const flags = flagged(exam);
-          return (
-            <Link key={m.id} href={`/member/${m.id}`} className="block">
-              <Card className="h-full transition hover:shadow-sm active:scale-[0.98]">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary-soft text-lg font-bold text-primary">{m.name[0]}</div>
-                  <div className="flex-1">
-                    <p className="flex items-center gap-2 text-[17px] font-semibold">
-                      {m.name} {m.age && <span className="text-sm font-normal text-muted">{m.age}세</span>}
-                      {flags.length > 0 && <span className={`rounded-md px-1.5 py-0.5 text-xs font-semibold ${flags.some((i) => severity(i) === "danger") ? "bg-danger-soft text-danger" : "bg-warn-soft text-warn"}`}>주의 {flags.length}</span>}
-                    </p>
-                    <p className="text-sm text-muted">{exam ? `최근 검진 ${formatDate(exam.date)}` : "아직 기록이 없어요"}</p>
+      {/* One line per person (UI reference 2026-10-12): the dot colour says who to look at first, the counts say why. */}
+      <Card className="py-1">
+        <ul className="divide-y divide-line">
+          {members.map((m) => {
+            const exam = latest(m);
+            const { level, counts } = glance(exam);
+            return (
+              <li key={m.id}>
+                <Link href={`/member/${m.id}`} className="flex items-center gap-3 py-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-soft text-lg font-bold text-primary">{m.name[0]}</div>
+                  <div className="min-w-0 flex-1">
+                    <p className="flex items-center gap-2 text-[17px] font-semibold"><StatusDot level={level} />{m.name} {m.age && <span className="text-sm font-normal text-muted">{m.age}세</span>}</p>
+                    <p className="truncate text-sm text-muted">{counts}{!exam && m.nextExam ? ` · 다음 검진 ${m.nextExam}` : ""}</p>
                   </div>
-                  <span className="text-muted">›</span>
-                </div>
-                {exam && (flags.length > 0 ? (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {/* Four chips keep the card one glance; the member page lists the rest. */}
-                    {flags.slice(0, 4).map((i, n) => (
-                      <span key={n} className="flex items-center gap-1.5 rounded-xl bg-background px-3 py-1.5 text-sm">
-                        {printed(i.label)} <Badge judgement={i.judgement} flag={i.flag} />
-                      </span>
-                    ))}
-                    {flags.length > 4 && <span className="rounded-xl bg-background px-3 py-1.5 text-sm text-muted">+{flags.length - 4}</span>}
-                  </div>
-                ) : exam.findings.length === 0 && (
-                  <p className="mt-4 text-sm text-muted">결과지에 표시된 주의 항목이 없어요</p>
-                ))}
-                {exam && exam.findings.length > 0 && <p className="mt-3 text-sm text-muted">결과지 소견 {exam.findings.length}개</p>}
-              </Card>
-            </Link>
-          );
-        })}
-      </div>
+                  <span className="shrink-0 text-sm text-muted">{exam ? formatDate(exam.date) : "›"}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </Card>
 
       <BottomButton href="/upload">결과지 올리기</BottomButton>
     </main>
