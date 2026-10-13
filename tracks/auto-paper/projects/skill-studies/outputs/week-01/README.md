@@ -1,5 +1,10 @@
 # Auto-Paper: 1주차 스킬 연구 논문과 해설서
 
+- 작성자: @darkwingduck-code
+- 트랙: Auto-Paper
+- 원본 PR: [#14](https://github.com/Pseudo-Lab/no-more-slops/pull/14)
+- 사용한 연구 자동화 스킬: [별도 기여 PR #11](https://github.com/Pseudo-Lab/no-more-slops/pull/11)
+
 2026-10-12에 작성·검증한 연구 설계 원고 3편과 한국어 해설서 3권이다. 논문은 각각 정확히 4페이지이며, 실제 모델 성능은 아직 NR(미실측)이다. 논문의 상태는 **첫 주 연구 설계**이고 사전등록·산업 성능 평가·arXiv 제출은 완료하지 않았다.
 
 | 프로젝트 | 연구 설계 논문 | 별도 한국어 해설서 | 중심 질문 |
@@ -45,4 +50,4 @@ python -X utf8 -B tools/check_explainers.py
 
 이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.
 
-동봉한 저자 작성 문서·코드는 저장소의 [MIT License](../../../LICENSE)를 따른다. 인용한 외부 논문, 원시 데이터와 개별 스킬 자산의 조건을 이 라이선스로 대체하지 않는다. 데이터셋 원문, 미확인 bundled skill, 원 연구 환경의 credentials·운영 상태는 포함하지 않았다.
+동봉한 저자 작성 문서·코드는 저장소의 [MIT License](../../../../../../LICENSE)를 따른다. 인용한 외부 논문, 원시 데이터와 개별 스킬 자산의 조건을 이 라이선스로 대체하지 않는다. 데이터셋 원문, 미확인 bundled skill, 원 연구 환경의 credentials·운영 상태는 포함하지 않았다.
