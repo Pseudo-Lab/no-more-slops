@@ -4,7 +4,7 @@
 
 이 계정을 이어서 제작할 때만 다음과 같이 지정합니다.
 
-`$instagram-content로 examples/instagram/chihuahua-ai/brand-brief.json을 사용해 최신 AI 소식 캐러셀을 만들어줘.`
+`$instagram-content로 tracks/auto-post/projects/instagram-production/examples/chihuahua-ai/brand-brief.json을 사용해 최신 AI 소식 캐러셀을 만들어줘.`
 
 다른 폴더에서는 이 예시 파일의 실제 경로를 지정하거나 현재 작업 폴더로 복사합니다. `brand-brief.json`은 현재 계정 설정이며 제작 하네스의 `--brief`에 전달합니다. `brand.json`은 렌더러만 쓸 때 `post.json`의 `brand` 필드에 선택적으로 복사할 설정입니다. 시안 PNG와 SVG는 원래 사진이나 확정 로고가 아닙니다.
 
@@ -12,4 +12,4 @@
 
 이 프로젝트의 활동으로 만든 결과물에는 저장소의 Acknowledgement 규칙을 적용합니다. 해당 문구는 이 계정 예시에만 명시되어 있으며, 범용 스킬이 다른 계정에 자동으로 삽입하지 않습니다.
 
-2026년 10월 12일, 전날 만든 나델라 AI 통제 원칙 카드뉴스의 입력을 새 하네스로 다시 실행했습니다. [제작 보고서 예시](production-report.example.json)에는 10장·1080×1350·캡션 442자·해시태그 3개·ZIP 12개 항목의 검증 결과가 있습니다. 사진과 실제 제작 입력은 해당 작업 폴더에 보관하며 이 예시에 포함하지 않습니다. 누구나 실행할 수 있는 중립적인 입력과 재현 방법은 [레이아웃 데모](../layout-demo/README.md)에 있습니다.
+2026년 10월 12일, 전날 만든 나델라 AI 통제 원칙 카드뉴스의 입력을 새 하네스로 다시 실행했습니다. [제작 보고서 예시](../../outputs/week-01/chihuahua-ai/production-report.example.json)에는 10장·1080×1350·캡션 442자·해시태그 3개·ZIP 12개 항목의 검증 결과가 있습니다. 사진과 실제 제작 입력은 해당 작업 폴더에 보관하며 이 예시에 포함하지 않습니다. 누구나 실행할 수 있는 중립적인 입력과 재현 방법은 [레이아웃 데모](../layout-demo/README.md)에 있습니다.
