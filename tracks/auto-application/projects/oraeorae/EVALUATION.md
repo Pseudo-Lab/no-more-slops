@@ -1,6 +1,6 @@
 # 평가 — micro-saas-audit로 본 오래오래 (2026-10-12)
 
-> [skills/micro-saas-audit/SKILL.md](skills/micro-saas-audit/SKILL.md)의 채점표 33항목을 비공개 저장소(main 9bf8310)와 운영 URL에 적용한 결과. 증거는 `scripts/audit.sh`가 찍은 줄을 그대로 옮겼고, 스크립트로 볼 수 없는 것은 사람 몫에 두었다.
+> [../../skills/micro-saas-audit/SKILL.md](../../skills/micro-saas-audit/SKILL.md)의 채점표 33항목을 비공개 저장소(main 9bf8310)와 운영 URL에 적용한 결과. 증거는 `scripts/audit.sh`가 찍은 줄을 그대로 옮겼고, 스크립트로 볼 수 없는 것은 사람 몫에 두었다.
 
 **통과 25 · 실패 8 · 미확인 3**
 

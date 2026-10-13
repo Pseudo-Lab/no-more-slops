@@ -1,7 +1,7 @@
 
 # 제작 과정 — 1주 트랙, 사람 vs Claude(스킬·CLI·MCP)
 
-> 오래오래를 10/7~10/12 닷새 만에 상용 배포까지 간 과정을 이슈 단위가 아니라 **단계 단위**로 압축한 것. 각 단계마다 사람이 한 것 / Claude가 스킬·CLI·MCP로 한 것 / 들어가는 것 / 나오는 것을 적어 두어, 스킬 초안은 [skills/micro-saas-week/SKILL.md](skills/micro-saas-week/SKILL.md).
+> 오래오래를 10/7~10/12 닷새 만에 상용 배포까지 간 과정을 이슈 단위가 아니라 **단계 단위**로 압축한 것. 각 단계마다 사람이 한 것 / Claude가 스킬·CLI·MCP로 한 것 / 들어가는 것 / 나오는 것을 적어 두어, 스킬 초안은 [../../skills/micro-saas-week/SKILL.md](../../skills/micro-saas-week/SKILL.md).
 
 ## 전체 트랙 (가장 빠른 경로)
 

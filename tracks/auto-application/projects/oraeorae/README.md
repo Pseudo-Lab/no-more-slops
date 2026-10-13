@@ -3,9 +3,13 @@
 가족의 건강검진 결과지(사진·PDF)를 올리면 AI가 수치·판정·소견을 읽어 주고, 사람이 확인해 저장하면 가족끼리 함께 보는 웹 서비스.
 
 - **서비스**: https://oraeorae.kro.kr (카카오 로그인, 모바일 우선)
+- **작성자**: [Woo-Yeol](https://github.com/Woo-Yeol)
+- **제출 PR**: [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10)
+- **결과물 위치**: [outputs/week-01/](outputs/week-01/README.md)
+- **트랙**: Auto-Application
 - **기간**: 2026-10-07 ~ 10-12 (1주차)
 - **스택**: Next.js 16 App Router · Supabase(서울, RLS) · Vercel · OpenAI Responses API · GA4
-- **코드**: 비공개 저장소(건강정보 서비스라 소스는 제출하지 않음). 이 폴더에는 문서, 발표 자료, 스킬만 둔다.
+- **코드**: 비공개 저장소(건강정보 서비스라 소스는 제출하지 않음). 이 프로젝트에는 문서와 발표 자료를 제출한다. 재사용 스킬 원본은 트랙의 `../../skills/`에 둔다.
 
 ## 문제
 부모님 검진 결과는 종이와 PDF로 흩어져 있고, 걱정하는 자녀가 모아서 보기 어렵다. 공공 앱(나의건강기록)은 본인 열람용이라 성인 가족끼리 계속 함께 보는 기능이 없다.
@@ -62,13 +66,13 @@
 제작 지표: 커밋 53, PR 16, 이슈 32, spec 10, 스킬 10, 판독 비용 ≈ 25원/건.
 
 ## 문서
-- [presentation-week1.pdf](presentation-week1.pdf) — 1주차 발표 슬라이드 15장(5분): 불편 한 줄 → 원칙 → 뼈대 → 아키텍처 · 호출 순서 → 판독 파이프라인 · 모델 실측 → 배포 · 퍼널 → 역할 분담 · 스킬 9개
+- [presentation-week1.pdf](outputs/week-01/presentation-week1.pdf) — 1주차 발표 슬라이드 15장(5분): 불편 한 줄 → 원칙 → 뼈대 → 아키텍처 · 호출 순서 → 판독 파이프라인 · 모델 실측 → 배포 · 퍼널 → 역할 분담 · 스킬 9개
 - [ARCHITECTURE.md](ARCHITECTURE.md) — 기능 흐름·시스템·데이터 모델·판독 파이프라인·운영 경계 다이어그램
 - [PROCESS.md](PROCESS.md) — 1주 제작 트랙: 단계별로 사람이 한 것 / Claude가 스킬·CLI·MCP로 한 것
 - [EVALUATION.md](EVALUATION.md) — `micro-saas-audit`로 이 프로젝트를 채점한 결과: 통과 25 · 실패 8 · 미확인 3, 실패마다 되돌아갈 스킬
-- `skills/micro-saas-week/SKILL.md` — 위 트랙을 스킬 8개의 **조합**으로 쓴 것. 단계 스킬 7개를 순서대로 호출하고 매 단계 끝을 `ship-loop`로 닫는다
-- 단계 스킬: [`constitution-first`](skills/constitution-first/SKILL.md) → [`skeleton-on-prod`](skills/skeleton-on-prod/SKILL.md) → [`launch-basics`](skills/launch-basics/SKILL.md) → [`core-feature-with-review`](skills/core-feature-with-review/SKILL.md) → [`model-bakeoff`](skills/model-bakeoff/SKILL.md) → [`glance-and-guardrails`](skills/glance-and-guardrails/SKILL.md) → [`env-split`](skills/env-split/SKILL.md), 공통 [`ship-loop`](skills/ship-loop/SKILL.md). 각각 입력 / 절차 / 멈추는 지점(사람 몫) / 산출물이 있어 단독으로도 쓴다
-- 평가 스킬: [`micro-saas-audit`](skills/micro-saas-audit/SKILL.md) — 위 스킬들의 산출물이 레포와 운영 URL에 실제로 있는지 33항목으로 채점. `scripts/audit.sh <레포> <운영 URL>`이 증거를 찍는다
+- `../../skills/micro-saas-week/SKILL.md` — 위 트랙을 스킬 8개의 **조합**으로 쓴 것. 단계 스킬 7개를 순서대로 호출하고 매 단계 끝을 `ship-loop`로 닫는다
+- 단계 스킬: [`constitution-first`](../../skills/constitution-first/SKILL.md) → [`skeleton-on-prod`](../../skills/skeleton-on-prod/SKILL.md) → [`launch-basics`](../../skills/launch-basics/SKILL.md) → [`core-feature-with-review`](../../skills/core-feature-with-review/SKILL.md) → [`model-bakeoff`](../../skills/model-bakeoff/SKILL.md) → [`glance-and-guardrails`](../../skills/glance-and-guardrails/SKILL.md) → [`env-split`](../../skills/env-split/SKILL.md), 공통 [`ship-loop`](../../skills/ship-loop/SKILL.md). 각각 입력 / 절차 / 멈추는 지점(사람 몫) / 산출물이 있어 단독으로도 쓴다
+- 평가 스킬: [`micro-saas-audit`](../../skills/micro-saas-audit/SKILL.md) — 위 스킬들의 산출물이 레포와 운영 URL에 실제로 있는지 33항목으로 채점. `scripts/audit.sh <레포> <운영 URL>`이 증거를 찍는다
 
 ## 다음 주
 - 결제: 토스페이먼츠로 크레딧 구매(5회 3,000원 / 10회 5,000원), 사업자·통신판매업 신고 선행
