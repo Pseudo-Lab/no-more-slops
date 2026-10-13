@@ -16,8 +16,8 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; line-height: 1.6; }
     a { color: inherit; text-underline-offset: 3px; }
-    button, input { font: inherit; }
-    button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid #fd7b61; outline-offset: 3px; }
+    button, input, select { font: inherit; }
+    button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid #fd7b61; outline-offset: 3px; }
     .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .hero { position: relative; isolation: isolate; overflow: hidden; color: #f9fbff; background: #122237; border-radius: 0 0 36px 36px; }
@@ -28,18 +28,19 @@
     .topbar nav { display: flex; flex-wrap: wrap; gap: 8px; }
     .topbar a { text-decoration: none; color: #e5eff9; border: 1px solid #647487; border-radius: 100px; padding: 7px 13px; font-size: .85rem; }
     .topbar a:hover { background: #263e54; }
-    .hero-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(440px, 1fr); align-items: center; gap: 48px; padding: 54px 0 52px; }
+    .hero-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(440px, 1fr); align-items: start; gap: 48px; padding: 54px 0 52px; }
     .hero-copy { min-width: 0; }
     .eyebrow { margin: 0 0 14px; color: #80e5d3; font-size: .83rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
     h1, h2, h3, p { margin-top: 0; }
     h1 { max-width: 760px; font-size: clamp(2.45rem, 4.45vw, 4.2rem); line-height: 1.14; letter-spacing: -.065em; margin-bottom: 22px; }
     .hero-lead { color: #d4e0ea; font-size: clamp(1rem, 1.45vw, 1.15rem); max-width: 610px; margin-bottom: 0; }
     .hero-aside { min-width: 0; display: grid; gap: 16px; }
-    .treasure-stage { position: relative; height: clamp(390px, 34vw, 445px); overflow: hidden; border: 1px solid rgba(255, 214, 151, .42); border-radius: 30px; background: radial-gradient(ellipse at 50% 82%, rgba(245, 159, 69, .27), transparent 49%), radial-gradient(ellipse at 52% 110%, rgba(96, 231, 199, .2), transparent 59%), linear-gradient(145deg, #29394b, #152434 59%, #0d1c2d); box-shadow: inset 0 1px rgba(255, 255, 255, .15), inset 0 -28px 62px rgba(7, 18, 30, .45), 0 26px 48px rgba(4, 13, 25, .28); transition: border-color .25s, box-shadow .25s; }
+    .treasure-stage { position: relative; height: clamp(430px, 37vw, 490px); overflow: hidden; border: 1px solid rgba(255, 214, 151, .42); border-radius: 30px; background: radial-gradient(ellipse at 50% 82%, rgba(245, 159, 69, .27), transparent 49%), radial-gradient(ellipse at 52% 110%, rgba(96, 231, 199, .2), transparent 59%), linear-gradient(145deg, #29394b, #152434 59%, #0d1c2d); box-shadow: inset 0 1px rgba(255, 255, 255, .15), inset 0 -28px 62px rgba(7, 18, 30, .45), 0 26px 48px rgba(4, 13, 25, .28); transition: border-color .25s, box-shadow .25s; }
     .treasure-stage::before { content: ""; position: absolute; z-index: 3; inset: 14px; border: 1px solid rgba(250, 226, 186, .22); border-radius: 20px; pointer-events: none; }
     .treasure-stage::after { content: "영상을 여기에 놓아 주세요"; position: absolute; z-index: 6; inset: 14px; display: grid; place-items: center; border: 2px dashed #ffe1a4; border-radius: 20px; background: rgba(18, 34, 55, .85); color: #fff4d8; font-size: 1.08rem; font-weight: 850; opacity: 0; pointer-events: none; transition: opacity .2s; }
     .treasure-stage.is-dragover::after { opacity: 1; }
     .treasure-stage.is-processing { border-color: #ffe0a6; box-shadow: 0 0 40px rgba(255, 182, 91, .27), inset 0 0 48px rgba(255, 201, 120, .15), 0 28px 56px rgba(4, 13, 25, .35); animation: chest-glow 2.7s ease-in-out infinite; }
+    .treasure-stage.is-failed { border-color: #e3a69b; box-shadow: 0 0 25px rgba(209, 105, 92, .2), 0 28px 50px rgba(4, 13, 25, .35); }
     .stage-atmosphere { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
     .stage-atmosphere::before { content: ""; position: absolute; left: 50%; top: 43%; width: min(82%, 420px); aspect-ratio: 1; border: 1px solid rgba(155, 240, 220, .23); border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 0 34px rgba(165, 226, 211, .035), 0 0 0 88px rgba(165, 226, 211, .018), 0 0 72px rgba(255, 190, 104, .12); }
     .stage-atmosphere::after { content: ""; position: absolute; left: 12%; right: 12%; bottom: 42px; height: 74px; border: 1px solid rgba(137, 233, 211, .3); border-radius: 50%; background: radial-gradient(ellipse, rgba(107, 226, 201, .19), transparent 69%); box-shadow: 0 0 36px rgba(107, 226, 201, .19), inset 0 0 28px rgba(107, 226, 201, .12); transform: perspective(200px) rotateX(60deg); }
@@ -49,16 +50,36 @@
     .stage-sparks i { position: absolute; left: var(--x); top: var(--y); width: 5px; height: 5px; border-radius: 50%; background: #ffe5a8; box-shadow: 0 0 10px 3px rgba(255, 215, 139, .68); opacity: .45; }
     .stage-sparks i:nth-child(even) { width: 4px; height: 4px; background: #a8fff0; box-shadow: 0 0 10px 3px rgba(125, 244, 219, .54); }
     .treasure-stage.is-processing .stage-sparks i { animation: ember-rise 2.6s ease-in-out infinite; animation-delay: var(--delay); }
+    .stage-progress-ring { position: absolute; z-index: 1; left: 50%; top: 46%; width: min(93%, 460px); aspect-ratio: 1; border-radius: 50%; background: conic-gradient(from -90deg, #fff1b6 0 var(--progress, 0%), rgba(120, 238, 216, .12) var(--progress, 0%) 100%); mask: radial-gradient(transparent 62%, #000 63% 64%, transparent 65%); transform: translate(-50%, -50%) rotate(-10deg); opacity: .5; transition: opacity .5s; pointer-events: none; }
+    .treasure-stage.is-processing .stage-progress-ring { opacity: .95; filter: drop-shadow(0 0 13px rgba(255, 219, 139, .6)); }
+    .treasure-stage.is-open .stage-progress-ring { opacity: 1; filter: drop-shadow(0 0 18px rgba(255, 229, 155, .8)); }
+    .chest-light { position: absolute; z-index: 1; left: 50%; top: 36%; width: min(84%, 400px); height: 52%; transform: translateX(-50%); background: radial-gradient(ellipse at 50% 80%, rgba(255, 220, 142, .7), rgba(255, 184, 83, .25) 28%, transparent 70%); filter: blur(20px); opacity: .35; pointer-events: none; }
+    .treasure-stage.is-processing .chest-light { opacity: .5; animation: light-breathe 2.2s ease-in-out infinite; }
+    .treasure-stage.is-open .chest-light { opacity: .9; transform: translateX(-50%) scale(1.3); }
+    .completion-burst { position: absolute; z-index: 1; inset: 0; overflow: hidden; opacity: 0; pointer-events: none; }
+    .completion-burst::before { content: ""; position: absolute; left: 50%; top: 43%; width: min(95%, 440px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(.6); background: repeating-conic-gradient(from 7deg, rgba(255, 245, 196, .58) 0 4deg, transparent 5deg 22deg); mask: radial-gradient(transparent 0 19%, #000 29%, transparent 69%); }
+    .completion-burst i { position: absolute; left: 50%; top: 43%; width: 9px; height: 9px; border-radius: 2px; background: #fff0b4; box-shadow: 0 0 15px #ffdd92; transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0); }
+    .completion-burst i:nth-child(3n) { width: 7px; height: 7px; background: #8dffdc; box-shadow: 0 0 13px #8dffdc; }
+    .treasure-stage.is-celebrating .completion-burst { opacity: 1; }
+    .treasure-stage.is-celebrating .completion-burst::before { animation: completion-rays 1.9s cubic-bezier(.16,.7,.3,1) both; }
+    .treasure-stage.is-celebrating .completion-burst i { animation: completion-stars 1.6s cubic-bezier(.12,.71,.2,1) both; animation-delay: var(--delay); }
+    .treasure-stage.is-celebrating { animation: completion-flash 1.7s ease-out both; }
+    .stage-complete { position: absolute; z-index: 5; top: 22px; left: 22px; display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid rgba(255, 237, 187, .7); border-radius: 99px; background: rgba(18, 46, 48, .86); color: #fff1bd; font-size: .8rem; font-weight: 900; letter-spacing: .02em; box-shadow: 0 8px 24px rgba(0,0,0,.25); opacity: 0; transform: translateY(-9px); transition: opacity .4s, transform .4s; pointer-events: none; }
+    .treasure-stage.is-open .stage-complete { opacity: 1; transform: translateY(0); }
+    .stage-progress-label { position: absolute; z-index: 5; top: 22px; left: 22px; display: flex; align-items: center; gap: 8px; padding: 7px 11px; border: 1px solid rgba(140, 238, 218, .62); border-radius: 99px; background: rgba(12, 44, 49, .86); color: #d8fff3; font-size: .73rem; font-weight: 850; opacity: 0; transform: translateY(-8px); transition: opacity .35s, transform .35s; pointer-events: none; }
+    .stage-progress-label b { color: #ffe1a0; font-size: .88rem; font-variant-numeric: tabular-nums; }
+    .treasure-stage.is-processing .stage-progress-label { opacity: 1; transform: translateY(0); }
+    .treasure-stage.is-open .stage-progress-label { opacity: 0; transform: translateY(-8px); }
     .treasure-stage canvas { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; opacity: 0; }
     .treasure-stage[data-renderer="three"] canvas { opacity: 1; }
-    .css-chest { --chest-scale: 1.55; --chest-breath: 1.61; position: absolute; z-index: 2; left: 50%; top: 48%; width: 215px; height: 132px; transform: translate(-50%, -35%) scale(var(--chest-scale)); filter: drop-shadow(0 28px 28px rgba(0, 0, 0, .35)); transition: opacity .3s; pointer-events: none; }
+    .css-chest { --chest-scale: 1.72; --chest-breath: 1.78; position: absolute; z-index: 2; left: 50%; top: 48%; width: 215px; height: 132px; transform: translate(-50%, -35%) scale(var(--chest-scale)); filter: drop-shadow(0 28px 28px rgba(0, 0, 0, .35)); transition: opacity .3s; pointer-events: none; }
     .treasure-stage.is-processing .css-chest { animation: chest-breathe 1.8s ease-in-out infinite; }
     .treasure-stage.is-rattling .css-chest { animation: chest-rattle .7s ease-in-out; }
     .treasure-stage[data-renderer="three"] .css-chest { opacity: 0; }
     .css-chest::before { content: ""; position: absolute; left: 15px; top: -7px; width: 185px; height: 21px; border-radius: 50%; background: #ffc877; filter: blur(12px); box-shadow: 0 0 35px #ffc877; }
     .css-chest-body { position: absolute; inset: 20px 0 0; border: 5px solid #d8a75e; border-radius: 8px 8px 13px 13px; background: repeating-linear-gradient(90deg, transparent 0 47px, rgba(247, 193, 105, .8) 47px 57px, transparent 57px 107px), linear-gradient(#965a3e, #4c2c2c); box-shadow: inset 0 -16px 0 rgba(36, 20, 23, .28), 0 0 32px rgba(255, 187, 91, .27); }
     .css-chest-lid { position: absolute; z-index: 1; left: -3px; right: -3px; top: -11px; height: 44px; border: 5px solid #e5b86e; border-radius: 22px 22px 5px 5px; background: repeating-linear-gradient(90deg, transparent 0 48px, #e0ac61 48px 59px, transparent 59px 108px), linear-gradient(#ab6d48, #693c33); transform-origin: center 100%; transition: transform .6s ease; }
-    .is-open .css-chest-lid { transform: translateY(-20px) rotate(-13deg); }
+    .is-open .css-chest-lid { transform: translateY(-65px) rotate(-18deg); }
     .css-chest-gem { position: absolute; z-index: 2; top: 56px; left: 89px; width: 37px; height: 37px; border: 6px solid #e5b86e; border-radius: 7px; background: #59d8cc; transform: rotate(45deg); box-shadow: 0 0 23px rgba(101, 245, 216, .8); }
     .stage-toggle { position: absolute; z-index: 4; inset: 0; width: 100%; border: 0; background: transparent; color: #f8fbfa; pointer-events: none; }
     .stage-toggle span { position: absolute; left: 50%; bottom: 19px; transform: translateX(-50%); white-space: nowrap; max-width: calc(100% - 42px); overflow: hidden; text-overflow: ellipsis; padding: 8px 16px; border: 1px solid rgba(252, 225, 178, .48); border-radius: 99px; background: rgba(12, 28, 39, .84); box-shadow: 0 8px 23px rgba(0, 0, 0, .25); font-size: .8rem; font-weight: 800; backdrop-filter: blur(9px); }
@@ -76,23 +97,45 @@
     .srt-pick { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; color: #dbece8; font-size: .76rem; font-weight: 800; }
     .srt-pick input { min-width: 0; max-width: 51%; color: #dbece8; font-size: .72rem; }
     .srt-pick input::file-selector-button { padding: 5px 9px; border: 1px solid #8cabae; border-radius: 8px; background: #214553; color: #fff; cursor: pointer; }
+    .scene-file-clear { margin-top: 5px; padding: 3px 7px; border: 1px solid #a8c3be; border-radius: 7px; background: transparent; color: #e1f4ed; font-size: .68rem; cursor: pointer; }
+    .scene-file-clear[hidden] { display: none; }
+    .scene-editor { margin-top: 8px; border: 1px solid rgba(163, 204, 195, .28); border-radius: 13px; background: rgba(10, 32, 42, .24); }
+    .scene-editor summary { padding: 8px 12px; color: #e5f5ee; cursor: pointer; font-size: .74rem; font-weight: 850; }
+    .scene-rows { display: grid; gap: 8px; padding: 0 11px 11px; }
+    .scene-row { display: grid; grid-template-columns: 75px 75px minmax(0, 1fr); gap: 7px; }
+    .scene-row label { display: grid; gap: 2px; min-width: 0; color: #b8ddd3; font-size: .66rem; font-weight: 800; }
+    .scene-row input { width: 100%; min-width: 0; padding: 6px 7px; border: 1px solid #708f92; border-radius: 7px; background: #1a3944; color: #fff; font-size: .73rem; }
+    .scene-row input::placeholder { color: #99b3b5; }
+    .scene-rows small { margin: 0; color: #abc8bf; font-size: .68rem; line-height: 1.4; }
+    .edit-workbench { margin-top: 14px; border: 1px solid rgba(140, 235, 217, .42); border-radius: 16px; background: rgba(10, 32, 42, .42); }
+    .edit-workbench summary { padding: 11px 14px; color: #b9fff0; cursor: pointer; font-size: .82rem; font-weight: 900; }
+    .edit-workbench summary::marker { color: #f2d295; }
+    .edit-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; padding: 0 14px 14px; }
+    .edit-controls label { display: grid; gap: 4px; min-width: 0; color: #e3f2ed; font-size: .72rem; font-weight: 800; }
+    .edit-controls input, .edit-controls select { width: 100%; min-width: 0; padding: 8px 9px; border: 1px solid #789a9b; border-radius: 9px; background: #193743; color: #fff; }
+    .edit-controls input::placeholder { color: #9ab2b5; }
+    .edit-controls small { grid-column: 1 / -1; margin: 0; color: #bed4d1; font-size: .7rem; line-height: 1.4; }
     .edit-mode { padding-left: 10px; border-left: 2px solid #8cebd9; color: #dcebe8; font-size: .75rem; line-height: 1.45; }
     .edit-mode[data-mode="reviewed"] { border-color: #ffe0a0; color: #fff0cc; }
     .edit-mode[data-mode="draft"] { border-color: #a5c7d1; color: #dcebe8; }
+    .edit-facts { margin-top: 7px; color: #acd4ca; font-size: .73rem; line-height: 1.4; }
     .progress-caption { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin: 9px 0 7px; color: #dcebe8; font-size: .73rem; font-weight: 750; letter-spacing: .05em; }
     .progress-caption strong { color: #ffe0aa; font-size: 1.22rem; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -.035em; }
-    .meter-shell { position: relative; padding: 4px; border: 1px solid rgba(174, 238, 220, .25); border-radius: 99px; background: #243d4b; box-shadow: inset 0 2px 10px rgba(0, 0, 0, .36), 0 0 0 3px rgba(122, 227, 204, .035); }
-    .meter-shell::after { content: ""; position: absolute; z-index: 1; top: 50%; left: clamp(13px, var(--progress, 0%), calc(100% - 13px)); width: 11px; height: 11px; border-radius: 50%; background: #fff7d9; box-shadow: 0 0 9px 3px #ffe0a0, 0 0 20px 6px rgba(255, 184, 100, .6); transform: translate(-50%, -50%); transition: left .25s ease; pointer-events: none; }
-    .intake progress { display: block; width: 100%; height: 13px; appearance: none; border: 0; border-radius: 99px; overflow: hidden; background: #344759; }
-    .intake progress::-webkit-progress-bar { background: repeating-linear-gradient(90deg, #344759 0 16%, #2b4050 16% 16.5%); border-radius: 99px; }
-    .intake progress::-webkit-progress-value { background: linear-gradient(90deg, #55d0c2, #8df5dc 42%, #ffe0a0 86%, #fff5cb); border-radius: 99px; box-shadow: 0 0 14px #8df5dc; transition: width .25s ease; }
-    .intake progress::-moz-progress-bar { background: linear-gradient(90deg, #55d0c2, #8df5dc 42%, #ffe0a0); border-radius: 99px; }
+    .meter-shell { position: relative; height: 26px; border: 1px solid rgba(174, 238, 220, .35); border-radius: 99px; background: #243d4b; box-shadow: inset 0 2px 10px rgba(0, 0, 0, .36), 0 0 0 3px rgba(122, 227, 204, .035); overflow: hidden; }
+    .meter-shell::before { content: ""; position: absolute; inset: 4px; border-radius: inherit; background: repeating-linear-gradient(90deg, #344b58 0 19%, #203744 19% 20%); }
+    .meter-shell::after { content: ""; position: absolute; z-index: 3; top: 50%; left: clamp(13px, var(--progress, 0%), calc(100% - 13px)); width: 13px; height: 13px; border-radius: 50%; background: #fff7d9; box-shadow: 0 0 9px 3px #ffe0a0, 0 0 20px 6px rgba(255, 184, 100, .6); transform: translate(-50%, -50%); transition: left .45s cubic-bezier(.2,.8,.2,1); pointer-events: none; }
+    .meter-shell progress { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+    .meter-fill { position: absolute; z-index: 2; left: 4px; top: 4px; bottom: 4px; width: var(--progress, 0%); max-width: calc(100% - 8px); border-radius: 99px; background: linear-gradient(90deg, #36b7ab, #7aefd4 54%, #ffe1a0); box-shadow: 0 0 16px rgba(122, 239, 212, .6), inset 0 1px rgba(255,255,255,.8); overflow: hidden; transition: width .45s cubic-bezier(.2,.8,.2,1); }
+    .meter-fill::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(115deg, transparent 0 20px, rgba(255,255,255,.22) 20px 28px, transparent 28px 48px); background-size: 96px 100%; animation: meter-flow 1.2s linear infinite; }
+    .meter-fill::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 36px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.95)); filter: blur(5px); }
     .meter-steps { display: flex; justify-content: space-between; margin: 7px 4px 0; color: #aebfca; font-size: .64rem; font-weight: 750; }
     .meter-steps span { position: relative; flex: 1; text-align: center; }
     .meter-steps span:first-child { text-align: left; }
     .meter-steps span:last-child { text-align: right; }
     .meter-steps span::before { content: ""; display: inline-block; width: 5px; height: 5px; margin: 0 5px 1px 0; border-radius: 50%; background: currentColor; opacity: .65; }
     .meter-steps span.earned { color: #ffe0a0; }
+    .meter-steps span.current { color: #fff8d7; text-shadow: 0 0 10px rgba(255, 213, 139, .85); }
+    .meter-steps span.current::before { box-shadow: 0 0 0 4px rgba(255, 211, 145, .2), 0 0 10px 3px rgba(255, 211, 145, .65); }
     .intake small { display: block; margin-top: 9px; color: #bdccd7; }
     @keyframes chest-rattle { 0%, 100% { transform: translate(-50%, -35%) scale(var(--chest-scale)) rotate(0); } 25% { transform: translate(-47%, -35%) scale(var(--chest-scale)) rotate(3deg); } 50% { transform: translate(-53%, -35%) scale(var(--chest-scale)) rotate(-3deg); } 75% { transform: translate(-48%, -35%) scale(var(--chest-scale)) rotate(2deg); } }
     @keyframes chest-breathe { 50% { transform: translate(-50%, -38%) scale(var(--chest-breath)) rotate(1deg); } }
@@ -100,6 +143,11 @@
     @keyframes aura-turn { 50% { transform: translate(-50%, -50%) scale(1.06) rotate(12deg); opacity: .8; } }
     @keyframes platform-pulse { 50% { opacity: .65; filter: brightness(1.5); } }
     @keyframes ember-rise { 0%, 100% { transform: translateY(16px) scale(.5); opacity: 0; } 40% { opacity: .9; } 80% { transform: translateY(-24px) scale(1.25); opacity: .55; } }
+    @keyframes light-breathe { 50% { opacity: .85; transform: translateX(-50%) scale(1.15); } }
+    @keyframes completion-rays { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.5) rotate(-28deg); } 35% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.25) rotate(16deg); } }
+    @keyframes completion-stars { 0% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0) scale(.3); } 22% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--distance))) scale(.7); } }
+    @keyframes completion-flash { 0%, 100% { box-shadow: 0 26px 48px rgba(4,13,25,.28), inset 0 1px rgba(255,255,255,.15); } 26% { box-shadow: 0 0 70px rgba(255,218,137,.9), inset 0 0 60px rgba(255,240,191,.3); } }
+    @keyframes meter-flow { to { background-position: 96px 0; } }
     .hero-note { max-width: 490px; margin-top: 32px; border: 1px solid rgba(173, 216, 223, .3); border-radius: 22px; background: rgba(255, 255, 255, .085); padding: 19px 23px; backdrop-filter: blur(12px); }
     .hero-note strong { display: block; font-size: .91rem; color: #8cebd9; margin-bottom: 12px; }
     .hero-note p { margin-bottom: 0; font-size: 1.14rem; font-weight: 750; line-height: 1.55; }
@@ -118,25 +166,51 @@
     .demo-progress { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: .93rem; font-weight: 900; }
     .demo-progress span:first-child { color: #165c54; font-variant-numeric: tabular-nums; }
     .demo-progress span:last-child { white-space: nowrap; padding: 5px 10px; border-radius: 99px; background: rgba(255, 255, 255, .75); color: #a96523; font-size: .75rem; }
-    .demo .meter-shell { padding: 5px; border-color: rgba(30, 116, 96, .27); background: #d0e4d9; box-shadow: inset 0 2px 9px rgba(25, 83, 65, .16); }
-    .demo progress { display: block; width: 100%; height: 16px; appearance: none; border: 0; border-radius: 99px; overflow: hidden; background: #d9e9de; }
-    .demo progress::-webkit-progress-bar { background: repeating-linear-gradient(90deg, #d9e9de 0 19%, #c7ded2 19% 19.5%); border-radius: 99px; }
-    .demo progress::-webkit-progress-value { background: linear-gradient(90deg, #1b9280, #63d6ad 52%, #efb76d, #ffe09f); border-radius: 99px; box-shadow: 0 0 16px rgba(32, 135, 116, .48); transition: width .25s ease; }
-    .demo progress::-moz-progress-bar { background: linear-gradient(90deg, #1b9280, #63d6ad 52%, #efb76d); border-radius: 99px; }
+    .demo .meter-shell { height: 29px; border-color: rgba(30, 116, 96, .27); background: #d0e4d9; box-shadow: inset 0 2px 9px rgba(25, 83, 65, .16); }
+    .demo .meter-shell::before { background: repeating-linear-gradient(90deg, #d9e9de 0 19%, #c7ded2 19% 20%); }
+    .demo .meter-fill { background: linear-gradient(90deg, #168d7b, #67d6ae 52%, #f2bb77, #ffe5ac); }
     .gems { display: flex; justify-content: space-between; align-items: center; position: relative; padding: 1px 4px; }
     .gems::before { content: ""; position: absolute; z-index: 0; left: 18px; right: 18px; top: 50%; height: 2px; background: #d4decf; }
     .gems span { position: relative; z-index: 1; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #d3e1d6; border-radius: 11px; color: #b0c6bb; background: #f7faf4; font-size: 1.1rem; transition: color .25s, background .25s, box-shadow .25s; }
     .gems span.earned { border-color: #f2c889; color: #fff; background: linear-gradient(145deg, #f4ca84, #d99144); box-shadow: 0 3px 13px rgba(232, 152, 69, .42), inset 0 1px rgba(255, 255, 255, .6); }
+    .gems span.current { box-shadow: 0 0 0 5px rgba(242, 200, 137, .22), 0 0 22px rgba(232, 152, 69, .65); }
     @media (prefers-reduced-motion: no-preference) { .gems span.earned { animation: gem-pop .35s ease-out; } }
     @keyframes gem-pop { 50% { transform: translateY(-5px) scale(1.16); } }
     .result-links { display: flex; flex-wrap: wrap; gap: 9px; }
     .result-links a { display: inline-block; border-radius: 12px; padding: 10px 15px; background: #1c5c51; color: #fff; font-weight: 850; text-decoration: none; }
     .result-links a[hidden] { display: none; }
+    .rerender-button { justify-self: start; padding: 9px 14px; border: 1px solid #b26c37; border-radius: 11px; background: linear-gradient(140deg, #fff0cc, #f5cd8f); color: #694221; font-size: .79rem; font-weight: 900; cursor: pointer; box-shadow: 0 6px 15px rgba(163, 99, 40, .16); }
+    .rerender-button:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .rerender-button[hidden] { display: none; }
     .review-preview { display: grid; gap: 9px; padding: 13px; border: 1px solid #c5dcd3; border-radius: 16px; background: rgba(255, 255, 255, .82); color: #1c5c51; font-size: .78rem; }
     .review-preview[hidden] { display: none; }
     .review-preview video { display: block; width: min(100%, 250px); max-height: 350px; margin-inline: auto; border-radius: 12px; background: #152434; }
     .real-activity { padding-top: 9px; border-top: 1px solid #bfd7c9; }
     .real-activity b { color: #156554; }
+    .api-inventory { padding: 28px; border: 1px solid #d5e8df; border-radius: 26px; background: radial-gradient(circle at 90% 10%, rgba(238, 196, 122, .22), transparent 37%), linear-gradient(120deg, #f1faf6, #fff9ee); }
+    .api-inventory-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    .api-inventory-head h2 { margin: 2px 0 5px; font-size: clamp(1.35rem, 2vw, 1.9rem); letter-spacing: -.04em; }
+    .api-inventory-head p { margin: 0; color: #60716f; font-size: .84rem; }
+    .api-live { white-space: nowrap; padding: 7px 11px; border: 1px solid #aecfbe; border-radius: 99px; background: #fff; color: #40685a; font-size: .74rem; font-weight: 850; }
+    .api-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+    .api-item { position: relative; display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 11px; min-height: 146px; padding: 17px; border: 1px solid #d9e4dc; border-radius: 19px; background: #fff; box-shadow: 0 12px 26px rgba(29, 65, 54, .06); }
+    .api-item[data-state="running"] { border-color: #e8c47a; box-shadow: 0 0 0 3px rgba(241, 194, 105, .2), 0 14px 27px rgba(157, 112, 45, .1); }
+    .api-item[data-state="succeeded"] { border-color: #81bca7; }
+    .api-item[data-state="failed"] { border-color: #dfaa9c; }
+    .api-item[data-locked="true"]::after { content: "잠금"; position: absolute; right: 16px; bottom: 15px; padding: 2px 6px; border: 1px solid #d6e2da; border-radius: 6px; color: #748c81; font-size: .61rem; font-weight: 900; letter-spacing: .04em; }
+    .api-item-icon { display: grid; place-items: center; width: 44px; height: 44px; border: 2px solid #b9d1c7; border-radius: 13px; background: linear-gradient(145deg, #e9f4ee, #fff9e6); color: #649d89; font-size: 1.3rem; box-shadow: inset 0 2px #fff; }
+    .api-item[data-state="running"] .api-item-icon { border-color: #edbf65; color: #b17a30; animation: item-charge 1.4s ease-in-out infinite; }
+    .api-item[data-state="succeeded"] .api-item-icon { border-color: #77b89a; color: #248967; }
+    .api-item-body { min-width: 0; }
+    .api-item-title { display: flex; justify-content: space-between; align-items: start; gap: 5px; }
+    .api-item-title b { color: #203e40; font-size: .91rem; line-height: 1.3; }
+    .api-item-state { flex: none; padding: 3px 7px; border-radius: 99px; background: #e8efeb; color: #557269; font-size: .64rem; font-weight: 900; }
+    .api-item[data-state="running"] .api-item-state { background: #fff0d1; color: #9d6724; }
+    .api-item[data-state="succeeded"] .api-item-state { background: #e1f4e9; color: #277651; }
+    .api-item[data-state="failed"] .api-item-state { background: #fae9e5; color: #aa4d3d; }
+    .api-item p { margin: 7px 0 5px; color: #5f706c; font-size: .75rem; line-height: 1.45; }
+    .api-item small { color: #7b8985; font-size: .7rem; font-weight: 800; }
+    @keyframes item-charge { 50% { transform: translateY(-3px) rotate(8deg); box-shadow: 0 0 17px rgba(237, 191, 101, .7); } }
     section + section { margin-top: 80px; }
     .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 24px; }
     .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); line-height: 1.25; letter-spacing: -.045em; margin-bottom: 8px; }
@@ -237,15 +311,18 @@
       .detail { border-left: 0; border-top: 1px solid #e4e9e8; }
       .rule-grid { grid-template-columns: 1fr; }
       .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .api-items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 650px) {
       .wrap { width: min(100% - 28px, 1180px); }
       .topbar { align-items: start; }
       .topbar nav { justify-content: end; }
-      .treasure-stage { height: 370px; border-radius: 24px; }
-      .css-chest { --chest-scale: 1.35; --chest-breath: 1.41; }
+      .treasure-stage { height: 390px; border-radius: 24px; }
+      .css-chest { --chest-scale: 1.38; --chest-breath: 1.44; }
       .srt-pick { align-items: start; flex-direction: column; gap: 5px; }
       .srt-pick input { max-width: 100%; }
+      .scene-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .scene-row label:last-child { grid-column: 1 / -1; }
       .meter-steps { font-size: .56rem; }
       .demo { padding: 21px; }
       .numbers > div { padding: 16px 11px; }
@@ -262,13 +339,20 @@
       .tool-list div { grid-template-columns: 1fr; gap: 2px; }
       .terms { grid-template-columns: 1fr; }
       .closing { flex-direction: column; align-items: start; }
+      .api-inventory { padding: 20px; }
+      .api-inventory-head { align-items: start; flex-direction: column; }
+      .api-items { grid-template-columns: 1fr; }
+      .api-item { min-height: 0; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .css-chest-lid, .css-chest, .meter-shell::after, .gems span, .intake progress::-webkit-progress-value, .demo progress::-webkit-progress-value { transition: none; }
+      .css-chest-lid, .css-chest, .meter-shell::after, .meter-fill, .gems span, .stage-complete { transition: none; }
       .treasure-stage.is-rattling .css-chest, .treasure-stage.is-processing .css-chest, .treasure-stage.is-processing,
       .treasure-stage.is-processing .stage-atmosphere::before, .treasure-stage.is-processing .stage-atmosphere::after,
-      .treasure-stage.is-processing .stage-sparks i, .gems span.earned { animation: none; }
+      .treasure-stage.is-processing .stage-sparks i, .gems span.earned, .meter-fill::before,
+      .treasure-stage.is-celebrating, .treasure-stage.is-celebrating .completion-burst::before,
+      .treasure-stage.is-celebrating .completion-burst i, .api-item[data-state="running"] .api-item-icon { animation: none; }
+      .treasure-stage.is-celebrating .completion-burst { display: none; }
     }
   </style>
 </head>
@@ -277,7 +361,7 @@
     <div class="wrap">
       <div class="topbar">
         <span class="brand">AUTO / POST · FAMILY REEL</span>
-        <nav aria-label="페이지 이동"><a href="#demo">실제 진행</a><a href="#flow">파이프라인</a><a href="#market-map">12개 조합</a><a href="#tools">실행 도구</a></nav>
+        <nav aria-label="페이지 이동"><a href="#demo">실제 진행</a><a href="#api-inventory">API 아이템</a><a href="#flow">파이프라인</a><a href="#market-map">12개 조합</a><a href="#tools">실행 도구</a></nav>
       </div>
       <div class="hero-content">
         <div class="hero-copy">
@@ -293,9 +377,14 @@
         <div class="hero-aside">
           <div class="treasure-stage" id="treasure-stage" data-renderer="fallback" aria-label="영상 파일을 놓을 수 있는 추억 보물상자">
             <div class="stage-atmosphere" aria-hidden="true"></div>
+            <div class="stage-progress-ring" aria-hidden="true"></div>
+            <div class="chest-light" aria-hidden="true"></div>
             <div class="stage-sparks" aria-hidden="true"><i style="--x:18%;--y:57%;--delay:-.2s"></i><i style="--x:28%;--y:35%;--delay:-1.4s"></i><i style="--x:39%;--y:22%;--delay:-2.1s"></i><i style="--x:61%;--y:19%;--delay:-.9s"></i><i style="--x:75%;--y:34%;--delay:-1.8s"></i><i style="--x:83%;--y:59%;--delay:-.5s"></i><i style="--x:26%;--y:72%;--delay:-2.4s"></i><i style="--x:72%;--y:74%;--delay:-1.1s"></i></div>
             <div class="css-chest" aria-hidden="true"><div class="css-chest-lid"></div><div class="css-chest-body"></div><div class="css-chest-gem"></div></div>
             <canvas id="treasure-canvas" aria-hidden="true"></canvas>
+            <div class="completion-burst" aria-hidden="true"><i style="--angle:0deg;--distance:180px;--delay:0s"></i><i style="--angle:30deg;--distance:155px;--delay:.08s"></i><i style="--angle:60deg;--distance:190px;--delay:.04s"></i><i style="--angle:90deg;--distance:170px;--delay:.12s"></i><i style="--angle:120deg;--distance:190px;--delay:0s"></i><i style="--angle:150deg;--distance:155px;--delay:.09s"></i><i style="--angle:180deg;--distance:180px;--delay:.02s"></i><i style="--angle:210deg;--distance:160px;--delay:.14s"></i><i style="--angle:240deg;--distance:190px;--delay:.04s"></i><i style="--angle:270deg;--distance:170px;--delay:.11s"></i><i style="--angle:300deg;--distance:185px;--delay:.02s"></i><i style="--angle:330deg;--distance:165px;--delay:.13s"></i></div>
+            <span class="stage-progress-label" aria-hidden="true">실제 제작 중 <b id="stage-progress-number">0%</b></span>
+            <span class="stage-complete" aria-hidden="true">✦ 릴스 초안 완성</span>
             <div class="stage-toggle" id="stage-toggle" aria-hidden="true"><span>영상을 상자에 놓으면 실제 제작 시작</span></div>
             <span class="renderer-status" id="renderer-status" role="status">2D 대체 화면 · 3D 지원 시 자동 표시</span>
           </div>
@@ -304,10 +393,28 @@
             <label for="caption-text">화면에 넣을 문구 · 실제 동작에 맞게 바꿀 수 있어요</label>
             <input id="caption-text" type="text" maxlength="80" value="우리 아기의 작은 순간" aria-describedby="video-help">
             <label class="srt-pick" for="scene-srt"><span>장면별 자막 파일 (.srt) · 선택</span><input id="scene-srt" type="file" accept=".srt" aria-describedby="video-help"></label>
+            <button class="scene-file-clear" id="clear-scene-srt" type="button" hidden>SRT 파일 선택 해제</button>
+            <details class="scene-editor"><summary>장면 자막 직접 입력 · 최대 3개</summary><div class="scene-rows">
+              <div class="scene-row"><label>시작 초<input data-scene-start type="number" min="0" step="0.1" inputmode="decimal" placeholder="0"></label><label>끝 초<input data-scene-end type="number" min="0" step="0.1" inputmode="decimal" placeholder="3"></label><label>실제 장면 문구<input data-scene-text type="text" maxlength="80" placeholder="예: 작은 손을 흔들어요"></label></div>
+              <div class="scene-row"><label>시작 초<input data-scene-start type="number" min="0" step="0.1" inputmode="decimal" placeholder="3"></label><label>끝 초<input data-scene-end type="number" min="0" step="0.1" inputmode="decimal" placeholder="6"></label><label>실제 장면 문구<input data-scene-text type="text" maxlength="80" placeholder="장면을 보고 적어 주세요"></label></div>
+              <div class="scene-row"><label>시작 초<input data-scene-start type="number" min="0" step="0.1" inputmode="decimal" placeholder="6"></label><label>끝 초<input data-scene-end type="number" min="0" step="0.1" inputmode="decimal" placeholder="9"></label><label>실제 장면 문구<input data-scene-text type="text" maxlength="80" placeholder="빈 행은 건너뜁니다"></label></div>
+              <small>시간은 원본 영상 기준입니다. 예를 들어 9초부터 자르고 자막을 11~16초로 넣으면 결과 영상의 2~7초에 보입니다. SRT 파일을 선택했다면 파일이 우선합니다.</small>
+            </div></details>
+            <details class="edit-workbench" open><summary>편집 도구 장착 · 드롭 전에 조정</summary>
+              <div class="edit-controls">
+                <label for="edit-start">시작 시각 · 초<input id="edit-start" type="number" min="0" step="0.1" inputmode="decimal" placeholder="처음부터"></label>
+                <label for="edit-end">끝 시각 · 초<input id="edit-end" type="number" min="0" step="0.1" inputmode="decimal" placeholder="끝까지"></label>
+                <label for="edit-music">배경음악 크기<select id="edit-music"><option value="balanced">기본 크기</option><option value="soft">작게</option></select></label>
+                <label for="edit-sfx">효과음<select id="edit-sfx"><option value="on">효과음 넣기</option><option value="off">효과음 빼기</option></select></label>
+                <label for="edit-look">화면 보정<select id="edit-look"><option value="soft">은은하고 화사하게</option><option value="natural">원본에 가깝게</option></select></label>
+                <small>선택한 값으로 실제 렌더링합니다. 효과음은 자막 시점에 맞춰 넣거나 검수된 편집안의 시점을 사용합니다. 아기 동작을 자동으로 판별하지 않으므로 미리 보기에서 장면·자막·소리를 확인해 주세요.</small>
+              </div>
+            </details>
             <p class="intake-status" id="video-status" role="status" aria-live="polite">MP4·MOV·WebM을 상자에 놓거나 영상을 선택해 주세요.</p>
             <div class="edit-mode" id="edit-mode" aria-live="polite">편집 방식은 영상 확인 후 표시합니다.</div>
+            <div class="edit-facts" id="edit-facts" aria-live="polite"></div>
             <div class="progress-caption"><span>릴스 제작 진행도</span><strong id="progress-number">0%</strong></div>
-            <div class="meter-shell" id="video-meter-shell"><progress id="video-meter" max="100" value="0" aria-label="실제 영상 처리 진행률">0%</progress></div>
+            <div class="meter-shell" id="video-meter-shell"><progress id="video-meter" max="100" value="0" aria-label="실제 영상 처리 진행률">0%</progress><span class="meter-fill" aria-hidden="true"></span></div>
             <div class="meter-steps" id="meter-steps" aria-hidden="true"><span>원본</span><span>합성</span><span>인코딩</span><span>검사</span><span>완성</span></div>
             <small id="video-help">로컬 서버에서 FFmpeg로 실제 처리합니다. 기본 문구는 동작을 자동 판별한 자막이 아니며, 게시 전 검토가 필요합니다.</small>
           </div>
@@ -330,12 +437,18 @@
       </div>
       <div class="demo-controls">
         <div class="demo-progress"><span id="demo-position">영상 대기</span><span id="demo-reward">보석 0 / 5</span></div>
-        <div class="meter-shell" id="demo-meter-shell"><progress id="demo-meter" max="100" value="0" aria-label="실제 영상 처리 진행률">0%</progress></div>
+        <div class="meter-shell" id="demo-meter-shell"><progress id="demo-meter" max="100" value="0" aria-label="실제 영상 처리 진행률">0%</progress><span class="meter-fill" aria-hidden="true"></span></div>
         <div class="gems" id="demo-gems" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></div>
+        <button class="rerender-button" id="rerender-button" type="button" hidden>✦ 선택한 편집값으로 다시 만들기</button>
         <div class="result-links"><a id="result-video" hidden download="instagram-reel.mp4">완성 영상 받기</a><a id="result-quality" hidden download="instagram-reel.quality.json">기술 검사 결과</a><a id="result-edit" hidden download="instagram-reel.edit.json">편집 계획 보기</a></div>
         <div class="review-preview" id="result-preview" hidden><strong>완성 영상 미리 보기 · 게시 전 장면과 소리를 확인해 주세요</strong><video id="preview-video" controls playsinline preload="metadata" aria-label="완성된 릴스 미리 보기"></video></div>
         <p class="real-activity" role="status" aria-live="polite"><b>밈 기획안 JSON</b> · <span id="real-activity-text">파일 대기. 아래에서 기획안을 선택하면 읽기·형식 검증 결과가 표시됩니다.</span></p>
       </div>
+    </section>
+
+    <section class="api-inventory" id="api-inventory" aria-labelledby="api-title">
+      <div class="api-inventory-head"><div><span class="kicker">OPTIONAL / API LOADOUT</span><h2 id="api-title">API 아이템 주머니</h2><p>외부 도구를 실제로 쓸 때만 아이템 상태가 바뀝니다. 연결되지 않은 도구는 호출하지 않습니다.</p></div><span class="api-live" id="api-live">로컬 서버 확인 중</span></div>
+      <div class="api-items" id="api-items" aria-live="polite"><p>API 연결 상태를 불러오는 중입니다.</p></div>
     </section>
 
     <section id="flow" aria-labelledby="flow-title">
@@ -355,8 +468,8 @@
           <div class="lane-label warm"><b>WEEK 01</b><span>릴스 제작</span></div>
           <div class="stages">
             <article class="stage warm"><span class="step">01</span><h3>원본 확인</h3><p>클립을 작업 폴더에 복사하고 ffprobe로 방향·길이·영상/음성 스트림을 확인합니다.</p></article>
-            <article class="stage warm"><span class="step">02</span><h3>자막·소리 설계</h3><p>실제 동작에 맞는 SRT 자막, 사용 권리가 확인된 BGM, 필요한 순간의 효과음을 준비합니다.</p></article>
-            <article class="stage warm"><span class="step">03</span><h3>렌더링·보정</h3><p>Python과 FFmpeg로 9:16 영상, ASS 자막, 소리, 자연스러운 색감과 용량 설정을 적용합니다.</p></article>
+            <article class="stage warm"><span class="step">02</span><h3>컷·자막·소리 설계</h3><p>원본 기준 시작·끝 시각, 실제 동작에 맞는 SRT 자막, 배경음악 크기와 효과음 사용 여부를 정합니다.</p></article>
+            <article class="stage warm"><span class="step">03</span><h3>렌더링·보정</h3><p>Python과 FFmpeg로 선택 구간을 자르고 9:16 화면, ASS 자막, 소리, 보정과 용량 설정을 적용합니다.</p></article>
             <article class="stage warm"><span class="step">04</span><h3>QA·게시 문구</h3><p>스트림·길이·9:16·용량·자막·A/V 싱크를 검사하고, 첫·중간·끝 장면과 소리를 사람이 본 뒤 문구를 작성합니다.</p></article>
           </div>
         </div>
@@ -409,7 +522,7 @@
             <div><dt>Python</dt><dd><code>score_reel_memes.py</code>로 선별표와 기획안을 만들고, <code>render_instagram_reel.py</code>로 편집 단계를 연결합니다.</dd></div>
             <div><dt>ffprobe</dt><dd>원본의 길이, 방향, 영상·음성 스트림을 검사합니다.</dd></div>
             <div><dt>FFmpeg</dt><dd>9:16·1080×1920·30 fps, H.264/AAC 출력, 자막·BGM·효과음·가벼운 색 보정과 기술 QA를 수행합니다.</dd></div>
-            <div><dt>소리·자막</dt><dd>원본 해시와 일치하는 검수 편집안이 있으면 장면 SRT·맞춤 BGM·효과음을 재사용합니다. 새 영상은 시간 지정 SRT를 받거나 중립 문구 초안을 만들고, 전 길이 원본 음악과 짧은 효과음을 합성합니다.</dd></div>
+            <div><dt>소리·자막</dt><dd>원본 해시와 일치하는 검수 편집안이 있으면 장면 SRT·맞춤 BGM·효과음을 재사용합니다. 새 영상은 SRT 파일 또는 원본 시각 기준 장면 문구를 받아 시간 지정 자막으로 만들고, 없을 때만 중립 초안을 사용합니다.</dd></div>
           </dl>
         </div>
         <div class="tool-side">
@@ -424,7 +537,7 @@ http://127.0.0.1:8765/</code></pre>
           <pre><code>python scripts/render_instagram_reel.py \
   work/source.mp4 work/scenes.srt work/owned-bgm.wav \
   --output out/reel.mp4</code></pre>
-          <small>기본 자막은 중립 문구 초안입니다. 영상 속 실제 동작을 AI가 판별하지 않으므로 게시 전에 문구·초상 공개·화면·소리를 직접 확인해야 합니다. 자동 게시와 플랫폼 API 실시간 수집은 연결되지 않았습니다.</small>
+          <small>화면에서 컷·음악·효과음·보정을 고르면 실제 FFmpeg 결과에 반영됩니다. 기본 자막은 중립 문구 초안입니다. 영상 속 실제 동작을 AI가 판별하지 않으므로 게시 전에 문구·초상 공개·화면·소리를 직접 확인해야 합니다. API 아이템은 현재 미연결이며 호출하지 않습니다.</small>
           <p style="margin-top: 16px; margin-bottom: 0;">3D 상자는 Three.js를 CDN에서 읽습니다. 네트워크나 WebGL을 사용할 수 없으면 2D 상자가 표시되며, 영상 처리는 계속할 수 있습니다.</p>
         </div>
       </div>
@@ -465,22 +578,122 @@ http://127.0.0.1:8765/</code></pre>
       const stageToggle = document.getElementById("stage-toggle");
       const demoSection = document.getElementById("demo");
       const videoInput = document.getElementById("video-file");
+      const sceneFileInput = document.getElementById("scene-srt");
+      const clearSceneFile = document.getElementById("clear-scene-srt");
       const videoStatus = document.getElementById("video-status");
       const videoMeter = document.getElementById("video-meter");
       const demoMeter = document.getElementById("demo-meter");
       const demoGems = [...document.querySelectorAll("#demo-gems span")];
       const meterSteps = [...document.querySelectorAll("#meter-steps span")];
       const editMode = document.getElementById("edit-mode");
-      const phaseNames = { prepare: "원본 확인", compose: "화면·자막·BGM 합성", finish: "보정·인코딩", quality: "기술 검사", done: "완성" };
-      const phaseGems = { prepare: 1, compose: 2, finish: 3, quality: 4, done: 5 };
+      const editFacts = document.getElementById("edit-facts");
+      const rerenderButton = document.getElementById("rerender-button");
+      const apiInventory = document.getElementById("api-items");
+      const apiLive = document.getElementById("api-live");
+      const phaseNames = { prepare: "원본 확인", compose: "화면·자막·BGM 합성", finish: "보정·인코딩", quality: "기술 검사", done: "완성", failed: "처리 실패" };
+      const phaseGems = { prepare: 0, compose: 1, finish: 2, quality: 3, done: 5 };
       let plan = new Map(markets.flatMap(market => platforms.map(platform => [`${market}:${platform}`, { market, platform, selected: null, alternate: null }])));
       let active = "KR:instagram";
       let intakeBusy = false;
       let rattleTimer;
+      let celebrationTimer;
       let lastPhase = "";
+      let lastSourceFile;
+      let lastApiItems = "";
+
+      function showApiItems(items) {
+        if (!Array.isArray(items)) {
+          apiLive.textContent = "상태 정보 없음";
+          apiInventory.textContent = "이 서버는 API 아이템 상태를 제공하지 않습니다. 로컬 서버를 다시 실행해 주세요.";
+          return;
+        }
+        const snapshot = JSON.stringify(items);
+        if (snapshot === lastApiItems) return;
+        lastApiItems = snapshot;
+        const states = { unavailable: "미연결", idle: "대기", selected: "준비", running: "사용 중", succeeded: "완료", failed: "실패", skipped: "미사용" };
+        const icons = { openai_scene: "✦", elevenlabs_music: "♫", seedance_cut: "◇" };
+        const cards = items.map(item => {
+          const card = document.createElement("article");
+          const icon = document.createElement("span");
+          const body = document.createElement("div");
+          const heading = document.createElement("div");
+          const title = document.createElement("b");
+          const state = document.createElement("span");
+          const detail = document.createElement("p");
+          const cost = document.createElement("small");
+          card.className = "api-item";
+          card.dataset.state = states[item.status] ? item.status : "unavailable";
+          card.dataset.locked = String(!item.available);
+          icon.className = "api-item-icon";
+          icon.setAttribute("aria-hidden", "true");
+          icon.textContent = icons[item.id] || "✧";
+          body.className = "api-item-body";
+          heading.className = "api-item-title";
+          title.textContent = item.label || item.id || "API 도구";
+          state.className = "api-item-state";
+          state.textContent = states[item.status] || "상태 확인 중";
+          detail.textContent = item.detail || "연결 상태는 로컬 서버에서 확인합니다.";
+          cost.textContent = item.used ? (item.cost_label || "실제 사용됨 · 요금 확인 필요")
+            : ["selected", "running"].includes(item.status) ? "호출 시 요금 확인 필요" : "호출 없음 · 비용 없음";
+          heading.append(title, state);
+          body.append(heading, detail, cost);
+          card.append(icon, body);
+          return card;
+        });
+        apiInventory.replaceChildren(...cards);
+        apiLive.textContent = `${items.filter(item => item.used).length}개 사용 · ${items.filter(item => item.available).length}개 연결`;
+      }
+
+      function editOptions() {
+        const start = document.getElementById("edit-start").value.trim();
+        const end = document.getElementById("edit-end").value.trim();
+        if (start && (!Number.isFinite(Number(start)) || Number(start) < 0)) throw new Error("시작 시각은 0초 이상이어야 합니다.");
+        if (end && (!Number.isFinite(Number(end)) || Number(end) <= 0)) throw new Error("끝 시각은 0초보다 커야 합니다.");
+        if (start && end && Number(end) <= Number(start)) throw new Error("끝 시각은 시작 시각보다 커야 합니다.");
+        return { start, end, music: document.getElementById("edit-music").value,
+          sfx: document.getElementById("edit-sfx").value, look: document.getElementById("edit-look").value };
+      }
+
+      function inlineScenes(options) {
+        const cues = [];
+        for (const row of document.querySelectorAll(".scene-row")) {
+          const startText = row.querySelector("[data-scene-start]").value.trim();
+          const endText = row.querySelector("[data-scene-end]").value.trim();
+          const caption = row.querySelector("[data-scene-text]").value.trim();
+          if (!startText && !endText && !caption) continue;
+          const start = Number(startText);
+          const end = Number(endText);
+          if (!startText || !endText || !caption || !Number.isFinite(start) || !Number.isFinite(end) || start < 0 || end <= start) {
+            throw new Error("장면 자막은 시작·끝 초와 실제 장면 문구를 함께 입력하고, 끝을 시작보다 늦게 지정해 주세요.");
+          }
+          if (cues.length && start < cues.at(-1).end) throw new Error("장면 자막이 겹칩니다. 시간 순서대로 겹치지 않게 입력해 주세요.");
+          cues.push({ start, end, caption });
+        }
+        if (!cues.length) return null;
+        const cutStart = Number(options.start || 0);
+        const cutEnd = options.end ? Number(options.end) : Infinity;
+        if (!cues.some(cue => cue.end > cutStart && cue.start < cutEnd)) {
+          throw new Error("장면 자막 시간이 선택한 영상 컷 구간과 겹치지 않습니다.");
+        }
+        const timestamp = seconds => {
+          const ms = Math.round(seconds * 1000);
+          const two = value => String(value).padStart(2, "0");
+          return `${two(Math.floor(ms / 3600000))}:${two(Math.floor(ms / 60000) % 60)}:${two(Math.floor(ms / 1000) % 60)},${String(ms % 1000).padStart(3, "0")}`;
+        };
+        const body = cues.map((cue, index) => `${index + 1}\n${timestamp(cue.start)} --> ${timestamp(cue.end)}\n${cue.caption}\n`).join("\n");
+        return new File([body], "inline-scenes.srt", { type: "application/x-subrip" });
+      }
 
       function setChestOpen(open) {
+        const opening = open && !stage.classList.contains("is-open");
         stage.classList.toggle("is-open", open);
+        if (!open) {
+          clearTimeout(celebrationTimer);
+          stage.classList.remove("is-celebrating");
+        } else if (opening && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          stage.classList.add("is-celebrating");
+          celebrationTimer = setTimeout(() => stage.classList.remove("is-celebrating"), 2300);
+        }
         stageToggle.querySelector("span").textContent = open ? "릴스 초안 완성 · 아래에서 받기" : "영상을 상자에 놓으면 실제 제작 시작";
         stage.dispatchEvent(new Event("chest-change"));
       }
@@ -498,9 +711,12 @@ http://127.0.0.1:8765/</code></pre>
         videoMeter.value = value;
         demoMeter.value = value;
         document.getElementById("progress-number").textContent = `${value}%`;
+        document.getElementById("stage-progress-number").textContent = `${value}%`;
         document.getElementById("video-meter-shell").style.setProperty("--progress", `${value}%`);
         document.getElementById("demo-meter-shell").style.setProperty("--progress", `${value}%`);
+        stage.style.setProperty("--progress", `${value}%`);
         stage.dataset.progress = String(value);
+        stage.dispatchEvent(new Event("chest-change"));
       }
 
       function updateJob(job) {
@@ -517,16 +733,31 @@ http://127.0.0.1:8765/</code></pre>
           const description = `${modeLabel[job.edit_mode] || "편집 계획"} · ${job.edit_summary || "장면과 소리를 확인해 주세요."}`;
           if (editMode.textContent !== description) editMode.textContent = description;
         }
-        const earned = phaseGems[job.phase] || 0;
+        if (job.edit_settings) {
+          const settings = job.edit_settings;
+          const music = { soft: "배경음악 작게", balanced: "배경음악 기본 크기" }[settings.music] || "음악 확인 중";
+          const look = { soft: "화사한 보정", natural: "자연스러운 보정" }[settings.look] || "보정 확인 중";
+          const sfx = settings.sfx === "off" ? "효과음 빼기" : "효과음 넣기";
+          const source = Number(job.source_duration_seconds);
+          const output = Number(job.output_duration_seconds);
+          const duration = Number.isFinite(source) && source > 0 && Number.isFinite(output) && output > 0
+            ? `원본 ${source.toFixed(1)}초 → 편집 ${output.toFixed(1)}초 · ` : "";
+          editFacts.textContent = `${duration}${music} · ${sfx} · ${look}`;
+        }
+        const earned = job.phase === "failed" ? demoGems.filter(gem => gem.classList.contains("earned")).length : phaseGems[job.phase] || 0;
+        const current = ["running", "queued"].includes(job.status) ? earned : -1;
         document.getElementById("demo-reward").textContent = `보석 ${earned} / 5`;
-        demoGems.forEach((gem, index) => gem.classList.toggle("earned", index < earned));
-        meterSteps.forEach((step, index) => step.classList.toggle("earned", index < earned));
+        demoGems.forEach((gem, index) => { gem.classList.toggle("earned", index < earned); gem.classList.toggle("current", index === current); });
+        meterSteps.forEach((step, index) => { step.classList.toggle("earned", index < earned); step.classList.toggle("current", index === current); });
+        showApiItems(job.api_items);
+        stage.classList.toggle("is-failed", job.status === "failed");
         if (job.phase !== lastPhase) {
           lastPhase = job.phase;
           if (["compose", "finish", "quality"].includes(job.phase)) rattleChest();
         }
         if (job.status === "succeeded") {
           videoStatus.textContent = `${job.name} · 릴스 초안 완성 · 게시 전 내용 검토 필요`;
+          rerenderButton.hidden = !lastSourceFile;
           const videoLink = document.getElementById("result-video");
           const qualityLink = document.getElementById("result-quality");
           videoLink.href = job.video_url;
@@ -558,11 +789,14 @@ http://127.0.0.1:8765/</code></pre>
         return result.token;
       }
 
-      function uploadVideo(file, caption, scenesToken) {
+      function uploadVideo(file, caption, scenesToken, options) {
         return new Promise((resolve, reject) => {
           const request = new XMLHttpRequest();
-          const scenes = scenesToken ? `&scenes=${encodeURIComponent(scenesToken)}` : "";
-          request.open("POST", `/api/reels?name=${encodeURIComponent(file.name)}&caption=${encodeURIComponent(caption)}${scenes}`);
+          const query = new URLSearchParams({ name: file.name, caption, music: options.music, sfx: options.sfx, look: options.look });
+          if (scenesToken) query.set("scenes", scenesToken);
+          if (options.start) query.set("start", options.start);
+          if (options.end) query.set("end", options.end);
+          request.open("POST", `/api/reels?${query}`);
           request.setRequestHeader("X-Reel-UI", "1");
           request.setRequestHeader("Content-Type", file.type || "application/octet-stream");
           request.upload.onprogress = event => {
@@ -607,9 +841,12 @@ http://127.0.0.1:8765/</code></pre>
           setProgress(0);
           return;
         }
+        lastSourceFile = file;
         intakeBusy = true;
         lastPhase = "";
         setChestOpen(false);
+        stage.classList.remove("is-failed");
+        rerenderButton.hidden = true;
         stage.classList.add("is-processing");
         demoSection.classList.add("is-processing");
         stage.dispatchEvent(new Event("chest-change"));
@@ -623,18 +860,21 @@ http://127.0.0.1:8765/</code></pre>
         document.getElementById("preview-video").load();
         editMode.removeAttribute("data-mode");
         editMode.textContent = "영상의 편집 계획을 확인하고 있습니다.";
-        meterSteps.forEach(step => step.classList.remove("earned"));
+        editFacts.textContent = "";
+        meterSteps.forEach(step => step.classList.remove("earned", "current"));
+        demoGems.forEach(gem => gem.classList.remove("earned", "current"));
         videoStatus.textContent = "추억을 정리하고 있습니다 · 로컬 서버 확인 중";
         try {
+          const options = editOptions();
           if (location.protocol !== "http:" || location.hostname !== "127.0.0.1") {
             throw new Error("실제 편집은 프로젝트에서 python -m scripts.serve_instagram_reel_ui 실행 후 http://127.0.0.1:8765/ 에서 시작해 주세요.");
           }
           const health = await fetch("/api/health", { cache: "no-store" });
-          if (!health.ok || !(await health.json()).ok) throw new Error("로컬 서버가 필요합니다. 프로젝트에서 python -m scripts.serve_instagram_reel_ui 를 실행해 주세요.");
-          const scenesInput = document.getElementById("scene-srt");
-          const scenesToken = await uploadScenes(scenesInput.files?.[0]);
-          const id = await uploadVideo(file, document.getElementById("caption-text").value.trim(), scenesToken);
-          scenesInput.value = "";
+          const healthData = await health.json();
+          if (!health.ok || !healthData.ok) throw new Error("로컬 서버가 필요합니다. 프로젝트에서 python -m scripts.serve_instagram_reel_ui 를 실행해 주세요.");
+          showApiItems(healthData.api_items);
+          const scenesToken = await uploadScenes(sceneFileInput.files?.[0] || inlineScenes(options));
+          const id = await uploadVideo(file, document.getElementById("caption-text").value.trim(), scenesToken, options);
           try { localStorage.setItem("reel-live-job", id); } catch {}
           await followJob(id);
         } catch (error) {
@@ -642,6 +882,7 @@ http://127.0.0.1:8765/</code></pre>
           document.getElementById("demo-message").textContent = error.message;
           document.getElementById("demo-title").textContent = "처리 상태를 확인해 주세요";
           stageToggle.querySelector("span").textContent = "처리 상태를 확인해 주세요";
+          rerenderButton.hidden = !lastSourceFile;
         } finally {
           intakeBusy = false;
           stage.classList.remove("is-processing");
@@ -654,6 +895,9 @@ http://127.0.0.1:8765/</code></pre>
         videoInput.value = "";
         if (file) inspectVideo(file);
       });
+      sceneFileInput.addEventListener("change", () => { clearSceneFile.hidden = !sceneFileInput.files?.length; });
+      clearSceneFile.addEventListener("click", () => { sceneFileInput.value = ""; clearSceneFile.hidden = true; });
+      rerenderButton.addEventListener("click", () => { if (lastSourceFile) inspectVideo(lastSourceFile); });
       stage.addEventListener("dragover", event => {
         event.preventDefault();
         event.dataTransfer.dropEffect = "copy";
@@ -751,6 +995,15 @@ http://127.0.0.1:8765/</code></pre>
       });
 
       render();
+      if (location.protocol === "http:" && location.hostname === "127.0.0.1") {
+        fetch("/api/health", { cache: "no-store" }).then(response => response.json()).then(data => {
+          if (!data.ok) throw new Error("로컬 서버 연결 실패");
+          showApiItems(data.api_items);
+        }).catch(() => { apiLive.textContent = "서버 연결 필요"; apiInventory.textContent = "로컬 서버를 실행하면 API 아이템 연결 상태가 표시됩니다."; });
+      } else {
+        apiLive.textContent = "서버 연결 필요";
+        apiInventory.textContent = "로컬 서버 주소에서 열면 API 아이템 연결 상태가 표시됩니다.";
+      }
       let recentJob;
       try { recentJob = localStorage.getItem("reel-live-job"); } catch {}
       if (location.protocol === "http:" && location.hostname === "127.0.0.1" && /^[a-f0-9]{32}$/.test(recentJob || "")) {
@@ -785,6 +1038,7 @@ http://127.0.0.1:8765/</code></pre>
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
       let cameraBaseX = 3.4;
+      let cameraBaseZ = 6.35;
       camera.position.set(cameraBaseX, 2.8, 6.35);
       camera.lookAt(0, -0.1, 0);
       scene.add(new THREE.HemisphereLight(0xd6fff1, 0x422b2b, 2.05));
@@ -832,6 +1086,13 @@ http://127.0.0.1:8765/</code></pre>
       const jewel = new THREE.Mesh(new THREE.OctahedronGeometry(0.24), gem);
       jewel.position.set(0, 0.1, 1.32);
       chest.add(jewel);
+      for (const x of [-1.37, 1.37]) {
+        addBox(chest, [0.26, 0.24, 2.24], [x, -0.76, 0], darkGold);
+        const handle = new THREE.Mesh(new THREE.TorusGeometry(0.2, 0.038, 8, 28, Math.PI), gold);
+        handle.rotation.y = x < 0 ? Math.PI / 2 : -Math.PI / 2;
+        handle.position.set(x < 0 ? -1.68 : 1.68, 0.08, 0);
+        chest.add(handle);
+      }
 
       const lid = new THREE.Group();
       lid.position.set(0, 0.72, -1.05);
@@ -840,6 +1101,7 @@ http://127.0.0.1:8765/</code></pre>
       arch.rotation.z = Math.PI / 2;
       arch.position.z = 1.05;
       lid.add(arch);
+      addBox(lid, [3.29, 0.06, 2.12], [0, -0.03, 1.05], woodShade);
       addBox(lid, [3.55, 0.16, 0.17], [0, 0.06, 2.19], gold);
       addBox(lid, [3.55, 0.13, 0.16], [0, 0.06, -0.09], darkGold);
       for (const x of [-1.13, 1.13]) {
@@ -849,7 +1111,30 @@ http://127.0.0.1:8765/</code></pre>
         });
         lid.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), 28, 0.085, 8, false), gold));
       }
-      const seam = addBox(chest, [3.08, 0.068, 1.85], [0, 0.745, 0], new THREE.MeshBasicMaterial({ color: 0xffd483, transparent: true, opacity: 0.55 }));
+      addBox(chest, [3.05, 0.025, 1.84], [0, 0.735, 0], new THREE.MeshStandardMaterial({ color: 0x2b2025, roughness: 0.9 }));
+      const seam = addBox(chest, [3.08, 0.05, 0.095], [0, 0.755, 0.98], new THREE.MeshBasicMaterial({ color: 0xffd483, transparent: true, opacity: 0.55 }));
+      const innerLight = new THREE.PointLight(0xffdc88, 0, 5);
+      innerLight.position.set(0, 0.83, 0.25);
+      scene.add(innerLight);
+      const reward = new THREE.Group();
+      reward.position.set(0, -0.2, 0.35);
+      reward.scale.setScalar(0.001);
+      reward.visible = false;
+      scene.add(reward);
+      const cardGold = new THREE.MeshStandardMaterial({ color: 0xf2ce80, metalness: 0.65, roughness: 0.25, emissive: 0x6b431e, emissiveIntensity: 0.12 });
+      const cardMint = new THREE.MeshStandardMaterial({ color: 0x72e4c7, metalness: 0.1, roughness: 0.3, emissive: 0x2c967e, emissiveIntensity: 0.25 });
+      const cardDark = new THREE.MeshStandardMaterial({ color: 0x173a3f, roughness: 0.45 });
+      addBox(reward, [0.92, 1.46, 0.08], [0, 0, 0], cardGold);
+      addBox(reward, [0.78, 1.29, 0.085], [0, 0, 0.055], cardDark);
+      addBox(reward, [0.65, 0.92, 0.03], [0, 0.13, 0.115], cardMint);
+      const play = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.27, 3), new THREE.MeshBasicMaterial({ color: 0xfff7d8 }));
+      play.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
+      play.position.set(0.02, 0.12, 0.15);
+      reward.add(play);
+      addBox(reward, [0.45, 0.045, 0.03], [-0.08, -0.52, 0.12], cardGold);
+      const rewardHalo = new THREE.Mesh(new THREE.TorusGeometry(0.85, 0.025, 8, 64), new THREE.MeshBasicMaterial({ color: 0xffe4a0, transparent: true, opacity: 0.65 }));
+      rewardHalo.position.z = -0.2;
+      reward.add(rewardHalo);
       const floor = new THREE.Mesh(new THREE.CircleGeometry(2.7, 48), new THREE.MeshBasicMaterial({ color: 0x4c806e, transparent: true, opacity: 0.18, depthWrite: false }));
       floor.rotation.x = -Math.PI / 2;
       floor.position.y = -1.25;
@@ -869,8 +1154,19 @@ http://127.0.0.1:8765/</code></pre>
         chest.add(particle);
         particles.push({ particle, baseY, phase: i * 0.75 });
       }
+      const burst = [];
+      for (let i = 0; i < 30; i++) {
+        const material = new THREE.MeshBasicMaterial({ color: i % 3 ? 0xffdc94 : 0x83f9d8, transparent: true, opacity: 0, depthWrite: false });
+        const star = new THREE.Mesh(new THREE.OctahedronGeometry(i % 4 ? 0.045 : 0.07), material);
+        star.visible = false;
+        scene.add(star);
+        const angle = i * 2.39996;
+        burst.push({ star, direction: new THREE.Vector3(Math.cos(angle) * (1.25 + i % 4 * 0.19), 0.45 + i % 6 * 0.24, Math.sin(angle) * (0.7 + i % 3 * 0.18)) });
+      }
 
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let celebrationAt = 0;
+      let wasCelebrating = false;
       function resize() {
         const width = stage.clientWidth;
         const height = stage.clientHeight;
@@ -878,8 +1174,9 @@ http://127.0.0.1:8765/</code></pre>
         renderer.setSize(width, height, false);
         const compact = width < 450;
         cameraBaseX = compact ? 3.7 : 3.4;
+        cameraBaseZ = compact ? 7.2 : 6.35;
         camera.fov = compact ? 43 : 38;
-        camera.position.set(cameraBaseX, compact ? 3.0 : 2.8, compact ? 7.2 : 6.35);
+        camera.position.set(cameraBaseX, compact ? 3.0 : 2.8, cameraBaseZ);
         camera.lookAt(0, -0.1, 0);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
@@ -889,20 +1186,40 @@ http://127.0.0.1:8765/</code></pre>
         const time = now * 0.001;
         const open = stage.classList.contains("is-open");
         const processing = stage.classList.contains("is-processing");
+        const celebrating = stage.classList.contains("is-celebrating");
+        if (celebrating && !wasCelebrating) celebrationAt = now;
+        wasCelebrating = celebrating;
         const charge = (Number(stage.dataset.progress) || 0) / 100;
-        const target = open ? -1.05 : processing ? -0.19 - Math.sin(time * 2.5) * 0.024 : 0;
+        const target = open ? -1.08 : processing ? -0.19 - Math.sin(time * 2.5) * 0.024 : 0;
         lid.rotation.x += (target - lid.rotation.x) * (reduced ? 1 : 0.075);
         glow.intensity = processing ? 5.1 + charge * 3 + Math.sin(time * 3.1) * 1.1 : open ? 6.2 : 3.6;
+        innerLight.intensity = open ? 11 : processing ? 2.5 + charge * 4.5 : 0;
         seam.material.opacity = open ? 0.95 : processing ? 0.72 + charge * 0.25 : 0.55;
         gem.emissiveIntensity = processing ? 0.8 + charge * 1.15 : open ? 1.7 : 0.75;
         floorRing.material.opacity = processing ? 0.34 + Math.sin(time * 2.2) * 0.11 : 0.29;
+        const cardScale = open ? (reduced ? 1 : Math.min(1, reward.scale.x + 0.065)) : (reduced ? 0.001 : Math.max(0.001, reward.scale.x - 0.1));
+        reward.scale.setScalar(cardScale);
+        reward.visible = cardScale > 0.02;
+        reward.position.y = -0.2 + cardScale * 1.73 + (open && !reduced ? Math.sin(time * 2) * 0.04 : 0);
+        reward.rotation.y = reduced ? 0 : Math.sin(time * 0.7) * 0.13;
+        rewardHalo.material.opacity = open ? 0.48 + (reduced ? 0 : Math.sin(time * 2.3) * 0.18) : 0;
+        const burstTime = celebrating ? Math.min(1, (now - celebrationAt) / 1700) : 1;
+        burst.forEach(({ star, direction }, index) => {
+          star.visible = celebrating && burstTime < 1;
+          if (!star.visible) return;
+          const travel = 1 - Math.pow(1 - burstTime, 2);
+          star.position.set(direction.x * travel, 0.95 + direction.y * travel - burstTime * burstTime * 0.55, direction.z * travel + 0.2);
+          star.rotation.set(time * 3 + index, time * 2, 0);
+          star.material.opacity = Math.max(0, 1 - burstTime * burstTime);
+        });
         if (!reduced) {
           chest.rotation.y = Math.sin(time * 0.4) * 0.065;
           chest.rotation.z = stage.classList.contains("is-rattling") ? Math.sin(time * 37) * 0.055 : processing ? Math.sin(time * 5.5) * 0.012 : 0;
           chest.position.y = -0.38 + Math.sin(time * (processing ? 2.2 : 0.9)) * (processing ? 0.075 : 0.035);
           camera.position.x = cameraBaseX + Math.sin(time * 0.28) * 0.12;
-          camera.lookAt(0, -0.1, 0);
         }
+        camera.position.z += (cameraBaseZ + (open ? 0.8 : 0) - camera.position.z) * (reduced ? 1 : 0.08);
+        camera.lookAt(0, -0.1, 0);
         particles.forEach(({ particle, baseY, phase }) => {
           particle.position.y = baseY + (reduced ? 0 : Math.sin(time * 1.2 + phase) * 0.11);
           particle.material.opacity = (open || processing ? 0.78 : 0.27) * (0.74 + Math.sin(time * 1.9 + phase) * 0.2);
