@@ -11,7 +11,7 @@ import sys
 import tempfile
 import unittest
 
-SCRIPT = Path(__file__).resolve().parents[1] / "skills/evidence-driven-paper/scripts/paper_checks.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "scripts/paper_checks.py"
 HAS_PYPDF = importlib.util.find_spec("pypdf") is not None
 
 

@@ -7,13 +7,13 @@
 
 ## 논문 결과물
 
-이 작업에서 정리한 최종 4쪽 논문 [paper.pdf](../artifacts/auto-paper/shared-regularization/paper.pdf)를 함께 제공합니다.
+이 작업에서 정리한 최종 4쪽 논문 [paper.pdf](../outputs/week-01/paper.pdf)를 함께 제공합니다.
 논문 제목은 **How Shared Regularization Changes Calibration: A Case Study with Splines**입니다.
 
 ## 사용하기
 
-저장소의 [스킬](../skills/evidence-driven-paper/SKILL.md)을 직접 읽도록 요청하거나,
-skills/evidence-driven-paper 폴더를 사용하는 에이전트의 스킬 디렉터리에 복사합니다.
+저장소의 [스킬](../../../skills/evidence-driven-paper/SKILL.md)을 직접 읽도록 요청하거나,
+tracks/auto-paper/skills/evidence-driven-paper 폴더를 사용하는 에이전트의 스킬 디렉터리에 복사합니다.
 스킬 폴더 전체를 복사해야 참조 문서와 검사기도 함께 설치됩니다.
 
 예시 요청:
@@ -34,21 +34,21 @@ skills/evidence-driven-paper 폴더를 사용하는 에이전트의 스킬 디�
 Python 3.10 이상에서 저장소 루트를 기준으로 실행합니다.
 
 ~~~sh
-python3 skills/evidence-driven-paper/scripts/paper_checks.py \
-  skills/evidence-driven-paper/assets/example/checks.json
-python3 -m unittest discover -s tests -v
+python3 tracks/auto-paper/skills/evidence-driven-paper/scripts/paper_checks.py \
+  tracks/auto-paper/skills/evidence-driven-paper/assets/example/checks.json
+python3 -m unittest discover -s tracks/auto-paper/skills/evidence-driven-paper/tests -v
 ~~~
 
 PDF 쪽수 검사에는 pypdf가 추가로 필요합니다. 개발·CI와 같은 의존성은 다음으로
 설치할 수 있습니다.
 
 ~~~sh
-python3 -m pip install -r requirements-dev.txt
+python3 -m pip install -r tracks/auto-paper/skills/evidence-driven-paper/requirements-dev.txt
 ~~~
 
 설정 파일을 논문 프로젝트 루트로 복사하고 결과 경로, 짝짓기 키, 지표 방향,
 기대 비교 개수, 제출 파일을 지정합니다.
-[전체 설정과 출력 규약](../skills/evidence-driven-paper/references/harness.md)에
+[전체 설정과 출력 규약](../../../skills/evidence-driven-paper/references/harness.md)에
 실행 예시와 실패 조건이 있습니다. 포함된 데이터는 사용법을 위한 가상 예제입니다.
 
 검사기는 다음을 확인합니다.

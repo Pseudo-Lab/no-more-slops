@@ -8,9 +8,9 @@ mechanical checks, not a scientific or independent audit.
 From the repository root:
 
 ~~~sh
-python3 skills/evidence-driven-paper/scripts/paper_checks.py \
-  skills/evidence-driven-paper/assets/example/checks.json
-python3 -m unittest discover -s tests -v
+python3 tracks/auto-paper/skills/evidence-driven-paper/scripts/paper_checks.py \
+  tracks/auto-paper/skills/evidence-driven-paper/assets/example/checks.json
+python3 -m unittest discover -s tracks/auto-paper/skills/evidence-driven-paper/tests -v
 ~~~
 
 The bundled example is invented: Candidate has one lower-score win, Baseline
@@ -107,7 +107,7 @@ After an intentional experimental change, review why the expected data and
 counts changed before updating the manifest.
 
 ~~~sh
-python3 skills/evidence-driven-paper/scripts/paper_checks.py \
+python3 tracks/auto-paper/skills/evidence-driven-paper/scripts/paper_checks.py \
   /path/to/paper/checks.json --output /path/to/paper/check-report.json
 ~~~
 

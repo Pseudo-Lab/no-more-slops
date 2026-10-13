@@ -3,16 +3,16 @@ name: Auto-Paper checks
 on:
   pull_request:
     paths:
-      - "skills/evidence-driven-paper/**"
-      - "tests/**"
-      - "requirements-dev.txt"
+      - "tracks/auto-paper/skills/evidence-driven-paper/**"
+      - "tracks/auto-paper/skills/evidence-driven-paper/tests/**"
+      - "tracks/auto-paper/skills/evidence-driven-paper/requirements-dev.txt"
       - ".github/workflows/auto-paper.yml"
   push:
     branches: [main]
     paths:
-      - "skills/evidence-driven-paper/**"
-      - "tests/**"
-      - "requirements-dev.txt"
+      - "tracks/auto-paper/skills/evidence-driven-paper/**"
+      - "tracks/auto-paper/skills/evidence-driven-paper/tests/**"
+      - "tracks/auto-paper/skills/evidence-driven-paper/requirements-dev.txt"
       - ".github/workflows/auto-paper.yml"
   workflow_dispatch:
 
@@ -30,8 +30,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: python -m pip install -r requirements-dev.txt
-      - run: python -m unittest discover -s tests -v
+      - run: python -m pip install -r tracks/auto-paper/skills/evidence-driven-paper/requirements-dev.txt
+      - run: python -m unittest discover -s tracks/auto-paper/skills/evidence-driven-paper/tests -v
       - run: >-
-          python skills/evidence-driven-paper/scripts/paper_checks.py
-          skills/evidence-driven-paper/assets/example/checks.json
+          python tracks/auto-paper/skills/evidence-driven-paper/scripts/paper_checks.py
+          tracks/auto-paper/skills/evidence-driven-paper/assets/example/checks.json

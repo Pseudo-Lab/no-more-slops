@@ -217,7 +217,7 @@ def artifact(root: Path, spec: dict[str, Any]) -> dict[str, Any]:
             from pypdf import PdfReader
         except Exception as exc:
             raise CheckError("PDF page checks require pypdf and working dependencies; "
-                             f"install requirements-dev.txt in this Python environment: {exc}") from exc
+                             f"install tracks/auto-paper/skills/evidence-driven-paper/requirements-dev.txt in this Python environment: {exc}") from exc
         try:
             pages = len(PdfReader(io.BytesIO(data)).pages)
         except Exception as exc:
