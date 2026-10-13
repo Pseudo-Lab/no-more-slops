@@ -49,7 +49,7 @@
     .css-chest-lid { position: absolute; z-index: 1; left: -3px; right: -3px; top: -11px; height: 44px; border: 5px solid #e5b86e; border-radius: 22px 22px 5px 5px; background: repeating-linear-gradient(90deg, transparent 0 48px, #e0ac61 48px 59px, transparent 59px 108px), linear-gradient(#ab6d48, #693c33); transform-origin: center 100%; transition: transform .6s ease; }
     .is-open .css-chest-lid { transform: translateY(-20px) rotate(-13deg); }
     .css-chest-gem { position: absolute; z-index: 2; top: 56px; left: 89px; width: 37px; height: 37px; border: 6px solid #e5b86e; border-radius: 7px; background: #59d8cc; transform: rotate(45deg); box-shadow: 0 0 23px rgba(101, 245, 216, .8); }
-    .stage-toggle { position: absolute; z-index: 3; inset: 0; width: 100%; border: 0; background: transparent; cursor: pointer; color: #f8fbfa; }
+    .stage-toggle { position: absolute; z-index: 3; inset: 0; width: 100%; border: 0; background: transparent; color: #f8fbfa; pointer-events: none; }
     .stage-toggle span { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); white-space: nowrap; padding: 6px 11px; border: 1px solid rgba(218, 244, 239, .45); border-radius: 99px; background: rgba(16, 36, 46, .8); font-size: .75rem; font-weight: 800; }
     .renderer-status { position: absolute; z-index: 3; top: 12px; right: 15px; padding: 4px 8px; border-radius: 99px; background: rgba(16, 36, 46, .7); color: #d6e8e5; font-size: .68rem; pointer-events: none; }
     .intake { padding: 15px 18px; border: 1px solid rgba(173, 216, 223, .3); border-radius: 18px; background: rgba(255, 255, 255, .085); }
@@ -58,13 +58,18 @@
     .pick-video { cursor: pointer; color: #fff4d8; text-decoration: underline; text-underline-offset: 3px; }
     .pick-video:focus-within { outline: 3px solid #fd7b61; outline-offset: 3px; }
     .intake-status { margin: 8px 0; min-height: 2.4em; color: #f1f5f5; font-size: .85rem; }
+    .intake label[for="caption-text"] { display: block; margin-top: 11px; font-size: .76rem; font-weight: 800; color: #dbece8; }
+    .intake input[type="text"] { width: 100%; margin-top: 5px; padding: 9px 11px; border: 1px solid #8cabae; border-radius: 10px; background: #193343; color: #fff; font: inherit; }
+    .intake input[type="text"]:focus-visible { outline: 3px solid #ffd189; outline-offset: 2px; }
     .intake progress { display: block; width: 100%; height: 12px; appearance: none; border: 0; border-radius: 99px; overflow: hidden; background: #344759; }
     .intake progress::-webkit-progress-bar { background: #344759; }
-    .intake progress::-webkit-progress-value { background: linear-gradient(90deg, #73ded0, #ffd189); border-radius: 99px; transition: width .18s ease; }
+    .intake progress::-webkit-progress-value { background: linear-gradient(90deg, #73ded0, #ffd189, #73ded0); background-size: 200% 100%; border-radius: 99px; transition: width .18s ease; }
+    .treasure-stage.is-processing + .intake progress::-webkit-progress-value { animation: progress-shimmer 1.4s linear infinite; }
     .intake progress::-moz-progress-bar { background: #73ded0; }
     .intake small { display: block; margin-top: 8px; color: #bdccd7; }
     @keyframes chest-rattle { 0%, 100% { transform: translate(-50%, -35%) rotate(0); } 25% { transform: translate(-47%, -35%) rotate(3deg); } 50% { transform: translate(-53%, -35%) rotate(-3deg); } 75% { transform: translate(-48%, -35%) rotate(2deg); } }
     @keyframes chest-glow { 50% { box-shadow: 0 0 48px rgba(255, 195, 105, .55), inset 0 0 45px rgba(255, 195, 105, .2); } }
+    @keyframes progress-shimmer { to { background-position: -200% 0; } }
     .hero-note { border: 1px solid rgba(173, 216, 223, .3); border-radius: 22px; background: rgba(255, 255, 255, .085); padding: 19px 23px; backdrop-filter: blur(12px); }
     .hero-note strong { display: block; font-size: .91rem; color: #8cebd9; margin-bottom: 12px; }
     .hero-note p { margin-bottom: 0; font-size: 1.14rem; font-weight: 750; line-height: 1.55; }
@@ -89,8 +94,9 @@
     .gems span.earned { color: #fff; background: #eaa656; box-shadow: 0 3px 12px rgba(232, 152, 69, .36); }
     @media (prefers-reduced-motion: no-preference) { .gems span.earned { animation: gem-pop .35s ease-out; } }
     @keyframes gem-pop { 50% { transform: translateY(-5px) scale(1.16); } }
-    .demo-advance { width: 100%; border: 0; border-radius: 12px; padding: 12px 16px; background: #1c5c51; color: #fff; font-weight: 850; cursor: pointer; }
-    .demo-advance:hover { background: #14463e; }
+    .result-links { display: flex; flex-wrap: wrap; gap: 9px; }
+    .result-links a { display: inline-block; border-radius: 12px; padding: 10px 15px; background: #1c5c51; color: #fff; font-weight: 850; text-decoration: none; }
+    .result-links a[hidden] { display: none; }
     .real-activity { padding-top: 9px; border-top: 1px solid #bfd7c9; }
     .real-activity b { color: #156554; }
     section + section { margin-top: 80px; }
@@ -213,7 +219,7 @@
       .terms { grid-template-columns: 1fr; }
       .closing { flex-direction: column; align-items: start; }
     }
-    @media (prefers-reduced-motion: reduce) { .css-chest-lid, .css-chest { transition: none; } .is-rattling .css-chest, .treasure-stage.is-processing { animation: none; } }
+    @media (prefers-reduced-motion: reduce) { .css-chest-lid, .css-chest { transition: none; } .is-rattling .css-chest, .treasure-stage.is-processing, .treasure-stage.is-processing + .intake progress::-webkit-progress-value { animation: none; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
@@ -222,7 +228,7 @@
     <div class="wrap">
       <div class="topbar">
         <span class="brand">AUTO / POST · FAMILY REEL</span>
-        <nav aria-label="페이지 이동"><a href="#demo">진행 시연</a><a href="#flow">파이프라인</a><a href="#market-map">12개 조합</a><a href="#tools">실행 도구</a></nav>
+        <nav aria-label="페이지 이동"><a href="#demo">실제 진행</a><a href="#flow">파이프라인</a><a href="#market-map">12개 조합</a><a href="#tools">실행 도구</a></nav>
       </div>
       <div class="hero-content">
         <div>
@@ -234,14 +240,16 @@
           <div class="treasure-stage" id="treasure-stage" data-renderer="fallback" aria-label="영상 파일을 놓을 수 있는 추억 보물상자">
             <div class="css-chest" aria-hidden="true"><div class="css-chest-lid"></div><div class="css-chest-body"></div><div class="css-chest-gem"></div></div>
             <canvas id="treasure-canvas" aria-hidden="true"></canvas>
-            <button class="stage-toggle" id="stage-toggle" type="button" aria-expanded="false" aria-label="보물상자 열어보기 시연"><span>상자 클릭 · 영상 드롭 가능</span></button>
+            <div class="stage-toggle" id="stage-toggle" aria-hidden="true"><span>영상을 상자에 놓으면 실제 제작 시작</span></div>
             <span class="renderer-status" id="renderer-status" role="status">2D 대체 화면 · 3D 지원 시 자동 표시</span>
           </div>
-          <div class="intake" aria-label="영상 파일 확인 진행률">
+          <div class="intake" aria-label="영상 처리 진행률">
             <div class="intake-head"><strong>내 영상 준비</strong><label class="pick-video" for="video-file">영상 선택 <input class="sr-only" id="video-file" type="file" accept=".mp4,.mov,.webm,video/mp4,video/quicktime,video/webm" aria-describedby="video-help"></label></div>
+            <label for="caption-text">화면에 넣을 문구 · 실제 동작에 맞게 바꿀 수 있어요</label>
+            <input id="caption-text" type="text" maxlength="80" value="우리 아기의 작은 순간" aria-describedby="video-help">
             <p class="intake-status" id="video-status" role="status" aria-live="polite">MP4·MOV·WebM을 상자에 놓거나 영상을 선택해 주세요.</p>
-            <progress id="video-meter" max="100" value="0" aria-label="로컬 영상 파일 읽기 진행률">0%</progress>
-            <small id="video-help">브라우저 안에서만 읽습니다. 이 단계는 영상 렌더링이나 업로드가 아닙니다.</small>
+            <progress id="video-meter" max="100" value="0" aria-label="실제 영상 처리 진행률">0%</progress>
+            <small id="video-help">로컬 서버에서 FFmpeg로 실제 처리합니다. 기본 문구는 동작을 자동 판별한 자막이 아니며, 게시 전 검토가 필요합니다.</small>
           </div>
           <aside class="hero-note" aria-label="현재 상태">
             <strong>2026.10.13 기준 · 실제 검증 상태</strong>
@@ -261,16 +269,16 @@
   <main class="wrap">
     <section id="demo" class="demo" aria-labelledby="demo-title">
       <div>
-        <span class="demo-label">✦ 화면 시연 · 실제 영상 처리 아님</span>
-        <h2 id="demo-title">우리만의 릴스 여정을 시작해요</h2>
-        <p id="demo-message" aria-live="polite">다섯 장면을 따라가며 보석을 모아 보세요. 시연 버튼은 Python·FFmpeg 작업을 실행하지 않습니다.</p>
+        <span class="demo-label">✦ 실제 영상 처리 · 로컬 FFmpeg</span>
+        <h2 id="demo-title">상자에 영상을 넣으면 편집이 시작됩니다</h2>
+        <p id="demo-message" aria-live="polite">전송, 원본 확인, 합성, 마무리 인코딩, 기술 검사를 실제 작업 상태에 맞춰 보여줍니다.</p>
       </div>
       <div class="demo-controls">
-        <div class="demo-progress"><span id="demo-position">시연 대기 · 0 / 5단계</span><span id="demo-reward">보석 0 / 5</span></div>
-        <progress id="demo-meter" max="5" value="0" aria-label="화면 시연 진행 단계">0 / 5</progress>
+        <div class="demo-progress"><span id="demo-position">영상 대기</span><span id="demo-reward">보석 0 / 5</span></div>
+        <progress id="demo-meter" max="100" value="0" aria-label="실제 영상 처리 진행률">0%</progress>
         <div class="gems" id="demo-gems" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></div>
-        <button class="demo-advance" id="demo-advance" type="button">시연 시작</button>
-        <p class="real-activity" role="status" aria-live="polite"><b>실제 JSON 상태</b> · <span id="real-activity-text">파일 대기. 아래에서 기획안을 선택하면 읽기·형식 검증 결과가 표시됩니다.</span></p>
+        <div class="result-links"><a id="result-video" hidden download="instagram-reel.mp4">완성 영상 받기</a><a id="result-quality" hidden download="instagram-reel.quality.json">기술 검사 결과</a></div>
+        <p class="real-activity" role="status" aria-live="polite"><b>밈 기획안 JSON</b> · <span id="real-activity-text">파일 대기. 아래에서 기획안을 선택하면 읽기·형식 검증 결과가 표시됩니다.</span></p>
       </div>
     </section>
 
@@ -336,7 +344,7 @@
     </section>
 
     <section id="tools" aria-labelledby="tools-title">
-      <div class="section-head"><div><span class="kicker">04 / IMPLEMENTATION</span><h2 id="tools-title">실제 쓰는 도구와 실행 경계</h2><p>HTML은 흐름과 결과를 보는 화면입니다. 조사 자료 입력, 점수 계산, 렌더링과 게시 판단은 아래 작업 절차에서 이뤄집니다.</p></div></div>
+      <div class="section-head"><div><span class="kicker">04 / IMPLEMENTATION</span><h2 id="tools-title">실제 쓰는 도구와 실행 경계</h2><p>로컬 서버에서 영상을 넣으면 FFmpeg 렌더링과 기술 검사를 시작합니다. 밈 조사와 게시 판단은 별도 검토가 필요합니다.</p></div></div>
       <div class="tool-shell">
         <div class="tool-main">
           <h3>현재 파이프라인</h3>
@@ -345,7 +353,7 @@
             <div><dt>Python</dt><dd><code>score_reel_memes.py</code>로 선별표와 기획안을 만들고, <code>render_instagram_reel.py</code>로 편집 단계를 연결합니다.</dd></div>
             <div><dt>ffprobe</dt><dd>원본의 길이, 방향, 영상·음성 스트림을 검사합니다.</dd></div>
             <div><dt>FFmpeg</dt><dd>9:16·1080×1920·30 fps, H.264/AAC 출력, 자막·BGM·효과음·가벼운 색 보정과 기술 QA를 수행합니다.</dd></div>
-            <div><dt>소리·자막</dt><dd>실제 적용 BGM은 NumPy로 만든 WAV, 효과음은 Python으로 생성했습니다. 장면 자막은 SRT로 작성하고 렌더 시 ASS 스타일을 적용합니다.</dd></div>
+            <div><dt>소리·자막</dt><dd>기존 사례는 NumPy BGM과 Python 효과음을 썼습니다. 이 화면의 자동 실행은 Python으로 원본 BGM을 만들고, 입력한 문구를 SRT→ASS로 적용합니다.</dd></div>
           </dl>
         </div>
         <div class="tool-side">
@@ -353,12 +361,15 @@
           <p>후보·원본 조회수·안전 검토를 JSON에 기록한 뒤 점수 스크립트를 실행합니다. 생성된 <code>trend-plan.json</code>을 이 화면의 “내 기획안 열기”로 확인할 수 있습니다.</p>
           <pre><code>python scripts/score_reel_memes.py INPUT.json \
   --brief trend-brief.md --plan trend-plan.json</code></pre>
-          <p>편집자는 검토한 장면 자막과 권리가 확인된 소리를 넣어 별도 렌더 스크립트를 실행합니다.</p>
+          <p>프로젝트 루트에서 로컬 서버를 실행한 뒤 이 주소를 열고 영상을 상자에 넣습니다. 원본과 결과는 <code>work/reel-ui-jobs/</code>에 저장됩니다.</p>
+          <pre><code>python -m scripts.serve_instagram_reel_ui
+http://127.0.0.1:8765/</code></pre>
+          <p>장면별 자막과 별도 BGM을 준비한 편집자는 기존 렌더 스크립트를 직접 실행할 수도 있습니다.</p>
           <pre><code>python scripts/render_instagram_reel.py \
   work/source.mp4 work/scenes.srt work/owned-bgm.wav \
   --output out/reel.mp4</code></pre>
-          <small>Whisper 음성 인식은 장면 자막에 필요하지 않았습니다. Seedance와 ElevenLabs는 향후 선택적으로 검토할 도구이며 이 작업의 영상·소리 제작에는 사용하지 않았습니다. 플랫폼 API를 통한 실시간 자동 수집도 아직 연결되지 않았습니다.</small>
-          <p style="margin-top: 16px; margin-bottom: 0;">3D 미리보기는 Three.js를 CDN에서 읽습니다. 팀 저장소 루트에서 <code>python -m http.server 8000</code>을 실행하고 <code>http://localhost:8000/docs/instagram-automation-pipeline.html</code>을 여세요. 네트워크나 WebGL을 사용할 수 없으면 2D 상자가 표시됩니다.</p>
+          <small>기본 자막은 공통 문구입니다. 영상 속 실제 동작을 AI가 판별하지 않으므로 게시 전에 문구·초상 공개·화면·소리를 직접 확인해야 합니다. 자동 게시와 플랫폼 API 실시간 수집은 연결되지 않았습니다.</small>
+          <p style="margin-top: 16px; margin-bottom: 0;">3D 상자는 Three.js를 CDN에서 읽습니다. 네트워크나 WebGL을 사용할 수 없으면 2D 상자가 표시되며, 영상 처리는 계속할 수 있습니다.</p>
         </div>
       </div>
     </section>
@@ -399,93 +410,131 @@
       const videoInput = document.getElementById("video-file");
       const videoStatus = document.getElementById("video-status");
       const videoMeter = document.getElementById("video-meter");
-      const demoButton = document.getElementById("demo-advance");
+      const demoMeter = document.getElementById("demo-meter");
       const demoGems = [...document.querySelectorAll("#demo-gems span")];
-      const demoSteps = [
-        ["트렌드 지도를 펼치고 있어요", "네 플랫폼과 세 시장의 아이디어를 둘러보는 화면 시연입니다."],
-        ["아기에게 어울리는 장면을 살펴봐요", "안전한 표현과 실제 동작에 맞는 포맷을 고르는 과정을 보여줍니다."],
-        ["추억을 정리하고 있습니다", "원본 영상을 살피고 자막을 붙일 장면을 고르는 과정을 보여줍니다."],
-        ["소리와 자막으로 순간을 꾸미고 있어요", "배경음·효과음·장면 자막을 준비하는 과정을 보여줍니다."],
-        ["완성된 장면을 함께 확인해요", "렌더 결과와 게시 문구를 사람이 검수하는 과정을 보여줍니다."]
-      ];
+      const phaseNames = { prepare: "원본 확인", compose: "화면·자막·BGM 합성", finish: "보정·인코딩", quality: "기술 검사", done: "완성" };
+      const phaseGems = { prepare: 1, compose: 2, finish: 3, quality: 4, done: 5 };
       let plan = new Map(markets.flatMap(market => platforms.map(platform => [`${market}:${platform}`, { market, platform, selected: null, alternate: null }])));
       let active = "KR:instagram";
-      let demoStep = -1;
-      let gemsEarned = 0;
       let intakeBusy = false;
       let rattleTimer;
+      let lastPhase = "";
 
       function setChestOpen(open) {
         stage.classList.toggle("is-open", open);
-        stageToggle.setAttribute("aria-expanded", String(open));
-        stageToggle.setAttribute("aria-label", open ? "보물상자 닫기 시연" : "보물상자 열어보기 시연");
-        stageToggle.querySelector("span").textContent = open ? "상자 닫기 · 시연" : "상자 열어보기 · 시연";
+        stageToggle.querySelector("span").textContent = open ? "릴스 초안 완성 · 아래에서 받기" : "영상을 상자에 놓으면 실제 제작 시작";
         stage.dispatchEvent(new Event("chest-change"));
       }
-      stageToggle.addEventListener("click", () => {
-        if (!intakeBusy) setChestOpen(!stage.classList.contains("is-open"));
-      });
 
-      async function inspectVideo(file) {
-        if (intakeBusy) return;
+      function rattleChest() {
+        stage.classList.remove("is-rattling");
+        void stage.offsetWidth;
         stage.classList.add("is-rattling");
         clearTimeout(rattleTimer);
         rattleTimer = setTimeout(() => stage.classList.remove("is-rattling"), 700);
-        if (!file || (!/^video\//.test(file.type) && !/\.(mp4|mov|webm)$/i.test(file.name)) || !file.size) {
+      }
+
+      function setProgress(percent) {
+        videoMeter.value = percent;
+        demoMeter.value = percent;
+      }
+
+      function updateJob(job) {
+        const progress = Math.min(100, Math.max(0, Number(job.progress) || 0));
+        setProgress(progress);
+        videoStatus.textContent = `추억을 정리하고 있습니다 · ${job.message} · ${progress}%`;
+        document.getElementById("demo-title").textContent = phaseNames[job.phase] || "영상 처리 중";
+        document.getElementById("demo-message").textContent = job.message;
+        document.getElementById("demo-position").textContent = `${phaseNames[job.phase] || "영상 처리"} · ${progress}%`;
+        const earned = phaseGems[job.phase] || 0;
+        document.getElementById("demo-reward").textContent = `보석 ${earned} / 5`;
+        demoGems.forEach((gem, index) => gem.classList.toggle("earned", index < earned));
+        if (job.phase !== lastPhase) {
+          lastPhase = job.phase;
+          if (["compose", "finish", "quality"].includes(job.phase)) rattleChest();
+        }
+        if (job.status === "succeeded") {
+          videoStatus.textContent = `${job.name} · 릴스 초안 완성 · 게시 전 내용 검토 필요`;
+          const videoLink = document.getElementById("result-video");
+          const qualityLink = document.getElementById("result-quality");
+          videoLink.href = job.video_url;
+          qualityLink.href = job.quality_url;
+          videoLink.hidden = qualityLink.hidden = false;
+          setChestOpen(true);
+        }
+      }
+
+      function uploadVideo(file, caption) {
+        return new Promise((resolve, reject) => {
+          const request = new XMLHttpRequest();
+          request.open("POST", `/api/reels?name=${encodeURIComponent(file.name)}&caption=${encodeURIComponent(caption)}`);
+          request.setRequestHeader("X-Reel-UI", "1");
+          request.setRequestHeader("Content-Type", file.type || "application/octet-stream");
+          request.upload.onprogress = event => {
+            if (!event.lengthComputable) return;
+            const percent = Math.min(10, Math.round(event.loaded / event.total * 10));
+            setProgress(percent);
+            videoStatus.textContent = `추억을 정리하고 있습니다 · 로컬 서버로 영상 전송 ${Math.round(event.loaded / event.total * 100)}%`;
+            document.getElementById("demo-position").textContent = `영상 전송 · ${percent}%`;
+          };
+          request.onload = () => {
+            let response;
+            try { response = JSON.parse(request.responseText); }
+            catch { reject(new Error("서버 응답을 읽지 못했습니다.")); return; }
+            if (request.status !== 202) reject(new Error(response.error || "영상 전송에 실패했습니다."));
+            else resolve(response.id);
+          };
+          request.onerror = () => reject(new Error("로컬 영상 서버에 연결하지 못했습니다."));
+          request.send(file);
+        });
+      }
+
+      async function followJob(id) {
+        for (;;) {
+          const response = await fetch(`/api/reels/${id}`, { cache: "no-store" });
+          if (!response.ok) throw new Error("작업 상태를 읽지 못했습니다.");
+          const job = await response.json();
+          updateJob(job);
+          if (job.status === "succeeded") return;
+          if (job.status === "failed") {
+            try { localStorage.removeItem("reel-live-job"); } catch {}
+            throw new Error(job.message);
+          }
+          await new Promise(resolve => setTimeout(resolve, 500));
+        }
+      }
+
+      async function inspectVideo(file) {
+        if (intakeBusy) return;
+        rattleChest();
+        if (!file || !/\.(mp4|mov|webm)$/i.test(file.name) || !file.size || file.size > 1_000_000_000) {
           videoStatus.textContent = "MP4·MOV·WebM 영상 파일을 넣어 주세요.";
-          videoMeter.value = 0;
+          setProgress(0);
           return;
         }
         intakeBusy = true;
+        lastPhase = "";
         setChestOpen(false);
         stage.classList.add("is-processing");
         stage.dispatchEvent(new Event("chest-change"));
-        videoMeter.value = 0;
-        videoStatus.textContent = "추억을 정리하고 있습니다 · 로컬 영상 읽기 0%";
-        const url = URL.createObjectURL(file);
-        const video = document.createElement("video");
-        const metadata = new Promise(resolve => {
-          const timer = setTimeout(() => resolve(null), 12000);
-          video.addEventListener("loadedmetadata", () => {
-            clearTimeout(timer);
-            resolve({ duration: video.duration, width: video.videoWidth, height: video.videoHeight });
-          }, { once: true });
-          video.addEventListener("error", () => {
-            clearTimeout(timer);
-            resolve(null);
-          }, { once: true });
-          video.preload = "metadata";
-          video.src = url;
-        });
+        setProgress(0);
+        document.getElementById("result-video").hidden = true;
+        document.getElementById("result-quality").hidden = true;
+        videoStatus.textContent = "추억을 정리하고 있습니다 · 로컬 서버 확인 중";
         try {
-          const reader = file.stream().getReader();
-          let loaded = 0;
-          let shown = -1;
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            loaded += value.byteLength;
-            const percent = Math.min(99, Math.floor(loaded / file.size * 100));
-            if (percent !== shown) {
-              shown = percent;
-              videoMeter.value = percent;
-              videoStatus.textContent = `추억을 정리하고 있습니다 · 로컬 영상 읽기 ${percent}%`;
-            }
+          if (location.protocol !== "http:" || location.hostname !== "127.0.0.1") {
+            throw new Error("실제 편집은 프로젝트에서 python -m scripts.serve_instagram_reel_ui 실행 후 http://127.0.0.1:8765/ 에서 시작해 주세요.");
           }
-          videoStatus.textContent = "추억을 정리하고 있습니다 · 영상 길이와 화면 크기 확인 중";
-          const info = await metadata;
-          if (!info || !info.width || !info.height) throw new Error("영상 정보를 읽지 못했습니다.");
-          videoMeter.value = 100;
-          const duration = Number.isFinite(info.duration) ? `${info.duration.toFixed(1)}초` : "길이 확인 불가";
-          videoStatus.textContent = `${file.name} · ${duration} · ${info.width}×${info.height} · 로컬 준비 완료`;
-          setChestOpen(true);
+          const health = await fetch("/api/health", { cache: "no-store" });
+          if (!health.ok || !(await health.json()).ok) throw new Error("로컬 서버가 필요합니다. 프로젝트에서 python -m scripts.serve_instagram_reel_ui 를 실행해 주세요.");
+          const id = await uploadVideo(file, document.getElementById("caption-text").value.trim());
+          try { localStorage.setItem("reel-live-job", id); } catch {}
+          await followJob(id);
         } catch (error) {
-          videoMeter.value = 0;
-          videoStatus.textContent = `파일 확인 실패: ${error.message}`;
+          videoStatus.textContent = error.message;
+          document.getElementById("demo-message").textContent = error.message;
+          document.getElementById("demo-title").textContent = "처리 상태를 확인해 주세요";
         } finally {
-          video.removeAttribute("src");
-          video.load();
-          URL.revokeObjectURL(url);
           intakeBusy = false;
           stage.classList.remove("is-processing");
           stage.dispatchEvent(new Event("chest-change"));
@@ -508,46 +557,6 @@
         event.preventDefault();
         stage.classList.remove("is-dragover");
         inspectVideo(event.dataTransfer.files?.[0]);
-      });
-
-      function showDemo() {
-        const title = document.getElementById("demo-title");
-        const detail = document.getElementById("demo-message");
-        const position = document.getElementById("demo-position");
-        const meter = document.getElementById("demo-meter");
-        if (demoStep < 0) {
-          title.textContent = "우리만의 릴스 여정을 시작해요";
-          detail.textContent = "다섯 장면을 따라가며 보석을 모아 보세요. 시연 버튼은 Python·FFmpeg 작업을 실행하지 않습니다.";
-          position.textContent = "시연 대기 · 0 / 5단계";
-          meter.value = 0;
-          demoButton.textContent = "시연 시작";
-        } else if (demoStep < demoSteps.length) {
-          title.textContent = demoSteps[demoStep][0];
-          detail.textContent = demoSteps[demoStep][1];
-          position.textContent = `화면 시연 · ${demoStep + 1} / 5단계`;
-          meter.value = demoStep + 1;
-          demoButton.textContent = demoStep === 4 ? "시연 완료 · 상자 열기" : "다음 단계 시연";
-        } else {
-          title.textContent = "추억 보석 5개를 모았어요!";
-          detail.textContent = "화면 시연이 끝났습니다. 실제 후보 검증과 영상 제작 상태는 아래 결과판에서 따로 확인하세요.";
-          position.textContent = "화면 시연 완료 · 5 / 5단계";
-          meter.value = 5;
-          demoButton.textContent = "다시 시연";
-        }
-        document.getElementById("demo-reward").textContent = `보석 ${gemsEarned} / 5`;
-        demoGems.forEach((gem, index) => gem.classList.toggle("earned", index < gemsEarned));
-      }
-      demoButton.addEventListener("click", () => {
-        if (demoStep === demoSteps.length) {
-          demoStep = -1;
-          gemsEarned = 0;
-          setChestOpen(false);
-        } else {
-          if (demoStep >= 0) gemsEarned = demoStep + 1;
-          demoStep += 1;
-          if (demoStep === demoSteps.length) setChestOpen(true);
-        }
-        showDemo();
       });
 
       function showDetail(key) {
@@ -633,6 +642,19 @@
       });
 
       render();
+      let recentJob;
+      try { recentJob = localStorage.getItem("reel-live-job"); } catch {}
+      if (location.protocol === "http:" && location.hostname === "127.0.0.1" && /^[a-f0-9]{32}$/.test(recentJob || "")) {
+        intakeBusy = true;
+        stage.classList.add("is-processing");
+        followJob(recentJob).catch(error => {
+          videoStatus.textContent = `이전 작업 상태를 불러오지 못했습니다: ${error.message}`;
+          try { localStorage.removeItem("reel-live-job"); } catch {}
+        }).finally(() => {
+          intakeBusy = false;
+          stage.classList.remove("is-processing");
+        });
+      }
     })();
   </script>
   <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js"}}</script>
@@ -753,7 +775,7 @@
       });
       resize();
       stage.dataset.renderer = "three";
-      status.textContent = "Three.js 3D 상자 · 화면 시연";
+      status.textContent = "Three.js 3D 상자 · 실제 작업 연동";
       if (!reduced) {
         const loop = now => {
           if (stage.dataset.renderer === "three" && !document.hidden) draw(now);
