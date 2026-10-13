@@ -4,6 +4,9 @@
 
 - **결과물**: https://pawstamp.vercel.app (설치 없이 링크로 바로 열림)
 - **트랙**: Auto-Application
+- **작성자**: [bea-kang](https://github.com/bea-kang)
+- **제출 PR**: [#2](https://github.com/Pseudo-Lab/no-more-slops/pull/2)
+- **결과물 위치**: [outputs/week-01/](outputs/week-01/README.md)
 - **제작 기간**: 2026-10-09 ~ 10-10 (MVP 배포까지 약 1시간, 이후 사용자 반응 보며 고도화)
 - **제작 방식**: Claude Code와 대화로 기획·구현·배포
 
@@ -29,7 +32,8 @@ app/
   src/breeds.js       견종·고양이 프리셋과 캐릭터 이미지
   supabase/schema.sql 테이블, RLS, 하트·수정 RPC, 욕설 트리거
 CHARACTER_PROMPTS.md  견종 캐릭터 이미지 생성 프롬프트 27종
-content/              인스타 카드뉴스 HTML 템플릿(레슨런, 감성 소개), 최종 카피, 릴스 영상 스크립트
+content/              인스타 카드뉴스 HTML 템플릿(레슨런, 감성 소개), 릴스 영상 스크립트
+outputs/week-01/      결과물 안내, 최종 카피(LESSONS-insta.md), 주차별 최종 제출 위치
 LESSONS.md            만들면서 배운 것 (상세)
 DECISIONS.md          로그인·얼굴 처리 의사결정 메모
 ```
@@ -55,9 +59,9 @@ npm run dev          # .env 없으면 브라우저 저장소 모드로 바로 �
 
 1. `content/deck.html?t=A&d=lesson&s=1`(레슨런), `content/deck-intro-emotional.html?s=1`(소개)을 1080×1350으로 캡처 (헤드리스 크롬 `--screenshot`)
 2. `python3 content/reel/frames.py <폴더> '#161413' slide1.png:2.5 slide2.png:6 ...` 로 9:16 프레임과 목록 생성
-3. `swiftc content/reel/mkvideo.swift -o mkvideo && ./mkvideo <폴더>/manifest.txt reel.mp4` (ffmpeg 없이 macOS AVFoundation으로 mp4 생성)
+3. `mkdir -p outputs/week-01` 후 `swiftc content/reel/mkvideo.swift -o <폴더>/mkvideo && <폴더>/mkvideo <폴더>/manifest.txt outputs/week-01/reel.mp4` (ffmpeg 없이 macOS AVFoundation으로 mp4 생성)
 
-사진·캐릭터 이미지는 저작권·개인정보 때문에 포함하지 않았다.
+카드뉴스 템플릿이 참조하는 사진은 저작권·개인정보 때문에 포함하지 않았다. 앱에서 사용하는 견종 캐릭터 파일은 `app/src/assets/characters/`에 포함되어 있다. 완성한 카드뉴스 PNG와 릴스 MP4를 추가 제출할 때는 `outputs/week-01/`에 두고 이 폴더의 README에 기록한다.
 
 ## 지표 (2026-10-10 기준, 지인 대상 공개 첫날)
 
