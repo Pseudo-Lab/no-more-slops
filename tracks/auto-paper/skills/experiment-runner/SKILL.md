@@ -78,7 +78,7 @@ advice; use only what the files say.
 
 On Windows, `~` is `C:\Users\<user>`. If a file is not found there, use
 the copy in the project's own skills tree, if one exists (e.g.
-`no-more-slops/auto-paper/claude-skills/.claude/skills/...`) and say which
+`no-more-slops/tracks/auto-paper/skills/...`) and say which
 copy was read. If no copy of a reference can be read, stop and tell the
 user; do not proceed from memory.
 
