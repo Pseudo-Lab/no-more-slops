@@ -1022,14 +1022,17 @@ http://127.0.0.1:8765/</code></pre>
       }
     })();
   </script>
-  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js"}}</script>
+  <script type="importmap">{"imports":{"three":"./assets/three-0.186.0/three.module.js"}}</script>
   <script type="module">
     const stage = document.getElementById("treasure-stage");
     const canvas = document.getElementById("treasure-canvas");
     const status = document.getElementById("renderer-status");
+    let initStep = "module";
     try {
       const THREE = await import("three");
+      initStep = "webgl";
       const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "low-power" });
+      initStep = "scene";
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -1250,7 +1253,11 @@ http://127.0.0.1:8765/</code></pre>
       }
     } catch (error) {
       stage.dataset.renderer = "fallback";
-      status.textContent = "3D 사용 불가 · 2D 상자 표시";
+      status.textContent = location.protocol === "file:" ? "127.0.0.1:8765에서 열어 주세요 · 2D 상자 표시"
+        : initStep === "module" ? "3D 파일 로딩 실패 · 2D 상자 표시"
+        : initStep === "webgl" ? "WebGL 사용 불가 · 2D 상자 표시"
+        : "3D 초기화 실패 · 2D 상자 표시";
+      console.error("보물상자 3D 초기화 실패", error);
     }
   </script>
 </body>
