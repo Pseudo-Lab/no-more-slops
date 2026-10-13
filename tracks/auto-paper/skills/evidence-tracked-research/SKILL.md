@@ -1,5 +1,5 @@
 ---
-name: research-pipeline
+name: evidence-tracked-research
 description: Automate evidence-tracked research from question framing and experiment design through execution, independent claim review, manuscript revision, and evaluated skill/context improvement; use for research automation and pipeline audits.
 ---
 
