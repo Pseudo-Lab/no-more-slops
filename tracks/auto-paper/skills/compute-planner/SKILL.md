@@ -25,7 +25,14 @@ The user provides:
   conditions and seeds, API or closed-model dependencies, LLM-judge calls,
   and whether evaluation is automatic
 
-Read `references/compute.md` for available compute resources.
+Read the global compute file
+`~/.claude/skills/compute-planner/references/compute.md`
+(`C:\Users\elika\.claude\skills\compute-planner\references\compute.md`)
+for available compute resources. It is the single authoritative source
+(its "Source of Truth" section). A project-local `compute.md` is only a
+mirror: never required, never a fallback, and its absence, emptiness or
+template text never implies missing GPU access. If the global file cannot
+be read, report compute as UNKNOWN (not UNAVAILABLE) and ask the user.
 
 If newer compute information is provided in the current conversation,
 use the newer information instead.
@@ -66,17 +73,27 @@ Use ranges when appropriate.
 
 ### Step 3: Compare with available hardware
 
-Compare requirements with `references/compute.md`.
+Compare requirements with the global `compute.md` (Feasibility Rules).
 
 Distinguish:
 
 Hardware Fit:
 Could the experiment run on known cluster hardware?
 
-User Feasibility:
-Is the user confirmed to have access to the required hardware?
+Documented Access:
+Is the required partition documented as open to the user's account
+category?
 
-Never assume that cluster-wide hardware is accessible to the user.
+User Feasibility (Allocation Status):
+CONFIRMED if a successful user job is recorded; otherwise UNKNOWN
+(allocation unverified). Queue / wait time is KNOWN or UNKNOWN.
+
+Never assume unrestricted access or guaranteed scheduling. Equally, never
+treat unverified allocation or unknown queue time as UNAVAILABLE.
+UNAVAILABLE requires positive evidence (hardware absent, documented
+partition limits exceeded, or a required account the user does not hold).
+Evaluate GPU designs by default, including single-GPU 7B–8B experiments
+on H100, H200, A40 or V100.
 
 ### Step 4: Assign feasibility
 
@@ -85,6 +102,8 @@ Use:
 EASY
 - Comfortable compute margin
 - Multiple runs/debugging practical
+- Requires CONFIRMED access (a DOCUMENTED-AVAILABLE GPU design is rated
+  FEASIBLE or RISKY on its margin)
 
 FEASIBLE
 - Fits available resources
@@ -98,7 +117,9 @@ IMPOSSIBLE
 - Exceeds confirmed hard constraints
 
 UNKNOWN
-- Critical information is missing
+- Critical information is missing (unverified allocation or unknown
+  queue time alone is not missing critical information; rate the design
+  on Hardware Fit and record User Feasibility separately)
 
 ### Step 5: Suggest compute reductions
 
@@ -177,10 +198,20 @@ reproduction through a finished short paper), the estimate must:
 1. Include time to understand unfamiliar repositories, benchmark protocols,
    evaluation scripts, and the relevant paper sections.
 2. Include realistic dependency/environment setup and debugging overhead.
-3. Not assume that a public repository runs successfully without
-   modification.
-4. Not assume baseline reproduction works on the first attempt; include at
-   least one failed or mismatched reproduction attempt.
+3. Check the actual repository before assigning setup or adaptation
+   overhead. Size the overhead from verified evidence: a documented run
+   command, example configs, pinned dependencies, released checkpoints,
+   outputs or activations. Neither assume it runs unchanged nor assume it
+   fails. An unverified incompatibility is a RISK with a mitigation, not
+   guaranteed work.
+4. Budget baseline reproduction from what is verified. Recomputing from
+   released outputs or released per-item scores is cheap. Rerunning
+   released code costs more. Re-implementing from scratch costs the most.
+   A reproduction mismatch is a RISK, covered by contingency with a stated
+   mitigation (e.g. fall back to the released number plus recomputation
+   from released outputs). Do not add a failed attempt as planned work
+   unless the evidence makes it likely (e.g. known open issues,
+   unreleased checkpoints).
 5. Include time to understand unfamiliar libraries or infrastructure before
    modifying them.
 6. Include realistic analysis, sanity-checking, figure/table creation,
@@ -203,28 +234,36 @@ Beginner phase guidance (defaults; adjust from the actual project, see
   producing the main result table and the required ablation/control, and
   deciding what the result actually supports. A very simple deterministic
   post-processing experiment may use less, only when justified.
-- **Writing a short paper**: about 1.0–1.5 working days by default, unless
-  there is concrete project-specific evidence that less is sufficient.
-  Writing covers the outline; Abstract, Introduction, Related Work, Method,
-  Experiment, Conclusion; integrating real citations; checking references;
-  turning results into tables; figure/table captions; revising claims to
-  match the actual results; basic LaTeX formatting; and final consistency
-  checking. AI may assist drafting, but AI-generated text does not
-  eliminate these tasks, and an AI-assisted or auto-paper workflow does not
-  make writing nearly automatic. If the user explicitly says only a
-  research note (not a short paper) is required, a smaller writing estimate
-  may be used. The default paper target is about four pages of main content
-  plus references unless the user specifies another length.
+- **Writing a short paper (AI-drafted, human-verified)**: the ~4-page
+  paper is drafted primarily by AI (paper-writer), so do **not** budget
+  human drafting time. Budget the human **review and verification** work,
+  about **0.5 working day at Beginner (range 0.5–0.75)**:
+  - tracing every number to an output file;
+  - checking every citation against its source;
+  - checking that each claim matches the evidence and the pre-registered
+    success, stop and SOTA criteria;
+  - correcting figures, tables and captions;
+  - checking limitations and integrity;
+  - a final read.
+
+  Use the upper end when there are many tables or a negative result
+  requires a rewrite. Verification time is mandatory and is never cut to
+  make a project fit. Review can overlap with background compute (count
+  active time once). The default paper target is about four pages of main
+  content plus references unless the user specifies another length.
 - **Writing-first workflow**: if research-readiness-advisor recommends
-  writing first, the estimate must include both the pre-experiment full
-  provisional paper draft (all sections including the Conclusion, with
-  result cells TBD) and the post-experiment result insertion and revision
-  (including rewriting the Abstract, Results, Discussion, and Conclusion if
-  the intended result is not achieved). Both are split from the SAME
-  writing budget, estimated from the project, e.g. pre-experiment draft
-  ~0.75 day + post-experiment results and revision ~0.5 day = 1.25 days
-  total. Do not double-count writing. Numerical results are never
-  fabricated.
+  writing first, the same 0.5–0.75 day covers both reviews:
+  - about 0.25 day to review the AI's pre-experiment full provisional
+    draft (all sections including the Conclusion, with result cells TBD);
+  - about 0.25–0.5 day to verify the AI's post-experiment result
+    insertion and revision, including the rewritten Abstract, Results,
+    Discussion and Conclusion if the intended result is not achieved.
+
+  Do not double-count writing. Numerical results are never fabricated.
+- **Reallocation rule**: the time saved by AI drafting goes to the
+  research: the diagnostic that tests the causal hypothesis, the controls
+  and the reviewer pre-mortem experiment (shared definitions §4e). It
+  never goes to extra optional scope.
 
 At **Intermediate**, keep Beginner items 2–4 and 6 (repositories still
 usually need fixes, reproduction may still need a retry, and analysis
@@ -239,8 +278,16 @@ unfamiliar codebases and tooling; reproduction, analysis, and debugging
 still carry their project-specific risk, and writing still requires real
 time even if less than at Beginner.
 
-At every level, increase the uncertainty (widen the range, and raise the
-conservative upper bound) for projects involving:
+Beginner describes experience, not the project's technical ceiling
+(shared definitions §2). GPU, fine-tuning, activation analysis,
+mechanistic interpretability and white-box projects are never excluded
+because of L. They are estimated from verified tooling.
+
+At every level, record the factors below as RISK entries, each with a
+probability (low / medium / high) and a mitigation. Widen the range only
+where verified evidence (missing configs, unreleased checkpoints, known
+open issues) makes the extra work likely. A speculative failure is
+covered by contingency, not added as work. Factors:
 
 - unfamiliar research repositories;
 - multi-GPU / model-parallel execution;
@@ -251,8 +298,10 @@ conservative upper bound) for projects involving:
 - fragile or difficult-to-reproduce published effects;
 - multiple interacting frameworks or repositories.
 
-The increase is largest at Beginner, smaller at Intermediate, and smallest
-at Advanced, but never zero for fragile effects or external APIs.
+Learning overhead for genuinely unfamiliar tools is largest at Beginner,
+smaller at Intermediate, and smallest at Advanced. Count it once, in the
+phase where it occurs. Fragile effects and external APIs always get a
+RISK entry.
 
 A project must fit D at the selected level L. A project that would fit for
 a more experienced researcher but not at level L is DOES NOT FIT DURATION
@@ -261,12 +310,24 @@ never shrink an estimate merely to make a project fit D; if it does not
 fit, propose redesign options (below).
 
 The goal is realistic, not pessimistic, estimates. Do not inflate every
-phase mechanically. A simple project using released outputs and standard
-Python / scikit-learn may still fit comfortably within five working days at
-Beginner. Projects involving unfamiliar repositories, GPU inference, model
-serving, multi-GPU execution, activation hooks, external APIs, fragile
-baseline reproduction, or complicated evaluation get appropriately wider
-and higher estimates.
+phase mechanically, and do not stack pessimistic assumptions. Do not
+assume any of the following without verification:
+- GPU setup takes a full day;
+- baseline reproduction fails;
+- every model must be downloaded from scratch;
+- existing implementations cannot be reused;
+- the full benchmark must be evaluated, when a pre-specified slice
+  answers the question.
+
+Verify the available resources and code first. Label every phase
+estimate:
+- **VERIFIED:** checked against the repository, dataset, model card,
+  released outputs or compute documentation.
+- **ESTIMATE:** reasoned from verified facts.
+- **RISK:** speculative, with a probability and a mitigation.
+
+See shared definitions §5
+(`~/.claude/skills/research-pipeline/references/research_design_principles.md`).
 
 #### Estimate each project individually
 
@@ -285,14 +346,28 @@ and higher estimates.
 - Estimated work: the range of planned working time across all phases.
   Expected work is its central value; the conservative upper bound is its
   upper end.
-- Required contingency: reserve time for things going wrong, sized from the
-  project's actual risks and the level-L uncertainty factors (no fixed
-  percentage). At Beginner it must be enough to absorb at least one
+- Required contingency: reserve time sized to the one or two most likely
+  RISK entries (no fixed percentage, and not the sum of every conceivable
+  failure). At Beginner it must absorb at least the single most likely
   plausible failure, such as a baseline mismatch, a dependency issue, an
   incorrect metric implementation, an unexpected data format, a method
-  implementation bug, or an experiment producing an uninterpretable result.
-- Total budget required = conservative upper bound of estimated work +
-  required contingency.
+  implementation bug, or an uninterpretable result. Each risk has a stated
+  mitigation.
+- Total budget required = expected work (active time, buckets 1–4) +
+  required contingency. The conservative upper bound of work is reported
+  separately, and must itself be at most D (the contingency is what
+  absorbs the gap between expected and conservative work; do not count
+  that gap twice).
+
+Report the estimate in the five buckets of shared definitions §5:
+1. essential implementation;
+2. compute (active work vs wall-clock; background compute overlapping
+   with writing or analysis is not counted twice);
+3. evaluation and statistics;
+4. paper writing;
+5. contingency.
+
+These buckets are in addition to the phase table below.
 
 Contingency is not working time: never list it as a planned task and never
 count unused contingency as research work.
@@ -300,16 +375,23 @@ count unused contingency as research work.
 #### Standalone first
 
 Every feasibility verdict is based on the STANDALONE estimate, assuming no
-setup carried over from any other project. A shared-setup estimate (e.g.
-"duration if run after Project X with reusable setup") may be reported
-afterwards as additional information, but a project is never labeled as
-fitting D solely because another project was completed first.
+setup carried over from another *planned* project in this portfolio. A
+shared-setup estimate (e.g. "duration if run after Project X with
+reusable setup") may be reported afterwards as additional information,
+but a project is never labeled as fitting D solely because another
+planned project would be completed first.
+
+Standalone does **not** exclude assets that already exist and are
+VERIFIED. These count toward the standalone estimate:
+- public code, released models, adapters, outputs and activations;
+- the user's existing local code, environments, cached weights or
+  confirmed compute allocations, when they are verified to exist now.
 
 Estimate time (in working days, as a range) for each phase, at level L:
 
 | Phase | What drives it |
 |---|---|
-| Understanding the benchmark and relevant prior work | paper length and clarity, protocol complexity, amount of related work |
+| Understanding the benchmark and relevant prior work | paper length and clarity, protocol complexity, amount of related work. When prior-work-checker's Evidence Report exists, size this phase by human verification of that report (the cited sections of the three closest papers and the baseline number). Do not size it as a fresh literature review. The agent-run literature stages belong to the planning budget, not to D, and are not counted twice |
 | Environment setup | repo quality, dependency pinning, infrastructure / cluster setup |
 | Baseline reproduction | evaluation protocol, exact split, preprocessing, reproducing and validating the published metric, investigating discrepancies; released outputs reduce but do not remove validation |
 | Implementation of the change | lines of code touched, number of components modified |
@@ -318,7 +400,7 @@ Estimate time (in working days, as a range) for each phase, at level L:
 | External dependencies | API access, rate limits and cost, closed models, LLM-judge calls |
 | Analysis / sanity checks | sanity checks, metric-implementation checks, baseline comparison, unexpected results, failure cases, main table, ablation/control, deciding what the result supports |
 | Figures and tables | number of results tables and plots |
-| Writing / revision | the required paper (default ~4 pages + references); outline, all sections, real citations, reference checks, captions, revising claims to match results, LaTeX, consistency check |
+| Writing / revision | AI-drafted ~4-page paper; human time covers only review and verification: number tracing, citation checks, claims vs evidence and pre-registered criteria, captions, limitations, final read (≈ 0.5 day at Beginner) |
 
 Explicitly account for: reproduction risk, engineering complexity, training
 requirements, number of experimental conditions and seeds, API dependencies,
@@ -328,47 +410,70 @@ whose inputs are missing as UNKNOWN rather than guessing.
 
 Classify against D:
 
-- FITS DURATION: the STANDALONE total budget required (conservative upper
-  bound of estimated work for the complete workflow — understanding the
-  benchmark and relevant prior work, reproducing the baseline,
-  implementation, debugging, experiments, analysis, figures/tables, and
-  writing the required paper — plus the required contingency) fits within
-  D. All of this is evaluated at the selected experience level L.
-- DOES NOT FIT DURATION: anything else, including projects that fit only if
-  reproduction and debugging go smoothly, projects that fit only with setup
-  reused from another project, and projects that would fit only for a more
-  experienced researcher than L. "Risky but possible" counts as DOES NOT
-  FIT.
+- FITS DURATION, when all three hold (evaluated at level L):
+  - the STANDALONE total budget (expected active work for the complete
+    workflow plus the required contingency) is at most D. The complete
+    workflow is: understanding what the design needs, setup, baseline
+    reproduction on the evaluated slice, implementation, debugging,
+    experiments, evaluation and statistics, figures/tables, and writing
+    the required paper;
+  - the conservative work bound is at most D;
+  - the critical-path wall-clock (including compute that cannot overlap
+    with other work) is at most D.
+- DOES NOT FIT DURATION: anything else, including projects that fit only
+  if every RISK fails to materialise (i.e. no contingency left), projects
+  that fit only with setup from another planned project, and projects that
+  would fit only for a more experienced researcher than L. Before this
+  verdict is final, apply the scope levers (shared definitions §6) and
+  re-estimate.
 
-Five-day rule: when D is 1 week = 5 working days, do not plan about five
-full days of expected work. At Beginner, expected work should normally be
-at most about 3.5–4 working days, leaving the rest for uncertainty and
-recovery. A Beginner project whose realistic conservative workload reaches
-about 5 days is normally DOES NOT FIT DURATION; an exception requires
-explicit justification from unusually low execution risk. For other values
-of D apply the same principle: conservative work plus required contingency
-must fit D.
+Short-sprint rule: expected active work should leave the contingency the
+top risks need.
+- **D = 4 working days:** expected work of about 3–3.5 days, with
+  0.5–1 day of contingency.
+- **D = 5:** about 3.5–4 days of expected work.
+
+A worked 4-day profile is in shared definitions §5. Estimate each project
+from its own verified requirements, not from the profile.
 - UNKNOWN: critical inputs (or D, or L) are missing. State exactly what is
   missing.
 
 User Feasibility = UNKNOWN (unconfirmed GPU access) does not by itself make
-Duration Feasibility UNKNOWN: estimate runtime on the configuration that has
-Hardware Fit, and note the access assumption.
+Duration Feasibility UNKNOWN, and is not by itself a reason to reject.
+Estimate runtime on the configuration that has Hardware Fit, record the
+access as a RISK, and give a concrete mitigation:
+- a day-0 test job on a documented all-account partition;
+- an alternative partition or GPU type (share, ampere, dgxh, dgx2,
+  preempt);
+- pre-downloading weights while other work proceeds;
+- a named smaller fallback model or quantised variant that keeps the
+  mechanism.
 
-Strongly favor projects that are simple benchmark extensions with existing
-repositories, published baselines, automatic evaluation, minimal code
-modification, and inference-only experiments.
+Favour projects that reuse existing repositories, released models,
+outputs or activations, published baselines and automatic evaluation.
+Fine-tuning (e.g. LoRA), activation extraction and white-box analysis are
+acceptable when the verified tooling and a scoped design fit D.
 
 If the verdict is DOES NOT FIT DURATION, name the limiting phase(s) and
 propose redesign options in this order, each with its re-estimated total:
 
-1. Simplify the experiment while keeping a meaningful contribution (fewer
-   conditions or seeds, smaller model, inference-only, existing
-   checkpoints, automatic metric instead of a judge, dropping an API
-   dependency).
-2. Use a simpler established benchmark or baseline for the same question.
+1. Optimise scope while keeping the mechanism and a meaningful,
+   technically deep contribution (shared definitions §6):
+   - narrow to the pre-specified documented failure slice;
+   - reuse released code, models, adapters, outputs or activations;
+   - cut optional models, layers, seeds and conditions;
+   - choose a smaller intervention that keeps the mechanism (e.g. a probe
+     on frozen activations instead of fine-tuning);
+   - use existing checkpoints, an automatic metric instead of a judge, or
+     drop an API dependency.
+2. Use a more appropriate established benchmark, setting or baseline for
+   the same mechanism.
 3. Reformulate the question around a smaller experiment.
 4. Replace it with a different benchmark-centered research question.
+
+For every option, state the binding bucket it relieves and give the
+re-estimated total. If even the best option does not fit, state the
+**minimum verified additional time or resource** that would make it fit.
 
 compute-planner proposes and re-estimates options 1–3 and flags when only
 option 4 remains; research-planner decides and routes changed or
@@ -384,9 +489,9 @@ skills use to order projects from easiest/fastest to hardest/slowest:
 - Experience Level Used: L
 - Standalone Expected Work: central value of the level-L standalone work
   estimate from Step 6 (rounded, e.g. ~3.5 days)
-- Standalone Conservative Range: the level-L standalone work range, whose
-  upper end plus the required contingency is the total budget used for
-  FITS DURATION
+- Standalone Conservative Range: the level-L standalone work range. Its
+  upper end must be ≤ D. Expected work plus the required contingency is
+  the total budget used for FITS DURATION (Step 6).
 - Level-Specific Difficulty: LOW / MEDIUM / HIGH for a researcher at
   level L, with a one-line reason
 - Learning Overhead: days spent understanding unfamiliar repositories,
@@ -425,7 +530,9 @@ of the questions.
 | Minimum Compute | |
 | Recommended Compute | |
 | Hardware Fit | |
-| User Feasibility | |
+| Documented Access | |
+| User Feasibility (Allocation Status) | |
+| Queue / Wait Time | |
 | Main Bottleneck | |
 | Recommended Modification | |
 
@@ -446,7 +553,21 @@ to 0.25 or 0.5; estimated from this project, not a template):
 | External dependencies (API / judge) | | |
 | **Estimated work (total)** | | |
 | Required contingency (not work) | | (which plausible failure(s) it covers) |
-| **Total budget required** | up to … | (conservative work + contingency) |
+| **Total budget required** | up to … | (expected active work + contingency; the conservative work bound must also be ≤ D) |
+
+Label each phase row VERIFIED / ESTIMATE / RISK. Also give the five-bucket
+summary (shared definitions §5):
+
+| Bucket | Active work | Wall-clock | Label | Notes |
+|---|---|---|---|---|
+| 1. Essential implementation | | | | |
+| 2. Compute | | | | (background compute overlapping other work counted once) |
+| 3. Evaluation and statistics | | | | |
+| 4. Paper writing | | | | |
+| 5. Contingency | | | | (top 1–2 risks, each with its mitigation) |
+
+| Risk | Probability | Mitigation | Covered by |
+|---|---|---|---|
 
 | Field | Result |
 |---|---|

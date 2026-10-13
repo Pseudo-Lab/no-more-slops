@@ -1,15 +1,36 @@
 ---
 name: research-planner
-description: Turn benchmark-backed research questions into small, meaningful, time-bounded research plans and compare candidate directions.
+description: Turn benchmark-backed research questions into tightly scoped, technically meaningful, time-bounded research plans with a credible path to beating the strongest comparable baseline. Actively redesign failing directions (scope levers first) and compare candidate directions.
 ---
 
 # Research Planner
 
-Design the smallest meaningful research plan for one or more
+Design the smallest-scope research plan that still delivers a technically
+meaningful contribution with a credible SOTA path, for one or more
 benchmark-backed research questions.
+
+Shared definitions (Beginner, technical depth, SOTA potential vs
+achievement, D-day feasibility, research redesign, mandatory gates) are
+in `~/.claude/skills/research-pipeline/references/research_design_principles.md`.
+They win over older wording here, but no gate is ever weakened. The
+planner is a research designer, not only a filter: Discover → Diagnose →
+Design → Scope → Evaluate → Refine → Select.
 
 Use compute-feasibility results from compute-planner when available.
 Do not independently invent detailed hardware requirements.
+
+Upstream evidence this skill consumes, and never re-derives:
+- [prior_work_novelty_sota_review.md](../prior-work-checker/references/prior_work_novelty_sota_review.md):
+  the Prior-Work Evidence Report schema (§7) and its consumption rules
+  (§8). Owned by prior-work-checker, which alone classifies novelty.
+- [research-readiness-advisor](../research-readiness-advisor/SKILL.md)
+  Steps 5b–5d: SOTA potential S1–S4, technical depth, novelty strength,
+  signal complementarity and negative-result readiness. The advisor
+  alone rates these.
+- compute-planner: FITS DURATION. compute-planner alone decides it.
+
+The planner combines these into the comparison matrix (Step 8b),
+selects, and schedules.
 
 ## Core Principle
 
@@ -88,10 +109,12 @@ replaced. The final research question is derived only after benchmark and
 literature analysis, and may move substantially away from the original
 topic.
 
-Do not ask "How can we make the original idea work?" Ask: "Given the
-strongest available exact benchmark, what is the smallest meaningful
-research question that can be answered within the user-specified
-duration D?"
+Do not ask "How can we make the original idea work?" Ask:
+
+"Given the strongest available exact benchmark, its strongest comparable
+baseline and that baseline's documented weakness, what technically
+meaningful intervention could beat it? What is the smallest-scope design
+that tests it within the user-specified duration D?"
 
 It is acceptable to conclude: "This is an interesting research question,
 but it is a poor short-term benchmark-centered project." That is preferable
@@ -126,12 +149,16 @@ The user provides:
 - The N output slots (RQ identifiers), each from a parsed idea or generated
 - Benchmark/prior-work findings, when available
 - prior-work-checker results (PASS/FAIL, prior-work table, traced baseline
-  number, gap statement, iteration history), when available
+  number, gap statement, iteration history), when available, plus the
+  Prior-Work Evidence Report (novelty classification, three closest
+  prior works, combination analysis, strongest published baseline,
+  known failure modes, evidence quality, DRAFT / FINAL)
 - Compute feasibility findings, when available
 - research-readiness-advisor output (benchmark fit, execution fit,
-  original-question preservation, project type, readiness checks,
-  short-paper readiness, recommended redesign, provisional paper draft, pivot
-  guidance), when available
+  original-question preservation, SOTA potential, novelty strength,
+  project type, readiness checks, Negative-Result Interpretability Review (six fields, SESOI, required
+  controls, PASS / CONDITIONAL / FAIL), short-paper readiness, recommended
+  redesign, provisional paper draft, pivot guidance), when available
 - Per-project duration D (user-specified; hard constraint)
 - Experience level L: Beginner / Intermediate / Advanced (user-specified;
   defined in compute-planner)
@@ -175,6 +202,11 @@ output with that label and ranked last.
 When the planner runs standalone without prior-work-checker results, mark
 every slot "Prior-work check: NOT RUN" and do not rank any slot as a
 strong recommendation.
+
+Take the "Closest prior work", "Novelty" and "Strongest comparable
+baseline" fields from the Evidence Report, quoted as they appear there.
+A slot whose report is still DRAFT can be planned, but it cannot be GO
+(Step 8b).
 
 ### Step 1: Validate the benchmark foundation
 
@@ -273,19 +305,26 @@ duplicates in this sense.
 
 Do not search for completely unexplored problems. Prefer:
 
-"Existing benchmark + strong baseline + one missing comparison/condition/
-method modification"
+"Existing benchmark + strongest comparable baseline + its documented
+weakness + one targeted, technically meaningful intervention"
 
 over "completely new phenomenon with no established evaluation."
 
 Determine:
 
 - What has already been evaluated on this benchmark?
+- What is the strongest comparable baseline (shared definitions §4a), and
+  what is its documented weakness (failure category, subset, error mode,
+  stated limitation)?
 - What specific, verified gap remains?
-- What is the smallest modification that tests it?
+- What intervention targets the cause of that weakness? Does it pass
+  technical depth (§3)? The entire contribution must not be a fixed
+  threshold, vote, average, tuning, or recombination of existing outputs.
+- What is the smallest scope (pre-specified slice, reused assets,
+  essential experiments only) that tests it?
 
 Modify ONE major variable while keeping the benchmark, metric, and baseline
-fixed.
+fixed. "One variable" means isolated, not trivial.
 
 
 ### Step 3: Define the research contribution
@@ -294,18 +333,24 @@ Express the proposed project as:
 
 Existing problem:
 Established benchmark:
-Strong baseline:
+Strongest comparable baseline:
+Documented weakness:
 Specific gap:
-Smallest proposed change:
+Proposed intervention (mechanism):
+Depth case (technical depth PASS):
 Main comparison:
 Expected contribution even if result is negative:
+(Take this from research-readiness-advisor's Negative-Result
+Interpretability Review, "Negative-result contribution"; do not re-derive
+it. It holds only for a sufficiently precise negative result, not for an
+inconclusive one.)
 
 The contribution should look like:
 
 existing benchmark
-+ established baseline
-+ clearly identified limitation/gap
-+ one small modification
++ strongest comparable baseline
++ documented limitation/gap
++ one targeted, technically meaningful intervention
 + controlled comparison
 
 Do not recommend a direction whose primary contribution is only
@@ -325,6 +370,9 @@ Specify:
 - Control
 - Metric
 - Minimum useful ablation
+- The required controls, SESOI, and statistical test from
+  research-readiness-advisor's Negative-Result Interpretability Review
+  (keep them; do not add further controls beyond what it names)
 
 Use the benchmark's existing evaluation protocol.
 
@@ -354,6 +402,15 @@ If compute feasibility is UNKNOWN, preserve it as UNKNOWN.
 Report Hardware Fit separately from User Feasibility. Do not reject a
 direction solely because user-specific GPU access is UNKNOWN.
 
+Resolve compute only from the global
+`~/.claude/skills/compute-planner/references/compute.md`; a project-local
+`compute.md` is never required or used as a fallback, and its absence
+never implies missing GPU access. Unverified allocation and unknown queue
+time are UNKNOWN, never UNAVAILABLE, and alone never lower S4. GPU
+directions, including single-GPU 7B–8B experiments, are considered by
+default; never prefer a CPU-only or API-only direction solely because GPU
+allocation is unverified.
+
 If compute feasibility is RISKY or IMPOSSIBLE, determine whether the
 research plan can be reduced in scope without destroying the core question.
 
@@ -375,16 +432,30 @@ level.
 
 Use compute-planner's level-L workflow estimate and Duration Feasibility
 verdict against D. Do not re-estimate it independently, and do not equate
-short GPU runtime with fitting D. FITS DURATION means the STANDALONE total
-budget required, i.e. the conservative upper bound of estimated work for
-the complete workflow at level L plus the separately stated required
-contingency, fits within D, so the project can realistically and reliably
-be completed within D by a researcher at level L, not merely theoretically
-finished. Contingency is not planned work. Setup reused from another
-project never makes a project fit. When D is 5 working days, a Beginner
-project's expected work should normally be at most about 3.5–4 days, and a
-conservative workload of about 5 days is normally DOES NOT FIT DURATION
-(compute-planner's five-day rule).
+short GPU runtime with fitting D.
+
+FITS DURATION (shared definitions §5) means all of the following, so the
+project can realistically and reliably be completed within D by a
+researcher at level L:
+- the STANDALONE total budget (expected active work for the complete
+  workflow at level L, plus the separately stated contingency sized to
+  the one or two most likely risks) is at most D;
+- the conservative work bound is at most D;
+- the critical-path wall-clock is at most D.
+
+Further rules:
+- Contingency is not planned work.
+- Estimates use verified requirements (VERIFIED / ESTIMATE / RISK). They
+  are never built from stacked pessimistic assumptions. A speculative
+  failure is a RISK with a mitigation.
+- Verified existing assets count toward the standalone estimate: public
+  code, released models, outputs or activations, and the user's verified
+  local environment or allocation. Setup from another *planned* project
+  never makes a project fit.
+- Beginner never makes GPU, fine-tuning, activation or white-box work
+  ineligible (§2).
+- For the user's standard D = 4 working days, expected work is about
+  3–3.5 days plus 0.5–1 day of contingency.
 
 A project that would fit D for a more experienced researcher but not at
 level L is DOES NOT FIT DURATION for this run. Never shrink an estimate, or
@@ -394,9 +465,15 @@ it instead.
 - FITS DURATION: keep.
 - DOES NOT FIT DURATION: do NOT mark it risky and keep it. Redesign it, in
   this order, until it fits:
-  1. Simplify the experiment while preserving a meaningful research
-     contribution.
-  2. Use a simpler established benchmark or baseline.
+  1. Optimise scope while keeping the mechanism and technical depth
+     (shared definitions §6), in this order:
+     - narrow to the pre-specified documented failure slice;
+     - reuse published code and configs;
+     - reuse released models, adapters, outputs or activations;
+     - remove optional models, layers, seeds and conditions;
+     - use a smaller intervention that keeps the mechanism.
+  2. Use a more appropriate established benchmark, setting or baseline
+     for the same mechanism.
   3. Reformulate the research question around a smaller experiment.
   4. Replace it with a different benchmark-centered research question that
      satisfies the constraints (same slot ID), only after steps 1–3 (and
@@ -435,12 +512,21 @@ slots are not part of the feasible portfolio.
 
 Reject (in Benchmark-First Mode, replace) or heavily penalize directions that
 require collecting a new dataset, designing a benchmark, extensive human
-annotation, large-scale training from scratch, complicated infrastructure,
-many interacting experimental variables, or uncertain evaluation design.
+annotation, large-scale training from scratch, many interacting
+experimental variables, or uncertain evaluation design. Apply this only
+after the scope levers have been tried.
 
-Prefer simple benchmark extensions with existing repositories, published
-baselines, automatic evaluation, minimal code modification, and
-inference-only experiments.
+Prefer designs that reuse existing repositories, released models,
+outputs or activations, published baselines and automatic evaluation.
+Fine-tuning (e.g. LoRA on a released model), activation extraction,
+probing, and white-box or mechanistic analysis are acceptable, and are
+never excluded because the user is a Beginner, when verified tooling and
+a scoped design fit D. Technical depth is judged by the mechanism and
+insight, not by implementation size.
+
+If, after genuine redesign attempts, a strong design still does not fit,
+report the binding bucket and the minimum verified additional time or
+resource that would make it fit. Do not give generic advice to extend D.
 
 If the user also gives an overall time budget shorter than N × D, report
 the conflict instead of shortening D.
@@ -462,7 +548,10 @@ For each research plan, define:
 
 - Minimum Result Worth Writing Up:
   What is the smallest interpretable positive or negative result that would
-  justify completing the paper or research report?
+  justify completing the paper or research report? Use the advisor's
+  outcome classification: a meaningful negative result needs the effect
+  bounded below the SESOI with the manipulation check passed; a
+  non-significant but imprecise result is inconclusive, not negative.
 
 These criteria should be compatible with the user-specified duration D
 (Step 6).
@@ -475,38 +564,81 @@ for analysis and writing.
 Before ordering, every direction in the portfolio must have:
 - passed the SAME-TASK test, comparability check, and validity check V1–V4
   on its final question (Step 1),
-- PASSED prior-work-checker on its final question (Step 0),
+- PASSED prior-work-checker on its final question (Step 0), backed by a
+  FINAL Evidence Report whose evidence quality is not Unverified,
 - no duplicate among the other slots (Step 1b),
 - a FITS DURATION verdict against D (Step 6),
 - a confirmed short-paper readiness of READY from
   research-readiness-advisor (NEEDS REDESIGN or NOT READY triggers the
-  advisor's mechanism-preserving redesign first, then the Step 6 sequence).
+  advisor's mechanism-preserving redesign first, then the Step 6 sequence),
+- technical depth PASS (advisor Step 5d; shared definitions §3),
+- a credible SOTA path: pre-experiment SOTA potential of at least MEDIUM,
+  or HIGH if the user required it, unless the user waived this for an
+  explicitly scientific-diagnostic goal (§7, gate 9),
+- the remaining gates in §7: no data leakage, fair comparison,
+  reproducibility, statistical rigor and research integrity.
 
-There is no "risky but kept" category. A slot that cannot meet all five is
+There is no "risky but kept" category. A slot that cannot meet all of these is
 redesigned and, if needed, replaced through the active search in Step 6.
 Only if that replacement search also fails does it remain in its slot with
 an UNRESOLVED label, outside the feasible portfolio.
 
 The quality criteria below are used to choose between candidate directions
 (e.g. when m > N, or when deciding which duplicate to redesign) and for the
-Recommendation. They NEVER determine project order. Assess quality by:
+Recommendation. They NEVER determine project order. The hard gates above
+(validity, prior-work PASS as the minimum novelty requirement, FITS
+DURATION, READY) are mandatory and never traded off. Among directions
+that pass them, rank strictly in this order (the same topic-ranking order
+as research-readiness-advisor Step 5c), applying each criterion only when
+directions are comparable on the higher ones:
 
-1. Exact established benchmark availability
-2. Reproducible baseline availability
-3. Clarity of evaluation metric
-4. Narrow and defensible literature gap
-5. Simplicity of proposed modification
-6. Ability to produce a conventional benchmark results table
-7. Contingency remaining within the duration D
-8. Hardware fit
-9. Interpretability of negative results
-10. Relevance to the user's broad interests
+1. **Credible SOTA potential (PRIMARY, pre-experiment):** an
+   evidence-supported opportunity to outperform the strongest *existing*
+   baseline on the named task and metric. This is the advisor rating
+   from the S1–S4 rubric (§4b), under the evidence rules (§4d):
+   - S1 documented weakness and headroom, after the baseline-maturity
+     audit (a weak or incomplete baseline set is not headroom);
+   - S2 mechanism targeting it, with cause evidence and not only lever
+     evidence;
+   - S3 fair, reproducible test, with the expected margin ≥ the MDE;
+   - S4 feasible MVRD.
 
-Original-question preservation is a preference among candidates that pass
-every hard gate (exact benchmark and validity, prior-work PASS, FITS
-DURATION): when several such candidates exist for a slot, prefer HIGH or
-MEDIUM preservation (research-readiness-advisor). Never replace a direction
-merely because an unrelated benchmark project is easier. Preservation never
+   HIGH needs all four STRONG on facts verified now. There is no
+   conditional HIGH. Novelty, promise or speculation alone never count.
+   HIGH ranks above MEDIUM.
+2. **Four-day feasibility margin, given the user's skills:** contingency
+   left within D, critical-path slack, share of requirements VERIFIED,
+   hardware fit.
+3. **Benchmark and evaluation strength:** a public benchmark;
+   reproducible baselines (released code, models or per-item outputs);
+   a clear metric and a conventional results table; reliable evaluation
+   (automatic metric, adequate test size and power, low label noise, no
+   contamination).
+4. **Clear, measurable contribution (§4e) and technical depth:** a
+   non-obvious finding in at least one outcome, plus the strength of the
+   pre-mortem answer. Within this criterion, a credible contribution of
+   type A or B ranks above C or D (Step 8b). Confirmatory engineering
+   (more data, a bigger model or standard fine-tuning with a predictable
+   outcome) fails the depth gate.
+5. **Novelty strength:** narrow, defensible gap and contribution beyond
+   prior work (advisor rating mapped from prior-work-checker's Evidence
+   Report). Modest novelty is acceptable when 1–4 are strong.
+6. **Negative-result interpretability** (advisor's negative-result
+   readiness: PASS > resolved CONDITIONAL > FAIL).
+7. **Original-question preservation** and relevance to the user's broad
+   interests (final tie-breakers).
+
+This list is the shared ranking order in shared definitions §8, with the
+same criteria, numbers and order. If the two ever differ, §8 wins. Topic
+area, AI safety or not, is never a ranking criterion (§1d).
+
+Never rank a highly novel direction with weak SOTA potential above a
+direction with a credible path to SOTA when both pass every gate.
+Scientific-diagnostic directions are eligible only when the user waived
+the credible-SOTA-path gate; they are then ranked by the same order.
+
+Never replace a direction merely because an unrelated benchmark project
+is easier. Preservation never
 overrides a hard gate: a direction loosely related to the original question
 but with an excellent exact benchmark still ranks above one that preserves
 the original idea but has only a proxy.
@@ -517,7 +649,81 @@ valid candidates; rank them last and label them. The same applies to slots
 that did not PASS prior-work-checker.
 
 Compliance with `research_advice.md` overrides this quality assessment
-where they conflict.
+where they conflict, except for the topic-ranking order above, which the
+user set explicitly.
+
+### Step 8b: Candidate comparison matrix (mandatory for every shortlisted candidate)
+
+Build one row per shortlisted candidate. This includes candidates
+compared for a slot when m > N, duplicates being resolved, and
+redesigned or replacement versions. Every column is **copied from its
+authoritative source**. The planner judges only the last two columns.
+
+| Field | Content | Source (authority) |
+|---|---|---|
+| Candidate | The proposed method (one line) | Planner |
+| Closest prior work | Three closest papers, where available | Evidence Report (prior-work-checker) |
+| Novelty | Classification (NOVEL / PARTIAL OVERLAP / ALREADY STUDIED / UNCERTAIN) **and** the existing gate (PASS / FAIL-<reason> / unresolved) | Evidence Report (prior-work-checker) |
+| Strongest comparable baseline | Method, metric, number, source | Evidence Report + mature baseline map (benchmark-finder) |
+| SOTA potential | HIGH / MEDIUM / LOW / UNKNOWN, with S1–S4 | research-readiness-advisor Step 5c |
+| Improvement mechanism | The evidence-supported explanation: targeted failure mode, cause evidence, and complementarity for combinations | research-readiness-advisor Step 5c items 2–4 |
+| Technical depth | PASS / FAIL | research-readiness-advisor Step 5d |
+| Four-day feasibility | FITS DURATION / DOES NOT FIT DURATION / UNKNOWN at D and L | compute-planner (authoritative) |
+| Negative-result readiness | PASS / CONDITIONAL / FAIL | research-readiness-advisor Step 5b |
+| Expected contribution | A / B / C / D (below) | Planner, from the evidence above |
+| Final decision | GO / REVISE / NO-GO (below) | Planner, subject to every gate |
+
+**Contribution types.** Assign the strongest type the evidence supports,
+not the type you hope for.
+
+- **A. SOTA improvement.** The method is expected to outperform the
+  strongest comparable baseline (§4a) under the same protocol. Claim A
+  only if all of these hold:
+  - SOTA potential is at least MEDIUM;
+  - the S2 mechanism targets a documented failure mode;
+  - the expected margin is at least the MDE.
+- **B. Significant combination benefit.** A combination is expected to
+  give a statistically supported improvement over each individual
+  component *and* over the relevant strong baselines. Claim B only if
+  all of these hold:
+  - the design includes every component-alone arm and the strong
+    baselines;
+  - there is a pre-registered paired test;
+  - the advisor rated signal complementarity COMPLEMENTARY;
+  - the expected gain over the best single component is at least the
+    MDE.
+- **C. Complementary failure-mode evidence.** Evidence that different
+  methods detect distinct failure modes, for example from a per-item
+  cross-tabulation.
+- **D. Mechanistic or diagnostic understanding.** New evidence on when
+  and why the methods succeed or fail.
+
+How the types interact with ranking and gates:
+- **Contribution type is not a new ranking criterion.** It describes the
+  §4e defensible contribution inside the existing order (Step 8 /
+  shared definitions §8, criterion 4). Within that criterion, a credible
+  A or B ranks above C or D.
+- A candidate whose only credible contribution is C or D usually has
+  SOTA potential below MEDIUM. It is then eligible only if the user
+  waived gate 9 for an explicitly scientific-diagnostic goal.
+- Never claim A or B without the supporting evidence listed above. When
+  in doubt, record the lower type and name the upgrade condition.
+
+**Final decision:**
+
+| Decision | Meaning |
+|---|---|
+| **GO** | Every Step 8 gate passes. The Evidence Report is FINAL, and the research-pipeline evidence gate passes. The only allowed condition is unconfirmed compute allocation |
+| **REVISE** | A gate or rating fails, but a redesign lever (shared definitions §6; advisor Step 7) or a named, permitted measurement could fix it. REVISE is a working state. It never appears in the final portfolio as GO and is never a "conditional GO" |
+| **NO-GO** | It fails a gate after at least one meaningful redesign attempt, or it is ALREADY STUDIED with no different question available. The slot then follows the existing replacement search (Step 6). If that also fails, the slot is labelled UNRESOLVED |
+
+A positive rating never overrides a failed gate. In particular:
+- high novelty strength never compensates for LOW SOTA potential;
+- a good readiness rating never compensates for a novelty FAIL or for
+  DOES NOT FIT DURATION.
+
+The matrix is used for selection and the Recommendation only. It never
+sets project order; Step 9 does.
 
 ### Step 9: Order feasible projects from easiest to hardest (mandatory)
 
@@ -592,6 +798,12 @@ mismatch.)
 
 Prior-work check:
 PASS at iteration n, with the earlier failed questions and their reasons.
+Novelty classification: (from the Evidence Report; quoted, not re-judged)
+Evidence Report: `prior_work_evidence_<run-tag>_<RQk>.md` (FINAL; evidence
+quality)
+Expected contribution: A / B / C / D (Step 8b), with its supporting
+evidence
+Final decision: GO / REVISE / NO-GO (Step 8b)
 
 Closest prior work and what remains untested:
 (From prior-work-checker. "No directly equivalent experiment was found in
@@ -600,7 +812,18 @@ the searched literature" — never "no prior work exists".)
 Literature gap:
 (The gap statement from prior-work-checker.)
 
+Strongest comparable baseline:
+(Name, number, source, task, slice, metric, access class; also the
+strongest method on the benchmark overall.)
+
+Documented weakness of that baseline:
+(Failure category, subset or error mode, with its source.)
+
 Proposed method/change:
+(The mechanism, and why it targets the cause of the documented weakness.)
+
+Technical depth:
+(PASS, with a one- or two-sentence depth case.)
 
 Main experiment:
 
@@ -610,11 +833,47 @@ Describe exactly what rows and columns would appear.
 Minimum ablation/control:
 
 Smallest viable experiment:
+(The MVRD. Mark each experiment ESSENTIAL or OPTIONAL. Only ESSENTIAL
+experiments are scheduled inside D.)
+
+Refinement history:
+(Each redesign attempt: the lever used, what changed, and the
+re-evaluated ratings.)
 
 Research readiness (from research-readiness-advisor, confirmed):
 (Benchmark fit, Execution fit, Original-question preservation, Project type
 (Performance-oriented / Scientific-diagnostic), Short-paper readiness, and
 the full provisional paper draft with all unmeasured numerical cells TBD.)
+
+Topic ranking (advisor Step 5c, confirmed; shared definitions §4b):
+- Pre-experiment SOTA potential (§8 criterion 1): HIGH / MEDIUM / LOW /
+  UNKNOWN.
+  Rate each criterion STRONG / PARTIAL / WEAK / UNVERIFIED, with its
+  evidence:
+  - S1 documented weakness and headroom (baseline number, sourced, with
+    its table/figure), plus the mature baseline map with UNMEASURED
+    systems (§4d.1–2);
+  - S2 mechanism targeting the weakness: cause evidence and lever
+    evidence, listed separately (§4d.3);
+  - S3 fair, reproducible test: expected effect, its basis, and the MDE
+    (§4d.5);
+  - S4 feasible MVRD.
+
+  HIGH only if all four are STRONG on facts verified now (no conditional
+  HIGH). This is never a claim of achieved SOTA (§4c).
+- Four-day feasibility margin (§8 criterion 2).
+- Benchmark and evaluation strength (§8 criterion 3): public benchmark,
+  reproducible baselines, reliable evaluation.
+- Clear, measurable contribution and technical depth (§8 criterion 4):
+  the finding if positive, the finding if negative, the predictability
+  test, the reviewer pre-mortem (§4e), and the contribution type A–D
+  (Step 8b).
+- Novelty strength (§8 criterion 5): HIGH / MEDIUM / LOW.
+- Negative-result readiness (§8 criterion 6): see the review table below.
+- Original-question preservation (§8 criterion 7, tie-breaker).
+
+Discovery record (§1a): Benchmark → Research Question + causal hypothesis
+→ Method, in that order.
 
 Duration estimate (from compute-planner; standalone, working days, rounded
 to 0.25 or 0.5, estimated from this project rather than a template):
@@ -632,7 +891,13 @@ to 0.25 or 0.5, estimated from this project rather than a template):
 - Writing/revision time: (if writing-first, the split of the same budget)
 - External dependency time:
 - Required contingency: (not work time; which plausible failure it covers)
-- Total budget required: (e.g. "up to 5 days")
+- Total budget required: (expected active work + contingency, e.g. "up to 4 days";
+  the conservative work bound and the critical-path wall-clock must also be <= D)
+- Five-bucket summary (shared definitions §5): essential implementation /
+  compute (active vs wall-clock) / evaluation and statistics / paper writing /
+  contingency. Label each line VERIFIED, ESTIMATE or RISK.
+- Risks: each with its probability and mitigation (a speculative failure is a
+  RISK, not added work)
 - Main uncertainty drivers:
 - Level-specific difficulty, learning overhead, setup/reproduction risk,
   main reason for the estimate:
@@ -654,16 +919,31 @@ Pilot Success Criterion:
 
 Stop/Pivot Criterion:
 
+Negative-Result Interpretability Review (from research-readiness-advisor):
+| Field | Result |
+|---|---|
+| Positive-result contribution | |
+| Negative-result contribution | |
+| Inconclusive-result risk | |
+| Independent scientific value | |
+| Required controls | |
+| Negative-result readiness (§8 criterion 6) | PASS / CONDITIONAL (conditions adopted) / FAIL (performance-dependent) |
+
 Minimum Result Worth Writing Up:
 
 What a negative result would mean:
+(Consistent with the review; distinguish meaningful negative from
+inconclusive.)
 
 Main Risk:
 
 Recommended Scope:
 
+Then provide the candidate comparison matrix (Step 8b), with one row per
+shortlisted candidate, including those not selected.
+
 Then provide the final schedule table (exactly N rows, one per output slot,
 sorted by Project order, UNRESOLVED slots last):
 
-| Project | Schedule Window | Slot (RQk) | Final Research Question | Preserved / Modified / Replaced / Generated / UNRESOLVED | Exact Benchmark | Baseline | Metric | Validity (V1–V4) | Prior-Work Check (iteration) | Gap | Proposed Change | Short-Paper Readiness | Preservation | Experience Level | Standalone Expected Work | Conservative Work Range | Contingency | Total Budget Required | Execution Risk | Duration Feasibility (standalone, vs. D, at L) | Hardware Fit | User Compute Feasibility |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Project | Schedule Window | Slot (RQk) | Final Research Question | Preserved / Modified / Replaced / Generated / UNRESOLVED | Exact Benchmark | Baseline | Metric | Validity (V1–V4) | Prior-Work Check (iteration) | Gap | Proposed Change | SOTA Potential | Novelty Strength | Negative-Result Readiness | Short-Paper Readiness | Preservation | Experience Level | Standalone Expected Work | Conservative Work Range | Contingency | Total Budget Required | Execution Risk | Duration Feasibility (standalone, vs. D, at L) | Hardware Fit | User Compute Feasibility |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
