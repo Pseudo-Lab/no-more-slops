@@ -36,9 +36,13 @@
     .hero-aside { min-width: 0; display: grid; gap: 14px; }
     .treasure-stage { position: relative; height: 300px; overflow: hidden; border: 1px solid rgba(173, 216, 223, .28); border-radius: 24px; background: radial-gradient(circle at 50% 68%, rgba(255, 176, 95, .3), transparent 36%), radial-gradient(circle at 50% 94%, rgba(113, 228, 208, .25), transparent 55%), rgba(255, 255, 255, .055); }
     .treasure-stage::before { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(220, 242, 239, .12); border-radius: 17px; pointer-events: none; }
+    .treasure-stage::after { content: "영상을 여기에 놓아 주세요"; position: absolute; z-index: 4; inset: 15px; display: grid; place-items: center; border: 2px dashed #ffe1a4; border-radius: 17px; background: rgba(18, 34, 55, .82); color: #fff4d8; font-weight: 850; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .treasure-stage.is-dragover::after { opacity: 1; }
+    .treasure-stage.is-processing { border-color: #ffd388; box-shadow: 0 0 32px rgba(255, 195, 105, .35), inset 0 0 35px rgba(255, 195, 105, .13); animation: chest-glow 1.8s ease-in-out infinite; }
     .treasure-stage canvas { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; opacity: 0; }
     .treasure-stage[data-renderer="three"] canvas { opacity: 1; }
     .css-chest { position: absolute; z-index: 1; left: 50%; top: 49%; width: 215px; height: 132px; transform: translate(-50%, -35%); filter: drop-shadow(0 28px 28px rgba(0, 0, 0, .35)); transition: opacity .3s; pointer-events: none; }
+    .is-rattling .css-chest { animation: chest-rattle .7s ease-in-out; }
     .treasure-stage[data-renderer="three"] .css-chest { opacity: 0; }
     .css-chest::before { content: ""; position: absolute; left: 15px; top: -7px; width: 185px; height: 21px; border-radius: 50%; background: #ffc877; filter: blur(12px); box-shadow: 0 0 35px #ffc877; }
     .css-chest-body { position: absolute; inset: 20px 0 0; border: 5px solid #d8a75e; border-radius: 8px 8px 13px 13px; background: repeating-linear-gradient(90deg, transparent 0 47px, rgba(247, 193, 105, .8) 47px 57px, transparent 57px 107px), linear-gradient(#965a3e, #4c2c2c); box-shadow: inset 0 -16px 0 rgba(36, 20, 23, .28), 0 0 32px rgba(255, 187, 91, .27); }
@@ -48,6 +52,19 @@
     .stage-toggle { position: absolute; z-index: 3; inset: 0; width: 100%; border: 0; background: transparent; cursor: pointer; color: #f8fbfa; }
     .stage-toggle span { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); white-space: nowrap; padding: 6px 11px; border: 1px solid rgba(218, 244, 239, .45); border-radius: 99px; background: rgba(16, 36, 46, .8); font-size: .75rem; font-weight: 800; }
     .renderer-status { position: absolute; z-index: 3; top: 12px; right: 15px; padding: 4px 8px; border-radius: 99px; background: rgba(16, 36, 46, .7); color: #d6e8e5; font-size: .68rem; pointer-events: none; }
+    .intake { padding: 15px 18px; border: 1px solid rgba(173, 216, 223, .3); border-radius: 18px; background: rgba(255, 255, 255, .085); }
+    .intake-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .83rem; }
+    .intake-head strong { color: #8cebd9; }
+    .pick-video { cursor: pointer; color: #fff4d8; text-decoration: underline; text-underline-offset: 3px; }
+    .pick-video:focus-within { outline: 3px solid #fd7b61; outline-offset: 3px; }
+    .intake-status { margin: 8px 0; min-height: 2.4em; color: #f1f5f5; font-size: .85rem; }
+    .intake progress { display: block; width: 100%; height: 12px; appearance: none; border: 0; border-radius: 99px; overflow: hidden; background: #344759; }
+    .intake progress::-webkit-progress-bar { background: #344759; }
+    .intake progress::-webkit-progress-value { background: linear-gradient(90deg, #73ded0, #ffd189); border-radius: 99px; transition: width .18s ease; }
+    .intake progress::-moz-progress-bar { background: #73ded0; }
+    .intake small { display: block; margin-top: 8px; color: #bdccd7; }
+    @keyframes chest-rattle { 0%, 100% { transform: translate(-50%, -35%) rotate(0); } 25% { transform: translate(-47%, -35%) rotate(3deg); } 50% { transform: translate(-53%, -35%) rotate(-3deg); } 75% { transform: translate(-48%, -35%) rotate(2deg); } }
+    @keyframes chest-glow { 50% { box-shadow: 0 0 48px rgba(255, 195, 105, .55), inset 0 0 45px rgba(255, 195, 105, .2); } }
     .hero-note { border: 1px solid rgba(173, 216, 223, .3); border-radius: 22px; background: rgba(255, 255, 255, .085); padding: 19px 23px; backdrop-filter: blur(12px); }
     .hero-note strong { display: block; font-size: .91rem; color: #8cebd9; margin-bottom: 12px; }
     .hero-note p { margin-bottom: 0; font-size: 1.14rem; font-weight: 750; line-height: 1.55; }
@@ -196,7 +213,7 @@
       .terms { grid-template-columns: 1fr; }
       .closing { flex-direction: column; align-items: start; }
     }
-    @media (prefers-reduced-motion: reduce) { .css-chest-lid, .css-chest { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { .css-chest-lid, .css-chest { transition: none; } .is-rattling .css-chest, .treasure-stage.is-processing { animation: none; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
@@ -214,11 +231,17 @@
           <p class="hero-lead">한국·일본·미국의 Instagram, YouTube, TikTok, X에서 아이디어를 찾고, 확인된 원본 영상과 아기 안전을 거쳐 Instagram 릴스 제작으로 연결하는 작업 흐름입니다.</p>
         </div>
         <div class="hero-aside">
-          <div class="treasure-stage" id="treasure-stage" data-renderer="fallback" aria-label="추억 보물상자 화면">
+          <div class="treasure-stage" id="treasure-stage" data-renderer="fallback" aria-label="영상 파일을 놓을 수 있는 추억 보물상자">
             <div class="css-chest" aria-hidden="true"><div class="css-chest-lid"></div><div class="css-chest-body"></div><div class="css-chest-gem"></div></div>
             <canvas id="treasure-canvas" aria-hidden="true"></canvas>
-            <button class="stage-toggle" id="stage-toggle" type="button" aria-expanded="false" aria-label="보물상자 열어보기 시연"><span>상자 열어보기 · 시연</span></button>
+            <button class="stage-toggle" id="stage-toggle" type="button" aria-expanded="false" aria-label="보물상자 열어보기 시연"><span>상자 클릭 · 영상 드롭 가능</span></button>
             <span class="renderer-status" id="renderer-status" role="status">2D 대체 화면 · 3D 지원 시 자동 표시</span>
+          </div>
+          <div class="intake" aria-label="영상 파일 확인 진행률">
+            <div class="intake-head"><strong>내 영상 준비</strong><label class="pick-video" for="video-file">영상 선택 <input class="sr-only" id="video-file" type="file" accept=".mp4,.mov,.webm,video/mp4,video/quicktime,video/webm" aria-describedby="video-help"></label></div>
+            <p class="intake-status" id="video-status" role="status" aria-live="polite">MP4·MOV·WebM을 상자에 놓거나 영상을 선택해 주세요.</p>
+            <progress id="video-meter" max="100" value="0" aria-label="로컬 영상 파일 읽기 진행률">0%</progress>
+            <small id="video-help">브라우저 안에서만 읽습니다. 이 단계는 영상 렌더링이나 업로드가 아닙니다.</small>
           </div>
           <aside class="hero-note" aria-label="현재 상태">
             <strong>2026.10.13 기준 · 실제 검증 상태</strong>
@@ -373,6 +396,9 @@
       const realActivity = document.getElementById("real-activity-text");
       const stage = document.getElementById("treasure-stage");
       const stageToggle = document.getElementById("stage-toggle");
+      const videoInput = document.getElementById("video-file");
+      const videoStatus = document.getElementById("video-status");
+      const videoMeter = document.getElementById("video-meter");
       const demoButton = document.getElementById("demo-advance");
       const demoGems = [...document.querySelectorAll("#demo-gems span")];
       const demoSteps = [
@@ -386,6 +412,8 @@
       let active = "KR:instagram";
       let demoStep = -1;
       let gemsEarned = 0;
+      let intakeBusy = false;
+      let rattleTimer;
 
       function setChestOpen(open) {
         stage.classList.toggle("is-open", open);
@@ -394,7 +422,93 @@
         stageToggle.querySelector("span").textContent = open ? "상자 닫기 · 시연" : "상자 열어보기 · 시연";
         stage.dispatchEvent(new Event("chest-change"));
       }
-      stageToggle.addEventListener("click", () => setChestOpen(!stage.classList.contains("is-open")));
+      stageToggle.addEventListener("click", () => {
+        if (!intakeBusy) setChestOpen(!stage.classList.contains("is-open"));
+      });
+
+      async function inspectVideo(file) {
+        if (intakeBusy) return;
+        stage.classList.add("is-rattling");
+        clearTimeout(rattleTimer);
+        rattleTimer = setTimeout(() => stage.classList.remove("is-rattling"), 700);
+        if (!file || (!/^video\//.test(file.type) && !/\.(mp4|mov|webm)$/i.test(file.name)) || !file.size) {
+          videoStatus.textContent = "MP4·MOV·WebM 영상 파일을 넣어 주세요.";
+          videoMeter.value = 0;
+          return;
+        }
+        intakeBusy = true;
+        setChestOpen(false);
+        stage.classList.add("is-processing");
+        stage.dispatchEvent(new Event("chest-change"));
+        videoMeter.value = 0;
+        videoStatus.textContent = "추억을 정리하고 있습니다 · 로컬 영상 읽기 0%";
+        const url = URL.createObjectURL(file);
+        const video = document.createElement("video");
+        const metadata = new Promise(resolve => {
+          const timer = setTimeout(() => resolve(null), 12000);
+          video.addEventListener("loadedmetadata", () => {
+            clearTimeout(timer);
+            resolve({ duration: video.duration, width: video.videoWidth, height: video.videoHeight });
+          }, { once: true });
+          video.addEventListener("error", () => {
+            clearTimeout(timer);
+            resolve(null);
+          }, { once: true });
+          video.preload = "metadata";
+          video.src = url;
+        });
+        try {
+          const reader = file.stream().getReader();
+          let loaded = 0;
+          let shown = -1;
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            loaded += value.byteLength;
+            const percent = Math.min(99, Math.floor(loaded / file.size * 100));
+            if (percent !== shown) {
+              shown = percent;
+              videoMeter.value = percent;
+              videoStatus.textContent = `추억을 정리하고 있습니다 · 로컬 영상 읽기 ${percent}%`;
+            }
+          }
+          videoStatus.textContent = "추억을 정리하고 있습니다 · 영상 길이와 화면 크기 확인 중";
+          const info = await metadata;
+          if (!info || !info.width || !info.height) throw new Error("영상 정보를 읽지 못했습니다.");
+          videoMeter.value = 100;
+          const duration = Number.isFinite(info.duration) ? `${info.duration.toFixed(1)}초` : "길이 확인 불가";
+          videoStatus.textContent = `${file.name} · ${duration} · ${info.width}×${info.height} · 로컬 준비 완료`;
+          setChestOpen(true);
+        } catch (error) {
+          videoMeter.value = 0;
+          videoStatus.textContent = `파일 확인 실패: ${error.message}`;
+        } finally {
+          video.removeAttribute("src");
+          video.load();
+          URL.revokeObjectURL(url);
+          intakeBusy = false;
+          stage.classList.remove("is-processing");
+          stage.dispatchEvent(new Event("chest-change"));
+        }
+      }
+      videoInput.addEventListener("change", () => {
+        const file = videoInput.files?.[0];
+        videoInput.value = "";
+        if (file) inspectVideo(file);
+      });
+      stage.addEventListener("dragover", event => {
+        event.preventDefault();
+        event.dataTransfer.dropEffect = "copy";
+        stage.classList.add("is-dragover");
+      });
+      stage.addEventListener("dragleave", event => {
+        if (!stage.contains(event.relatedTarget)) stage.classList.remove("is-dragover");
+      });
+      stage.addEventListener("drop", event => {
+        event.preventDefault();
+        stage.classList.remove("is-dragover");
+        inspectVideo(event.dataTransfer.files?.[0]);
+      });
 
       function showDemo() {
         const title = document.getElementById("demo-title");
@@ -611,19 +725,21 @@
       function draw(now) {
         const time = now * 0.001;
         const open = stage.classList.contains("is-open");
+        const processing = stage.classList.contains("is-processing");
         const target = open ? -0.82 : 0;
         lid.rotation.x += (target - lid.rotation.x) * (reduced ? 1 : 0.075);
-        glow.intensity = open ? 5.1 : 3.1;
+        glow.intensity = processing ? 6.2 : open ? 5.1 : 3.1;
         seam.material.opacity = open ? 0.9 : 0.48;
         if (!reduced) {
           chest.rotation.y = Math.sin(time * 0.4) * 0.065;
+          chest.rotation.z = stage.classList.contains("is-rattling") ? Math.sin(time * 37) * 0.055 : 0;
           chest.position.y = -0.38 + Math.sin(time * 0.9) * 0.035;
           camera.position.x = 4.3 + Math.sin(time * 0.28) * 0.17;
           camera.lookAt(0, 0.28, 0);
         }
         particles.forEach(({ particle, baseY, phase }) => {
           particle.position.y = baseY + (reduced ? 0 : Math.sin(time * 1.2 + phase) * 0.11);
-          particle.material.opacity = (open ? 0.75 : 0.31) * (0.74 + Math.sin(time * 1.9 + phase) * 0.2);
+          particle.material.opacity = (open || processing ? 0.75 : 0.31) * (0.74 + Math.sin(time * 1.9 + phase) * 0.2);
         });
         renderer.render(scene, camera);
       }
