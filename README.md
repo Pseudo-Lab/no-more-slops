@@ -65,3 +65,13 @@ When publishing or operating the work under your own name, **you must still incl
 > This work was created as part of the No-More-Slops group activities at Pseudo Lab.
 
 **The GitHub repository for the production systems belongs to Pseudo Lab.** Contributed code, skills, prompts, and documentation are published under the [MIT License](LICENSE), which continues to apply when participants use their deliverables under their own names.
+
+## Contributing
+
+Read the [contribution rules](CONTRIBUTING.md) and [skill scope catalog](docs/skill-catalog.md) before submitting.
+
+- [Auto-Paper](tracks/auto-paper/README.md): research, papers, and research skills
+- [Auto-Application](tracks/auto-application/README.md): applications, services, and release skills
+- [Auto-Post](tracks/auto-post/README.md): posts, videos, and production skills
+
+Keep reusable skills in each track’s `skills/` directory and project deliverables in `projects/<project>/outputs/week-NN/`. Update the existing PR for revisions, and compare skill names and scopes before adding a new skill.

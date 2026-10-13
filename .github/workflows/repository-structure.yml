@@ -1,0 +1,22 @@
+name: Repository structure
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test repository rules
+        run: python -B -m unittest discover -s scripts -p 'test_check_repository.py' -v
+      - name: Check contribution paths and unique skill names
+        run: python -B scripts/check_repository.py
