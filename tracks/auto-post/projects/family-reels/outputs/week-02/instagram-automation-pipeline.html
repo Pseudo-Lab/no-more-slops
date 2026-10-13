@@ -327,6 +327,7 @@
         </div>
         <div class="tool-side">
           <h3>로컬에서 실행</h3>
+          <p>아래 점수 계산·영상 렌더 명령은 별도 제작 저장소의 실행 예시입니다. 해당 Python 스크립트와 영상 입력은 이 공유 저장소에 포함되어 있지 않습니다. 이 저장소에서는 아래 안내에 따라 HTML 화면을 열고 이미 생성한 JSON을 확인할 수 있습니다.</p>
           <p>후보·원본 조회수·안전 검토를 JSON에 기록한 뒤 점수 스크립트를 실행합니다. 생성된 <code>trend-plan.json</code>을 이 화면의 “내 기획안 열기”로 확인할 수 있습니다.</p>
           <pre><code>python scripts/score_reel_memes.py INPUT.json \
   --brief trend-brief.md --plan trend-plan.json</code></pre>
@@ -335,7 +336,7 @@
   work/source.mp4 work/scenes.srt work/owned-bgm.wav \
   --output out/reel.mp4</code></pre>
           <small>Whisper 음성 인식은 장면 자막에 필요하지 않았습니다. Seedance와 ElevenLabs는 향후 선택적으로 검토할 도구이며 이 작업의 영상·소리 제작에는 사용하지 않았습니다. 플랫폼 API를 통한 실시간 자동 수집도 아직 연결되지 않았습니다.</small>
-          <p style="margin-top: 16px; margin-bottom: 0;">3D 미리보기는 Three.js를 CDN에서 읽습니다. 팀 저장소 루트에서 <code>python -m http.server 8000</code>을 실행하고 <code>http://localhost:8000/docs/instagram-automation-pipeline.html</code>을 여세요. 네트워크나 WebGL을 사용할 수 없으면 2D 상자가 표시됩니다.</p>
+          <p style="margin-top: 16px; margin-bottom: 0;">3D 미리보기는 Three.js를 CDN에서 읽습니다. 팀 저장소 루트에서 <code>python -m http.server 8000</code>을 실행하고 <code>http://localhost:8000/tracks/auto-post/projects/family-reels/outputs/week-02/instagram-automation-pipeline.html</code>을 여세요. 네트워크나 WebGL을 사용할 수 없으면 2D 상자가 표시됩니다.</p>
         </div>
       </div>
     </section>
