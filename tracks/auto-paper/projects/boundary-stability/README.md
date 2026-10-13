@@ -1,12 +1,28 @@
+# boundary-stability
+
+Auto-Paper 트랙의 [YOOHYOJEONG](https://github.com/YOOHYOJEONG) 기여입니다. 원 PR: [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4).
+
+[1주차 결과물과 검증 범위](outputs/week-01/README.md)를 확인하세요.
+
+## 재사용 스킬
+
+| 스킬 | 적용 범위 |
+| --- | --- |
+| [audit-paper-citations](../../skills/audit-paper-citations/SKILL.md) | Word 논문의 인용·서지 정보와 원문 부합성 검수 |
+| [draft-conference-paper](../../skills/draft-conference-paper/SKILL.md) | 실험 전 선행연구 자료에서 학회 초안 작성 |
+| [experiment-report-to-paper](../../skills/experiment-report-to-paper/SKILL.md) | 완료된 실험 리포트를 학회 형식 Word 논문으로 작성 |
+| [research-related-work](../../skills/research-related-work/SKILL.md) | 연구 주제의 문헌 검색과 원문·BibTeX 근거 정리 |
+| [translate-paper-to-english](../../skills/translate-paper-to-english/SKILL.md) | 국문 Word 논문의 서식을 유지하는 영문 번역 |
+
+같은 이름의 스킬을 주차별로 복사하지 않고 `tracks/auto-paper/skills/`의 기존 스킬을 개선합니다. 비슷한 스킬은 위 입력·역할 범위를 기준으로 선택합니다.
+
+## 원 기여 소개
+
 # Auto-Paper · Week 01
 
 논문 한 편을 선행연구 조사부터 영문 투고본까지 만드는 데 쓴 스킬 5개와, 그 결과물인 논문을 담았습니다.
 
-```
-week01/
-├── skills/   # 논문 작성 단계별 스킬
-└── paper/    # 스킬로 작성한 논문 (PDF)
-```
+스킬은 `../../skills/`에, 논문은 `outputs/week-01/`에 모았습니다.
 
 ## Skills
 
@@ -14,11 +30,11 @@ week01/
 
 | 순서 | 스킬 | 입력 | 출력 |
 | --- | --- | --- | --- |
-| 1 | [`research-related-work`](skills/research-related-work/SKILL.md) | 연구 주제 또는 연구계획서 | 선행연구 조사 보고서, 출처·BibTeX |
-| 2 | [`draft-conference-paper`](skills/draft-conference-paper/SKILL.md) | 선행연구 조사 결과, 목표 학회명 | 실험 전 초안(Abstract·Introduction·Related Work)의 Word·LaTeX |
-| 3 | [`experiment-report-to-paper`](skills/experiment-report-to-paper/SKILL.md) | 실험 결과 리포트(Markdown), 목표 학회명 | 학회 형식의 완성 논문 Word |
-| 4 | [`audit-paper-citations`](skills/audit-paper-citations/SKILL.md) | 논문 Word | 인용 검수 보고서(Markdown) 또는 수정 반영 Word |
-| 5 | [`translate-paper-to-english`](skills/translate-paper-to-english/SKILL.md) | 한글 논문 Word | 서식을 유지한 영문 Word |
+| 1 | [`research-related-work`](../../skills/research-related-work/SKILL.md) | 연구 주제 또는 연구계획서 | 선행연구 조사 보고서, 출처·BibTeX |
+| 2 | [`draft-conference-paper`](../../skills/draft-conference-paper/SKILL.md) | 선행연구 조사 결과, 목표 학회명 | 실험 전 초안(Abstract·Introduction·Related Work)의 Word·LaTeX |
+| 3 | [`experiment-report-to-paper`](../../skills/experiment-report-to-paper/SKILL.md) | 실험 결과 리포트(Markdown), 목표 학회명 | 학회 형식의 완성 논문 Word |
+| 4 | [`audit-paper-citations`](../../skills/audit-paper-citations/SKILL.md) | 논문 Word | 인용 검수 보고서(Markdown) 또는 수정 반영 Word |
+| 5 | [`translate-paper-to-english`](../../skills/translate-paper-to-english/SKILL.md) | 한글 논문 Word | 서식을 유지한 영문 Word |
 
 ### research-related-work
 
@@ -49,7 +65,7 @@ week01/
 
 ## Paper
 
-[**Boundary Stability for Adaptive Stopping in Diffusion-Based Event Boundary Detection**](paper/Boundary%20Stability%20for%20Adaptive%20Stopping%20in%20Diffusion-Based%20Event%20Boundary%20Detection.pdf)
+[**Boundary Stability for Adaptive Stopping in Diffusion-Based Event Boundary Detection**](outputs/week-01/Boundary%20Stability%20for%20Adaptive%20Stopping%20in%20Diffusion-Based%20Event%20Boundary%20Detection.pdf)
 
 확산 모델 기반 이벤트 경계 검출(DiffGEBD)에서, 디노이징 단계 사이의 평균 점수 변화가 작아도 검출된 경계는 계속 바뀔 수 있다는 점을 분석한 논문입니다. Kinetics-GEBD 검증 영상 18,797개 중 55.97%에서 이런 불일치가 나타났습니다. 이를 바탕으로 인접한 두 단계의 경계 개수와 위치가 같아지면 추론을 멈추는, 추가 학습이 필요 없는 영상별 조기 종료 규칙을 제안합니다. 확인용 영상 12,900개에서 고정 4-step DDIM 대비 F1@0.05가 0.635%p 오르고 추론 시간은 5.23% 줄었으나, 단일 공개 체크포인트와 이미 관측한 검증 세트에 한정된 결과입니다.
 
