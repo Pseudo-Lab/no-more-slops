@@ -1,6 +1,6 @@
 """슬라이드 HTML을 인스타 캐러셀 PNG(1080x1350)로 뽑는다.
 
-python3 scripts/render.py design/file-01.html out/file-01
+python3 scripts/render.py design/file-01.html outputs/week-01/file-01
 """
 import pathlib
 import sys

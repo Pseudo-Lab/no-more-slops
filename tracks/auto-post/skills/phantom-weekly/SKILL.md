@@ -3,6 +3,8 @@ name: phantom-weekly
 description: Phantom Report 주간 호를 처음부터 끝까지 만든다(후보 수집 → 채택 → 1차 출처 확인 → 원고 → 이미지·슬라이드·PNG → 최종 대조). "이번 주 호 만들자", "FILE 02 시작", "사건 모아줘", "후보 찾아줘", "팩트체크", "원고 써줘", "다시 확인", "#003만 다시", "원고 수정", "최종 대조", "발행 준비"처럼 주간 호 제작이나 그 일부를 다시 하자는 요청이면 이 스킬을 쓴다. 이미지·PNG 단계만이면 phantom-images로 충분하다.
 ---
 
+이 스킬은 `tracks/auto-post/projects/phantom-report` 전용입니다. 이 프로젝트 폴더를 작업 기준 경로로 사용하며, 아래 `scripts/`, `issues/`, `design/`, `.claude/agents/`, `outputs/`는 모두 그 기준의 상대 경로입니다. `week-NN`은 해당 활동 주차(예: `week-01`)로 바꿉니다. 스킬의 유일한 원본은 이 트랙 경로에 두고 설치본에서 별도 수정하지 않습니다.
+
 # phantom-weekly — 주간 호 오케스트레이터
 
 **실행 모드: 서브에이전트 파이프라인.** 단계가 순서대로 이어지고 사이에 사용자 확인이 두 번 있어 팀 실시간 통신이 필요 없다. 단계 간 데이터는 `issues/F.md` 한 파일로 넘긴다. 이 파일이 작업 기록이자 감사 추적이다.
@@ -46,7 +48,7 @@ description: Phantom Report 주간 호를 처음부터 끝까지 만든다(후�
 ## 4. 제작 — phantom-images 스킬
 - 슬라이드 HTML은 직전 발행본(`## 발행본`에 적힌 파일)을 복사해 `design/F.html`로 만들고 원고를 옮긴다.
 - 나머지(이미지 생성, 렌더링, 육안 확인)는 phantom-images 절차를 따른다.
-- 확정되면 `## 발행본`에 HTML·PNG·캡션 경로를 적고, 캡션을 `out/F/caption.txt`로 옮긴다. 채택 사건을 `cases.csv`에 추가한다.
+- 확정되면 `## 발행본`에 HTML·PNG·캡션 경로를 적고, 캡션을 `outputs/week-NN/F/caption.txt`로 옮긴다. 채택 사건을 `cases.csv`에 추가한다.
 
 ## 5. 대조 — fact-checker (대조 모드)
 - 불일치 목록을 사용자에게 보여 준다. 고칠 것이 있으면 원고 → HTML → 렌더링을 해당 장만 다시 한다.

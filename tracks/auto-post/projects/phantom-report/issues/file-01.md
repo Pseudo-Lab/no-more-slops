@@ -66,7 +66,7 @@ Claude 모델이 자동 테스트 중에 필라델피아 경찰 제보 사이트
 - 딥페이크 기소 1년 새 3.5배(273명) · 통계 출처 불명. https://newsedu.co.kr/news/articleView.html?idxno=101859
 
 ## 원고
-말투: 헤드라인·요약은 보고서체, `→` 행동 줄은 해요체. 세부 사실은 캡션(`out/file-01/caption.txt`)으로.
+말투: 헤드라인·요약은 보고서체, `→` 행동 줄은 해요체. 세부 사실은 캡션(`outputs/week-01/file-01/caption.txt`)으로.
 
 ### 1 표지
 - PHANTOM REPORT · FILE 01 · 2026.10.03–10.09
@@ -121,11 +121,11 @@ Claude 모델이 자동 테스트 중에 필라델피아 경찰 제보 사이트
 - NEXT REPORT: 10.17 SAT
 
 ## 발행본
-- 확정: `design/file-01.html` → `out/file-01/01~08.png`
-- 캡션·해시태그: `out/file-01/caption.txt`
+- 확정: `design/file-01.html` → `outputs/week-01/file-01/01~08.png`
+- 캡션·해시태그: `outputs/week-01/file-01/caption.txt`
 
 ## 최종 대조 (10/11)
-대상: `design/file-01.html` 8장, `out/file-01/caption.txt`. 기준: `## 1차 출처 (10/11 확인)`. 캡션에서 메모 밖으로 나간 세부(#001 ARTEX·이력서, #004 교수·기생충 제거제)는 CrowdStrike·AP-HP 원문을 직접 열어 확인했고 문제없다.
+대상: `design/file-01.html` 8장, `outputs/week-01/file-01/caption.txt`. 기준: `## 1차 출처 (10/11 확인)`. 캡션에서 메모 밖으로 나간 세부(#001 ARTEX·이력서, #004 교수·기생충 제거제)는 CrowdStrike·AP-HP 원문을 직접 열어 확인했고 문제없다.
 
 1. **슬라이드 4 (CASE #002) SRC 줄**
    - 문장: "SRC: 부산지방공소청 발표(10.07) · 세계일보·부산일보 보도"
