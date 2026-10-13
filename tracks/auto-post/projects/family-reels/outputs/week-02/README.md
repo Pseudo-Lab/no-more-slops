@@ -2,7 +2,7 @@
 
 - 작성자: [임경태 · darkwingduck-code](https://github.com/darkwingduck-code)
 - 원본 PR: [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9)
-- 선행 PR: [1주차 #15](https://github.com/Pseudo-Lab/no-more-slops/pull/15). PR의 기반 브랜치 관계를 유지합니다.
+- 관련 제작 이력: [1주차 #15](https://github.com/Pseudo-Lab/no-more-slops/pull/15). 공통 규칙 PR #16을 반영한 뒤 두 PR의 병합 순서는 자유입니다.
 - 결과물: [instagram-automation-pipeline.html](instagram-automation-pipeline.html)
 - 제작 절차: [family-reel-meme-preflight](../../../../skills/family-reel-meme-preflight/SKILL.md), [instagram-reel](../../../../skills/instagram-reel/SKILL.md)
 
