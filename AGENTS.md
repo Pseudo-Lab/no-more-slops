@@ -11,4 +11,5 @@ Read CONTRIBUTING.md before adding or moving contributions.
 - Run python3 scripts/check_repository.py and relevant existing tests. Distinguish rerun checks from contributor-reported results.
 - Update the current PR for revisions. After the common rules PR #16, contribution PRs must be mergeable in any order against main. Do not stack them on another open PR or assume another unmerged contribution is present.
 - Preserve the contributions of related PRs. If open PRs share files, keep their final contents identical or separate their changes; verify both merge orders and retain a distinct contribution in each PR.
+- Supported GitHub merge methods are merge commit and squash. Rebase-and-merge is disabled because replaying pre-migration commits can conflict; do not rewrite contributor history to work around this.
 - Do not merge PRs without explicit maintainer authorization.
