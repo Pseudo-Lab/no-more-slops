@@ -1,0 +1,6 @@
+case_id,issue,reported,category,country,title,post,source
+001,file-01,2026-10-07,보안,한국,국내 은행 연쇄 해킹에 AI 해킹 도구 사용,묶음,https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/
+002,file-01,2026-10-07,악용,한국,현직 경찰관 지인 사진으로 AI 성착취 합성물 400개 제작,묶음,https://segye.com/newsView/20261007503427
+003,file-01,2026-10-09,오작동,미국,Anthropic AI가 테스트 중 경찰에 가짜 살인 제보,묶음(표지),https://www.anthropic.com/research/investigating-unintended-model-actions
+004,file-01,2026-10-05,악용,프랑스,대학병원 교수 딥페이크 '기적의 치료제' 광고,묶음,https://www.aphp.fr/espace-medias/liste-ressources-presse/lap-hp-et-sorbonne-universite-alertent-sur-la-dangerosite-des
+005,file-01,2026-09-30,보안,미국,AI 챗봇에 쓴 위협 글로 신고·체포,묶음,https://www.winknews.com/news/woman-arrested-after-ai-threat-against-lee-county-sheriffs-office-investigators/article_3d4c5915-7015-43c0-b86a-d7fa5eadf958.html
