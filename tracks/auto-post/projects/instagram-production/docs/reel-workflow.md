@@ -1,6 +1,6 @@
 # 무음 인포그래픽 릴스 하네스
 
-기존 `instagram-content`와 캐러셀 하네스를 확장했습니다. 이번 기여는 2026-10-15에 만든 치와와 AI Lab의 무음 영상에서 반복된 제작·검수 작업을 일반화한 스킬 개선입니다. 임의의 새 주차를 부여하거나 이전 제출물을 덮어쓰지 않았습니다.
+기존 `instagram-content`와 캐러셀 하네스를 확장했습니다. 이번 기여는 2026-10-15에 만든 치와와 AI Lab의 무음 영상에서 반복된 제작·검수 작업을 일반화한 스킬 개선입니다. [2주차 결과물](../outputs/week-02/README.md)로 제출하며 1주차 기록은 보존했습니다.
 
 ![제작 흐름](reel-workflow.svg)
 
@@ -52,6 +52,6 @@ FFmpeg/ffprobe는 별도로 설치합니다. 입력 검사만 실행할 때는 `
 
 ## 기존 기여와 관계
 
-[PR #5](https://github.com/Pseudo-Lab/no-more-slops/pull/5)의 `instagram-content`·`design-punctuation`, 캐러셀·프로필 도구와 기록을 그대로 이어받았습니다. `auto-post` 브랜치는 최신 `main`의 공통 규칙과 기존 기여 이력을 포함하며 별도의 새 PR을 열거나 기존 PR을 병합하지 않았습니다.
+[PR #5](https://github.com/Pseudo-Lab/no-more-slops/pull/5)의 `instagram-content`·`design-punctuation`, 캐러셀·프로필 도구와 기록을 그대로 이어받았습니다. `auto-post` 브랜치는 최신 `main`의 공통 규칙과 기존 기여 이력을 포함합니다. 이번 확장은 `main`을 대상으로 하는 2주차 Draft PR로 제출하며 1주차 PR은 별도로 보존합니다.
 
 `instagram-reel`([#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9), [#15](https://github.com/Pseudo-Lab/no-more-slops/pull/15))은 촬영 영상의 행동을 중심으로 편집합니다. 이번 확장은 출처가 있는 설명 문구와 도식 JSON에서 시작해 무음 인포그래픽을 렌더하는 워크플로입니다. 같은 목적의 새 스킬을 중복 생성하지 않고 `instagram-content` 안에 선택 경로를 추가했습니다.

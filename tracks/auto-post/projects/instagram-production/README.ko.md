@@ -50,7 +50,7 @@ python -B "$HOME/.agents/skills/instagram-content/scripts/run_carousel.py" /path
 - 신호 흐름·단계 이동·가리기와 재등장·정보 카드·숫자 강조·사진/영상 장면을 조합합니다. 설명 문구는 고정하고 음성 트랙을 제외합니다.
 - 완성 캡션의 출처·크레딧·Acknowledgement를 포함해 500자 미만·해시태그 3개를 검사하도록 예시 계정을 설정했습니다.
 
-[치와와 AI Lab 영상 설정](examples/chihuahua-ai/reel-brief.json)과 [2026-10-15 Neuron AI 재현 예제](examples/chihuahua-ai/neuron-reel-2026-10-15.json)는 명시적으로 선택하는 입력입니다. 이전 캐러셀 설정은 그대로 보관합니다. 뉴스 예제는 당시 발표를 사용한 날짜가 있는 데모이며, 오늘의 뉴스로 재게시하는 입력이 아닙니다. 실제 주차 제출물은 추가하지 않았습니다.
+[치와와 AI Lab 영상 설정](examples/chihuahua-ai/reel-brief.json)과 [2026-10-15 Neuron AI 재현 예제](examples/chihuahua-ai/neuron-reel-2026-10-15.json)는 명시적으로 선택하는 입력입니다. 이전 캐러셀 설정은 그대로 보관합니다. 뉴스 예제는 당시 발표를 사용한 날짜가 있는 데모이며, 오늘의 뉴스로 재게시하는 입력이 아닙니다. [2주차 결과물과 리뷰 안내](outputs/week-02/README.md)에 검토용 데모와 측정 보고서를 추가했습니다.
 
 ```sh
 python -B tracks/auto-post/skills/instagram-content/scripts/run_reel.py   tracks/auto-post/projects/instagram-production/examples/chihuahua-ai/neuron-reel-2026-10-15.json   --brief tracks/auto-post/projects/instagram-production/examples/chihuahua-ai/reel-brief.json   --out /path/to/reel-demo --font-regular /path/to/Regular.ttf --font-bold /path/to/Bold.ttf

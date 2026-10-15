@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "dimensions": [
+    2160,
+    3840
+  ],
+  "aspect_ratio": "9:16",
+  "duration_seconds": 60,
+  "fps": 30,
+  "frames": 1800,
+  "caption_characters": 486,
+  "character_count_method": "Unicode code points, including final newline",
+  "hashtags": 3,
+  "punctuation_review": [],
+  "exports_verified": true,
+  "manual_review": [
+    "Review claims, dates and media permissions against the original sources.",
+    "Watch the actual MP4 at phone size and inspect scene transitions, reading time and UI overlap."
+  ],
+  "safe_area_note": "Insets are task settings, not a universal Instagram UI guarantee.",
+  "media": [],
+  "audio_streams": 0,
+  "decode_verified": true,
+  "codec": "h264",
+  "pixel_format": "yuv420p",
+  "color_metadata": "BT.709",
+  "file_bytes": 2717469,
+  "native_text_and_geometry": true,
+  "safe_area_pixels": [
+    240,
+    560,
+    1780,
+    2880
+  ],
+  "layout_bounds": [
+    {
+      "scene": "closing",
+      "region": "body",
+      "pixels": [
+        271,
+        2479,
+        1134,
+        2657
+      ]
+    },
+    {
+      "scene": "closing",
+      "region": "credit",
+      "pixels": [
+        271,
+        2741,
+        1097,
+        2784
+      ]
+    },
+    {
+      "scene": "closing",
+      "region": "header",
+      "pixels": [
+        271,
+        602,
+        1582,
+        660
+      ]
+    },
+    {
+      "scene": "closing",
+      "region": "kicker",
+      "pixels": [
+        271,
+        769,
+        891,
+        822
+      ]
+    },
+    {
+      "scene": "closing",
+      "region": "title",
+      "pixels": [
+        271,
+        896,
+        1339,
+        1276
+      ]
+    },
+    {
+      "scene": "closing",
+      "region": "visual",
+      "pixels": [
+        271,
+        1407,
+        1749,
+        2335
+      ]
+    },
+    {
+      "scene": "demo",
+      "region": "body",
+      "pixels": [
+        271,
+        2479,
+        1217,
+        2657
+      ]
+    },
+    {
+      "scene": "demo",
+      "region": "credit",
+      "pixels": [
+        271,
+        2741,
+        1097,
+        2784
+      ]
+    },
+    {
+      "scene": "demo",
+      "region": "header",
+      "pixels": [
+        271,
+        602,
+        1582,
+        660
+      ]
+    },
+    {
+      "scene": "demo",
+      "region": "kicker",
+      "pixels": [
+        271,
+        769,
+        1019,
+        822
+      ]
+    },
+    {
+      "scene": "demo",
+      "region": "title",
+      "pixels": [
+        271,
+        896,
+        1395,
+        1276
+      ]
+    },
+    {
+      "scene": "demo",
+      "region": "visual",
+      "pixels": [
+        352,
+        1465,
+        1749,
+        2348
+      ]
+    },
+    {
+      "scene": "intro",
+      "region": "body",
+      "pixels": [
+        271,
+        2479,
+        1134,
+        2657
+      ]
+    },
+    {
+      "scene": "intro",
+      "region": "credit",
+      "pixels": [
+        271,
+        2741,
+        1097,
+        2784
+      ]
+    },
+    {
+      "scene": "intro",
+      "region": "header",
+      "pixels": [
+        271,
+        602,
+        1582,
+        660
+      ]
+    },
+    {
+      "scene": "intro",
+      "region": "kicker",
+      "pixels": [
+        271,
+        769,
+        1115,
+        822
+      ]
+    },
+    {
+      "scene": "intro",
+      "region": "title",
+      "pixels": [
+        271,
+        896,
+        1207,
+        1256
+      ]
+    },
+    {
+      "scene": "intro",
+      "region": "visual",
+      "pixels": [
+        271,
+        1407,
+        1749,
+        2335
+      ]
+    },
+    {
+      "scene": "local",
+      "region": "body",
+      "pixels": [
+        271,
+        2479,
+        1275,
+        2657
+      ]
+    },
+    {
+      "scene": "local",
+      "region": "credit",
+      "pixels": [
+        271,
+        2741,
+        1097,
+        2784
+      ]
+    },
+    {
+      "scene": "local",
+      "region": "header",
+      "pixels": [
+        271,
+        602,
+        1582,
+        660
+      ]
+    },
+    {
+      "scene": "local",
+      "region": "kicker",
+      "pixels": [
+        271,
+        769,
+        720,
+        822
+      ]
+    },
+    {
+      "scene": "local",
+      "region": "title",
+      "pixels": [
+        271,
+        896,
+        1058,
+        1276
+      ]
+    },
+    {
+      "scene": "local",
+      "region": "visual",
+      "pixels": [
+        381,
+        1444,
+        1624,
+        1987
+      ]
+    },
+    {
+      "scene": "memory",
+      "region": "body",
+      "pixels": [
+        271,
+        2479,
+        1151,
+        2657
+      ]
+    },
+    {
+      "scene": "memory",
+      "region": "credit",
+      "pixels": [
+        271,
+        2741,
+        1097,
+        2784
+      ]
+    },
+    {
+      "scene": "memory",
+      "region": "header",
+      "pixels": [
+        271,
+        602,
+        1582,
+        660
+      ]
+    },
+    {
+      "scene": "memory",
+      "region": "kicker",
+      "pixels": [
+        271,
+        769,
+        761,
+        822
+      ]
+    },
+    {
+      "scene": "memory",
+      "region": "title",
+      "pixels": [
+        271,
+        896,
+        1058,
+        1276
+      ]
+    },
+    {
+      "scene": "memory",
+      "region": "visual",
+      "pixels": [
+        543,
+        1430,
+        1600,
+        2334
+      ]
+    },
+    {
+      "scene": "senses",
+      "region": "body",
+      "pixels": [
+        271,
+        2479,
+        1182,
+        2657
+      ]
+    },
+    {
+      "scene": "senses",
+      "region": "credit",
+      "pixels": [
+        271,
+        2741,
+        1097,
+        2784
+      ]
+    },
+    {
+      "scene": "senses",
+      "region": "header",
+      "pixels": [
+        271,
+        602,
+        1582,
+        660
+      ]
+    },
+    {
+      "scene": "senses",
+      "region": "kicker",
+      "pixels": [
+        271,
+        769,
+        705,
+        822
+      ]
+    },
+    {
+      "scene": "senses",
+      "region": "title",
+      "pixels": [
+        271,
+        896,
+        1247,
+        1276
+      ]
+    },
+    {
+      "scene": "senses",
+      "region": "visual",
+      "pixels": [
+        366,
+        1398,
+        1654,
+        2353
+      ]
+    },
+    {
+      "scene": "training",
+      "region": "body",
+      "pixels": [
+        271,
+        2479,
+        1221,
+        2658
+      ]
+    },
+    {
+      "scene": "training",
+      "region": "credit",
+      "pixels": [
+        271,
+        2741,
+        1097,
+        2784
+      ]
+    },
+    {
+      "scene": "training",
+      "region": "header",
+      "pixels": [
+        271,
+        602,
+        1582,
+        660
+      ]
+    },
+    {
+      "scene": "training",
+      "region": "kicker",
+      "pixels": [
+        271,
+        769,
+        714,
+        822
+      ]
+    },
+    {
+      "scene": "training",
+      "region": "title",
+      "pixels": [
+        271,
+        896,
+        910,
+        1276
+      ]
+    },
+    {
+      "scene": "training",
+      "region": "visual",
+      "pixels": [
+        271,
+        1360,
+        1749,
+        2284
+      ]
+    }
+  ],
+  "motion": "Scene-specific moving signals, occlusion/reveal and transfers; body copy stays fixed for each full scene"
+}
