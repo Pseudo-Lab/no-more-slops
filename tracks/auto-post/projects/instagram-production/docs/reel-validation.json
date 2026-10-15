@@ -35,7 +35,7 @@
         1780,
         2880
       ],
-      "file_bytes": 2655325
+      "file_bytes": 2655477
     },
     {
       "example": "reel-harness-chihuahua-proof",
@@ -62,12 +62,17 @@
         1780,
         2880
       ],
-      "file_bytes": 2717571
+      "file_bytes": 2717469
     }
   ],
   "limitations": [
     "Source truth and rights require review",
     "UI insets are task-specific",
     "Phone-size readability and useful motion require visual review"
-  ]
+  ],
+  "font_portability": {
+    "additional_font": "Noto Sans CJK Bold",
+    "tests_passed": 28,
+    "note": "Body region reserves space for larger CJK-font Latin glyph bounds without shrinking text"
+  }
 }

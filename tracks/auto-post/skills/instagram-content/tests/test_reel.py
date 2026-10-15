@@ -114,7 +114,7 @@ class ReelTests(unittest.TestCase):
         hidden=renderer.frame(0,30)
         crop=lambda a,b:tuple(round(v*renderer.scale) for v in (renderer.x(.02),renderer.y(a),renderer.x(.98),renderer.y(b)))
         self.assertIsNotNone(ImageChops.difference(before.crop(crop(.33,.785)),hidden.crop(crop(.33,.785))).getbbox())
-        self.assertIsNone(ImageChops.difference(before.crop(crop(.80,.915)),hidden.crop(crop(.80,.915))).getbbox())
+        self.assertIsNone(ImageChops.difference(before.crop(crop(.80,.925)),hidden.crop(crop(.80,.925))).getbbox())
         self.assertEqual(before.size,(360,640))
 
     @unittest.skipUnless(shutil.which('ffmpeg') and shutil.which('ffprobe'),'FFmpeg required')

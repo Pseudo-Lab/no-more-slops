@@ -88,7 +88,7 @@ class Renderer:
         require(l >= sl-.01 and t >= st-.01 and r <= sr+.01 and b <= sb+.01,
                 f'{self.scene_id}: {label} exceeds the safe area: {box}. Shorten copy or adjust the layout.')
         limits = {'header': (0, .075), 'kicker': (.075, .13), 'title': (.13, .32),
-                  'visual': (.33, .785), 'body': (.80, .915), 'credit': (.925, .966)}
+                  'visual': (.33, .785), 'body': (.80, .925), 'credit': (.925, .966)}
         if self.section in limits:
             lo, hi = limits[self.section]
             require(t >= self.y(lo)-.01 and b <= self.y(hi)+.01,
@@ -164,7 +164,7 @@ class Renderer:
         self.section='body'
         self.line(d,(self.x(.02),self.y(.808),self.x(.98),self.y(.808)),2)
         for j,value in enumerate(scene['body']):
-            self.text(im,self.x(.02),self.y(.834+j*.047),value,36)
+            self.text(im,self.x(.02),self.y(.827+j*.047),value,36)
         self.section='credit'
         self.text(im,self.x(.02),self.y(.94),scene['credit'],22,bold=False)
         self.section='progress'
