@@ -4,7 +4,7 @@ Use this workflow when the content is primarily an explanation built from copy, 
 
 ## Continue the account's accepted choices
 
-Read the current task's brief. Preserve the display name, colors, caption policy, punctuation and latest format choices. Keep these preferences with the task; an example account is never the global default. A new request for movement does not reopen the account identity or re-enable audio.
+Read the current task's latest brief. Preserve the display name, colors, caption policy, punctuation, motion policy and latest format choices. Record an explicit request for uninterrupted movement as `motion_policy.mode: "continuous"`; keep that choice in this account's future briefs until the user changes it. A request to apply this to future editions does not ask you to regenerate already accepted videos. Keep these preferences with the task; an example account is never the global default. A new request for movement does not reopen the account identity or re-enable audio.
 
 Translate ambiguous quality labels into concrete output dimensions. For example, 2160×3840 is a 9:16 vertical 4K delivery that satisfies a minimum-2K request. Record exact dimensions rather than promising “high resolution.” Render typography and diagrams at that resolution; increasing an old 1080p video's dimensions does not restore detail. Record source footage dimensions separately. Use the user's requested length; an approximately one-minute explanation needs enough reading time, not a fixed count of scenes.
 
@@ -31,6 +31,32 @@ Recompose the title, graphic, explanation and credit into that rectangle. Keep k
 Use movement with a purpose: inputs converge, a value is emphasized, an object is hidden and revealed, a token moves through a process, or data arrives from multiple sources. Vary the scene structure while retaining a coherent brand. An animated number must not pass through misleading values that could be mistaken for the result.
 
 Keep the main explanation fixed while the diagram moves. Use brief entrances and transitions, allow reading time after a reveal, and avoid flashing or constant movement of all the text. For a complex scene, compare early, middle and late frames and watch the actual segment. Mere frame differences do not prove the animation is useful.
+
+## When uninterrupted motion is required
+
+Apply these acceptance rules when the user or selected brief requires continuous motion. This is an account preference, not a requirement for unrelated accounts that ask for calmer or static content.
+
+- Keep the primary explanatory graphic visibly active from the first frame through the last, including opening, reading time, scene transitions and the closing call to action. There is no permitted frozen hold. Before one action settles, start the next or overlap their motion so the scene stays alive.
+- Make motion substantial enough to read on a phone: unfold or reorganize layers, assemble and separate objects, trace meaningful paths, move data through a process, or continuously transform the diagram. A static slide with an entrance animation, a progress bar, tiny decorative dots, subtle bobbing, camera micro-jitter or encoder noise does not satisfy this requirement by itself.
+- Plan an entrance, continuing action and moving handoff for each scene. After the entrance, the main graphic must continue doing something that explains the story. Do not stretch a short animation by freezing its final frame. A still image or held source-video frame needs a continuing, prominent explanatory animation when used in this mode.
+- Keep explanatory copy stable for reading while graphics remain active. Continuous motion does not require shaking every label, flashing, unreadable camera moves, or animating a measured number through false values. Preserve the selected safe areas throughout the movement.
+- Review the **entire encoded MP4** at normal speed and phone size, including the first/last frames and both sides of every cut. Inspect the main graphic region separately from captions, credits and progress indicators. Use frame-difference or freeze detection to locate suspect intervals, then judge whether the visible motion actually communicates; changing pixels alone cannot pass the review. Fix every stationary or merely decorative interval before delivery and record what was checked.
+
+Save the choice in the selected account brief, for example:
+
+```json
+"motion_policy": {
+  "mode": "continuous",
+  "max_static_seconds": 0,
+  "scope": "primary_explanatory_graphic",
+  "visibility": "clearly_visible_at_phone_size",
+  "explanatory_text": "stable_while_graphics_move",
+  "reject_sole_motion": ["entrance_then_hold", "progress_bar", "tiny_decorative_dots", "micro_jitter"],
+  "review": "full_encoded_video_and_primary_graphic_region"
+}
+```
+
+These fields record production and review requirements. The current harness preserves them as brief metadata but **does not enforce continuous motion automatically**. Its existing layout demos predate this stricter requirement and are not proof of compliance. Adapt the renderer and review the resulting motion; neither `exports_verified: true` nor `--validate-only` establishes this visual criterion.
 
 ## Produce and inspect
 

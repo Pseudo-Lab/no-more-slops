@@ -26,6 +26,7 @@ Brief fields:
 | `safe_area.left/top/right/bottom` | Fractional **edge insets**, not coordinates; at least half the canvas width and height must remain for these layouts |
 | `caption_policy` | Same count/hashtag rules as [the carousel harness](harness.md#brief-as-the-account-input) |
 | `punctuation_policy`, `acknowledgement` | Task-specific preferences, never global organization defaults |
+| `motion_policy` | Optional account production/review requirements; continuous motion is **not** automatically validated by this harness |
 
 An episode declares `schema_version: 1`, `content_type`, `edition_date`, `topic`, `caption`, `sources` and `scenes`. Account/brand overrides in the episode are rejected to prevent accidental drift. The output caption includes the optional acknowledgement, demo marker and final newline before counts are checked.
 
@@ -39,6 +40,8 @@ Each scene supplies a unique `id`, `layout`, `duration`, 1–2 `title` lines, 1�
 | `cards` | 1–3 `items`, each `{symbol, label, detail}` | Staggered explanation and data markers |
 | `metric` | `value`, `label`, `note` | Value entrance and emphasis, no misleading count-up |
 | `media` | Optional `label`; scene also needs `media` below | Original image or source-video motion |
+
+When `motion_policy.mode` is `continuous`, follow [the uninterrupted-motion acceptance rules](reels.md#when-uninterrupted-motion-is-required). The stock layouts and example exports do not guarantee prominent motion throughout a scene; entrances that settle, tiny moving symbols, progress bars and held media frames cannot satisfy that requirement by themselves. Adapt the primary graphic animation and inspect the encoded video. A successful technical report does not certify continuous motion.
 
 Symbols are short text glyphs supported by the selected fonts; letters/numbers work without platform emoji differences. Templates target concise copy. Change the copy or the renderer if a topic needs a different composition rather than forcing all stories into these examples.
 
