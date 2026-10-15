@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Pawstamp</title>
+  <meta name="description" content="Pawstamp — 강아지랑 다녀온 곳에 꼬순내 남기는 지도" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9.5' fill='%23F0502F'/%3E%3Cg transform='rotate%28-12 16 17%29' fill='%23fff'%3E%3Cpath d='M16 14.6c-3.2 0-6.6 4.3-6.6 7 0 2.1 1.7 2.9 3.4 2.9 1.3 0 2.1-.7 3.2-.7s1.9.7 3.2.7c1.7 0 3.4-.8 3.4-2.9 0-2.7-3.4-7-6.6-7z'/%3E%3Cellipse cx='8.9' cy='13.6' rx='1.9' ry='2.5' transform='rotate%28-22 8.9 13.6%29'/%3E%3Cellipse cx='13.1' cy='9.4' rx='2' ry='2.7' transform='rotate%28-8 13.1 9.4%29'/%3E%3Cellipse cx='18.9' cy='9.4' rx='2' ry='2.7' transform='rotate%288 18.9 9.4%29'/%3E%3Cellipse cx='23.1' cy='13.6' rx='1.9' ry='2.5' transform='rotate%2822 23.1 13.6%29'/%3E%3C/g%3E%3C/svg%3E" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="map" aria-label="지도"></div>
+
+  <header class="topbar">
+    <h1 class="logo">
+      <svg class="stamp" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9.5" fill="currentColor"/><g transform="rotate(-12 16 17)" fill="#fff"><path d="M16 14.6c-3.2 0-6.6 4.3-6.6 7 0 2.1 1.7 2.9 3.4 2.9 1.3 0 2.1-.7 3.2-.7s1.9.7 3.2.7c1.7 0 3.4-.8 3.4-2.9 0-2.7-3.4-7-6.6-7z"/><ellipse cx="8.9" cy="13.6" rx="1.9" ry="2.5" transform="rotate(-22 8.9 13.6)"/><ellipse cx="13.1" cy="9.4" rx="2" ry="2.7" transform="rotate(-8 13.1 9.4)"/><ellipse cx="18.9" cy="9.4" rx="2" ry="2.7" transform="rotate(8 18.9 9.4)"/><ellipse cx="23.1" cy="13.6" rx="1.9" ry="2.5" transform="rotate(22 23.1 13.6)"/></g></svg>
+      <span class="wordmark"><b>Pawstamp</b><small>꼬순내 남기기</small></span>
+    </h1>
+    <button id="myDogsBtn" class="chip-btn" type="button">내 강아지</button>
+  </header>
+
+  <div id="pickBanner" class="pick-banner" hidden>
+    <span>사진 찍은 곳을 지도에서 눌러주세요</span>
+    <button id="pickCancel" type="button" class="link-btn">취소</button>
+  </div>
+
+  <button id="addBtn" class="fab" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+    꼬순내 남기기
+  </button>
+
+  <aside id="sheet" class="sheet" hidden aria-live="polite">
+    <button id="sheetClose" class="sheet-close" type="button" aria-label="닫기">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div id="sheetBody"></div>
+  </aside>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
