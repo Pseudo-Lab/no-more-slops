@@ -60,7 +60,9 @@ Include deliverables, production code, reproduction instructions, metrics, and p
 
 Participants may retain their work and be paper authors, app or service owners, or owners of the accounts where they publish content.
 
-When publishing or operating the work under your own name, **you must still include an acknowledgement** in the paper's acknowledgements, an about page or credits, or the post itself:
+When publishing or operating the work under your own name, **you must still include an acknowledgement** in the paper's acknowledgements, an about page or credits, or the post itself.
+
+Use the English wording below, or the Korean equivalent in the [Korean README](README.ko.md#소유권과-acknowledgement), depending on the submission or publication language.
 
 > This work was created as part of the No-More-Slops group activities at Pseudo Lab.
 
