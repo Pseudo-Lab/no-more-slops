@@ -64,6 +64,8 @@ The [local harness](reel-harness.md) can render six configurable layouts. A cust
 
 Review the whole exported video at phone size, especially transitions, late-stage diagrams, credits and the bottom explanation. A preview mask is a separate review artifact, never burned into the upload. Check title punctuation and large copy using the user's style; preserve meaningful dates, decimals, abbreviations and genuine questions.
 
+When the selected brief requires recompression review, follow [the legibility workflow](recompression.md): preserve the master, make separate 1080p/720p stress previews, and inspect text, line clarity and continuous motion in those files. The optional light-panel and minimum-type settings support the chosen brand; they do not certify Instagram's eventual encoding quality.
+
 Measure the final public caption after links, media credits, hashtags and acknowledgement are included. The Chihuahua AI Lab example uses fewer than 500 characters and exactly three hashtags as account preferences. Do not turn these into universal Instagram limits. Do not truncate attribution merely to pass a count.
 
 Deliver the actual files and record the updated brief for the next edition. Creating files, naming a branch `auto-post`, or invoking this production workflow does not authorize posting to a social account or scheduling a run. Continue external publishing only when it is actually requested through an available, authorized workflow.

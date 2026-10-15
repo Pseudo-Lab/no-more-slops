@@ -69,6 +69,14 @@ def preflight(manifest, brief_path):
     delivery=carousel.object_field(brief,'deliverable')
     policy=carousel.object_field(brief,'caption_policy')
     carousel.object_field(brief,'punctuation_policy')
+    compression=brief.get('recompression_policy',{})
+    require(isinstance(compression,dict),'recompression_policy must be an object.')
+    for key in ('body_on_light_panel','require_review'):
+        if key in compression:
+            require(type(compression[key]) is bool,f'recompression_policy.{key} must be boolean.')
+    for key in ('min_body_font_at_1080','min_graphic_font_at_1080','min_line_width_at_1080'):
+        if key in compression:
+            number(compression[key],f'recompression_policy.{key}',1)
     string(account.get('display_name'),'account.display_name')
     for key in ('background','text'):
         require(isinstance(brand.get(key),str) and re.fullmatch(r'#[0-9A-Fa-f]{6}',brand[key]),f'Invalid brand.{key}.')
@@ -198,6 +206,9 @@ def preflight(manifest, brief_path):
             'caption_characters':len(caption),'character_count_method':'Unicode code points, including final newline','hashtags':tags,
             'punctuation_review':findings,'exports_verified':False,'manual_review':['Review claims, dates and media permissions against the original sources.','Watch the actual MP4 at phone size and inspect scene transitions, reading time and UI overlap.'],
             'safe_area_note':'Insets are task settings, not a universal Instagram UI guarantee.'}
+    if compression.get('require_review'):
+        report['recompression_review']={'status':'pending','actual_instagram_result_verified':False}
+        report['manual_review'].append('Run preview_recompression.py on the final master and inspect both review-only videos at phone size. Record legibility and motion findings separately; exports_verified does not pass this review.')
     return post,brief,caption,report
 
 

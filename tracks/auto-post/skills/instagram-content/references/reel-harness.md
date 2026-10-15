@@ -27,6 +27,7 @@ Brief fields:
 | `caption_policy` | Same count/hashtag rules as [the carousel harness](harness.md#brief-as-the-account-input) |
 | `punctuation_policy`, `acknowledgement` | Task-specific preferences, never global organization defaults |
 | `motion_policy` | Optional account production/review requirements; continuous motion is **not** automatically validated by this harness |
+| `recompression_policy` | Optional white body panel, minimum body/graphic type and line widths, plus a pending review requirement; see [legibility after recompression](recompression.md) |
 
 An episode declares `schema_version: 1`, `content_type`, `edition_date`, `topic`, `caption`, `sources` and `scenes`. Account/brand overrides in the episode are rejected to prevent accidental drift. The output caption includes the optional acknowledgement, demo marker and final newline before counts are checked.
 
@@ -60,6 +61,8 @@ The package contains `reel.mp4`, `cover.jpg`, `preview.jpg`, `safe-area-preview.
 The report checks the encoded dimensions, whole-frame count, duration, H.264/yuv420p, BT.709 tags, exactly one video stream, zero audio streams and a full decoder pass. Text and geometry are rasterized directly at the requested resolution. Text and bounded shapes are checked throughout rendering, with their measured region bounds recorded. Body copy stays fixed throughout each scene. The report also contains caption counts and punctuation **review candidates**, which do not rewrite the input.
 
 The renderer checks type regions as well as outer safety margins, but it is not a general collision detector for arbitrary custom drawings. Inspect the encoded contact sheet, masked preview and moving MP4. The report is not factual, legal, aesthetic or platform-upload approval. Instagram may transcode a file after upload.
+
+For selected briefs with `recompression_policy.require_review`, the report explicitly leaves that review pending. Run [preview_recompression.py](../scripts/preview_recompression.py) on the master, then follow the [manual review steps](recompression.md#complete-the-review). It creates separate review-only videos and verifies their technical properties; it cannot pass visual review or simulate Instagram exactly.
 
 Rendering occurs in a temporary staging directory. Input, font, source, layout and encode failures leave the previous delivery intact. Use a new output directory, or `--overwrite` to replace the generated package while retaining unrelated files. Keep all input files outside the output directory. The final file replacement is per file, not a filesystem-wide atomic transaction.
 

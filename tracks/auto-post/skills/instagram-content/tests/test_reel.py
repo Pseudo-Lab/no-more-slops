@@ -117,6 +117,36 @@ class ReelTests(unittest.TestCase):
         self.assertIsNone(ImageChops.difference(before.crop(crop(.80,.925)),hidden.crop(crop(.80,.925))).getbbox())
         self.assertEqual(before.size,(360,640))
 
+    def test_recompression_policy_renders_panel_and_keeps_review_pending(self):
+        self.brief['brand']={'background':'#FF4D00','text':'#000000'}
+        self.brief['recompression_policy']={'body_on_light_panel':True,'min_body_font_at_1080':38,
+                                          'min_graphic_font_at_1080':30,'min_line_width_at_1080':3,'require_review':True}
+        self.post['scenes'][0]['body']=['A clear explanation','Readable after scaling']
+        self.save()
+        post,brief,_,report=harness.preflight(self.manifest,self.brief_path)
+        renderer=harness.Renderer(post,brief,self.fonts())
+        before,after=renderer.frame(0,0),renderer.frame(0,5)
+        point=lambda x,y:tuple(round(v*renderer.scale) for v in (renderer.x(x),renderer.y(y)))
+        self.assertEqual(before.getpixel(point(.9,.825)),(255,255,255))
+        self.assertEqual(before.getpixel(point(.9,.79)),(255,77,0))
+        region=(*point(.02,.80),*point(.98,.925))
+        self.assertIsNone(ImageChops.difference(before.crop(region),after.crop(region)).getbbox())
+        self.assertIn((round(38*renderer.scale),True),renderer.font_cache)
+        self.assertEqual(report['recompression_review']['status'],'pending')
+        self.assertFalse(report['recompression_review']['actual_instagram_result_verified'])
+        post['scenes'][0]['body']=['Long text '*20]
+        with self.assertRaisesRegex(ValueError,'safe area|light panel'):
+            renderer.frame(0,0)
+
+    def test_invalid_recompression_policy_fails_preflight(self):
+        for policy in ([], {'require_review':'true'}, {'body_on_light_panel':1},
+                       {'min_body_font_at_1080':float('nan')}, {'min_line_width_at_1080':0}):
+            with self.subTest(policy=policy):
+                self.brief['recompression_policy']=policy
+                self.save()
+                with self.assertRaisesRegex(ValueError,'recompression_policy'):
+                    harness.preflight(self.manifest,self.brief_path)
+
     @unittest.skipUnless(shutil.which('ffmpeg') and shutil.which('ffprobe'),'FFmpeg required')
     def test_render_failure_preserves_delivery_and_unrelated_files(self):
         self.args.out.mkdir()

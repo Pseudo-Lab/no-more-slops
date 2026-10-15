@@ -68,6 +68,7 @@ class Renderer:
         self.type_scale = self.sw / 770
         self.bg, self.ink = (ImageColor.getrgb(brief['brand'][k]) for k in ('background', 'text'))
         self.panel, self.panel_ink = (255, 255, 255), (0, 0, 0)
+        self.recompression = brief.get('recompression_policy', {})
         self.tiles, self.font_cache, self.glyphs, self.bounds = {}, {}, set(), {}
         self.section, self.scene_id = 'header', ''
 
@@ -99,7 +100,9 @@ class Renderer:
 
     def text(self, im, x, y, value, size=36, bold=True, color=None, center=False, alpha=1):
         color = color or self.ink
-        px = max(1, round(size*self.type_scale*self.scale))
+        floor_key = {'body': 'min_body_font_at_1080', 'visual': 'min_graphic_font_at_1080'}.get(self.section)
+        floor = self.recompression.get(floor_key, 0) if floor_key else 0
+        px = max(1, round(max(size*self.type_scale, floor)*self.scale))
         key = (value, px, bold, color)
         if key not in self.tiles:
             fk = (px, bold)
@@ -121,21 +124,27 @@ class Renderer:
         if center:
             x -= w/2
         self.box_check((x,y,x+w,y+h),repr(value))
+        if self.section == 'body' and self.recompression.get('body_on_light_panel'):
+            require(x >= self.x(.04) and x+w <= self.x(.96) and y+h <= self.y(.917),
+                    f'{self.scene_id}: body copy exceeds the light panel. Shorten or reflow the copy.')
         if alpha < .999:
             tile = tile.copy()
             tile.putalpha(tile.getchannel('A').point(lambda a: round(a*max(0,min(1,alpha)))))
         im.paste(tile,(round(x*self.scale),round(y*self.scale)),tile)
 
     def line(self, d, points, width=3, fill=None):
-        d.line(self.coords(points),fill=fill or self.ink,width=max(1,round(width*self.type_scale*self.scale)))
+        d.line(self.coords(points),fill=fill or self.ink,width=self.stroke(width*self.type_scale))
+
+    def stroke(self, width):
+        return max(1, round(max(width, self.recompression.get('min_line_width_at_1080', 0))*self.scale))
 
     def rect(self, d, box, fill=None, radius=0, width=3):
         self.box_check(box,'graphic')
-        d.rounded_rectangle(self.coords(box),round(radius*self.scale),fill=fill or self.panel,outline=self.ink,width=max(1,round(width*self.scale)))
+        d.rounded_rectangle(self.coords(box),round(radius*self.scale),fill=fill or self.panel,outline=self.ink,width=self.stroke(width))
 
     def circle(self, d, x, y, radius, fill=None, width=3):
         self.box_check((x-radius,y-radius,x+radius,y+radius),'circle')
-        d.ellipse(self.coords((x-radius,y-radius,x+radius,y+radius)),fill=fill or self.panel,outline=self.ink,width=max(1,round(width*self.scale)))
+        d.ellipse(self.coords((x-radius,y-radius,x+radius,y+radius)),fill=fill or self.panel,outline=self.ink,width=self.stroke(width))
 
     def packet(self, d, p1, p2, t, phase=0, speed=.6, radius=6):
         p=(t*speed+phase)%1
@@ -162,9 +171,14 @@ class Renderer:
         self.section='visual'
         self.visual(im,d,scene,t,n,media)
         self.section='body'
-        self.line(d,(self.x(.02),self.y(.808),self.x(.98),self.y(.808)),2)
+        light_panel = self.recompression.get('body_on_light_panel', False)
+        if light_panel:
+            self.rect(d,(self.x(.02),self.y(.812),self.x(.98),self.y(.925)))
+        else:
+            self.line(d,(self.x(.02),self.y(.808),self.x(.98),self.y(.808)),2)
         for j,value in enumerate(scene['body']):
-            self.text(im,self.x(.02),self.y(.827+j*.047),value,36)
+            self.text(im,self.x(.045 if light_panel else .02),self.y(.833+j*.047 if light_panel else .827+j*.047),
+                      value,36,color=self.panel_ink if light_panel else self.ink)
         self.section='credit'
         self.text(im,self.x(.02),self.y(.94),scene['credit'],22,bold=False)
         self.section='progress'

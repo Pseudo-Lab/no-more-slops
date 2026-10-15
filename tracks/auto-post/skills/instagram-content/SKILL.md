@@ -26,6 +26,8 @@ For repeated carousel production with a saved account brief, read [references/ha
 
 Use the user's dimensions when specified. Otherwise 1080×1350 for a carousel and 1080×1080 for an avatar are practical starting formats. Choose slide count from the story and brief, not a fixed brand template. Confirm current platform limits if they affect publishing or a requested format.
 
+When a Reel looks degraded after upload or its brief requires a recompression review, read [references/recompression.md](references/recompression.md). Preserve the chosen palette and master resolution, adapt small copy and thin lines, then create separate local stress previews with [scripts/preview_recompression.py](scripts/preview_recompression.py). Inspect the actual derivatives at phone size; do not blame a solid background without evidence or describe local previews as Instagram's actual result.
+
 ## Finish with reviewable assets
 
 Open the actual rendered images and check the whole set plus small-screen readability. For profiles, check the circular crop and small icon sizes. Correct clipping, unsupported glyphs, weak contrast and obscured subjects before delivery.
