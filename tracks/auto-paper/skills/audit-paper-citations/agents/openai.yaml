@@ -1,0 +1,6 @@
+interface:
+  display_name: "Word 논문 인용 및 참고문헌 검수"
+  short_description: "Word 인용과 원문을 대조해 검수 MD 또는 수정 Word 작성"
+  default_prompt: "$audit-paper-citations로 첨부 Word의 인용·참고문헌·원문 부합성을 검수하고, 수정 요청 여부에 맞는 결과 파일을 저장해 줘."
+policy:
+  allow_implicit_invocation: true

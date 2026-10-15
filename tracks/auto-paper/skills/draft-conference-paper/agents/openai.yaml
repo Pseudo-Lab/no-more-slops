@@ -1,0 +1,4 @@
+interface:
+  display_name: "학회 논문 초안 작성"
+  short_description: "선행연구 파일로 학회 양식의 실험 전 초록·서론·관련 연구 작성"
+  default_prompt: "$draft-conference-paper 선행연구 결과 파일과 목표 학회명을 바탕으로 실험 전 국문 Abstract, Introduction, Related Work를 작성하고 편집 가능한 Word와 LaTeX로 저장해 줘."
