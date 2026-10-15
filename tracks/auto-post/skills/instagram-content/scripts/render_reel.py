@@ -177,7 +177,7 @@ class Renderer:
         else:
             self.line(d,(self.x(.02),self.y(.808),self.x(.98),self.y(.808)),2)
         for j,value in enumerate(scene['body']):
-            self.text(im,self.x(.045 if light_panel else .02),self.y(.833+j*.047 if light_panel else .827+j*.047),
+            self.text(im,self.x(.045 if light_panel else .02),self.y(.827+j*.047),
                       value,36,color=self.panel_ink if light_panel else self.ink)
         self.section='credit'
         self.text(im,self.x(.02),self.y(.94),scene['credit'],22,bold=False)
