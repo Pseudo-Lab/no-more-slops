@@ -39,3 +39,21 @@ python -B "$HOME/.agents/skills/instagram-content/scripts/run_carousel.py" /path
 ```
 
 캡션 길이·해시태그 수·장수·문장부호 선호는 계정별로 지정합니다. 출처 확인과 실제 이미지 검토는 스킬의 제작 과정에 포함됩니다. [동작 테스트](../../skills/instagram-content/tests)는 Python 3.10·3.12 CI에서 실행하며, 복사한 스킬을 다른 폴더에서 실행하는 경우도 검사합니다. [재현 예시](examples/layout-demo/README.md)에서 실행 방법을 확인할 수 있습니다.
+
+
+## 무음 인포그래픽 릴스
+
+캐러셀 하네스를 유지하면서 JSON 장면으로 세로 인포그래픽을 제작하는 도구를 추가했습니다. 스킬을 전역에 복사한 뒤에도 계정 설정과 새 기사 입력만 바꿔 실행할 수 있습니다. [제작 흐름과 검증 기록](docs/reel-workflow.md), [장면 형식과 실행 안내](../../skills/instagram-content/references/reel-harness.md)를 참고하세요.
+
+- 9:16과 요청한 정확한 해상도·길이·프레임률을 검증합니다. 치와와 AI Lab 예시는 2160×3840·60초·30fps입니다.
+- 상단·하단·오른쪽 UI 여백은 조절할 수 있으며, 확인용 마스크는 별도 미리보기에만 표시합니다.
+- 신호 흐름·단계 이동·가리기와 재등장·정보 카드·숫자 강조·사진/영상 장면을 조합합니다. 설명 문구는 고정하고 음성 트랙을 제외합니다.
+- 완성 캡션의 출처·크레딧·Acknowledgement를 포함해 500자 미만·해시태그 3개를 검사하도록 예시 계정을 설정했습니다.
+
+[치와와 AI Lab 영상 설정](examples/chihuahua-ai/reel-brief.json)과 [2026-10-15 Neuron AI 재현 예제](examples/chihuahua-ai/neuron-reel-2026-10-15.json)는 명시적으로 선택하는 입력입니다. 이전 캐러셀 설정은 그대로 보관합니다. 뉴스 예제는 당시 발표를 사용한 날짜가 있는 데모이며, 오늘의 뉴스로 재게시하는 입력이 아닙니다. 실제 주차 제출물은 추가하지 않았습니다.
+
+```sh
+python -B tracks/auto-post/skills/instagram-content/scripts/run_reel.py   tracks/auto-post/projects/instagram-production/examples/chihuahua-ai/neuron-reel-2026-10-15.json   --brief tracks/auto-post/projects/instagram-production/examples/chihuahua-ai/reel-brief.json   --out /path/to/reel-demo --font-regular /path/to/Regular.ttf --font-bold /path/to/Bold.ttf
+```
+
+FFmpeg와 ffprobe도 설치되어 있어야 합니다. 하네스는 파일 제작과 검수를 담당합니다. `auto-post` 브랜치명은 Instagram에 자동 게시할 권한이나 일정 설정을 뜻하지 않습니다.

@@ -1,6 +1,6 @@
 ---
 name: instagram-content
-description: "Create or revise Instagram branding, photo-led carousels, and profile images or characters using the current account's brief. Use for Instagram card news, visual posts, account names/colors, or reference-photo avatars; not for general news Q&A or automatic publishing."
+description: "Create or revise Instagram branding, photo-led carousels, silent infographic Reels, and profile images or characters using the current account's brief. Use for card news, animated explainers, visual posts, or reference-photo avatars; not for general news Q&A or automatic publishing."
 ---
 
 # Instagram Content
@@ -19,6 +19,7 @@ Preserve accepted choices across revisions. A request to change the photo or cha
 
 - **Brand colors and account names:** Read [references/branding.md](references/branding.md). Offer distinct, usable choices, then record the chosen identity in the brief.
 - **Carousels / card news:** Read [references/carousel.md](references/carousel.md). Research only what the content requires, pair each slide with a relevant visual, and produce upload images and caption. For a compatible 4:5 editorial layout, use [scripts/render_carousel.py](scripts/render_carousel.py) with [references/renderer.md](references/renderer.md). This helper is optional; adapt the layout or tool to the requested design.
+- **Silent infographic Reels:** Read [references/reels.md](references/reels.md). Carry forward the requested resolution, duration, audio choice and UI margins. Use the portable [Reel harness](references/reel-harness.md) for a reviewed scene manifest; it renders native-resolution type and diagrams, checks the actual MP4, and creates overlay previews. Adapt the visual design when its six layouts do not fit the story.
 - **Photo profiles / illustrated characters:** Read [references/profile.md](references/profile.md). Preserve the subject's recognizable features and use the selected brand. [scripts/prepare_avatar.py](scripts/prepare_avatar.py) exports a finished square image and circular previews; it does not create or isolate the subject.
 
 For repeated carousel production with a saved account brief, read [references/harness.md](references/harness.md) and use [scripts/run_carousel.py](scripts/run_carousel.py). It applies the selected brief, checks its slide and caption constraints, stages rendering, verifies the upload ZIP, and records a production report. Include source and license credits before measuring the final caption. Treat punctuation findings as review candidates, preserving meaningful punctuation and long-form sentence separators. Neither this harness nor its reports verify source truth or replace viewing the exports.
@@ -30,6 +31,7 @@ Use the user's dimensions when specified. Otherwise 1080×1350 for a carousel an
 Open the actual rendered images and check the whole set plus small-screen readability. For profiles, check the circular crop and small icon sizes. Correct clipping, unsupported glyphs, weak contrast and obscured subjects before delivery.
 
 - Carousel: numbered PNGs, contact sheet, finished caption, claim/media sources where applicable, and an upload ZIP. Record generation inputs when needed for reproduction.
+- Reel: actual MP4, cover, encoded-frame contact sheet, UI safe-area preview, finished caption, scene explanations/SRT, source ledger, selected brief and measured production report. Review motion and reading time in the exported video; technical checks do not establish visual or factual quality.
 - Profile: square PNG, circular preview, and editable source when one was actually created.
 - Branding only: concise choices or the selected brief; do not make unrelated assets.
 

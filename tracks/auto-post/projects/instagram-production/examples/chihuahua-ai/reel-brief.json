@@ -1,0 +1,45 @@
+{
+  "account": {
+    "display_name": "치와와 AI Lab",
+    "handle": "chihuahua_ai",
+    "status": "name_selected_availability_unverified"
+  },
+  "audience": "AI 소식을 빠르게 이해하고 싶은 한국어 독자",
+  "topic": "최신 AI 소식",
+  "language": "ko",
+  "timezone": "Asia/Seoul",
+  "tone": "쉽고 간결하며 사실을 과장하지 않는 설명",
+  "brand": {
+    "background": "#FF4D00",
+    "text": "#000000"
+  },
+  "visual_direction": "비비드 오렌지와 검정 글자, 중앙에 배치한 제목·설명·도표, 정보의 흐름과 작업 순서를 보여주는 움직임",
+  "deliverable": {
+    "type": "reel",
+    "width": 2160,
+    "height": 3840,
+    "min_short_side": 2048,
+    "fps": 30,
+    "duration_seconds": 60,
+    "min_scene_seconds": 3,
+    "audio": "none",
+    "safe_area": {
+      "left": 0.1111111111111111,
+      "top": 0.14583333333333334,
+      "right": 0.17592592592592593,
+      "bottom": 0.25
+    }
+  },
+  "acknowledgement": "이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.",
+  "caption_policy": {
+    "max_characters": 499,
+    "hashtag_count": 3
+  },
+  "punctuation_policy": {
+    "headlines": "omit_terminal_period",
+    "short_captions": "omit_terminal_period",
+    "large_display_copy": "omit_terminal_period",
+    "long_form_prose": "retain_sentence_separators"
+  },
+  "video_preference": "9:16, minimum 2K; current export 2160×3840; approximately 60 seconds; silent; Reels UI safe areas; meaningful dynamic infographic motion"
+}

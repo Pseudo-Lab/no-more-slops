@@ -39,3 +39,14 @@ python -B "$HOME/.agents/skills/instagram-content/scripts/run_carousel.py" /path
 ```
 
 Caption limits, hashtag counts, slide counts and punctuation preferences are configurable per account. Source verification and visual review remain part of the skill workflow. The [behavioral tests](../../skills/instagram-content/tests) run in CI on Python 3.10 and 3.12, including a copied installation used outside this checkout. See the [reproduction example](examples/layout-demo/README.md).
+
+
+## Silent infographic Reels
+
+The existing carousel tools now also have a portable scene-manifest workflow for silent vertical explainers. See the [production flow and verification record](docs/reel-workflow.md) and the [Reel harness reference](../../skills/instagram-content/references/reel-harness.md).
+
+The harness supports native-resolution type and diagrams, configurable Reels UI insets, six motion layouts, local images/video, a fixed explanation for each scene, and no audio stream. It verifies the actual MP4 and caption, then exports the cover, encoded-frame contact sheet, safe-area preview, SRT, sources, selected brief and measured report. FFmpeg, ffprobe and Pillow are required.
+
+Select the [Chihuahua AI Lab Reel brief](examples/chihuahua-ai/reel-brief.json) and [dated Neuron AI replay example](examples/chihuahua-ai/neuron-reel-2026-10-15.json) explicitly. They use 2160×3840, 60 seconds, 30 fps, a caption below 500 characters and three hashtags. These are account preferences, not universal platform rules. The earlier carousel brief remains unchanged. The replay is visibly labeled as a demo and must not be relabeled current news. This skill improvement does not assign a new submission week.
+
+The `auto-post` branch collects production tools; it does not schedule or publish to a social account. The scope differs from `instagram-reel` in PRs #9/#15: this workflow begins with sourced copy and diagram scenes, while that workflow edits recorded footage around its visible actions. It extends `instagram-content` from PR #5 rather than creating a duplicate skill.
