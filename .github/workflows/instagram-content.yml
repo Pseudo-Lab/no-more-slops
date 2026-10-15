@@ -1,0 +1,33 @@
+name: Instagram production helpers
+
+on:
+  push:
+    paths:
+      - 'tracks/auto-post/skills/instagram-content/**'
+      - '.github/workflows/instagram-content.yml'
+  pull_request:
+    paths:
+      - 'tracks/auto-post/skills/instagram-content/**'
+      - '.github/workflows/instagram-content.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install fonts and rendering dependency
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-dejavu-core fonts-noto-cjk
+          python -m pip install -r tracks/auto-post/skills/instagram-content/scripts/requirements.txt
+      - name: Test portable rendering and production checks
+        run: python -B -m unittest discover -s tracks/auto-post/skills/instagram-content/tests -v
