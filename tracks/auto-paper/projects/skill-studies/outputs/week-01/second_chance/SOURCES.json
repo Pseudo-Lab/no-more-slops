@@ -1,0 +1,284 @@
+{
+  "schema": "rf.second-chance.sources.v5",
+  "created_date": "2026-10-12",
+  "scope": "Read-only local sources and official primary abstracts/documentation. No original ZIP code execution, PDF download, dataset download, live model or dependency installation.",
+  "local_sources": [
+    {
+      "id": "v3_executor",
+      "path": "projects/skill_research_v3_20261012/second_chance/experiment.py",
+      "sha256": "e3b0b830b1792e6ef2bcd2ea1e538a0c89b10fe10ad0e09258fc7f7c07a3b1e8",
+      "review_date": "2026-10-12",
+      "review_kind": "local_read_only",
+      "claim_scope": "Scripted behavior/ledger/budget/endpoints and missingness implementation, not a live-model experiment."
+    },
+    {
+      "id": "v3_methods",
+      "path": "projects/skill_research_v3_20261012/second_chance/METHODS.md",
+      "sha256": "7b487b4175eb7e16baaecc970f94393dea57ba0e1111b575a6706cb3fdb6b2c0",
+      "review_date": "2026-10-12",
+      "review_kind": "local_read_only",
+      "claim_scope": "Explicit prototype scope and limitations; actual response intake remains provenance-unverified."
+    },
+    {
+      "id": "v3_paper",
+      "path": "projects/skill_research_v3_20261012/papers_v3/sources/SecondChance.json",
+      "sha256": "58cc9a54b91b557db5f1f23984188b388c3ae5a81b2f3639963f38f63ce4be6c",
+      "review_date": "2026-10-12",
+      "review_kind": "local_read_only",
+      "claim_scope": "Prior design manuscript; no real empirical outcome."
+    },
+    {
+      "id": "v4_design",
+      "path": "projects/skill_research_dataset_v4_20261012/evaluation_design/DESIGN.md",
+      "sha256": "7c14c0795ce836de88d5bb27ddd9bdd0257ed983e92cdfddf4879e8425c7d123",
+      "review_date": "2026-10-12",
+      "review_kind": "local_read_only",
+      "claim_scope": "Dataset conversion design, fixed requirements and error-mutation boundaries."
+    },
+    {
+      "id": "v4_contracts",
+      "path": "projects/skill_research_dataset_v4_20261012/evaluation_design/bench_contracts.json",
+      "sha256": "438d13d3de2f804c606246359c1b7d2ff4d01b86547a25f86f2685a59354bd03",
+      "review_date": "2026-10-12",
+      "review_kind": "local_read_only",
+      "claim_scope": "Proposed data/histories/checkpoint contracts; not actual model histories."
+    },
+    {
+      "id": "v4_manifest",
+      "path": "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/manifest.json",
+      "sha256": "d73a92b6654c0086b8e349136ec4a46e23460df7b95cff971f37e8cc145e2fb0",
+      "review_date": "2026-10-12",
+      "review_kind": "local_read_only",
+      "claim_scope": "Prepared source/split/file receipt; 531 tasks,325 components,44 seeded training faults,0 histories."
+    },
+    {
+      "id": "v4_faults",
+      "path": "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/second_chance_evaluator_mutations.json",
+      "sha256": "8b20c4a246a2dbef96738cea837665075d15765d6c09fa4968adc68426e643af",
+      "review_date": "2026-10-12",
+      "review_kind": "local_read_only",
+      "claim_scope": "Constructed overlays; original benchmark annotations preserved."
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "ref1",
+      "reference_number": 1,
+      "title": "Y. Yang et al. SkillOpt: Executive Strategy for Self-Evolving Agent Skills. arXiv:2605.23904v2, 2026.",
+      "url": "https://arxiv.org/abs/2605.23904v2",
+      "review_date": "2026-10-12",
+      "review_kind": "official_abstract_and_metadata",
+      "pinned_version": "2605.23904v2",
+      "claim_scope": "Abstract establishes a rejected-edit buffer, bounded optimization and held-out gating; no performance figure is adopted.",
+      "not_established": [
+        "performance on our tasks",
+        "absence of all overlapping methods",
+        "implemented comparator equivalence"
+      ]
+    },
+    {
+      "id": "ref2",
+      "reference_number": 2,
+      "title": "Microsoft. SkillOpt-Sleep: Deployment-Time Companion (Preview). Official software documentation, reviewed 2026-10-12.",
+      "url": "https://github.com/microsoft/SkillOpt/blob/main/docs/sleep/README.md",
+      "review_date": "2026-10-12",
+      "review_kind": "official_repository_documentation_preview",
+      "pinned_version": "not_pinned_mutable_main",
+      "claim_scope": "Mutable official README describes replay, reflection, memory updates and gating; executable adapter equivalence remains unverified.",
+      "not_established": [
+        "performance on our tasks",
+        "absence of all overlapping methods",
+        "implemented comparator equivalence"
+      ]
+    },
+    {
+      "id": "ref3",
+      "reference_number": 3,
+      "title": "A. Madaan et al. Self-Refine: Iterative Refinement with Self-Feedback. arXiv:2303.17651, 2023.",
+      "url": "https://arxiv.org/abs/2303.17651",
+      "review_date": "2026-10-12",
+      "review_kind": "official_abstract_and_metadata",
+      "pinned_version": null,
+      "claim_scope": "Iterative self-feedback/refinement is an adjacent output-repair mechanism.",
+      "not_established": [
+        "performance on our tasks",
+        "absence of all overlapping methods",
+        "implemented comparator equivalence"
+      ]
+    },
+    {
+      "id": "ref4",
+      "reference_number": 4,
+      "title": "N. Shinn et al. Reflexion: Language Agents with Verbal Reinforcement Learning. arXiv:2303.11366, 2023.",
+      "url": "https://arxiv.org/abs/2303.11366",
+      "review_date": "2026-10-12",
+      "review_kind": "official_abstract_and_metadata",
+      "pinned_version": null,
+      "claim_scope": "Verbal reflective feedback retained as episodic memory motivates a serious lesson-memory comparator.",
+      "not_established": [
+        "performance on our tasks",
+        "absence of all overlapping methods",
+        "implemented comparator equivalence"
+      ]
+    },
+    {
+      "id": "ref5",
+      "reference_number": 5,
+      "title": "J. S. Park et al. Generative Agents: Interactive Simulacra of Human Behavior. arXiv:2304.03442v2, 2023.",
+      "url": "https://arxiv.org/abs/2304.03442v2",
+      "review_date": "2026-10-12",
+      "review_kind": "official_abstract_metadata_and_HTML_section_4.1",
+      "pinned_version": "2304.03442v2",
+      "claim_scope": "Experience memory, reflection, and retrieval contextualize memory selection; HTML section 4.1 verifies relevance/recency/importance.",
+      "not_established": [
+        "performance on our tasks",
+        "absence of all overlapping methods",
+        "implemented comparator equivalence"
+      ],
+      "additional_url": "https://arxiv.org/html/2304.03442v2"
+    },
+    {
+      "id": "ref6",
+      "reference_number": 6,
+      "title": "C. G. Northcutt, L. Jiang, I. L. Chuang. Confident Learning: Estimating Uncertainty in Dataset Labels. JAIR, 2021.",
+      "url": "https://arxiv.org/abs/1911.00068v6",
+      "review_date": "2026-10-12",
+      "review_kind": "official_abstract_and_metadata",
+      "pinned_version": "1911.00068v6",
+      "claim_scope": "Label-error estimation under noise assumptions motivates comparison with supervision repair; it is not decision-history recovery evidence.",
+      "not_established": [
+        "performance on our tasks",
+        "absence of all overlapping methods",
+        "implemented comparator equivalence"
+      ]
+    },
+    {
+      "id": "ref7",
+      "reference_number": 7,
+      "title": "L. Zheng et al. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. arXiv:2306.05685, 2023.",
+      "url": "https://arxiv.org/abs/2306.05685",
+      "review_date": "2026-10-12",
+      "review_kind": "official_abstract_and_metadata",
+      "pinned_version": null,
+      "claim_scope": "Documented evaluator biases motivate independently challenged grading; their magnitude is not an estimate for this study.",
+      "not_established": [
+        "performance on our tasks",
+        "absence of all overlapping methods",
+        "implemented comparator equivalence"
+      ]
+    },
+    {
+      "id": "ref8",
+      "reference_number": 8,
+      "title": "D. Wadden et al. Fact or Fiction: Verifying Scientific Claims. EMNLP, 2020.",
+      "url": "https://aclanthology.org/2020.emnlp-main.609/",
+      "review_date": "2026-10-12",
+      "review_kind": "official_abstract_and_metadata",
+      "pinned_version": null,
+      "claim_scope": "Scientific claim verification with annotated evidence provides source tasks; the local cited-pair scoring contract is distinct.",
+      "not_established": [
+        "performance on our tasks",
+        "absence of all overlapping methods",
+        "implemented comparator equivalence"
+      ]
+    },
+    {
+      "id": "scifact_schema",
+      "url": "https://github.com/allenai/scifact/blob/master/doc/data.md",
+      "review_date": "2026-10-12",
+      "review_kind": "official_repository_schema_documentation",
+      "claim_scope": "Claim/corpus IDs and rationale alternatives inform local cited-pair adaptation; no official-score equivalence."
+    },
+    {
+      "id": "scifact_license",
+      "url": "https://github.com/allenai/scifact/blob/master/LICENSE.md",
+      "review_date": "2026-10-12",
+      "review_kind": "official_component_license_local_snapshot_and_primary_document",
+      "claim_scope": "Claims/evidence CC-BY4.0; abstracts ODC-By1.0; code Apache2.0. Distinct components, not a legal certification.",
+      "snapshot_sha256": "56ee69bc639cbab8f0b2e4b67091ec5e9390aa99a1d65f0a35e4274686c9a806"
+    }
+  ],
+  "claim_map": [
+    {
+      "id": "C1",
+      "statement": "Faulty selection and negative lessons can be distinct post-correction intervention targets.",
+      "status": "author_proposed_mechanism",
+      "sources": [
+        "v3_methods",
+        "v3_paper",
+        "ref3",
+        "ref4"
+      ],
+      "evidence_limit": "No observed natural history effect."
+    },
+    {
+      "id": "C2",
+      "statement": "Frozen score difference identity and recorded DAG path-slice argument.",
+      "status": "author_analysis",
+      "sources": [
+        "METHODS_CONTRACT.json"
+      ],
+      "evidence_limit": "Algebra/reachability conditions only; not behavioral success or minimum repair cost."
+    },
+    {
+      "id": "C3",
+      "statement": "Buffer, replay and memory consolidation are existing capabilities.",
+      "status": "primary_source_report",
+      "sources": [
+        "ref1",
+        "ref2"
+      ],
+      "evidence_limit": "README review only; code adapter and systematic novelty review incomplete."
+    },
+    {
+      "id": "C4",
+      "statement": "Real-model outcomes NR; current code is scripted measurement plumbing.",
+      "status": "local_source_review",
+      "sources": [
+        "v3_executor",
+        "v3_methods"
+      ],
+      "evidence_limit": "No rerun or new model execution in v5 authorship."
+    },
+    {
+      "id": "C5",
+      "statement": "531 adapted tasks,325 components,44 constructed faults,zero actual histories.",
+      "status": "prepared_dataset_manifest_report",
+      "sources": [
+        "v4_manifest",
+        "v4_faults"
+      ],
+      "evidence_limit": "Counts concern prepared tasks/fault records, not experimental replications."
+    },
+    {
+      "id": "C6",
+      "statement": "Local annotation coverage differs from official score and can reward supersets.",
+      "status": "local_measurement_contract",
+      "sources": [
+        "v4_design",
+        "v4_contracts",
+        "scifact_schema"
+      ],
+      "evidence_limit": "Primary endpoint is all-task label accuracy; precision diagnostic reported separately."
+    },
+    {
+      "id": "C7",
+      "statement": "Matched factorial procedures and a separately fixed-artifact paired memory fork define different intervention estimands under declared conditions.",
+      "status": "planned_identification_design",
+      "sources": [
+        "METHODS_CONTRACT.json"
+      ],
+      "evidence_limit": "No randomized procedure experiment, fixed-artifact memory fork or power plan has been executed. Identical selector mechanisms/pools alone do not hold stochastic repair artifacts fixed."
+    }
+  ],
+  "unresolved": [
+    "Model identity/settings/resource authorization",
+    "Sample size and smallest meaningful paired effect",
+    "Version-pinned SkillOpt/Sleep/Reflexion adapters",
+    "Complete lineage capture and OS-level auditor isolation",
+    "Independent adjudication of ambiguous domain examples",
+    "Actual natural rejection and lesson histories",
+    "Preregistration and final frozen protocol"
+  ],
+  "integrity_statement": "SHA256 identifies reviewed local bytes. It does not authenticate the publisher, prove academic accuracy, certify novelty or turn design into empirical evidence."
+}
