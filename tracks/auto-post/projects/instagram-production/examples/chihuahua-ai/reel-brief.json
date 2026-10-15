@@ -1,0 +1,74 @@
+{
+  "account": {
+    "display_name": "치와와 AI Lab",
+    "handle": "chihuahua_ai.lab",
+    "url": "https://www.instagram.com/chihuahua_ai.lab/",
+    "status": "user_provided_account_url"
+  },
+  "audience": "AI 소식을 빠르게 이해하고 싶은 한국어 독자",
+  "topic": "최신 AI 소식",
+  "language": "ko",
+  "timezone": "Asia/Seoul",
+  "tone": "쉽고 간결하며 사실을 과장하지 않는 설명",
+  "brand": {
+    "background": "#FF4D00",
+    "text": "#000000"
+  },
+  "visual_direction": "진입·지속 동작·장면 전환을 이어서 설계하고 핵심 설명 그래픽이 단 한 구간도 정지하지 않는 다이내믹한 인포그래픽",
+  "deliverable": {
+    "type": "reel",
+    "width": 2160,
+    "height": 3840,
+    "min_short_side": 2048,
+    "fps": 30,
+    "duration_seconds": 60,
+    "min_scene_seconds": 3,
+    "audio": "none",
+    "safe_area": {
+      "left": 0.1111111111111111,
+      "top": 0.14583333333333334,
+      "right": 0.17592592592592593,
+      "bottom": 0.25
+    }
+  },
+  "acknowledgement": "이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.",
+  "caption_policy": {
+    "max_characters": 499,
+    "hashtag_count": 3
+  },
+  "punctuation_policy": {
+    "headlines": "omit_terminal_period",
+    "short_captions": "omit_terminal_period",
+    "large_display_copy": "omit_terminal_period",
+    "long_form_prose": "retain_sentence_separators"
+  },
+  "video_preference": "9:16 세로 4K · 약 60초 · 무음 · 릴스 UI 여백 유지 · 첫 프레임부터 마지막 프레임까지 핵심 설명 그래픽이 눈에 띄게 계속 움직임 · 정지 구간 없음",
+  "motion_policy": {
+    "mode": "continuous",
+    "max_static_seconds": 0,
+    "scope": "primary_explanatory_graphic",
+    "visibility": "clearly_visible_at_phone_size",
+    "explanatory_text": "stable_while_graphics_move",
+    "reject_sole_motion": [
+      "entrance_then_hold",
+      "progress_bar",
+      "tiny_decorative_dots",
+      "micro_jitter"
+    ],
+    "review": "full_encoded_video_and_primary_graphic_region"
+  },
+  "preference_update": {
+    "recorded_on": "2026-10-15",
+    "applies_to": "future_reels",
+    "request": "다음부터 더 다이나믹한 움직임이 항상 있어야 하며 단 한 순간도 가만히 있으면 안 됨",
+    "historical_outputs": "이미 완성한 영상과 검수 기록은 보존",
+    "recompression_request": "비비드 오렌지는 유지하고 본문은 흰색 패널에 검정 굵은 글자, 도식은 큰 글자와 굵은 선을 사용하며 축소·재압축 후 가독성을 검수"
+  },
+  "recompression_policy": {
+    "body_on_light_panel": true,
+    "min_body_font_at_1080": 38,
+    "min_graphic_font_at_1080": 30,
+    "min_line_width_at_1080": 3,
+    "require_review": true
+  }
+}

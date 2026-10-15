@@ -1,0 +1,4 @@
+interface:
+  display_name: "Instagram Content"
+  short_description: "브랜드·캐러셀·무음 인포그래픽 릴스와 프로필 제작 및 검수"
+  default_prompt: "$instagram-content로 이번 계정의 주제와 브랜드에 맞는 인스타 콘텐츠를 만들어줘. 대화에서 정한 설정을 이어서 사용해줘."

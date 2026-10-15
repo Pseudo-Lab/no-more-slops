@@ -1,0 +1,4 @@
+interface:
+  display_name: "디자인 문구의 마침표"
+  short_description: "콘텐츠·웹디자인 제목, 캡션, 큰 글씨의 불필요한 끝마침표를 정리합니다"
+  default_prompt: "$design-punctuation을 사용해 이 콘텐츠의 제목·캡션·큰 글씨에서 불필요한 끝마침표를 정리해줘."
