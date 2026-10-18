@@ -1,0 +1,4 @@
+interface:
+  display_name: "LLM API Experiment Runs"
+  short_description: "Preflight, estimate, run, resume and verify paid LLM API experiments"
+  default_prompt: "Use $llm-api-experiment-runs to check the configuration, estimate the cost and time, and prepare a resumable run of this benchmark experiment."

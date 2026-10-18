@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sync Paper Results"
+  short_description: "Regenerate paper tables from runs, catch stale numbers, keep the PDF in budget"
+  default_prompt: "Use $sync-paper-results to fill this paper's result tables from the finished runs, fix stale numbers in the prose and README, and check the PDF's page budget."

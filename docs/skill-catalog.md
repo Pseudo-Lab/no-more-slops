@@ -17,6 +17,8 @@
 | [experiment-report-to-paper](../tracks/auto-paper/skills/experiment-report-to-paper/SKILL.md) | 완료된 실험 Markdown 보고서를 학회 형식 Word 논문으로 작성합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
 | [experiment-runner](../tracks/auto-paper/skills/experiment-runner/SKILL.md) | 확정한 계획에 따라 대조군을 갖춘 실험 실행을 지원합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [experiment-to-paper](../tracks/auto-paper/skills/experiment-to-paper/SKILL.md) | 저장된 JSON 실험 결과를 근거 표로 내보내고 원고를 작성합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
+| [llm-api-experiment-runs](../tracks/auto-paper/skills/llm-api-experiment-runs/SKILL.md) | 유료 LLM·검증기 API 실험의 사전 점검·비용 추정·재개 가능한 기록·실패 처리·완료 검사를 다룹니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
+| [paper-code-audit](../tracks/auto-paper/skills/paper-code-audit/SKILL.md) | 논문의 방법·설정·수치를 코드·데이터·실행 기록과 대조하고 다시 계산합니다. 결과로 원고를 고치는 `paper-results-reviser`와 달리 구현과의 불일치를 찾습니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [paper-results-reviser](../tracks/auto-paper/skills/paper-results-reviser/SKILL.md) | 완료된 실험 결과와 원고의 주장·수치를 대조하고 수정합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [paper-review-local](../tracks/auto-paper/skills/paper-review-local/SKILL.md) | 로컬 원고·인용 키·그림·PDF 및 텍스트 중복을 검사합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
 | [paper-to-latex](../tracks/auto-paper/skills/paper-to-latex/SKILL.md) | 원고를 LaTeX 프로젝트로 변환하고 내용·빌드 결과를 검사합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
@@ -28,6 +30,8 @@
 | [research-question-parser](../tracks/auto-paper/skills/research-question-parser/SKILL.md) | 문서에서 연구 질문과 검증 가능한 가설을 추출합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-readiness-advisor](../tracks/auto-paper/skills/research-readiness-advisor/SKILL.md) | 연구 계획의 준비 상태와 진행 조건을 검토합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-related-work](../tracks/auto-paper/skills/research-related-work/SKILL.md) | 선행연구의 출처와 BibTeX를 정리합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
+| [reuse-recorded-runs](../tracks/auto-paper/skills/reuse-recorded-runs/SKILL.md) | 결과가 나온 뒤 한도·임계값·최종 규칙·반복 횟수를 바꿀 때 기록을 재계산·이어서 실행·부분 재실행으로 재사용하고 짝짓기와 공개를 확인합니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
+| [sync-paper-results](../tracks/auto-paper/skills/sync-paper-results/SKILL.md) | 실행 기록에서 논문 표·그림 블록을 생성하고, 본문·README에 남은 옛 수치와 PDF 쪽수·참고문헌 시작 쪽을 검사합니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [translate-paper-to-english](../tracks/auto-paper/skills/translate-paper-to-english/SKILL.md) | 한국어 Word 논문을 구조를 보존한 영문 Word로 번역합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
 
 ## Auto-Application
