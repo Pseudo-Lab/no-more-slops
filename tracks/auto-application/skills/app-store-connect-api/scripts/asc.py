@@ -2,7 +2,7 @@
 """App Store Connect API 클라이언트. 표준 라이브러리와 openssl만 쓴다.
 
 환경 변수
-  ASC_KEY_ID      키 ID (예: 373UJ786UZ)
+  ASC_KEY_ID      키 ID (예: ABC123DEFG)
   ASC_ISSUER_ID   Issuer ID (UUID, 사용자 및 액세스 › 통합 › App Store Connect API 맨 위)
   ASC_KEY_PATH    .p8 파일 경로 (저장소 밖에 둔다)
 
