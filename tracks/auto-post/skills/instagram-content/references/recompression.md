@@ -6,12 +6,12 @@ Use this workflow when revising Reels that look degraded after upload, or when t
 
 A uniform background usually compresses efficiently. Do not claim that a solid vivid color inherently causes poor quality, or that a small file / low average bitrate proves a bad encode. Saturated color boundaries, small text and thin lines can become less clear after downscaling, chroma subsampling and additional lossy encoding. Treat this as a mechanism to check, not a diagnosis of an unseen platform stream.
 
-- Keep the selected accent color. For the Chihuahua AI Lab brief, retain vivid orange and place explanatory body copy on a white panel with bold black type. This is an account choice, not a rule for every brand.
+- Keep the selected accent color and latest layout. For the approved Chihuahua AI Lab treatment, use small vivid-orange accents and large light type directly over a fixed photograph with a fixed neutral contrast layer. Do not restore the earlier small white explanation panel. Use a light panel only when the current brief actually selects it.
 - Increase body and diagram-label sizes and line thickness. Shorten or reflow crowded copy instead of shrinking it. Render text and diagrams at the master resolution; upscaling a finished low-resolution frame does not restore detail.
-- Keep body copy stable while the primary explanatory graphic continues moving according to the [motion policy](reels.md#when-uninterrupted-motion-is-required). A readable panel does not justify holding the main graphic still.
+- Keep body copy stable and review the [selected motion policy](reels.md). Information-linked editorial reveals allow intentional reading holds; uninterrupted-motion rules apply only when that mode remains selected.
 - Do not add grain, noise or gradients merely to increase bitrate. They can consume encoding capacity and are not a proven fix. Preserve the clean brand unless a reviewed visual experiment supports a change.
 
-The portable renderer supports an optional selected-brief policy:
+The portable renderer supports an optional selected-brief policy. The following light-panel example is an alternative treatment, not the approved Chihuahua AI Lab default:
 
 ```json
 "recompression_policy": {
@@ -52,6 +52,6 @@ The master is read without modification and its SHA-256 is checked again before 
 
 ## Complete the review
 
-Watch both full preview MP4s at normal speed and phone size. Use the contact sheet to compare selected frames; it cannot prove motion quality or full-video legibility. Inspect small Korean characters, black/orange edges, light-panel body copy, diagram labels, lines, transitions and UI overlap. Review the primary graphic separately so a moving progress bar cannot hide a static explanation.
+Watch both full preview MP4s at normal speed and phone size. Use the contact sheet to compare selected frames; it cannot prove motion quality or full-video legibility. Inspect small Korean characters, color edges, explanatory type on its selected background, labels, lines, transitions and UI overlap. Review the primary information separately from progress indicators. Judge pauses against the selected reading policy; intentional reading holds in the editorial treatment are not a failure.
 
 Record the source hash, reviewed files/times, legibility findings, motion findings and corrections in a separate visual-review note. The helper deliberately leaves manual review pending; do not interpret successful encoding or pixel-difference metrics as visual approval. Rework failed scenes and regenerate the master and previews before delivery. Mark actual Instagram quality as unverified unless the posted result was inspected. Local review does not authorize posting.

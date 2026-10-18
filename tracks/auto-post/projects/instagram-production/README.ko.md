@@ -14,6 +14,7 @@
 | --- | --- |
 | [instagram-content](../../skills/instagram-content/SKILL.md) | 인스타 브랜드 설정, 사진을 곁들인 캐러셀, 참고 사진을 활용한 프로필·캐릭터를 제작합니다. 계정·주제·언어·색상·사진은 작업별로 지정하며, 반복 출력용 도구도 포함합니다. |
 | [design-punctuation](../../skills/design-punctuation/SKILL.md) | 콘텐츠와 웹디자인의 제목·짧은 캡션·큰 글씨에서 불필요한 끝마침표를 생략합니다. 의미와 데이터에 필요한 문장부호는 유지합니다. |
+| [direct-news-copy](../../skills/direct-news-copy/SKILL.md) | 뉴스·카드뉴스·릴스 카피의 반복 해명을 줄이고 사실·계획·검증 범위를 직접 씁니다. |
 
 처음 설치할 때는 이 저장소에서 다음과 같이 실행합니다.
 
@@ -21,6 +22,7 @@
 mkdir -p "$HOME/.agents/skills"
 cp -R tracks/auto-post/skills/instagram-content "$HOME/.agents/skills/"
 cp -R tracks/auto-post/skills/design-punctuation "$HOME/.agents/skills/"
+cp -R tracks/auto-post/skills/direct-news-copy "$HOME/.agents/skills/"
 ```
 
 필요한 파일을 Codex의 사용자 전역 스킬 폴더에 복사하므로 다른 프로젝트에서도 사용할 수 있고, 원래 저장소를 옮겨도 작동합니다. 업데이트할 때는 설치본에 별도 수정한 내용이 있는지 확인하고 보관한 뒤 교체합니다. Codex는 변경된 스킬을 자동으로 감지하며, 목록에 보이지 않을 때만 재시작합니다. 설치 위치는 [OpenAI 공식 문서](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)를 따릅니다.
@@ -57,3 +59,8 @@ python -B tracks/auto-post/skills/instagram-content/scripts/run_reel.py   tracks
 ```
 
 FFmpeg와 ffprobe도 설치되어 있어야 합니다. 하네스는 파일 제작과 검수를 담당합니다. `auto-post` 브랜치명은 Instagram에 자동 게시할 권한이나 일정 설정을 뜻하지 않습니다.
+
+
+## 최신 카피와 화면 구성
+
+한국어 뉴스는 출력 전에 `direct-news-copy`로 카피를 검토합니다. 치와와 AI Lab의 최신 선택은 따뜻한 흰색·검은 글씨의 캐러셀과 고정 사진·큰 설명의 어두운 릴스입니다. 릴스에는 읽는 시간과 확장된 하단 공간을 적용합니다. 도식 하네스는 선택 가능한 제작 도구로 유지하고, 이전 데모의 입력과 검증 기록은 보존합니다. [2주차 수정 기록](outputs/week-02/README.md)을 참고하세요.

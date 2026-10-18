@@ -1,11 +1,14 @@
-# Week 02 · 무음 인포그래픽 릴스
+# Week 02 · 무음 릴스 제작과 뉴스 카피
 
 - 작성자: [유민형 · gogoymh](https://github.com/gogoymh)
 - 트랙: Auto-Post
 - 프로젝트: Instagram production
 - 상태: **리뷰 대기 · Draft PR · 머지 금지**
 - 이전 기여: [Week 01 / PR #5](https://github.com/Pseudo-Lab/no-more-slops/pull/5)
-- 제작일: 2026-10-15
+- 최초 데모 제작일: 2026-10-15
+- 스킬 수정일: 2026-10-18
+- 현재 PR: [#18](https://github.com/Pseudo-Lab/no-more-slops/pull/18)
+- 콘텐츠 게시 계정: [치와와 AI Lab](https://www.instagram.com/chihuahua_ai.lab/)
 
 ## 결과물
 
@@ -16,6 +19,14 @@
 이 영상은 Neuron AI의 2026-10-14 발표를 사용한 **날짜가 있는 하네스 재현 데모**입니다. 화면과 캡션에 `LAYOUT DEMO`를 표시했으며, 현재 뉴스나 게시 완료 결과로 제시하지 않습니다. 영상에는 직접 만든 도식만 사용했습니다. 원본 기사 영상과 개인 스크린샷은 포함하지 않았습니다.
 
 ![장면 미리보기](neuron-reel-demo/preview.jpg)
+
+## 10월 18일 수정
+
+- [direct-news-copy](../../../../skills/direct-news-copy/SKILL.md): 반복적인 부정 해명은 줄이고 사실·계획·검증 범위를 직접 씁니다. [카피 수정 예시와 검토 범위](copy-review.md)를 기록했습니다.
+- [instagram-content](../../../../skills/instagram-content/SKILL.md): 렌더링 전 카피 검토에 연결하고, 고정 사진·큰 설명·읽기 시간·장면별 진행 바·확장된 하단 공간을 저장했습니다.
+- 치와와 AI Lab의 캐러셀 색상은 따뜻한 흰색·검정·작은 오렌지 강조로 별도 프로필에 보존했습니다.
+
+아래 데모와 검증 수치는 10월 15일의 결과입니다. 최신 화면 구성이나 카피 기준을 적용해 다시 렌더링한 영상으로 제시하지 않습니다.
 
 ## 이번 주 추가한 제작 방법
 

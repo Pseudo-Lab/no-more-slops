@@ -1,10 +1,10 @@
-# Silent infographic Reels
+# Silent Reels
 
-Use this workflow when the content is primarily an explanation built from copy, diagrams and selected media. Editing a person's recorded footage around its actions is a different workflow. Do not convert a requested infographic into a narrated slideshow just because TTS is available.
+Use this workflow for silent explanations built from copy and selected photos, footage or diagrams. Choose the visual medium from the latest brief; do not force an infographic layout onto a requested photo-led edit. Editing a person's recorded footage around its actions may need a dedicated editing workflow. Do not add narration just because TTS is available.
 
 ## Continue the account's accepted choices
 
-Read the current task's latest brief. Preserve the display name, colors, caption policy, punctuation, motion policy and latest format choices. Record an explicit request for uninterrupted movement as `motion_policy.mode: "continuous"`; keep that choice in this account's future briefs until the user changes it. A request to apply this to future editions does not ask you to regenerate already accepted videos. Keep these preferences with the task; an example account is never the global default. A new request for movement does not reopen the account identity or re-enable audio.
+Read the current task's latest brief. Preserve the display name, colors, caption policy, punctuation, motion policy and latest format choices. Record the latest motion choice in the account brief. An explicit request for uninterrupted movement uses `motion_policy.mode: "continuous"`; approval of large editorial explanations with reading time uses `"information_linked"` and supersedes older continuous-motion instructions. A request to apply this to future editions does not ask you to regenerate already accepted videos. Keep these preferences with the task; an example account is never the global default. A new request for movement does not reopen the account identity or re-enable audio.
 
 Translate ambiguous quality labels into concrete output dimensions. For example, 2160×3840 is a 9:16 vertical 4K delivery that satisfies a minimum-2K request. Record exact dimensions rather than promising “high resolution.” Render typography and diagrams at that resolution; increasing an old 1080p video's dimensions does not restore detail. Record source footage dimensions separately. Use the user's requested length; an approximately one-minute explanation needs enough reading time, not a fixed count of scenes.
 
@@ -18,11 +18,21 @@ Build a sequence around what changed, how it works, a concrete example, its limi
 
 Use relevant official or authorized footage when it helps. Keep its geometry and natural colors, credit it, and record the selected time range and usage basis. An explanatory animation is not a measured benchmark or an actual product interface. Personal screenshots, editorial source videos and credentials do not belong in a reusable skill or public code contribution.
 
+## When the account prefers real photography
+
+Make the relevant real subject the dominant visual. Use the account's preferred background and accent roles; a selected brand color does not require a large color field or a tint over the photo. Respect a rejected video mascot even when that character remains the profile identity.
+
+Build variety through meaningful crops, different source images, layered depth and timed cuts. If uninterrupted motion is required, keep clearly visible subject or camera movement through reading time and transitions, such as a continuing reframe that reveals a relevant detail. A photo-led edit need not add a diagram to qualify, but an imperceptible pan or an unrelated decorative overlay is still insufficient. Keep the explanatory copy stable and verify the actual encoded video at phone size.
+
+## When fixed-photo editorial explanations are selected
+
+Read [editorial-reels.md](editorial-reels.md). Keep photography fixed and place large information directly across the protected screen area. Use source-grounded comparisons, function labels and disclosure states; reveal each new fact once and allow reading time. This selected treatment takes precedence over the moving-photo examples above, continuous-motion rules below, and an earlier light-panel choice. A small explanation box or a decorative diagram is not required.
+
 ## Compose for the actual Reels view
 
 Instagram places controls at the top, bottom and right; their locations vary with device, crop and viewing mode. Use the user's screenshot when supplied, and treat safe-area coordinates as task-specific settings rather than a universal platform specification.
 
-For the screenshot that motivated this workflow, a conservative protected rectangle on a 1080×1920 design was x=120–890, y=280–1440. Its 4K equivalent is x=240–1780, y=560–2880. The bundled example stores these as fractional edge insets. Adjust them for the intended view.
+The bundled demo's older rectangle x=120–890, y=280–1440 on a 1080×1920 canvas is only a historical example. For Chihuahua AI Lab, use the approved expanded margins in its saved account brief and [editorial guide](editorial-reels.md#calibrate-space-against-the-actual-reels-screen), which leave more usable lower-screen space. Adjust other accounts' margins to their intended view. Safe-area fractions are edge insets, not coordinates.
 
 Recompose the title, graphic, explanation and credit into that rectangle. Keep key nodes and their labels away from the right-hand action buttons. Leave only optional decoration in covered regions. Avoid burning a second handle or caption into the bottom account area. Uniformly shrinking a previous card is often less readable than simplifying copy and rearranging the graphic.
 
@@ -34,11 +44,11 @@ Keep the main explanation fixed while the diagram moves. Use brief entrances and
 
 ## When uninterrupted motion is required
 
-Apply these acceptance rules when the user or selected brief requires continuous motion. This is an account preference, not a requirement for unrelated accounts that ask for calmer or static content.
+Apply these acceptance rules only when the latest user instruction or selected brief still requires continuous motion. Do not apply them to an approved information-linked editorial treatment with reading holds. This is an account preference, not a requirement for unrelated accounts that ask for calmer or static content.
 
 - Keep the primary explanatory graphic visibly active from the first frame through the last, including opening, reading time, scene transitions and the closing call to action. There is no permitted frozen hold. Before one action settles, start the next or overlap their motion so the scene stays alive.
 - Make motion substantial enough to read on a phone: unfold or reorganize layers, assemble and separate objects, trace meaningful paths, move data through a process, or continuously transform the diagram. A static slide with an entrance animation, a progress bar, tiny decorative dots, subtle bobbing, camera micro-jitter or encoder noise does not satisfy this requirement by itself.
-- Plan an entrance, continuing action and moving handoff for each scene. After the entrance, the main graphic must continue doing something that explains the story. Do not stretch a short animation by freezing its final frame. A still image or held source-video frame needs a continuing, prominent explanatory animation when used in this mode.
+- Plan an entrance, continuing action and moving handoff for each scene. After the entrance, the primary visual must continue doing something that explains the story. Do not stretch a short animation by freezing its final frame. A still image or held source-video frame needs continuing, prominent motion, using the photo-led treatment above when selected.
 - Keep explanatory copy stable for reading while graphics remain active. Continuous motion does not require shaking every label, flashing, unreadable camera moves, or animating a measured number through false values. Preserve the selected safe areas throughout the movement.
 - Review the **entire encoded MP4** at normal speed and phone size, including the first/last frames and both sides of every cut. Inspect the main graphic region separately from captions, credits and progress indicators. Use frame-difference or freeze detection to locate suspect intervals, then judge whether the visible motion actually communicates; changing pixels alone cannot pass the review. Fix every stationary or merely decorative interval before delivery and record what was checked.
 
@@ -64,7 +74,7 @@ The [local harness](reel-harness.md) can render six configurable layouts. A cust
 
 Review the whole exported video at phone size, especially transitions, late-stage diagrams, credits and the bottom explanation. A preview mask is a separate review artifact, never burned into the upload. Check title punctuation and large copy using the user's style; preserve meaningful dates, decimals, abbreviations and genuine questions.
 
-When the selected brief requires recompression review, follow [the legibility workflow](recompression.md): preserve the master, make separate 1080p/720p stress previews, and inspect text, line clarity and continuous motion in those files. The optional light-panel and minimum-type settings support the chosen brand; they do not certify Instagram's eventual encoding quality.
+When the selected brief requires recompression review, follow [the legibility workflow](recompression.md): preserve the master, make separate 1080p/720p stress previews, and inspect text, line clarity and the selected motion policy in those files. The optional light-panel and minimum-type settings support the chosen brand; they do not certify Instagram's eventual encoding quality.
 
 Measure the final public caption after links, media credits, hashtags and acknowledgement are included. The Chihuahua AI Lab example uses fewer than 500 characters and exactly three hashtags as account preferences. Do not turn these into universal Instagram limits. Do not truncate attribution merely to pass a count.
 

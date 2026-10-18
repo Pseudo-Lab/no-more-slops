@@ -14,6 +14,7 @@ The reusable skills in `tracks/auto-post/skills/` can be installed for use acros
 | --- | --- |
 | [instagram-content](../../skills/instagram-content/SKILL.md) | Create Instagram brand identities, photo-led carousels and reference-based profile images or characters. Supply the account, topic, language, colors and media for each task. Includes optional local renderers. |
 | [design-punctuation](../../skills/design-punctuation/SKILL.md) | Omit unnecessary terminal periods in headings, short captions and large display copy across content and web design, while preserving punctuation needed for meaning and data. |
+| [direct-news-copy](../../skills/direct-news-copy/SKILL.md) | Write Korean news copy directly; remove repetitive explanations of imagined misunderstandings while retaining factual limits. |
 
 For a first local installation, run from this repository:
 
@@ -21,6 +22,7 @@ For a first local installation, run from this repository:
 mkdir -p "$HOME/.agents/skills"
 cp -R tracks/auto-post/skills/instagram-content "$HOME/.agents/skills/"
 cp -R tracks/auto-post/skills/design-punctuation "$HOME/.agents/skills/"
+cp -R tracks/auto-post/skills/direct-news-copy "$HOME/.agents/skills/"
 ```
 
 This copies a self-contained skill into Codex's user-wide discovery directory. It works outside the repository, even if the original checkout is moved. When updating, back up any changes to the installed copy before replacing it from this repository. Codex detects local skill changes automatically; if the skill does not appear, restart Codex. See the [official local-skills documentation](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills).
@@ -50,3 +52,8 @@ The harness supports native-resolution type and diagrams, configurable Reels UI 
 Select the [Chihuahua AI Lab Reel brief](examples/chihuahua-ai/reel-brief.json) and [dated Neuron AI replay example](examples/chihuahua-ai/neuron-reel-2026-10-15.json) explicitly. They use 2160×3840, 60 seconds, 30 fps, a caption below 500 characters and three hashtags. These are account preferences, not universal platform rules. The earlier carousel brief remains unchanged. The replay is visibly labeled as a demo and must not be relabeled current news. The [Week 02 submission](outputs/week-02/README.md) includes the review demo and its measured report. It remains a draft pending review.
 
 The `auto-post` branch collects production tools; it does not schedule or publish to a social account. The scope differs from `instagram-reel` in PRs #9/#15: this workflow begins with sourced copy and diagram scenes, while that workflow edits recorded footage around its visible actions. It extends `instagram-content` from PR #5 rather than creating a duplicate skill.
+
+
+## Current copy and editorial treatment
+
+Use `direct-news-copy` before rendering Korean news. The selected Chihuahua AI Lab profiles now keep warm off-white/black carousels separate from dark fixed-photo Reels, with large unboxed explanations, reading holds and expanded lower-screen space. The diagram harness remains an alternative renderer, and earlier demos keep their original inputs and verification records. See the [Week 02 update](outputs/week-02/README.md).
