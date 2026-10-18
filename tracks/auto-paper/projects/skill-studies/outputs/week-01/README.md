@@ -1,5 +1,7 @@
 # Auto-Paper: 1주차 스킬 연구 논문과 해설서
 
+**2026-10-18 수정:** [v13 논문 PDF 3편과 재현 안내](revisions/v13-20261018/README.md)를 추가했습니다. 아래는 기존 v5 배포·검증 기록으로 보존합니다. 최신 제출본의 결과 범위와 파일 해시는 새 revision의 안내를 따릅니다. 새 연구 자동화 지침은 [canonical SKILL.md](../../../../skills/evidence-tracked-research/SKILL.md)에서 읽습니다.
+
 - 작성자: @darkwingduck-code
 - 트랙: Auto-Paper
 - 원본 PR: [#14](https://github.com/Pseudo-Lab/no-more-slops/pull/14)

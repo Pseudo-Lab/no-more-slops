@@ -1,0 +1,335 @@
+{
+  "schema": "secondchance_v13_primary_source_ledger",
+  "reviewed_at": "2026-10-18",
+  "evidence_boundary": "Author-reported method descriptions; primary review does not independently reproduce or verify external scientific claims.",
+  "sources": [
+    {
+      "id": "SC13-R01",
+      "reference_number": 1,
+      "bibliography": "Yifan Yang et al. SkillOpt: Executive Strategy for Self-Evolving Agent Skills. arXiv:2605.23904v2, 2026.",
+      "url": "https://arxiv.org/abs/2605.23904v2",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author arXiv abstract and HTML Sections 3.1/3.5; bounded edits, validation gate and rejected-edit feedback only. No native execution or superiority comparison.",
+      "retained_excerpt": "an epoch-local rejected-step buffer",
+      "retained_excerpt_sha256": "a95db1bf53538401df0ac1a3ec8d2d1e68b7b0f7c8031b789d3637b4cc492c9c",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-01"
+      ],
+      "additional_method_url": "https://arxiv.org/html/2605.23904v2"
+    },
+    {
+      "id": "SC13-R02",
+      "reference_number": 2,
+      "bibliography": "Noah Shinn et al. Reflexion: language agents with verbal reinforcement learning. NeurIPS 2023.",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official conference abstract; selected method Section 3 of arXiv:2303.11366v4 reviewed separately. Different author lists are not merged.",
+      "retained_excerpt": "maintain their own reflective text in an episodic memory buffer",
+      "retained_excerpt_sha256": "c19f056816868bd4eaaca3c6fcf930db419a7ca3b5b0539475241cacec21987b",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-02"
+      ],
+      "additional_method_url": "https://arxiv.org/html/2303.11366v4"
+    },
+    {
+      "id": "SC13-R03",
+      "reference_number": 3,
+      "bibliography": "Aman Madaan et al. Self-Refine: Iterative Refinement with Self-Feedback. NeurIPS 2023.",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official abstract and arXiv:2303.17651v2 Section 2; same-model generation/feedback/refinement loop. Published effects are not imported.",
+      "retained_excerpt": "uses a single LLM as the generator, refiner and the feedback provider",
+      "retained_excerpt_sha256": "50f8708073728231e06d9c059fb390240e02427a1f2fa920afe15dd72400e783",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-03"
+      ],
+      "additional_method_url": "https://arxiv.org/html/2303.17651v2"
+    },
+    {
+      "id": "SC13-R04",
+      "reference_number": 4,
+      "bibliography": "Zhibin Gou et al. CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing. ICLR 2024.",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/fef126561bbf9d4467dbb8d27334b8fe-Abstract-Conference.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official abstract and arXiv:2305.11738v4 Section 3/Algorithm 1; tool-derived feedback and output revision, not retrospective archive repair.",
+      "retained_excerpt": "validate and progressively amend their own outputs",
+      "retained_excerpt_sha256": "e633dfd122deeef16f0f8d588cfb6702e48de80555542f94c84c2d05ba2f75a1",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-04"
+      ],
+      "additional_method_url": "https://arxiv.org/html/2305.11738v4"
+    },
+    {
+      "id": "SC13-R05",
+      "reference_number": 5,
+      "bibliography": "Jie Huang et al. Large Language Models Cannot Self-Correct Reasoning Yet. ICLR 2024.",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official abstract only: intrinsic reasoning self-correction without external feedback. HTML v3 retrieval failed; no full-text or universal impossibility claim.",
+      "retained_excerpt": "without the crutch of external feedback",
+      "retained_excerpt_sha256": "8e9ef2687b8acc7f82d57bd6191230503657e528063a17edce42fcadaaf24bc9",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-05"
+      ]
+    },
+    {
+      "id": "SC13-R06",
+      "reference_number": 6,
+      "bibliography": "Aviral Kumar et al. Training Language Models to Self-Correct via Reinforcement Learning. ICLR 2025.",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official abstract only: SCoRe online multi-turn RL and self-generated correction traces. No assertion of failure under later methods.",
+      "retained_excerpt": "a multi-turn online reinforcement learning (RL) approach, SCoRe",
+      "retained_excerpt_sha256": "99d7f7e48660e8e763743b79ab9ea0a7bcb5ea296c07e66448fe009aeb8fec35",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-06"
+      ]
+    },
+    {
+      "id": "SC13-R07",
+      "reference_number": 7,
+      "bibliography": "Karl Cobbe et al. Training Verifiers to Solve Math Word Problems. arXiv:2110.14168v2, 2021.",
+      "url": "https://arxiv.org/abs/2110.14168v2",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author arXiv abstract: generate candidates and select using a verifier. No GSM8K execution or external performance transfer.",
+      "retained_excerpt": "select the one ranked highest by the verifier",
+      "retained_excerpt_sha256": "f3f5ee2389fe88762dfde60b28f37145acfba13d5bf9a54a55d450cf400f09d6",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-07"
+      ]
+    },
+    {
+      "id": "SC13-R08",
+      "reference_number": 8,
+      "bibliography": "Preston Rasmussen et al. Zep: A Temporal Knowledge Graph Architecture for Agent Memory. arXiv:2501.13956v1, 2025.",
+      "url": "https://arxiv.org/abs/2501.13956v1",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author abstract and HTML Section 2.2.3: temporal validity/edge invalidation. World changes are distinguished from fixed-requirement correction.",
+      "retained_excerpt": "manage dynamic information updates through temporal extraction and edge invalidation processes",
+      "retained_excerpt_sha256": "1fdddbf8ad14643ea6e1b8f5040016b5a899cfb19373274670570f7a873d0bb7",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-08"
+      ],
+      "additional_method_url": "https://arxiv.org/html/2501.13956v1"
+    },
+    {
+      "id": "SC13-R09",
+      "reference_number": 9,
+      "bibliography": "Leo Gao, John Schulman, and Jacob Hilton. Scaling Laws for Reward Model Overoptimization. ICML 2023, PMLR 202:10835–10866.",
+      "url": "https://proceedings.mlr.press/v202/gao23h.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official abstract: proxy versus gold-reward optimization. No numerical scaling law is claimed for our deterministic fixture.",
+      "retained_excerpt": "optimizing its value too much can hinder ground truth performance",
+      "retained_excerpt_sha256": "00bf03e9d22b023b87661fa9b38167c416b87d35039da9e38c89a9a0f32ecd6f",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-09"
+      ]
+    },
+    {
+      "id": "SC13-R10",
+      "reference_number": 10,
+      "bibliography": "Gavin C. Cawley and Nicola L. C. Talbot. On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation. JMLR 11:2079–2107, 2010.",
+      "url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official abstract: overfitting a finite-sample selection criterion and biased performance evaluation. Motivates protected audit roles; no theorem transfer.",
+      "retained_excerpt": "over-fitting in model selection and subsequent selection bias in performance evaluation",
+      "retained_excerpt_sha256": "a0de4a5d265624b32d812b897326aa34d4979c7389cd962b61aef4bae4b3a3e3",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-10"
+      ]
+    },
+    {
+      "id": "SC13-R11",
+      "reference_number": 11,
+      "bibliography": "Cynthia Dwork et al. Generalization in Adaptive Data Analysis and Holdout Reuse. arXiv:1506.02629v2, 2015.",
+      "url": "https://arxiv.org/abs/1506.02629v2",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author abstract: adaptive reuse can overfit a holdout. No privacy mechanism or guarantee is implemented here.",
+      "retained_excerpt": "Reusing a holdout set adaptively multiple times can easily lead to overfitting",
+      "retained_excerpt_sha256": "10190941197a08b83b626518c454552affa5e151e98e4d6469e63a1b31100d8a",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-11"
+      ]
+    },
+    {
+      "id": "SC13-R12",
+      "reference_number": 12,
+      "bibliography": "Peter Henderson et al. Deep Reinforcement Learning that Matters. AAAI 2018; author version arXiv:1709.06560.",
+      "url": "https://arxiv.org/abs/1709.06560",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author abstract and official AAAI search result; concerns nondeterminism, variability and experimental reporting. No RL experiment here.",
+      "retained_excerpt": "non-determinism in standard benchmark environments",
+      "retained_excerpt_sha256": "2e92edc8129a77dd06cd38244d2bd1f0f2f730f08fe3320d1eda7b1d81862de9",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-12"
+      ]
+    },
+    {
+      "id": "SC13-R13",
+      "reference_number": 13,
+      "bibliography": "Rishabh Agarwal et al. Deep Reinforcement Learning at the Edge of the Statistical Precipice. NeurIPS 2021; author version arXiv:2108.13264v4.",
+      "url": "https://arxiv.org/abs/2108.13264v4",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author abstract: finite-run uncertainty and aggregate evaluation. We do not attach population intervals to designed templates.",
+      "retained_excerpt": "ignoring the statistical uncertainty implied by the use of a finite number of training runs",
+      "retained_excerpt_sha256": "cbdd99ae9ba5246e518ac14a965545c7871f09b93a420d5e140dd9ef27a66f4d",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-13"
+      ]
+    },
+    {
+      "id": "SC13-R14",
+      "reference_number": 14,
+      "bibliography": "Elizabeth D. Dolan and Jorge J. Moré. Benchmarking optimization software with performance profiles. Mathematical Programming 91:201–213, 2002.",
+      "url": "https://link.springer.com/article/10.1007/s101070100263",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Publisher abstract/bibliography only: distribution functions of a performance metric. Not claimed as a recovery-area theorem.",
+      "retained_excerpt": "distribution functions for a performance metric",
+      "retained_excerpt_sha256": "6c1ab5f313be59fd828a2e2c06fc59141857b42cf2a4098a5172434bdcff749f",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-14"
+      ]
+    },
+    {
+      "id": "SC13-R15",
+      "reference_number": 15,
+      "bibliography": "Nikolaus Hansen et al. COCO: A Platform for Comparing Continuous Optimizers in a Black-Box Setting. arXiv:1603.08785v4, 2020.",
+      "url": "https://arxiv.org/abs/1603.08785v4",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author abstract: problem instances, target values and objective-call runtime. Resource-accounting motivation only; no optimizer benchmark.",
+      "retained_excerpt": "runtime defined by the number of function calls",
+      "retained_excerpt_sha256": "558cfa2f3fb0c0c882f33456b4bdf1f8e1542d4bcaa43951271b93b41e9f7615",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-15"
+      ]
+    },
+    {
+      "id": "SC13-R16",
+      "reference_number": 16,
+      "bibliography": "Nikolaus Hansen, Anne Auger, Dimo Brockhoff, Dejan Tušar, and Tea Tušar. COCO: Performance Assessment. arXiv:1605.03560v1, 2016.",
+      "url": "https://arxiv.org/abs/1605.03560v1",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author abstract: any-time evaluation using objective evaluations to targets. Distinguished from area under possibly decreasing utility.",
+      "retained_excerpt": "runtimes measured in number of objective function evaluations",
+      "retained_excerpt_sha256": "109d1172f937bd884992ccb9afa695ead8498e0c8a82bce7870f0e4c5a5f6ced",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-16"
+      ]
+    },
+    {
+      "id": "SC13-R17",
+      "reference_number": 17,
+      "bibliography": "Jiawei Liu, Chunqiu Steven Xia, Yuyao Wang, and Lingming Zhang. Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation. NeurIPS 2023.",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/43e9d647ccd3e4b7b5baab53f0368686-Abstract.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official abstract: test augmentation and previously undetected errors. Does not establish natural evaluator-correction histories.",
+      "retained_excerpt": "test insufficiency can lead to mis-ranking",
+      "retained_excerpt_sha256": "094724ce7741a2d3c645760c57d7823a55ff48993db390b554226f71303952d9",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-17"
+      ]
+    },
+    {
+      "id": "SC13-R18",
+      "reference_number": 18,
+      "bibliography": "Carlos E. Jimenez et al. SWE-bench: Can Language Models Resolve Real-world Github Issues? ICLR 2024.",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/edac78c3e300629acfe6cbe9ca88fb84-Abstract-Conference.html",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Official abstract: repository issue resolution through code edits. Future environment candidate only; no acquisition, execution or correction-history labels.",
+      "retained_excerpt": "editing the codebase to address the issue",
+      "retained_excerpt_sha256": "3dcea9425830b5da3d3baf9c37f9f558f66863470632285aad19a2971ff9232f",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-18"
+      ]
+    },
+    {
+      "id": "SC13-R19",
+      "reference_number": 19,
+      "bibliography": "Shunyu Yao et al. ReAct: Synergizing Reasoning and Acting in Language Models. ICLR 2023; author version arXiv:2210.03629v3.",
+      "url": "https://arxiv.org/abs/2210.03629v3",
+      "reviewed_at": "2026-10-18",
+      "review_method": "Direct web open of primary HTML/abstract; no PDF download",
+      "review_scope": "Author abstract: interleaved reasoning and environment actions. Motivates recording tool/environment state; no direct recovery comparison.",
+      "retained_excerpt": "reasoning traces and task-specific actions in an interleaved manner",
+      "retained_excerpt_sha256": "b7c2198cf662b962a882415a1f37a3382c36e081b81a2f204f4a767411fa8071",
+      "hash_scope": "UTF-8 bytes of this short retained excerpt only; not a full webpage/PDF hash.",
+      "claim_links": [
+        "SC13-LIT-19"
+      ]
+    }
+  ],
+  "local_inputs": [
+    {
+      "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+      "bytes": 27560,
+      "sha256": "2523b4e08df9324a18639a62ebc7887c0b69b63b3c0c31e4b8775abde3945c3c"
+    },
+    {
+      "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+      "bytes": 8648,
+      "sha256": "11654fe78a1d7ed4953cd5f1370c46c4ab25d26f40e4107a0b3df4a7a32eea2d"
+    },
+    {
+      "path": "projects/research_manuscripts_v12_20261018/second_chance/paper.json",
+      "bytes": 41619,
+      "sha256": "172eb2aa4964e1e828f31633447a1ea64b6965340d55e1c31ac03177617a9252"
+    },
+    {
+      "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/receipt.json",
+      "bytes": 173393,
+      "sha256": "c15707d9afc5d5fa385e279dfeaf78957c27576c656c6465419a862f83e3894c"
+    }
+  ],
+  "retrieval_failures": [
+    {
+      "url": "https://arxiv.org/html/2310.01798v3",
+      "result": "Internal Error",
+      "fallback": "Official ICLR 2024 abstract only"
+    },
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/11694",
+      "result": "Open returned Internal Error after official search result",
+      "fallback": "Author arXiv abstract directly opened"
+    }
+  ],
+  "omitted_prior_reference": {
+    "name": "SkillOpt-Sleep mutable companion preview",
+    "reason": "Unnecessary to current version-pinned comparison; not carried forward as an independently reviewed native baseline."
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "schema": "conference_figures_v13",
+  "sources": [
+    {
+      "path": "runs/research_manuscripts_v12_20261018_01/skillmerge/measurement_01/results.json",
+      "sha256": "267e45616c9da223efc47071a9e676f6d2cc0479bfe187db3b6421dbef12f063"
+    },
+    {
+      "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+      "sha256": "11654fe78a1d7ed4953cd5f1370c46c4ab25d26f40e4107a0b3df4a7a32eea2d"
+    },
+    {
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+      "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+    },
+    {
+      "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+      "sha256": "2523b4e08df9324a18639a62ebc7887c0b69b63b3c0c31e4b8775abde3945c3c"
+    },
+    {
+      "path": "projects/research_manuscripts_v12_20261018/probeflow/VALIDATION.json",
+      "sha256": "a456c3a50f5496c9838ca90bfd669b029bd6d325f58eed64acb814231ac59c13"
+    }
+  ],
+  "generator_sha256": "52545f9c81b4a32a2130bbeeada312cb64e10fa49f77cf0abf1f3776c483da8f",
+  "projects": {
+    "skillmerge": [
+      {
+        "id": "overview",
+        "kind": "concept_with_observed_counts",
+        "values": {
+          "tasks": 531,
+          "components": 325,
+          "evidence_tasks": 309,
+          "annotations": 548,
+          "eligible_pairs": 0,
+          "theta_Q": null
+        },
+        "source_fields": [
+          "unique_tasks",
+          "unique_components",
+          "evidence_tasks",
+          "annotation_responses",
+          "candidate_funnel"
+        ],
+        "svg_sha256": "a7e6ef4e6e70bb59c2e54bbe999903d0ae629a0f235646930e8fd4da6686afce",
+        "png_sha256": "d06896813e1e43ddf51d569329fcbbd9e0e1cf1955185d956715ed3db82ab41d",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      },
+      {
+        "id": "budget-sensitivity",
+        "kind": "data",
+        "values": {
+          "sentence_budget": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "evidence_tasks_reachable": [
+            290,
+            305,
+            308,
+            309,
+            309,
+            309,
+            309,
+            309,
+            309,
+            309
+          ],
+          "document_prefix_unlimited_sufficient_pass": [
+            17,
+            43,
+            76,
+            119,
+            148,
+            176,
+            202,
+            221,
+            238,
+            251
+          ],
+          "document_prefix_first_three_pass": [
+            17,
+            43,
+            76,
+            76,
+            76,
+            76,
+            76,
+            76,
+            76,
+            76
+          ],
+          "document_prefix_exact_annotated_pass": [
+            17,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "source_fields": [
+          "evidence_tasks_reachable",
+          "document_prefix_unlimited_sufficient_pass",
+          "document_prefix_first_three_pass",
+          "document_prefix_exact_annotated_pass"
+        ],
+        "svg_sha256": "f058786f4ed151b5b3911e39ca2de37852872a35a7de1d9506c83c3d11957f60",
+        "png_sha256": "06f1e1463687d73666adb03cf1b7e0c921f72f124f00606c8c93ec115b3a7d6f",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      },
+      {
+        "id": "endpoint-controls",
+        "kind": "data",
+        "values": {
+          "response_denominator": 548,
+          "passes": [
+            [
+              548,
+              547,
+              548,
+              309
+            ],
+            [
+              548,
+              543,
+              0,
+              309
+            ],
+            [
+              548,
+              547,
+              0,
+              309
+            ]
+          ],
+          "first_three_same_set_flips": 4
+        },
+        "source_fields": [
+          "annotation_response_counts",
+          "one_distractor_counts"
+        ],
+        "svg_sha256": "e904a39980bb0d14b2ae8176b879773f07a0cc2fc54d37c664436ab9f7a00e70",
+        "png_sha256": "3ea263f094d91ceff59a98a8e21a57477b4aabd4d207ff17a1b186b6d58721e9",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      }
+    ],
+    "second_chance": [
+      {
+        "id": "overview",
+        "kind": "concept_with_observed_counts",
+        "values": {
+          "budget": 8,
+          "saved_improvements": 12,
+          "rescore_current_recovery": 0,
+          "candidate_success": 12,
+          "selection_current_recovery": 4,
+          "authored_histories": 12
+        },
+        "source_fields": [
+          "second_v11.summaries"
+        ],
+        "svg_sha256": "60b7e8f84ac1a10c7d186ddc63c2897dfd52cb5f141557fe8eb1aee0f2ff82aa",
+        "png_sha256": "77052a9460551943668c5ae715d9aad42c62e5a7fb86c861a14241f9a4a8c6c9",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      },
+      {
+        "id": "commit-timeline",
+        "kind": "executed_metric_example",
+        "values": {
+          "coarse_grid": [
+            0,
+            1.25,
+            2.5,
+            3.75,
+            5
+          ],
+          "state_change_cost": 4,
+          "budget": 5,
+          "coarse_area": 0,
+          "commit_area": 0.2
+        },
+        "source_fields": [
+          "selfchecks",
+          "maximum_absolute_initial_area_difference"
+        ],
+        "svg_sha256": "64b78600ac0f06bf5f1d75f05db047d20f1c95875eca123f71d51d24630c188f",
+        "png_sha256": "29a0921d55628abccb7c47e65545dd9b64283f4652572cfe05e975d75f30f334",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      },
+      {
+        "id": "area-sampling-effects",
+        "kind": "data",
+        "values": {
+          "rows": [
+            {
+              "budget": 5,
+              "policy": "neutral_joint"
+            },
+            {
+              "budget": 5,
+              "policy": "selective_joint"
+            },
+            {
+              "budget": 8,
+              "policy": "neutral_joint"
+            },
+            {
+              "budget": 8,
+              "policy": "selective_joint"
+            }
+          ],
+          "mean_differences": {
+            "initial": [
+              0.06666666666666667,
+              0.06666666666666667,
+              0.0,
+              0.0
+            ],
+            "later": [
+              0.03333333333333333,
+              0.03333333333333333,
+              0.020833333333333332,
+              0.020833333333333332
+            ],
+            "unaffected": [
+              0.0,
+              -0.1333333333333333,
+              -0.08333333333333333,
+              0.0
+            ]
+          },
+          "initial_positive_paths": 16,
+          "unaffected_negative_paths": 32,
+          "paths": 168
+        },
+        "source_fields": [
+          "summaries",
+          "trajectories_with_positive_initial_area_difference"
+        ],
+        "svg_sha256": "24d7c00c62d76809f8bcc9272cd9cc2c4461afa0b164a44c4d5fcbf48be69082",
+        "png_sha256": "e0790aaa186327138ff3d8f2329fb85fb2a80f62e3662110806b05035c434186",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      }
+    ],
+    "probeflow": [
+      {
+        "id": "overview",
+        "kind": "concept_with_observed_counts",
+        "values": {
+          "selection_cycles": 204,
+          "evaluation_cycles": 421,
+          "predictors": 3,
+          "masks": 8,
+          "unsupported_joint_cycles": 391
+        },
+        "source_fields": [
+          "unique_selection_cycles",
+          "unique_evaluation_cycles",
+          "predictor_count",
+          "source_masks",
+          "support"
+        ],
+        "svg_sha256": "66f8a066b8ec837a56b99f8d882dc35d299ce40d7729c68c088fb6dab13368e0",
+        "png_sha256": "204e0813198c9731b18c000a8da72d8d08b6aaf133b37be9caea779796fbf0ca",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      },
+      {
+        "id": "predictor-mask-errors",
+        "kind": "data",
+        "values": {
+          "predictors": [
+            "prior_centroid",
+            "uniform_centroid",
+            "nearest_neighbor_1"
+          ],
+          "source_masks": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "component_error": [
+            [
+              0.7238717339667459,
+              0.7238717339667459,
+              0.7238717339667459,
+              0.7238717339667459,
+              0.7238717339667459,
+              0.7238717339667459,
+              0.7238717339667459,
+              0.7238717339667459
+            ],
+            [
+              0.7238717339667459,
+              0.4982185273159145,
+              0.6965558194774347,
+              0.5504750593824228,
+              0.47802850356294535,
+              0.47387173396674587,
+              0.47387173396674587,
+              0.47387173396674587
+            ],
+            [
+              0.7238717339667459,
+              0.5201900237529691,
+              0.47743467933491684,
+              0.5742280285035629,
+              0.47387173396674587,
+              0.47387173396674587,
+              0.47387173396674587,
+              0.47387173396674587
+            ]
+          ],
+          "cycles": 421,
+          "heads": 4
+        },
+        "source_fields": [
+          "evaluation_results"
+        ],
+        "svg_sha256": "d9cb478e575e7273b14f1ba94d3c29376be9501f9af60610605d643c07137b1d",
+        "png_sha256": "91c1dcc72f60650dfa8d2b778efef52f687244d16fbc3fedbb79232e3d714128",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      },
+      {
+        "id": "support-and-cost",
+        "kind": "data",
+        "values": {
+          "training_cooler100_cycles": 76,
+          "training_cooler100_joint_tuples": 1,
+          "evaluation_seen_joint": 30,
+          "evaluation_unseen_joint": 391,
+          "raw_price_rows": [
+            {
+              "budget": 6660,
+              "budget_violations": 0,
+              "component_comparisons": 1684,
+              "component_error": 0.47387173396674587,
+              "component_error_plus_normalized_quote": 0.4743221844171963,
+              "component_errors": 798,
+              "head_error_counts": [
+                0,
+                273,
+                246,
+                279
+              ],
+              "independent_statistic_counterfactual_quote": 180,
+              "invalid_predictions": 0,
+              "mean_acquisition_quote": 60,
+              "policy": "selection_locked_subset",
+              "predictor": "nearest_neighbor_1",
+              "quote": 60,
+              "quote_unit": "raw_sample_proxy",
+              "scenario": "raw_sample_proxy",
+              "source_mask": 4,
+              "total_acquisition_quote": 25260,
+              "unique_cycles": 421,
+              "vector_error": 0.9287410926365796,
+              "vector_errors": 391
+            },
+            {
+              "budget": 6660,
+              "budget_violations": 0,
+              "component_comparisons": 1684,
+              "component_error": 0.47387173396674587,
+              "component_error_plus_normalized_quote": 0.5238717339667459,
+              "component_errors": 798,
+              "head_error_counts": [
+                0,
+                273,
+                246,
+                279
+              ],
+              "independent_statistic_counterfactual_quote": 19980,
+              "invalid_predictions": 0,
+              "mean_acquisition_quote": 6660,
+              "policy": "cheapest",
+              "predictor": "nearest_neighbor_1",
+              "quote": 6660,
+              "quote_unit": "raw_sample_proxy",
+              "scenario": "raw_sample_proxy",
+              "source_mask": 7,
+              "total_acquisition_quote": 2803860,
+              "unique_cycles": 421,
+              "vector_error": 0.9287410926365796,
+              "vector_errors": 391
+            }
+          ],
+          "equal_price_rows": [
+            {
+              "budget": 1,
+              "budget_violations": 0,
+              "component_comparisons": 1684,
+              "component_error": 0.5201900237529691,
+              "component_error_plus_normalized_quote": 0.5368566904196358,
+              "component_errors": 876,
+              "head_error_counts": [
+                65,
+                273,
+                246,
+                292
+              ],
+              "independent_statistic_counterfactual_quote": 3,
+              "invalid_predictions": 0,
+              "mean_acquisition_quote": 1,
+              "policy": "selection_locked_subset",
+              "predictor": "nearest_neighbor_1",
+              "quote": 1,
+              "quote_unit": "equal_source_quote",
+              "scenario": "equal_source_quote",
+              "source_mask": 1,
+              "total_acquisition_quote": 421,
+              "unique_cycles": 421,
+              "vector_error": 0.9287410926365796,
+              "vector_errors": 391
+            },
+            {
+              "budget": 1,
+              "budget_violations": 0,
+              "component_comparisons": 1684,
+              "component_error": 0.47743467933491684,
+              "component_error_plus_normalized_quote": 0.4941013460015835,
+              "component_errors": 804,
+              "head_error_counts": [
+                398,
+                153,
+                51,
+                202
+              ],
+              "independent_statistic_counterfactual_quote": 3,
+              "invalid_predictions": 0,
+              "mean_acquisition_quote": 1,
+              "policy": "cheapest",
+              "predictor": "nearest_neighbor_1",
+              "quote": 1,
+              "quote_unit": "equal_source_quote",
+              "scenario": "equal_source_quote",
+              "source_mask": 2,
+              "total_acquisition_quote": 421,
+              "unique_cycles": 421,
+              "vector_error": 0.9691211401425178,
+              "vector_errors": 408
+            }
+          ]
+        },
+        "source_fields": [
+          "support",
+          "policy_results",
+          "probeflow_validation.read_only_actual_trace_verification"
+        ],
+        "svg_sha256": "014faf356617b12456140af4163dabfacc1a6148ba55e403f1db2251e726bbcd",
+        "png_sha256": "b441d388e515c394c45309326928d78c2ebeec4b84a31cd1e914c1cf3e732e0f",
+        "scope": "Visualization of frozen descriptive evidence or explicitly marked study logic; no new model/policy execution."
+      }
+    ]
+  },
+  "new_experiments": false,
+  "model_api_calls": 0
+}

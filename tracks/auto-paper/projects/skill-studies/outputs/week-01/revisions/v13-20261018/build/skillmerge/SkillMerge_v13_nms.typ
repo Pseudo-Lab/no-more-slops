@@ -1,0 +1,302 @@
+#import "conference.typ": *
+#show: research-paper.with(title: "SkillMerge: Auditing Evidence Contracts Before Measuring Qualified Skill Composition: A measurement study and a falsifiable protocol for independently useful agent-skill changes")
+#title-block("SkillMerge: Auditing Evidence Contracts Before Measuring Qualified Skill Composition: A measurement study and a falsifiable protocol for independently useful agent-skill changes","Neutral conference-style working paper, 2026-10-18. Completed evidence: v11 public-data/grader audit and v12 deterministic measurement run. v13 restructures and analyzes those preserved results; no new predictive-model experiment. Actual A/B histories=0, eligible pairs=0, theta_Q=null. No acceptance, scientific-independence, or novelty certification.")
+#abstract-block[#text("Can two independently useful changes to an agent skill reduce completion when installed together? Answering this question requires both independently qualified changes and a measurement contract that supports the intended inference. We specify a paired, qualification-conditioned contrast between joint deployment and the mean isolated branch, while separating operational loss from semantic-interference attribution. The agent experiment remains unexecuted. We instead complete a prerequisite measurement study on a provenance-linked SciFact adaptation: 531 tasks in 325 structural components, including 309 evidence-bearing tasks with 548 original rationale annotations. Under auditor-provided correct labels, all 548 annotation responses pass sufficient-containment and exact-annotation endpoints; retaining only the first annotation accepts 309. Budgets of one, two, three, and four sentences make an annotated answer reachable on 290, 305, 308, and 309 tasks. Prepending rather than appending the same unannotated sentence changes four first-three judgments while preserving the full response set. We derive an annotation-reachability condition, a same-set counterexample, and exact subset controls, checked against exhaustive enumeration. These findings change concrete grader-admission and mechanism-diagnosis decisions, but establish neither model composition collapse nor a winning integration method. We provide a controlled comparison design against conservative replay, typed migration, and assessment-based assembly, with zero eligible histories and null composition effects explicitly retained.")]
+
+= #text("Introduction")
+
+#text("Agent instructions increasingly live in reusable skill files with associated tools and resources. A deployment decision arises when two changes are useful separately: should both become available together, should integration be repaired, or should deployment fall back to an isolated branch? A negative score alone does not answer why integration failed. It could reflect lost evidence, different ordering under a ranked contract, an omitted valid annotation, changed tool rights, or additional context. Distinguishing these possibilities determines which intervention is worth deploying.")
+
+#text("Consider an evidence task whose correct rationale contains three sentences. Two isolated configurations and their ancestor return these sentences followed by an irrelevant sentence; the joint configuration returns the same four IDs with the irrelevant one first. A first-three grader reports a strict joint failure, while full-set containment reports no change. If ranked evidence is the application contract, the failure is operationally meaningful. The identical full set nevertheless rules out the stronger explanation that the joint answer lost an annotated evidence sentence. A study that confuses these claims can prescribe the wrong repair.")
+
+#text("Our question is therefore two-level. The behavioral target is whether independently qualified changes lose completion jointly. The completed empirical contribution is an audit of the measurement substrate required to investigate that target. This ordering follows established concerns about evidence evaluation ")#link(<bib1>)[#text("[1,3,4]")]#text(" and construct validity ")#link(<bib8>)[#text("[8,9]")]#text(", rather than claiming that measurement validity is newly discovered. The useful gap is operational: a claim about qualified composition needs a chain linking candidate history, held-out qualification, answer expressibility, grader behavior, and fresh deployment outcomes.")
+
+#text("We ask three research questions. RQ1: do original valid annotation responses remain accepted, and is a complete answer expressible under the proposed budget? RQ2: which endpoint changes can occur while the full evidence set is fixed? RQ3: what additional histories, controls, and comparison rights are required before estimating a qualified-composition effect? RQ1 and RQ2 receive finite, executed answers; RQ3 receives an explicit prospective protocol. No observation in the completed audit qualifies a skill pair.")
+
+#text("Figure 1 separates these evidential stages. The completed lane contains 531 tasks, 309 evidence-bearing tasks, 548 annotation responses, and 4,186 constructed diagnostics. These are nested units, not independent integration events. The separate behavioral lane has zero authoring histories, zero eligible pairs, and a null effect. Our central practical result is that an incomplete grader and an unexamined response cap would already change eligibility and mechanism interpretations before any model comparison begins.")
+
+#figure(image("figures/overview.svg", width: 100%), caption: [#text("Completed measurement work and prospective behavioral inference are separate. Solid stages contain 531 tasks in 325 structural components, 309 evidence-bearing tasks in 204 components plus 222 insufficient tasks, 548 original annotation responses, and 4,186 constructed diagnostics. The dashed A/B-authoring, qualification-Q, and fresh-S lane has zero eligible histories and null effects. Counts are nested units; no arrow establishes observed composition collapse.")]) <fig-overview>
+
+#text(weight: "bold")[Contributions.]
+
+- #text("A decision-focused formulation of qualified skill composition: joint availability versus the mean isolated branch, conditional on an independently applied qualification gate, with eligibility yield separated from effect.")
+- #text("An executed evidence-contract audit preserving source connectivity, annotation alternatives, exposed-data status, and distinct task/component/response denominators.")
+- #text("Budget-reachability and same-set controls that separate answer-space impossibility, annotation omission, ranking sensitivity, and actual semantic loss; exact finite controls are checked by exhaustive enumeration.")
+- #text("A falsifiable, equal-information and fully charged comparison protocol against conservative replay, typed migration, and assessment/assembly methods; agent effects remain unestimated rather than inferred from grader diagnostics.")
+
+= #text("Related Work")
+
+#text("We organize related work by the decision it supports: what counts as evidence, what a benchmark score warrants, and what an integration policy actually does. This avoids treating a dataset, a testing philosophy, and an executable skill-management method as interchangeable performance baselines.")
+
+== #text("Evidence and rationale evaluation")
+
+#text("SciFact evaluates scientific claim–abstract relations with rationale annotations ")#link(<bib1>)[#text("[1]")]#text(". Its rationalized abstract endpoint uses containment of a complete rationale, whereas its sentence endpoint also penalizes excess predictions. FEVER likewise distinguishes label correctness from evidence-supported correctness and recognizes incomplete evidence annotation ")#link(<bib3>)[#text("[3]")]#text(". ERASER separates agreement with human rationales from faithfulness to a model's prediction ")#link(<bib4>)[#text("[4]")]#text(". These distinctions motivate separate endpoints; they do not justify naming exact annotation agreement semantic truth. Our sufficient-containment rule also differs from ERASER's confidence-based notion of rationale sufficiency.")
+
+#text("The pinned SciFact implementation slices a supplied rationale list to three IDs for rationalized abstract correctness ")#link(<bib2>)[#text("[2]")]#text(". The inspected parser retains the supplied list rather than sorting it. We study that local list behavior explicitly. We do not reproduce corpus retrieval, native aggregate precision/recall/F1, or ERASER faithfulness. Original annotations are operational references, not independent domain adjudications.")
+
+== #text("Behavioral testing and warranted inference")
+
+#text("CheckList distinguishes focused functionality, invariance, and directional tests ")#link(<bib5>)[#text("[5]")]#text(". Our same-set controls apply this testing logic to deterministic graders, not to a model evaluated through CheckList. HELM motivates examining several desiderata in the same scenarios ")#link(<bib6>)[#text("[6]")]#text("; BIG-bench discusses sensitivity to task and metric specification ")#link(<bib7>)[#text("[7]")]#text(". Construct-validity analyses make the score-to-claim assumptions explicit ")#link(<bib8>)[#text("[8,9]")]#text(". We implement a narrow part of that agenda through executable acceptance and answer-space checks.")
+
+#text("Underspecification warns that similar held-out predictive performance can coexist with different deployment behavior ")#link(<bib11>)[#text("[11]")]#text(". Datasheets motivate explicit composition, collection, and intended-use documentation ")#link(<bib12>)[#text("[12]")]#text(", while The Benchmark Lottery motivates fixing task selection and weighting rather than interpreting a convenient ranking as universal ")#link(<bib13>)[#text("[13]")]#text(". None proves that a particular skill pair interferes. Together they explain why our exposed annotation audit supports an engineering admission decision but not a behavioral population estimate.")
+
+== #text("Skill evolution and integration controls")
+
+#text("DSPy compiles modular language-model programs against an explicit metric, including metric-filtered traces ")#link(<bib10>)[#text("[10]")]#text(". SkillCommit emphasizes source-case replay and conservative scope management ")#link(<bib14>)[#text("[14]")]#text(". SkillSmith includes typed operations and required caller updates ")#link(<bib15>)[#text("[15]")]#text(". SkillCAT v2 uses assessment with an LLM router and an LLM assembler ")#link(<bib16>)[#text("[16]")]#text(". SkillEvoReg studies candidate-conditioned regression validation and repair ")#link(<bib17>)[#text("[17]")]#text(". These provide substantive comparison mechanisms, but optimize or condition on different objects; none is automatically an estimator of our qualified-pair contrast.")
+
+#text("Signal or Noise separates skill instructions, matched irrelevant content, slices, and mounted resources ")#link(<bib18>)[#text("[18]")]#text(". Its byte-matched control motivates a length diagnostic, while actual tokenizer equality remains a separate requirement. SkillsBench's versioned task/environment/oracle/verifier packages offer a prospective workflow setting ")#link(<bib19>)[#text("[19]")]#text(". We inspect these primary sources and specify comparison rights; we execute none of their native systems, import none of their reported scores, and make no priority claim over their broader mechanisms.")
+
+= #text("Problem Formulation and Method")
+
+#text("An event fixes a common skill ancestor S0, two branch changes A and B, their associated resource graph, and a canonical joint configuration AB. Installation, routing, actual reading, and runtime assembly are distinct interventions. The primary behavioral treatment is joint availability under a declared deployment policy. A forced-activation test can diagnose a route, but cannot replace availability while retaining the same estimand.")
+
+== #text("Qualification-conditioned target")
+
+#text("Authors may use development information D but cannot inspect each other's change or auditor-only Q/S labels. An event qualifies only if both isolated branches satisfy a predeclared gain rule against the same ancestor on Q. Qualification must be based on observed task behavior, not an assigned role or a critic's approval. Proposal caps, duplicate attempts, authoring failures, and Q failures remain in a yield ledger. Selection on Q defines a conditional target; it does not measure the frequency of harmful merges among all proposed changes.")
+
+#text("For a qualified event and task, p0, pA, pB, and pAB denote completion probabilities under fresh reset executions with fixed model identity, rights, contract, and accounting. The primary contrast compares joint deployment to an equal mixture of isolated branches. It does not select the best branch after inspecting final S. Weights over histories and source families must be declared before S; task-rich components otherwise receive unintended extra influence.")
+
+#text("The interaction tau is different. The authored cell (S0,A,B,AB)=(0,1,1,1) gives tau=-1 but primary contrast zero: joint deployment is not worse than either isolated branch. A strict cell (1,1,1,0), a negative mean contrast, and a high-probability witness are also different claims. The current ledger contains no actual A/B histories, Q evaluations, or assigned S cells; all composition effects and witness incidence remain null.")
+
+$ d_(e,t) = p_(A B) - frac(p_A + p_B, 2) $
+
+$ theta_Q = E_w[d_(e,t) mid Q_e = 1] $
+
+$ tau_(e,t) = p_(A B) - p_A - p_B + p_0 $
+
+== #text("Evidence contracts")
+
+#text("For an evidence-bearing task t, let its n sentence IDs be stable and let R1 through Rm be its original nonempty rationale sets. A response L is an ordered list of distinct in-range IDs. Every executed diagnostic receives the correct label from the auditor. This isolates evidence-contract behavior and deliberately excludes label prediction. Insufficient tasks use a separate explicit label and empty evidence in the local adapter.")
+
+#text("Unlimited sufficiency accepts when a complete original rationale occurs anywhere in the response set. First-three applies containment only to the first three supplied IDs. Exact-annotated accepts when the full set equals an enumerated rationale. An intentionally incomplete first-annotation-only comparator retains only the first original rationale. The last comparator tests omission and is never proposed as an admissible deployed grader. Order invariance, tolerance of extra evidence, and preservation of alternatives are distinct properties.")
+
+#text("The endpoint must follow the application. Containment can reward an answer with excessive unrelated material; exact matching can reject a valid unannotated explanation. Ranked evidence may be a legitimate retrieval requirement. We therefore audit contracts without promoting whichever endpoint makes a preferred composition story appear. The local cited-document task and its insufficient convention differ from native SciFact retrieval and aggregate scoring ")#link(<bib1>)[#text("[1,2]")]#text(".")
+
+#result-table(([#text("Contract")],[#text("Acceptance condition")],[#text("What a rejection can mean")],),(([#text("Unlimited sufficient")],[#text("Some original rationale is contained in set(L)")],[#text("No complete enumerated rationale in the full set")],),([#text("First three")],[#text("Some original rationale is contained in set(L[:3])")],[#text("Evidence absent from the scored prefix; may still exist later")],),([#text("Exact annotated")],[#text("set(L) equals one original rationale")],[#text("Extra IDs or mismatch with enumerated alternatives")],),([#text("First annotation only")],[#text("The first listed rationale is contained in set(L)")],[#text("May reject a different original valid alternative")],),),"Contracts used in the executed measurement study, conditional on an auditor-correct label. This is not a ranking of universally better graders.")
+
+== #text("Reachability, invariance, and exact controls")
+
+#text("Proposition 1. Under an at-most-k sentence budget, an annotated sufficient answer exists if and only if the shortest original rationale has size at most k. Necessity follows because a response containing a complete rationale cannot be shorter than that rationale. Sufficiency follows by returning the shortest rationale itself. This is an answer-space condition, not a model success bound conditional on arbitrary generation behavior. A first-three cap consequently makes any task with only longer rationales unreachable under that endpoint.")
+
+#text("Proposition 2. Full-set containment is invariant to permutations of L and monotone under adding IDs. Exact-annotated is permutation invariant but need not be monotone. First-three need not be permutation invariant. For a three-ID rationale R and an ID d outside every annotated rationale, compare [r1,r2,r3,d] with [d,r1,r2,r3]. Their full sets are identical and sufficient, but only the first passes first-three. Assigning the first list to S0/A/B and the second to AB constructs a strict score cell without losing any full-set evidence. This is a deterministic counterexample, not an eligible behavioral event.")
+
+#text("A uniform k-subset control quantifies document-position structure without inventing predictions. With k=min(b,n), inclusion–exclusion over nonempty subsets J of distinct rationales gives the exact probability that the chosen set contains at least one rationale. Here uJ is the size of their union; impossible binomial terms are zero. Exact-annotated instead counts distinct size-k annotations divided by the total number of size-k subsets. Exact rational arithmetic and exhaustive checks avoid Monte Carlo uncertainty. These elementary results are useful contract checks, not claims of mathematical priority.")
+
+$ "reachable"_t(k) = I[min_j |R_(t,j)| <= k] $
+
+$ q_(t,k) = sum_(J != emptyset) (-1)^(|J|+1) frac(binom(n_t-u_J, k-u_J), binom(n_t,k)) $
+
+== #text("When endpoint disagreement changes a composition contrast")
+
+#text("Endpoint disagreement alone does not determine the direction of a composition effect. Hold the qualified cohort Q, task weights, and arm outputs fixed, and let eta_z be the expected difference between two binary graders g and h on arm z. Linearity gives the contrast decomposition below. If every arm has the same discrepancy, it cancels. A task that is unreachable under one contract for all arms therefore imposes a ceiling but need not create a negative joint-minus-isolated contrast. Its effect on qualification or weighting is a separate question.")
+
+#text("If epsilon_z is the weighted probability that the graders disagree on arm z within that same fixed Q cohort, the triangle inequality yields the displayed sensitivity bound. These are conditional algebraic statements, not numerical estimates from our oracle diagnostics. We have no arm-specific model outputs, so neither eta nor epsilon is observed for a qualified composition population. In particular, 239 omitted-alternative rejections and four constructed order flips cannot be substituted into the bound as model disagreement probabilities.")
+
+#text("Changing the grader used for Q may also change which histories qualify. Then even the cohort differs, and the fixed-Q identity cannot transport one reported effect to the other without additional assumptions or observations. A future study should distinguish rescoring the same frozen S outputs from rerunning qualification under a different contract. The former diagnoses measurement sensitivity; the latter changes the conditional study population. This distinction prevents treating a convenient endpoint switch as either a repaired mechanism or evidence of general collapse.")
+
+$ theta_Q^(g) - theta_Q^(h) = E_w[eta_(A B) - frac(eta_A+eta_B,2) mid Q=1] $
+
+$ abs(theta_Q^(g)-theta_Q^(h)) <= epsilon_(A B) + frac(epsilon_A+epsilon_B,2) $
+
+= #text("Experimental Setup")
+
+#text("The completed experiments operate on public dataset records and authored oracle-label response lists. The earlier audit establishes source reconstruction and basic grader behavior; the follow-up measurement run adds budget, alternative, same-set, and combinatorial diagnostics. The present revision adds analysis and inspected literature, not another predictive experiment.")
+
+== #text("Sources, splitting, and exposure")
+
+#text("The preserved raw snapshot contains 809 training claims, 300 development claims, and 5,183 abstracts. An independent breadth-first reconstruction checks the prepared adapter against raw bytes, including original labels and rationale alternatives. Excluding 278 training claims linked to development sources leaves 531 local tasks in 325 structural components. Of these, 309 evidence-bearing tasks occupy 204 components; 222 are insufficient tasks. These are local adapter counts, not a substituted official benchmark population.")
+
+#text("Recorded cross-split component, selected-document, and normalized-claim overlaps are zero under the reconstruction rules. Structural separation is narrower than semantic independence or pretraining-contamination freedom. All 531 selected labels and annotations were already exposed during development audit. None is a blind final set for a newly authored skill. The exposure ledger follows the documentation rationale of ")#link(<bib12>)[#text("[12]")]#text(", but no documentation artifact itself guarantees independence.")
+
+#text("The rationale family has 548 original annotation records across 309 evidence tasks. Task-level shortest-rationale sizes are one on 290 tasks, two on 15, three on three, and four on one. Across all annotation records, the corresponding counts are 510, 33, four, and one. Alternatives share tasks and sources; treating 548 responses as independent tasks would change the denominator without adding independent evidence.")
+
+== #text("Diagnostic construction and validation")
+
+#text("For each original annotation we construct its ordered IDs with the correct label. For each budget from one through ten we also return a document prefix of at most that many IDs. Reachability is computed independently of this prefix policy. Finally, for every annotation, we choose one sentence outside the union of its task's annotated rationales and place the same ID before versus after the annotation. All 309 evidence tasks support this construction; no task is silently excluded. The full set, label, and distractor identity are fixed within a pair.")
+
+#text("The saved run contains 4,186 diagnostic rows. Basic scorer checks include original annotation/empty responses, wrong labels, evidence deletions, and malformed outputs from the preceding audit. Follow-up mathematical checks cover overlapping and duplicate rationale families as well as boundary budgets. Saved traces are reaggregated and their input/output byte bindings checked; all 66,431 real-data size-three subsets are exhaustively enumerated to verify the analytic control. This establishes specified software relationships, not label correctness or independent scientific replication.")
+
+#text("No model, router, assembler, or tool-using agent produces these responses. The execution makes zero model calls and zero network requests. Later literature HTML retrieval belongs to this revision's source review, not to the offline experiment. We preserve the executed plan, script snapshot, results, row traces, and receipts, including an explicit supplement for a prepared-manifest binding omitted from the original follow-up receipt.")
+
+= #text("Results and Analysis")
+
+#text("Results answer admission and interpretation questions on a fixed exposed corpus. Exact counts require no sampling interval for this corpus; they do not estimate a population composition rate. We retain endpoint-specific denominators and distinguish existential reachability from achieved diagnostic scores.")
+
+== #text("Budget changes expressibility before behavior")
+
+#text("Figure 2 plots the answer-space ceiling and the constructed prefix policy on the same 309 tasks. Budgets one, two, three, and four permit a complete annotated answer on 290, 305, 308, and 309 tasks respectively. The unique four-sentence-only annotation remains preserved; a three-ID endpoint cannot accept it even with perfect sentence selection. A historical paper description of rationale length does not replace checking the actual raw snapshot and adapter.")
+
+#text("Document-prefix sufficient passes rise from 17 at budget one to 76 at three, 119 at four, and 251 at ten. First-three passes plateau at 76 after budget three. Exact-annotated prefix passes are 17, three, and zero at budgets one, two, and three; they remain zero through ten. These curves measure different contracts, not a model becoming worse at verification as its budget increases. Under exact matching, extra predicted IDs can change a previously exact set into a rejection by definition.")
+
+#text("This changes an immediate design decision: either preserve the ranking cap and explicitly account for unreachable original cases, or define a justified adapted task before testing new behavior. Silently discarding the four-sentence case or increasing the cap after observing a desired effect would change the target. We make neither change and promote no endpoint.")
+
+#figure(image("figures/budget-sensitivity.svg", width: 100%), caption: [#text("Sentence budgets 1–10 on the same 309 evidence-bearing tasks. Annotation reachability is an existential answer-space ceiling, while prefix sufficient/first-three/exact curves score constructed document-prefix responses with auditor-correct labels. At k=3, 308 tasks are reachable but only 76 prefix responses pass sufficient containment; the first-three curve then plateaus. These are not LLM accuracies.")]) <fig-budget-sensitivity>
+
+== #text("Alternative preservation and same-set order effects")
+
+#text("Every original annotation response passes unlimited sufficiency and exact-annotated: 548/548 each. First-three accepts 547/548. The incomplete first-annotation-only comparator accepts 309/548, losing 239 original valid annotation responses, or 43.61% of these response units. This is not a 43.61-point model gain: the same task can contribute several alternatives, and no model chose among them. It is a concrete reason to reject that incomplete grader for the stated annotation-preserving contract.")
+
+#text("Figure 3 compares original responses with the same one-distractor set in two orders. Unlimited sufficiency accepts 548/548 in both orders. First-three accepts 543/548 when the distractor is prepended and 547/548 when appended, producing four paired flips. Exact-annotated rejects every distractor response in both orders because the chosen ID lies outside every rationale. The incomplete comparator accepts 309 in either order. Four flips are an observed count among constructed annotation pairs, not the natural incidence of harmful merges.")
+
+#text("The control rules out full-set evidence loss as an explanation for these particular flips. It does not invalidate ranking as a task requirement, nor does it establish that model attention, instruction conflict, or context length caused a behavioral change. Those require model-produced outputs and matched interventions. An integration policy whose only benefit is moving evidence into a required prefix may be useful, but its claim should name ranking repair.")
+
+#figure(image("figures/endpoint-controls.svg", width: 100%), caption: [#text("Pass counts for 548 original annotation responses, nested in 309 tasks, under four contracts. Original/prepend/append counts are 548/548/548 for unlimited sufficiency, 547/543/547 for first-three, 548/0/0 for exact-annotated, and 309/309/309 for the deliberately incomplete first-annotation-only control. Prepend/append hold the full set fixed; their four first-three flips are constructed diagnostics, not composition incidence.")]) <fig-endpoint-controls>
+
+== #text("Finite controls and the missing behavioral denominator")
+
+#text("At size three, uniform-subset sufficient containment has exact equal-task expectation 0.490307, compared with document-prefix containment 76/309, approximately 0.245955. This diagnoses sentence-position structure under correct labels; it does not show a random agent outperforming a verification model. Equal-component averaging yields 0.496126, numerically different because tasks and components induce different targets. Reporting one as the other would hide a weighting choice.")
+
+#text("The authored formula passes 165 exhaustive small-family comparisons and five additional contract-check groups. Independent saved-trace validation reaggregates all 4,186 rows, checks 25 bound input/output files, and confirms the real-data three-subset enumeration. The elementary propositions and diagnostic counts are consequently supported as finite software/data statements, conditional on the annotations and definitions.")
+
+#text("The behavioral funnel remains empty: actual A/B histories=0, Q-evaluated pairs=0, eligible pairs=0, and assigned S cells=0. Theta_Q, interaction, and strict-witness rate are null. The nulls mean missing behavioral evidence, not zero harm. Neither successful software tests nor a model critic's agreement can populate those denominators.")
+
+#result-table(([#text("Evidence object")],[#text("Observed denominator")],[#text("Supported interpretation")],),(([#text("Prepared public-data tasks")],[#text("531 tasks / 325 components")],[#text("Reconstructed structural subset; already exposed")],),([#text("Evidence annotation diagnostics")],[#text("548 responses / 309 tasks")],[#text("Contract acceptance and paired order controls")],),([#text("Saved diagnostic traces")],[#text("4,186 rows")],[#text("Reproducible constructed-response calculations")],),([#text("Qualified composition")],[#text("0 histories / 0 eligible pairs")],[#text("Effects null; no behavioral incidence estimate")],),),"Different denominators answer different questions. Response rows and exhaustive subsets do not create independent skill histories.")
+
+= #text("Discussion and Limitations")
+
+#text("The strongest warranted conclusion is a prerequisite decision: admit the measurement contract before interpreting a qualified-composition contrast. The audit demonstrates particular failure modes in an incomplete grader and particular order sensitivity in a ranked endpoint. It does not demonstrate that combining real skill files generally lowers completion.")
+
+== #text("A behavioral study that could falsify the hypothesis")
+
+#text("A next study must justify new source/history separation and access controls rather than rename the exposed tasks. Freeze the ancestor, resource graph, author contexts, proposal cap, Q gain rule, final endpoint, and AB order before S. Retain failed proposals and nonqualifiers. Use Q only for qualification, not retrospective repair based on S. If no pair qualifies, report yield zero and effect null; weakening the gate after seeing joint failure would redefine the target.")
+
+#text("For eligible pairs, allocate fresh matched S0/A/B/AB resets. Keep all assigned availability cells, including nonactivation, invalid output, agent-caused timeout, and deliberate deferral. Unresolved external outages require a separate missingness ledger and bounded success summaries. Record installed, routed, read, and assembled hashes. Diagnostics should include BA order, tokenizer-matched irrelevant context, structured padding, unchanged-resource controls, and sham repair. A negative required-ranking score remains operational loss even if semantic-loss attribution is falsified.")
+
+#text("Repeated trials share histories and source families. An inferential plan must say whether histories and families are fixed or sampled, and model both dependencies for claims about both populations. Qualification yield and paired variability from an independent feasibility pilot should inform later precision requirements; zero current histories cannot support a power claim. The semantic-interference explanation is weakened if the negative contrast vanishes when full evidence, ordering, tokenizer length, rights, and the declared grader are controlled.")
+
+#method-algorithm(([#text("Admit task rights, answer expressibility, annotation alternatives, grader behavior, and reset/cost contract.")],[#text("Freeze S0 and independent author contexts; generate capped A/B proposals using D only.")],[#text("Preserve all proposals and failures; apply the predeclared auditor-only Q gate to both branches.")],[#text("If eligible count is zero, return yield zero and null composition effects.")],[#text("Freeze eligible candidate/resource bytes and joint order; assign fresh S0/A/B/AB resets and controls.")],[#text("Compare policies under equal feedback rights and full budget; retain deferral, missingness, and nonactivation.")],[#text("Estimate the mean-isolated-branch contrast with declared family/history weighting.")],[#text("Attribute mechanisms only to the extent supported by matched interventions.")],),"Prospective protocol. The current deterministic audit completes admission checks only; it does not execute the authoring-to-S sequence.")
+
+== #text("Strong comparisons and accounting")
+
+#text("A fixed-pool adapter comparison would give every policy identical candidate bytes, development feedback, tool rights, and total budget. Conservative replay must be allowed to narrow, reject, or fall back; an always-merge straw controller is insufficient. Typed migration must preserve the task contract and pass behavior checks, not receive credit for schema legality alone. Assessment-based assembly must retain router/assembler costs and information access. Naive concatenation is a separate control, not native SkillCAT v2 ")#link(<bib16>)[#text("[16]")]#text(".")
+
+#text("A native-system comparison is a different experiment: generation procedures, teacher/reference access, training objectives, routing, and assembly all matter. We have executed neither that experiment nor the fixed-pool adapters. Candidate-conditioned stress sets ")#link(<bib17>)[#text("[17]")]#text(" can diagnose a policy but cannot estimate unselected prevalence. Instruction/content/resource controls ")#link(<bib18>)[#text("[18]")]#text(" and versioned workflow packages ")#link(<bib19>)[#text("[19]")]#text(" are useful extensions only after their own rights, environments, and contracts are frozen.")
+
+#text("Charge candidate creation, rejected proposals and repairs, replay, routing, assembly, loading/cache, retries, and final execution. Q/S research overhead can be reported separately but remains part of total resource use. Compare completion alongside deferral, conditional deployment coverage, and cost; a policy that avoids every hard deployment must not appear unconditionally superior. No native-paper score is placed beside the local diagnostic counts as if measured on one benchmark.")
+
+#result-table(([#text("Comparison mechanism")],[#text("Allowed conservative action")],[#text("Essential fairness condition")],),(([#text("Source replay / SkillCommit-inspired")],[#text("Reject, narrow, split, or fall back")],[#text("Same source feedback and charged replay budget")],),([#text("Typed migration / SkillSmith-inspired")],[#text("Repair callers and interfaces")],[#text("Same resources; behavioral acceptance beyond static legality")],),([#text("Assessment/assembly / SkillCAT-inspired")],[#text("Select and assemble runtime content")],[#text("Charge LLM routing/assembly; preserve information rights")],),([#text("Naive joint availability")],[#text("Canonical unmodified installation")],[#text("Same ancestor, reset, tools, endpoint, and execution budget")],),),"Prospective comparison mechanisms. An inspired adapter is labeled as such and never reported as a native reproduction.")
+
+== #text("Threats to interpretation")
+
+#text("Gold labels and rationale sets are privileged inputs. Their semantic correctness and completeness were not independently adjudicated. A sentence outside the annotation union is unannotated by construction; calling it irrelevant is operational shorthand, not a domain-expert judgment. Exact-annotated can reject valid unlisted evidence, and sufficient containment tolerates unhelpful extras. Our conclusions concern the specified annotation contract.")
+
+#text("The study uses one exposed scientific-verification adaptation. Structural disjointness does not establish semantic independence or absence of model pretraining exposure. Four paired flips and one unreachable case are finite findings worth preserving, not a population prevalence claim. The related-work inspection is bounded to recorded primary passages; several references are preprints, one uses an abstract-only scope, and none supplies a reproduced external result. No external professor or independent scientific reviewer endorsed the results.")
+
+#text("The elementary reachability proof and counterexample do not certify methodological novelty. We do not show a new integration controller, general harm from skills, or superiority over the cited systems. The falsifiable contribution is narrower: concrete admissibility checks and controls prevent unsupported inferences in the planned qualified-composition experiment. Full reference scopes, local provenance, and reproducibility limits are preserved in the appendices and companion records.")
+
+= #text("Conclusion")
+
+#text("Before asking whether useful skills fail together, specify which outcomes would count and whether valid answers can be expressed. On the preserved SciFact adaptation, original alternatives, a three-ID cap, and evidence ordering change diagnostic acceptance in quantitatively different ways. These results support grader-admission decisions and narrower mechanism claims. Qualified composition remains a separate empirical question: with zero actual histories, its effect is null. The next defensible advance is an independently qualified, freshly evaluated behavioral study with strong conservative comparisons and complete accounting.")
+
+#heading(numbering: none)[Acknowledgements]
+
+#text("This work was created as part of the No-More-Slops group activities at Pseudo Lab.")
+
+#heading(numbering: none)[References]
+
+#bibliography-entry(1, [#text("David Wadden, Shanchuan Lin, Kyle Lo, Lucy Lu Wang, Madeleine van Zuylen, Arman Cohan, and Hannaneh Hajishirzi. 2020. Fact or Fiction: Verifying Scientific Claims. Proceedings of EMNLP, 7534–7550.")],"https://aclanthology.org/2020.emnlp-main.609/") <bib1>
+
+#bibliography-entry(2, [#text("Allen Institute for AI. SciFact evaluation implementation, commit 68b98a56d93e0f9da0d2aab4e6c3294699a0f72e. verisci/evaluate/lib/metrics.py and data.py.")],"https://github.com/allenai/scifact/blob/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py") <bib2>
+
+#bibliography-entry(3, [#text("James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. 2018. FEVER: a Large-scale Dataset for Fact Extraction and VERification. Proceedings of NAACL-HLT, 809–819.")],"https://aclanthology.org/N18-1074/") <bib3>
+
+#bibliography-entry(4, [#text("Jay DeYoung, Sarthak Jain, Nazneen Fatema Rajani, Eric Lehman, Caiming Xiong, Richard Socher, and Byron C. Wallace. 2020. ERASER: A Benchmark to Evaluate Rationalized NLP Models. Proceedings of ACL, 4443–4458.")],"https://aclanthology.org/2020.acl-main.408/") <bib4>
+
+#bibliography-entry(5, [#text("Marco Tulio Ribeiro, Tongshuang Wu, Carlos Guestrin, and Sameer Singh. 2020. Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. Proceedings of ACL, 4902–4912.")],"https://aclanthology.org/2020.acl-main.442/") <bib5>
+
+#bibliography-entry(6, [#text("Percy Liang et al. 2023. Holistic Evaluation of Language Models. arXiv:2211.09110v2.")],"https://arxiv.org/abs/2211.09110v2") <bib6>
+
+#bibliography-entry(7, [#text("Aarohi Srivastava et al. 2023. Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models. arXiv:2206.04615v3.")],"https://arxiv.org/abs/2206.04615v3") <bib7>
+
+#bibliography-entry(8, [#text("Timo Freiesleben and Sebastian Zezulka. 2025. The Benchmarking Epistemology: Construct Validity for Evaluating Machine Learning Models. arXiv:2510.23191v1.")],"https://arxiv.org/html/2510.23191v1") <bib8>
+
+#bibliography-entry(9, [#text("Andrew M. Bean et al. 2025. Measuring what Matters: Construct Validity in Large Language Model Benchmarks. arXiv:2511.04703v1.")],"https://arxiv.org/html/2511.04703v1") <bib9>
+
+#bibliography-entry(10, [#text("Omar Khattab et al. 2023. DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines. arXiv:2310.03714v1.")],"https://arxiv.org/html/2310.03714v1") <bib10>
+
+#bibliography-entry(11, [#text("Alexander D’Amour et al. 2022. Underspecification Presents Challenges for Credibility in Modern Machine Learning. Journal of Machine Learning Research, 23(226):1–61.")],"https://jmlr.org/papers/v23/20-1335.html") <bib11>
+
+#bibliography-entry(12, [#text("Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2021. Datasheets for Datasets. arXiv:1803.09010v8.")],"https://arxiv.org/html/1803.09010v8") <bib12>
+
+#bibliography-entry(13, [#text("Mostafa Dehghani, Yi Tay, Alexey A. Gritsenko, Zhe Zhao, Neil Houlsby, Fernando Diaz, Donald Metzler, and Oriol Vinyals. 2021. The Benchmark Lottery. arXiv:2107.07002v1.")],"https://arxiv.org/html/2107.07002v1") <bib13>
+
+#bibliography-entry(14, [#text("Yu He and Weikai Yang. 2026. SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion. arXiv:2608.15165v1.")],"https://arxiv.org/html/2608.15165v1") <bib14>
+
+#bibliography-entry(15, [#text("Yangbo Wei et al. 2026. SkillSmith: Co-Evolving Skills and Tools for Self-Improving Agent Systems. arXiv:2606.01314v2.")],"https://arxiv.org/html/2606.01314v2") <bib15>
+
+#bibliography-entry(16, [#text("Kunfeng Chen, Qihuang Zhong, Juhua Liu, and Bo Du. 2026. SkillCAT: Contrastive, Assessment-Augmented and Topology-Aware Skill Self-Evolution for LLM Agents. arXiv:2606.13317v2.")],"https://arxiv.org/html/2606.13317v2") <bib16>
+
+#bibliography-entry(17, [#text("Guanyu Nie et al. 2026. SkillEvoReg: Regularizing Agent Skill Evolution Against Overfitting. arXiv:2609.30861v1.")],"https://arxiv.org/html/2609.30861v1") <bib17>
+
+#bibliography-entry(18, [#text("Ziyue Yang and Fan Ding. 2026. Signal or Noise? A Benchmark Study of Agent Skills in Web Development. arXiv:2608.23067v1.")],"https://arxiv.org/html/2608.23067v1") <bib18>
+
+#bibliography-entry(19, [#text("BenchFlow contributors. 2026. SkillsBench v1.1: native task.md package release. Official release artifact.")],"https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1") <bib19>
+
+#pagebreak()
+#set heading(numbering: "A.1")
+#counter(heading).update(0)
+= #text("Reproducibility and preserved artifacts")
+
+#text("The v11 audit is runs/research_progress_v11_20261018_01/skillmerge/audit_01. The v12 project is projects/research_manuscripts_v12_20261018/skillmerge; its executed output is runs/research_manuscripts_v12_20261018_01/skillmerge/measurement_01. The output preserves locked_plan.json, results.json, task_measurements.json, diagnostic_rows.jsonl, the exact consumed measure.py snapshot, and receipt.json. The project preserves verify.py and VALIDATION.json. The v13 manuscript does not overwrite those files, earlier manuscripts, or active skills.")
+
+#text("Reproduce using Python 3.11: python -X utf8 -B projects/research_manuscripts_v12_20261018/skillmerge/measure.py --out runs/research_manuscripts_v12_20261018_01/skillmerge/measurement_fresh. Choose a genuinely new child if that path exists. The --self-check option runs finite mathematical/software checks without an agent. verify.py documents saved-run reaggregation. No new dependency or model API is required.")
+
+#text("The v12 receipt SHA-256 is 93e6014be9c1b980856c95194b3c0e8edb7e0f758fd233ef45c867ab3517bae3. Its original binding omitted the consumed prepared manifest; VALIDATION.json explicitly supplements that omission against the pre-existing sealed v11 receipt and retains the original receipt unchanged. This is a documented integrity repair, not a claim that the historical receipt originally included every input. Hashes bind local bytes, not semantics, publisher authenticity, or independent replication.")
+
+= #text("Endpoint and finite-control details")
+
+#text("The unique four-sentence-only task is scifact_v4_264 with rationale IDs (7,8,9,10). It is retained in both denominator and source records. The pinned evaluator's metrics.py lines 10–52 defines the three-ID rationalized-abstract rule; data.py lines 218–242 preserves the supplied response list in the inspected parser. Our document-prefix construction chooses ascending document order; upstream parser sorting is not asserted.")
+
+#text("The annotation-reachable counts for budgets 1–10 are (290,305,308,309,309,309,309,309,309,309). Constructed prefix sufficient passes are (17,43,76,119,148,176,202,221,238,251); first-three passes are (17,43,76,76,76,76,76,76,76,76); exact-annotated passes are (17,3,0,0,0,0,0,0,0,0). Every count uses 309 evidence tasks. The 222 insufficient tasks are not silently mixed into this positive-task figure.")
+
+#text("The equal-task uniform-subset containment expectations for budgets 1–10 are (0.190907,0.352965,0.490307,0.606539,0.701456,0.776807,0.834577,0.877959,0.910136,0.935464). They condition on auditor-correct labels and size min(b,n). Distinct rationale sets are deduplicated before inclusion–exclusion; overlapping unions are supported. Enumerating all subsets of each relevant size independently checks the formula. The displayed decimals are rounded summaries, not random-trial estimates.")
+
+#text("In the earlier grader audit, 770 original annotation-or-empty responses were accepted by the alternative-preserving local contract; 531 wrong-label, 592 one-sentence-deleted, and 6,903 malformed-response diagnostics were rejected. These groups are different constructions and denominators, not a single overall model accuracy. The current budget/order study preserves those earlier findings without merging them into a behavioral performance table.")
+
+= #text("Source review and claim boundaries")
+
+#text("SOURCES.json links each of 19 references to inspected primary URLs, selected passages, intended claims, exclusions, and acquisition receipts. Conference records establish bibliographic identity where available; pinned arXiv revisions establish the preprint identity actually inspected. For Underspecification the review scope is the official JMLR metadata and abstract, not the entire paper. Other full HTML pages were inspected at the recorded relevant sections; availability of HTML does not mean every appendix was audited.")
+
+#text("A separate standard-library retrieval records exact HTML/plain-code response bytes, UTC acquisition time, content type, and SHA-256 without storing whole copyrighted papers. These response hashes do not identify PDF bytes or the browser's rendered representation. Failed guessed locators are explicitly rejected rather than used to complete metadata. The five recent skill preprints resolve to matching primary versions; their dates alone are not grounds to fabricate or discard bibliographic facts.")
+
+#text("CLAIMS.json separates local measurements, author-derived finite statements, literature descriptions, proposed protocols, and untested hypotheses. Figure plans bind each plotted value to result keys. Korean explanations provide the derivations, objections, source differences, and independent-study design. Neither this documentation chain nor same-session cross-review constitutes external scientific validation.")
+
+= Source inspection boundaries
+
+#text("")#link(<bib1>)[#text("[1]")]#text(" ACL bibliographic record and abstract; arXiv v2 Sections 3.3 and 4.1–4.2. Original rationale alternatives, abstract-level containment/cap, and separate sentence-level precision/recall. v2's statement that the longest rationale has three sentences is not transferred to the later local raw snapshot, which contains one four-sentence-only task.")
+
+#text("")#link(<bib2>)[#text("[2]")]#text(" metrics.py lines 10–52: MAX_ABSTRACT_SENTS=3 and supplied-list slicing before containment. data.py lines 218–242: sentences assigned to prediction rationale without sorting in the inspected parser. Sentence endpoint is separate. Local document-prefix ordering is an authored diagnostic policy, not parser-imposed sorting.")
+
+#text("")#link(<bib3>)[#text("[3]")]#text(" ACL identity/abstract and original HTML evaluation discussion, including label-plus-evidence versus label-only scoring and Section 5.2 warning that evidence annotations may be incomplete. No reported baseline percentage is imported.")
+
+#text("")#link(<bib4>)[#text("[4]")]#text(" ACL identity/abstract and HTML Sections 1 and 4. Agreement with human rationales and faithfulness to the model's prediction are distinct. Its confidence-perturbation sufficiency is not our annotation-set sufficient-containment endpoint.")
+
+#text("")#link(<bib5>)[#text("[5]")]#text(" ACL identity/abstract and HTML Section 2.2 minimum functionality, invariance, and directional expectations. Supports focused behavioral/relationship tests; current tests exercise deterministic graders rather than a model through CheckList software.")
+
+#text("")#link(<bib6>)[#text("[6]")]#text(" Pinned v2 identity and Section 1.1 multi-metric measurement/targeted evaluation/standardization. Supports reporting different task desiderata separately. No external model numbers are copied.")
+
+#text("")#link(<bib7>)[#text("[7]")]#text(" Pinned v3 title/lead author and Sections 3.4.2–3.5. Metric/task specification affects observed capability patterns. Cite the inspected arXiv revision, without guessing a journal publication year.")
+
+#text("")#link(<bib8>)[#text("[8]")]#text(" Title/authors and Sections 2–3. Score-to-scientific-inference validity depends on intended inference, assumptions, and supporting/refuting evidence. The pinned title is used; later differently titled publisher metadata is not merged.")
+
+#text("")#link(<bib9>)[#text("[9]")]#text(" Identity and selected Sections 3.2–3.4 and 3.8. Auxiliary formatting demands, reuse limitations, and phenomenon-to-task-to-code-to-claim links. No survey percentage is imported.")
+
+#text("")#link(<bib10>)[#text("[10]")]#text(" Identity and Sections 3–4/Appendix E.1. Declarative modules and compilation; a specified metric filters traces. This is the inspected v1 title, not a merged later conference-title record.")
+
+#text("")#link(<bib11>)[#text("[11]")]#text(" Official JMLR metadata and abstract only. Similar held-out predictive performance can coexist with different deployment behavior. Full article not claimed as read.")
+
+#text("")#link(<bib12>)[#text("[12]")]#text(" Pinned v8 identity/abstract and documentation categories covering motivation, composition, collection, and recommended use. Supports explicit source/split/exposure documentation; no certification of dataset quality.")
+
+#text("")#link(<bib13>)[#text("[13]")]#text(" Title/authors, abstract, and discussion of benchmark/task choice affecting apparent method rankings. Supports fixing weighting and task family coverage before final comparison; not a local ranking result.")
+
+#text("")#link(<bib14>)[#text("[14]")]#text(" Primary identity and selected patch/replay/compatibility/consolidation sections. Source-case replay and narrowing/rejection/splitting before commit. Teacher and executor information access differ. No numerical result is imported.")
+
+#text("")#link(<bib15>)[#text("[15]")]#text(" Identity, selected typed operations in Section 3.4 and appendix interaction assumptions. Patch/Retype/Extract/Inline and required caller updates. Static legality is not behavioral qualification; its interaction assumptions are not theta_Q.")
+
+#text("")#link(<bib16>)[#text("[16]")]#text(" Identity and selected test-time routing/assembly section, equations 5–6. v2 uses an LLM router and an LLM assembler over selected topology nodes. Concatenation is a separate control, not labeled native SkillCAT.")
+
+#text("")#link(<bib17>)[#text("[17]")]#text(" Identity and selected CCV/counterfactual validation and Section 4 passages. Candidate-conditioned regression validation/repair; the source itself distinguishes its operational analysis from formal causal identification under stochastic or multi-edit settings.")
+
+#text("")#link(<bib18>)[#text("[18]")]#text(" Identity and Section 3 controls C0–C3. SKILL.md injection versus separately mounted assets, target/irrelevant byte-matched instructions, and slices. Byte matching is not equality under the actual model tokenizer; reported performance not imported.")
+
+#text("")#link(<bib19>)[#text("[19]")]#text(" Official release sections describing task/environment/oracle/verifier packages and pinned 0.6.x tooling. Prospective workflow benchmark requires its native environment and skill/no-skill contract. Release inventory is not reproduced as a local result.")
