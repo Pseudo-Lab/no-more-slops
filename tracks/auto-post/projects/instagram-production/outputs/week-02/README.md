@@ -12,6 +12,12 @@
 
 ## 결과물
 
+[실제 카드뉴스·릴스 미리보기와 제작 흐름](review-visuals/README.md) · [고정 사진·큰 설명의 60초 릴스](editorial-reel/README.md)
+
+![실제 제작한 카드뉴스와 릴스 발췌](review-visuals/production-examples.jpg)
+
+카드뉴스는 CLaC 소재 탐색 연구를 10장으로 설명했고, 릴스는 벤츠·NVIDIA 협력의 기술별 역할을 8개 장면으로 전달했습니다. 이번 PR에는 카드뉴스 자체 문구 2장 발췌와 기존 4K 릴스 파일·검토 기록을 추가했습니다. 아래 Neuron AI 영상은 최초 도식 하네스 데모입니다.
+
 [60초 세로 4K 데모 영상](neuron-reel-demo/reel.mp4) · [커버](neuron-reel-demo/cover.jpg) · [장면 미리보기](neuron-reel-demo/preview.jpg) · [UI 안전 영역](neuron-reel-demo/safe-area-preview.jpg)
 
 [캡션](neuron-reel-demo/caption.txt) · [출처](neuron-reel-demo/sources.md) · [자막](neuron-reel-demo/subtitles.srt) · [측정 보고서](neuron-reel-demo/production-report.json)
