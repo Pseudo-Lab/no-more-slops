@@ -3,11 +3,84 @@
 - 작성자: @gogoymh
 - 트랙: Auto-Application
 - 원본 PR: [#20](https://github.com/Pseudo-Lab/no-more-slops/pull/20)
-- 결과물: Fewshot 1.0 — App Store Connect에 제출 준비 완료(빌드 1.0 (9)), TestFlight 내부 테스트 중 · [공개 페이지](https://goyo-drive.github.io/fewshot/) · [한국어 스토어 스크린샷](store-screenshots-ko.jpg)
+- 결과물: Fewshot 1.0 — App Store Connect에 제출 준비 완료(빌드 1.0 (9)), TestFlight 내부 테스트 중 · [공개 페이지](https://goyo-drive.github.io/fewshot/)
 - 상태: **심사 제출 전** (2026-10-18 기준). App Store 링크는 승인 후 이 문서에 추가한다.
 - 사용한 스킬: [app-store-connect-api](../../../../skills/app-store-connect-api/SKILL.md) (이번 주 추가), Tonlit의 출시 스킬들(#7)
 
-## 이번 주에 한 것
+## Fewshot은 어떤 앱인가
+
+**누구를 위해:** 사진이 수천 장 쌓였지만 앨범 정리를 미루는 iPhone 사용자.
+
+**어떤 문제:** 사진 정리는 한 장씩 "이건 어디에 넣지?"를 판단해야 해서 끝나지 않는다. 기존 정리 앱은 중복·흐린 사진 지우기에 집중하고, 내가 원하는 기준(우리 강아지, 여행, 영수증…)으로 나눠 주지 않는다.
+
+**어떻게:** 내가 정한 클래스마다 사진을 **5장씩만** 직접 분류하면, 기기 안에서 도는 AI(Google EmbeddingGemma 2)가 그 5장을 예시로 배워(few-shot) 나머지 보관함을 같은 기준으로 분류한다. 이름 Fewshot은 "사진 몇 장(few shots)"과 few-shot 학습을 함께 뜻한다. 사진은 기기 밖으로 나가지 않는다.
+
+![시작: 5장만 분류하면 AI가, 클래스 고르기, 사진을 넘기며 분류](flow-start-ko.jpg)
+
+![사용: AI 결과 검토, 갤러리, 카메라](flow-use-ko.jpg)
+
+| 탭 | 하는 일 |
+| --- | --- |
+| 분류 | 사진을 한 장씩 보며 클래스를 탭한다. 위로 쓸면 건너뛴다. 클래스마다 5장이 모이면 AI가 시작한다 |
+| 검토 | AI가 고른 사진을 넘기며 맞으면 위로 쓸어 승인, 틀리면 다른 클래스를 탭해 고친다(무료) |
+| 카메라 | 클래스를 고르고 찍으면 분류된 채로 보관함에 저장된다 |
+| 갤러리 | 클래스별로 본다. 여러 장 선택해 한 클래스로 옮기거나, 분류 탭으로 되돌리거나, iOS 공유 시트로 보낸다 |
+| 설정 | 클래스·AI 모델·Pro·튜토리얼·개인정보 |
+
+### 동작 원리
+
+```mermaid
+flowchart LR
+    A["사진 보관함"] --> B["분류 탭<br/>클래스마다 5장 직접 분류"]
+    B -->|"학습 샘플"| C["EmbeddingGemma 2<br/>사진 → 임베딩 (기기 안)"]
+    A -->|"나머지 사진"| C
+    C --> D["few-shot 분류기<br/>클래스별 가장 비슷한 5장의<br/>평균 코사인 유사도 → 신뢰도"]
+    D -->|"신뢰도 65% 이상"| E{"요금제"}
+    D -->|"확신 없음"| B
+    E -->|"무료"| F["검토 탭<br/>최대 100장 대기<br/>넘기며 승인·수정"]
+    E -->|"Pro"| G["바로 클래스 확정<br/>+ 사진 앱 앨범"]
+    F -->|"승인·수정한 사진"| H["학습 샘플이 늘어남"]
+    H --> D
+    G --> I["갤러리에서 확인<br/>고치면 학습 샘플"]
+    I --> H
+```
+
+- 분류기는 샘플이 많은 클래스가 유리하지 않도록 **클래스별 top-5 평균 유사도**를 쓰고, 온도 0.05 softmax로 신뢰도를 만든다. 기준(느슨 50% / 보통 65% / 엄격 80%)은 설정에서 바꾼다.
+- AI가 Pro에서 바로 넣은 분류는 **학습 샘플로 쓰지 않는다.** 사람이 고르거나 고친 사진만 학습에 쓰여서, 틀린 분류가 스스로 강화되지 않는다.
+
+### 앱 구조와 개인정보 경계
+
+```mermaid
+flowchart TB
+    subgraph PHONE["iPhone 안 (사진·임베딩·분류 기록은 여기서만)"]
+        LIB["사진 보관함<br/>PhotoKit"] --> PL["PhotoLibrary"]
+        PL --> RT["EmbeddingRuntime<br/>LiteRT-LM · EmbeddingGemma 2"]
+        RT --> DB[("SwiftData<br/>AssetRecord: 라벨·예측·임베딩")]
+        DB --> CL["Classifier"]
+        CL --> ENG["ClassificationEngine<br/>(Pro: 충전 중 백그라운드)"]
+        ENG --> LS["LabelStore"]
+        LS --> AS["AlbumSync<br/>클래스별 앨범"]
+        AS --> LIB
+    end
+    HF["Hugging Face<br/>모델 388MB 1회 다운로드"] -.->|"다운로드만"| RT
+    ADS["Google AdMob<br/>무료: 12장마다 네이티브 광고"] -.->|"광고 요청"| PHONE
+    SK["App Store · StoreKit 2<br/>Pro 구독·평생 이용권"] -.->|"구매 확인"| PHONE
+```
+
+### 무료와 Pro
+
+| | 무료 | Pro (월 ₩2,900 / 연 ₩19,000·7일 무료 체험 / 평생 ₩39,000) |
+| --- | --- | --- |
+| 자동 분류 | 검토 대기 최대 100장, 검토하면 다시 채움 | 보관함 전체를 한 번에, **검토 없이 바로 클래스로** |
+| 충전 중 분류 | ✗ | ✓ (iOS가 시점을 정함) |
+| 클래스 | 4개까지 | 무제한 |
+| 광고 | 분류·검토 탭 합쳐 12장마다 | 없음 |
+
+![Pro 결제 화면과 자동 분류된 갤러리](pro-en.jpg)
+
+35개 언어(앱·스토어 문구·스크린샷·결제 상품 이름)를 지원하고, 언어는 iPhone 설정을 따른다.
+
+## 이번 주에 한 것 (출시 준비)
 
 | 영역 | 내용 |
 | --- | --- |
@@ -18,6 +91,24 @@
 | 결제 | 구독 2개(월 ₩2,900, 연 ₩19,000 + 7일 무료 체험)와 평생 이용권(₩39,000), 174개 국가 가격, 35개 언어 현지화, 상품별 영어 심사 스크린샷 |
 | 공개 페이지 | 소개·개인정보처리방침·지원(영어·한국어), 스튜디오 조직 `goyo-drive`의 GitHub Pages, app-ads.txt |
 | 배포 | API 키로 빌드 9개 업로드(수동 서명 우회), TestFlight 내부 그룹, 버전에 빌드 연결 |
+
+### 출시 과정
+
+```mermaid
+flowchart LR
+    APP["앱 저장소<br/>Swift · 35개 언어 카탈로그"] --> UIT["UI 테스트 워크스루<br/>언어별 스크린샷 35 × 6"]
+    APP --> MD["fastlane/metadata<br/>이름·부제·설명·키워드 35개 언어"]
+    APP --> AR["Release 아카이브"]
+    AR -->|"app_store_profile.py<br/>수동 서명"| UP["xcodebuild -exportArchive<br/>API 키로 업로드"]
+    UIT --> DL["fastlane deliver"]
+    MD --> DL
+    DL --> ASC[("App Store Connect")]
+    UP --> TF["TestFlight<br/>내부 테스트"]
+    TF --> ASC
+    SET["app_setup.py<br/>연령 등급·가격·국가·콘텐츠 권한"] --> ASC
+    IAP["iap_setup.py<br/>구독 2 + 평생 1<br/>174개 국가 가격 · 35개 언어"] --> ASC
+    ASC --> SUB["사람: 개인정보 설문 · 심사 제출"]
+```
 
 ## 재현 및 검증
 
