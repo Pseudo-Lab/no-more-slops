@@ -35,7 +35,7 @@
 | 스킬 | 적용 범위 | 최초 정리 PR |
 | --- | --- | --- |
 | [app-design-review](../tracks/auto-application/skills/app-design-review/SKILL.md) | 네이티브 앱의 디자인 토큰·시각 요소·실제 상호작용을 검토합니다. | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
-| [app-store-connect-api](../tracks/auto-application/skills/app-store-connect-api/SKILL.md) | App Store Connect 설정·결제 상품·빌드 업로드·TestFlight를 API 키로 처리합니다. 스토어 자료를 만드는 `app-store-release`와 달리 만들어진 자료를 계정에 반영합니다. | 이 PR (Fewshot Week 02) |
+| [app-store-connect-api](../tracks/auto-application/skills/app-store-connect-api/SKILL.md) | App Store Connect 설정·결제 상품·빌드 업로드·TestFlight를 API 키로 처리합니다. 스토어 자료를 만드는 `app-store-release`와 달리 만들어진 자료를 계정에 반영합니다. | [#20](https://github.com/Pseudo-Lab/no-more-slops/pull/20) |
 | [app-store-release](../tracks/auto-application/skills/app-store-release/SKILL.md) | iOS 앱의 스토어 메타데이터·스크린샷·심사 제출 묶음을 준비합니다. | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
 | [constitution-first](../tracks/auto-application/skills/constitution-first/SKILL.md) | 서비스의 개발 원칙과 사람의 의사결정 경계를 먼저 정합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [core-feature-with-review](../tracks/auto-application/skills/core-feature-with-review/SKILL.md) | 핵심 기능에 사람이 결과를 확인하는 단계를 포함합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |

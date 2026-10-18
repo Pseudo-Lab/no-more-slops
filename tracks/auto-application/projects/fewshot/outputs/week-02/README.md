@@ -2,7 +2,7 @@
 
 - 작성자: @gogoymh
 - 트랙: Auto-Application
-- 원본 PR: 이 PR
+- 원본 PR: [#20](https://github.com/Pseudo-Lab/no-more-slops/pull/20)
 - 결과물: Fewshot 1.0 — App Store Connect에 제출 준비 완료(빌드 1.0 (9)), TestFlight 내부 테스트 중 · [공개 페이지](https://goyo-drive.github.io/fewshot/) · [한국어 스토어 스크린샷](store-screenshots-ko.jpg)
 - 상태: **심사 제출 전** (2026-10-18 기준). App Store 링크는 승인 후 이 문서에 추가한다.
 - 사용한 스킬: [app-store-connect-api](../../../../skills/app-store-connect-api/SKILL.md) (이번 주 추가), Tonlit의 출시 스킬들(#7)
