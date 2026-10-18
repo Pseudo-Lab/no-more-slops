@@ -17,6 +17,7 @@
 | [experiment-report-to-paper](../tracks/auto-paper/skills/experiment-report-to-paper/SKILL.md) | 완료된 실험 Markdown 보고서를 학회 형식 Word 논문으로 작성합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
 | [experiment-runner](../tracks/auto-paper/skills/experiment-runner/SKILL.md) | 확정한 계획에 따라 대조군을 갖춘 실험 실행을 지원합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [experiment-to-paper](../tracks/auto-paper/skills/experiment-to-paper/SKILL.md) | 저장된 JSON 실험 결과를 근거 표로 내보내고 원고를 작성합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
+| [paper-readability-pass](../tracks/auto-paper/skills/paper-readability-pass/SKILL.md) | 빌드된 짧은 논문 PDF의 가독성을 회차마다 점검합니다. 채택 논문 구조 비교, 원고만 읽는 새 리뷰어, 글·캡션만 고치는 수정, 쪽 이미지 확인을 반복합니다. 숫자·결과 대조와 형식 검사는 하지 않습니다. | [#22](https://github.com/Pseudo-Lab/no-more-slops/pull/22) |
 | [paper-results-reviser](../tracks/auto-paper/skills/paper-results-reviser/SKILL.md) | 완료된 실험 결과와 원고의 주장·수치를 대조하고 수정합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [paper-review-local](../tracks/auto-paper/skills/paper-review-local/SKILL.md) | 로컬 원고·인용 키·그림·PDF 및 텍스트 중복을 검사합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
 | [paper-to-latex](../tracks/auto-paper/skills/paper-to-latex/SKILL.md) | 원고를 LaTeX 프로젝트로 변환하고 내용·빌드 결과를 검사합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
