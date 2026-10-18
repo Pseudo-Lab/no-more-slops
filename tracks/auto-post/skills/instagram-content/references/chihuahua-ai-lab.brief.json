@@ -1,0 +1,101 @@
+{
+  "profile_name": "Chihuahua AI Lab — approved editorial Reels",
+  "selection": "Use only when the user names 치와와 AI Lab or chihuahua_ai.lab, or explicitly selects this account profile",
+  "account": {
+    "display_name": "치와와 AI Lab",
+    "handle": "chihuahua_ai.lab"
+  },
+  "language": "ko",
+  "timezone": "Asia/Seoul",
+  "audience": "최신 AI 소식을 알고 싶은 일반 독자",
+  "brand": {
+    "accent": "#FF4D00",
+    "accent_role": "small brand mark, scene number and active scene progress",
+    "background": "#0E181E",
+    "text": "#F3F2EB",
+    "avoid": "large orange backgrounds or an orange tint over photography"
+  },
+  "visual_treatment": "large_editorial_fixed_photo",
+  "visual_layout": {
+    "photography": "fixed real photograph with natural colors; fixed neutral contrast layer when needed",
+    "information": "large type and open comparisons directly across the protected screen area",
+    "avoid": [
+      "small enclosing explanation panels",
+      "mascot in videos",
+      "unnecessary infographic metaphors"
+    ],
+    "starting_type_px_at_1080": {
+      "primary": [
+        40,
+        66
+      ],
+      "supporting": [
+        32,
+        40
+      ]
+    },
+    "ui_calibration": {
+      "reference": "2026-10-17 user-provided capture of the previous uploaded editorial Reel",
+      "important_content_rectangle_at_1080": [
+        120,
+        280,
+        890,
+        1660
+      ],
+      "information_area_at_1080": [
+        136,
+        636,
+        874,
+        1546
+      ],
+      "progress_y_at_1080": 1640,
+      "status": "User approved expanded layout for future production; the new video has been locally reviewed, not verified through a new Instagram upload",
+      "rule": "Use lower space above account controls, keep clear of the right rail, and recalibrate against the latest capture rather than treating these margins as universal",
+      "preference_status": "user_approved_for_future_reels",
+      "approved_at": "2026-10-17",
+      "supersedes": "Older important-content cutoff at logical y=1440"
+    },
+    "default_layout": "expanded_lower_space_editorial"
+  },
+  "motion_policy": {
+    "mode": "information_linked",
+    "reading_holds_allowed": true,
+    "photograph": "fixed",
+    "information": "reveal each new fact once, then retain it",
+    "transitions": "soft",
+    "progress": "one segment per actual scene",
+    "supersedes": "Earlier uninterrupted-motion and mandatory-white-panel preferences; restore only if the latest user request changes this"
+  },
+  "deliverable": {
+    "type": "reel",
+    "width": 2160,
+    "height": 3840,
+    "min_short_side": 2048,
+    "fps": 30,
+    "duration_seconds": 60,
+    "audio": "none",
+    "safe_area": {
+      "left": 0.1111111111111111,
+      "top": 0.14583333333333334,
+      "right": 0.17592592592592593,
+      "bottom": 0.13541666666666666
+    }
+  },
+  "caption_policy": {
+    "max_characters": 499,
+    "max_hashtags": 3
+  },
+  "punctuation_policy": {
+    "headlines": "omit_terminal_period",
+    "short_captions": "omit_terminal_period",
+    "large_display_copy": "omit_terminal_period"
+  },
+  "acknowledgement": "이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.",
+  "recompression_policy": {
+    "body_on_light_panel": false,
+    "require_review": true
+  },
+  "news_policy": "Verify a fresh official source for each new edition; preserve source dates and separate announced plans from releases",
+  "approved_at": "2026-10-17",
+  "scope": "Future Reels for this named account; does not authorize publishing or impose a scene count"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "demo": false,
+  "slides": 10,
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "caption_characters": 400,
+  "character_count_method": "Unicode code points, including final newline",
+  "hashtags": 3,
+  "sources": 2,
+  "punctuation_review": [],
+  "exports_verified": true,
+  "manual_review": [
+    "Open the exported slides and contact sheet to review crops, typography and phone-size readability.",
+    "Check that originals support each claim, dates are accurate and media rights/credits are satisfied. The harness does not research or certify these."
+  ],
+  "zip_entries": 12,
+  "manual_visual_review": {
+    "status": "complete",
+    "method": "All 10 final RGB/sRGB slides reopened; contact sheet and phone-size display reviewed",
+    "findings": [
+      "Warm off-white, black type and small orange marks preserved",
+      "No text overflow or missing glyphs",
+      "Original research figures remain unannotated and are supporting evidence; large Korean copy carries the explanation"
+    ],
+    "claim_review": [
+      "Paper Aug26/record Sep28 vs MIT news Oct18 explicitly distinguished",
+      "Property-conditioned descriptions and structure-text alignment traced to primary sources",
+      "Battery example explicitly excludes ionic conductivity evaluation"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "account": {
+    "display_name": "치와와 AI Lab",
+    "handle": "chihuahua_ai.lab",
+    "language": "ko"
+  },
+  "brand": {
+    "background": "#F5F3EE",
+    "text": "#111111",
+    "accent": "#FF4D00",
+    "accent_role": "small brand dot and short accent line; preserve the warm off-white main background"
+  },
+  "deliverable": {
+    "type": "carousel",
+    "width": 1080,
+    "height": 1350,
+    "preview_columns": 2
+  },
+  "caption_policy": {
+    "max_characters": 499,
+    "hashtag_count": 3
+  },
+  "punctuation_policy": {
+    "headlines": "omit_terminal_period",
+    "large_display_copy": "omit_terminal_period",
+    "short_captions": "omit_terminal_period"
+  },
+  "acknowledgement": "이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.",
+  "visual_policy": {
+    "photo_led": true,
+    "no_mascot": true,
+    "natural_colors": true,
+    "type": "large black headings, open editorial layout, natural-color photos",
+    "avoid": [
+      "large orange backgrounds",
+      "orange tint over photographs",
+      "inheriting the dark Reel background"
+    ]
+  },
+  "profile_name": "Chihuahua AI Lab — approved photo-led carousel colors",
+  "selection": "Use only for carousels for 치와와 AI Lab / chihuahua_ai.lab, or when the user explicitly selects this account profile",
+  "language": "ko",
+  "timezone": "Asia/Seoul",
+  "preference_status": "user_approved_for_future_carousels",
+  "approved_at": "2026-10-17",
+  "reference_edition": "2026-10-17 RTX Spark carousel; source images and news content remain edition assets, not profile defaults"
+}

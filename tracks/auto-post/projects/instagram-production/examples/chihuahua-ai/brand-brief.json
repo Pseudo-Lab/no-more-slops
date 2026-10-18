@@ -1,0 +1,41 @@
+{
+  "account": {
+    "display_name": "치와와 AI Lab",
+    "handle": "chihuahua_ai",
+    "status": "name_selected_availability_unverified"
+  },
+  "audience": "AI 소식을 빠르게 이해하고 싶은 한국어 독자",
+  "topic": "최신 AI 소식",
+  "language": "ko",
+  "timezone": "Asia/Seoul",
+  "tone": "쉽고 간결하며 사실을 과장하지 않는 설명",
+  "brand": {
+    "background": "#FF4D00",
+    "text": "#000000"
+  },
+  "visual_direction": "공식 사진과 실제 시연 화면을 크게 사용",
+  "deliverable": {
+    "type": "carousel",
+    "width": 1080,
+    "height": 1350,
+    "slides": 10,
+    "preview_columns": 2
+  },
+  "profile": {
+    "reference_features": "큰 동그란 눈, 접힌 귀, 짧은 주둥이, 갈색·황갈색 무늬, 웃는 듯한 표정",
+    "draft": "chihuahua-character-draft.png",
+    "editable_draft": "chihuahua-character-draft.svg",
+    "status": "draft_not_final_approval"
+  },
+  "acknowledgement": "이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.",
+  "caption_policy": {
+    "max_characters": 499,
+    "hashtag_count": 3
+  },
+  "punctuation_policy": {
+    "headlines": "omit_terminal_period",
+    "short_captions": "omit_terminal_period",
+    "large_display_copy": "omit_terminal_period",
+    "long_form_prose": "retain_sentence_separators"
+  }
+}
