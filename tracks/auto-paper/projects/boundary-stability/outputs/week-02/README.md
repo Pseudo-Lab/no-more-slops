@@ -2,7 +2,7 @@
 
 - 트랙: Auto-Paper
 - 기여자: [YOOHYOJEONG](https://github.com/YOOHYOJEONG)
-- 원 PR: #번호
+- 원 PR: [#19](https://github.com/Pseudo-Lab/no-more-slops/pull/19)
 - 프로젝트 및 스킬 역할: [프로젝트 안내](../../README.md)
 
 > **본 연구 전에 진행한 예비 연구(pilot study)입니다.** 본 연구에 앞서 데이터·라벨 절차, 평가 기준, 비용 측정 방식을 점검하기 위한 작은 규모의 연구이며, 결과를 일반화하거나 최종 성능으로 해석하지 않습니다.
