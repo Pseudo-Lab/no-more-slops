@@ -22,7 +22,7 @@
 
 ## 10월 18일 수정
 
-- [direct-news-copy](../../../../skills/direct-news-copy/SKILL.md): 반복적인 부정 해명은 줄이고 사실·계획·검증 범위를 직접 씁니다. [카피 수정 예시와 검토 범위](copy-review.md)를 기록했습니다.
+- [direct-news-copy](../../../../skills/direct-news-copy/SKILL.md): 반복적인 부정 해명은 줄이고 사실·계획·검증 범위를 직접 씁니다. [카피 수정 예시와 검토 범위](copy-review.md), [10월 18일 검증 기록](skill-validation.md)을 기록했습니다.
 - [instagram-content](../../../../skills/instagram-content/SKILL.md): 렌더링 전 카피 검토에 연결하고, 고정 사진·큰 설명·읽기 시간·장면별 진행 바·확장된 하단 공간을 저장했습니다.
 - 치와와 AI Lab의 캐러셀 색상은 따뜻한 흰색·검정·작은 오렌지 강조로 별도 프로필에 보존했습니다.
 
