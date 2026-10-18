@@ -29,6 +29,7 @@
 | [research-readiness-advisor](../tracks/auto-paper/skills/research-readiness-advisor/SKILL.md) | 연구 계획의 준비 상태와 진행 조건을 검토합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-related-work](../tracks/auto-paper/skills/research-related-work/SKILL.md) | 선행연구의 출처와 BibTeX를 정리합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
 | [translate-paper-to-english](../tracks/auto-paper/skills/translate-paper-to-english/SKILL.md) | 한국어 Word 논문을 구조를 보존한 영문 Word로 번역합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
+| [weekly-research-planner](../tracks/auto-paper/skills/weekly-research-planner/SKILL.md) | 연구 주제 MD를 일주일 실험과 4페이지 논문 작성으로 이어지는 일차별 실행 MD 7개로 변환합니다. 단일 계획을 세우는 research-planner와 달리 세션별 순차 실행 파일을 만듭니다. | #번호 |
 
 ## Auto-Application
 
