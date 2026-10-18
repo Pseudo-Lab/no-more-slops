@@ -13,3 +13,4 @@
 | [projects/pawstamp](projects/pawstamp/README.md) | @bea-kang | [#2](https://github.com/Pseudo-Lab/no-more-slops/pull/2) |
 | [projects/tonlit](projects/tonlit/README.md) | @gogoymh | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
 | [projects/oraeorae](projects/oraeorae/README.md) | @Woo-Yeol | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
+| [projects/fewshot](projects/fewshot/README.md) | @gogoymh | Week 02 PR |
