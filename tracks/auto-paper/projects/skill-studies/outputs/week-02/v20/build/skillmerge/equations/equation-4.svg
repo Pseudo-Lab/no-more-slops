@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="13pt" height="13pt" viewBox="0 0 13 13" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 13  L 13 13  L 13 0  L 0 0  L 0 13  z " style="fill: none" />
+  </g>
+  <g id="text_1">
+   
+   <g style="fill: #202020" transform="translate(0 13) scale(0.19 -0.19)">
+    <defs>
+     <path id="Cmmi10-4c" d="M 300 0  Q 238 0 238 84  Q 241 100 250 139  Q 259 178 276 201  Q 294 225 319 225  Q 709 225 863 269  Q 947 297 984 441  L 1863 3956  Q 1875 4019 1875 4044  Q 1875 4113 1797 4122  Q 1678 4147 1338 4147  Q 1275 4147 1275 4231  Q 1297 4313 1309 4342  Q 1322 4372 1381 4372  L 3272 4372  Q 3328 4372 3328 4288  Q 3319 4222 3306 4184  Q 3294 4147 3244 4147  Q 2772 4147 2613 4116  Q 2456 4088 2419 3928  L 1544 416  Q 1516 338 1516 275  Q 1516 225 1734 225  L 2328 225  Q 2831 225 3143 425  Q 3456 625 3606 876  Q 3756 1128 3857 1398  Q 3959 1669 4006 1678  L 4063 1678  Q 4128 1678 4128 1594  L 3559 44  Q 3550 0 3500 0  L 300 0  z " transform="scale(0.015625)" />
+    </defs>
+    <use ns1:href="#Cmmi10-4c" transform="translate(0 0.6875)" />
+   </g>
+  </g>
+ </g>
+</svg>

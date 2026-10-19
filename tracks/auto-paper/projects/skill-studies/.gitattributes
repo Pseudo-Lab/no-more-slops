@@ -1,0 +1,5 @@
+# The manifest checks exact artifact bytes on every platform.
+outputs/week-02/v20/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+outputs/week-02/v20/**/*.pdf binary
+# Preserve generated extractor/SVG whitespace; source code keeps normal checks.
+outputs/week-02/v20/build/** -whitespace

@@ -1,0 +1,155 @@
+{
+  "schema": "nms_week02_ack_visual_review_v1",
+  "checked_at": "2026-10-19",
+  "status": "ok",
+  "ok": true,
+  "blocking_findings_remaining": 0,
+  "documents_reviewed": 9,
+  "sample_pages_reviewed": 9,
+  "new_scientific_executions": 0,
+  "scope": "Direct visual inspection with view_image of the nine supplied acknowledgement-page PNGs, bound to matching rebuilt PDF hashes. Checked acknowledgement, adjacent References/body or guide ending, margins and overlap.",
+  "pages_inventory_sha256": "5b61f294894a6d88e26eb8d41a436bc9a3001b512e6435a411623bdaeafad7ba",
+  "pdfs": [
+    {
+      "project": "skillmerge",
+      "kind": "paper",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/skillmerge/SkillMerge_v20.pdf",
+      "sha256": "3a843213f63a89b00803e79e0f095782965f86c76ad36c88f7bc5f1dd0adbf12",
+      "pages": 5,
+      "checked_pages": [
+        5
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/skillmerge-paper-credit.png",
+      "image_sha256": "cb0fbbb186b2d6f1391eedf7dac35f3b0f1905efc4a2683aa2a9c5f5c04c5f6f",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Acknowledgements and adjacent text are legible within margins. References continue normally."
+    },
+    {
+      "project": "skillmerge",
+      "kind": "supplement",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v20.pdf",
+      "sha256": "5808f6cdbe6f7a66a7b8ef2e942fddb0dc74466e13dc810cb3133cd3dc1c975e",
+      "pages": 38,
+      "checked_pages": [
+        33
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/skillmerge-supplement-credit.png",
+      "image_sha256": "156ef4e0770f853603729df932b9ca1de709d39c0829fe6ed45d174ff079f7a4",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Acknowledgements and adjacent text are legible within margins. References continue normally."
+    },
+    {
+      "project": "skillmerge",
+      "kind": "guide",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v20.pdf",
+      "sha256": "a3655c1bebd6be6fb0375127099178049f01ce54c2a84bbfa6adcb4534ca8a84",
+      "pages": 22,
+      "checked_pages": [
+        22
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/skillmerge-guide-credit.png",
+      "image_sha256": "d10ae5ce51d0d05d9a07046a4e317df1ac9b47a6f12d2b330683ba8810d687ba",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Final guide paragraphs and acknowledgement are legible with clear spacing; footer remains separate."
+    },
+    {
+      "project": "second_chance",
+      "kind": "paper",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/second-chance/SecondChance_v20.pdf",
+      "sha256": "4df1b5d5d5afde61401e2a4f40adef522048af2e2db4c63dd084a182f9ad76bf",
+      "pages": 5,
+      "checked_pages": [
+        4
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/second_chance-paper-credit.png",
+      "image_sha256": "8b26d5b017bd5fe80db1fe2ec1bde12d08bffb31c90b602d4729d7e4c3265c7a",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Acknowledgements and adjacent text are legible within margins. References continue normally."
+    },
+    {
+      "project": "second_chance",
+      "kind": "supplement",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v20.pdf",
+      "sha256": "c6b9a0479da71c383c58444df5e4a3b9cd5eaf651c78166cbbbc857ba4d25ce3",
+      "pages": 39,
+      "checked_pages": [
+        35
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/second_chance-supplement-credit.png",
+      "image_sha256": "9332f974b47cd5cfea3505d2ef348bc1a77b467a14da167d465166ca6cf667e7",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Acknowledgements and adjacent text are legible within margins. References continue normally."
+    },
+    {
+      "project": "second_chance",
+      "kind": "guide",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/second-chance/SecondChance_EXPLAINER_KO_v20.pdf",
+      "sha256": "12bef8af712ea51a33d60a354cf4d28fd82b93e85df4651de973911e1835e00c",
+      "pages": 20,
+      "checked_pages": [
+        20
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/second_chance-guide-credit.png",
+      "image_sha256": "2e0e900e4e90f104244e1ceaa122a3fda188fbd27595babccea7f673f7ba2fc3",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Final guide paragraphs and acknowledgement are legible with clear spacing; footer remains separate."
+    },
+    {
+      "project": "probeflow",
+      "kind": "paper",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/probeflow/ProbeFlow_v20.pdf",
+      "sha256": "da5ede622f943841befeda5438b31cf007e7b0f6e65c53ae00bfccd9e6e23c19",
+      "pages": 5,
+      "checked_pages": [
+        4
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/probeflow-paper-credit.png",
+      "image_sha256": "514bd7a19854619f29be6e1043a84c35c175ddeb2c0f2f4eeae6b1aa9cc14c4a",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Acknowledgements and adjacent text are legible within margins. References continue normally."
+    },
+    {
+      "project": "probeflow",
+      "kind": "supplement",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v20.pdf",
+      "sha256": "2eb69528cf427509f4ddbc48ea0ceca729f5abbfa1f3a96f18fe768d1d6bca54",
+      "pages": 35,
+      "checked_pages": [
+        30
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/probeflow-supplement-credit.png",
+      "image_sha256": "035739c0ce698a6f2e8ba97e94ab41522cbd8384cf2d495b3b59762a68bca248",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Acknowledgements and adjacent text are legible within margins. References continue normally."
+    },
+    {
+      "project": "probeflow",
+      "kind": "guide",
+      "path": "outputs/no-more-slops-week02-v20_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v20.pdf",
+      "sha256": "9215ccec8faee686b3dd524bbab41e6eb0984e2624b56600c32e4705820c568a",
+      "pages": 41,
+      "checked_pages": [
+        41
+      ],
+      "image": "outputs/no-more-slops-week02-v20_20261019/visual/probeflow-guide-credit.png",
+      "image_sha256": "2fce2c5e29ed786325b66cbb10b499bfde0d6bcda759528191d26e7f5c2e8bd2",
+      "acknowledgement_visible": true,
+      "clipping_or_overlap_observed": false,
+      "observation": "Final guide paragraphs and acknowledgement are legible with clear spacing; footer remains separate."
+    }
+  ],
+  "findings": [],
+  "limits": [
+    "Nine acknowledgement pages are the visual sample; this is not an all-page visual review.",
+    "Parent full-document literal, figure, bounds and acknowledgement checks are separate evidence and were not rerun here.",
+    "No new scientific experiment, external review, model/API call, Git or PR action was performed."
+  ]
+}

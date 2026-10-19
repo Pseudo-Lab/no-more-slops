@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="91pt" height="20pt" viewBox="0 0 91 20" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 20  L 91 20  L 91 0  L 0 0  L 0 20  z " style="fill: none" />
+  </g>
+  <g id="text_1">
+   
+   <g style="fill: #202020" transform="translate(0 15) scale(0.19 -0.19)">
+    <defs>
+     <path id="Cmr10-5b" d="M 756 -1600  L 756 4800  L 1631 4800  L 1631 4544  L 1013 4544  L 1013 -1344  L 1631 -1344  L 1631 -1600  L 756 -1600  z " transform="scale(0.015625)" />
+     <path id="Cmsy10-a1" d="M 653 1472  Q 600 1472 565 1512  Q 531 1553 531 1600  Q 531 1647 565 1687  Q 600 1728 653 1728  L 4325 1728  Q 4375 1728 4408 1687  Q 4441 1647 4441 1600  Q 4441 1553 4408 1512  Q 4375 1472 4325 1472  L 653 1472  z " transform="scale(0.015625)" />
+     <path id="Cmr10-31" d="M 594 0  L 594 225  Q 1394 225 1394 428  L 1394 3788  Q 1063 3628 556 3628  L 556 3853  Q 1341 3853 1741 4263  L 1831 4263  Q 1853 4263 1873 4245  Q 1894 4228 1894 4206  L 1894 428  Q 1894 225 2694 225  L 2694 0  L 594 0  z " transform="scale(0.015625)" />
+     <path id="Cmmi10-3d" d="M 359 -1472  Q 359 -1453 366 -1447  L 2591 4722  Q 2603 4759 2634 4779  Q 2666 4800 2706 4800  Q 2763 4800 2798 4765  Q 2834 4731 2834 4672  L 2834 4647  L 609 -1522  Q 572 -1600 488 -1600  Q 434 -1600 396 -1562  Q 359 -1525 359 -1472  z " transform="scale(0.015625)" />
+     <path id="Cmr10-34" d="M 178 1056  L 178 1281  L 2156 4231  Q 2178 4263 2222 4263  L 2316 4263  Q 2388 4263 2388 4191  L 2388 1281  L 3016 1281  L 3016 1056  L 2388 1056  L 2388 428  Q 2388 297 2575 261  Q 2763 225 3009 225  L 3009 0  L 1247 0  L 1247 225  Q 1494 225 1681 261  Q 1869 297 1869 428  L 1869 1056  L 178 1056  z M 391 1281  L 1906 1281  L 1906 3547  L 391 1281  z " transform="scale(0.015625)" />
+     <path id="Cmmi10-3b" d="M 634 -1153  Q 634 -1125 659 -1100  Q 891 -878 1019 -587  Q 1147 -297 1147 25  L 1147 103  Q 1044 0 891 0  Q 744 0 641 103  Q 538 206 538 353  Q 538 503 641 603  Q 744 703 891 703  Q 1119 703 1216 492  Q 1313 281 1313 25  Q 1313 -331 1170 -651  Q 1028 -972 769 -1228  Q 744 -1241 728 -1241  Q 697 -1241 665 -1212  Q 634 -1184 634 -1153  z " transform="scale(0.015625)" />
+     <path id="Cmr10-5d" d="M 141 -1600  L 141 -1344  L 763 -1344  L 763 4544  L 141 4544  L 141 4800  L 1019 4800  L 1019 -1600  L 141 -1600  z " transform="scale(0.015625)" />
+    </defs>
+    <use ns1:href="#Cmr10-5b" />
+    <use ns1:href="#Cmsy10-a1" transform="translate(27.685547 0)" />
+    <use ns1:href="#Cmr10-31" transform="translate(105.371094 0)" />
+    <use ns1:href="#Cmmi10-3d" transform="translate(155.371094 0)" />
+    <use ns1:href="#Cmr10-34" transform="translate(205.371094 0)" />
+    <use ns1:href="#Cmmi10-3b" transform="translate(255.371094 0)" />
+    <use ns1:href="#Cmr10-31" transform="translate(300.615234 0)" />
+    <use ns1:href="#Cmmi10-3d" transform="translate(350.615234 0)" />
+    <use ns1:href="#Cmr10-34" transform="translate(400.615234 0)" />
+    <use ns1:href="#Cmr10-5d" transform="translate(450.615234 0)" />
+   </g>
+  </g>
+ </g>
+</svg>

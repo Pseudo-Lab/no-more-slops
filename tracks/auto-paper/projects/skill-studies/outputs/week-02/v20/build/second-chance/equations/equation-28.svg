@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="8pt" height="10pt" viewBox="0 0 8 10" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 10  L 8 10  L 8 0  L 0 0  L 0 10  z " style="fill: none" />
+  </g>
+  <g id="text_1">
+   
+   <g style="fill: #202020" transform="translate(0 9) scale(0.19 -0.19)">
+    <defs>
+     <path id="Cmmi10-b2" d="M 788 903  Q 788 688 866 503  Q 944 319 1101 208  Q 1259 97 1472 97  Q 1616 97 1778 159  Q 1941 222 2080 297  Q 2219 372 2222 372  Q 2256 372 2276 333  Q 2297 294 2297 256  Q 2297 222 2278 213  Q 1878 -72 1466 -72  Q 1128 -72 856 86  Q 584 244 436 525  Q 288 806 288 1141  Q 288 1472 422 1770  Q 556 2069 793 2291  Q 1031 2513 1331 2636  Q 1631 2759 1959 2759  L 2322 2759  Q 2419 2759 2419 2663  Q 2419 2609 2383 2571  Q 2347 2534 2297 2534  L 1947 2534  Q 1691 2534 1483 2421  Q 1275 2309 1134 2109  Q 994 1909 916 1656  L 2047 1656  Q 2091 1656 2117 1629  Q 2144 1603 2144 1563  Q 2144 1509 2109 1471  Q 2075 1434 2022 1434  L 856 1434  Q 788 1103 788 903  z " transform="scale(0.015625)" />
+    </defs>
+    <use ns1:href="#Cmmi10-b2" transform="translate(0 0.890625)" />
+   </g>
+  </g>
+ </g>
+</svg>
