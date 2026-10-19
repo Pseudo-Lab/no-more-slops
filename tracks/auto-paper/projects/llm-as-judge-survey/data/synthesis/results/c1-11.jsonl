@@ -1,0 +1,110 @@
+{"key": "arxiv:2305.14282", "biases": [], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "LLaMA 기반 7B InstructScore가 GPT-3·GPT-4 기반 비지도 지표를 포함한 다른 비지도 지표를 능가한다.", "condition": "번역·캡션·data-to-text·상식 생성; 기준선은 175B GPT-3/GPT-4 기반 지표", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2406.18365", "biases": [], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "평가 전용으로 학습한 Themis가 GPT-4를 포함한 다른 평가 모델을 능가하고 보지 않은 과제에도 일반화한다.", "condition": "다양한 NLG 과제, 참조 없는 평가; 기준선 GPT-4 등", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2501.00269", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2510.24592", "biases": [], "mitigation": ["critique_refine", "fine_tuning"], "claims": []}
+{"key": "arxiv:2401.07103", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.1109/tvcg.2024.3456354", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2502.16182", "biases": [], "mitigation": ["other"], "claims": []}
+{"key": "arxiv:2408.03837", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2507.09075", "biases": [], "mitigation": ["critique_refine", "fine_tuning"], "claims": []}
+{"key": "arxiv:2409.01941", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2401.00437", "biases": ["prompt_sensitivity"], "mitigation": ["other"], "claims": []}
+{"key": "arxiv:2410.03837", "biases": [], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "CodeFavor 모델은 6-9배 많은 파라미터의 모델과 성능이 맞고 비용은 34배 효율적이다.", "condition": "코드 선호(정확성·효율·보안·사람 선호) 쌍비교, CodePrefBench", "evidence": "모델 정확도 최대 28.8% 향상; 6-9x 파라미터 모델과 동등, 34x 비용 효율", "basis": "own_method"}]}
+{"key": "arxiv:2504.01282", "biases": ["inconsistency"], "mitigation": [], "claims": []}
+{"key": "doi:10.1145/3613905.3650774", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2501.03545", "biases": [], "mitigation": ["decomposition", "tool_grounding"], "claims": []}
+{"key": "arxiv:2605.28091", "biases": [], "mitigation": ["fine_tuning", "rubric"], "claims": []}
+{"key": "arxiv:2404.10595", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2506.05735", "biases": [], "mitigation": ["calibration"], "claims": []}
+{"key": "arxiv:2503.02574", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2508.05470", "biases": ["prompt_sensitivity", "other"], "mitigation": [], "claims": []}
+{"key": "arxiv:2508.18240", "biases": ["position", "verbosity"], "mitigation": [], "claims": [{"question": "Q-HARD", "direction": "support", "claim": "LLM 판정은 성능 격차가 크거나 기준이 명시적일 때만 사람과 일치하며, Arena와 Rubrics 모두 격차가 클 때만 신뢰할 만한 구분이 나타난다.", "condition": "음성-음성 모델 멀티턴 대화 평가", "evidence": "성능 격차가 클 때만 신뢰할 구분 가능", "basis": "evaluation"}]}
+{"key": "arxiv:2412.09269", "biases": ["inconsistency", "competence"], "mitigation": [], "claims": []}
+{"key": "doi:10.1001/jamanetworkopen.2025.29418", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2411.13281", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2401.10020", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2305.12421", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2404.05692", "biases": [], "mitigation": ["fine_tuning"], "claims": []}
+{"key": "arxiv:2307.02762", "biases": ["self_preference", "position"], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "Peer rank와 peer discussion은 단일 강한 모델 판정보다 정확도가 높고 사람 판정과 더 잘 맞는다.", "condition": "오픈형 QA 두 벤치마크, 쌍비교; 기준선은 가장 강한 LLM 단일 평가자", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2410.04663", "biases": ["position", "verbosity"], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "역할 분담 에이전트의 구조화된 토론(D3)이 사람 판정과의 일치에서 최고 수준을 보였다.", "condition": "MT-Bench, AlignBench, AUTO-J; 옹호자·판정자·배심원 토론", "evidence": null, "basis": "own_method"}, {"question": "Q-DEBIAS", "direction": "support", "claim": "익명화와 역할 다양화가 위치·장황함 편향을 줄였다.", "condition": "MT-Bench, AlignBench, AUTO-J", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2404.11791", "biases": [], "mitigation": ["calibration"], "claims": []}
+{"key": "arxiv:2504.01001", "biases": [], "mitigation": [], "claims": [{"question": "Q-SCALE", "direction": "support", "claim": "판정 모델 크기가 벤치마크 성능(사람 순위와의 상관)을 좌우하는 핵심 요인이었다.", "condition": "ZSB로 만든 벤치마크(영어·중국어·프랑스어·한국어 일반 능력, 번역, 비전-언어)의 순위 상관", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2512.03109", "biases": [], "mitigation": ["calibration"], "claims": []}
+{"key": "arxiv:2410.18927", "biases": [], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2406.09008", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2410.18889", "biases": [], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2603.29139", "biases": [], "mitigation": ["tool_grounding"], "claims": []}
+{"key": "arxiv:2404.08137", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2410.15287", "biases": [], "mitigation": ["fine_tuning", "ensemble", "critique_refine"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "MultiCritique로 미세조정한 7B 모델이 다른 7B-13B 공개 모델을 크게 앞서고 70B급 LLM과 GPT-4에 근접한다.", "condition": "두 개의 비평 벤치마크; 기준선 7B-13B 공개 모델, 70B LLM, GPT-4", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2408.10902", "biases": [], "mitigation": ["fine_tuning"], "claims": []}
+{"key": "arxiv:2505.00662", "biases": [], "mitigation": ["fine_tuning", "critique_refine", "decomposition"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "Qwen2.5-7B 기반 DeepCritic이 같은 크기의 DeepSeek-R1-distill 모델과 GPT-4o를 포함한 기존 LLM 비평 모델을 오류 식별 벤치마크에서 크게 능가한다.", "condition": "수학 풀이 단계별 오류 식별 벤치마크", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2407.10817", "biases": ["other"], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "FLAMe는 보지 않은 과제에서 GPT-4·Claude-3 등 독점 데이터 모델을 여러 과제에서 능가하고, 12개 판정 벤치마크 중 8개에서 독점 LLM 판정 모델을 앞선다.", "condition": "100개 이상 품질 평가 과제로 학습, RewardBench·LLM-AggreFact 등", "evidence": "RewardBench 87.8% (GPT-4-0125 85.9%, GPT-4o 84.7%); 12개 중 8개 벤치마크", "basis": "own_method"}, {"question": "Q-DEBIAS", "direction": "support", "claim": "FLAMe는 CoBBLEr 편향 벤치마크에서 다른 LLM 판정 모델보다 편향이 유의하게 적었다.", "condition": "CoBBLEr 편향 벤치마크", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2509.09716", "biases": [], "mitigation": ["decomposition"], "claims": []}
+{"key": "arxiv:2603.20882", "biases": [], "mitigation": ["rubric", "tool_grounding"], "claims": []}
+{"key": "arxiv:2311.14906", "biases": [], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2501.10421", "biases": [], "mitigation": ["cot", "ensemble"], "claims": []}
+{"key": "arxiv:2503.01372", "biases": [], "mitigation": ["fine_tuning"], "claims": []}
+{"key": "doi:10.1145/3626772.3657675", "biases": [], "mitigation": ["cot", "ensemble"], "claims": []}
+{"key": "doi:10.1109/ichi61247.2024.00058", "biases": [], "mitigation": ["cot", "other"], "claims": []}
+{"key": "doi:10.18653/v1/2024.emnlp-main.1085", "biases": ["competence"], "mitigation": [], "claims": []}
+{"key": "arxiv:2412.11912", "biases": [], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "CharacterJudge 모델이 GPT-4 등 최신 자동 판정 모델보다 우수하다.", "condition": "캐릭터 커스터마이징 평가(CharacterBench)", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2502.08514", "biases": ["style"], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2505.15433", "biases": ["position", "inconsistency"], "mitigation": ["other"], "claims": [{"question": "Q-DEBIAS", "direction": "support", "claim": "Set-LLM은 순열 불변 구조로 순서 민감성을 제거하면서 성능은 같거나 더 낫다.", "condition": "선택지 순서 편향 및 LLM 평가자 용도", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2504.11101", "biases": [], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "여러 VLM의 합의 엔트로피가 단일 VLM-as-Judge보다 품질 검증에서 우수하다.", "condition": "OCR 출력 신뢰도 검증", "evidence": "F1 42.1% 향상 (VLM-as-Judge 대비)", "basis": "own_method"}]}
+{"key": "arxiv:2606.04923", "biases": ["other"], "mitigation": [], "claims": []}
+{"key": "arxiv:2506.17863", "biases": [], "mitigation": ["critique_refine", "human_in_loop", "rubric"], "claims": []}
+{"key": "arxiv:2504.04596", "biases": [], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2405.15329", "biases": [], "mitigation": ["decomposition", "ensemble"], "claims": []}
+{"key": "arxiv:2404.19563", "biases": [], "mitigation": ["internal"], "claims": []}
+{"key": "arxiv:2402.11676", "biases": [], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2312.07398", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2606.09863", "biases": ["competence", "style"], "mitigation": ["other"], "claims": []}
+{"key": "arxiv:2504.08697", "biases": ["competence"], "mitigation": [], "claims": []}
+{"key": "arxiv:2604.11581", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": ["other"], "claims": []}
+{"key": "arxiv:2408.08688", "biases": [], "mitigation": ["ensemble", "critique_refine"], "claims": [{"question": "Q-MULTI", "direction": "refute", "claim": "GPT-4o 단일 판정이 배심원·토론보다 모든 데이터셋에서 더 일관되었다.", "condition": "선호 최적화 데이터셋 생성용 응답 평가; LLM-as-a-Judge vs LLMs-as-a-Jury vs LLM Debate", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2603.15164", "biases": ["other"], "mitigation": [], "claims": []}
+{"key": "arxiv:2410.03278", "biases": [], "mitigation": ["cot", "reference"], "claims": [{"question": "Q-REF", "direction": "support", "claim": "LLM 기반 번역 평가에서 참조 번역이 중요한 것으로 나타났다.", "condition": "기계번역 평가, 8개 언어쌍(고·중·저자원), 여러 LLM; 원문·참조·오류·가이드라인 정보 비교", "evidence": null, "basis": "evaluation"}, {"question": "Q-SCALE", "direction": "refute", "claim": "더 큰 모델이 반드시 더 낫지는 않았다(다만 큰 모델이 CoT 프롬프팅에서 더 큰 이득을 본다).", "condition": "기계번역 품질 평가, 여러 크기의 LLM", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2310.07641", "biases": ["style"], "mitigation": ["other"], "claims": []}
+{"key": "arxiv:2502.16903", "biases": [], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2507.15157", "biases": [], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2511.18491", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2602.10367", "biases": [], "mitigation": ["rubric", "decomposition"], "claims": []}
+{"key": "arxiv:2603.00039", "biases": ["verbosity", "style"], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2510.01591", "biases": [], "mitigation": ["internal"], "claims": []}
+{"key": "arxiv:2503.17755", "biases": [], "mitigation": ["internal"], "claims": []}
+{"key": "title:allure a systematic protocol for auditing and improving llm based evaluation of text using iterative in context learning", "biases": [], "mitigation": [], "claims": []}
+{"key": "title:examining llm prompting strategies for automatic evaluation of learner created computational artifacts", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2311.00686", "biases": [], "mitigation": ["cot", "rubric"], "claims": []}
+{"key": "arxiv:2410.02205", "biases": ["inconsistency"], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-DEBIAS", "direction": "support", "claim": "REPAIR 데이터 정제·증강은 사람 선호와의 정렬을 유지하면서 논리적 선호 일관성(추이성·교환·부정 불변성)을 높인다.", "condition": "LLM 판단의 논리적 선호 일관성", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2502.11368", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.18653/v1/2024.emnlp-main.691", "biases": [], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2510.17853", "biases": [], "mitigation": ["tool_grounding"], "claims": []}
+{"key": "arxiv:2511.13027", "biases": ["prompt_sensitivity", "style"], "mitigation": ["fine_tuning"], "claims": []}
+{"key": "arxiv:2509.21823", "biases": [], "mitigation": ["tool_grounding"], "claims": []}
+{"key": "arxiv:2505.18659", "biases": [], "mitigation": ["calibration"], "claims": []}
+{"key": "arxiv:2505.08498", "biases": ["leniency", "inconsistency"], "mitigation": ["other"], "claims": [{"question": "Q-FORMAT", "direction": "support", "claim": "쌍비교로 에세이 점수를 만드는 LCES가 절대 점수를 직접 생성하는 기존 제로샷 방식보다 정확도가 높다.", "condition": "자동 에세이 채점(AES) 벤치마크, 여러 LLM 백본; 기준선은 직접 절대 점수 생성 제로샷 방식", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2505.12570", "biases": [], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "배치형 pointwise 판정에 자기일관성 앙상블을 적용하면 호출 1회 대비 성능이 크게 오르고, 단건 pointwise의 앙상블 이득보다 크다.", "condition": "검색 관련성 평가·랭킹, 3개 데이터셋, GPT-4o·Claude Sonnet 3·Nova Pro", "evidence": "법률 검색에서 GPT-4o 배치 PW 랭킹 NDCG@10 43.8%에서 51.3% (자기일관성 1회 대 15회); 단건 PW는 44.9%에서 46.8%", "basis": "own_method"}]}
+{"key": "arxiv:2307.03025", "biases": ["criteria", "competence"], "mitigation": ["decomposition"], "claims": [{"question": "Q-DEBIAS", "direction": "conditional", "claim": "평가 차원을 분리해 독립 평가하는 Multi-Elo(MERS)는 LLM 기반 평가 품질을 높이지만 크라우드 기반 평가에서는 유의한 개선이 없었다.", "condition": "사실 오류·문법 오류·짧은 답변을 포함한 의도적 결함 답변 비교; LLM 평가자 대 크라우드 평가자", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2502.04718", "biases": [], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2608.11669", "biases": ["other"], "mitigation": ["rubric", "other"], "claims": []}
+{"key": "arxiv:2410.04838", "biases": [], "mitigation": ["other"], "claims": []}
+{"key": "arxiv:2501.16655", "biases": [], "mitigation": ["reference"], "claims": [{"question": "Q-REF", "direction": "support", "claim": "골드 테스트 패치를 참조로 쓰는 실행 중심 LLM 비평 모델이 다른 참조 없는 비평 모델과 참조 기반 비평 모델보다 38.9%-72.5% 우수하다.", "condition": "SWE-bench 저장소 수준 코드 변경의 실행 가능성 예측", "evidence": "38.9% to 72.5%; 편집 위치 실행 가능성 F1 91.6%", "basis": "own_method"}]}
+{"key": "arxiv:2504.20090", "biases": [], "mitigation": ["fine_tuning"], "claims": []}
+{"key": "arxiv:2507.04278", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2412.15524", "biases": ["other"], "mitigation": ["reference"], "claims": [{"question": "Q-REF", "direction": "support", "claim": "사람이 쓴 응답을 참조 맥락으로 주면 자동 평가의 사람 일치도가 최대 3.2% 향상된다.", "condition": "지시 따르기 평가, 여러 과제 범주", "evidence": "up to a 3.2% improvement in agreement with human judges", "basis": "evaluation"}]}
+{"key": "arxiv:2602.05088", "biases": [], "mitigation": ["rubric"], "claims": [{"question": "Q-EXPERT", "direction": "support", "claim": "LLM 판정(IRR 0.81)이 임상의 합의와 강하게 일치해 임상의끼리의 일치(IRR 0.77)와 비슷한 수준이며, 판정 모델과 반복 평가 간에도 안정적이었다.", "condition": "AI 챗봇 자살 위험 대응 안전 평가(VERA-MH 루브릭), 면허 임상의 평가자", "evidence": "임상의 간 IRR = 0.77, LLM 판정-임상의 합의 IRR = 0.81", "basis": "evaluation"}]}
+{"key": "arxiv:2308.16890", "biases": [], "mitigation": ["reference"], "claims": []}
+{"key": "arxiv:2502.10563", "biases": ["other"], "mitigation": ["calibration"], "claims": []}
+{"key": "arxiv:2408.06352", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2604.23581", "biases": [], "mitigation": ["decomposition", "calibration"], "claims": []}
+{"key": "arxiv:2609.29429", "biases": [], "mitigation": ["fine_tuning", "calibration"], "claims": []}
+{"key": "doi:10.18653/v1/2024.findings-acl.597", "biases": ["self_preference"], "mitigation": ["decomposition"], "claims": [{"question": "Q-DEBIAS", "direction": "support", "claim": "원자 단위로 분해해 검증하는 ACUEval은 LLM 생성 요약에 대한 선호 편향을 줄이고 사람 판단과의 상관을 높인다.", "condition": "요약 충실성 평가, 3개 벤치마크; 기준선은 차선 LLM 기반 지표", "evidence": "균형 정확도 차선 지표 대비 3% 향상", "basis": "own_method"}]}
+{"key": "arxiv:2410.14165", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2406.09295", "biases": [], "mitigation": ["fine_tuning", "calibration"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "규칙으로 보정한 평가 모델 CritiqueVLM이 GPT-4의 평가 능력을 넘어선다.", "condition": "중국어 멀티모달 정렬 평가(AlignMMBench)", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2605.27761", "biases": [], "mitigation": ["rubric", "decomposition"], "claims": []}
+{"key": "arxiv:2508.15218", "biases": ["criteria"], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2506.13326", "biases": [], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "시각화 비평 데이터셋으로 학습한 7B 공개 MLLM이 훨씬 큰 공개 모델이나 독점 모델에 필적한다.", "condition": "데이터 시각화 생성 비평, 자동 평가와 사람 선호 연구", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2603.19191", "biases": [], "mitigation": ["decomposition", "critique_refine", "ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "여러 에이전트로 마일스톤을 검증하고 증거를 감사하는 OS-Themis에서 평가된 모든 모델이 최고 성능을 보였다.", "condition": "GUI 결과 보상 벤치마크(OGRBench); 기준은 단일 판정", "evidence": "AndroidWorld 온라인 RL 10.3% 향상", "basis": "own_method"}]}
+{"key": "arxiv:2511.20513", "biases": ["criteria"], "mitigation": ["fine_tuning", "other"], "claims": []}
+{"key": "arxiv:2412.15298", "biases": [], "mitigation": ["prompt_optimization"], "claims": []}
+{"key": "arxiv:2503.01670", "biases": ["competence", "other"], "mitigation": [], "claims": []}

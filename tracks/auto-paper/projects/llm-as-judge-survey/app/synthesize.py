@@ -22,7 +22,7 @@ from extract import included
 SYN = DATA / "synthesis"
 BATCHES, RESULTS = SYN / "batches", SYN / "results"
 QUESTIONS = ("Q-FORMAT", "Q-MULTI", "Q-SCALE", "Q-SELF", "Q-HARD", "Q-COT", "Q-REF", "Q-FT", "Q-EXPERT",
-             "Q-ATTACK", "Q-DEFENSE")
+             "Q-DEBIAS", "Q-ATTACK", "Q-DEFENSE")
 DIRECTIONS = ("support", "refute", "conditional", "null")
 BASES = ("own_method", "evaluation")
 BIASES = {"position", "verbosity", "style", "anchoring", "self_preference", "authority", "sycophancy", "social",
