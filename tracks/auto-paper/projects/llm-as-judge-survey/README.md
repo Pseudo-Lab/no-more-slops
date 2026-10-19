@@ -14,7 +14,7 @@ LLM이 평가자·판정자 역할을 하는 연구(LLM-as-a-Judge)를 2023–20
 | 1 | 주제·범위 정의 | [docs/scope.md](docs/scope.md) | 완료 |
 | 2 | 문헌 검색 | [data/search_log.csv](data/search_log.csv), [data/candidates.csv](data/candidates.csv) (10,273편) | 완료 (2026-10-19) |
 | 3 | 선별 | [docs/screening.md](docs/screening.md), [data/screening.csv](data/screening.csv) | 완료 (포함 2,325편) |
-| 4 | 추출·종합 | [docs/extraction.md](docs/extraction.md), 논문별 추출표, 분류 체계 | 추출 중 |
+| 4 | 추출·종합 | [docs/extraction.md](docs/extraction.md), 논문별 추출표, 분류 체계 | 1차 추출 완료 (2,325편), 분류 체계 확정 전 |
 | 5 | 집필 | 원고 초안 | 대기 |
 | 6 | 검증·퇴고 | 인용 대조 기록, 수정본 | 대기 |
 

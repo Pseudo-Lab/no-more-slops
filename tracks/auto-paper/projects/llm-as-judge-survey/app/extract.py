@@ -1,25 +1,34 @@
 """Data extraction (PMDRL summary + taxonomy codes) for included papers.
 
 prepare: split included papers without results into data/extraction/batches/<round>-NN.jsonl
+fill: fetch missing or short abstracts of included papers (arXiv, OpenAlex, Semantic Scholar)
+      into data/extraction/abstracts.json (used by prepare)
 collect: validate data/extraction/results/*.jsonl, add `who` from candidates.csv,
          and write data/extraction.jsonl
 
 Fields are defined in docs/extraction.md.
 
 Usage:
+  uv run extract.py fill
   uv run extract.py prepare --round e1 --size 70
+  uv run extract.py prepare --round e1-fix --redo-filled   # re-extract title-only records
   uv run extract.py collect
 """
 
 import argparse
 import json
+import time
+import urllib.error
+import xml.etree.ElementTree as ET
 from collections import Counter
 
-from common import DATA
+from common import DATA, get_json, norm_title, request, s2_headers
 from screen import candidates, results as screening
 
 EXTRACT = DATA / "extraction"
 BATCHES, RESULTS = EXTRACT / "batches", EXTRACT / "results"
+ABSTRACTS = EXTRACT / "abstracts.json"  # abstracts fetched by `fill`, keyed by candidate key
+SHORT = 300  # abstracts shorter than this are treated as missing or truncated
 PMDRL = ("problem", "method", "data", "result", "limitation", "gap")
 REQUIRED = ("problem", "method", "data", "result")
 CODES = {
@@ -36,7 +45,12 @@ CODES = {
 
 def included():
     done = screening()
-    return [r for r in candidates() if done.get(r["key"], {}).get("decision") == "include"]
+    fetched = json.loads(ABSTRACTS.read_text(encoding="utf-8")) if ABSTRACTS.exists() else {}
+    rows = [r for r in candidates() if done.get(r["key"], {}).get("decision") == "include"]
+    for r in rows:
+        if len(fetched.get(r["key"], "")) > len(r["abstract"]):
+            r["abstract"], r["abstract_fetched"] = fetched[r["key"]], True
+    return rows
 
 
 def results():
@@ -77,11 +91,58 @@ def problems(rec):
     return out
 
 
+def fetch_abstract(r):
+    """Try arXiv, OpenAlex, then one Semantic Scholar title search; return "" if none has it."""
+    if r["arxiv"]:
+        feed = ET.fromstring(request("http://export.arxiv.org/api/query", {"id_list": r["arxiv"]}))
+        summary = feed.find("{http://www.w3.org/2005/Atom}entry/{http://www.w3.org/2005/Atom}summary")
+        if summary is not None and summary.text:
+            return " ".join(summary.text.split())
+    if r["doi"]:
+        try:
+            work = get_json(f"https://api.openalex.org/works/doi:{r['doi']}", {"select": "abstract_inverted_index"})
+        except urllib.error.HTTPError:
+            work = {}
+        if index := work.get("abstract_inverted_index"):
+            words = sorted((i, w) for w, positions in index.items() for i in positions)
+            return " ".join(w for _, w in words)
+    try:
+        hits = json.loads(request("https://api.semanticscholar.org/graph/v1/paper/search",
+                                  {"query": r["title"], "fields": "title,abstract", "limit": 3},
+                                  headers=s2_headers(), retries=2))
+    except urllib.error.HTTPError:
+        return ""
+    for paper in hits.get("data", []):
+        if norm_title(paper["title"]) == norm_title(r["title"]) and paper.get("abstract"):
+            return paper["abstract"]
+    return ""
+
+
+def fill(args):
+    """Fetch abstracts for included papers whose abstract is missing or short."""
+    fetched = json.loads(ABSTRACTS.read_text(encoding="utf-8")) if ABSTRACTS.exists() else {}
+    rows = [r for r in included() if len(r["abstract"]) < SHORT and r["key"] not in fetched]
+    found = 0
+    for r in rows:
+        abstract = fetch_abstract(r)
+        if len(abstract) > len(r["abstract"]):
+            fetched[r["key"]] = abstract
+            found += 1
+            ABSTRACTS.parent.mkdir(parents=True, exist_ok=True)
+            ABSTRACTS.write_text(json.dumps(fetched, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        time.sleep(3)
+    print(f"short or missing abstracts: {len(rows)}; fetched {found} -> {ABSTRACTS.relative_to(DATA.parent)}")
+
+
 def prepare(args):
     done = results()
     pending = {p.stem for p in BATCHES.glob("*.jsonl")} - {p.stem for p in RESULTS.glob("*.jsonl")}
     queued = {json.loads(line)["key"] for name in pending for line in (BATCHES / f"{name}.jsonl").open()}
-    rows = [r for r in included() if r["key"] not in done and r["key"] not in queued]
+    if args.redo_filled:
+        # Records first written from a missing or truncated abstract, now that `fill` found a full one.
+        rows = [r for r in included() if r.get("abstract_fetched") and r["key"] in done and r["key"] not in queued]
+    else:
+        rows = [r for r in included() if r["key"] not in done and r["key"] not in queued]
     BATCHES.mkdir(parents=True, exist_ok=True)
     for n, i in enumerate(range(0, len(rows), args.size), 1):
         with (BATCHES / f"{args.round}-{n:02d}.jsonl").open("w", encoding="utf-8") as f:
@@ -97,7 +158,7 @@ def collect(args):
     stray = sorted(set(done) - set(papers))
     for batch in sorted(p.stem for p in BATCHES.glob("*.jsonl")):
         keys = [json.loads(line)["key"] for line in (BATCHES / f"{batch}.jsonl").open()]
-        missing = [k for k in keys if done.get(k, {}).get("batch") != batch]
+        missing = [k for k in keys if k not in done]
         if (RESULTS / f"{batch}.jsonl").exists() and missing:
             print(f"WARNING {batch}: {len(missing)} keys without results, e.g. {missing[:2]}")
 
@@ -149,9 +210,11 @@ def main():
     p = sub.add_parser("prepare")
     p.add_argument("--round", required=True)
     p.add_argument("--size", type=int, default=70)
+    p.add_argument("--redo-filled", action="store_true", help="re-extract papers whose abstract `fill` fetched")
+    sub.add_parser("fill")
     sub.add_parser("collect")
     args = parser.parse_args()
-    {"prepare": prepare, "collect": collect}[args.cmd](args)
+    {"prepare": prepare, "fill": fill, "collect": collect}[args.cmd](args)
 
 
 if __name__ == "__main__":
