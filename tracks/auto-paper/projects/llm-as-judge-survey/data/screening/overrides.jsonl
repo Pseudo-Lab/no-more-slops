@@ -1,0 +1,2 @@
+{"key": "doi:10.1007/978-3-032-21289-4_27", "decision": "maybe", "code": "M", "reason": "사람 검수: 초록이 없어 기준에 따라 전문 검토로 넘김 (LLM I2 포함, 검수자 제외)"}
+{"key": "doi:10.5281/zenodo.20788786", "decision": "include", "code": "I1", "reason": "사람 검수: 판정 모델 대안을 제안하고 LLM 판정과 비교하는 연구로 포함 (LLM E1 제외)"}

@@ -1,0 +1,327 @@
+<title>LLM 판정 선별 검수</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: sticky progress header, then a two-pane review desk (queue left, paper right) that stacks on phones. */
+:root {
+  --bg: #f3f4f1;
+  --panel: #ffffff;
+  --ink: #1d2422;
+  --muted: #5f6b67;
+  --line: #d9ddd8;
+  --accent: #23525e;
+  --accent-soft: #e2ecee;
+  --inc: #2f7a4b;
+  --inc-soft: #e3f1e7;
+  --exc: #a8442f;
+  --exc-soft: #f6e6e1;
+  --may: #9a6b12;
+  --may-soft: #f6eedb;
+  --sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141917; --panel: #1c2220; --ink: #e4e9e6; --muted: #9aa7a2; --line: #2f3835;
+    --accent: #7fb4c0; --accent-soft: #20343a;
+    --inc: #77c493; --inc-soft: #1d3326; --exc: #e48d78; --exc-soft: #3a231d; --may: #e0b55c; --may-soft: #362c17;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141917; --panel: #1c2220; --ink: #e4e9e6; --muted: #9aa7a2; --line: #2f3835;
+  --accent: #7fb4c0; --accent-soft: #20343a;
+  --inc: #77c493; --inc-soft: #1d3326; --exc: #e48d78; --exc-soft: #3a231d; --may: #e0b55c; --may-soft: #362c17;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.6; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel); }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1180px; margin: 0 auto; }
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line); }
+header .wrap { padding-block: 12px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between; }
+h1 { font-size: 17px; font-weight: 700; margin: 0; text-wrap: balance; }
+.sub { color: var(--muted); font-size: 13px; }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.stats b { font-weight: 600; }
+.bar { height: 4px; background: var(--line); }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.status { font-size: 12px; color: var(--muted); }
+.status.err { color: var(--exc); }
+
+main .wrap { padding-block: 20px 40px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 820px) { main .wrap { grid-template-columns: minmax(0, 1fr); } .queue { order: 2; } }
+
+.queue { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.filters { display: flex; gap: 4px; padding: 8px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.filters button { font: inherit; font-size: 12px; border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.list { max-height: calc(100vh - 190px); overflow-y: auto; }
+@media (max-width: 820px) { .list { max-height: 360px; } }
+.item { display: grid; grid-template-columns: 34px minmax(0, 1fr) 18px; gap: 8px; align-items: center; width: 100%; text-align: left; font: inherit; font-size: 13px; padding: 7px 10px; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+.item:hover { background: var(--accent-soft); }
+.item[aria-current="true"] { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+.item .n { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.item .t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--line); }
+.dot.include { background: var(--inc); border-color: var(--inc); }
+.dot.exclude { background: var(--exc); border-color: var(--exc); }
+.dot.maybe { background: var(--may); border-color: var(--may); }
+
+.paper { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 22px 24px; display: grid; gap: 16px; min-width: 0; }
+@media (max-width: 520px) { .paper { padding: 16px; } }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; color: var(--muted); }
+.meta a { color: var(--accent); }
+.paper h2 { font-size: 20px; line-height: 1.4; margin: 0; text-wrap: balance; }
+.llm { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; align-items: baseline; padding: 12px 14px; border-radius: 6px; background: var(--bg); font-size: 14px; }
+.llm .lab { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.chip { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; font-weight: 600; padding: 1px 9px; border-radius: 999px; }
+.chip code { font-family: var(--mono); font-weight: 500; }
+.chip.include { background: var(--inc-soft); color: var(--inc); }
+.chip.exclude { background: var(--exc-soft); color: var(--exc); }
+.chip.maybe { background: var(--may-soft); color: var(--may); }
+.abstract { max-width: 72ch; color: var(--ink); white-space: pre-line; }
+.abstract.empty { color: var(--muted); font-style: italic; }
+
+.decide { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 16px; }
+.choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.choices button { font: inherit; font-weight: 600; padding: 10px 8px; border-radius: 6px; border: 1.5px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; display: grid; gap: 2px; justify-items: center; }
+.choices button kbd { font-family: var(--mono); font-size: 11px; font-weight: 400; color: var(--muted); }
+.choices button[data-v="include"][aria-pressed="true"] { background: var(--inc-soft); border-color: var(--inc); color: var(--inc); }
+.choices button[data-v="exclude"][aria-pressed="true"] { background: var(--exc-soft); border-color: var(--exc); color: var(--exc); }
+.choices button[data-v="maybe"][aria-pressed="true"] { background: var(--may-soft); border-color: var(--may); color: var(--may); }
+.choices button:disabled { opacity: .5; cursor: not-allowed; }
+label { font-size: 13px; color: var(--muted); }
+textarea { width: 100%; font: inherit; font-size: 14px; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); resize: vertical; min-height: 60px; }
+.nav { display: flex; justify-content: space-between; gap: 8px; align-items: center; flex-wrap: wrap; }
+.nav button { font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+.hint { font-size: 12px; color: var(--muted); }
+.hint kbd { font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; }
+button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+
+<header>
+  <div class="wrap">
+    <div>
+      <h1>LLM 판정 선별 검수</h1>
+      <div class="sub">1차 선별(r1)에서 LLM이 판정한 논문 표본입니다. 제목·초록만 보고 직접 판정하세요.</div>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+</header>
+
+<main>
+  <div class="wrap">
+    <aside class="queue">
+      <div class="filters" id="filters">
+        <button type="button" data-f="all" aria-pressed="true">전체</button>
+        <button type="button" data-f="todo" aria-pressed="false">미검수</button>
+        <button type="button" data-f="diff" aria-pressed="false">LLM과 다름</button>
+        <button type="button" data-f="include" aria-pressed="false">LLM 포함</button>
+        <button type="button" data-f="exclude" aria-pressed="false">LLM 제외</button>
+      </div>
+      <div class="list" id="list"></div>
+    </aside>
+
+    <article class="paper" id="paper">
+      <div class="meta" id="meta"></div>
+      <h2 id="title"></h2>
+      <div class="llm">
+        <span class="lab">LLM 판정</span><span id="llm-chip"></span>
+        <span class="lab">근거</span><span id="llm-reason"></span>
+      </div>
+      <div class="abstract" id="abstract"></div>
+      <div class="decide">
+        <div class="choices" id="choices">
+          <button type="button" data-v="include" aria-pressed="false">포함<kbd>1</kbd></button>
+          <button type="button" data-v="exclude" aria-pressed="false">제외<kbd>2</kbd></button>
+          <button type="button" data-v="maybe" aria-pressed="false">애매<kbd>3</kbd></button>
+        </div>
+        <label for="note">메모 (선택)</label>
+        <textarea id="note" placeholder="LLM 판정과 다르다면 이유를 짧게 적어 주세요"></textarea>
+        <div class="nav">
+          <button type="button" id="prev">← 이전</button>
+          <span class="status" id="status">저장소 연결 중…</span>
+          <button type="button" id="next">다음 →</button>
+        </div>
+        <div class="hint"><kbd>1</kbd> 포함 · <kbd>2</kbd> 제외 · <kbd>3</kbd> 애매 · <kbd>J</kbd>/<kbd>K</kbd> 다음/이전. 판정하면 자동으로 저장되고 다음 미검수 논문으로 넘어갑니다.</div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<script>
+const PAPERS = /*DATA*/[];
+const LABEL = { include: "포함", exclude: "제외", maybe: "애매" };
+const docId = (key) => key.replace(/[^A-Za-z0-9_\-.~:@+]/g, "_");
+
+let db = null, canWrite = true, filter = "all", idx = 0;
+const human = {};  // docId -> {decision, note}
+
+const $ = (id) => document.getElementById(id);
+const setStatus = (text, err) => { $("status").textContent = text; $("status").classList.toggle("err", !!err); };
+
+function visible() {
+  return PAPERS.map((p, i) => i).filter((i) => {
+    const p = PAPERS[i], h = human[docId(p.key)];
+    if (filter === "todo") return !h;
+    if (filter === "diff") return h && h.decision !== p.llm_decision;
+    if (filter === "include" || filter === "exclude") return p.llm_decision === filter;
+    return true;
+  });
+}
+
+function renderStats() {
+  const done = PAPERS.filter((p) => human[docId(p.key)]);
+  const agree = done.filter((p) => human[docId(p.key)].decision === p.llm_decision).length;
+  const rate = done.length ? Math.round((agree / done.length) * 100) : 0;
+  $("stats").innerHTML = "";
+  [["검수", `${done.length} / ${PAPERS.length}`], ["LLM과 일치", done.length ? `${agree}건 (${rate}%)` : "–"], ["불일치", `${done.length - agree}건`]]
+    .forEach(([k, v]) => { const s = document.createElement("span"); s.innerHTML = `${k} <b></b>`; s.querySelector("b").textContent = v; $("stats").append(s); });
+  $("bar").style.width = `${(done.length / PAPERS.length) * 100}%`;
+}
+
+function renderList() {
+  const list = $("list");
+  list.innerHTML = "";
+  visible().forEach((i) => {
+    const p = PAPERS[i], h = human[docId(p.key)];
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "item"; b.dataset.i = i;
+    if (i === idx) b.setAttribute("aria-current", "true");
+    b.innerHTML = `<span class="n"></span><span class="t"></span><span class="dot"></span>`;
+    b.querySelector(".n").textContent = String(i + 1).padStart(3, "0");
+    b.querySelector(".t").textContent = p.title;
+    b.title = p.title;
+    if (h) b.querySelector(".dot").classList.add(h.decision);
+    list.append(b);
+  });
+  if (!list.children.length) {
+    const e = document.createElement("div"); e.className = "item"; e.style.cursor = "default";
+    e.textContent = "이 조건에 맞는 논문이 없습니다."; list.append(e);
+  }
+}
+
+function chip(decision, code) {
+  const c = document.createElement("span");
+  c.className = `chip ${decision}`;
+  c.textContent = LABEL[decision] || decision;
+  if (code) { const k = document.createElement("code"); k.textContent = code; c.append(k); }
+  return c;
+}
+
+function renderPaper() {
+  const p = PAPERS[idx], h = human[docId(p.key)];
+  const meta = $("meta");
+  meta.innerHTML = "";
+  const add = (text, href) => {
+    const el = document.createElement(href ? "a" : "span");
+    el.textContent = text;
+    if (href) { el.href = href; el.target = "_blank"; el.rel = "noopener"; }
+    meta.append(el);
+  };
+  add(`#${String(idx + 1).padStart(3, "0")}`);
+  if (p.year) add(p.year);
+  if (p.venue) add(p.venue);
+  if (p.arxiv) add(`arXiv ${p.arxiv}`, `https://arxiv.org/abs/${p.arxiv}`);
+  if (p.doi && !p.doi.includes("arxiv")) add("DOI", `https://doi.org/${p.doi}`);
+  if (!p.arxiv && !p.doi) add("Google Scholar", `https://scholar.google.com/scholar?q=${encodeURIComponent(p.title)}`);
+  $("title").textContent = p.title;
+  $("llm-chip").replaceChildren(chip(p.llm_decision, p.llm_code));
+  $("llm-reason").textContent = p.llm_reason;
+  $("abstract").textContent = p.abstract || "초록이 없습니다. 제목과 링크로 판단하세요.";
+  $("abstract").classList.toggle("empty", !p.abstract);
+  document.querySelectorAll("#choices button").forEach((b) => {
+    b.setAttribute("aria-pressed", String(!!h && h.decision === b.dataset.v));
+    b.disabled = !db || !canWrite;
+  });
+  $("note").value = h?.note || "";
+  $("note").disabled = !db || !canWrite;
+}
+
+function render() { renderStats(); renderList(); renderPaper(); }
+
+function go(i) {
+  if (i < 0 || i >= PAPERS.length) return;
+  idx = i;
+  try { localStorage.setItem("audit-idx", String(idx)); } catch (e) {}
+  render();
+  document.querySelector('.item[aria-current="true"]')?.scrollIntoView({ block: "nearest" });
+}
+
+function nextTodo(from) {
+  for (let k = 1; k <= PAPERS.length; k++) {
+    const i = (from + k) % PAPERS.length;
+    if (!human[docId(PAPERS[i].key)]) return i;
+  }
+  return Math.min(from + 1, PAPERS.length - 1);
+}
+
+async function save(decision, advance) {
+  if (!db || !canWrite) return;
+  const p = PAPERS[idx], id = docId(p.key);
+  const prev = human[id];
+  const body = { key: p.key, decision, note: $("note").value.trim(), llm_decision: p.llm_decision, updated_at: new Date().toISOString() };
+  human[id] = { decision, note: body.note };
+  const at = idx;
+  if (advance) go(nextTodo(at)); else { renderStats(); renderList(); }
+  setStatus("저장 중…");
+  try {
+    await db.doc(`audit/${id}`).set(body);
+    setStatus(`#${String(at + 1).padStart(3, "0")} 저장됨`);
+  } catch (e) {
+    if (prev) human[id] = prev; else delete human[id];
+    if (e?.code === "invalid_argument") { canWrite = false; setStatus("이 화면에서는 저장할 권한이 없습니다. 아티팩트 소유자 계정으로 열어 주세요.", true); }
+    else setStatus("저장하지 못했습니다. 잠시 뒤 다시 눌러 주세요.", true);
+    render();
+  }
+}
+
+let noteTimer = null;
+$("note").addEventListener("input", () => {
+  const h = human[docId(PAPERS[idx].key)];
+  if (!h) return;
+  clearTimeout(noteTimer);
+  noteTimer = setTimeout(() => save(h.decision, false), 800);
+});
+
+$("choices").addEventListener("click", (e) => { const b = e.target.closest("button[data-v]"); if (b) save(b.dataset.v, true); });
+$("list").addEventListener("click", (e) => { const b = e.target.closest(".item[data-i]"); if (b) go(Number(b.dataset.i)); });
+$("filters").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-f]"); if (!b) return;
+  filter = b.dataset.f;
+  document.querySelectorAll("#filters button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  const v = visible(); if (v.length && !v.includes(idx)) idx = v[0];
+  render();
+});
+$("prev").addEventListener("click", () => go(idx - 1));
+$("next").addEventListener("click", () => go(idx + 1));
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "TEXTAREA" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const map = { "1": "include", "2": "exclude", "3": "maybe" };
+  if (map[e.key]) { e.preventDefault(); save(map[e.key], true); }
+  else if (e.key === "j" || e.key === "ArrowRight") go(idx + 1);
+  else if (e.key === "k" || e.key === "ArrowLeft") go(idx - 1);
+});
+
+try { const s = Number(localStorage.getItem("audit-idx")); if (s >= 0 && s < PAPERS.length) idx = s; } catch (e) {}
+render();
+
+(async () => {
+  db = await window.claude?.use?.("db") ?? null;
+  if (!db) { setStatus("저장소에 연결할 수 없습니다. claude.ai에 로그인한 상태로 열어 주세요.", true); render(); return; }
+  const user = await window.claude.use("user");
+  if (user && (await user.can("data.write")) === false) { canWrite = false; setStatus("읽기 전용으로 열렸습니다. 판정을 저장하려면 소유자 계정으로 열어 주세요.", true); }
+  db.collection("audit").onSnapshot((snap) => {
+    for (const k of Object.keys(human)) delete human[k];
+    snap.docs.forEach((d) => { const v = d.data(); human[d.id] = { decision: v.decision, note: v.note || "" }; });
+    if (canWrite && !$("status").classList.contains("err")) setStatus(snap.metadata.fromCache ? "불러오는 중…" : "연결됨");
+    const typing = document.activeElement === $("note");
+    renderStats(); renderList(); if (!typing) renderPaper();
+  }, () => setStatus("저장소 연결이 끊겼습니다. 페이지를 새로 고쳐 주세요.", true));
+  render();
+})();
+</script>

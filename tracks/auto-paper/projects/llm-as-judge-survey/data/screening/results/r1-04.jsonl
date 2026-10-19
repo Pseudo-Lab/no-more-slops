@@ -1,0 +1,141 @@
+{"key": "arxiv:2604.18164", "decision": "include", "code": "I4", "reason": "MLLM 판정 모델의 구성적 편향을 평가하는 벤치마크를 제안한다."}
+{"key": "arxiv:2602.09411", "decision": "include", "code": "I3", "reason": "VLM 판정 결과를 보정하여 인간 선호와 맞추는 방법을 제안한다."}
+{"key": "arxiv:2601.21268", "decision": "maybe", "code": "M", "reason": "평가자의 답변으로 보상을 만드는 RL 방법이라 판정 모델 자체가 주제인지 초록만으로 불분명하다."}
+{"key": "arxiv:2602.07773", "decision": "include", "code": "I3", "reason": "검색 에이전트의 단계별 판정 모델을 학습하는 연구이다."}
+{"key": "arxiv:2510.02329", "decision": "exclude", "code": "E2", "reason": "추측 디코딩의 토큰 검증 기법으로 LLM 판정 모델 연구가 아니다."}
+{"key": "arxiv:2603.00546", "decision": "include", "code": "I4", "reason": "멀티모달 판정 모델의 능력 벤치마크와 데이터 생성을 제안한다."}
+{"key": "arxiv:2506.02592", "decision": "include", "code": "I2", "reason": "판정 모델의 자기선호 편향 측정 방법을 제안한다."}
+{"key": "arxiv:2505.19176", "decision": "include", "code": "I2", "reason": "프록시 판정 모델의 교사 선호 편향을 분석하고 완화한다."}
+{"key": "arxiv:2504.12663", "decision": "exclude", "code": "E3", "reason": "토큰 수준 자기판단 기반 개인화 정렬로 LLM 판정 모델 비교가 없다."}
+{"key": "arxiv:2605.23261", "decision": "include", "code": "I3", "reason": "음성 평가를 위한 추론형 판정(보상) 모델을 학습한다."}
+{"key": "arxiv:2602.20670", "decision": "maybe", "code": "M", "reason": "생성형 판정 보상모델 연구이나 LLM 판정 모델과의 직접 비교 여부가 불분명하다."}
+{"key": "arxiv:2407.18370", "decision": "include", "code": "I3", "reason": "판정 모델의 신뢰도 기반으로 인간 일치를 보장하는 방법을 제안한다."}
+{"key": "arxiv:2506.20128", "decision": "include", "code": "I1", "reason": "RAG 평가용 제로샷 LLM 판정 프레임워크를 제안한다."}
+{"key": "arxiv:2602.07996", "decision": "include", "code": "I2", "reason": "LLM 판정 모델의 숨은 지름길 의존과 충실성을 분석한다."}
+{"key": "arxiv:2607.07774", "decision": "maybe", "code": "M", "reason": "에이전트 행동을 사전 차단하는 판정 모듈로 판정 연구인지 불분명하다."}
+{"key": "arxiv:2410.09775", "decision": "include", "code": "I3", "reason": "오픈소스 판정 모델 기반 평가 도구를 제시한다."}
+{"key": "arxiv:2606.07810", "decision": "include", "code": "I1", "reason": "소형 언어모델의 판정 능력을 평가하는 프레임워크를 제안한다."}
+{"key": "arxiv:2607.28609", "decision": "include", "code": "I4", "reason": "컴퓨터 사용 에이전트 보상(판정) 모델의 표준 평가를 제안한다."}
+{"key": "arxiv:2607.25640", "decision": "include", "code": "I5", "reason": "대화형 음악 추천에서 LLM 판정의 타당성을 다룬다."}
+{"key": "arxiv:2606.01629", "decision": "include", "code": "I4", "reason": "장문 출력 평가용 LLM 판정 벤치마크이다."}
+{"key": "arxiv:2502.12501", "decision": "include", "code": "I1", "reason": "군중 비교 추론으로 LLM 판정 방식을 개선한다."}
+{"key": "arxiv:2601.03444", "decision": "include", "code": "I2", "reason": "채점 척도가 LLM 판정과 인간의 일치에 미치는 영향을 분석한다."}
+{"key": "arxiv:2502.13396", "decision": "include", "code": "I1", "reason": "LLM 판정에 가중치 메커니즘을 프롬프트로 도입한다."}
+{"key": "arxiv:2506.13639", "decision": "include", "code": "I2", "reason": "판정 설계 선택이 신뢰성에 미치는 영향을 실증 분석한다."}
+{"key": "arxiv:2509.18658", "decision": "include", "code": "I3", "reason": "적합 예측으로 LLM 판정의 불확실성 구간을 제시한다."}
+{"key": "arxiv:2511.04205", "decision": "maybe", "code": "M", "reason": "LLM의 판정자 적합성을 다루나 초록상 주된 초점이 불분명하다."}
+{"key": "arxiv:2609.02942", "decision": "include", "code": "I2", "reason": "루브릭 아티팩트 등 LLM 판정의 신뢰성 문제를 분석한다."}
+{"key": "arxiv:2507.18392", "decision": "maybe", "code": "M", "reason": "판정 결과를 오류 분석에 쓰는 도구라 판정 자체가 대상인지 불분명하다."}
+{"key": "arxiv:2609.12191", "decision": "include", "code": "I2", "reason": "에이전트 평가에서 LLM 판정을 신뢰하지 말아야 할 때를 분석한다."}
+{"key": "arxiv:2604.27727", "decision": "include", "code": "I5", "reason": "코딩 분야 LLM 판정의 신뢰성 인식 평가 프레임워크이다."}
+{"key": "arxiv:2501.00697", "decision": "maybe", "code": "M", "reason": "LLM 판정으로 데이터셋을 만든 연구로 판정 검증 정도가 불분명하다."}
+{"key": "arxiv:2601.17312", "decision": "include", "code": "I8", "reason": "메타 판정에 대한 개념·방법·과제를 다룬 서베이이다."}
+{"key": "arxiv:2602.13551", "decision": "maybe", "code": "M", "reason": "소형 보상모델 연구로 LLM 판정 모델과의 직접 비교 여부가 불분명하다."}
+{"key": "arxiv:2604.13717", "decision": "include", "code": "I1", "reason": "비용 효율적인 LLM 판정 개선 기법을 연구한다."}
+{"key": "arxiv:2509.13332", "decision": "include", "code": "I2", "reason": "사고형 판정 모델의 정확도·효율·강건성을 체계적으로 비교한다."}
+{"key": "arxiv:2604.05083", "decision": "maybe", "code": "M", "reason": "LLM 판정의 대안 지표를 제안하는 연구로 판정 분석 정도가 불분명하다."}
+{"key": "arxiv:2603.10351", "decision": "include", "code": "I2", "reason": "다국어 LLM 판정의 번역투 편향을 분석하고 완화한다."}
+{"key": "arxiv:2502.15094", "decision": "maybe", "code": "M", "reason": "기업 공시 채점에 LLM 판정을 쓰며 판정 검증 여부가 불분명하다."}
+{"key": "arxiv:2604.22597", "decision": "include", "code": "I5", "reason": "수학 추론 평가를 위한 강건한 LLM 판정 프레임워크를 제안한다."}
+{"key": "arxiv:2602.14564", "decision": "exclude", "code": "E1", "reason": "의료 QA 모델 비교에 LLM 판정을 지표로 쓰는 연구이다."}
+{"key": "arxiv:2609.02246", "decision": "include", "code": "I8", "reason": "LLM 판정을 신뢰할 수 없다는 입장을 제시한 포지션 페이퍼이다."}
+{"key": "arxiv:2606.02578", "decision": "include", "code": "I3", "reason": "멀티모달 판정 모델의 지각 편향을 완화하는 학습 방법이다."}
+{"key": "arxiv:2508.00454", "decision": "include", "code": "I3", "reason": "여러 LLM 판정을 증류해 다중 턴 대화 평가기를 학습한다."}
+{"key": "arxiv:2408.02666", "decision": "include", "code": "I3", "reason": "합성 데이터로 평가 모델을 학습하는 Self-Taught Evaluators이다."}
+{"key": "arxiv:2501.09993", "decision": "maybe", "code": "M", "reason": "요약 평가에 에이전트 판정을 쓰며 판정 자체 검증 여부가 불분명하다."}
+{"key": "arxiv:2510.08145", "decision": "include", "code": "I2", "reason": "판정 선호 편향을 집단 투표로 완화한다."}
+{"key": "arxiv:2512.06751", "decision": "include", "code": "I3", "reason": "평가자의 선택적 테스트 시점 학습을 제안한다."}
+{"key": "arxiv:2311.09730", "decision": "exclude", "code": "E2", "reason": "LLM으로 인간의 주관 판단을 모사하는 연구로 평가자 연구가 아니다."}
+{"key": "arxiv:2605.16354", "decision": "include", "code": "I3", "reason": "인간 평가를 LLM 판정으로 보강할 때 필요한 인간 리뷰 수를 분석한다."}
+{"key": "arxiv:2510.22827", "decision": "include", "code": "I5", "reason": "T2I 공정성 평가용 멀티모달 판정 모델을 설계한다."}
+{"key": "arxiv:2607.10139", "decision": "include", "code": "I3", "reason": "LLM 배심원 합의를 보상모델과 비교하는 연구이다."}
+{"key": "arxiv:2402.12146", "decision": "include", "code": "I3", "reason": "약한 LLM으로 응답 신뢰도를 판정하는 메타 랭킹 방법이다."}
+{"key": "arxiv:2606.03043", "decision": "include", "code": "I2", "reason": "판정 모델 간 합의와 인간 일치의 차이를 분석한다."}
+{"key": "arxiv:2604.18803", "decision": "maybe", "code": "M", "reason": "VLM 환각 평가에 판정을 쓰며 판정 검증 정도가 불분명하다."}
+{"key": "arxiv:2410.08442", "decision": "maybe", "code": "M", "reason": "LLM 판정 대안인 인코더 앙상블 안전장치로 범위 적합성이 불분명하다."}
+{"key": "arxiv:2603.06942", "decision": "include", "code": "I4", "reason": "장문 QA 평가의 메타평가 프레임워크를 분석한다."}
+{"key": "arxiv:2511.09195", "decision": "include", "code": "I5", "reason": "피부과 서술 평가용 멀티모달 평가기와 벤치마크를 제안한다."}
+{"key": "arxiv:2602.13576", "decision": "include", "code": "I6", "reason": "루브릭 조작으로 판정 모델 선호를 몰래 바꾸는 공격을 다룬다."}
+{"key": "arxiv:2606.25487", "decision": "include", "code": "I2", "reason": "탈옥 판정자의 보정과 적대적 강건성을 분석한다."}
+{"key": "arxiv:2410.20774", "decision": "include", "code": "I2", "reason": "인식적 표지어에 대한 LLM 판정의 강건성을 조사한다."}
+{"key": "arxiv:2512.00390", "decision": "include", "code": "I2", "reason": "LLM 관련성 판정의 임계 점화 편향을 완화한다."}
+{"key": "arxiv:2406.09972", "decision": "include", "code": "I1", "reason": "LLM 평가 프롬프트의 출력 순서와 최적화를 연구한다."}
+{"key": "arxiv:2511.10871", "decision": "include", "code": "I2", "reason": "과제 프레이밍이 LLM 판정의 확신에 미치는 영향을 조사한다."}
+{"key": "arxiv:2502.13031", "decision": "include", "code": "I1", "reason": "LLM 평가자 프롬프트 전략 탐색을 제안한다."}
+{"key": "arxiv:2606.29719", "decision": "include", "code": "I2", "reason": "평가자 주도 선호 변화를 다중 평가자로 감사하는 프레임워크이다."}
+{"key": "arxiv:2506.05062", "decision": "include", "code": "I4", "reason": "토론 연설 평가로 LLM 판정을 벤치마킹한다."}
+{"key": "arxiv:2511.19489", "decision": "maybe", "code": "M", "reason": "진화 알고리즘에서 LLM 판정을 적합도로 쓰는 연구로 초점이 불분명하다."}
+{"key": "arxiv:2601.08343", "decision": "include", "code": "I2", "reason": "다중 후보 판정에서 KV 캐시 재사용이 판정에 미치는 영향을 분석한다."}
+{"key": "arxiv:2606.15608", "decision": "include", "code": "I6", "reason": "멀티모달 LLM 판정의 적대적 강건성을 연구한다."}
+{"key": "arxiv:2603.18557", "decision": "include", "code": "I3", "reason": "평가 분해로 판정 모델의 교차언어 전이를 연구한다."}
+{"key": "arxiv:2609.34862", "decision": "include", "code": "I5", "reason": "에이전트 추적 보안 판정에서 판정 모델들을 비교한다."}
+{"key": "arxiv:2607.01830", "decision": "include", "code": "I1", "reason": "다중 역할 루브릭 생성으로 LLM 판정과 보상모델을 개선한다."}
+{"key": "arxiv:2508.01543", "decision": "maybe", "code": "M", "reason": "LLM 판정·정제로 선호 데이터를 만드는 연구라 초점이 불분명하다."}
+{"key": "doi:10.2139/ssrn.5188865", "decision": "include", "code": "I2", "reason": "제목이 LLM 판정의 신뢰성 문제를 직접 다룬다."}
+{"key": "doi:10.31219/osf.io/8y3km", "decision": "include", "code": "I5", "reason": "수학 추론에서 LLM 판정 모델을 평가한다."}
+{"key": "doi:10.1609/aaai.v39i28.35351", "decision": "include", "code": "I1", "reason": "LLM 판정 워크플로를 단순화하는 기준 개발 도구를 제안한다."}
+{"key": "doi:10.5753/sbbd.2024.243130", "decision": "include", "code": "I2", "reason": "LLM 관련성 판정자의 신뢰 가능성을 분석한다."}
+{"key": "doi:10.1109/aixdke63520.2024.00020", "decision": "include", "code": "I4", "reason": "개방형 LLM의 판정 능력을 평가하는 파이프라인이다."}
+{"key": "doi:10.2514/6.2025-3712", "decision": "exclude", "code": "E1", "reason": "항공 특화 모델 평가에 LLM 판정을 지표로 쓴다."}
+{"key": "doi:10.1007/978-3-031-96235-6_30", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로 판정 검증 여부를 알 수 없다."}
+{"key": "doi:10.48448/wbp4-6q60", "decision": "include", "code": "I2", "reason": "저품질 출력 식별에서 LLM 판정의 실패를 분석한다."}
+{"key": "doi:10.1109/sieds65500.2025.11021089", "decision": "maybe", "code": "M", "reason": "NLP 지표와 LLM 판정 지표의 비교로 판정 분석 정도가 불분명하다."}
+{"key": "doi:10.1101/2025.10.27.25338910", "decision": "include", "code": "I5", "reason": "글로벌 헬스에서 인간 평가자와 LLM 판정을 대조한다."}
+{"key": "doi:10.3389/fpubh.2026.1874389", "decision": "include", "code": "I5", "reason": "감염관리 분야 LLM 판정을 전문가 평가와 비교한다."}
+{"key": "doi:10.1109/cloudcom67567.2025.11331361", "decision": "maybe", "code": "M", "reason": "공격 생성과 다중 판정 합의 파이프라인으로 판정 검증 정도가 불분명하다."}
+{"key": "doi:10.1109/icmla61862.2024.00034", "decision": "include", "code": "I2", "reason": "LLM 판정의 질적 진단 방법을 제시한다."}
+{"key": "doi:10.17605/osf.io/j34uc", "decision": "maybe", "code": "M", "reason": "편향 보정 LLM 판정을 쓴 종단 비교로 판정 분석 비중이 불분명하다."}
+{"key": "doi:10.18653/v1/2025.acl-long.513", "decision": "include", "code": "I3", "reason": "세밀한 기준을 지원하는 생성형 평가 모델 Praetor를 제안한다."}
+{"key": "doi:10.5281/zenodo.20685263", "decision": "exclude", "code": "E2", "reason": "내부 권한 탐침 연구로 LLM 판정 모델이 주제가 아니다."}
+{"key": "title:assessing semantic consistency in data to text generation a meta evaluation of textual semantic and model based metrics", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로 LLM 판정 포함 여부를 알 수 없다."}
+{"key": "arxiv:2311.09204", "decision": "include", "code": "I1", "reason": "여러 평가자를 LLM으로 통합하는 Fusion-Eval을 제안한다."}
+{"key": "arxiv:2501.13261", "decision": "include", "code": "I5", "reason": "음악 이해에서 GPT 판정 능력을 체계적으로 검증한다."}
+{"key": "arxiv:2502.04997", "decision": "include", "code": "I3", "reason": "블랙박스 LLM 판정을 인간 판단에 정렬시키는 방법이다."}
+{"key": "arxiv:2502.15022", "decision": "maybe", "code": "M", "reason": "스타일 전이 지표의 메타평가로 LLM 판정 포함 여부가 불분명하다."}
+{"key": "arxiv:2605.06036", "decision": "exclude", "code": "E3", "reason": "노이즈 선호 보상모델 학습으로 LLM 판정 비교가 없다."}
+{"key": "arxiv:2601.07477", "decision": "maybe", "code": "M", "reason": "워크플로 최적화용 블록 판정으로 판정 연구인지 불분명하다."}
+{"key": "arxiv:2510.25860", "decision": "include", "code": "I3", "reason": "추론 흔적 추론으로 LLM 평가자 신뢰성을 높인다."}
+{"key": "arxiv:2510.20304", "decision": "maybe", "code": "M", "reason": "생성형 PRM 사례 연구로 LLM 판정 비교 여부가 불분명하다."}
+{"key": "arxiv:2507.21645", "decision": "maybe", "code": "M", "reason": "보상모델 평가·개선 연구로 LLM 판정 비교 여부가 불분명하다."}
+{"key": "arxiv:2503.19877", "decision": "include", "code": "I3", "reason": "추론 모델 평가자로 평가 시간 연산을 확장한다."}
+{"key": "title:using llm judgements for sanity checking results and reproducibility of human evaluations in nlp", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로 판정 검증 여부가 불분명하다."}
+{"key": "arxiv:2601.01751", "decision": "include", "code": "I2", "reason": "LLM 관련성 판정의 편향을 분석한다."}
+{"key": "arxiv:2405.11874", "decision": "maybe", "code": "M", "reason": "답안 추출용 평가 모델로 판정 연구 범위인지 불분명하다."}
+{"key": "arxiv:2608.02620", "decision": "include", "code": "I4", "reason": "LLM 판정 평가를 위한 통합 재현 프레임워크이다."}
+{"key": "arxiv:2608.24314", "decision": "include", "code": "I4", "reason": "음성 에이전트 평가용 LLM 판정을 벤치마킹한다."}
+{"key": "arxiv:2609.00088", "decision": "include", "code": "I2", "reason": "선응답 후 비교 방식 판정의 오류 상속을 분석한다."}
+{"key": "arxiv:2510.03376", "decision": "include", "code": "I5", "reason": "산업 도면 객체 검출에서 VLM 판정을 검증한다."}
+{"key": "arxiv:2605.31381", "decision": "include", "code": "I2", "reason": "안전 기준별 LLM 판정의 불일치를 분석한다."}
+{"key": "arxiv:2502.01534", "decision": "include", "code": "I2", "reason": "LLM 판정의 선호 누수 오염 문제를 분석한다."}
+{"key": "arxiv:2601.04029", "decision": "include", "code": "I4", "reason": "대화 화자 일관성에 대한 오디오 판정 모델 벤치마크이다."}
+{"key": "arxiv:2509.21117", "decision": "include", "code": "I2", "reason": "LLM 판정의 불일치를 분석하고 완화한다."}
+{"key": "arxiv:2411.10954", "decision": "include", "code": "I2", "reason": "방언에 따른 LLM 판정 일관성을 분석한다."}
+{"key": "arxiv:2510.05135", "decision": "include", "code": "I1", "reason": "창의성 평가를 위한 호기심 기반 LLM 판정을 제안한다."}
+{"key": "arxiv:2605.10805", "decision": "include", "code": "I1", "reason": "비용 효율적인 판정 라우팅을 제안한다."}
+{"key": "arxiv:2603.17145", "decision": "include", "code": "I3", "reason": "회귀 인식 강화학습으로 LLM 판정을 학습한다."}
+{"key": "arxiv:2512.20159", "decision": "include", "code": "I4", "reason": "코드 LLM 판정 벤치마크를 제안한다."}
+{"key": "arxiv:2512.03019", "decision": "include", "code": "I3", "reason": "사고형 판정의 추론 시간 연산 보정을 제안한다."}
+{"key": "arxiv:2508.05674", "decision": "exclude", "code": "E1", "reason": "공격 에이전트 개선 중 판정을 부수적으로 쓴다."}
+{"key": "arxiv:2503.02246", "decision": "include", "code": "I8", "reason": "소프트웨어 공학에서 LLM 판정을 다룬 포지션 논문이다."}
+{"key": "arxiv:2504.16828", "decision": "maybe", "code": "M", "reason": "생각하는 PRM 연구로 LLM 판정 비교 여부가 불분명하다."}
+{"key": "arxiv:2510.18196", "decision": "include", "code": "I2", "reason": "판정의 점수 범위 편향을 대조 디코딩으로 완화한다."}
+{"key": "arxiv:2607.01103", "decision": "include", "code": "I5", "reason": "임상 질문에서 LLM 평가자를 의사 주석과 대조해 검증한다."}
+{"key": "arxiv:2608.26623", "decision": "include", "code": "I4", "reason": "에이전트 도구 호출 판정 벤치마크이다."}
+{"key": "arxiv:2508.09724", "decision": "include", "code": "I2", "reason": "쌍비교 판정의 선호 편향을 비지도 방식으로 교정한다."}
+{"key": "arxiv:2604.18835", "decision": "include", "code": "I2", "reason": "LLM 판정 유사도 점수의 민감도를 실험적으로 검사한다."}
+{"key": "arxiv:2410.17578", "decision": "include", "code": "I4", "reason": "다국어 판정·보상모델 메타평가 벤치마크이다."}
+{"key": "arxiv:2603.04033", "decision": "include", "code": "I5", "reason": "프랑스어 의료 QA에서 LLM 판정을 검증한다."}
+{"key": "arxiv:2606.08092", "decision": "include", "code": "I3", "reason": "다국어 판정의 언어 간 불일치를 활용해 자기진화시킨다."}
+{"key": "arxiv:2604.24158", "decision": "maybe", "code": "M", "reason": "여행 추천 평가에 LLM 판정을 쓰며 검증 정도가 불분명하다."}
+{"key": "arxiv:2601.22230", "decision": "include", "code": "I3", "reason": "코드 생성용 LLM 판정을 데이터 재가중으로 학습한다."}
+{"key": "arxiv:2606.13221", "decision": "include", "code": "I3", "reason": "판정 오류를 보정하는 적합 Elo 추정을 제안한다."}
+{"key": "arxiv:2608.19802", "decision": "include", "code": "I3", "reason": "LLM 판정 패널의 중단·라우팅을 연구한다."}
+{"key": "arxiv:2509.13081", "decision": "exclude", "code": "E3", "reason": "인코더 보상모델 연구로 LLM 판정 비교가 없다."}
+{"key": "arxiv:2408.15240", "decision": "maybe", "code": "M", "reason": "생성형 검증기 연구로 LLM 판정과의 직접 비교 여부가 불분명하다."}
+{"key": "arxiv:2511.02203", "decision": "include", "code": "I5", "reason": "보증 사례 검토에서 LLM 판정을 설계하고 검증한다."}
+{"key": "arxiv:2401.10019", "decision": "maybe", "code": "M", "reason": "에이전트 안전 위험 판단 벤치마크로 판정 연구인지 불분명하다."}
+{"key": "arxiv:2604.13035", "decision": "maybe", "code": "M", "reason": "LLM 판정을 대체하는 기호적 평가기로 범위 적합성이 불분명하다."}
+{"key": "arxiv:2504.09781", "decision": "maybe", "code": "M", "reason": "추론 시스템 내부 판정 모듈이라 범위 적합성이 불분명하다."}
+{"key": "arxiv:2606.04867", "decision": "include", "code": "I4", "reason": "AI 동반자 안전성 판정 모델 벤치마크이다."}
+{"key": "arxiv:2606.26185", "decision": "include", "code": "I2", "reason": "판정 온도 설정과 재현성의 관계를 분석한다."}
+{"key": "arxiv:2410.15393", "decision": "include", "code": "I2", "reason": "판정 모델의 선택 편향을 보정으로 완화한다."}

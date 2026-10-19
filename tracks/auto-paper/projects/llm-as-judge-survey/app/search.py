@@ -43,7 +43,6 @@ def openalex(phrase):
             out.append(record(
                 "openalex", phrase, title=w.get("title"), year=w.get("publication_year"),
                 date=w.get("publication_date"), venue=source.get("display_name"), doi=w.get("doi"),
-                arxiv=arxiv_id((w.get("primary_location") or {}).get("landing_page_url")),
                 openalex_id=w["id"].rsplit("/", 1)[-1],
                 authors="; ".join(a["author"]["display_name"] for a in w.get("authorships", [])[:10]),
                 cited_by=w.get("cited_by_count"), abstract=openalex_abstract(w.get("abstract_inverted_index"))))

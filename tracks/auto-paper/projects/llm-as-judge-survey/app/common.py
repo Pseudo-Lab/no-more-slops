@@ -17,7 +17,8 @@ RAW = DATA / "raw"
 LOG = DATA / "search_log.csv"
 USER_AGENT = "llm-as-judge-survey/0.1 (literature review tooling)"
 
-ARXIV_ID = re.compile(r"(\d{4}\.\d{4,5})(?:v\d+)?")
+# New-style arXiv IDs only (YYMM.NNNNN, 2007+); digit guards keep DOI fragments like 3807246.3807349 out.
+ARXIV_ID = re.compile(r"(?<!\d)((?:0[7-9]|[12]\d)(?:0[1-9]|1[0-2])\.\d{4,5})(?:v\d+)?(?!\d)")
 
 
 def request(url, params=None, data=None, headers=None, retries=12):
@@ -77,7 +78,7 @@ def save(step, source, query, records):
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
     new = not LOG.exists()
     with LOG.open("a", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         if new:
             writer.writerow(["run_at", "step", "source", "query", "records", "file"])
         writer.writerow([dt.datetime.now().isoformat(timespec="seconds"), step, source, query,

@@ -11,7 +11,7 @@ import json
 import re
 from collections import Counter
 
-from common import DATA, RAW, norm_title
+from common import DATA, RAW, arxiv_id, norm_title
 from search import QUERIES
 
 FIELDS = ["key", "title", "year", "date", "venue", "doi", "arxiv", "s2_id", "openalex_id",
@@ -35,6 +35,8 @@ def main():
     for path in sorted(RAW.rglob("*.jsonl")):
         for line in path.open(encoding="utf-8"):
             rec = json.loads(line)
+            # Raw OpenAlex records from before 2026-10-19 took arXiv IDs from DOI landing URLs; re-derive.
+            rec["arxiv"] = arxiv_id(rec["doi"]) if rec["source"] == "openalex" else arxiv_id(rec["arxiv"])
             ks = keys(rec)
             if not ks:
                 continue
@@ -65,6 +67,8 @@ def main():
         if dates and min(dates)[:4] < QUERIES["date_from"][:4]:
             dropped += 1
             continue
+        for f in ("title", "venue", "authors", "abstract"):
+            row[f] = " ".join(str(row[f]).split())
         row["key"] = keys(row)[0]
         row["sources"] = ";".join(sorted({r["source"] for r in recs}))
         row["queries"] = " | ".join(sorted({r["query"] for r in recs}))
@@ -73,7 +77,7 @@ def main():
 
     rows.sort(key=lambda r: (-r["title_hit"], -int(r["cited_by"] or 0)))
     with (DATA / "candidates.csv").open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, FIELDS)
+        writer = csv.DictWriter(f, FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
