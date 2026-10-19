@@ -1,0 +1,9 @@
+{
+  "name": "product-cgi-render",
+  "private": true,
+  "type": "module",
+  "description": "글자 오버레이 프레임 렌더 (scripts/overlay.mjs)용. 로컬 Chrome을 puppeteer-core로 띄운다",
+  "dependencies": {
+    "puppeteer-core": "^24.10.0"
+  }
+}

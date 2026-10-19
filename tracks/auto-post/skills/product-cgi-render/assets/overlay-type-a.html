@@ -1,0 +1,71 @@
+<!doctype html>
+<!-- 화면 글자 A형 (큰 글자 한 덩어리, 박스 없음, 한 가지 색). 투명 오버레이. scripts/overlay.mjs로 프레임을 뽑는다.
+     모션: 등장 블러 8px→0 + 12px 상승 0.3초 ease-out, 퇴장 0.2초 페이드 (dur 끝에서)
+     쿼리 (모두 선택):
+       text     본문. 줄바꿈은 | 또는 %0A                      (기본 "TEXT")
+       kicker   본문 위 작은 줄 (예: 성분 범위)                   (기본 없음)
+       dur      클립 길이(초). 퇴장 페이드가 끝에서 0.2초          (기본 2)
+       t0       등장 시작(초). 0이면 첫 프레임부터 등장 모션        (기본 0)
+       in, out  등장·퇴장 길이(초)                                (기본 0.3, 0.2)
+       blur, rise  등장 블러(px)·상승(px)                          (기본 8, 12)
+       size, weight, lh, ls  본문 글자 크기(px)·굵기·줄 간격·자간(em)  (기본 120, 800, 1.08, -0.02)
+       ksize, kweight, kls   킥커 크기·굵기·자간(em)                (기본 38, 600, 0.3)
+       color    글자색 (#은 %23으로)                               (기본 %231e2a4a)
+       x, y     글자 덩어리 기준점(px). align에 따라 왼쪽/가운데/오른쪽 끝 기준 (기본 x = 가운데 또는 가장자리 80px, y = 300)
+       align    left | center | right                               (기본 center)
+       font     글꼴 이름, fontUrl 글꼴 파일 경로(overlay.mjs --root 기준, 예 /fonts/MyFont.woff2)
+     글꼴은 사용 권리가 확인된 것(OFL 등)만, 출처를 sources.md에. 지정하지 않으면 시스템 sans-serif. -->
+<html><head><meta charset="utf-8"><link rel="icon" href="data:,">
+<style>
+html,body{margin:0;background:transparent;overflow:hidden}
+#g{position:absolute;will-change:transform,filter,opacity;white-space:nowrap}
+#k{opacity:.8}
+</style></head><body><div id="g"><div id="k"></div><div id="t"></div></div>
+<script>
+const q = new URLSearchParams(location.search);
+const num = (k, d) => (q.has(k) ? Number(q.get(k)) : d);
+const P = {
+  text: q.get("text") ?? "TEXT", kicker: q.get("kicker") ?? "",
+  dur: num("dur", 2), t0: num("t0", 0), tin: num("in", 0.3), tout: num("out", 0.2), blur: num("blur", 8), rise: num("rise", 12),
+  size: num("size", 120), weight: num("weight", 800), lh: num("lh", 1.08), ls: num("ls", -0.02),
+  ksize: num("ksize", 38), kweight: num("kweight", 600), kls: num("kls", 0.3),
+  color: q.get("color") ?? "#1e2a4a", align: q.get("align") ?? "center", y: num("y", 300),
+  font: q.get("font") ?? "", fontUrl: q.get("fontUrl") ?? "",
+};
+// x 기본값: 가운데 정렬은 화면 가운데, 왼쪽·오른쪽 정렬은 가장자리에서 80px
+P.x = num("x", P.align === "left" ? 80 : P.align === "right" ? innerWidth - 80 : innerWidth / 2);
+document.body.style.width = innerWidth + "px";
+document.body.style.height = innerHeight + "px";
+const fam = (P.font ? `"${P.font}",` : "") + `-apple-system,"Apple SD Gothic Neo","Noto Sans CJK KR",sans-serif`;
+const g = document.getElementById("g"), t = document.getElementById("t"), k = document.getElementById("k");
+const lines = (s) => s.split(/\||\n/).map((x) => x.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c])).join("<br>");
+t.innerHTML = lines(P.text);
+k.innerHTML = lines(P.kicker);
+k.style.display = P.kicker ? "block" : "none";
+Object.assign(g.style, { color: P.color, fontFamily: fam, textAlign: P.align, top: P.y + "px" });
+Object.assign(t.style, { fontSize: P.size + "px", fontWeight: P.weight, lineHeight: P.lh, letterSpacing: P.ls + "em" });
+Object.assign(k.style, { fontSize: P.ksize + "px", fontWeight: P.kweight, letterSpacing: P.kls + "em", marginBottom: P.ksize * 0.25 + "px" });
+// 기준점: left → x가 왼쪽 끝, right → x가 오른쪽 끝, center → x가 가운데
+const place = () => {
+  const w = g.offsetWidth;
+  g.style.left = (P.align === "left" ? P.x : P.align === "right" ? P.x - w : P.x - w / 2) + "px";
+};
+const eout = (x) => 1 - Math.pow(1 - x, 3), cl = (x) => Math.max(0, Math.min(1, x));
+window.renderAt = (time) => {
+  const kk = eout(cl((time - P.t0) / P.tin));
+  const out = 1 - cl((time - (P.dur - P.tout)) / P.tout);
+  g.style.opacity = (time < P.t0 ? 0 : kk) * out;
+  g.style.filter = `blur(${(1 - kk) * P.blur}px)`;
+  g.style.transform = `translateY(${(1 - kk) * P.rise}px)`;
+};
+(async () => {
+  if (P.font && P.fontUrl) {
+    const ff = new FontFace(P.font, `url(${P.fontUrl})`);
+    document.fonts.add(await ff.load());
+  }
+  await document.fonts.ready;
+  place();
+  window.renderAt(0);
+  window.sceneReady = true;
+})();
+</script></body></html>
