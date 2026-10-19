@@ -1,0 +1,14 @@
+{"line": 9, "decision": "applied", "reason": "3장 표 3-4 기준 566/229/164", "new": "일치율이 566편, 정확도가 229편, 상관이 164편"}
+{"line": 30, "decision": "applied", "reason": "순서 근거 없음", "new": "초기부터 보고된 유형으로"}
+{"line": 32, "decision": "applied", "reason": "2306.05685가 먼저", "new": "자기선호가 보고됐고"}
+{"line": 32, "decision": "applied", "reason": "파인튜닝 조건 누락", "new": "파인튜닝하면 ... 선형으로 상관"}
+{"line": 38, "decision": "applied", "reason": "bionlp는 criteria 코드 아님; 능력 한계 사례로 옮기고 표 대표를 2510.09738(criteria)로 교체", "new": "기준 차이보다 능력 한계에 가까운 사례다"}
+{"line": 17, "decision": "applied", "reason": "선별 사례", "new": "대표 사례다"}
+{"line": 13, "decision": "applied", "reason": "전수 코딩 아님 단서", "new": "대표 벤치마크는 대체로 ... 전수 코딩하지 않았다; 5.4 동일 보정"}
+{"line": 56, "decision": "applied", "reason": "4편 사례 한정", "new": "이 장에서 본 사례의 상당수는"}
+{"line": 62, "decision": "applied", "reason": "설명력 비교 근거 없음", "new": "어느 쪽이 더 크게 작용하는지는 판단할 수 없다"}
+{"line": 62, "decision": "partly", "reason": "'대부분' 추가·조건부 단서 추가(claims.csv는 conditional)", "new": "대부분 Pearson r ≥ 0.90 ... 관대한 점수 단서"}
+{"line": 102, "decision": "applied", "reason": "2608.26623 사례로 좁힘", "new": "사라지지 않은 사례가 있다 [@arxiv:2608.26623]"}
+{"line": 102, "decision": "applied", "reason": "처방 효과 근거 없음", "new": "해결되기 어려울 것으로 보인다"}
+{"line": 104, "decision": "applied", "reason": "2508.07805는 취약성 결과만", "new": "설득 문구에 대한 취약성이 줄지 않은 사례가 있다"}
+{"line": 104, "decision": "applied", "reason": "지표 설명 근거 두 편뿐", "new": "한몫했을 수 있다"}

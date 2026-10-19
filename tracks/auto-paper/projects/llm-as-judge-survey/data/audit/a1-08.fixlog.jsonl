@@ -1,0 +1,13 @@
+{"line": 93, "decision": "applied", "reason": "집계 없음, 반례 존재", "new": "24개 주장을 읽은 범위에서 ... 눈에 띄게 적었다(집계하지 않았다)"}
+{"line": 109, "decision": "applied", "reason": "전수 집계 없음; 보고 3편만 확인", "new": "본문 확인 범위에서 3편뿐, 나머지는 확인하지 못했다"}
+{"line": 83, "decision": "partly", "reason": "적응형 시험 빈도 집계 없음; 소표본 기존 방어 시험은 적응형이 아님. BITE/Pretext 문장은 유지", "new": "방어를 아는 공격자 시험은 적었고... 기존 방어를 소표본으로 시험한 연구들도..."}
+{"line": 85, "decision": "applied", "reason": "초록만으로 공격 계열 수 판단 불가; 같은 문단 2608.06422와 충돌", "new": "대부분의 방어는 겨냥한 공격 계열 중심으로 보고되었다"}
+{"line": 95, "decision": "applied", "reason": "직접 비교 근거 없음, 2605.30521 반례", "new": "효과가 컸던 것으로 보고된 방어 가운데 일부... 직접 비교한 결과가 아니며 모의 도구 호출 격리는 효과가 없었다"}
+{"line": 101, "decision": "applied", "reason": "'상당수' 집계 없음", "new": "여럿은 ... 증폭한 것으로 읽을 수 있다"}
+{"line": 103, "decision": "applied", "reason": "편향 크기-탐색량 근거 없음", "new": "공격 후보가 될 수 있다. 다만 관계는 확인된 바 없다"}
+{"line": 119, "decision": "applied", "reason": "영역별 방어 평가 비교 집계 없음", "new": "이 영역들에서는 방어 평가가 적게 보고되었다"}
+{"line": 46, "decision": "applied", "reason": "2606.27287은 닫힌 과제 아님", "new": "네 연구 가운데 세 연구는... 이력서 심사에서는 주입자가 늘어난 조건에서 효과가 사라졌다"}
+{"line": 42, "decision": "applied", "reason": "Q-SCALE 등은 독립 평가 다수", "new": "Q-MULTI나 Q-DEBIAS와 달리"}
+{"line": 79, "decision": "applied", "reason": "verify 근거가 번역 과제 Table V", "new": "번역 과제 기준으로 재토큰화는"}
+{"line": 60, "decision": "applied", "reason": "verify: confirmed 9에 방향 변경 1 포함, partly 1", "new": "8개 그대로, 1개 partly, 1개 방향 이동"}
+{"line": 23, "decision": "applied", "reason": "2610.15778 한계: 12 cell로 격차와 분리 불가, Spearman -0.69 상관", "new": "판정 능력(AUC)이 해킹의 plateau와 상관한다는 보고"}
