@@ -1,0 +1,29 @@
+{"key":"doi:10.64898/2026.01.01.26343326","decision":"exclude","code":"E1","reason":"RAG 청크 품질 측정 연구로 LLM 판정 자체는 연구 대상이 아니다."}
+{"key":"doi:10.1109/iciea65512.2025.11148483","decision":"exclude","code":"E2","reason":"수면 품질 추정용 경량 LLM 프레임워크로 LLM은 판정자가 아니다."}
+{"key":"title:mamma mia where s my name de identifying italian clinical notes with large language models","decision":"exclude","code":"E2","reason":"임상 노트 비식별화 연구로 LLM 판정은 다루지 않는다."}
+{"key":"doi:10.1609/aaaiss.v7i1.36929","decision":"exclude","code":"E2","reason":"EHR 정보 추출의 보정적 검증 프레임워크로 LLM 판정 모델 연구가 아니다."}
+{"key":"doi:10.1101/2025.11.19.25340596","decision":"exclude","code":"E1","reason":"합성 대화의 정확성을 평가하는 데 LLM을 쓰는 응용으로 판정 자체는 분석하지 않는다."}
+{"key":"doi:10.1101/2025.08.14.25332839","decision":"include","code":"I5","reason":"의료 eConsult에서 LLM-as-judge를 의사 평가자와 대조해 일치도를 검증한다."}
+{"key":"doi:10.3233/faia251428","decision":"include","code":"I5","reason":"보건 개입 에이전트 평가에 LLM 판정 앙상블을 설계하고 전문가 주석과의 일치를 검증한다."}
+{"key":"arxiv:2410.09418","decision":"include","code":"I5","reason":"이벤트 추출 평가용 LLM 평가 에이전트를 제안하고 인간 판정과의 상관을 검증한다."}
+{"key":"arxiv:2411.02448","decision":"include","code":"I3","reason":"설명·인용을 제공하는 파인튜닝 LLM 자동평가 모델(REC)을 제안한다."}
+{"key":"arxiv:2501.06728","decision":"include","code":"I2","reason":"참조 없는 대화 평가 지표의 적대적 공격 강건성을 측정하는 벤치마크를 제안한다."}
+{"key":"arxiv:2502.18874","decision":"include","code":"I3","reason":"코드·텍스트 분석을 결합하는 파인튜닝 판정 모델 ARJudge를 제안한다."}
+{"key":"arxiv:2505.01761","decision":"include","code":"I2","reason":"긴 입력이 LLM 기반 번역 평가자에 미치는 영향을 분석한다."}
+{"key":"arxiv:2503.18076","decision":"maybe","code":"M","reason":"판정 모델을 분류에 쓰는 추측적 디코딩 변형으로 judge 연구인지 불분명하다."}
+{"key":"arxiv:2412.11536","decision":"maybe","code":"M","reason":"LLM-as-a-judge를 교사로 증류하지만 판정 자체보다 검색 감축이 주목적이다."}
+{"key":"arxiv:2505.16003","decision":"include","code":"I3","reason":"LLM 판정자의 보정 방법 SLMEval을 제안하고 인간 판단과의 상관을 검증한다."}
+{"key":"arxiv:2511.03152","decision":"include","code":"I5","reason":"LLM을 판정자로 써 이해관계자별 위험을 예측·설명하는 프레임워크로 판정 역할이 핵심이다."}
+{"key":"arxiv:2504.12732","decision":"include","code":"I5","reason":"교육 자원 검색에서 LLM 관련성 판정을 인간 판정과 대조해 프롬프트 기준별로 검증한다."}
+{"key":"arxiv:2412.07429","decision":"include","code":"I3","reason":"제한된 데이터로 개인화된 LLM 판정 모델을 정렬하는 데이터 증강 기법을 제안한다."}
+{"key":"arxiv:2505.22430","decision":"include","code":"I3","reason":"RAG 응답 평가용 추론 기반 판정 모델 RAG-Zeval을 학습해 제안한다."}
+{"key":"arxiv:2405.14103","decision":"maybe","code":"M","reason":"LLM 판정자를 선호 신호로 쓰는 정렬 연구로 판정 자체가 주 대상인지 불분명하다."}
+{"key":"arxiv:2501.03491","decision":"exclude","code":"E2","reason":"LLM이 생성한 질문을 평가하는 연구로 LLM은 평가 대상이다."}
+{"key":"arxiv:2503.05846","decision":"exclude","code":"E2","reason":"다국어 능력 향상 연구로 판정과 무관하다."}
+{"key":"arxiv:2505.08854","decision":"exclude","code":"E2","reason":"자율주행용 생성형 AI 개관으로 판정 연구가 아니다."}
+{"key":"arxiv:2505.14422","decision":"exclude","code":"E2","reason":"LLM의 여론 예측을 평가하는 벤치마크로 LLM은 평가 대상이다."}
+{"key":"arxiv:2505.20214","decision":"exclude","code":"E2","reason":"다중모달 추론의 진실성 스케일링 연구로 LLM이 평가 대상이다."}
+{"key":"arxiv:2403.01892","decision":"exclude","code":"E4","reason":"로버스트 평균 추정의 통계 이론으로 LLM 판정과 무관하다."}
+{"key":"arxiv:2412.16720","decision":"exclude","code":"E2","reason":"OpenAI o1 시스템 카드로 모델 보고서이며 판정 연구가 아니다."}
+{"key":"arxiv:2412.19437","decision":"exclude","code":"E2","reason":"DeepSeek-V3 기술 보고서로 판정 연구가 아니다."}
+{"key":"arxiv:2604.09548","decision":"exclude","code":"E2","reason":"칸나비디올 안내용 RAG LLM 응용으로 판정 연구가 아니다."}

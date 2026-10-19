@@ -85,6 +85,12 @@ def collect(args):
     print("codes: " + ", ".join(f"{k} {v}" for k, v in sorted(Counter(r.get("code") for r in done.values()).items())))
     if bad:
         print(f"invalid decisions: {len(bad)} e.g. {bad[:3]}")
+    # Subagents sometimes skim and reuse template reasons; flag batches where >10% of reasons repeat.
+    for batch in sorted({r["batch"] for r in done.values()} - {"human"}):
+        reasons = Counter(r.get("reason", "") for r in done.values() if r["batch"] == batch)
+        repeated, total = sum(n for n in reasons.values() if n > 1), sum(reasons.values())
+        if repeated > total * 0.1:
+            print(f"WARNING {batch}: {repeated}/{total} reasons are repeated sentences; re-screen this batch")
 
     if (SCREEN / "audit.csv").exists() and not args.resample:
         print("audit sample kept: data/screening/audit.csv (pass --resample to redraw)")
