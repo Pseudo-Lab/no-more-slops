@@ -2,7 +2,7 @@
 
 - 작성자: @sooyoung-wind
 - 트랙: Auto-Paper
-- 상태: 4단계(추출·종합) 준비 중
+- 상태: 4단계(추출·종합) 진행 중
 - 원고 언어: 한국어 (검수용)
 
 LLM이 평가자·판정자 역할을 하는 연구(LLM-as-a-Judge)를 2023–2026년 범위에서 망라하는 서베이 논문 작업입니다. 기존 일반 서베이가 2024년 말에 머물러 있고 2025–2026년 연구는 의료·코드·보안 등 분야별로만 정리되어 있어, 그 기간 전체를 다시 묶는 것을 목표로 합니다.
@@ -14,7 +14,7 @@ LLM이 평가자·판정자 역할을 하는 연구(LLM-as-a-Judge)를 2023–20
 | 1 | 주제·범위 정의 | [docs/scope.md](docs/scope.md) | 완료 |
 | 2 | 문헌 검색 | [data/search_log.csv](data/search_log.csv), [data/candidates.csv](data/candidates.csv) (10,273편) | 완료 (2026-10-19) |
 | 3 | 선별 | [docs/screening.md](docs/screening.md), [data/screening.csv](data/screening.csv) | 완료 (포함 2,325편) |
-| 4 | 추출·종합 | [docs/extraction.md](docs/extraction.md), 논문별 추출표, 분류 체계 | 항목 설계 중 |
+| 4 | 추출·종합 | [docs/extraction.md](docs/extraction.md), 논문별 추출표, 분류 체계 | 추출 중 |
 | 5 | 집필 | 원고 초안 | 대기 |
 | 6 | 검증·퇴고 | 인용 대조 기록, 수정본 | 대기 |
 
@@ -45,6 +45,18 @@ uv run screen.py collect                          # data/screening.csv 갱신, �
 - 1차 선별자: Claude Code 서브에이전트 (Sonnet), 배치당 약 140편
 - 사람 검수: 포함·제외 각 50편 무작위 표본을 검수 페이지(`uv run audit_page.py OUT.html`로 생성, claude.ai 아티팩트로 게시)에서 판정한다. 판정은 아티팩트 저장소의 `audit` 컬렉션에 저장되고, 내보낸 뒤 `uv run screen.py audit-import EXPORT_DIR`로 `data/screening/audit.csv`에 반영한다. `maybe`는 전문 검토 단계에서 처리한다.
 - 배치 파일은 `candidates.csv`에서 재생성되므로 커밋하지 않는다.
+
+## 정보 추출 (4단계)
+
+```sh
+cd app
+uv run extract.py prepare --round e1 --size 70   # 포함 논문 중 미추출분을 배치로 분할
+# 배치별로 서브에이전트가 docs/extraction.md 항목대로 추출 → data/extraction/results/<batch>.jsonl
+uv run extract.py collect                        # 형식 검사, who 추가, data/extraction.jsonl 갱신
+```
+
+- 논문마다 PMDRL 요약(Who, Problem, Method, Data, Result, Limitation, Gap)과 분류 코드를 기록한다.
+- 추출자: Claude Code 서브에이전트 (Sonnet), 배치당 70편, 제목·초록 기준
 
 ## 사용한 스킬·도구
 
