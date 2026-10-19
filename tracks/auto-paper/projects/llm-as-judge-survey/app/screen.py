@@ -91,6 +91,15 @@ def collect(args):
         repeated, total = sum(n for n in reasons.values() if n > 1), sum(reasons.values())
         if repeated > total * 0.1:
             print(f"WARNING {batch}: {repeated}/{total} reasons are repeated sentences; re-screen this batch")
+    # Parallel subagents once shared scratch files, attaching one batch's reasons to another's keys.
+    seen = {}
+    for r in done.values():
+        if r["batch"] != "human" and len(r.get("reason", "")) > 30:
+            seen.setdefault(r["reason"], set()).add(r["batch"])
+    shared = Counter(b for batches in seen.values() if len(batches) > 1 for b in batches)
+    for batch, n in sorted(shared.items()):
+        if n > 5:
+            print(f"WARNING {batch}: {n} reasons also appear in other batches; check for mixed-up results")
 
     if (SCREEN / "audit.csv").exists() and not args.resample:
         print("audit sample kept: data/screening/audit.csv (pass --resample to redraw)")
