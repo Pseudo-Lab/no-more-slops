@@ -10,6 +10,7 @@ Usage:
   uv run screen.py prepare --round r2 --title-hit --curated
   uv run screen.py prepare --round r2s --sample 140
   uv run screen.py prepare --round r4 --maybe-high-value --size 84
+  uv run screen.py prepare --round r5 --keys data/screening/r5_keys.txt --size 58
   uv run screen.py collect [--audit 50]
   uv run screen.py audit-import EXPORT_DIR
 """
@@ -26,6 +27,7 @@ from common import DATA
 SCREEN = DATA / "screening"
 BATCHES, RESULTS = SCREEN / "batches", SCREEN / "results"
 OVERRIDES = SCREEN / "overrides.jsonl"  # human decisions that replace LLM screening
+DUPLICATES = SCREEN / "duplicates.jsonl"  # other versions of an included paper (E7), applied last
 DECISIONS = {"include", "exclude", "maybe"}
 CURATED = ("awesome", "arxiv-bib", "s2-references", "seed-survey")
 
@@ -43,11 +45,12 @@ def results():
                 rec = json.loads(line)
                 rec["batch"] = path.stem
                 out[rec["key"]] = rec
-    if OVERRIDES.exists():
-        for line in OVERRIDES.open(encoding="utf-8"):
-            if line.strip():
-                rec = json.loads(line)
-                out[rec["key"]] = {**out.get(rec["key"], {}), **rec, "batch": "human"}
+    for path, batch in ((OVERRIDES, "human"), (DUPLICATES, "dedup")):
+        if path.exists():
+            for line in path.open(encoding="utf-8"):
+                if line.strip():
+                    rec = json.loads(line)
+                    out[rec["key"]] = {**out.get(rec["key"], {}), **rec, "batch": batch}
     return out
 
 
@@ -55,7 +58,11 @@ def prepare(args):
     done = results()
     pending = {p.stem for p in BATCHES.glob("*.jsonl")} - {p.stem for p in RESULTS.glob("*.jsonl")}
     queued = {json.loads(line)["key"] for name in pending for line in (BATCHES / f"{name}.jsonl").open()}
-    if args.maybe_high_value:
+    if args.keys:
+        # Re-screen an explicit key list, e.g. papers flagged during extraction.
+        wanted = set(args.keys.read_text(encoding="utf-8").splitlines())
+        rows = [r for r in candidates() if r["key"] in wanted and r["key"] not in queued]
+    elif args.maybe_high_value:
         # Second look at first-pass maybes that are curated or cited at least 20 times.
         rows = [r for r in candidates() if done.get(r["key"], {}).get("decision") == "maybe"
                 and r["key"] not in queued
@@ -93,7 +100,7 @@ def collect(args):
     if bad:
         print(f"invalid decisions: {len(bad)} e.g. {bad[:3]}")
     # Subagents sometimes skim and reuse template reasons; flag batches where >10% of reasons repeat.
-    for batch in sorted({r["batch"] for r in done.values()} - {"human"}):
+    for batch in sorted({r["batch"] for r in done.values()} - {"human", "dedup"}):
         # No-abstract maybes legitimately share one reason, so leave them out of the repeat count.
         reasons = Counter(r.get("reason", "") for r in done.values()
                           if r["batch"] == batch and not (r["decision"] == "maybe" and "초록" in r.get("reason", "")))
@@ -103,7 +110,7 @@ def collect(args):
     # Parallel subagents once shared scratch files, attaching one batch's reasons to another's keys.
     seen = {}
     for r in done.values():
-        if r["batch"] != "human" and len(r.get("reason", "")) > 30:
+        if r["batch"] not in {"human", "dedup"} and len(r.get("reason", "")) > 30:
             seen.setdefault(r["reason"], set()).add(r["batch"])
     shared = Counter(b for batches in seen.values() if len(batches) > 1 for b in batches)
     for batch, n in sorted(shared.items()):
@@ -171,6 +178,7 @@ def main():
     p.add_argument("--sample", type=int, help="random sample of the remaining selection")
     p.add_argument("--maybe-high-value", action="store_true",
                    help="re-screen maybes from curated sources or cited >= 20 times")
+    p.add_argument("--keys", type=Path, help="re-screen the keys listed in this file (one per line)")
     p.add_argument("--seed", type=int, default=20261019)
     c = sub.add_parser("collect")
     c.add_argument("--audit", type=int, default=50)

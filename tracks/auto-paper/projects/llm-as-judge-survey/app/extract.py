@@ -168,7 +168,8 @@ def collect(args):
         example = next(k for k in bad if done[k]["batch"] == batch)
         print(f"WARNING {batch}: {n} invalid records, e.g. {example}: {bad[example][:3]}")
     if stray:
-        print(f"WARNING {len(stray)} results for papers not included, e.g. {stray[:3]}")
+        # Papers later moved to maybe/exclude (r5 re-screening, duplicates) keep their records but are dropped here.
+        print(f"note: {len(stray)} results for papers no longer included, e.g. {stray[:3]}")
     # Subagents sometimes skim and reuse template text; flag batches where >10% of summaries repeat.
     for batch in sorted({r["batch"] for r in done.values()}):
         texts = Counter((r.get("pmdrl") or {}).get("result") for r in done.values() if r["batch"] == batch)
