@@ -1,0 +1,154 @@
+{
+  "schema": "skillmerge_v21_claims_v1",
+  "inherited_content_version": "v20-20261019 plus preserved v19 scientific claims",
+  "claims": [
+    {
+      "id": "SM19-C01",
+      "kind": "finite_rank_identity_and_replay",
+      "claim": "The first sufficient capacity is the minimum rationale-completion rank; each saved pair has at most one contiguous sufficient gain or loss interval under nested prefix outputs.",
+      "source_ids": [
+        "SM19-RUN",
+        "SM19-VERIFY"
+      ],
+      "scope": "Nonempty original rationale containment; not exact agreement or semantic truth."
+    },
+    {
+      "id": "SM19-C02",
+      "kind": "conditional_no_loss_proposition_and_exhaustive_certificate",
+      "claim": "For <=3-ID inputs each annotation-sufficient, stable common promotion cannot lose full-output sufficiency at capacity>=4. Empty common sets preserve the baseline and do not imply success.",
+      "source_ids": [
+        "SM19-RUN",
+        "SM19-VERIFY"
+      ],
+      "scope": "Same union, equal output count, stable within-class order; not first-three, independent skill Q qualification or deployment safety."
+    },
+    {
+      "id": "SM19-C03",
+      "kind": "executed_endpoint_capacity_separation",
+      "claim": "All-pair full-sufficient gain/loss counts are565/2700 atcap1,95/25 atcap2,0/2 atcap3 and0/0 atcap4..6; first-three retains0/2 atcap4..6.",
+      "source_ids": [
+        "SM19-RUN"
+      ],
+      "scope": "22,794 exposed constructed pairs; k is output-ID capacity, not token budget."
+    },
+    {
+      "id": "SM19-C04",
+      "kind": "exhaustive_authored_minimal_counterexamples",
+      "claim": "With both original inputs annotation-sufficient, minimal loss-witness union sizes at capacities1,2,3 are3,4,5; no losses exist at0 or4..6 in the declared <=3-ID input class.",
+      "source_ids": [
+        "SM19-RUN",
+        "SM19-VERIFY"
+      ],
+      "scope": "3,046 finite input pairs and122,571 one/two-alternative annotation families; includes overlapping alternatives, not additional independent observations."
+    },
+    {
+      "id": "SM19-C05",
+      "kind": "preregistered_weighting_sensitivity_on_exposed_stratum",
+      "claim": "In the12,067-pair both-input annotation-sufficient stratum atcap1, the pooled contrast is-844/12067 but the equal-component contrast is+3363459013/266277211200.",
+      "source_ids": [
+        "SM19-RUN"
+      ],
+      "scope": "308 tasks/203 components, fixed descriptive stratum and declared weights; not a population effect or a selected superior policy."
+    },
+    {
+      "id": "SM19-C06",
+      "kind": "information_rights_boundary",
+      "claim": "For equal-cardinality output sets, every nonempty-reference-family no-loss guarantee requires unchanged sets; any removed ID supplies a singleton-reference witness.",
+      "source_ids": [
+        "SM19-RUN",
+        "SM19-VERIFY"
+      ],
+      "scope": "A universal answer-contract property under unrestricted reference families; not impossibility of useful skill integration."
+    },
+    {
+      "id": "SM19-C07",
+      "kind": "scope_accounting",
+      "claim": "New independent A/B histories, qualified skill pairs, model calls, model fits, native benchmark runs and measured token costs remain absent; behavioral effect is null.",
+      "source_ids": [
+        "SM19-RUN"
+      ],
+      "scope": "Finite new computation on an already exposed bank; v18 was a layout-only revision."
+    },
+    {
+      "id": "SM21-C01",
+      "kind": "proved_exact_conditional_certificate",
+      "claim": "For fixed equal-cardinality output sets, G=(X=Y or A subset Y or B subset Y) is necessary and sufficient for full-containment no-loss over every nonempty-reference family making each complete input annotation-sufficient.",
+      "source_ids": [
+        "SM21-RUN",
+        "SM21-VERIFY"
+      ],
+      "scope": "Binary P-or-V switch and declared reference class only; necessity uses an authored at-most-two-singleton counterfamily, not actual task replacement."
+    },
+    {
+      "id": "SM21-C02",
+      "kind": "proved_sharp_length_corollary",
+      "claim": "For lengths at most d>=2, complete stable-common promotion satisfies G from cap2d-2; a common-last authored family loses at2d-3 for every d>=2.",
+      "source_ids": [
+        "SM21-RUN",
+        "SM21-VERIFY"
+      ],
+      "scope": "No-loss, not guaranteed success. d0/1 and cap0 are handled separately; full containment only."
+    },
+    {
+      "id": "SM21-C03",
+      "kind": "executed_conditional_guard_result",
+      "claim": "On12067 both-input annotation-sufficient pairs, guarded full gain/loss versus RR is563/0 atcap1,95/0 atcap2,0/0 atcap3..6; fallbacks1502,29,2 atcap1..3.",
+      "source_ids": [
+        "SM21-RUN",
+        "SM21-VERIFY"
+      ],
+      "scope": "Fixed exposed308tasks/203components; not actual Q qualification. Cap3 is no gain versus RR."
+    },
+    {
+      "id": "SM21-C04",
+      "kind": "executed_conservatism_and_failure",
+      "claim": "Atcap1 the guard sacrifices two promotion gains and retains487 losses on all22794 pairs despite2361 fallbacks; both-sufficient losses are zero.",
+      "source_ids": [
+        "SM21-RUN",
+        "SM21-VERIFY"
+      ],
+      "scope": "Conditional guarantee does not establish unconditional safety. Saved and separately authored failure witnesses retain distinct status."
+    },
+    {
+      "id": "SM21-C05",
+      "kind": "executed_endpoint_boundary",
+      "claim": "Guarded first-three gain/loss remains0/2 atcaps4..6 despite full0/0; exact endpoints are separately recomputed.",
+      "source_ids": [
+        "SM21-RUN",
+        "SM21-VERIFY"
+      ],
+      "scope": "No theorem transfer to first-three, exact matching, semantic correctness or cap-dependent nestedness."
+    },
+    {
+      "id": "SM21-C06",
+      "kind": "separate_author_implementation_and_tamper_check",
+      "claim": "A separate same-author verifier reconstructs159558 rows and21 aggregates and rejects copied-input/output tampering; finite checks include2112 rejected-guard counterfamilies.",
+      "source_ids": [
+        "SM21-RUN",
+        "SM21-VERIFY"
+      ],
+      "scope": "777333 accepted ordered subset-pair checks can repeat family representations; no independent scientific replication."
+    },
+    {
+      "id": "SM21-C07",
+      "kind": "source_review_and_scope",
+      "claim": "Three official benchmark/method resources were inspected with access/license limits, without dataset download, native benchmark, model call or independent behavioral evidence.",
+      "source_ids": [
+        "SM21-READING"
+      ],
+      "scope": "SkillsBench review repeats inherited reference19; FollowBench and ManyIFEval are prospective design resources. Code license for the latter remains unconfirmed."
+    }
+  ],
+  "not_established": [
+    "Qualified natural skill-composition collapse",
+    "Population consensus failure frequency",
+    "Native SciFact leaderboard performance",
+    "Measured token or tool-cost savings",
+    "Independent final confirmation",
+    "Universal no-loss for first-three or exact endpoints",
+    "Unconditional safety of the guarded policy",
+    "Optimality under actual annotations or arbitrary output policies",
+    "Universal first-three/exact safety of the guard",
+    "Native behavioral performance on FollowBench, ManyIFEval or SkillsBench"
+  ]
+}

@@ -1,0 +1,2558 @@
+ProbeFlow v21: Detailed Supplement and 
+Preserved Scientific Record
+Research Forge · 19 October 2026 · Layout v21 · Research content v21
+Adds frozen-policy preference diagnostics S14-S20. S1-S13 and the entire inherited v19 record are retained verbatim; no 
+new independent evidence.
+Abstract
+Detailed assumptions, derivations, full comparison contracts, negative evidence and reproducibility 
+notes accompany the compact main paper. The full previous scientific record is retained without 
+changing its reported numbers or evidence scope. New finite computations reuse existing exposed 
+evidence; no model invocation or independent empirical sample is introduced. New v21 sections 
+distinguish these calculations from preserved v20 explanations and the v19 scientific record.
+1 S1. Typed observations and the execution boundary
+Separate a record's existence from its disclosure. A private record contains sensor traces, labels, and 
+cached predictions. A public observation contains only source means actually returned after validated 
+requests. A locked policy specifies a fixed mask or a root, hexadecimal threshold, and two terminal 
+masks. The executor owns affordability, acquired-source bookkeeping, and reveal events; the auditor 
+owns scoring. These are distinct types of permission even when all objects reside in one trusted 
+Python process.
+The implemented decision signature is next_action(policy, observed, acquired). It receives no cycle 
+identifier, target, undisclosed source value, or terminal prediction bank. A gate requests its root if 
+absent; otherwise it uses only observed[root] and the immutable threshold to choose a terminal mask. 
+The next not-yet-acquired source is requested in ascending source index, or STOP is returned. The 
+executor checks no repeat and spent+price≤B before revealing a mean. The trace records the revealed 
+mean as float.hex together with the charged source quote.
+The terminal predictor may use the purchased source's predefined feature bundle even though 
+branching uses only its mean. Access to that bundle is authorized by acquiring the source; it is not a 
+license for the controller to inspect every hidden transform before choosing an action. This distinction 
+supports inspection and poison-value tests of trusted code. It is not process isolation, a capability-
+secure service, or a guarantee against arbitrary malicious code.
+Object / owner
+Permitted contents
+Excluded or delayed contents
+Policy / immutable
+Root, threshold_hex, leaf masks, or 
+fixed mask
+Evaluation labels; mutable per-cycle 
+oracle advice
+Observation / controller
+Means of charged sources; acquired 
+mask
+Unrequested means, cycle identity, 
+cache outputs
+Executor / trusted replay
+Private traces, price book, cap, 
+request log
+Forwarding hidden fields into 
+next_action
+Terminal predictor / after STOP
+Frozen k, terminal mask, permitted 
+feature coordinates
+Choosing actions from other masks' 
+outputs
+Auditor / post-hoc
+Labels and all frozen predictions for 
+exact scoring
+Changing fitted gates or dev choices
+Stratum label / post-hoc
+Fit-seen truth tuple and root-range 
+flags
+Deployment features or new selection 
+inputs
+Table 1: Actual restricted replay types; proposed physical or shared-computation extensions are not silently included.
+2 S2. Feasibility and normalized quote risk
+Mask integers are bit encodings, not ordered amounts of information: 1=PS1, 2=FS1, 4=TS1, 
+3=PS1+FS1, 5=PS1+TS1, 6=FS1+TS1, and 7=all three. The cost C(m) sums the prices of included 
+sources once. The feasible set is formed before minimizing any loss. Empty mask 0 is retained with 
+its previously defined fallback prediction. With equal prices and cap 2, mask 7 is infeasible even if it 
+has zero prediction error.
+For a cycle with e incorrect heads, L=e/4. The scalar objective is u=e/4+λ C(m)/Σc. Under equal 
+quotes, Σc=3; λ=1/20 assigns one extra purchased source a penalty 1/60. The hard cap and lambda 
+serve different purposes. At lambda 0 a two-source action may be chosen despite higher expense, but 
+a three-source action still cannot exceed cap 2. Raising lambda cannot legalize an infeasible action 
+either.
+The other inherited price book is (6000, 600, 60), with its own declared caps. These values proxy raw 
+sample counts, not currency or seconds. Scaling both a price book and its cap by a positive constant 
+1
+
+preserves feasibility and normalized quote loss; scaling the cap alone does not. Changing between 
+raw-count and equal-source books changes relative prices, so settings must remain separate. Common 
+caps permit different realized average expenditure because a gate may stop on different leaves across 
+cohorts.
+𝐶(𝑚) = ∑
+𝑗∈𝑚
+𝑐𝑗,
+ℱ︀𝐵= {𝑚: 𝐶(𝑚) ≤𝐵}
+(1)
+𝑢𝑖(𝑚) = 𝑒𝑖(𝑚)
+4
++ 𝜆𝐶(𝑚)
+∑3
+𝑗=1 𝑐𝑗
+(2)
+Mask
+Sources
+C(m)
+Feasible
+0
+empty fallback
+0
+yes
+1
+PS1
+1
+yes
+2
+FS1
+1
+yes
+3
+PS1+FS1
+2
+yes
+4
+TS1
+1
+yes
+5
+PS1+TS1
+2
+yes
+6
+FS1+TS1
+2
+yes
+7
+PS1+FS1+TS1
+3
+no
+Table 2: Equal-source book at B=2. The source and quote contract remains fixed before evaluation.
+3 S3. Complete-cycle features and the physical clock
+Each local record summarizes an already completed 60-second cycle. PS1 contains 6000 samples, FS1 
+contains 600, and TS1 contains 60. The policy sees a source mean; the cached terminal classifier uses 
+the declared mean, population standard deviation, and slope features of purchased sources. A mean 
+derived from the completed interval is not an observation available at the beginning of that same 
+interval.
+A valid retrospective request means revealing previously recorded data through the permitted 
+interface. It does not mean the equipment could start collecting an unavailable historical source after 
+seeing another completed-cycle mean. A future physical system must specify buffering, overlapping 
+availability windows, action duration, failures after partial work, and whether additional reading 
+changes the device. Those restrictions can change the action set and terminal feature values, so replay 
+validity cannot be established merely by matching a mask.
+A general shared-work graph would additionally distinguish work already paid for from features 
+already disclosed. Source reads and transforms could have separate costs and dependencies. The 
+present restricted source-level experiment buys a fixed feature bundle, has deterministic successful 
+reads, and reconstructs its cache from requested sources. It supplies no measured advantage for hidden 
+cache state or general DAG planning.
+Source
+Samples / completed 
+cycle
+Branch input
+Terminal bundle
+Missing deployment 
+fact
+PS1
+6000
+Mean if purchased
+Mean / population SD / 
+slope
+When the complete 
+interval can be accessed
+FS1
+600
+Mean if purchased
+Mean / population SD / 
+slope
+Availability after another 
+source's reveal
+TS1
+60
+Mean if purchased
+Mean / population SD / 
+slope
+Acquisition delay, failure 
+and buffering
+Table 3: Recorded sample inventory and derived timing questions; no measured physical latency is supplied.
+4 S4. Frozen predictions and fair policy matching
+The reused prediction bank maps (k, mask, cycle) to four categorical outputs. Historical predictor 
+training cycles 1..1540 and train-only standardization remain fixed. Earlier work generated class-
+balanced neighbor-vote candidates; the gate experiment uses the preserved k1 and k3 predictions. 
+The current diagnostic does not retrain those models or run their forward computations.
+A matched acquisition comparison holds k, training bank, feature preprocessing, masks, cap, price 
+book, lambda, cohort, and scoring code fixed. A stronger predictor is a separate intervention, not 
+a benefit attributable to a more elaborate acquisition policy. A historical fixed-source comparator 
+can still be diagnostically important, but its different original selection access must be labeled rather 
+than merged into the primary development selector.
+Terminal lookup must occur after STOP. Merely storing all mask outputs is harmless to an auditor; 
+handing those outputs to next_action would change the policy's information rights. The order below 
+2
+
+separates the lawful execution from retrospective all-mask evaluation. No out-of-mask features may 
+be used to construct the chosen terminal prediction.
+1. Load immutable policy, price book and cap; initialize observed={}, acquired=0, spent=0.
+2. Ask next_action using only policy, observed and acquired.
+3. If STOP, freeze terminal mask; otherwise reject repeated or unaffordable requests.
+4. Charge the source, reveal its allowed mean, append the exact request, and return to step 2.
+5. After STOP only, read prediction_bank[k, terminal_mask, cycle].
+6. Auditor compares prediction to the target; separate post-hoc code may inspect other masks.
+Algorithm 1: Inspected execution order; cached outputs are not policy observations.
+5 S5. Gate fitting, development selection, and access rights
+The inherited v17 fitting procedure sorts 102 fit means separately for each root and takes candidates 
+at indices floor((102−1)q), q∈{1/4, 1/2, 3/4}. A threshold is rejected unless both branches contain 
+at least 16 fit records. Feasible leaves include the root and at most one other source, and left/right 
+masks must differ. Each legal root/threshold selects a leaf pair by exact fit objective, then lower total 
+quote, lower left mask, and lower right mask.
+Development scores the already fitted gates and every cap-feasible fixed mask using the same k and 
+scalar loss. Ties prefer lower quote, fixed before gate, and lexical canonical policy JSON. best_fixed 
+uses fixed masks only; gate_only uses gates, explicitly falling back to best_fixed if no gate exists; 
+adaptive_enabled includes both families. Candidate inclusion proves a weak development-objective 
+inequality, not test dominance.
+The original experiment fitted 390 gate-context records across 90 settings; the subsequent v19 
+diagnostic and this compact v20 revision fit none. Historical evaluation exposure remains even though 
+the current execution writes policy_locks before opening its evaluation bank. Our primary forced 
+gate is labeled as forced because the adaptive-enabled primary selector actually retains PS1.
+1. Fix k, price book, hard cap B and lambda before comparing candidates.
+2. Construct quartile thresholds from fit means only; retain branches with at least 16 examples.
+3. Enumerate distinct affordable root-containing leaf pairs and minimize fit loss with recorded ties.
+4. Freeze candidates. Score all feasible fixed masks and frozen gates on the separate dev interval.
+5. Choose each family by dev objective, quote, fixed-before-gate and canonical policy order.
+6. Record policy locks. Replay the previously exposed evaluation interval without changing choices.
+7. Compute privileged oracle diagnostics only after locking; never pass them back to steps 2–5.
+Algorithm 2: Historical fit/dev procedure, described for reproducibility; no new fitting is executed for v20.
+6 S6. The exact decomposition, one inequality at a time
+For cycle i define a_i as the minimum objective across all feasible masks, p_i the minimum across 
+the current gate's two leaves, g_i the actual selected-leaf objective, and f_i the locked fixed-mask 
+objective. Both leaves and the fixed mask are feasible. Therefore a_i≤f_i, a_i≤p_i, and p_i≤g_i. 
+The fixed mask need not belong to the leaf pair; p_i≤f_i is not guaranteed.
+Average each quantity over the same nonempty cohort to obtain A,P,G,F. Define H=F−A, E=P−A, 
+R=G−P. The inequalities establish nonnegativity; adding and subtracting the same A and P estab­
+lishes G−F=−H+E+R. No statistical model or learned optimality theorem is needed. A zero-size 
+support stratum instead retains null means, so this argument is not applied to a fabricated zero-
+denominator average.
+H is headroom against a clairvoyant feasible-mask chooser, not a promised information gain. E 
+bundles mandatory-root acquisition, the leaf set, and their price implications under a fixed predictor. 
+R is loss relative to a label-aware choice among those leaves. Hidden outcome uncertainty, restricted 
+observations, imperfect fitting, and deterministic ties can all contribute. They are accounting gaps, 
+not individually identified causal effects.
+For the primary common denominator 25260, the numerator differences are 3360, 2190, 22: 
+−3360+2190+22=−1148. The secondary uses 1684 head decisions because lambda 0 removes quote 
+from its objective: −299+164+72=−63. Mixing these scales would make the decomposition uninter­
+pretable.
+𝐻= 𝐹−𝐴≥0,
+𝐸= 𝑃−𝐴≥0,
+𝑅= 𝐺−𝑃≥0
+(3)
+𝐺−𝐹= −(𝐹−𝐴) + (𝑃−𝐴) + (𝐺−𝑃) = −𝐻+ 𝐸+ 𝑅
+(4)
+Case
+F / A / P / G
+H
+E
+R
+G−F
+Primary
+13561 /10201 /12391 /12413, each /25260
+56/421
+73/842
+11/12630
+−287/6315
+Secondary
+924 /625 /789 /861, each /1684
+299/1684
+41/421
+18/421
+−63/1684
+3
+
+Table 4: Exact existing cohort arithmetic. G always denotes the actual gate; E always denotes the candidate-constraint 
+gap.
+7 S7. Why pair-oracle equality blocks a routing improvement
+Let t_i be the TS1-only objective on the primary cohort. TS1 is leaf mask 4; the other leaf is mask 5. 
+Hence p_i=min(t_i,u_i(5))≤t_i for every cycle. The measured equality P=mean(t_i)=12391/25260 
+implies Σ(t_i−p_i)=0. Every summand is nonnegative, so each must be zero. Any deterministic or 
+randomized chooser between these leaves has expected cycle loss at least p_i=t_i. This proves the 
+stated finite-cohort boundary without assuming that a learned threshold is optimal.
+The equality argument requires common positive evaluation weights and identical per-cycle predictor, 
+feasible masks, prices, cap, lambda, and labels. It does not compare unequal objectives or averages 
+from different cohorts. It also does not say which rule wins on future data. If new leaves, a new 
+predictor, altered costs, or a new target loss are introduced, the relevant lower bound must be 
+recomputed and separately evaluated.
+A more specific consequence follows from the primary units. Write e5 and e4 for integer head-
+error counts. Then u_i(5)−u_i(4)=(15(e5−e4)+1)/60, which cannot equal zero. Since p_i=t_i, this 
+difference is strictly positive on every evaluated cycle. The actual gate takes mask 5 on 22 left-branch 
+cycles. Its total excess 22/25260 equals the minimum possible positive sum 22/(60×421), forcing 
+e5=e4 on each chosen left cycle. Thus those 22 extra source purchases account for the entire scalar 
+gap to TS1; equal head-error counts do not imply identical prediction tuples.
+This is a deduction from already stored integer counts and exact equality, not a newly executed 
+policy search. The stronger fixed TS1 control has historical selection access and remains explicitly 
+labeled. Its usefulness is to rule out one explanation of the attractive PS1 contrast, rather than to 
+retroactively declare a newly selected primary winner.
+𝑝𝑖= min(𝑡𝑖, 𝑢𝑖(5)) ≤𝑡𝑖,
+∑
+𝑛
+𝑖=1
+(𝑡𝑖−𝑝𝑖) = 0 ⇒𝑝𝑖= 𝑡𝑖
+(5)
+𝑢𝑖(5) −𝑢𝑖(4) = 15(𝑒𝑖(5) −𝑒𝑖(4)) + 1
+60
+(6)
+𝐺−𝑃=
+22
+25260 =
+22
+60 × 421
+(7)
+8 S8. Repeated diagnostics and the missing independent denominator
+The dataset contribution is one existing rig and 625 reused cycles:102 fit, 102 dev, 421 exposed 
+evaluation. There are 390 fitted gate-context records but only 36 distinct (k, policy) combinations. 
+Applying every record to all three cohorts produces 1170 rows; four support strata per row produce 
+4680 subgroup records. Multiplying settings or strata does not create new condition episodes, 
+independent devices, or untouched test units.
+Among 390 evaluation gate contexts, the pair oracle cannot strictly beat locked fixed in 147; the actual 
+gate improves 117, ties 14, and worsens 259. There are 126 settings with pair potential unrealized 
+by the gate. Within the 50 gate_only selections, the respective diagnostic counts are 32 unable to 
+beat fixed, 14 actual improvements, 4 ties, 32 regressions, and 4 unrealized-potential cases. The 40 
+no-gate contexts use fixed fallback and do not enter that 50 denominator.
+Among six adaptive-enabled selections that are gates, all six have pair potential; four actual objectives 
+improve and two regress, with two unrealized-potential settings. The other 84 settings retain equal 
+fixed selection. These counts are descriptive across repeated contexts. Their differing k, costs, caps, 
+and lambda values prohibit treating the settings as an independent binomial experiment or averaging 
+scalar objectives indiscriminately.
+The alternative verifier imports no author analysis functions and checks 1170 rows, 4680 strata, 
+ten traces, and two altered decomposition fixtures. That is a separate implementation by the same 
+analysis author, followed by a separate root aggregate review; neither is external scientific replication. 
+The execution accounts separately for raw-mean recomputation, cached-loss arithmetic, prediction 
+reuse, and zero new policy fitting.
+Quantity
+Count
+Unit and interpretation
+Existing rigs / cycles
+1 /625
+Not newly collected independent evidence
+Gate contexts / distinct k-policy pairs
+390 /36
+Repeated settings, not390 learned policies in v19
+Gate-cohort / subgroup records
+1170 /4680
+Dependent arithmetic views; empty strata stay null
+Gate-cycle diagnostic evaluations
+243750
+390×625 reused cycle evaluations
+4
+
+Quantity
+Count
+Unit and interpretation
+New predictor fits / forwards
+0 /0
+Frozen existing bank
+New policy fits / selections
+0 /0
+Historical v17 choices reused
+New independent units / API calls
+0 /0
+No population or model-run denominator added
+Table 5: New arithmetic is separated from reused evidence and new empirical units.
+9 S9. Five recorded primary cycles
+The primary threshold is exactly 0x1.1b9228afdadcfp+5, printed as 35.44636666666667. Root source 
+TS1 is bought first. A mean≤threshold selects mask 5; otherwise mask 4. The table is transcribed 
+from the immutable v19 traced_cases.json, in its stored explanatory order. F/G/P/A always means 
+locked fixed, actual gate, pair oracle, all-mask oracle.
+Cycle 2184 has target(100, 90, 0, 90) and the same displayed prediction(100, 100, 0, 90) for all 
+four actions. The gate reads an unnecessary second source:1/4+2/60=17/60 versus 1/4+1/60=4/15. 
+Cycle 2185 repeats this mechanism. At cycle 1812 the gate and pair oracle make three head errors, 
+while FS1-only all-mask hindsight makes two. That is a leaf-set exclusion witness, not proof that the 
+observable root can select FS1 correctly.
+These five cases were selected by predeclared diagnostic categories after outcomes, including positive 
+regret and pair gap. They are not a random sample. Decimal means are displayed faithfully, while 
+hexadecimal means, exact targets and all action predictions remain available in the trace source and 
+the preserved long explainer.
+Cycle
+TS1 mean; 
+branch→mask
+Target tuple
+Head errors F/G/
+P/A
+Quotes F/G/P/A
+Objectives F/G/
+P/A
+1785
+36.2273; right → 4
+(100,90,0,130)
+2 / 2 / 2 / 2
+1 / 1 / 1 / 1
+31/60 | 31/60 | 
+31/60 | 31/60
+2184
+35.442933333333336; 
+left → 5
+(100,90,0,90)
+1 / 1 / 1 / 1
+1 / 2 / 1 / 1
+4/15 | 17/60 | 4/15 | 
+4/15
+1786
+36.21248333333334; 
+right → 4
+(100,90,0,130)
+2 / 2 / 2 / 2
+1 / 1 / 1 / 1
+31/60 | 31/60 | 
+31/60 | 31/60
+2185
+35.43333333333333; 
+left → 5
+(100,90,0,90)
+1 / 1 / 1 / 1
+1 / 2 / 1 / 1
+4/15 | 17/60 | 4/15 | 
+4/15
+1812
+36.19121666666667; 
+right → 4
+(100,73,2,115)
+3 / 3 / 3 / 2
+1 / 1 / 1 / 1
+23/30 | 23/30 | 
+23/30 | 31/60
+Table 6: Existing primary traces; F/G/P/A ordering is identical in the last three columns.
+10 S10. Five recorded secondary cycles
+The secondary threshold is exactly 0x1.4211a64531f1ap+7, printed as 161.03447166666666. Its PS1 
+root selects mask 1 on the left and mask 3 on the right. Lambda 0 means all objectives are head-
+error fractions even though source quotes remain physically relevant proxy accounting. The same 
+immutable illustration rule provides five stored cases.
+At cycle 1788 the target is(100, 100, 0, 130). Fixed mask 3 predicts it exactly; the gate stops at 
+mask 1 and predicts(100, 100, 0, 90), causing one head and one vector error while saving one quote. 
+Pair hindsight chooses mask 3, exposing a1/4 routing gap but not establishing learnability from PS1 
+alone. Cycle 1789 has the same kind of tradeoff. At cycle 1787 even the pair retains two errors while 
+all-mask FS1 hindsight has one.
+Across all 421 evaluation cycles the gate has 861 rather than 924 component errors and 518 rather 
+than 842 quotes, but 391 rather than 381 vector errors. The five cases explain mechanisms; they 
+cannot replace those complete-cohort counts. An error objective that rewards partial correctness and 
+an objective requiring every head correct answer different decision questions [19].
+Cycle
+PS1 mean; 
+branch→mask
+Target tuple
+Head errors F/
+G/P/A
+Quotes F/G/P/A
+Objectives F/G/
+P/A
+1785
+161.06345166666665; 
+right → 3
+(100,90,0,130)
+2 / 2 / 2 / 2
+2 / 2 / 1 / 1
+1/2 | 1/2 | 1/2 | 1/2
+1788
+161.01096166666667; 
+left → 1
+(100,100,0,130)
+0 / 1 / 0 / 0
+2 / 1 / 2 / 2
+0 | 1/4 | 0 | 0
+1786
+161.05212166666666; 
+right → 3
+(100,90,0,130)
+2 / 2 / 2 / 2
+2 / 2 / 1 / 1
+1/2 | 1/2 | 1/2 | 1/2
+1789
+161.01089166666665; 
+left → 1
+(100,100,0,130)
+0 / 1 / 0 / 0
+2 / 1 / 2 / 2
+0 | 1/4 | 0 | 0
+1787
+161.05556666666666; 
+right → 3
+(100,90,0,130)
+2 / 2 / 2 / 1
+2 / 2 / 1 / 1
+1/2 | 1/2 | 1/2 | 1/4
+5
+
+Table 7: Existing secondary traces; quote savings survive lambda0 accounting but are not measured deployment 
+savings.
+11 S11. Root ranges, label support, and cohort movement
+All 102 fit labels share one target tuple. It occurs in 2/102 dev cycles and 30/421 evaluation cycles. 
+This restricts what the fit stage has seen about condition-dependent utility; it does not prove all 
+observation-based learning is impossible. Predictor mistakes can vary within one target condition. 
+Whether such relations survive new conditions is an untested transport question.
+For primary g129, branch counts shift 26/76 in fit to 0/102 in dev and 22/399 in evaluation. Its 
+root means leave the fit minimum–maximum range in 100 dev and 392 evaluation cycles. Secondary 
+g301 shifts 51/51→85/17→324/97; its corresponding outside-range counts are 99 and 382. Cohort-
+dependent realized quote totals follow these branch frequencies despite an unchanged per-cycle cap.
+Range membership is a one-dimensional descriptive flag. A point inside the range may lie in a low-
+density gap; a point outside may be predicted accurately. Joint feature support, device identity, 
+concept drift, uncertainty calibration, and causality require more than a min/max test. Truth-tuple 
+seen/unseen strata use audited labels and cannot become deployment inputs.
+The primary 30 fit-seen evaluation cycles have zero all-mask headroom and actual-minus-fixed 
+19/1800 due to extra quote. The 391 fit-unseen cycles have difference−389/7820. Both are post-
+hoc decompositions on an exposed cohort; neither authorizes a new label-aware selector. Prospective 
+training should diversify conditions before reserving an untouched device or regime.
+Gate / cohort
+n
+L / R
+Root outside fit range
+Quote fixed / gate
+g129 fit
+102
+26 /76
+0
+102 /128
+g129 dev
+102
+0 /102
+100
+102 /102
+g129 evaluation
+421
+22 /399
+392
+421 /443
+g301 fit
+102
+51 /51
+0
+204 /153
+g301 dev
+102
+85 /17
+99
+204 /119
+g301 evaluation
+421
+324 /97
+382
+842 /518
+Table 8: Stored cohort movement. L/R are gate branch counts; no row is a new independent rig.
+12 S12. What the library comparators would actually test
+A method name is not an implementation. A native reproduction preserves its original architecture, 
+objective, data and evaluation protocol; a common-contract adapter changes some of them and must 
+disclose the changes. A handcrafted reference gate claims neither. The table identifies which missing 
+capability each comparison could test and the work not performed here.
+Fixed predictor matching is especially important for BRiG-AFA: comparing its learned future-
+risk policy against a different predictor would entangle acquisition and classification. Generative 
+surrogates and EDDI require a model of unobserved outcomes, not just a confidence scalar. Learned 
+mutual-information selection supplies a meaningful greedy competitor before nonmyopic complexity 
+is credited. Hierarchical costly features require shared structure and acquisition costs that our three 
+flat sources do not instantiate.
+The inherited reference objects retain their exact number, text, URL and claim_scope. Some recorded 
+scopes cover only official abstracts, while selected others describe reviewed sections. This compact 
+reorganization adds no fresh primary-source check or native benchmark result. Structured validation 
+[14–16], offline acquisition assumptions [11], selective risk/coverage [6, 17, 18], and adaptive-submod­
+ular conditions [7] remain limits rather than borrowed guarantees.
+Reference family
+Strength worth testing
+Required matching / 
+unimplemented part
+Joint AFA/classification [8,21]
+Learned acquire-or-classify behavior
+Separate predictor and policy training 
+effects
+Hierarchical costly features [20]
+Structured source dependencies and 
+costs
+Actual hierarchy, shared-cost 
+semantics, native agent
+GSM [9] / EDDI [12]
+Conditional missing-feature models
+Fit and validate forecasts without 
+evaluation leakage
+Learned information gain [10]
+Strong amortized greedy selection
+Same information, predictor, loss and 
+total training budget
+Learning-To-Measure [2]
+Predictor/acquisition coupling
+Native predictor/meta-training and 
+evaluation rights
+BRiG-AFA [3]
+Remaining-budget risk-to-go
+Frozen predictor; original budget and 
+fitted future-risk model
+6
+
+Reference family
+Strength worth testing
+Required matching / 
+unimplemented part
+O-MPAC [4] / NM-PPG [5]
+Planning or trajectory optimization
+Native teacher/scorer or gradient 
+machinery and costs
+Survey [13]
+Taxonomy for organizing methods
+Taxonomy alone does not validate any 
+implementation
+Table 9: Methodological comparators, all unexecuted natively in this local study.
+13 S13. Negative controls, latency accounting, and falsifiable next ev­
+idence
+Existing trusted-interface poison tests hold acquired values fixed while changing hidden values; 
+unchanged actions support the declared observation boundary. Existing checks also reject altered 
+decomposition fixtures and rehash original prediction, policy and raw-source inputs. These tests 
+target finite invariants, not physical acquisition, malicious-process isolation, calibrated uncertainty, 
+or scientific validity.
+Realized quotes count requested sources under a declared book. They do not include full-record 
+collection, training data acquisition, policy fitting, cache construction, tuning, hardware startup, 
+failure recovery, network transport, or wall-clock delay. A comparison can obey the same hard cap 
+and still spend more per cycle. Future methods must report their training and inference budgets as 
+well as terminal acquisition quotes.
+A falsifiable prospective study would reserve a new device or time regime before fitting, diversify 
+the policy-fit target conditions, and predeclare component and vector endpoints. Freeze source avail­
+ability, failure rules, exact cap, prices, lambda, predictor controls and tuning allocations. Compare 
+strong fixed TS1 where appropriate, exhaustive feasible fixed masks, the small gate, and one explicitly 
+native or adapted literature method. Evaluate policy behavior only on information available at its 
+real decision time.
+A gain claim fails if the locked selector does not improve the prespecified endpoint against the strong 
+matched control, violates acquisition timing, or hides a prespecified vector regression or failed request. 
+Report empty coverage and missing strata, rather than assigning them zero error. This is a proposed 
+admission study; no new cohort, model, acquisition, statistical coverage, or professor endorsement 
+is claimed.
+Check
+Current status
+What a new study must supply
+No hidden-value action dependence
+Inspected trusted-code fixtures
+Actual deployment permission and 
+timing tests
+Exact F/A/P/G identity
+Saved arithmetic and altered-fixture 
+checks
+Same contracts on a newly reserved 
+cohort
+Strong fixed-source control
+Historical TS1 retained with 
+selection scope
+Locked common selection access and 
+budgets
+Component versus vector conflict
+Observed secondary −63 /+10
+Predetermined endpoint and tradeoff 
+acceptance
+Source cost and latency
+Quotes only; real latency 
+unmeasured
+Availability, failures, wall-clock/
+energy/currency records
+Independent generalization
+Not established
+New device/regime, provenance and 
+untouched evaluation
+Table 10: Prospective requirements are unexecuted; saved checks are labeled separately.
+14 S14. A preference is a decision contract, not a new policy
+The new analysis fixes two previously identified contrasts before reading the new calculations: primary 
+g129/k1 versus historical TS1(mask4), and secondary g301/k3 versus its locked fixed mask3. Both 
+use equal source prices(1,1,1), cap2 and the same421 exposed evaluation cycles. The policies were not 
+fitted or selected again. Primary development had selected PS1 in its adaptive-enabled family; TS1 
+remains a strong historical control, not a retrospectively relabeled selected policy.
+For cycle i and mask m, d_i(m) is an integer number of wrong heads in0..4 and v_i(m)=1 when at 
+least one head is wrong. Component loss is d_i/4; vector loss is v_i. Their convex mixture expresses 
+a preference: alpha0 values each head equally, alpha1 values complete-diagnosis success. It does not 
+transform four dependent head decisions into four independent samples.
+Each source quote is1 and a mask may cost at most2. Therefore the mean cost term divides total 
+quotes by3n; the component term divides total wrong heads by4n and the vector term divides wrong 
+cycles byn. In this continuation only, the cost normalizer3 is fixed by the equal-price contract. 
+7
+
+Replacing it by another price book without changing the derivation is invalid. Lambda cannot 
+authorize an action outside the cap.
+ℓ𝛼,𝑖(𝑚) = (1 −𝛼)𝑑𝑖(𝑚)
+4
++ 𝛼𝑣𝑖(𝑚)
+(8)
+𝑈𝛼,𝜆(𝜋) = (1
+𝑛) ∑
+𝑛
+𝑖=1
+ℓ𝛼,𝑖(𝑚𝜋,𝑖) + 𝜆
+∑𝑛
+𝑖=1 𝐶(𝑚𝜋,𝑖)
+3𝑛
+(9)
+15 S15. An exhaustive pointwise certificate for the two primary leaves
+The raw cached predictions and profile labels were compared on every declared evaluation cycle. The 
+421 certificate rows contain mask4 and mask5 head-error counts, vector indicators, their differences 
+and quote difference. Head-error difference is0 on421/421; vector difference is0 on421/421; source-
+quote difference is+1 on421/421. The exceptions list is empty. These are observed finite statements, 
+not a confidence bound on future cycles.
+For any alpha in[0,1] and lambda>=0, subtract mask4 utility from mask5 utility. The two loss terms 
+vanish in the actual certificate and the remainder islambda/3. Consequently a deterministic router, 
+a label-aware chooser, or a randomized mixture restricted to these two leaves cannot strictly improve 
+this scalar objective over constant mask4 on this cohort. A random router pays its mask5 probability 
+timeslambda/3 in expectation; randomization does not create a missing error gain.
+Actual g129 uses mask5 on22 cycles and mask4 on399. Its average excess is22lambda/(421*3); 
+atlambda1/20 it is11/12630. Lambda0 produces a scalar tie, despite a strictly larger raw quote count. 
+Standard three-coordinate dominance is different from strict improvement for every scalarization: a 
+zero cost weight can ignore the only strictly worse coordinate.
+The proof does not cover other leaves, predictors, prices, cohorts or physical measurements. An 
+authored counterexample makes that limit explicit: with one cycle, let mask4 have one wrong head 
+while mask5 has none. Atalpha0 andlambda1/20, the difference becomes-1/4+1/60=-7/30, so the 
+larger mask helps. This is a mathematical fixture, not an observed alternative model result.
+𝑢𝛼,𝜆,𝑖(5) −𝑢𝛼,𝜆,𝑖(4) = 𝜆
+3
+(10)
+𝑈𝛼,𝜆(g129) −𝑈𝛼,𝜆(TS1) = 22𝜆
+1263
+(11)
+Coordinate: mask5 minus mask4
+Negative
+Zero
+Positive
+Head-error count
+0
+421
+0
+Complete-diagnosis indicator
+0
+421
+0
+Source quote
+0
+0
+421
+Table 11: All421 already exposed cycles, frozen k1 predictions, masks4/5, equal source prices andcap2. No independent 
+sample is added.
+16 S16. Deriving the secondary preference boundary with exact frac­
+tions
+The fixed mask3 has924 wrong head decisions,381 wrong complete diagnoses and842 quotes. The 
+unchanged g301 has861,391 and518 respectively. Their signed differences are-63,+10,-324. Component 
+improvement and complete-diagnosis regression are simultaneously true; neither cancels the other 
+before a preference is declared.
+Multiplying the component change by1-alpha gives(-63+63alpha)/1684. The vector change 
+is10alpha/421=40alpha/1684. The normalized cost change is-324lambda/1263=-432lambda/1684. 
+Adding them yields(-63+103alpha-432lambda)/1684. The103 coefficient therefore combines63 lost 
+units of component emphasis and40 units of complete-diagnosis penalty; it is not a fitted regression 
+slope.
+The zero set isalpha=(63+432lambda)/103. Withlambda0 it is63/103; withlambda1/20 it is423/515. 
+Below the boundary the frozen gate has lower scalar loss, on it the losses tie, and above it fixed mask3 
+has lower loss. Atlambda5/54 the line reachesalpha1; beyond that cost weight g301 has strictly lower 
+scalar loss for everyalpha in[0,1]. At the threshold onlyalpha1 ties.
+Although the gate wins these weighted comparisons at sufficiently large lambda, it still does not 
+dominate the three-coordinate outcome vector: its vector-error coordinate is worse. Cost preference 
+has compensated that regression, not removed it. If one chooses the arbitrary numerical diagonalal­
+8
+
+pha=lambda, the same algebra gives(-63-329alpha)/1684<0; this one-dimensional slice is not a reason 
+to identify the two parameters or to select them using evaluation outcomes.
+The phase diagram evaluates the same two locked outputs everywhere. Its cells are dependent recal­
+culations, not60 separately trained policies or60 independent trials. Policies chosen by a new alpha/
+lambda-specific fit/dev search would be a different experiment, requiring a new locked candidate-
+selection protocol and independent evaluation.
+Δ𝛼,𝜆= −63 + 103𝛼−432𝜆
+1684
+(12)
+𝛼∗(𝜆) = 63 + 432𝜆
+103
+,
+𝛼∗(0) = 63
+103
+(13)
+alpha
+lambda
+Gate minus fixed
+Interpretation
+0
+0
+-63/1684
+Component-only benefit
+1
+0
+10/421
+Complete-diagnosis regression
+0
+1/20
+-423/8420
+Errors and cost prefer gate
+1
+1/20
+23/2105
+Vector emphasis still prefers fixed
+423/515
+1/20
+0
+Exact preference boundary
+1
+5/54
+0
+Boundary reaches alpha1
+Table 12: Exact post-hoc arithmetic from the same421-cycle contrast; original g301 selection remains lambda0.
+Figure 1: Exact post-hoc preference sensitivity of frozen g301 versus fixed PS1+FS1 on the same421 exposed cycles: 
+Delta=(-63+103alpha-432lambda)/1684, equal prices andcap2. The boundary reweights unchanged cached outputs; 
+it is not a new-lambda policy selection, independent experiment or native-method comparison.
+17 S17. Heterogeneous errors and predeclared support strata
+Secondary component errors improve on73 cycles, worsen on10 and tie on338. Vector errors worsen 
+on10, improve on none and tie on411. These counts come from all421 raw rows, not from the four 
+illustrative branch examples. New exception rows remain in cycle_metrics.jsonl and are not dropped 
+to make a monotone gain narrative.
+The already used root min/max indicator partitions secondary evaluation into39 inside-range cycles 
+and382 outside. The inside group changes wrong heads by-1, wrong vectors by+8 and quotes by-32. 
+The outside group changes them by-62,+2,-292. Eight of the ten complete-diagnosis regressions are 
+therefore inside the original range. Outside-range status is neither necessary nor sufficient to explain 
+a failure in this contrast.
+Target-seen strata use labels only after decisions for diagnosis. On30 seen-target cycles both contrasts 
+have zero errors; secondary saves9 quotes, while primary spends19 additional quotes. The391 unseen-
+target cycles carry all reported component/vector errors. These overlapping descriptive partitions 
+9
+
+neither define a deployable policy nor identify a causal mechanism, and they are not independent 
+replication units.
+Secondary original root stratum
+Cycles
+Head difference
+Vector difference
+Quote difference
+Inside fit min/max
+39
+-1
++8
+-32
+Outside fit min/max
+382
+-62
++2
+-292
+All exposed evaluation
+421
+-63
++10
+-324
+Table 13: Gate minus fixed from the same frozen masks and original root range. This is a descriptive partition, not 
+new cohort selection or density support.
+Read the frozen root mean and the original threshold; do not read labels to choose a leaf.
+Decode the cached terminal prediction after the original gate stops.
+Only the evaluator compares the prediction with the four profile labels.
+Retain both signed error changes and the original root-range/fit-label flags.
+Aggregate every declared row, with the original cycle denominator and separate empty-stratum handling.
+Algorithm 3: Read-only replay and diagnostic aggregation; no new model or policy execution is hidden in an oracle.
+18 S18. What was recomputed, reused and allowed to fail
+Nine input snapshots bind the v19 plan, input lock, result, observed means, prediction cache, 
+profile labels, fitted gates, policy locks and policy metrics. The v21 successful execution reads2105 
+unique cached prediction rows for five fixed k/mask combinations; it writes842 policy-cycle rows,421 
+pointwise certificates and60 preference cells. Its625 existing cycles remainfit102/dev102/evaluation421 
+from one rig.
+The first frozen attempt stopped at a metadata lookup: primary development-selected fixed was 
+PS1, so a selected-TS1 row did not exist in that context. Its original code, plan, input lock and 
+FAILURE.json are preserved underanalysis_01. The corrected plan retains the policies, cohort and 
+objective, checks historical TS1 from its raw cache against the old pair-oracle objective, and verifies 
+selected PS1 separately. Successfulanalysis_02 is not evidence of two successful experiments.
+The separate verifier imports no author-analysis function. It recomputes1684 policy-cycle out­
+comes,421 leaf comparisons,60 literal preference cells and exact boundary fractions. A changed metric 
+and a false expected input hash are rejected. The small counterexample demonstrates why a different 
+predictor can break the local dominance result. This same-author alternative implementation supports 
+finite arithmetic, not external scientific validation.
+New predictor fitting, forward calls, policy fitting, policy selection, independent units, data downloads, 
+model/API calls and physical sensor measurements are all zero. The current cost ledger measures 
+declared quote arithmetic only. It does not measure wall-clock latency, energy, sensor wear or research-
+authoring tool usage.
+19 S19. Primary sources and candidate benchmark contracts
+The official AFAPE source[11] distinguishes acquired observations, target policy/classifier and acqui­
+sition versus misclassification costs; its selected body sections state assumptions for retrospective 
+identification. Our transfer is a design discipline: define observable history, loss, cost and evaluation 
+target before reusing a log. ProbeFlow does not implement its estimators or inherit their guarantees. 
+The official2025 reference identity was already correct and remains unchanged.
+The v21 resource ledger adds official UCI candidate pages for HAR, gas drift and OPPORTUNITY. 
+Their role is to make the next missing evidence concrete, not to label an unrun dataset as a benchmark 
+result. Archive bytes, internal preprocessing rules and native challenge scripts were not downloaded 
+or executed. External scores are absent from our result table.
+HAR motivates subject-held-out sensor-group selection; completed-window features must wait for 
+their declared availability time. Gas drift motivates chronological batch evaluation, but the official 
+page contains both research-only wording and a CC BY4.0 label, so its access/license decision remains 
+unresolved. OPPORTUNITY motivates explicit distinction between unpurchased values, recorded 
+missingness and request failure, with whole subject/run groups reserved.
+For every candidate, fit normalization and predictor parameters only on training groups, use separate 
+groups for policy fitting and development selection, and never select the root/leaf or alpha/lambda 
+on the held-out groups. A sensor group pays once for its shared features. A completed-window mask 
+replay uses synthetic quote prices unless separate hardware measurements establish latency or energy. 
+More windows do not become more independent people, batches or devices.
+10
+
+Candidate
+Missing question it can 
+address
+Boundary it cannot 
+close
+Next protocol decision
+UCI HAR
+Across-person sensor-group 
+transfer
+New hydraulic-rig or 
+battery savings
+Reserve subject IDs and 
+remove overlap leakage
+UCI gas drift
+Across-time sensor drift
+Independent-device transfer 
+or early availability
+Resolve conflicting rights 
+before obtaining files
+UCI OPPORTUNITY
+Multisensor groups and 
+missingness
+Physical online acquisition 
+or hydraulic transfer
+Freeze subject/run, label 
+level and availability 
+semantics
+Table 14: Official-page review plus Forge prospective proposals. None of these datasets was downloaded or benchmarked 
+in v21. URLs, checked sections and short excerpt hashes are in literature/RESOURCES.json.
+20 S20. A falsifiable next study instead of another preference sweep
+There are two distinct next questions. To beat the primary boundary, change and independently 
+validate the allowed leaf representation, frozen predictor or information contract; changing only a 
+threshold among the same two tied leaves cannot help on this finite cohort. To evaluate the secondary 
+tradeoff, choose the decision preference before a new selection/evaluation experiment and retain 
+complete-diagnosis failures alongside component and cost gains.
+A prospective protocol should reserve a new device or group before fitting, diversify policy-fit labels, 
+declare source availability and failure, and compare against both the original selection procedure 
+and the strongest affordable fixed source selected with the same training access. Complete raw rows, 
+excluded groups, cap violations, failed acquisitions, resets, training expense and physical latency must 
+be preserved. If the new gate fails the fixed control or the locked complete-diagnosis criterion, record 
+no gain rather than changing the preference after seeing results.
+The conditional certificate is falsified outside its declared finite input when the larger leaf yields 
+a smaller head or vector loss or a different cost relation. The current raw cache contains no such 
+exception. The broader scientific question remains open: neither the local no-improvement boundary 
+nor the secondary scalar benefit supplies independent evidence that adaptive acquisition generally 
+works or fails.
+21 Complete preserved v19 scientific record
+The following complete record preserves the earlier scientific sections, negative results, equations, 
+tables, algorithms, figures and appendices. Its development-stage statements retain their original 
+scope. The current compact conclusions and detailed derivations precede this archived material; 
+retaining an earlier result does not turn it into an independent replication.
+ProbeFlow: Observation-Dependent Acquisition Exposes Selection, Cost and Diagnosis Tradeoffs: 
+Frozen predictors, chronological policy fitting and inspectable acquisition traces
+Neutral working paper v19, 2026-10-19. New finite saved-evidence diagnostics; no new independent 
+data, real model/API calls, native-method trial or physical acquisition. Previous v17 evidence and 
+v18 presentation are retained.
+Observation-dependent acquisition needs a stronger control than a favorable fixed-mask comparison. 
+ProbeFlow v17 fits 390 small acquisition gates on 102 chronological policy-fit cycles, selects among 
+gates and all feasible fixed subsets on 102 policy-dev cycles, and replays frozen terminal predictions 
+on 421 previously exposed evaluation cycles. The prelocked grid has 90 predictor, price, cap and cost-
+weight settings. At the primary equal cap 2, weight 0.05 and k1, the adaptive-enabled selector retains 
+fixed PS1: 876/1684 component errors and 391/421 vector errors. A forced TS1-first gate reaches 
+798 component errors but only matches the existing TS1/k1 control while spending 22 extra quote 
+units. Six settings select a k3 gate; four lower component error, two raise it, and the remaining 84 
+tie fixed selection. Component gains can accompany ten additional vector errors, while a three-count 
+dev gain can reverse into 62 additional evaluation component errors. All 102 policy-fit targets share 
+one joint condition, sharply limiting learned condition-dependent utility. We preserve this support 
+failure, exact request traces and nonzero policy-learning counts. These are exposed offline policy 
+executions, not an independent final, physical cost saving or native AFA superiority claim. A new 
+exact oracle-separated diagnostic shows that the primary gate's two frozen leaves cannot strictly 
+beat the historical TS1 objective on the exposed cohort, while a secondary component benefit retains 
+vector regression.
+• A bounded, executed four-objective selection audit on one frozen predictor and prediction bank, 
+separating new decision analysis from new predictions and independent trials.
+11
+
+• A conditional training-tuple output-support ceiling, with a separate empty-fallback check and 
+explicit budget-achievability and forced-prediction conditions.
+• Matched loss/cost tables, projected Pareto diagnostics and same-loss hindsight fixed-subset regret 
+that retain unfavorable transfers and head-level tradeoffs.
+• A reproducible continuation of the v11/v12 support-first study with eight boundary fixtures, 
+consumed code/input snapshots and a long-form Korean explanation; no industrial, adaptive or 
+native-method superiority claim.
+• A real matched compositional neighbor baseline separates output-class expressibility, selection-
+locked utility and exposed-grid diagnostics, with exact 5,000-record baseline reproduction and a 
+retained negative selection result.
+• A matched fixed-policy benchmark distinguishes globally averaged predictor selection from budget-
+conditioned joint selection, retaining unchanged source masks, vector failures, stronger fixed-source 
+controls, cost-sensitive counterexamples and chronological selection instability.
+• A real observed-value acquisition gate benchmark separates policy fitting from frozen predictor 
+reuse, compares all feasible fixed subsets, preserves strong TS1 controls and reports metric conflicts, 
+expenditure drift and policy-fit support failure.
+• A new post-hoc diagnostic holds all390 fitted gate-context records, the frozen predictions, prices, 
+hard cap, k and lambda fixed. For each cohort, A is the per-cycle all-feasible-mask oracle mean, P 
+the current two-leaf oracle mean, G the actual gate mean and F the locked fixed-policy mean. The 
+exact identity G-F=-(F-A)+(P-A)+(G-P) splits the difference into negative headroom, the root/
+leaf/cost-constraint representation gap and privileged routing regret. The last two are not pure 
+learning errors or causal effects: the oracle observes labels and unseen predictions unavailable to 
+an executable policy.
+22 Preserved v19: Introduction
+Active feature acquisition decides which information to request before making a prediction. More 
+elaborate policies can reason over future observations, remaining budgets, and stop decisions. Yet a 
+policy comparison can be uninformative when its fixed predictor cannot exploit even the complete 
+permitted input. ProbeFlow studies that dependency in a public sensor replay: what should be checked 
+before spending additional effort on acquisition search?
+The practical waste is specific. A longer search tree requires future-observation estimates, additional 
+inference, parameter choices, and a larger audit surface. If every resulting terminal diagnosis abstains, 
+or if its error is unchanged across source masks, a lower planning objective cannot establish useful 
+diagnosis. We therefore diagnose data support, predictive utility, and terminal coverage before 
+escalating acquisition complexity. This ordering is a proposed research discipline illustrated by the 
+present sequence; we have not randomized research teams or measured its general effect on research 
+productivity.
+The public Hydraulic dataset contains recorded 60-second cycles and four categorical condition targets 
+[1]. Our local assets contain PS1, FS1, and TS1 only. We do not evaluate the full physical sensor bank. 
+The current task is retrospective classification of completed recorded cycles, not online equipment 
+control or causal fault intervention. Reading an offline file does not demonstrate that the same sensor 
+request would have the modeled cost or measurement effect in a deployed system.
+All numerical results below are local computations on these assets. Earlier finite examples, the v11 
+sensor replay, the v12 predictor comparison, and author-reported literature results remain distinct 
+evidence classes. The 421 evaluation cycles were already inspected in v9 and v11; locking a new 
+program before its current evaluation pass supplies a reproducible procedural boundary, not renewed 
+blindness. We use no independent-sample confidence intervals or population significance tests.
+V14 asks a second, decision-level question: after a predictor is frozen, can changing its selection 
+loss repair the diagnosis, and which component pays for the change? We freeze four objective rules 
+and analyze their decisions on the already preserved prediction bank. This is intentionally post-hoc 
+development research: earlier aggregate outcomes were known when this question was formulated. A 
+new plan and execution snapshot make the continuation inspectable; they do not make its evaluation 
+independent. The distinction between a better scalar objective and a representable complete diagnosis 
+becomes the central limit.
+Figure 1 locates the observed failures in this sequence. The support check remains qualified even after 
+marginal class presence is restored. The subsequent bounded predictor contrast supplies a reason to 
+run small, matched acquisition controls, while its unfavorable results limit further claims. A richer 
+information-state contract remains a hypothesis for a later, properly supported experiment.
+12
+
+The v14 ceiling assumes that predictions copy training joint tuples. An independently decoded 
+model can violate this assumption without adding a sensor. V15 makes that possibility executable 
+by balancing neighbor votes separately for each target head. The decisive outcome has two parts: 
+some unselected configurations produce correct unseen tuples, but the one admitted by selection 
+remains the old k=1 rule. Keeping those findings separate prevents a retrospective counterexample 
+from becoming an unsupported performance victory.
+V16 asks whether that v15 outcome is specific to its mask-averaged selection criterion. Budget-
+conditioned joint model/mask selection is a stronger fixed control, yet changing the predictor must 
+not be credited to acquisition planning. The resulting local component gains coexist with unchanged 
+source masks and vector failures, a stronger fixed-source comparator, and unstable choices across 
+dependent chronological views.
+V17 moves from fixed masks to a bounded observation-dependent policy. Its primary selector does 
+not choose adaptation; a forced gate's apparent component gain vanishes against the preserved 
+TS1 control. Sensitivity outcomes expose complete-diagnosis conflicts and a homogeneous policy-fit 
+interval. The contribution is an executed, auditable acquisition comparison with these unfavorable 
+boundaries, not a general adaptive-policy victory.
+Figure 2: Diagnostic ordering and the observed v11-to-v12 detour. Zero selective coverage leads to a bounded predictor 
+audit before additional planner search. Arrows describe the study logic, not a proven causal benefit or universally 
+sufficient checklist.
+23 Preserved v19: Related Work
+Our closest comparison is active feature acquisition (AFA): a predictor and an information policy 
+are evaluated together under acquisition constraints. A recent survey organizes this literature using 
+partially observed decision problems and model-based, model-free, and hybrid approaches [13]. We 
+use that taxonomy to locate the study, while separating conceptual similarity from an executed 
+comparison. External benchmark scores are not inserted into our local result tables.
+23.1 Preserved v19: Learned policies, surrogates, and strong greedy controls
+Joint acquisition and classification can learn a cost-sensitive stop-or-acquire agent alongside a 
+variable-size representation [8]. EDDI uses a partial variational model and expected information gain 
+[12]; generative-surrogate AFA supplies models of missing features to support decisions [9]. These 
+approaches clarify why a current confidence value is not a distribution over unobserved outcomes. 
+ProbeFlow does not train these generative components or test their conditional forecasts.
+Amortized conditional-mutual-information selection provides a learned greedy alternative [10]. Its 
+relevance here is comparator strength: a small or greedy policy deserves careful construction before a 
+longer horizon is credited. Our cheapest-first, pressure-first, and exhaustive eight-subset development 
+controls are simpler still. They are useful within this small action space but cannot substitute for the 
+native objectives, architectures, or training resources of these methods.
+13
+
+23.2 Preserved v19: Recent nonmyopic and grouped-source methods
+Learning-To-Measure combines an in-context predictor with acquisition and includes greedy and 
+lookahead variants [2]. BRiG-AFA learns remaining-budget risk-to-go for a fixed predictor [3]. O-
+MPAC learns source-acquisition decisions from offline planning [4]. NM-PPG optimizes nonmyopic 
+trajectories with pathwise policy gradients [5]. These primary texts establish that lookahead, fixed-
+predictor planning, and grouped acquisition are existing design choices. None alone is a novelty 
+claim here.
+We distinguish three possible comparisons. A native reproduction preserves the original method 
+and evaluation contract. A common-contract adapter may change actions, prices, terminal loss, or 
+predictor and must disclose those changes. A handcrafted reference policy makes no claim to imple­
+ment a named method. Our v11 empirical planner belongs to the third category. Native reproduction 
+counts remain zero; a future comparison must separately budget training, teachers, forecasts, and 
+tuning.
+Reference
+Relevant design feature
+Missing native reproduction 
+component
+Learning-To-Measure [2]
+Predictor/acquisition coupling; greedy and 
+lookahead
+Native meta-predictor, training, 
+retrospective-support assumptions
+BRiG-AFA [3]
+Fixed predictor and learned future risk
+Backward fitted networks and original 
+acquisition objective
+O-MPAC [4]
+Training-record teacher and receding 
+source planning
+Original teacher/scorer training and native 
+data protocol
+NM-PPG [5]
+Trajectory objective and nonmyopic 
+optimization
+Pathwise optimization, native transition 
+and cost model
+Table 15: Method comparisons are conceptual and contract-level. No source-reported benchmark number is placed in 
+our locally measured performance tables.
+23.3 Preserved v19: Selective decisions, offline evaluation, and structural assump­
+tions
+Selective classification makes coverage part of the outcome [18]. SelectiveNet jointly learns prediction 
+and rejection [17], whereas our v11 fixed predictor uses a development-selected threshold. SGR 
+supplies a risk-control construction under its sampling and selection assumptions [6]; the present 
+threshold is not such a certificate. Empty coverage leaves selective error undefined.
+Offline AFA evaluation can depend on how data were acquired and on assumptions connecting 
+observed and deployed acquisition [11]. Adaptive-submodularity guarantees likewise require a speci­
+fied distribution and objective satisfying the theorem conditions [7]. A complete-record replay with 
+a mask lookup is not automatically a valid evaluation of arbitrary adaptive histories, and our fixed 
+classifier is not covered by a generic guarantee of monotone empirical error.
+23.4 Preserved v19: Loss-specific decisions and the comparison gap
+Loss-specific decisions and Hamming/subset-zero-one tradeoffs are established topics [19]. We exam­
+ine a finite four-head multiclass acquisition system rather than reproducing binary-label theory. Our 
+added question is operational: which selection-locked subset changes under declared terminal losses, 
+and can that change escape this predictor's actual output support? No new general loss theory or 
+AFA optimizer is claimed.
+24 Preserved v19: Problem and Diagnostic Method
+A latent record consists of complete sensor traces and the condition label. The controller initially 
+receives the declared source catalogue, legal action set, quote map, budget, and any explicitly public 
+history. It may receive a statistic only after the corresponding successful action. The true evaluation 
+label, unrequested numerical features, candidate future outcomes from the evaluation record, and 
+private cache intermediates are excluded from controller inputs.
+In the general contract, state must distinguish publicly disclosed features from work already completed 
+by the executor. A cached raw record need not mean that every derived statistic has been disclosed. 
+Reusing an already-read source can change a marginal quote without granting free access to every 
+downstream transform. This is a contract requirement, not an established empirical advantage of a 
+new state representation.
+The present three-channel experiment is a restricted case: requesting one channel discloses all three 
+predefined statistics together, requests succeed deterministically, and each source has a fixed quote. 
+The cache is reconstructible from the requested-channel history. In this case the observed mask, 
+disclosed values, remaining budget, and catalogue suffice for the implemented policy comparison; 
+we do not claim that an unobserved cache variable provides additional predictive power. Partial 
+14
+
+windows, overlapping sources, failed reads after partial work, or separate transform requests require 
+a subsequent experiment.
+A planner additionally needs a predictive distribution for future observations. Current confidence 
+is not that distribution. The v11 empirical planner used complete training prototypes to forecast 
+possible source outcomes; it never used unrequested evaluation values as its forecast target. Those 
+empirical forecasts may be wrong under joint-condition shift. The v12 study deliberately steps back to 
+fixed mask baselines so that a predictor failure cannot be mistaken for evidence favoring or disfavoring 
+a sophisticated transition model.
+𝐽(𝑝) = 𝐸[𝐿+ 𝛼𝐶]
+(14)
+𝐶(𝐴) =
+∑
+𝑔∈𝐺(𝐴)
+𝑐𝑔
+(15)
+24.1 Preserved v19: Unit-aware source quotes and hard budgets
+For a selected source, mean, population standard deviation, and slope share one source-read quote. 
+The raw-sample price system assigns PS1=6000, FS1=600, and TS1=60. A separate equal-source 
+system assigns one unit to each channel. These units are never summed across price systems. A 
+preflight failure consumes no quote and discloses nothing. Repeated statistics of the same acquired 
+source are not charged as independent raw reads.
+The quote is a logical replay proxy, not a measured physical I/O, energy, monetary, or end-to-
+end latency cost. In fact, the offline evaluator loads the complete feature bank to support all mask 
+projections; the quote records the information rights assigned to a policy, not which files the audit 
+host physically avoided reading. Training, feature-bank construction, and inference wall time are 
+reported separately. Substituting a source-count quote for a raw-sample quote changes the decision 
+problem, even if the predictor remains fixed.
+Our scalar objective is component error plus 0.05 times mean quote normalized by the sum of the 
+three source prices. The normalization and coefficient were fixed before the v12 run. They are not 
+fitted after observing a favorable ranking. Hard budget feasibility is enforced separately from the soft 
+penalty; a low expected penalty cannot license an over-budget action.
+24.2 Preserved v19: Diagnostic admission and selective denominators
+The admission sequence asks different questions rather than collapsing them into one pass flag. Are 
+the source bytes and label definitions pinned? Are the evaluation marginal labels and joint conditions 
+represented in training? Does a fixed predictor improve on no evidence under complete and partial 
+masks? Does the terminal rule make accepted predictions? Only then is a policy-specific comparison 
+interpretable. An unmet support condition is disclosed, not silently repaired by excluding hard cycles.
+We measure mean four-head component error, complete-vector error, terminal coverage, and scenario-
+specific quote. Component error counts four decisions per cycle; vector error counts a cycle incorrect 
+if any head is wrong. These denominators are descriptive and correlated. Coverage is accepted cycles 
+divided by all declared cycles. Selective risk divides accepted errors by accepted decisions and is null 
+when none are accepted. The v12 predictor audit makes no selective-risk claim and does not replace 
+the v11 terminal result.
+𝑅= 𝑒1 + 𝑒2 + 𝑒3 + 𝑒4
+4𝑛
+(16)
+𝑅vec = ( 1
+𝑛) ∑
+𝑛
+𝑖=1
+𝟏(𝑦̂𝑖≠𝑦𝑖)
+(17)
+coverage = 𝑛accepted
+𝑛
+(18)
+24.3 Preserved v19: Loss contracts and a closed-output support ceiling
+Let e_ih indicate an error on head h of cycle i. Component loss averages the four head decisions; 
+vector loss charges a cycle once if any head is wrong. Worst-head loss is the maximum of the four 
+aggregate head error rates, not the mean of a per-cycle maximum: that latter quantity would equal 
+vector loss. Pump loss counts errors on the third target only. All four outputs are proportions but their 
+decision units and priorities differ. Differences between rules are meaningful within the same loss, 
+cycles and price system; subtracting vector loss from component loss is not an improvement measure. 
+The elementary bounds component<=vector<=min(1,4*component) leave substantial room for 
+mismatched rankings. Our boundary fixture constructs an explicit ranking reversal; it is an authored 
+illustration rather than a hydraulic result.
+15
+
+A sharper conditional restriction follows from the output class. Let T be the set of complete training 
+label tuples. For every nonempty observed mask, the fixed 1NN returns all four labels of one training 
+cycle, so its output lies in T. An empty mask is different: its per-head modal fallback can combine 
+labels into a tuple absent from T. The closed-support statement therefore requires separately checking 
+that fallback. In this cohort it is (3,100,0,90), and it belongs to T. A synthetic counterexample with 
+training tuples (1,0,0,0), (0,1,0,0) and (0,0,1,0) has modal tuple (0,0,0,0) outside support; our verifier 
+rejects applying the training-support bound in that case.
+Conditional proposition. For any forced complete-vector decision rule whose every legal terminal 
+output belongs to T, the number of exact successes on a finite cohort cannot exceed the number 
+of true tuples belonging to T. Proof: when a true tuple is outside T, equality with any allowed 
+output in T is impossible. Sum that zero-success fact over unsupported cycles; supported cycles 
+contribute at most one each. The argument needs no sampling independence. It is conditional on the 
+output restriction, not on an assumption that unseen combinations are intrinsically undiagnosable. 
+Head-wise independent classifiers, a changed representation/decoder, or an empty fallback outside 
+T need not satisfy the premise. A stop or abstention is not an exact successful vector. The bound 
+is an upper bound, not a promise that a legal budget can attain it. The inherited support-bound 
+audit did not execute an adaptive rollout; the set argument describes a hypothetical rule retaining 
+this restricted output class, not its measured policy performance. V17 below separately executes 
+observation-dependent offline replay.
+𝑅𝐶= ( 1
+4𝑛) ∑
+𝑛
+𝑖=1
+∑
+4
+ℎ=1
+𝑒𝑖ℎ
+(19)
+𝑅𝑉= ( 1
+𝑛) ∑
+𝑛
+𝑖=1
+𝟏(∑
+4
+ℎ=1
+𝑒𝑖ℎ> 0)
+(20)
+𝑅𝑊= max
+ℎ=1,…,4(( 1
+𝑛) ∑
+𝑛
+𝑖=1
+𝑒𝑖ℎ)
+(21)
+𝑅𝑃= ( 1
+𝑛) ∑
+𝑛
+𝑖=1
+𝑒𝑖3
+(22)
+𝑅𝐶≤𝑅𝑉≤min(1, 4𝑅𝐶)
+(23)
+exact successes ≤∑
+𝑛
+𝑖=1
+𝟏(𝑦𝑖∈𝑇)
+(24)
+25 Preserved v19: Experimental Setup
+The inherited v11/v12 experiments remain unchanged. V13 added source review and manuscript 
+structure without new trials. V14 adds one bounded offline objective/decision analysis of the preserved 
+prediction files. It does not fit a model, call a predictor, collect a physical cycle, train a literature-
+native policy or acquire an independent final set. The following inherited setup is followed by the 
+explicit v14 continuation.
+25.1 Preserved v19: Data, chronology, and support
+The raw assets are byte-identical to the earlier registered subset: PS1 contains 6000 values per cycle, 
+FS1 600, and TS1 60; profile supplies the four condition labels. We preserve all 2205 cycles as the 
+data inventory, although only the declared train, selection, and evaluation intervals are used by the 
+comparison. The feature extractor computes the same three statistics per channel as v9/v11. Label 
+fields, the stability flag, and cycle index are not predictive features.
+The v9 chronological training prefix ended at cycle 1323 and contained no cooler=100 example; all 
+421 evaluation cycles had cooler=100. The v11/v12 prefix ends at 1540 and contains cooler counts 
+732, 732, and 76 for classes 3, 20, and 100. Each evaluation head class is now present in training. 
+This repairs a marginal-label admission failure but does not establish support for the joint diagnostic 
+question.
+All 76 training records with cooler=100 have the same four-head condition tuple, (100,100,0,90). 
+The evaluation segment contains that tuple only 30 times. Therefore 391 of 421 evaluation cycles, 
+or 92.87%, have joint conditions absent from training. Across all classes, the training set contains 97 
+distinct condition tuples, selection 11, and evaluation 38. The 194 contiguous same-condition runs in 
+the full profile are not established independent experimental units or physical assets.
+16
+
+This distinction prevents a misleading remedy: merely showing every head label somewhere in training 
+does not supply examples of every relevant mechanism combination. Our reported errors remain well-
+defined descriptive errors on the exposed interval, but their scientific interpretation is conditional on 
+this narrow single-rig support. A random cycle split could mix adjacent experimental regimes; we do 
+not introduce one to manufacture an easier final result.
+Structured validation should match the intended deployment problem: blocking may reduce depen­
+dence but can also change interpolation into extrapolation [16]. Our two 20-cycle gaps are transparent 
+exclusions, not evidence that adjacent retained cycles are independent. The absence of verified asset 
+or physical-session identities prevents us from defining a justified independent-unit count.
+Partition
+Inclusive cycles
+Count
+Permitted use
+Training
+1-1540
+1540
+Scaler, centroids, nearest-neighbor reference bank
+Embargo
+1541-1560
+20
+Excluded
+Selection
+1561-1764
+204
+One model choice and predeclared subset selection
+Embargo
+1765-1784
+20
+Excluded
+Exposed evaluation
+1785-2205
+421
+Fixed comparison and descriptive audit
+Table 16: The embargo preserves temporal ordering; it does not prove statistical independence. Current evaluation 
+decoding occurs after the new selection artifact is frozen, but earlier exposure remains.
+25.2 Preserved v19: Frozen predictor contrasts and selection rights
+We limit the candidate set to three simple predictors. The prior-weighted centroid is exactly the 
+existing v9/v11 rule: training-only feature means and population standard deviations; one standard­
+ized centroid per head/class; average squared distance over disclosed dimensions; and a log training 
+class-prior offset. Each head is classified independently. Tests compare this implementation against 
+the original predictor on every mask.
+The prior-neutral centroid uses the same fitted means, scales, centroids, and masked distance. For 
+nonempty masks it removes only the log-prior offset. This is a controlled software scoring contrast, 
+not a claim that a balanced prior is correct for an industrial population. The empty-mask fallback is 
+held common across all candidates: the modal training class per head, with numerical label ordering 
+for ties.
+The one-nearest-neighbor predictor searches complete training cycles using standardized distance in 
+the disclosed feature subspace and returns the winning training cycle's four labels. Exact distance 
+ties choose the earliest training row; the index is a deterministic tie rule, not an input feature. No 
+k, metric, preprocessing, or mask-specific fit is tuned. This changes local representation, multi-head 
+coupling, and inductive bias together, so its difference from a centroid cannot uniquely identify one 
+representation mechanism.
+All eight source subsets, including the empty set, are evaluated with one shared training fit per 
+candidate family. We select exactly one predictor using the equal mean selection component error 
+across the eight masks; ties follow the declared candidate order. No evaluation outcome enters that 
+choice. The selection criterion intentionally differs from choosing the best all-source score, because 
+acquisition systems operate under partial observations.
+Finite-sample model selection can itself overfit a development criterion [14,15]. We therefore preserve 
+both rights boundaries and their limits: the same 204 labels support the model choice and the 
+permitted subset choices; the subsequent segment was exposed in earlier work. Freezing the current 
+selection artifact before current evaluation decoding makes the run reproducible, but does not turn 
+the interval into a fresh holdout.
+Pin plan, raw hashes, dependency hash, and exact consumed code in a new output directory.
+Fit one common scaler and training-only reference parameters on cycles 1-1540.
+Evaluate the three declared predictors under all eight masks on the 204 selection cycles.
+Select one predictor by mean selection mask error; freeze the choice and any permitted subset masks.
+Decode the current evaluation segment; record all 24 fixed model-mask prediction groups.
+Reconcile recorded predictions, head errors, vector errors, mask prices, and denominators.
+Retain negative comparisons, price-dependent reversals, and the earlier exposure record.
+Algorithm 4: One bounded run; no additional candidates are proposed after its evaluation results.
+25.3 Preserved v19: Conditional acquisition controls
+Before evaluation, the selected predictor must improve its full-source selection component error by 
+at least 0.05 over the common no-evidence baseline, with no invalid prediction. If this usefulness gate 
+fails, no policy search is added. The gate is a development eligibility rule, not a statistical certificate. 
+17
+
+It prevents a longer planner from being evaluated against a system that cannot use even the complete 
+declared input.
+If eligible, four fixed policies share the selected predictor: stop; cheapest-first; pressure-first; and 
+selection-locked subset. The last policy considers all eight feasible masks and chooses the lowest 
+selection error plus normalized quote. Ties prefer lower quote and then mask index. It is a strong 
+small-design baseline, not a new adaptive algorithm. Cheapest-first uses price order with deterministic 
+lexical ties; pressure-first uses PS1, FS1, TS1 and skips unaffordable sources.
+Raw-sample budgets are 0, 60, 660, 6000, and 6660; equal-source budgets are 0, 1, 2, and 3. Every 
+chosen mask satisfies the corresponding hard cap. Model selection and subset selection reuse the same 
+204 development labels, which can overfit their conditions. We report that reuse explicitly rather 
+than introducing an unobserved calibration or final set.
+The inherited fixed-subset evaluation reuses the saved predictions of the frozen model-mask groups. 
+It does not invoke a new predictor with test labels and does not generate additional independent 
+outcomes. For that inherited comparison, this reuse is valid because its policies are fixed subsets. 
+It would not justify counterfactual replay of an adaptive policy whose information history or state 
+transition was absent from the trace. V17 below separately supplies observed-value requests and 
+terminal masks for its offline replay under the stated completed-cycle assumptions.
+25.4 Preserved v19: V14 objective-audit protocol and information rights
+We inherit the previously selected 1NN rather than selecting a new predictor for each objective. The 
+four rules are component, vector, worst-head and pump; all use the same 204 selection labels, eight 
+masks and nine price-budget contracts. Each rule minimizes its own selection loss plus 0.05 times 
+quote normalized by the sum of source prices, subject to the same hard cap. The coefficient is reused 
+as a declared sensitivity contract, not an elicited equivalence between the four utility scales. Exact 
+rational arithmetic fixes ties by lower quote and then mask index. The original component-selected 
+masks are reproduced in all nine contracts.
+Before computation, the new directory receives the plan, exact consumed runner, both prediction 
+JSONLs, profile labels, prior frozen selection artifact and prior result summary. The selection function 
+is passed selection aggregate metrics only, and its 36 decisions are saved before current evaluation 
+metrics are computed. The audit infrastructure holds exposed profile bytes; this is a procedural access 
+boundary, not blindness. The new 36 rows equal four objective rules times nine contracts. They differ 
+from the earlier 36 rows, which were four policy baselines times nine contracts. Both reuse the same 
+421 cycles, and neither is a sample of 36 independent experiments.
+We compute a projected Pareto frontier in component error, vector error and quote, separately 
+within each partition, price system and budget. Strict dominance requires no worse values in all three 
+coordinates and a strict gain in at least one; equal points stay tied. This projection does not include 
+pump or worst-head utility. A pump-optimal subset may therefore be dominated in the projection 
+without being inferior for its declared pump objective.
+For each target loss we additionally report a hindsight best single fixed subset using exposed evalu­
+ation labels. Same-loss penalized regret is the chosen rule's evaluation loss plus normalized quote 
+minus this optimistic minimum. Its nonnegativity follows from the minimum, not from successful 
+generalization. It is not a deployable selection rule, an adaptive per-cycle oracle or independent 
+evaluation. True joint labels also define seen/unseen retrospective strata; policies never receive 
+evaluation stratum membership. Empty stratum rates would be null.
+𝑚𝑙= arg
+min
+𝑚:𝑐(𝑚)≤𝐵(𝑅𝑙,sel(𝑚) + 0.05𝑐(𝑚)
+𝑐all
+)
+(25)
+regret𝑙(𝑚) = 𝑅𝑙,eval(𝑚) + 0.05𝑐(𝑚)
+𝑐all
+−
+min
+𝑎:𝑐(𝑎)≤𝐵(𝑅𝑙,eval(𝑎) + 0.05𝑐(𝑎)
+𝑐all
+)
+(26)
+26 Preserved v19: Results and Analysis
+Results follow the diagnostic order rather than presenting a single favorable aggregate. The earlier 
+selective failure, the bounded predictor change, the source-mask geometry, and the price-dependent 
+policy controls answer different questions. Every reported local arm remains in its original denomi­
+nator.
+26.1 Preserved v19: V11: repaired marginal labels, zero terminal coverage
+Restoring marginal class presence in v11 did not produce useful selective diagnoses. The selection-
+tuned common threshold was 1.01, so all 47 policy-budget-price groups had zero coverage and 
+18
+
+undefined selective error; their terminal abstention loss was 0.3. A separate, explicitly posthoc one-
+run diagnostic forced the threshold to zero. It was not substituted for the main selective result.
+Under that diagnostic and raw budget 6660, empirical greedy and two-step lookahead acquired mean 
+quotes 269.50 and 2419.38, respectively. The complete three-source reference cost 6660. All had 
+forced component error 0.723872 and vector error 1. The longer planner increased the quote without 
+predictive benefit. Planning plus replay wall time was approximately 2.48 seconds for greedy, 23.03 
+for two-step lookahead, and 0.015 for stop on that single sequential host run; these times are not 
+randomized performance estimates or physical measurement costs.
+This failure does not refute nonmyopic acquisition in general. It identifies a concrete dependency of the 
+experiment: if the predictor and its forecast provide no useful terminal decision on the target segment, 
+additional search is not evidence of improved information use. We preserve this unsuccessful stage 
+rather than presenting the later predictor contrast as if it had been the initial selective hypothesis.
+26.2 Preserved v19: V12: a full-source gain confined to one head
+The selection mean mask errors were 0.555147 for the prior centroid, 0.348499 for the prior-neutral 
+centroid, and 0.339308 for one-nearest-neighbor. The declared rule selected one-nearest-neighbor. Its 
+full-source selection error was 0.305147 against a no-evidence error of 0.555147, so the 0.05 usefulness 
+gate passed with an observed development gain of 0.25.
+On the exposed evaluation interval, the prior centroid had component error 0.723872 under every 
+mask. Removing the prior offset reduced full-source error to 0.473872; one-nearest-neighbor had the 
+same full-source error. In both improved full-source cases the cooler head had zero errors, while valve, 
+pump, and accumulator errors remained 273, 246, and 279 out of 421. Thus the full-source 0.25 
+reduction is exactly one corrected head per cycle, not broad four-component diagnostic recovery.
+The full-source nearest-neighbor prediction was the same tuple, (100,100,0,90), on all 421 cycles. 
+Thirty cycles matched it completely and 391 did not, giving vector error 0.928741. The improved 
+component score therefore coexists with a high rate of incorrect complete diagnostic vectors. 
+Reporting only the component mean would conceal this limitation.
+The same-centroid contrast shows that changing the explicit scoring offset is sufficient to produce 
+this cooler-head change within the fixed program and data. It does not identify a hydraulic causal 
+mechanism or establish that prior removal will help a new population. The nearest-neighbor full-
+source tie with the much simpler prior-neutral centroid also prevents attributing that particular gain 
+to a new nonparametric representation.
+Predictor
+Selection mean 
+mask error
+Evaluation mean 
+mask error
+Evaluation full-
+source error
+Full-source vector 
+error
+Prior centroid
+0.555147
+0.723872
+0.723872
+1.000000
+Prior-neutral 
+centroid
+0.348499
+0.546096
+0.473872
+0.928741
+1NN, selection 
+chosen
+0.339308
+0.523901
+0.473872
+0.928741
+Table 17: Each evaluation number uses the same 421 exposed cycles. The 24 evaluation model-mask groups contain 
+10104 prediction records, not 10104 independent samples.
+26.3 Preserved v19: Source-mask errors are not monotone
+The selected nearest-neighbor predictor makes the information issue concrete. FS1 alone has compo­
+nent error 0.477435, but PS1 plus FS1 has error 0.574228. TS1 alone, FS1 plus TS1, and all three 
+sources have the same 0.473872 component error. A larger observed mask changes the neighbor 
+geometry; it does not give this fixed predictor an option to ignore every harmful added dimension.
+This observation concerns the implemented fixed decision rule. Additional coordinates alter its 
+nearest-neighbor geometry, while the program has no learned option to ignore every harmful added 
+coordinate. It is therefore inappropriate to impose a monotonic-error constraint on this table or treat 
+the all-source reference as an empirical upper bound on accuracy. Figure 2 displays the complete 
+three-by-eight comparison on one common error scale.
+The FS1-only prediction also trades head errors: cooler 398, valve 153, pump 51, accumulator 202. 
+The TS1-only errors are 0, 273, 246, and 279. Similar component means can represent very different 
+diagnostic failures. Equal component weights are a declared experimental choice, not an elicited 
+industrial utility function. An application with safety-critical pump decisions might rank these policies 
+differently.
+Disclosed channels
+Prior centroid error
+Prior-neutral error
+1NN error
+1NN vector error
+None
+0.723872
+0.723872
+0.723872
+1.000000
+19
+
+Disclosed channels
+Prior centroid error
+Prior-neutral error
+1NN error
+1NN vector error
+PS1
+0.723872
+0.498219
+0.520190
+0.928741
+FS1
+0.723872
+0.696556
+0.477435
+0.969121
+PS1 + FS1
+0.723872
+0.550475
+0.574228
+0.928741
+TS1
+0.723872
+0.478029
+0.473872
+0.928741
+PS1 + TS1
+0.723872
+0.473872
+0.473872
+0.928741
+FS1 + TS1
+0.723872
+0.473872
+0.473872
+0.928741
+PS1 + FS1 + TS1
+0.723872
+0.473872
+0.473872
+0.928741
+Table 18: Fixed-mask development errors, not an exhaustive industrial sensor benchmark or native-method leader­
+board.
+Figure 3: Mean four-head component error for three predictors and eight source masks on the same 421 exposed 
+evaluation cycles. The 1NN model was chosen using the separate 204-cycle selection interval. Adding PS1 to FS1 
+worsens this fixed predictor; the full-source 0.25 gain affects only cooler and still leaves complete-vector error 0.928741.
+26.4 Preserved v19: Price-sensitive controls expose a selection-transfer failure
+Under the raw-sample quote, the selection-locked subset chooses TS1 for every nonzero declared 
+budget. At budget 6660 it attains the same exposed evaluation component error, 0.473872, as the 
+three-source reference, with quote 60 instead of 6660. At budget 660, cheapest and pressure-first 
+acquire FS1 plus TS1 for quote 660 and again have the same error. This is a useful strong-simple-
+baseline observation; it is not a measured physical saving or proof that temperature alone is sufficient 
+for future diagnosis.
+Under equal source quotes, several source masks have identical selection error. The declared lower-
+mask-index tie rule selects PS1. At budget 1, the selection-locked policy has evaluation error 0.520190, 
+worse than cheapest-first FS1 at 0.477435. At budget 3 it remains on PS1 while the full-source baseline 
+has error 0.473872; even the penalized objective favors full-source on that exposed interval. We retain 
+the unfavorable result and do not replace the tie rule with an evaluation-informed preference for TS1.
+The comparison illustrates two different uncertainties. Price assumptions change feasibility and which 
+tied validation choice is favored. Separately, equal selection scores need not transfer equally to a later 
+condition regime. No novel optimizer is required to observe either issue. A complex adaptive policy 
+should be compared against these fixed subset and prior-neutral baselines, with the same predictor 
+rights and development resources, before a policy-specific contribution is claimed.
+Figure 3 puts this price reversal beside the support limitation. Its panels use distinct quote units 
+rather than a shared numerical cost axis. The policy table contains 36 summaries obtained by lookup 
+in the frozen selected-model predictions; it adds no independent physical trial or new prediction call.
+Price system / budget
+Policy
+Chosen mask
+Quote
+Evaluation component error
+Raw / 6660
+Stop
+None
+0
+0.723872
+Raw / 6660
+Cheapest or pressure-first
+All three
+6660
+0.473872
+Raw / 6660
+Selection-locked subset
+TS1
+60
+0.473872
+Equal / 1
+Cheapest-first
+FS1
+1
+0.477435
+Equal / 1
+Selection-locked subset
+PS1
+1
+0.520190
+Equal / 3
+All-source fixed order
+All three
+3
+0.473872
+20
+
+Price system / budget
+Policy
+Chosen mask
+Quote
+Evaluation component error
+Equal / 3
+Selection-locked subset
+PS1
+1
+0.520190
+Table 19: All policies share the selection-chosen 1NN predictor. Quotes from different rows' price systems are not 
+interchangeable. The policy rows reuse fixed-mask predictions.
+Figure 4: Joint support and two matched-price contrasts. The 76 training cooler=100 cycles have one tuple; 391 of 
+421 evaluation cycles have train-unseen joint conditions. At raw budget 6660 TS1 and all-source component errors tie 
+at quotes 60 and 6660. At equal budget 1 the selected PS1 subset is worse than cheapest-first FS1 at the same quote 
+1. Quotes are replay proxies, not measured physical savings.
+26.5 Preserved v19: V14: objective changes move errors between heads
+Component and vector rules select the same subset in all nine contracts. This is a retained negative 
+result, not evidence that their losses are generally equivalent. Every nonempty mask has the same 
+selection vector error 100/204. Changing to that tied criterion leaves the existing quote/index 
+preference intact. In contrast, pump changes seven masks relative to component and worst-head 
+changes two.
+At raw budget 6660, component/vector choose TS1 at quote 60; worst-head chooses PS1 at quote 
+6000; pump chooses FS1 at quote 600. Relative to TS1, FS1 reduces pump errors from 246 to 51 out 
+of 421 but raises vector errors from 391 to 408 and worst-head error from 0.662708 to 0.945368. Its 
+aggregate component error rises slightly from 0.473872 to 0.477435. A near-tie in the four-head mean 
+therefore hides a large redistribution of diagnostic errors. Figure 4 exposes that redistribution using 
+the same per-head denominator throughout.
+Pump-focused selection has zero same-loss hindsight regret in these nine exposed contracts, including 
+a zero-quote stop at raw budget 60 where affordable TS1 changes no pump prediction. That result 
+concerns this narrow priority, not complete diagnosis, a generalization certificate or real pump safety. 
+At equal budget 1 the pump rule selects FS1 with quote 1 and pump error 51/421; component/
+vector/worst choose PS1 with the same quote and pump error 246/421. The negative vector and 
+worst-head trades remain in the same table rather than being relegated to an excluded denominator.
+Rule at raw B=6660
+Mask/quote
+Component
+Vector
+Worst head
+Pump
+Component or vector
+TS1 /60
+0.473872
+0.928741
+0.662708
+0.584323
+Worst-head
+PS1 /6000
+0.520190
+0.928741
+0.693587
+0.584323
+Pump
+FS1 /600
+0.477435
+0.969121
+0.945368
+0.121140
+Table 20: One selected predictor, one 421-cycle exposed cohort and one raw-price system. Each column is compared 
+within its own loss; cross-column differences are not improvements. Masks are selection-locked, not evaluation-chosen.
+21
+
+Figure 5: Per-head errors for the three masks selected by the four objective rules at raw budget 6660. Each bar divides 
+one head's errors by 421 cycles. Pump-specific improvement trades against other heads; the worst-head rule selects 
+a more expensive mask with worse exposed worst-head error. Fixed predictions and logical quotes, not adaptive or 
+physical trials.
+26.6 Preserved v19: V14: hindsight regret and projected dominance
+Selection minimizes a development criterion; it need not minimize that criterion later. At raw budgets 
+6000 and 6660 the worst-head rule picks PS1 with worst-head error 0.693587, worse than TS1 at 
+0.662708 despite quotes 6000 versus 60. Its same-loss penalized regret is 0.075473. In this example 
+TS1 is no worse in any of the four reported errors and costs less, so the failure is not explained by 
+an omitted pump preference.
+At equal budgets 1–3, the component rule's PS1 has same-loss hindsight regret 0.046318 against TS1 
+at the same quote 1. This develops, rather than erases, the earlier transfer failure. The vector rule 
+uses the same PS1 but has zero vector regret because PS1 and TS1 tie on vector error and cost. A 
+single chosen action can therefore be suboptimal for component error while optimal in a tied vector 
+criterion. Comparing one rule's pump regret with another rule's component regret would silently 
+change the estimand.
+Seventeen of 36 objective-contract rows are strictly dominated in the component/vector/quote pro­
+jection. The rows repeat policies across budgets and are not 17 independent failures. The projection 
+also marks pump-focused FS1 dominated by TS1 at raw budgets where both are feasible. That 
+diagnosis must not be promoted to universal inferiority: pump error is an omitted coordinate and 
+is lower for FS1. At positive evaluation budgets, the projected frontier contains the empty mask 
+and TS1; the empty mask remains because its quote is zero. Frontiers are descriptive finite-record 
+comparisons, not a population Pareto guarantee.
+26.7 Preserved v19: V14: a tight cohort ceiling and its assumptions
+The new trace audit checks 5000 selected-predictor records across selection and evaluation masks. 
+All 4375 nonempty-mask records return a training tuple;625 empty-mask records share fallback 
+(3,100,0,90), independently checked inside training joint support. These are cached record checks, 
+not 5000 new predictions. Selection contains 104 train-joint-seen and 100 unseen cycles; evaluation 
+contains 30 seen and 391 unseen cycles.
+Every one of the eight masks makes a vector error on all 391 unseen evaluation tuples. This is the 
+cohort observation. The conditional closed-output proposition explains why it occurs for a training-
+tuple-copy decision class. The resulting exact-vector success upper bound is 30/421, or 0.071259. TS1 
+and the full-source reference attain it, but the affordability condition matters: TS1 is legal only at 
+raw budget at least 60 or equal budget at least 1. Budget zero has only the empty fallback and makes 
+421 vector errors, so the support bound is not achieved there.
+22
+
+Among the 30 seen evaluation cycles, TS1 makes zero vector errors whereas FS1 makes 17. Both 
+make 391 errors on the unseen stratum, giving total vector errors 391 versus 408. The same unseen 
+stratum still distinguishes component priorities: pump errors are 246/391 for TS1 and 51/391 for 
+FS1. Exact-vector loss is saturated at 1 there while head-level information remains useful. Figure 5 
+separates the stratum denominators; it does not provide true-label stratum information to a policy.
+The ceiling says neither that unsupported hydraulic conditions are intrinsically unpredictable nor 
+that extra information is useless. An independent-head predictor can recombine marginal classes into 
+a tuple outside training support; a different decoder may do so as well. Such systems violate the 
+proposition's restricted-output premise and require their own matched evaluation. Actual adaptive-
+policy value, abstention coverage and independent physical transfer remain unmeasured.
+Figure 6: Retrospective exact-vector error on 30 train-joint-seen and 391 train-joint-unseen evaluation cycles. All 
+eight masks fail every unseen tuple under the checked output-class restriction; only two masks are shown. The bound 
+30/421 is an upper bound, attained by TS1 only when affordable. It does not apply automatically to independent-
+head predictors or changed decoders, and zero-coverage abstention is not exact success.
+27 Preserved v19: matched compositional neighbor voting
+The closed-output bound is conditional on predicting a training tuple. To test a broader decision 
+class, we reuse the exact v12 standardized training bank and rank neighbors using squared Euclidean 
+distance over disclosed dimensions only. For each head and candidate label, the score is the number 
+of its labels among the k neighbors divided by that label's training count. Maximization is separate 
+for each head, with smaller numeric labels breaking exact score ties. Different heads can therefore 
+choose labels supported by different neighbors and compose a tuple never observed jointly during 
+training.
+The five neighborhood sizes are fixed to k=1,3,5,11,31 before executing the run. Class counts, the 
+1,540 training targets, the nine standardization means/scales and training coordinates come from the 
+byte-frozen v12 bank. We estimate no new standardizer, optimize no parameter and add no input. 
+The operation is new local inference with an initialized voting baseline, not five newly fitted neural 
+models. These ranking scores are not calibrated probabilities and are not used to declare selective 
+coverage.
+A source mask exposes exactly its three per-channel statistics. No unrequested coordinate, profile 
+label, stable flag, cycle index or condition-coded stratum enters the distance or vote. The empty mask 
+uses the original headwise training mode for all k. The train, selection and evaluation intervals remain 
+1..1540,1561..1764 and 1785..2205. Twenty-cycle chronological gaps are preserved without treating 
+them as an independence guarantee.
+One k is selected by the total component error on 204 selection cycles averaged equally over all 
+eight masks, with smaller k on ties. The selected k and exact selection summaries are written before 
+the current evaluation feature pass. Researchers had already exposed this evaluation interval in 
+23
+
+earlier versions; the procedural ordering does not restore blindness. The selection criterion remains 
+an exploratory development rule whose correspondence to the nine actual acquisition budgets must 
+itself be examined later.
+The run checks exact equality between k=1 outputs and all 5,000 prior selected-1NN records across 
+625 cycles and eight masks, including 625 empty-mask outputs. This is stronger than comparing 
+aggregate errors. A sampled second implementation recomputes 210 nonempty-mask predictions from 
+raw six-cycle features with standard-library sums, exact rational vote comparisons and independent 
+sorting. All 25,000 cached prediction records are also independently rescored.
+Execution accounting distinguishes reusable fitting from new predictions. We initialize one class-bal­
+anced voting baseline, estimate zero new parameters, compute 4,375 nonempty-mask query-distance 
+arrays, use 625 empty-mask fallbacks and emit 25,000 records across the five configurations. A 
+subsequent support audit reads those records without making new predictions. None of these repeated 
+masks/configurations creates additional scientific units, physical rigs or independent final cycles.
+𝑣ℎ,𝑙(𝑥, 𝑘, 𝑚) =
+∑𝑗∈𝑁𝑘(𝑥,𝑚) 𝐼(𝑦𝑗,ℎ= 𝑙)
+𝑛train,ℎ,𝑙
+(27)
+𝑦̂ℎ= arg max
+𝑙
+𝑣ℎ,𝑙(𝑥, 𝑘, 𝑚)
+(28)
+𝑘⋆= arg min
+𝑘
+∑
+7
+𝑚=0
+∑
+𝑖∈𝑆selection
+∑
+4
+ℎ=1
+𝐼(𝑦̂𝑖,ℎ,𝑘,𝑚≠𝑦𝑖,ℎ)
+(29)
+27.1 Preserved v19: The selection-locked answer remains negative
+This subsection preserves the v15 all-mask selection contract. V16 below changes the selection 
+objective, rather than rewriting the original negative result.
+Selection summed component error counts over the eight masks are 2215,2218,2225,2223 and 2216 for 
+k=1,3,5,11,31 respectively. Each total has 6528 head-mask-cycle comparisons, reusing 204 underlying 
+cycles. Thus k=1 wins, and even the nearest k=31 alternative is one comparison worse under this 
+declared criterion. That one-count gap is not a stability certificate or a population significance result.
+Because the admitted configuration is exactly k=1, all 3,368 evaluation cycle-mask records match 
+the original baseline. Every same-cycle component comparison is tied. The selection-locked mask rule 
+under the same 0.05 normalized quote coefficient also preserves all nine price-budget decisions: raw 
+budgets at least 60 choose TS1, equal budgets at least 1 choose PS1, and zero budgets use no source. 
+No observed admitted policy gain can be claimed.
+The already exposed evaluation grid has lower summed component counts for several unselected 
+configurations:7058,6955,6871,6840 and 6817 in the same k order, over 13472 head-mask-cycle com­
+parisons. Choosing k=31 from that table would use evaluation labels. We report the divergence as a 
+development diagnostic, not as the result of the selection procedure or independent tuning evidence. 
+The selected policy remains k=1 even though retrospective results would tempt a different choice.
+At full source mask, every configured k makes the same head error counts (0, 273, 246, 279) and 391 
+vector errors among 421 cycles. Therefore simply enlarging the local neighborhood does not repair 
+the full-source representation in this grid. More available statistics do not guarantee that this fixed 
+distance metric retrieves a useful condition mixture. The training bank's 76 cooler 100 examples 
+all share joint tuple(100,100,0,90), which is a concrete conditional-support limitation rather than a 
+missing marginal cooler class.
+k
+Selection component errors /6528
+Exposed eval errors /13472
+Selected?
+1
+2215
+7058
+Yes
+3
+2218
+6955
+No
+5
+2225
+6871
+No
+11
+2223
+6840
+No
+31
+2216
+6817
+No
+Table 21: Eight-mask totals use the same 204 selection or 421 exposed evaluation cycles repeatedly. Only selection 
+chooses k; evaluation columns are development diagnostics, not alternative admissible winners.
+24
+
+Figure 7: New v15 fixed k grid. Changes in equal-mask component error are measured relative to k=1 within each 
+partition. The selected k remains 1 despite better exposed evaluation totals for unselected variants. Underlying 
+denominators are 204 and 421 cycles, reused over 8 masks and 4 heads; these are not independent samples or final 
+evaluation gains.
+27.2 Preserved v19: A class-conditional ceiling can be escaped without winning the 
+experiment
+The first completed run stored retrospective support summaries only for the selected k. To avoid 
+hiding behavior of the predefined broader decision class, we then freeze a separate explicitly post-
+hoc support-audit plan. It reads all 25,000 predictions and reports 160 partition/k/mask/seen-unseen 
+stratum rows. No k is added, selected k is not changed, no new model is fit and no new predictions 
+are generated. Its labels and train-support strata remain unavailable to the policy.
+The unselected k=3 model with PS1+FS1, mask 3, outputs training-unseen tuples on 32 of the 391 
+training-unseen evaluation cycles and gets ten of those complete tuples correct. Its total vector errors 
+fall from 391 under k=1 to 381, giving 40/421 complete successes. This exceeds the earlier joint-copy 
+ceiling 30/421 because the new decoder violates the premise of that proposition. It is a constructive 
+counterexample to a universal-impossibility reading, not a newly selected deployable winner.
+Other variants expose a different tradeoff. For FS1 only, k=11 correctly predicts 14 training-unseen 
+tuples but makes 392 total vector errors, while original k=1 has 408. These correct novel outputs 
+demonstrate expressibility without proving broad diagnosis. At k=3 PS1+FS1 the chosen cost quote 
+would be 6600 raw-sample units or 2 equal-source units, exceeding raw budget 6000; the favorable 
+full-vector diagnostic must not be silently inserted into a cheaper admitted policy.
+The new class-balanced decoder still cannot emit a per-head label absent from training. Its ability 
+to output any combination of observed marginal labels says nothing about whether neighborhood 
+geometry supports that combination, whether the acquisition mask is affordable or whether selection 
+can identify it without evaluation feedback. In particular, all full-source configurations retain the 
+original 391 errors, and the only admitted predictor still obeys the old training-tuple restriction on 
+these saved outputs.
+A stronger follow-up should reserve independent final condition/unit data before changing feature 
+metrics or choosing head-specific source rights. It should compare joint copying, factorized votes 
+and established compositional prediction under the same disclosed coordinates and complete costs, 
+retaining cheap fixed-subset controls before any adaptive search. The present negative selection result 
+supplies a falsifiable obstacle: a new model must improve a predeclared selection criterion and transfer 
+without using the exposed evaluation grid to choose itself.
+25
+
+28 Preserved v19: selection order is a matched fixed-policy ablation
+The v15 result is tied to its declared criterion: choose one k by component error summed equally 
+over eight masks, then choose a budget-feasible mask. A k that is good on average over masks need 
+not be best for the mask actually affordable at deployment. V16 benchmarks this staged rule against 
+joint selection of (k,mask) from the same five-by-eight cached prediction bank. This is a predictor-
+selection and fixed-source control, not a newly trained adaptive acquisition agent.
+Both rules have the same selection data, training bank, projected features, possible source masks and 
+offline tuning rights. They differ in the objective used to choose the configuration. Joint selection 
+minimizes selection component error plus lambda times the mask quote divided by the sum of the 
+three source quotes, subject to the same hard per-cycle budget. The staged first step instead averages 
+all masks, including masks unaffordable under a particular cap. Deterministic ties favor smaller quote, 
+then smaller k and mask. Lambda is predeclared as 0, 0.01, 0.05, 0.2 or 1; raw and equal price books 
+keep their original nine budget cases.
+Controls include the best feasible mask with k fixed at 1, the cheapest nonempty source, a maximum-
+source-count affordable mask, and the exact expected loss of uniform sampling over feasible masks 
+including empty. The label-free controls read no selection label when choosing a mask. The uniform 
+result averages the cached outcomes analytically; it is not additional sampled trials. All controls obey 
+the same deployment cap, although actual spent quotes may differ. Offline feature collection and 
+tuning costs are not measured by these source quotes.
+The full choice uses all 204 selection cycles. Four leave-one-contiguous-block-out views use 153 cycles 
+to choose and 51 to audit. Three forward-prefix views use the first 51, 102 or 153 cycles and audit only 
+the next 51. The leave-block procedure may use later selection cycles and is explicitly not a forward-
+deployment simulation. Full choices are sealed before this execution decodes evaluation prediction 
+records, but all 421 evaluation outcomes were exposed in earlier work. Four evaluation blocks have 
+106,105,105 and 105 cycles. These dependent slices do not supply independent final data or population 
+confidence intervals.
+BRiG-AFA [3] motivates keeping the predictor fixed when isolating an acquisition-horizon effect. 
+Our changed k therefore cannot be interpreted as a planner effect. Its reviewed unit-cost fixed-
+horizon setting also differs from these source quotes. Janisch et al. [20] distinguish cost-weighted and 
+hard-budget objectives and validate model choices; we therefore report lambda and cap sensitivity 
+separately. Neither native system is implemented, and no author-reported score is pooled with 
+local results. A faithful native comparison still requires matched data, predictor, action granularity, 
+information, budgets and evaluation access.
+28.1 Preserved v19: A conditional predictor gain leaves diagnosis and benchmark 
+limits intact
+At the prespecified lambda 0.05, all five raw-price cases preserve the staged configuration. The 
+three positive equal-quote caps all choose PS1 as before but replace k1 with k3. Thus three of nine 
+configuration cases change, while zero of nine source masks change. These three caps repeat one 
+configuration and the same 421 cycles; they are not three independent successful experiments. Joint 
+selection is no worse on its own selection objective by candidate-set inclusion, which does not establish 
+generalization.
+For that repeated PS1 comparison, selection component errors decrease from 249 to 248 of 816 
+head-cycle comparisons. Exposed evaluation errors decrease from 876 to 799 of 1684, a difference of 
+-77/1684 or -4.5724 percentage points. Head errors change from (65, 273, 246, 292) to (0, 273, 246, 
+280). Vector errors remain 391 of 421 for both. This refines the v15 selection-contract negative result 
+without claiming a repaired complete diagnosis, independent final improvement, or an acquisition-
+mask gain.
+The strong fixed-source comparison remains unfavorable to a general winner claim. The already 
+executed TS1/k1 control has 798/1684 component errors at the same equal-source quote 1, one fewer 
+than joint PS1/k3. Its selection count is 249/816, so the joint rule cannot use its better evaluation 
+count to choose it. This is an explicitly retrospective diagnostic against a previously executed fixed 
+control, not a new evaluation-tuned policy. The v15 all-mask criterion still selects k1 exactly as 
+originally recorded.
+Lambda 0 changes five full-cohort configuration cases and worsens exposed evaluation error in two 
+raw-price cases. At raw cap 6000, selecting PS1/k3 rather than TS1/k1 lowers selection error by 1/816, 
+increases quote from 60 to 6000, and increases evaluation error by 1/1684. At raw cap 6660, PS1+FS1/
+k5 lowers selection error by 5/816, increases quote from 60 to 6600, and increases evaluation error by 
+26
+
+75/1684. A respected hard cap alone therefore does not prevent an expensive unfavorable transfer. 
+Lambda 0.01, 0.05 and 0.2 change only the three equal-price configurations; lambda 1 changes none.
+The one-count selection advantage is not stable identification of an optimal configuration. At equal 
+cap 1 and lambda 0.05, joint selection differs from its full-cohort choice in one of four leave-block 
+views and two of three forward-prefix views. One leave-block choice becomes FS1/k31; the first two 
+forward prefixes retain PS1/k1. On the four exposed evaluation blocks, the locked joint-versus-staged 
+component counts are 251 versus 282, 233 versus 244, 195 versus 205, and 120 versus 145. Vector 
+counts remain 106,105,95 and 85 in both rules. These are dependent diagnostics of the same run, not 
+four independent transfer replications.
+Ground-truth joint tuples absent from training occur in 100/204 selection cycles and 391/421 evalua­
+tion cycles. Pump-label total variation between these intervals is 266/421; individual evaluation blocks 
+further differ. These label diagnostics are unavailable to the chooser and are not a causal explanation 
+of every error. They quantify why repeated chronological reuse cannot replace independently reserved 
+conditions or physical units. The v16 study obtains no new rig, feature, prediction, parameter fit, 
+physical cost measurement or adaptive rollout; its supported outcome is a sharper baseline and 
+selection-scope comparison.
+Fixed comparison at 
+equal quote 1
+Selection component 
+errors /816
+Exposed eval component 
+errors /1684
+Vector errors /421
+Staged / fixed-k1, PS1
+249
+876
+391
+Joint (k,mask), PS1/k3
+248
+799
+391
+Existing fixed TS1/k1 
+diagnostic
+249
+798
+391
+Table 22: Same 204/421 cycles and equal source quote; the TS1 row is an already executed fixed-source diagnostic, 
+not a newly selected evaluation winner. Quote equality does not establish measured physical cost equality.
+Figure 8: V16 matched selection-order benchmark at lambda 0.05. Bars show joint-minus-staged component error 
+within each partition. The three equal-price caps repeat the same PS1/k3 versus PS1/k1 choice; all source masks are 
+unchanged. Evaluation is previously exposed development reuse, not an independent final improvement.
+29 Preserved v19: observation-dependent acquisition with a frozen ter­
+minal predictor
+V17 executes a deployable-information acquisition rule rather than another fixed-mask selection audit. 
+The terminal predictor remains the v15 k-neighbor decoder; k1 is primary and k3 is a prespecified 
+sensitivity. Policy fit uses cycles 1561--1662 (102), policy dev uses 1663--1764 (102), and scoring retains 
+the previously exposed 1785--2205 interval (421). The original predictor bank was fitted on 1540 prior 
+cycles. No chronological reuse interval becomes a new independent final.
+27
+
+A gate first requests one root source. It receives only that source's observed complete-cycle mean, 
+compares it with a fit-derived threshold, and either stops or requests one other source. Leaves contain 
+the root and at most one additional source, with distinct left and right masks. Root thresholds are 
+the sorted fit means at floor(101q), for q equal to one quarter, one half and three quarters; each 
+branch must contain at least 16 fit cycles. Thresholds are serialized with float.hex. For each root 
+and threshold, fit labels select the two affordable leaf masks by exact component-error plus lambda-
+normalized mean-quote objective. This fits an acquisition policy; it does not refit the frozen terminal 
+predictor.
+The decision function receives only the immutable policy, acquired-source means and acquired mask. 
+A private replay service checks the hard quote cap, charges a source, then reveals its mean. The 
+controller receives no cycle identity, target, unseen source value or cached terminal prediction. 
+Only after STOP does the harness retrieve the frozen prediction for the terminal mask. Previously 
+computed mean, standard deviation and slope from an acquired source remain valid terminal features; 
+no unacquired source's features are admitted. This is an inspected trusted-code API boundary, not 
+OS isolation.
+best_fixed enumerates every feasible mask, including empty and the full three-source mask where 
+affordable. A gate uses at most two sources. adaptive_enabled includes all those fixed candidates plus 
+the fit-trained nonconstant gates, while gate_only probes the gate family and explicitly falls back if 
+none is feasible. All families share k, the hard cap, lambda and the dev objective. Dev ties favor lower 
+mean quote, then fixed over gate, then lexical policy serialization. Inclusion makes adaptive_enabled's 
+dev objective no worse mechanically; it supplies no generalization guarantee. Equal caps do not imply 
+equal realized mean expenditure.
+The prelocked grid contains two k values, five lambdas and nine price/cap cases: 90 settings and three 
+selected families per setting. The primary is equal-source cap 2, lambda 0.05 and k1. Raw and equal 
+quotes remain separate proxy units. Gates are fit before dev selection; all choices are sealed before 
+the current pass decodes evaluation means, labels or prediction records. Earlier exposure is explicit. 
+The full grid, stronger fixed controls, permission fixtures and unfavorable outcomes are retained.
+BRiG-AFA [3] supplies a methodological comparator: its fixed-predictor ablation isolates acquisition 
+while inference uses observed values and budget rights. We do not implement its Bellman networks or 
+native datasets. Its reviewed fixed-horizon unit costs also differ from our STOP and grouped-source 
+quotes. Janisch et al. [20] distinguish cost-weighted objectives from budget constraints. Our chrono­
+logical gate class and their hierarchical A2C are not interchangeable benchmark implementations, 
+and external scores do not enter the local result table.
+29.1 Preserved v19: Adaptation executes, but the primary selector keeps its fixed 
+policy
+At the prespecified equal cap 2, lambda 0.05 and k1, adaptive_enabled selects the same fixed PS1 
+mask as best_fixed. Both incur 876 of 1684 component errors and 391 of 421 vector errors on exposed 
+evaluation, with mean quote 1. Adding the gate family therefore changes neither selected acquisition 
+nor prediction in the primary comparison. Its dev objective ties a gate, and the predeclared simpler-
+policy rule preserves the fixed policy; reporting gate_only instead would change the selection contract.
+The forced gate first acquires TS1 and adds PS1 below its fit threshold. Its fit, dev and evaluation 
+terminal masks respectively use the two-source leaf in 26 of 102, zero of 102 and 22 of 421 cycles. 
+Evaluation component errors are 798 of 1684, below the primary PS1 control. However, the preserved 
+fixed TS1/k1 control also has 798 component errors and 391 vector errors. The gate spends 443 rather 
+than 421 equal-quote units with no terminal error reduction. This stronger source control prevents 
+an apparent adaptive victory. Its historical selection access differs from the current selector and is 
+disclosed rather than used as an evaluation oracle.
+Across all 90 settings, adaptive_enabled selects a gate in six; four settings reduce evaluation compo­
+nent error, two increase it, and 84 tie the matched fixed selector. These counts repeat one k3 gate 
+across caps 2 and 3 and three lambdas, not six independent trials. The common gate reads PS1 and 
+adds FS1 only above its fit median. Its two-source frequencies change from 51 of 102 fit cycles to 
+17 of 102 dev cycles and 97 of 421 evaluation cycles, so even one locked rule has different realized 
+expenditures across intervals.
+At k3, equal cap 2 and lambda 0 or 0.01, the fixed comparator is PS1+FS1. The gate lowers evaluation 
+component errors from 924 to 861 and quote sum from 842 to 518, but vector errors rise from 381 to 
+391. Its component advantage therefore coexists with ten fewer complete diagnoses. Component and 
+28
+
+vector denominators are respectively 1684 and 421; they are different observables, not interchangeable 
+performance summaries. Cap 3 repeats this same contrast.
+At k3 and lambda 0.05, the fixed comparator changes to PS1. The gate wins dev component counts by 
+245 versus 248, yet evaluation increases from 799 to 861 errors and quote sum from 421 to 518. Vector 
+errors remain 391. Thus a three-count dev advantage produces 62 additional evaluation component 
+errors and 97 additional proxy quote units. We retain this selection-to-evaluation reversal rather than 
+choose lambda after viewing the exposed outcomes.
+Equal-cap comparison
+Dev errors /408
+Eval errors /1684
+Vector errors /421
+Eval quote sum
+Primary k1 fixed / union
+249
+876
+391
+421
+Primary k1 forced gate
+249
+798
+391
+443
+Historical TS1/k1 diagnostic
+not a new selector
+798
+391
+421
+k3 lambda 0 fixed / gate
+245 / 245
+924 / 861
+381 / 391
+842 / 518
+k3 lambda 0.05 fixed / gate
+248 / 245
+799 / 861
+391 / 391
+421 / 518
+Table 23: Same exposed 421 cycles, no pooled external scores. Primary cap is 2; cap 3 repeats the k3 rows. Historical 
+TS1 has different selection access. A shared hard cap does not match realized expenditure, and quoted units are not 
+measured physical costs.
+Figure 9: V17 gate-minus-respective-fixed differences on exposed evaluation. Primary union retains fixed PS1; forced 
+k1 gate matches historical TS1 errors while spending 22 extra units. k3 lambda 0 reduces component errors but 
+increases vector errors; lambda 0.05 worsens component errors. Component points use 1684 comparisons, vector points 
+421 cycles. Repeated caps are not independent trials.
+29.2 Preserved v19: Policy-fit support is a new limiting assumption
+A post-hoc frozen-label diagnostic reveals that all 102 policy-fit cycles share the truth tuple (100, 100, 
+0, 90). That tuple occurs in only 2 of 102 policy-dev cycles and 30 of 421 evaluation cycles. Thus the 
+gate is not trained across the diverse target conditions it later encounters. This diagnostic is derived 
+after locking the policy and never enters its decisions. We retain the predeclared chronological split; 
+shuffling it after seeing this limitation would answer a different question.
+Where fit outcomes tie, forcing different leaf masks can make cost and deterministic tie rules identify a 
+gate without identifying condition-dependent predictive utility. The primary forced gate's acquisition 
+branch is absent from dev and reappears on evaluation. This is an observed support and selection 
+limitation, not proof that observation-dependent acquisition cannot work or that one distribution shift 
+causes every error. A dedicated diverse policy-fit cohort and independent condition/rig evaluation 
+are still required.
+The new work comprises 390 fitted gate models, 780 fitted leaf actions, nine fit-derived thresholds, 
+790 dev candidate scores and 270 selected-policy records. Selected-policy execution produces 168750 
+replay trajectories, of which 35000 execute nonconstant gates. A trajectory is one policy/cycle path, 
+with zero to three source requests, not one request or independent sample. These traces contain 
+29
+
+130459 source requests, counted separately. Candidate-dev replay and historical diagnostic execution 
+are separately counted. Frozen predictor parameter fits and forward calls are zero, while new policy 
+fitting and replay are explicitly nonzero.
+Recorded 60-second sensor cycles are fully observed offline. Sequentially revealing their statistics 
+assumes the stored channels coexist and that hiding/revealing a value does not change that recorded 
+cycle. Seeing a completed cycle's mean before requesting another channel does not establish that the 
+same past interval can later be measured online: buffering, remeasurement and latency requirements 
+are untested. This study does not model intervention effects, acquisition delays or online equipment 
+control. No physical adaptive sensor experiment, independent final unit or native BRiG-AFA/A2C 
+reproduction is conducted. An independent mathematical replay review cannot replace those missing 
+data.
+29.3 Preserved v19: Oracle-separated loss diagnostics locate the remaining acquisi­
+tion gap
+A new post-hoc diagnostic holds all390 fitted gate-context records, the frozen predictions, prices, 
+hard cap, k and lambda fixed. For each cohort, A is the per-cycle all-feasible-mask oracle mean, P 
+the current two-leaf oracle mean, G the actual gate mean and F the locked fixed-policy mean. The 
+exact identity G-F=-(F-A)+(P-A)+(G-P) splits the difference into negative headroom, the root/leaf/
+cost-constraint representation gap and privileged routing regret. The last two are not pure learning 
+errors or causal effects: the oracle observes labels and unseen predictions unavailable to an executable 
+policy.
+The 
+primary 
+inherited 
+k1/equal 
+cap2/lambda0.05 
+forced 
+gate 
+has 
+F=13561/25260,A=10201/25260,P=12391/25260,G=12413/25260 on421 exposed evaluation cycles. 
+Thus H=56/421,E=73/842,R=11/12630 and G-F=-287/6315. The pair oracle equals the existing 
+TS1/k1 objective. No routing of these same two frozen leaves can strictly beat that TS1 comparison 
+on this particular finite cohort and scalar loss. The actual gate retains798/1684 component errors 
+and391/421 vector errors, with22 extra quotes.
+A predetermined secondary k3/equal cap2/lambda0 gate gives component-error counts 
+F924,A625,P789,G861. The exact decomposition is-299+164+72=-63 over1684 component compar­
+isons. The gain coexists with vector error381->391 and quote842->518. We therefore preserve the 
+objective-specific benefit and the complete-diagnosis regression instead of pooling the metrics.
+The analysis produces1,170 gate/cohort records and4,680 support-stratum records on the same625 
+cycles, with an exact arithmetic alternative verifier and ten explicitly post-hoc illustrative cycles. It 
+adds no policy fitting, policy selection, predictor forward calls, independent device, physical acqui­
+sition or external native-method trial. Empty support strata have null means. The392/421 primary 
+root means outside the fit min/max range are an observed extrapolation diagnostic, not a density-
+support or causal test.
+𝐴= ( 1
+𝑛) ∑
+𝑛
+𝑖=1
+min
+𝑚∈ℱ︀𝐵
+𝑢𝑖(𝑚)
+(30)
+𝑃= (1
+𝑛) ∑
+𝑛
+𝑖=1
+min(𝑢𝑖(𝑚𝐿), 𝑢𝑖(𝑚𝑅))
+(31)
+𝐺−𝐹= −(𝐹−𝐴) + (𝑃−𝐴) + (𝐺−𝑃)
+(32)
+Quantity
+Primary k1 objective
+Secondary k3 errors /1684
+Locked fixed F
+13561/25260
+924
+All-mask oracle A
+10201/25260
+625
+Two-leaf oracle P
+12391/25260
+789
+Actual gate G
+12413/25260
+861
+Table 24: Same predictor, price, cap, lambda and finite cohort; oracles are privileged retrospective lower bounds.
+30
+
+Figure 10: New v19 decomposition of already saved predictions. Left: primary scalar objective including normalized 
+source quote. Right: secondary lambda0 component-error counts. All oracles use true labels and unobserved mask 
+predictions only after policy locking; their gaps are not deployable gains or independent benchmark results.
+29.4 Preserved v19: The next experiment must change evidence, not only threshold 
+search
+The primary pair-oracle tie implies a narrow but useful design decision: spending more search on the 
+same two leaf masks cannot establish strict improvement over TS1 under the declared finite loss. A 
+new leaf class or predictor is a separate intervention and must be tested with its own information 
+and cost rights. Positive routing regret elsewhere identifies a privileged opportunity, without proving 
+that acquired root observations can learn to exploit it.
+The expanded Korean handbook distinguishes source, feature, mask, predictor, policy, fitting, dev 
+selection, exposed evaluation, cost scalarization, hard feasibility, component/vector losses and oracle 
+rights. It includes exact stepwise recorded cases and a visual reading map to generative surrogates, 
+Bellman risk-to-go, hierarchical costly features, learned information-gain controls and assumption-
+aware offline evaluation [3,9,10,11,20,21]. These methods are primary-source comparisons rather than 
+native executions here.
+The next confirmatory study needs diverse policy-fit conditions and an independently reserved device 
+or time regime, with measured acquisition availability, failure and latency. Complete-cycle offline 
+means, synthetic permission fixtures and one-rig exposed replay do not establish physical adaptive 
+sensing, native AFA superiority or confidence coverage.
+30 Preserved v19: Discussion and Limitations
+The point of the diagnostic ordering is to identify what an acquisition comparison could establish. A 
+failed predictor check directs attention to scoring and support; it does not prove that a better planner 
+is impossible. A successful predictor check only admits a policy comparison; it does not certify safe 
+deployment. Here that distinction stops the earlier zero-coverage result from being hidden by a later 
+component-error gain, and stops a raw-price saving from hiding an equal-price loss.
+V14 adds a distinct limitation to planning escalation. A mismatch between component utility and 
+complete-vector utility can coexist with identical selected actions, and a changed head priority can 
+improve one component while damaging another. When legal outputs stay within training joint 
+support, loss tuning alone cannot create a missing complete label tuple. This finite class-conditional 
+statement is stronger than reporting a high error but narrower than declaring planning futile. 
+It redirects the next experiment toward supported output representations and externally justified 
+utilities, without claiming that the research workflow itself causally improves productivity.
+31
+
+30.1 Preserved v19: Falsification and alternative explanations
+We distinguish a data-admission failure from a poor valid prediction, an empty selective denominator, 
+a resource rejection, and an unavailable independent evaluation. The original v9 class-support failure 
+remains visible. V11 zero coverage remains a null selective error rather than a zero error. V12 produces 
+valid four-head outputs under all 24 masks/models, but high vector error remains a negative outcome 
+rather than a rejected record.
+The original v12 prices, candidate order, tie rule and usefulness threshold remain unchanged. V14 
+deliberately changes the declared decision objective in a post-hoc continuation; earlier aggregate 
+evaluation outcomes were already known. Its four-objective plan and exact input/code snapshots were 
+fixed before the new calculation, with no additional objective or tie rule added after observing that 
+calculation. This protects procedural reproducibility, not independence. If the empty fallback leaves 
+training joint support, the training-support ceiling cannot be applied unchanged. If a new predictor 
+emits novel joint tuples, it needs a different output-class bound. If a chosen worst-head policy loses 
+to a cheaper fixed subset, that loss remains even when another policy attains its narrow pump goal.
+Our candidate explanations have explicit falsifiers. If a same-centroid prior-neutral contrast does not 
+change predictions on new, supported conditions, the present scoring explanation does not transfer. If 
+a stronger simple predictor with adequate condition coverage removes a planner's advantage, a policy-
+specific claim weakens. If correct source identity and disclosure remove a reported cost advantage, 
+that advantage was bookkeeping or leakage. If a history-aware baseline reconstructs the relevant 
+executor state, a richer hidden-state claim is unnecessary.
+No failure in this finite development sequence establishes a population rate. Conversely, a narrow, 
+correctly scoped descriptive report should not be rejected for lacking an experiment that it explicitly 
+does not claim to have performed. Research Forge records the current claim, supporting artifact, 
+contrary observation, and next required evidence separately. This claim-scope discipline prevents 
+speculative next steps from being promoted to supported results.
+30.2 Preserved v19: Boundaries and the next confirmatory study
+The most important limitation is support and exposure, not manuscript length. The evaluation 
+segment is already known, uses one rig and a small channel subset, and contains many joint conditions 
+absent from the training prefix. We have no verified physical experiment/session/asset map and no 
+fresh independent final set. A chronological gap cannot supply those missing identities. The 421 cycles 
+are a descriptive denominator, not a proved independent sample count.
+The feature representation is deliberately simple and uses a completed cycle. The 1NN fit changes 
+several inductive assumptions and has no calibrated confidence. A constant-label full-source predictor 
+can improve component mean by correcting only one head. Fixed subset baselines do not establish 
+adaptive or nonmyopic value, and the present grouped action cannot test all of ProbeFlow's proposed 
+partial-disclosure and shared-cache distinctions.
+The next confirmatory study should first obtain reliable physical-block provenance and adequately 
+supported condition combinations. Predictor and future-observation model development must remain 
+within training; an explicit development/calibration/final resource envelope must precede any final 
+evaluation. The comparator set should retain the prior-neutral centroid, fixed subset design, and 
+history-aware simple baselines, alongside faithful native or clearly declared adapted literature 
+methods. Computational planning costs, failures, tuning, and teacher work must be included or 
+separately bounded.
+Within that new setting, a typed executor can vary overlapping sources, partial disclosure, failed 
+requests, and cache reuse while preserving public information and quotes across policies. A matched 
+comparison would be needed to isolate the value of executor state from a history-aware baseline 
+that reconstructs it. For now, neither industrial generalization, an independent algorithmic effect, 
+nonmyopic superiority, nor a certified risk guarantee is established.
+31 Preserved v19: Conclusion
+ProbeFlow's inherited support-first audit separates scoring, coverage and acquisition. The new frozen-
+objective analysis shows that changing the loss may preserve every action, redistribute errors between 
+heads, or select a more expensive dominated choice. A checked training-tuple output restriction also 
+yields a tight exact-vector ceiling on this exposed cohort, with explicit fallback and affordability 
+conditions. The conclusion is not a new adaptive optimizer's victory: it is a reproducible account of 
+which decision changes help which loss, and which complete outputs this predictor cannot express. 
+Independent supported data, meaningful utilities and faithful comparator implementations remain 
+prerequisites for broader policy claims.
+32
+
+The v15 compositional neighbor study crosses the closed-output boundary for some unselected 
+diagnostics but yields no admitted predictor or policy gain. Exact baseline reproduction and the 
+preserved k=1 choice prevent expressive counterexamples from being sold as a validated selection 
+victory. The remaining research target is a supported, independently reserved comparison with 
+stronger representation and unchanged information rights.
+V16 shows that a stronger matched selection contract can change the admitted predictor while leaving 
+the acquisition choice and complete-vector failure unchanged. Its component gain is conditional on 
+an exposed development interval and does not beat every same-quote fixed control. Cost-weighted 
+counterexamples and chronological instability make independent data and fixed information rights 
+the next admission gates.
+V17 genuinely fits acquisition gates and executes observation-dependent offline trajectories. Never­
+theless, the primary union retains its fixed policy, and a forced gate matches the existing TS1 
+control while spending more. Selected k3 gates reveal component/vector conflicts and a dev-to-evalu­
+ation reversal. A single-condition policy-fit interval further blocks transfer claims. More acquisition 
+machinery is not established as the remedy; diverse policy fitting, measured costs and independent 
+evaluation are the next evidence requirements.
+V19 locates the primary gate limitation in its frozen action class. Under identical feasible masks, 
+cached predictor, cost normalization and scalar loss, G-F=-H+E+R separates available headroom, 
+the root/leaf/cost constraint bundle and a privileged-oracle routing gap. The primary two-leaf oracle 
+already equals the historical TS1 control, so rerouting only these leaves cannot strictly improve that 
+objective on the same exposed cohort. The secondary gate reduces component errors but increases 
+vector errors. These finite diagnostics prioritize supported policy fitting and action representation 
+before added planning complexity; they do not establish population impossibility or a guaranteed 
+learnable gain.
+Acknowledgements
+This work was created as part of the No-More-Slops group activities at Pseudo Lab.
+References
+[1]
+N. Helwig, E. Pignanelli, and A. Schütze. Condition monitoring of hydraulic systems. UCI Machine Learning 
+Repository, 2015.
+[2]
+Y. Kobayashi, Z. Jing, J. Yao, H. Namkoong, and S. Joshi. Learning-To-Measure: In-Context Active Feature 
+Acquisition. arXiv:2510.12624v2, 2026.
+[3]
+J. Feng, Q. Li, and Y. Li. BRiG-AFA: Bellman Risk-to-Go Learning for Non-Myopic Active Feature 
+Acquisition. arXiv:2608.02305v1, 2026.
+[4]
+Z. Zhao, R. Xu, and Q. Ni. Learning Source Acquisition Policies by Offline Planning. arXiv:2609.14299v1, 
+2026.
+[5]
+L. Aronsson and M. Haghir Chehreghani. Non-Myopic Active Feature Acquisition via Pathwise Policy 
+Gradients. arXiv:2605.05511v2, 2026.
+[6]
+Y. Geifman and R. El-Yaniv. Selective Classification for Deep Neural Networks. arXiv:1705.08500v2, 2017.
+[7]
+D. Golovin and A. Krause. Adaptive Submodularity: Theory and Applications in Active Learning and 
+Stochastic Optimization. JAIR 42; arXiv:1003.3967v5, 2011.
+[8]
+H. Shim, S. J. Hwang, and E. Yang. Joint Active Feature Acquisition and Classification with Variable-Size Set 
+Encoding. NeurIPS, 2018.
+[9]
+Y. Li and J. B. Oliva. Active Feature Acquisition with Generative Surrogate Models. ICML, PMLR 
+139:6450-6459, 2021.
+[10] I. C. Covert, W. Qiu, M. Lu, N. Y. Kim, N. J. White, and S.-I. Lee. Learning to Maximize Mutual 
+Information for Dynamic Feature Selection. ICML, PMLR 202:6424-6447, 2023.
+[11] H. von Kleist, A. Zamanian, I. Shpitser, and N. Ahmidi. Evaluation of Active Feature Acquisition Methods for 
+Time-varying Feature Settings. JMLR 26(60):1-84, 2025.
+[12] C. Ma, S. Tschiatschek, K. Palla, J. M. Hernandez-Lobato, S. Nowozin, and C. Zhang. EDDI: Efficient 
+Dynamic Discovery of High-Value Information with Partial VAE. ICML, PMLR 97:4234-4243, 2019.
+[13] L. Aronsson, A. Rahbar, and M. Haghir Chehreghani. A Survey on Active Feature Acquisition Strategies. 
+IJCAI Survey Track, pages 7740-7748, 2026.
+[14] G. C. Cawley and N. L. C. Talbot. On Over-fitting in Model Selection and Subsequent Selection Bias in 
+Performance Evaluation. JMLR 11(70):2079-2107, 2010.
+[15] S. Varma and R. Simon. Bias in error estimation when using cross-validation for model selection. BMC 
+Bioinformatics 7:91, 2006.
+[16] D. R. Roberts et al. Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic 
+structure. Ecography 40:913-929, 2017.
+[17] Y. Geifman and R. El-Yaniv. SelectiveNet: A Deep Neural Network with an Integrated Reject Option. ICML, 
+PMLR 97:2151-2159, 2019.
+[18] R. El-Yaniv and Y. Wiener. On the Foundations of Noise-free Selective Classification. JMLR 
+11(53):1605-1641, 2010.
+[19] K. Dembczyński, W. Waegeman, W. Cheng, and E. Hüllermeier. On label dependence and loss minimization 
+in multi-label classification. Machine Learning 88:5–45, 2012.
+[20] J. Janisch, T. Pevny, and V. Lisy. Classification with costly features in hierarchical deep sets. Machine 
+Learning 113:4487-4522, 2024.
+33
+
+[21] J. Janisch, T. Pevny, and V. Lisy. Classification with Costly Features Using Deep Reinforcement Learning. 
+AAAI33(01):3959-3966,2019.
+34
+
+A Computation and exact-byte reproducibility
+The bounded v12 run took approximately 20.22 seconds on the local host, including parsing, fitting, 
+selection, evaluation, and output generation. Shared fitting took about 0.0067 seconds. Across the 
+eight evaluation masks, measured inference totals were about 0.165 seconds for the prior centroid, 
+0.141 seconds for the prior-neutral centroid, and 8.970 seconds for 1NN. Full-source inference alone 
+was about 0.030, 0.026, and 1.954 seconds, respectively. These are single sequential wall-time obser­
+vations, not randomized throughput comparisons; no hardware efficiency claim is made.
+The historical v12 run uses only the Python standard library and existing local data. It makes zero 
+model API calls, network requests, or downloads. This does not mean that no predictive model was 
+fitted: centroids, scalers, and a nearest-neighbor reference bank are fitted machine-learning compo­
+nents. It means that no external or local generative-model endpoint was invoked for the experiment.
+PLAN.json, raw-file SHA-256 values, the inherited feature extractor hash, exact consumed runner 
+bytes, frozen fitted parameters, selection predictions, frozen model/policy choice, evaluation predic­
+tions, event ordering, and result metrics are saved in a fresh run directory. The exact code snapshot is 
+created before fitting so later source changes cannot silently substitute for the consumed implemen­
+tation. Hashes establish byte identity, not dataset truth, independent review, or scientific validity.
+Eight focused checks cover train-only fitting, exclusion of unqueried dimensions, the isolated prior-
+term counterfactual, preservation of the original predictor, deterministic model selection and nearest-
+neighbor ties, quote/budget separation, and explicit nonempty metric denominators. A separate 
+saved-trace audit recomputes counts, losses, class support, and policy costs without new prediction 
+calls.
+A v11 audit discovered that two aggregate ledger fields had added unlike price units. We retained 
+that original report, marked those scalar totals invalid, and recomputed a scenario-separated ledger 
+from its unchanged prediction trace. Its per-arm costs and predictive outcomes were unaffected. The 
+exact consumed code was archived before correcting the future runner. This incident motivates a 
+practical invariant: numerical provenance must bind units as well as hashes. A matching hash cannot 
+repair a dimensionally invalid sum.
+B Artifact map and execution recipe
+The historical v12 execution project is projects/research_manuscripts_v12_20261018/probeflow. Its 
+PLAN.json and run_experiment.py define the bounded study; test_experiment.py checks contracts; 
+SOURCES.json records inherited primary-source review scopes; README_KO.md explains the 
+result in Korean; and paper.json is the structured source of that historical baseline manuscript. The 
+run directory is runs/research_manuscripts_v12_20261018_01/probeflow.
+The 
+run 
+contains 
+locked_plan.json, 
+source_receipt.json, 
+consumed_code/
+run_experiment.py, frozen_fit.json, selection_predictions.jsonl, frozen_selection_and_policies.json, 
+evaluation_predictions.jsonl, results.json, and events.json. The current-run selection artifact precedes 
+current evaluation decoding in the event log. Neither that log nor a hash erases the previous exposure 
+disclosed in the plan.
+From the repository root, run Python with UTF-8 and bytecode disabled: python -X utf8 -B 
+projects/research_manuscripts_v12_20261018/probeflow/test_experiment.py. To repeat the sensor 
+computation, pass a new, unused output directory to run_experiment.py --out. Never rerun into an 
+existing result directory. The original v9/v11 assets and active research skills are preserved.
+Policy rows are lookups into the selected predictor's saved mask predictions: 36 budget-price-policy 
+summaries do not constitute 36 independent tests. There are 4896 selection prediction records and 
+10104 evaluation records, over 204 and 421 unique cycles respectively. The audit should check per-
+head errors, full-vector errors, duplicate cycles within an arm, permitted source dimensions, exact 
+fit/selection hashes, and price units before consuming a summary.
+C Admission checklist for a future policy claim
+• Dataset identity: pin source bytes, extractor version, units, target definitions, and physical block 
+provenance.
+• Support: disclose marginal labels and joint/condition support separately; retain unsupported cases 
+in the declared denominator.
+• Predictor: demonstrate useful complete and partial-input behavior before attributing value to 
+policy search; retain strong simple alternatives.
+• Information rights: bind public observations, private cached work, permitted future forecasts, and 
+target exclusion for every action.
+35
+
+• Prices: separate hard caps from soft penalties; charge a shared source once; never add unlike units 
+or label replay quotes physical savings.
+• Selection: freeze candidate set, mask weighting, tie rules, thresholds, and tuning budget; label 
+exposed development and independent final evidence correctly.
+• Comparison: distinguish native reproduction, substantive common-contract adaptation, and hand­
+crafted reference policies.
+• Reporting: preserve empty selective denominators, failed arms, unfavorable simple baselines, exact 
+consumed code, and subsequent corrections.
+D Primary-source review boundaries
+The v13 source ledger records a new direct review of selected primary HTML pages. Some entries 
+cover official abstracts only; others cover identified definitions and method sections. Such a review 
+verifies a bounded description, not complete proofs, code identity, native accuracy, or the correctness 
+of every author claim. No external benchmark result becomes a local observation.
+SOURCES.json binds each review note to its URL, scope, review time, and a canonical review-record 
+SHA-256. It does not invent a publisher-byte hash: original response bytes were not archived, and 
+their hash is null. Local experiment and code hashes refer to actual files. CLAIMS.json links empirical 
+statements to these immutable records and separates observed results from proposals and untested 
+generalization.
+E V14 decision-audit provenance and verification
+The new analysis is preserved in runs/research_advancement_v14_20261019_01/probeflow. 
+PLAN.json and locked_plan.json record four objectives, both price systems, access rights, tie rules 
+and post-hoc scope. admission.json pins five input snapshots and the exact consumed runner before 
+its subprocess executes. frozen_objective_decisions.json precedes current evaluation aggregation; 
+manifest.json seals 11 artifacts. No original v11/v12 execution was overwritten. The profile labels 
+and prediction banks are preserved bytes, not newly acquired data.
+run_experiment.py performs the new selection/objective/Pareto/stratum calculation. verify.py inde­
+pendently implements count and rational-choice arithmetic within the same author lane, reconciles 16 
+selected-predictor partition-mask groups, checks 5000 label-copy records, recomputes 36 decisions and 
+144 same-loss hindsight comparisons, and checks the empty fallback separately. Eight small authored 
+boundary tests cover loss ranking reversal, empty denominators, pump indexing, hard budgets and 
+price units, exact ties, Pareto-equivalent points, modal-fallback nonclosure and a finite support ceiling. 
+Fixtures and record checks are not extra sensor experiments or external scientific review.
+The run result SHA-256 is 47e689aba91964956f7f41fdc69934978851beaefcb0ab25e71c32aa0fb23f83. 
+The 
+consumed 
+code 
+SHA-256 
+is 
+d9b3d27819ed6969233ce7f94e30c8e3684c6dbbe1b9b0425ac3cae9ee3373f0. In that inherited support/
+objective execution, new fits, predictions, adaptive rollouts, model API calls and physical trials are 
+all zero. The exact input manifest and scopes belong to the reproduction record; their hashes do not 
+establish blindness, physical independence or signed endorsement.
+F V15 compositional prediction and support-audit inventory
+The 
+current 
+structured 
+manuscript 
+and 
+Korean 
+guide 
+are 
+pro­
+jects/research_advancement_v15_20261019/probeflow/paper.json 
+and 
+EXPLAINER_KO.md. 
+PLAN.json and analyze.py define the five-config local voting experiment. The consumed snapshot 
+is runs/research_advancement_v15_20261019_01/probeflow/analysis_01, containing exact code/
+plan, raw and fitted-bank copies, input_lock.json, frozen_selection.json,25000 new prediction records, 
+results.json and receipt.json. This implementation uses the already installed NumPy 2.3.2 plus Python 
+standard library; no dependency was added.
+Reproduction uses a fresh path: python projects/research_advancement_v15_20261019/probe­
+flow/analyze.py 
+--out 
+runs/research_advancement_v15_20261019_01/probeflow/NEW_RUN. 
+SUPPORT_PLAN.json and support_audit.py define a separate post-hoc cached-record diagnostic in 
+support_audit_01; it produces 160 support-stratum rows with 0 new predictions. verify.py indepen­
+dently checks all cached metrics and 210 sampled neighbor predictions. Fits 0, API calls 0 and new 
+prediction records 25000 are distinct accounting fields.
+G V16 matched-policy benchmark inventory
+The new source is projects/research_advancement_v16_20261019/probeflow; execution is runs/
+research_advancement_v16_20261019_01/probeflow/analysis_01. PLAN.json, analyze.py, verify.py 
+36
+
+and six input snapshots are fixed by input_lock.json before selection. policy_locks.json records 2160 
+choices before this execution decodes evaluation predictions. Historical evaluation exposure remains 
+explicit. No prior source or execution is overwritten.
+policy_results.jsonl contains 2160 fit/test metric pairs. joint_sequential_contrasts.jsonl contains 
+360 paired rule contrasts; evaluation_block_diagnostics.jsonl contains 1080 dependent block rows; 
+selection_stability.jsonl preserves 270 choice-sensitivity records; label_shift_diagnostics.json reports 
+six exposed-label cohorts. These rows repeatedly reuse 625 cycles from one rig and are not indepen­
+dent sample counts. The uniform feasible-mask control uses exact rational expectations rather than 
+sampled random runs.
+verify.py imports no analysis functions. It independently reaggregates all 25000 cached records, recom­
+putes 2160 selections and their fit/test metric pairs, and checks 1080 evaluation-block metrics. Exact 
+Fraction strings preserve expected uniform-control counts and all objective ties. This alternative im­
+plementation validates finite local arithmetic, not external scientific replication. ACCOUNTING.json 
+and CLAIMS.json preserve the zero new-prediction/fit/API counts and limits on transfer and cost 
+interpretation.
+The v16 primary-source review reopens BRiG-AFA v1 HTML and the official Janisch2024 publisher 
+HTML. Review locators and short excerpt hashes identify the local reading records, not publisher 
+response bytes or external certification. BRiG-AFA, hierarchical CwCF, native adaptive acquisition 
+and their published performance results are not implemented or pooled into the local benchmark.
+H V17 policy execution and evidence inventory
+The v17 source and execution roots are projects/research_advancement_v17_20261019/probeflow 
+and runs/research_advancement_v17_20261019_01/probeflow/analysis_01. input_lock.json binds 
+consumed PLAN.json, analyze.py, verify.py and eight byte-preserved input snapshots before fitting. 
+fitted_gates.json records the 390 branch fits; candidate_dev_scores.json records 790 candidate scores; 
+policy_locks.json fixes 270 selected records before this pass reads evaluation outcomes.
+rollout_traces.jsonl records 168750 selected-policy/cycle trajectories, including requests in actual 
+order, revealed means in hexadecimal notation, quote, terminal mask and selected cached prediction. 
+policy_results.json separates fit, dev and evaluation metrics; paired_contrasts.json retains all 90 
+settings. Permission poisoning executes the actual controller on 1560 synthetic boundary fixtures; 
+these are not independent real-data tests. ACCOUNTING.json reports request events separately from 
+trajectories, candidate-dev replay, historical controls and zero predictor refits.
+verify.py imports no analyze functions. It rederives raw source means, fit thresholds, best leaf 
+assignments, dev winners, 810 cohort metric groups and all 168750 traces. This alternative author 
+implementation and subsequent nonauthor review concern finite arithmetic and inspected information 
+rights; neither certifies population validity. AUTHOR_DIAGNOSTICS.json is a separately marked 
+post-hoc support/request-count derivation with source/profile/trace/code hashes. It never changes 
+the locked policy or split.
+I Source inspection boundaries
+[1] Direct v13 primary HTML review: dataset, variables, citation, and license; physical independent-
+block IDs and deployment costs unverified.
+[2] Direct primary HTML review of setup and predictor/acquisition methods in Sections 3-4.2; no 
+native implementation, full proof, or numerical reproduction.
+[3] Direct primary HTML review of fixed-predictor risk-to-go and reviewed unit-cost budget setup, 
+Sections 3-4.2; no native reproduction. V16 re-opened primary HTML Sections3-5 and7; same-
+predictor controls, unit costs and native-comparison limits only.
+[4] Direct primary HTML review of grouped-source setup and method, Sections 2-3.4; no native 
+teacher/scorer training or benchmark reproduction.
+[5] Direct primary HTML review of setup and pathwise-policy approach; no complete gradient proof 
+or native reproduction.
+[6] Direct v13 review of risk/coverage definitions and SGR assumptions; no risk guarantee is trans­
+ferred to the present descriptive threshold.
+[7] Direct v13 review of definitions and a greedy-guarantee statement only; no industrial, history-
+dependent-price, or current-predictor theorem claimed.
+[8] Official abstract: joint acquisition/classification, cost-sensitive stop-or-acquire agent and set repre­
+sentation only.
+37
+
+[9] Official abstract: generative-surrogate support for model-based acquisition; no architecture/proof/
+benchmark verification.
+[10] Official abstract: amortized conditional mutual information and learned greedy selection; no 
+numerical superiority transferred.
+[11] Official abstract: acquisition-distribution and offline/semi-offline evaluation assumptions only; no 
+guarantee applied here.
+[12] Official abstract: partial VAE and information-gain acquisition; no local implementation or 
+external benchmark reproduction.
+[13] Official proceedings abstract: POMDP framing and model-based/model-free/hybrid taxonomy 
+only.
+[14] Official abstract: finite-sample selection-criterion overfitting and evaluation bias; no quantitative 
+bound applied.
+[15] Direct primary HTML abstract/background: selection inside evaluation and nested validation; 
+no claim that random nested CV solves this temporal problem.
+[16] Direct primary HTML review of structured dependence, blocked evaluation, and extrapolation 
+tradeoffs; no independence guarantee for a fixed gap.
+[17] Official abstract: integrated prediction/rejection learning; not implemented here.
+[18] Official abstract: foundational risk/coverage and reject-option framing; noise-free assumptions 
+are not asserted for Hydraulic.
+[19] Direct primary publisher HTML inspection of metadata, abstract and selected Sections 4–5 and 
+7.5: loss-specific Hamming/subset-zero-one decisions and tradeoffs. Binary multilabel theory is not 
+transferred as a theorem for these multiclass heads; no proof/code/benchmark reproduction.
+[20] V16 direct publisher HTML review of Sections3.1 and6.2, cost-assignment discussion and limita­
+tions. Objective/cap distinctions and validation protocol only; no hierarchical A2C implementation 
+or numerical reproduction.
+[21] Official publisher abstract and bibliography plus author implementation pointer 
+checked2026-10-19. Cost-sensitive acquire-or-classify framing only; no complete proof/code audit or 
+native benchmark reproduction.
+38

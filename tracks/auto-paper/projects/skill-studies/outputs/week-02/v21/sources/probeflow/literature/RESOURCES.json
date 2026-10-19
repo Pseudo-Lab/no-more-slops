@@ -1,0 +1,179 @@
+{
+  "schema": "forge_research_resources_v21",
+  "project_id": "probeflow",
+  "checked_at": "2026-10-19",
+  "scope": "Four selected primary-source reviews, methodological transfer proposals and candidate data contracts. No dataset or external PDF downloaded, no native comparator executed, and no source code remotely executed. Excerpt hashes bind the short captured passages, not an unavailable whole HTTP response.",
+  "resources": [
+    {
+      "id": "PF21-AFAPE",
+      "kind": "paper",
+      "title": "Evaluation of Active Feature Acquisition Methods for Time-varying Feature Settings",
+      "url": "https://www.jmlr.org/papers/v26/23-1635.html",
+      "checked_at": "2026-10-19",
+      "review_scope": "JMLR official landing metadata/abstract and author arXiv2312.01530v3 HTML, Sections3.2,3.3,3.5.1,3.5.2. No complete proof, simulation, appendix or code audit; no PDF downloaded.",
+      "body_url": "https://arxiv.org/html/2312.01530v3",
+      "author_report": "저자는 정책의 예상 획득 비용과 오분류 비용을 평가 대상으로 분리한다. 관측 이력 밖의 값은 정책 입력이 아니며, NDE·NUC 등 가정에 따라 오프라인 평가의 식별 조건을 구분한다.",
+      "method": "기대 비용의 대상을 먼저 정의하고 관측 과정의 가정을 확인하는 평가 프레임이다. 새 획득 정책 자체를 제안하는 비교로 읽지 않는다.",
+      "comparison_rights": "Forge 해석: 같은 예측기를 동결해도 관측 가능 시점·행동 지지·수집 정책이 바뀌면 저장 로그의 차이는 배치 효과와 같지 않다. v21의 α는 손실 선호이며 이 논문의 정책 기호와 동일한 변수가 아니다.",
+      "inputs_outputs": "입력은 목표 정책·분류기와 과거 관측 이력, 출력은 선언한 가정 아래 목표 비용 추정이다. ProbeFlow는 완전 캐시에서 유한 산술을 재생하므로 이 논문의 식별 정리를 수행한 것이 아니다.",
+      "budget": "Forge 제안: hard cap2, 누적 획득 quote와 분류 손실을 각각 기록하고 λ를 사전에 고정한다. 현재 λ 재가중은 재선택을 하지 않는 민감도 분석이다.",
+      "dataset_access_license": "논문 공개 landing과 버전 지정 arXiv HTML만 읽었다. 저자 데이터·코드의 접근권한과 라이선스는 이번에 검토하지 않았다.",
+      "easy_explanation": "과거 장부에서 계산을 다시 하는 일과, 새 규칙을 실제로 써도 같은 결과가 나는 일 사이에는 빠진 가정이 있다. 우리 표는 전자를 정확히 하고 후자는 새 실험으로 남긴다.",
+      "experiment_use": "향후 로그에는 정책이 본 값·시점·획득 이력·실패를 저장한다. 새 정책이 요구하는 행동이 과거 자료에 실제로 있었는지를 먼저 검사한 뒤 평가 방법을 정한다.",
+      "limits": [
+        "α·λ 곡선을 인과적 비용 절감이나 새 정책 우승으로 해석하지 않는다.",
+        "원문의 추정기 성능·신뢰구간·보장을 ProbeFlow로 이전하지 않는다."
+      ],
+      "excerpt": "not allowed to depend on the unobserved underlying features",
+      "locator": "arXiv2312.01530v3 Section3.3, first paragraph",
+      "full_text_archived": false,
+      "publisher_response_sha256": null,
+      "native_runs": 0,
+      "comparison": "Forge 해석: 같은 예측기를 동결해도 관측 가능 시점·행동 지지·수집 정책이 바뀌면 저장 로그의 차이는 배치 효과와 같지 않다. v21의 α는 손실 선호이며 이 논문의 정책 기호와 동일한 변수가 아니다.",
+      "study_note": {
+        "idea": "과거 장부에서 계산을 다시 하는 일과, 새 규칙을 실제로 써도 같은 결과가 나는 일 사이에는 빠진 가정이 있다. 우리 표는 전자를 정확히 하고 후자는 새 실험으로 남긴다.",
+        "method": "기대 비용의 대상을 먼저 정의하고 관측 과정의 가정을 확인하는 평가 프레임이다. 새 획득 정책 자체를 제안하는 비교로 읽지 않는다.",
+        "benchmark": "입력은 목표 정책·분류기와 과거 관측 이력, 출력은 선언한 가정 아래 목표 비용 추정이다. ProbeFlow는 완전 캐시에서 유한 산술을 재생하므로 이 논문의 식별 정리를 수행한 것이 아니다.",
+        "use": "향후 로그에는 정책이 본 값·시점·획득 이력·실패를 저장한다. 새 정책이 요구하는 행동이 과거 자료에 실제로 있었는지를 먼저 검사한 뒤 평가 방법을 정한다.",
+        "limits": [
+          "α·λ 곡선을 인과적 비용 절감이나 새 정책 우승으로 해석하지 않는다.",
+          "원문의 추정기 성능·신뢰구간·보장을 ProbeFlow로 이전하지 않는다."
+        ],
+        "questions": [
+          "이 자료에서 정책이 선택 전에 볼 수 있는 값과 사후 평가만 볼 수 있는 값은 무엇인가?",
+          "독립 group과 비용 단위를 어떻게 고정하고 현재 한 rig의 어느 한계를 실제로 검사할 것인가?"
+        ]
+      },
+      "excerpt_sha256": "d012255c21ade3aee5c2860ab2262a0715b3e29f0b099d9b4a70d945a9bf9023"
+    },
+    {
+      "id": "PF21-UCI-HAR",
+      "kind": "dataset",
+      "title": "Human Activity Recognition Using Smartphones",
+      "url": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+      "checked_at": "2026-10-19",
+      "review_scope": "Official UCI Dataset Information, Additional Variable Information, files and License sections. Archive58.2MB and README inside it were not downloaded or parsed.",
+      "author_report": "공식 설명은 30명의 스마트폰 가속도·자이로 기록, 2.56초·50% 겹침 창, 피험자별70/30 분할과561개 특징을 제시한다.",
+      "method": "Forge 제안: 특징 하나씩 사는 대신 센서별로 같은 창에서 유도되는 특징 묶음을 정의한다. 중력·신체 가속도처럼 같은 원천의 파생값을 독립 구매로 중복 계산하지 않는다.",
+      "comparison_rights": "완성된 창을 가린 뒤 공개하는 권한만 주장한다. 원래 수집된 창은 현재 센서를 켜서 미래 신호를 측정한 결과가 아니며 중첩 창도 독립 피험자가 아니다.",
+      "inputs_outputs": "센서 창·subject ID를 입력으로 하고 활동 class를 예측하는 후보이다. 네 head를 가진 현 유압 진단과 endpoint가 달라 v21의 α 혼합을 그대로 이식하지 않는다.",
+      "budget": "센서 묶음 quote 또는 별도로 측정한 에너지를 쓰는 두 실험을 구분한다. 허용 센서 수 cap과 평균 quote·예측 오류를 동시에 보고한다.",
+      "group_split": "Forge 설계: 공식 피험자 test 경계를 보존하고 train 피험자를 다시 fit/dev로 나눈다. 같은 사람이나 겹친 창이 train/test에 섞인 무작위 행 분할은 금지한다.",
+      "observation_time": "완성된 창의 특징은 그 창이 끝난 뒤의 정보다. 창 도중 결정을 내리는 실험은 별도 원시시점·지연 계약이 필요하다.",
+      "dataset_access_license": "공식 페이지 License는 CC BY4.0으로 표시된다. 실제 압축 내부 권리·파일 동일성은 미검토이고 이번 사용은 페이지 검토뿐이다.",
+      "easy_explanation": "장비 한 대 대신 사람을 나누어, 새 사람에게도 선택 규칙이 통하는지 묻는 출발점이다. 센서를 몇 개 덜 읽었다고 배터리 절약까지 측정한 것은 아니다.",
+      "experiment_use": "후속 후보1: 미관측 피험자를 남기는 센서 그룹 선택 대조. 고정 all-source·동일 cap 최강 fixed·관측 가능한 gate를 같은 classifier에서 비교한다.",
+      "limits": [
+        "사람 간 검증은 새 유압 rig의 검증을 대신하지 못한다.",
+        "공식 파일을 받지 않았으므로 전처리·결측·sample count를 실행 검증했다고 쓰지 않는다."
+      ],
+      "excerpt": "fixed-width sliding windows of 2.56 sec and 50% overlap",
+      "locator": "UCI Dataset Information, second paragraph; License",
+      "full_text_archived": false,
+      "publisher_response_sha256": null,
+      "native_runs": 0,
+      "comparison": "완성된 창을 가린 뒤 공개하는 권한만 주장한다. 원래 수집된 창은 현재 센서를 켜서 미래 신호를 측정한 결과가 아니며 중첩 창도 독립 피험자가 아니다.",
+      "study_note": {
+        "idea": "장비 한 대 대신 사람을 나누어, 새 사람에게도 선택 규칙이 통하는지 묻는 출발점이다. 센서를 몇 개 덜 읽었다고 배터리 절약까지 측정한 것은 아니다.",
+        "method": "Forge 제안: 특징 하나씩 사는 대신 센서별로 같은 창에서 유도되는 특징 묶음을 정의한다. 중력·신체 가속도처럼 같은 원천의 파생값을 독립 구매로 중복 계산하지 않는다.",
+        "benchmark": "센서 창·subject ID를 입력으로 하고 활동 class를 예측하는 후보이다. 네 head를 가진 현 유압 진단과 endpoint가 달라 v21의 α 혼합을 그대로 이식하지 않는다.",
+        "use": "후속 후보1: 미관측 피험자를 남기는 센서 그룹 선택 대조. 고정 all-source·동일 cap 최강 fixed·관측 가능한 gate를 같은 classifier에서 비교한다.",
+        "limits": [
+          "사람 간 검증은 새 유압 rig의 검증을 대신하지 못한다.",
+          "공식 파일을 받지 않았으므로 전처리·결측·sample count를 실행 검증했다고 쓰지 않는다."
+        ],
+        "questions": [
+          "이 자료에서 정책이 선택 전에 볼 수 있는 값과 사후 평가만 볼 수 있는 값은 무엇인가?",
+          "독립 group과 비용 단위를 어떻게 고정하고 현재 한 rig의 어느 한계를 실제로 검사할 것인가?"
+        ]
+      },
+      "excerpt_sha256": "6d9b006cdd79b0eb89abd2c6bc703ce42b8f2dfed51fe6db777b89786b0942c9"
+    },
+    {
+      "id": "PF21-UCI-GAS-DRIFT",
+      "kind": "dataset",
+      "title": "Gas Sensor Array Drift Dataset",
+      "url": "https://archive.ics.uci.edu/dataset/224/gas+sensor+array+drift+dataset",
+      "checked_at": "2026-10-19",
+      "review_scope": "Official UCI Dataset Information, feature construction, ten-batch chronology and License. No archive9.5MB downloaded, no byte-level files or underlying paper reviewed.",
+      "author_report": "공식 설명은16개 센서의128개 요약 특징과 시간 순서의10개 batch를 제시한다. 특징에는 반응 상승·감쇠 구간을 요약한 값이 포함된다.",
+      "method": "Forge 제안: 센서 하나의8개 특징을 한 묶음으로 보고 앞 batch에서 fit/dev, 뒤 batch에서 동결 평가한다. batch별 성능과 class 결손을 숨기지 않는다.",
+      "comparison_rights": "드리프트를 가진 별도 시간 구간을 검사할 후보지만 새 장치 독립성은 제공하지 않는다. 반응 전체 요약을 첫 측정 순간에 관측한 값으로 취급하면 안 된다.",
+      "inputs_outputs": "센서별 요약 특징에서 가스 class를 예측한다. current four-head 오류·vector 오류와 다른 단일 class endpoint이므로 별도 손실 정의가 필요하다.",
+      "budget": "센서 그룹별 동일 quote는 사전 선언 proxy일 뿐이다. 반응·회복 시간이나 에너지는 주어진 특징표에서 실측할 수 없다.",
+      "group_split": "Forge 설계: batch 순서와 sample ID를 잠그고 early fit→later dev→last held-out을 둔다. 클래스 부재나 농도 이동을 제외 사유와 함께 기록하고 표본을 유리하게 재선택하지 않는다.",
+      "observation_time": "최대 반응이나 감쇠 구간 특징은 나중에 완성된다. 시간 절감 실험에는 원시 시계열·결정 시각·센서 회복 조건이 추가로 필요하다.",
+      "dataset_access_license": "같은 공식 페이지에 상충 표기가 있다: Dataset Information은 연구 전용·상업 제외, License는 CC BY4.0을 표시한다. 어느 하나를 전체 허가로 확정하지 않는다. 실제 파일 권리 확인 전 다운로드·재배포·상업 적용은 이번 계획에 넣지 않는다.",
+      "easy_explanation": "오래 쓰며 변한 센서에서도 규칙이 통하는지를 묻는다. 장비가 늘어난 실험도 아니고, 오래 걸리는 특징을 미리 볼 권한을 주는 실험도 아니다.",
+      "experiment_use": "권리 확인 후의 조건부 후보: 시기별 센서 그룹 선택·오류·quote 민감도. 현 논문의 증명이나 우열을 그대로 일반화하지 않는다.",
+      "limits": [
+        "권리 표기가 같은 페이지 안에서 충돌하므로 access/license confirmed로 표시하지 않는다.",
+        "10개 batch를10개 독립 장치나 무작위 trial로 세지 않는다."
+      ],
+      "excerpt": "The dataset can be used exclusively for research purposes. Commercial purposes are fully excluded.",
+      "locator": "UCI Dataset Information paragraph2 versus License paragraph1",
+      "full_text_archived": false,
+      "publisher_response_sha256": null,
+      "native_runs": 0,
+      "comparison": "드리프트를 가진 별도 시간 구간을 검사할 후보지만 새 장치 독립성은 제공하지 않는다. 반응 전체 요약을 첫 측정 순간에 관측한 값으로 취급하면 안 된다.",
+      "study_note": {
+        "idea": "오래 쓰며 변한 센서에서도 규칙이 통하는지를 묻는다. 장비가 늘어난 실험도 아니고, 오래 걸리는 특징을 미리 볼 권한을 주는 실험도 아니다.",
+        "method": "Forge 제안: 센서 하나의8개 특징을 한 묶음으로 보고 앞 batch에서 fit/dev, 뒤 batch에서 동결 평가한다. batch별 성능과 class 결손을 숨기지 않는다.",
+        "benchmark": "센서별 요약 특징에서 가스 class를 예측한다. current four-head 오류·vector 오류와 다른 단일 class endpoint이므로 별도 손실 정의가 필요하다.",
+        "use": "권리 확인 후의 조건부 후보: 시기별 센서 그룹 선택·오류·quote 민감도. 현 논문의 증명이나 우열을 그대로 일반화하지 않는다.",
+        "limits": [
+          "권리 표기가 같은 페이지 안에서 충돌하므로 access/license confirmed로 표시하지 않는다.",
+          "10개 batch를10개 독립 장치나 무작위 trial로 세지 않는다."
+        ],
+        "questions": [
+          "이 자료에서 정책이 선택 전에 볼 수 있는 값과 사후 평가만 볼 수 있는 값은 무엇인가?",
+          "독립 group과 비용 단위를 어떻게 고정하고 현재 한 rig의 어느 한계를 실제로 검사할 것인가?"
+        ]
+      },
+      "excerpt_sha256": "f275155fc3852886a67838430055664699b8a5b97a90de0317ce42c254475a28"
+    },
+    {
+      "id": "PF21-UCI-OPPORTUNITY",
+      "kind": "dataset",
+      "title": "OPPORTUNITY Activity Recognition",
+      "url": "https://archive.ics.uci.edu/dataset/226/opportunity+activity+recognition",
+      "checked_at": "2026-10-19",
+      "review_scope": "Official UCI Dataset Information, missingness, Additional Variable Information, file list and License; no292.4MB archive, challenge script or package specification downloaded.",
+      "author_report": "공식 설명은 착용·물체·환경 센서,4명×6회 기록, 여러 수준의 활동 라벨과 결측을 보고한다.",
+      "method": "Forge 제안: subject/run을 독립성 경계로 고정하고 서로 다른 센서 종류를 action group으로 구성한다. 하나의 원천에서 나온 여러 축은 묶어 비용을 한 번 청구한다.",
+      "comparison_rights": "다중 센서·결측 조건을 다룰 후보이다. 과거에 값이 존재했다는 사실과 새 획득 시점에 값이 제공된다는 사실을 분리한다.",
+      "inputs_outputs": "원시 센서 reading과 주체/run 식별자에서 사전 선택한 라벨 수준 하나를 예측한다. label track은 평가자가 보관하고 정책에 공개하지 않는다.",
+      "budget": "착용/물체/환경 그룹의 quote를 선언한 mask 실험과 실제 통신·센서 에너지 측정을 구별한다. 미획득·본래 결측·수신 실패를 서로 다른 상태로 기록한다.",
+      "group_split": "Forge 설계: 새 subject 또는 통째 run을 held-out으로 둔다. ADL과 scripted drill의 역할을 잠그고, 동일 run 창을 무작위로 섞어 독립 test처럼 쓰지 않는다.",
+      "observation_time": "아카이브 상세 시각·정렬·전처리 규격은 미검토이다. causally available prefix와 결측 처리 기준을 확정하기 전 물리적 온라인 평가를 주장하지 않는다.",
+      "dataset_access_license": "현재 공식 페이지 License는 CC BY4.0이다. 내부 파일·challenge 코드의 별도 권리는 검토하지 않았고 재배포하지 않았다.",
+      "easy_explanation": "몇 가지 센서를 쓸지뿐 아니라, 필요한 값이 정말 도착했는지까지 구분할 수 있는 후속 후보이다. 사람이4명이므로 많은 시간 창을 독립 사람 수처럼 늘려 세지 않는다.",
+      "experiment_use": "후속 후보2: 그룹 선택과 availability를 분리한 센서 획득 프로토콜. 실제 설치 전에는 완성된 기록의 mask replay로만 보고한다.",
+      "limits": [
+        "archive와 benchmark scripts를 실행하지 않았으므로 실제 재현 결과는0이다.",
+        "하나의 공동 환경에서 나온 기록이 유압 장치 간 일반화나 실제 energy saving을 보장하지 않는다."
+      ],
+      "excerpt": "4 users, 6 runs per users",
+      "locator": "UCI Dataset Information, sensor inventory paragraph; License",
+      "full_text_archived": false,
+      "publisher_response_sha256": null,
+      "native_runs": 0,
+      "comparison": "다중 센서·결측 조건을 다룰 후보이다. 과거에 값이 존재했다는 사실과 새 획득 시점에 값이 제공된다는 사실을 분리한다.",
+      "study_note": {
+        "idea": "몇 가지 센서를 쓸지뿐 아니라, 필요한 값이 정말 도착했는지까지 구분할 수 있는 후속 후보이다. 사람이4명이므로 많은 시간 창을 독립 사람 수처럼 늘려 세지 않는다.",
+        "method": "Forge 제안: subject/run을 독립성 경계로 고정하고 서로 다른 센서 종류를 action group으로 구성한다. 하나의 원천에서 나온 여러 축은 묶어 비용을 한 번 청구한다.",
+        "benchmark": "원시 센서 reading과 주체/run 식별자에서 사전 선택한 라벨 수준 하나를 예측한다. label track은 평가자가 보관하고 정책에 공개하지 않는다.",
+        "use": "후속 후보2: 그룹 선택과 availability를 분리한 센서 획득 프로토콜. 실제 설치 전에는 완성된 기록의 mask replay로만 보고한다.",
+        "limits": [
+          "archive와 benchmark scripts를 실행하지 않았으므로 실제 재현 결과는0이다.",
+          "하나의 공동 환경에서 나온 기록이 유압 장치 간 일반화나 실제 energy saving을 보장하지 않는다."
+        ],
+        "questions": [
+          "이 자료에서 정책이 선택 전에 볼 수 있는 값과 사후 평가만 볼 수 있는 값은 무엇인가?",
+          "독립 group과 비용 단위를 어떻게 고정하고 현재 한 rig의 어느 한계를 실제로 검사할 것인가?"
+        ]
+      },
+      "excerpt_sha256": "762882454b176055d1a5cb33245599434c6f531938a9abb3cbae6b0050261e3c"
+    }
+  ]
+}

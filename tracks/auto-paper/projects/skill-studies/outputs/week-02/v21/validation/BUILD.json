@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "typst_version": "0.15.1",
+  "pdfs": [
+    {
+      "path": "build/skillmerge/SkillMerge_v21.pdf",
+      "pages": 5,
+      "bytes": 275157,
+      "sha256": "0dbcee0ec2f0428eed8efb1bc9ac6bdc54b62e6498ed5651ceb6e4eb4febcbd9"
+    },
+    {
+      "path": "build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+      "pages": 45,
+      "bytes": 1813225,
+      "sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89"
+    },
+    {
+      "path": "build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+      "pages": 25,
+      "bytes": 1495737,
+      "sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e"
+    },
+    {
+      "path": "build/second-chance/SecondChance_v21.pdf",
+      "pages": 5,
+      "bytes": 288041,
+      "sha256": "db7242d8b9175a2384b0b31d8fc3ae760f4be35295fb4f7569f8421bc3afae56"
+    },
+    {
+      "path": "build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+      "pages": 43,
+      "bytes": 1825974,
+      "sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535"
+    },
+    {
+      "path": "build/second-chance/SecondChance_EXPLAINER_KO_v21.pdf",
+      "pages": 23,
+      "bytes": 1304705,
+      "sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2"
+    },
+    {
+      "path": "build/probeflow/ProbeFlow_v21.pdf",
+      "pages": 5,
+      "bytes": 317622,
+      "sha256": "04f917f6d1f97e7ba93b471827cffb7f1b34571b70dae94286263e876ea5d1d8"
+    },
+    {
+      "path": "build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+      "pages": 38,
+      "bytes": 1492016,
+      "sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c"
+    },
+    {
+      "path": "build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+      "pages": 43,
+      "bytes": 1751424,
+      "sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d"
+    }
+  ],
+  "source_comparisons": 162,
+  "acknowledgement": "This work was created as part of the No-More-Slops group activities at Pseudo Lab.",
+  "font_families": [
+    "Arial",
+    "Malgun Gothic",
+    "DejaVu Sans",
+    "New Computer Modern"
+  ],
+  "scope": "Fresh compile of the submitted Typst sources with installed fonts. Font binaries, private paths, scientific datasets and operational state are excluded."
+}

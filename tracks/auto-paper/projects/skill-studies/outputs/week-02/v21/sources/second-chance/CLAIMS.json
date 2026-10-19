@@ -1,0 +1,142 @@
+{
+  "schema": "secondchance_v21_claims_v1",
+  "inherited_content_version": "v20-20261019",
+  "run": "runs/research_advancement_v21_20261019_01/second_chance/analysis_01",
+  "claims": [
+    {
+      "id": "SC19-C01",
+      "kind": "exact_conditional_identification_identity_and_counterexample",
+      "claim": "Worst scenario-conditioned width, actual unknown-scenario union width and pre-outcome worst union width are three different objectives. The last admits an exact four-endpoint-pair formula.",
+      "source_ids": [
+        "SC19-PLAN",
+        "SC19-WITNESS",
+        "SC19-VERIFY",
+        "SC19-ENVELOPE"
+      ],
+      "section": "Unknown continuation scenarios change the audit objective",
+      "scope": "Fixed audited utilities, remaining utilities in [0,1], and lambda in [0,1]. No assumption that this restricted class contains real future paths. A two-state analytic example has conditioned width zero and union width 1/2."
+    },
+    {
+      "id": "SC19-C02",
+      "kind": "conditional_zero_sum_l1_tube_identity",
+      "claim": "With zero-sum L1 perturbation at most epsilon and two freely valued fresh coordinates, conditioned width, panel union width and pre-outcome union objective each increase by exactly epsilon. Uniform eta inflation cannot alter candidate ranking.",
+      "source_ids": [
+        "SC19-PLAN",
+        "SC19-WITNESS",
+        "SC19-ENVELOPE"
+      ],
+      "section": "Uniform ambiguity inflation is not a selector repair",
+      "scope": "Fresh-state utilities may attain zero and one; tube is not intersected with a tighter physically attainable continuation set. Positive/negative masses epsilon/2 are essential. Not a confidence guarantee under unspecified support restrictions."
+    },
+    {
+      "id": "SC19-C03",
+      "kind": "retrospective_dependent_model_inclusion_sensitivity",
+      "claim": "At eta 0,1/8,1/4,1/2,3/4,1 the inflated model includes the final coefficient in 4,8,10,13,13,13 of the same 13 dependent nonterminal views.",
+      "source_ids": [
+        "SC19-MEMBERSHIP",
+        "SC19-VERIFY"
+      ],
+      "section": "Retrospective inclusion does not establish predictive calibration",
+      "scope": "All views are exposed authored development paths. No statistical coverage, generalization, data-selected deployable eta or independent validation sample."
+    },
+    {
+      "id": "SC19-C04",
+      "kind": "executed_matched_development_comparison_with_negative_final_result",
+      "claim": "Both new union selectors tie their respective restricted selectors in all 16 final-width contracts. Four paired areas improve by exactly 1/192 with unchanged quote counts and query checkpoints; no new unaffected sign certificate.",
+      "source_ids": [
+        "SC19-RUN",
+        "SC19-VERIFY"
+      ],
+      "section": "Union-aware selection changes a few states but not final identification",
+      "scope": "Four differences are B8/q2 one and set, B8/q3 one, B8/q4 one. They are dependent replay contrasts, not independent gains or prospective latency savings. The other 12 areas tie."
+    },
+    {
+      "id": "SC19-C05",
+      "kind": "negative_observed_panel_diagnostic",
+      "claim": "All 1620 actual fixed-panel decision views have scenario-union width equal to worst scenario-conditioned width, despite counterfactual pre-outcome premiums and an analytic separating example.",
+      "source_ids": [
+        "SC19-AMBIGUITY",
+        "SC19-ENVELOPE"
+      ],
+      "section": "Observed panel equality limits the empirical separation claim",
+      "scope": "Policies, caps, checkpoints and three reused panels do not create 1620 independent units. Do not describe the theoretical separation as an observed positive premium in these panels."
+    },
+    {
+      "id": "SC19-C06",
+      "kind": "finite_family_pareto_and_timing_tradeoff",
+      "claim": "At B8/q3 late retains final safe width 1/24 and area 75/64; FIFO, restricted-set and both union rules attain width 1/12 and area 37/32. A two-quote current-disagreement rule remains nondominated on the declared width/area/quote axes despite worse width.",
+      "source_ids": [
+        "SC19-RUN",
+        "SC19-PARETO"
+      ],
+      "section": "A finite policy-family frontier preserves timing tradeoffs",
+      "scope": "Only nine predeclared rules on exposed replay. Quotes are old saved-value inspections. No globally optimal causal policy or real audit-speed frontier."
+    },
+    {
+      "id": "SC19-C07",
+      "kind": "provenance_and_scope_accounting",
+      "claim": "173 input hashes, 540 decisions and 1620 safe-bound cells were checked; 56 original v17 terminal contracts and 420 decisions reproduce. New actual audits, natural histories, independent units and model calls remain zero.",
+      "source_ids": [
+        "SC19-VERIFY",
+        "SC19-ENVELOPE",
+        "SC19-RUN"
+      ],
+      "section": "Execution inventory and admission gates",
+      "scope": "Same-author verifiers use distinct formulas and enumerations, not external scientific peer review. Native Codex authoring usage is not measured."
+    },
+    {
+      "id": "SC21-C01",
+      "kind": "exact_fixed_stream_structural_frontier",
+      "claim": "An audited-set dynamic program computes the complete 2D terminal-safe-width/checkpoint-area frontier under the fixed arrival/quote contract; separate exhaustive enumeration agrees in all eight settings.",
+      "source_ids": [
+        "SC21-PLAN",
+        "SC21-RUN",
+        "SC21-VERIFY"
+      ],
+      "section": "Problem and Method",
+      "scope": "Fixed recovery, one instantaneous unique visible identity quote per positive integer slot, at most q. Future structure is privileged; no global online optimality."
+    },
+    {
+      "id": "SC21-C02",
+      "kind": "executed_finite_schedule_diagnostic",
+      "claim": "All eight frontiers are singleton objective points. Of 72 preserved causal-policy rows, 28 match and 44 are dominated. The 33,658 schedule-contract combinations include nested-cap repeats.",
+      "source_ids": [
+        "SC21-RUN",
+        "SC21-VERIFY"
+      ],
+      "section": "Results",
+      "scope": "Exposed twelve-template authored streams only; singleton behavior and counts are not a general scheduling theorem or independent sample denominator."
+    },
+    {
+      "id": "SC21-C03",
+      "kind": "conditional_hindsight_gap_and_adverse_online_comparison",
+      "claim": "At B8/q3 the structural point (1/24,73/64) dominates FIFO/union (1/12,37/32) and late-prefix (1/24,75/64). At B8/q4 the point is (0,217/192), reached by none of the nine rules.",
+      "source_ids": [
+        "SC21-RUN",
+        "SC21-VERIFY"
+      ],
+      "section": "Results",
+      "scope": "Legal offline witnesses read future arrivals/occupations. No proof that these headroom gaps are predictable or achievable by an online policy on new streams."
+    },
+    {
+      "id": "SC21-C04",
+      "kind": "primary_resource_review_and_unexecuted_transfer_design",
+      "claim": "Three primary trajectory/debugging resources were inspected and bounded passages preserved. Attribution annotations, rerun infrastructure and deterministic complete-state recovery certification are different contracts.",
+      "source_ids": [
+        "SC21-LITERATURE"
+      ],
+      "section": "S19. Primary trajectory resources and an unclosed transfer gate",
+      "scope": "Read-only primary-paper/repository/card review. No data acquisition, native run, complete checkpoint proof, inherited-data license certification or external effect-size comparison."
+    }
+  ],
+  "not_established": [
+    "Prospective advantage in natural evaluator-correction histories",
+    "A positive actual scenario-ambiguity premium in the saved panels",
+    "Real audit latency or compute savings",
+    "Statistical coverage or optimally calibrated eta",
+    "Global online optimality or adaptive-submodular guarantees",
+    "Closure of complete-state and deterministic-utility admission gates"
+  ],
+  "prospective_effect": null,
+  "inherited_run": "outputs/research_advancement_v19_20261019/second_chance_analysis_01"
+}

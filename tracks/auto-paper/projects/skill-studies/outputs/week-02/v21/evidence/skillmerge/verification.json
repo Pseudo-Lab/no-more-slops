@@ -1,0 +1,21 @@
+{
+  "schema": "skillmerge_v21_separate_verification_v1",
+  "ok": true,
+  "pair_capacity_rows": 159558,
+  "aggregate_rows": 21,
+  "finite_counts": {
+    "input_pairs": 3046,
+    "pair_caps": 21322,
+    "guard_true": 19210,
+    "qualified_family_cap_checks": 777333,
+    "guard_false_counterfamilies": 2112
+  },
+  "expected_tamper_rejections": [
+    "input",
+    "output"
+  ],
+  "results_sha256": "7ba5202f9b317d489710419ea3335427a6af0174bbb00f29686be3927b3b376d",
+  "executed_verifier_sha256": "c44b10c5ca8f44e4cab52556210fac3120013205ff6b3085b1cdd067060321ed",
+  "model_api_calls": 0,
+  "scope": "Same-author separate implementation. Original run preserved; no independent skill or scientific replication."
+}

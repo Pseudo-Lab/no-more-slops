@@ -1,0 +1,191 @@
+{
+  "schema": "nms_week02_v21_selected_page_visual_review_v1",
+  "reviewed_at_utc": "2026-10-19T11:47:00.442905+00:00",
+  "status": "passed_selected_pages",
+  "reviewer": "Native Codex separate source-audit lane",
+  "method": "Opened and visually inspected all nine supplied acknowledgement-page PNGs with view_image; additionally rendered and opened ProbeFlow Supplement pages 37 and 38. PDF and image hashes are checked at review time.",
+  "pdfs_inspected": 9,
+  "images_inspected": 11,
+  "blocking_findings_remaining": 0,
+  "documents": [
+    {
+      "project": "skillmerge",
+      "kind": "paper",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/skillmerge/SkillMerge_v21.pdf",
+      "pdf_sha256": "0dbcee0ec2f0428eed8efb1bc9ac6bdc54b62e6498ed5651ceb6e4eb4febcbd9",
+      "pdf_pages": 5,
+      "pages_inspected": [
+        4
+      ],
+      "images": [
+        {
+          "page": 4,
+          "path": "visual/skillmerge-paper-credit.png",
+          "sha256": "1ac86691bd33520e21aed0e985ac7351369e25abbe014b3691249863cbd1d0d0"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed."
+    },
+    {
+      "project": "skillmerge",
+      "kind": "supplement",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+      "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+      "pdf_pages": 45,
+      "pages_inspected": [
+        40
+      ],
+      "images": [
+        {
+          "page": 40,
+          "path": "visual/skillmerge-supplement-credit.png",
+          "sha256": "f410c4b974e60b26f2533fde73456682ac5c08136b8ee9dfb72a81cc73813fb8"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed."
+    },
+    {
+      "project": "skillmerge",
+      "kind": "guide",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+      "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+      "pdf_pages": 25,
+      "pages_inspected": [
+        25
+      ],
+      "images": [
+        {
+          "page": 25,
+          "path": "visual/skillmerge-guide-credit.png",
+          "sha256": "1f934c689612b50714302b2ea8a23d5e536882b9784bf5493737fd88d419f0ef"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed."
+    },
+    {
+      "project": "second_chance",
+      "kind": "paper",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/second-chance/SecondChance_v21.pdf",
+      "pdf_sha256": "db7242d8b9175a2384b0b31d8fc3ae760f4be35295fb4f7569f8421bc3afae56",
+      "pdf_pages": 5,
+      "pages_inspected": [
+        4
+      ],
+      "images": [
+        {
+          "page": 4,
+          "path": "visual/second_chance-paper-credit.png",
+          "sha256": "e35b2a73f1474a878255b3d03cfa80d71479ac0c5b9bd9daedf8bb72a0cbdc1f"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed."
+    },
+    {
+      "project": "second_chance",
+      "kind": "supplement",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+      "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+      "pdf_pages": 43,
+      "pages_inspected": [
+        39
+      ],
+      "images": [
+        {
+          "page": 39,
+          "path": "visual/second_chance-supplement-credit.png",
+          "sha256": "25f11861951c52435b8688a5a8c947e78ac2c7019ef17c738b2d45292202e5e9"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed."
+    },
+    {
+      "project": "second_chance",
+      "kind": "guide",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/second-chance/SecondChance_EXPLAINER_KO_v21.pdf",
+      "pdf_sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2",
+      "pdf_pages": 23,
+      "pages_inspected": [
+        23
+      ],
+      "images": [
+        {
+          "page": 23,
+          "path": "visual/second_chance-guide-credit.png",
+          "sha256": "89ca1b956ea74005b49f9f3803da896cce99122e5d0c8d72c11f8f6a567c3fc2"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed."
+    },
+    {
+      "project": "probeflow",
+      "kind": "paper",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/probeflow/ProbeFlow_v21.pdf",
+      "pdf_sha256": "04f917f6d1f97e7ba93b471827cffb7f1b34571b70dae94286263e876ea5d1d8",
+      "pdf_pages": 5,
+      "pages_inspected": [
+        4
+      ],
+      "images": [
+        {
+          "page": 4,
+          "path": "visual/probeflow-paper-credit.png",
+          "sha256": "31ad3b908e3cf37b94d823ce6822ebcfa1c78d221bae7345cda972d4252b65b7"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed."
+    },
+    {
+      "project": "probeflow",
+      "kind": "supplement",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+      "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+      "pdf_pages": 38,
+      "pages_inspected": [
+        33,
+        37,
+        38
+      ],
+      "images": [
+        {
+          "page": 33,
+          "path": "visual/probeflow-supplement-credit.png",
+          "sha256": "7f9f873aea114861cec363bf20f1e592f77d491f74bc401715752adf5091e71f"
+        },
+        {
+          "page": 37,
+          "path": "visual/reviewer-extra/probeflow-supplement-page-37.png",
+          "sha256": "99a63328beea9af8c5b5a4b25411d18adf1cb752687ce4a2776d228dc6a249a3"
+        },
+        {
+          "page": 38,
+          "path": "visual/reviewer-extra/probeflow-supplement-page-38.png",
+          "sha256": "e3a7364175b9b653a5a092ec945ee98f396d782b06a87501549cfef24f883f1b"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed. The final two pages were also visually inspected: the source-inspection boundary continues cleanly onto page 38; neither page is blank or visibly truncated."
+    },
+    {
+      "project": "probeflow",
+      "kind": "guide",
+      "pdf": "repo/tracks/auto-paper/projects/skill-studies/outputs/week-02/v21/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+      "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+      "pdf_pages": 43,
+      "pages_inspected": [
+        43
+      ],
+      "images": [
+        {
+          "page": 43,
+          "path": "visual/probeflow-guide-credit.png",
+          "sha256": "e558a91130c5b565769d71cad9f6b37b56bf71e089c6ee5a31b7284fa0e512cb"
+        }
+      ],
+      "observation": "Acknowledgement heading and full required wording are readable inside the page margins; no clipping, overlap, or intrusion into nearby body text, figures or references observed."
+    }
+  ],
+  "limits": [
+    "Selected-page visual inspection only, not all-page visual review.",
+    "Source consistency and automated text/geometry checks are separate root-lane checks.",
+    "This is not external peer review, independent scientific replication, or a skill behavioral evaluation."
+  ]
+}

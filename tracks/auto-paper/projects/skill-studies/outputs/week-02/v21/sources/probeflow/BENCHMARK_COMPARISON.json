@@ -1,0 +1,87 @@
+{
+  "schema": "forge_benchmark_comparison_v1",
+  "project_id": "probeflow",
+  "methods": [
+    {
+      "name": "best_fixed (all feasible masks)",
+      "source_url": "local:runs/research_advancement_v17_20261019_01/probeflow/analysis_01/policy_results.json",
+      "source_scope": "Prelocked v17 fit/dev gate benchmark; all 90 settings preserved.",
+      "our_implementation": "implemented_local",
+      "data": "One rig; predictor train1540, policy fit102/dev102, exposed evaluation421.",
+      "information": "All feasible masks including empty/full where allowed, dev-selected with fixed k; no observed-value branching.",
+      "budget": "Same hard quote cap, k and lambda; actual average quote explicitly differs.",
+      "comparison_scope": "Local chronological replay, not independent final or physical deployment."
+    },
+    {
+      "name": "gate_only (forced nonconstant family)",
+      "source_url": "local:runs/research_advancement_v17_20261019_01/probeflow/analysis_01/policy_results.json",
+      "source_scope": "Prelocked v17 fit/dev gate benchmark; all 90 settings preserved.",
+      "our_implementation": "implemented_local",
+      "data": "One rig; predictor train1540, policy fit102/dev102, exposed evaluation421.",
+      "information": "Fit-only root/threshold/leaf learning; dev chooses a gate, with explicit no-gate fallback.",
+      "budget": "Same hard quote cap, k and lambda; actual average quote explicitly differs.",
+      "comparison_scope": "Local chronological replay, not independent final or physical deployment."
+    },
+    {
+      "name": "adaptive_enabled (fixed plus gates)",
+      "source_url": "local:runs/research_advancement_v17_20261019_01/probeflow/analysis_01/policy_results.json",
+      "source_scope": "Prelocked v17 fit/dev gate benchmark; all 90 settings preserved.",
+      "our_implementation": "implemented_local",
+      "data": "One rig; predictor train1540, policy fit102/dev102, exposed evaluation421.",
+      "information": "Union includes every best_fixed candidate and fit-trained gate; dev inclusion guarantee is mechanical.",
+      "budget": "Same hard quote cap, k and lambda; actual average quote explicitly differs.",
+      "comparison_scope": "Local chronological replay, not independent final or physical deployment."
+    },
+    {
+      "name": "Historical TS1/k1 control",
+      "source_url": "local:runs/research_advancement_v17_20261019_01/probeflow/analysis_01/results.json",
+      "source_scope": "Preserved historical fixed-source diagnostic, reevaluated from identical cached outputs.",
+      "our_implementation": "implemented_local",
+      "data": "One rig; predictor train1540, policy fit102/dev102, exposed evaluation421.",
+      "information": "Offline fit labels and dev choice rights; online only acquired means, mask and declared policy.",
+      "budget": "Same hard quote cap, k and lambda; actual average quote explicitly differs.",
+      "comparison_scope": "798/1684 component errors and quote421; matches primary forced gate at lower expenditure, but historical selection access differs."
+    },
+    {
+      "name": "Historical v16 joint PS1/k3",
+      "source_url": "local:runs/research_advancement_v17_20261019_01/probeflow/analysis_01/results.json",
+      "source_scope": "Prior full-selection204 joint choice, not new fit102/dev102 selector.",
+      "our_implementation": "implemented_local",
+      "data": "One rig; predictor train1540, policy fit102/dev102, exposed evaluation421.",
+      "information": "Offline fit labels and dev choice rights; online only acquired means, mask and declared policy.",
+      "budget": "Same hard quote cap, k and lambda; actual average quote explicitly differs.",
+      "comparison_scope": "Historical diagnostic799/1684, quote421; no claim of matched policy-selection information."
+    },
+    {
+      "name": "BRiG-AFA v1",
+      "source_url": "https://arxiv.org/html/2608.02305v1",
+      "source_scope": "Official HTML Sections 3, 4.1, 4.2, 5.2 and 7 opened through web. Observed-only action rights, frozen-predictor control, unit-cost fixed horizon and offline validity limits.",
+      "our_implementation": "not_run",
+      "data": "Published native datasets not reproduced here.",
+      "information": "Observed-value/mask/candidate/budget only; frozen predictor isolates policy effect.",
+      "budget": "Reviewed unit costs and fixed horizon differ from grouped quotes and STOP.",
+      "comparison_scope": "Methodological comparator only; no external scores pooled."
+    },
+    {
+      "name": "Hierarchical CwCF (Janisch et al.)",
+      "source_url": "https://link.springer.com/article/10.1007/s10994-024-06565-4",
+      "source_scope": "Official publisher HTML reopened; methodological cost/budget distinction and validation role previously read in Sections 3.1 and 6.2. No native hierarchical A2C or benchmark reproduction.",
+      "our_implementation": "related_only",
+      "data": "Hierarchical datasets and A2C not reproduced.",
+      "information": "Validation selection and objective/cap distinction inform the fairness contract.",
+      "budget": "Physical costs not measured; scalarized loss and hard caps remain separate.",
+      "comparison_scope": "Related method, no native performance claim."
+    },
+    {
+      "name": "V19 oracle-separated fixed/leaf/routing diagnostics",
+      "source_url": "local:runs/research_advancement_v19_20261019_01/probeflow/analysis_01/results.json",
+      "source_scope": "New consumed-plan finite analysis and separately recorded arithmetic verification.",
+      "our_implementation": "implemented_local",
+      "data": "Same previously exposed source records; settings and derived cells are not independent samples.",
+      "information": "Auditor-only reference/oracle information is not returned to a causal selector.",
+      "budget": "Same declared capacity/opportunities/source prices and caps; no new physical or remote calls.",
+      "comparison_scope": "Exact finite identities and development replay only; not native external reproduction or a prospective efficacy claim."
+    }
+  ],
+  "scope": "V19 new finite diagnostics are separated from inherited v17 results and external unrun methods. Five local executed/control rows and two primary-source methodology rows; external scores never enter local performance tables."
+}

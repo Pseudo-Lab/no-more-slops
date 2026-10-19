@@ -1,0 +1,107 @@
+{
+  "schema": "forge_benchmark_comparison_v1",
+  "project_id": "second_chance",
+  "methods": [
+    {
+      "name": "FIFO / prefix_abs / current disagreement",
+      "our_implementation": "implemented_local",
+      "source_url": "https://arxiv.org/html/1003.3967v5",
+      "source_scope": "Our preserved v16 deterministic rules;URL supplies methodological context,not authorship.",
+      "data": "Same168 frozen authored paths,12 templates,two horizons;48 selected-arm path records,not natural independent samples.",
+      "information": "Visible prefix,arrival and current active difference only;no future coefficient or utility.",
+      "budget": "At mostone visible-state quote per checkpoint,q1..4;B5or8.",
+      "comparison_scope": "Exact v16 terminal reproduction;no prospective native-method benchmark."
+    },
+    {
+      "name": "Unrestricted one-step minimax",
+      "our_implementation": "implemented_local",
+      "source_url": "https://arxiv.org/html/1003.3967v5",
+      "source_scope": "Our supremum argument and explicit ranking equality checks.",
+      "data": "Same168 frozen authored paths,12 templates,two horizons;48 selected-arm path records,not natural independent samples.",
+      "information": "Unknown future may reach fresh states arbitrarily soon;onlyprefix available now.",
+      "budget": "One current query;worstfuturewidth includes2r.",
+      "comparison_scope": "Equals prefix_abs locally;not globally optimal online allocation."
+    },
+    {
+      "name": "Persistence and restricted one-query minimax",
+      "our_implementation": "implemented_local",
+      "source_url": "https://arxiv.org/html/1003.3967v5",
+      "source_scope": "Authored continuation class c(lambda)=p+lambda*r*d;exact two-endpoint objective.",
+      "data": "Same168 frozen authored paths,12 templates,two horizons;48 selected-arm path records,not natural independent samples.",
+      "information": "Onlyobservedp,d,r;noactualfuture or goldutility.",
+      "budget": "Sameq/opportunities;onequery choosesstrict positive marginal gain.",
+      "comparison_scope": "Conditional scenario width,not unknownlambda union identification or fullfuture robustness."
+    },
+    {
+      "name": "Restricted visible-set minimax",
+      "our_implementation": "implemented_local",
+      "source_url": "https://arxiv.org/html/1003.3967v5",
+      "source_scope": "Authored small exact subset comparator and complementarity test.",
+      "data": "Same168 frozen authored paths,12 templates,two horizons;48 selected-arm path records,not natural independent samples.",
+      "information": "Currentvisible states only;replan at each checkpoint.",
+      "budget": "Enumerate subsets up toremainingq/public opportunities;483primary candidate sets across robust rules.",
+      "comparison_scope": "Exact current static objective;terminal tie withpersistence/onequery,small checkpoint-area difference."
+    },
+    {
+      "name": "Late-prefix scheduling control",
+      "our_implementation": "implemented_local",
+      "source_url": "https://arxiv.org/html/1003.3967v5",
+      "source_scope": "Our simple delayed baseline.",
+      "data": "Same168 frozen authored paths,12 templates,two horizons;48 selected-arm path records,not natural independent samples.",
+      "information": "Public B,q andprefix;futurecommitcontents unavailable.",
+      "budget": "Queries onlylastq publicopportunities;quote usageanddelayretained.",
+      "comparison_scope": "Narrower B8/q3finalwidth buthighercheckpointarea;notuniversal superiority."
+    },
+    {
+      "name": "Arrival-constrained clairvoyant oracle",
+      "our_implementation": "implemented_local",
+      "source_url": "https://arxiv.org/html/1003.3967v5",
+      "source_scope": "Preserved v16 dynamic program,independently checked feasible subsets.",
+      "data": "Same168 frozen authored paths,12 templates,two horizons;48 selected-arm path records,not natural independent samples.",
+      "information": "Sees final coefficient vector;not an information-matched executable policy.",
+      "budget": "Same arrival times,onequery opportunities andq.",
+      "comparison_scope": "Diagnostic final-widthlower bound;not a causal policy."
+    },
+    {
+      "name": "Adaptive submodularity [21]",
+      "our_implementation": "related_only",
+      "source_url": "https://arxiv.org/html/1003.3967v5",
+      "source_scope": "PrimaryHTMLv5 partialobservations,policydefinition anddiminishing-returns scope.",
+      "data": "Same168 frozen authored paths,12 templates,two horizons;48 selected-arm path records,not natural independent samples.",
+      "information": "A matching prior/objective structure would needseparate proof;notprovided here.",
+      "budget": "No native sensor benchmark or Bayesian implementation.",
+      "comparison_scope": "Local four-state counterexample blocks automatic guarantee transfer."
+    },
+    {
+      "name": "COCO fixed-budget / fixed-target assessment [16]",
+      "our_implementation": "related_only",
+      "source_url": "https://numbbo.github.io/coco-doc/perf-assessment/",
+      "source_scope": "Official assessmentHTMLreopened;noexternalperformance number.",
+      "data": "Same168 frozen authored paths,12 templates,two horizons;48 selected-arm path records,not natural independent samples.",
+      "information": "Quality afterbudget differsfromtime-to-target;unattainedtarget remainsmissing.",
+      "budget": "No test-function oroptimizer run;cachequotes andlatency separate.",
+      "comparison_scope": "Reporting alignment only;not COCO method reproduction."
+    },
+    {
+      "name": "V19 unknown-continuation union/tube diagnostics",
+      "source_url": "local:runs/research_advancement_v19_20261019_01/second_chance/analysis_01/results.json",
+      "source_scope": "New consumed-plan finite analysis and separately recorded arithmetic verification.",
+      "our_implementation": "implemented_local",
+      "data": "Same previously exposed source records; settings and derived cells are not independent samples.",
+      "information": "Auditor-only reference/oracle information is not returned to a causal selector.",
+      "budget": "Same declared capacity/opportunities/source prices and caps; no new physical or remote calls.",
+      "comparison_scope": "Exact finite identities and development replay only; not native external reproduction or a prospective efficacy claim."
+    }
+  ],
+  "scope": "V19 new finite diagnostics are separated from inherited v17 results and external unrun methods. Local finite executions,conditional mathematical claims,clairvoyant bounds and related literature remain separate;no external numeric scores imported.",
+  "v21_additional_primary_reading": {
+    "path": "projects/research_advancement_v21_20261019/second_chance/literature/RESOURCES.json",
+    "sha256": "a23c001c1ae502ff31f858ec9885dfeb7872529209d6c5bac2a11e0ce1ec07fc",
+    "source_ids": [
+      "sc21-agentdebug-agenterrorbench",
+      "sc21-whowhen",
+      "sc21-agentdebugx"
+    ],
+    "scope": "Reading and prospective design only. No data downloaded, baseline executed or external performance pooled with the authored frontier."
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "schema": "forge_research_resources_v1",
+  "project_id": "skillmerge",
+  "checked_at": "2026-10-19",
+  "scope": "Official primary HTML/repository review only; no dataset download, dependency installation, native benchmark or model call. Author reports, our method interpretation and future experiments are separate. Main bibliography remains the inherited21 records.",
+  "resources": [
+    {
+      "id": "skillsbench-v1.1-release",
+      "title": "SkillsBench v1.1 — native task.md package release",
+      "authors": "BenchFlow contributors",
+      "kind": "benchmark_release",
+      "url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+      "version": "v1.1; b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+      "checked_at": "2026-10-19",
+      "review_scope": "Official fixed release: package inventory, exclusion and pinned harness compatibility, paired with-skill/no-skill command forms; pinned repository LICENSE. Previously reviewed source, rechecked rather than counted as new empirical evidence.",
+      "author_report_summary_ko": "공식 릴리스는 task.md·environment·oracle·verifier 패키지와 skill 유무 비교를 고정한다. 기본87과제와 제외14패키지를 구분하고 BenchFlow0.6.3 이상0.7 미만을 지정한다. 이 항목은 논문 성능표가 아니라 버전 고정된 벤치마크 배포물이다.",
+      "core_idea_ko": "스킬 파일을 실제 환경에서 읽고 도구를 사용한 결과를 검증하는 작업 단위가 있다. 우리의 문장 ID 조작을 넘어선 실제 스킬 비교를 설계할 때 먼저 볼 자료다.",
+      "our_method_difference_ko": "현재 guard는 두 고정 출력의 ID 포함 관계만 읽는다. 네이티브 작업 수행·스킬 읽기·라우팅·도구 호출·새 응답 생성을 하지 않는다. skill/no-skill 차이는 독립 A/B 각각의 Q 자격이나 합친 AB의 효과를 자동으로 식별하지 않는다.",
+      "information_budget_evaluation_rights_ko": "추후에는 후보 정책마다 같은 task prompt·초기 환경·권한·총예산을 고정하고 skill 파일 설치와 실제 읽기/호출을 분리해 기록한다. oracle 해결 코드와 verifier 정답을 실행 정책에 주지 않는다. 환경 구동·라우팅·재시도·스킬 로딩 비용도 따로 계수해야 한다.",
+      "data_access_ko": "공식 릴리스에서 개별 task 폴더와 manifest 접근 경로만 확인했다. 데이터·컨테이너·의존성은 내려받거나 실행하지 않았다. excluded 패키지를 기본 모집단에 합치지 않는다.",
+      "license": {
+        "status": "pinned_repository_license_checked",
+        "name": "Apache-2.0",
+        "url": "https://github.com/benchflow-ai/skillsbench/blob/b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af/LICENSE",
+        "scope": "Pinned repository LICENSE text inspected; individual third-party task inputs, credentials, remote services and redistribution rights were not exhaustively checked."
+      },
+      "easy_summary_ko": "우리 연구가 주소표 두 장을 합치는 연습이라면, 이 자료는 실제 작업실과 공구·완료 검사까지 있는 시험장이다. 주소표에서 증명한 안전성을 시험장 실력으로 부풀리지 않고 다음 실험의 무대를 선택하는 데 쓴다.",
+      "future_experiment_ko": "권한과 라이선스를 검토한 네이티브 과제 가족을 먼저 고르고, source-disjoint D/Q/S와 독립 A/B 저술을 추가한 별도 파일럿을 설계한다. 현재 guard의 효과를 검증했다고 부르지 않는다.",
+      "limits": [
+        "Native skill execution and independent qualification absent in current work.",
+        "Already in inherited reference19; re-review is not new empirical evidence.",
+        "Release instructions are source material, not commands executed here."
+      ],
+      "new_empirical_evidence": false,
+      "already_in_main_reference": 19,
+      "excerpt_path": "literature/excerpts/skillsbench-release.json",
+      "idea": "스킬 파일을 실제 환경에서 읽고 도구를 사용한 결과를 검증하는 작업 단위가 있다. 우리의 문장 ID 조작을 넘어선 실제 스킬 비교를 설계할 때 먼저 볼 자료다.",
+      "method": "현재 guard는 두 고정 출력의 ID 포함 관계만 읽는다. 네이티브 작업 수행·스킬 읽기·라우팅·도구 호출·새 응답 생성을 하지 않는다. skill/no-skill 차이는 독립 A/B 각각의 Q 자격이나 합친 AB의 효과를 자동으로 식별하지 않는다.",
+      "benchmark": "공식 릴리스에서 개별 task 폴더와 manifest 접근 경로만 확인했다. 데이터·컨테이너·의존성은 내려받거나 실행하지 않았다. excluded 패키지를 기본 모집단에 합치지 않는다.",
+      "use": "권한과 라이선스를 검토한 네이티브 과제 가족을 먼저 고르고, source-disjoint D/Q/S와 독립 A/B 저술을 추가한 별도 파일럿을 설계한다. 현재 guard의 효과를 검증했다고 부르지 않는다.",
+      "questions": [
+        "Which information is available to the generating policy versus the evaluator?",
+        "What must be added before this benchmark can identify an independently Q-qualified A/B composition effect?"
+      ],
+      "excerpt_sha256": "346dc990b8c0ebfa0656cbc100f03d63ad0d4e0caeb95f4376a3a4ff773f2083",
+      "excerpt_bytes": 559
+    },
+    {
+      "id": "followbench-acl2024",
+      "title": "FollowBench: A Multi-level Fine-grained Constraints Following Benchmark for Large Language Models",
+      "authors": "Yuxin Jiang, Yufei Wang, Xingshan Zeng, Wanjun Zhong, Liangyou Li, Fei Mi, Lifeng Shang, Xin Jiang, Qun Liu, Wei Wang",
+      "kind": "paper_and_author_benchmark",
+      "url": "https://arxiv.org/html/2310.20410v3",
+      "official_record": "https://aclanthology.org/2024.acl-long.257/",
+      "official_repository": "https://github.com/YJiangcm/FollowBench",
+      "version": "Pinned paper v3; repository master inspected without claiming a frozen code commit",
+      "checked_at": "2026-10-19",
+      "review_scope": "ACL identity; primary paper selected Section3.1 construction/quality checks and Section3.2 evaluation; author README metrics/data/evaluation instructions; repository LICENSE text. No native experiment or result reproduction.",
+      "author_report_summary_ko": "저자는 제약을 한 단계씩 더하는 레벨과 content·situation·style·format·example 및 혼합 제약을 제시한다. 모든 제약 동시 충족과 개별 충족을 나누고 연속 통과 레벨도 측정한다. 열린 응답 일부는 제약의 변화 과정을 보는 강한 LLM judge로 평가한다.",
+      "core_idea_ko": "제약 수뿐 아니라 어떤 종류가 추가됐는지와 어느 단계부터 깨졌는지를 볼 수 있다. 한 가지 평균점수 뒤에 서로 다른 실패 유형이 숨는 문제를 줄이는 설계 관점이다.",
+      "our_method_difference_ko": "HSR은 모든 요구의 동시 충족이고 우리의 full-containment는 정답 대안 하나의 완성이다. 자연어 제약의 실행 성공을 ID 목록 보존으로 대신할 수 없다. 공개된 단계별 제약 실험은 독립적으로 저술한 두 스킬의 자격 조건과도 다르다.",
+      "information_budget_evaluation_rights_ko": "생성 모델과 judge의 정보·모델·호출비용을 구분한다. judge가 보는 제약의 evolution path와 응답을 후보 정책에게 평가 피드백으로 돌려주면 권한이 바뀐다. 추후 비교는 동일한 채점 유형·judge 예산·규칙 검증을 유지하고 HSR/SSR을 별도로 보고해야 한다.",
+      "data_access_ko": "작성자 repo의 data 및 data_zh 경로와 평가 코드 안내를 확인했다. 데이터 파일은 내려받지 않았다. master는 가변이므로 실행 전 commit·파일 hash·필요 subset을 별도로 동결해야 한다.",
+      "license": {
+        "status": "repository_license_checked",
+        "name": "Apache-2.0",
+        "url": "https://github.com/YJiangcm/FollowBench/blob/master/LICENSE",
+        "scope": "Repository LICENSE inspected. Upstream task/example rights and redistribution for a selected subset were not individually audited."
+      },
+      "easy_summary_ko": "처음에는 한 가지 주문만 하고 다음에는 주문을 하나씩 더해 어디서 놓치는지 본다. 단, 채점 선생님에게 더 많은 단계 정보를 주는 방식도 실험의 일부라서 그 비용과 판정 오차를 숨길 수 없다.",
+      "future_experiment_ko": "순서·포맷·내용 제약을 분리한 작은 상충/비상충 대조를 사전설계하고, 같은 기본 task 안에서 A/B/AB가 어떤 제약을 놓쳤는지 추적한다. source-disjoint split과 독립 Q 자격은 추가 설계가 필요하다.",
+      "limits": [
+        "LLM-judged open-ended constraints are not exact annotation-set certificates.",
+        "Constraint count and requirement composition are not by themselves evidence of skill interference.",
+        "No published accuracy is copied into the local guard result table."
+      ],
+      "new_empirical_evidence": false,
+      "already_in_main_reference": null,
+      "excerpt_path": "literature/excerpts/followbench-paper.json",
+      "idea": "제약 수뿐 아니라 어떤 종류가 추가됐는지와 어느 단계부터 깨졌는지를 볼 수 있다. 한 가지 평균점수 뒤에 서로 다른 실패 유형이 숨는 문제를 줄이는 설계 관점이다.",
+      "method": "HSR은 모든 요구의 동시 충족이고 우리의 full-containment는 정답 대안 하나의 완성이다. 자연어 제약의 실행 성공을 ID 목록 보존으로 대신할 수 없다. 공개된 단계별 제약 실험은 독립적으로 저술한 두 스킬의 자격 조건과도 다르다.",
+      "benchmark": "작성자 repo의 data 및 data_zh 경로와 평가 코드 안내를 확인했다. 데이터 파일은 내려받지 않았다. master는 가변이므로 실행 전 commit·파일 hash·필요 subset을 별도로 동결해야 한다.",
+      "use": "순서·포맷·내용 제약을 분리한 작은 상충/비상충 대조를 사전설계하고, 같은 기본 task 안에서 A/B/AB가 어떤 제약을 놓쳤는지 추적한다. source-disjoint split과 독립 Q 자격은 추가 설계가 필요하다.",
+      "questions": [
+        "Which information is available to the generating policy versus the evaluator?",
+        "What must be added before this benchmark can identify an independently Q-qualified A/B composition effect?"
+      ],
+      "excerpt_sha256": "425a403648c3f53a2c2d341f69894c53b99325962e73466603094879513fd0ce",
+      "excerpt_bytes": 487
+    },
+    {
+      "id": "manyifeval-emnlp2025",
+      "title": "When Instructions Multiply: Measuring and Estimating LLM Capabilities of Multiple Instructions Following",
+      "authors": "Keno Harada, Yudai Yamazaki, Masachika Taniguchi, Edison Marrese-Taylor, Takeshi Kojima, Yusuke Iwasawa, Yutaka Matsuo",
+      "kind": "paper_and_author_benchmark",
+      "url": "https://arxiv.org/html/2509.21051v1",
+      "official_record": "https://aclanthology.org/2025.findings-emnlp.896/",
+      "official_repository": "https://github.com/kenoharada/Multiple-Instructions-Following",
+      "version": "Pinned paper v1; author repository main inspected without claiming a pinned code commit",
+      "checked_at": "2026-10-19",
+      "review_scope": "ACL identity; primary Sections2.2,3,3.1,4.2 and selected5.2 split design; author README dataset/evaluation paths and runtime dependencies. License claim checked in paper; standalone repository code license not independently established.",
+      "author_report_summary_ko": "ManyIFEval은 같은 기본 과제에서 양립 가능한 제약 수를 변화시키고 규칙으로 개별·전체 충족을 평가한다. 저자는 제약 조합 충돌을 거른다고 설명하며, 평가할 때 task 설명과 일부 조합이 train/test에 겹치지 않게 나눈다. StyleMBPP는 기능 정답과 코딩 스타일을 구분하는 동반 벤치다.",
+      "core_idea_ko": "스킬이 늘어서 깨졌다는 설명을 하려면, 원래 동시에 만족할 수 없는 주문을 넣은 것인지부터 구분해야 한다. 같은 task를 고정하고 제약 수·종류를 통제하는 대조가 현재 계획에 특히 유용하다.",
+      "our_method_difference_ko": "검증기가 요구하는 모든 제약의 곱은 대안 근거 중 하나를 포함하는 현재 점수와 다르다. 두 응답 목록을 보존하는 guard를 자연어 지시 결합기에 그대로 옮길 수 없다. 저자의 관측 성능 저하도 독립 Q-qualified skill 결합 효과의 직접 증거는 아니다.",
+      "information_budget_evaluation_rights_ko": "최종 verifier는 정책에게 숨기고 응답을 고정한 뒤 평가한다. 모든 arm은 같은 기본 task·제약집합·생성예산을 받아야 하며, 제약 수·종류·충돌 가능성·토큰길이를 분리한다. 라이브 모델과 평가 의존성 실행 비용은 추후 별도로 고정해야 한다.",
+      "data_access_ko": "작성자 repo가 안내하는 data/manyifeval.jsonl, instruction_following_eval 및 code_bench 경로와 의존성 설치 안내만 확인했다. 실제 파일·데이터셋·모델·의존성을 다운로드하거나 실행하지 않았다.",
+      "license": {
+        "status": "paper_data_license_claim_checked_code_license_unconfirmed",
+        "name": "CC BY4.0 for benchmark data as stated by authors; repository code license unresolved",
+        "url": "https://arxiv.org/html/2509.21051v1#S3",
+        "scope": "Section3 states data licensing; repository landing view had no standalone LICENSE entry. Do not infer the data statement grants every code/upstream artifact right. Verify selected files before reuse."
+      },
+      "easy_summary_ko": "같은 요리 주문에 서로 모순되지 않는 조건을 더해 가며, 각 조건과 전체 주문을 따로 채점한다. ‘다 지키기’가 어려워졌다는 결과를 ‘두 스킬이 싸웠다’는 결론으로 건너뛰지 않는 것이 핵심이다.",
+      "future_experiment_ko": "가장 먼저 검토할 controlled instruction-composition 파일럿이다. 원래 task·constraint-combination 단위로 D/Q/S를 나누고, 독립 skill edit A/B와 동일 계약 Q를 추가한다. instruction-count baseline과 token-matched padding을 넣어 합성 효과와 단순 길이 부담을 분리한다. native ManyIFEval 재현과 이 adapter는 다른 실험으로 표시한다.",
+      "limits": [
+        "No benchmark accuracy, regression fit, sampling guarantee or native run is reproduced here.",
+        "Paper data-license statement and absent repository code-license confirmation remain distinct.",
+        "Compatible requirement sets help control impossibility but do not establish independent behavioral qualification."
+      ],
+      "new_empirical_evidence": false,
+      "already_in_main_reference": null,
+      "excerpt_path": "literature/excerpts/manyifeval-paper.json",
+      "idea": "스킬이 늘어서 깨졌다는 설명을 하려면, 원래 동시에 만족할 수 없는 주문을 넣은 것인지부터 구분해야 한다. 같은 task를 고정하고 제약 수·종류를 통제하는 대조가 현재 계획에 특히 유용하다.",
+      "method": "검증기가 요구하는 모든 제약의 곱은 대안 근거 중 하나를 포함하는 현재 점수와 다르다. 두 응답 목록을 보존하는 guard를 자연어 지시 결합기에 그대로 옮길 수 없다. 저자의 관측 성능 저하도 독립 Q-qualified skill 결합 효과의 직접 증거는 아니다.",
+      "benchmark": "작성자 repo가 안내하는 data/manyifeval.jsonl, instruction_following_eval 및 code_bench 경로와 의존성 설치 안내만 확인했다. 실제 파일·데이터셋·모델·의존성을 다운로드하거나 실행하지 않았다.",
+      "use": "가장 먼저 검토할 controlled instruction-composition 파일럿이다. 원래 task·constraint-combination 단위로 D/Q/S를 나누고, 독립 skill edit A/B와 동일 계약 Q를 추가한다. instruction-count baseline과 token-matched padding을 넣어 합성 효과와 단순 길이 부담을 분리한다. native ManyIFEval 재현과 이 adapter는 다른 실험으로 표시한다.",
+      "questions": [
+        "Which information is available to the generating policy versus the evaluator?",
+        "What must be added before this benchmark can identify an independently Q-qualified A/B composition effect?"
+      ],
+      "excerpt_sha256": "f9fa76bcced2495655a5d13d0ba383b8a0a1ef5aa2fae632dfa2e2d151724e22",
+      "excerpt_bytes": 468
+    }
+  ],
+  "selected_verbatim_utf8_bytes": 360,
+  "excerpt_manifest": [
+    {
+      "path": "literature/excerpts/skillsbench-release.json",
+      "url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+      "sha256": "346dc990b8c0ebfa0656cbc100f03d63ad0d4e0caeb95f4376a3a4ff773f2083",
+      "bytes": 559,
+      "verbatim_words": 19
+    },
+    {
+      "path": "literature/excerpts/followbench-paper.json",
+      "url": "https://arxiv.org/html/2310.20410v3",
+      "sha256": "425a403648c3f53a2c2d341f69894c53b99325962e73466603094879513fd0ce",
+      "bytes": 487,
+      "verbatim_words": 15
+    },
+    {
+      "path": "literature/excerpts/manyifeval-paper.json",
+      "url": "https://arxiv.org/html/2509.21051v1",
+      "sha256": "f9fa76bcced2495655a5d13d0ba383b8a0a1ef5aa2fae632dfa2e2d151724e22",
+      "bytes": 468,
+      "verbatim_words": 15
+    }
+  ]
+}

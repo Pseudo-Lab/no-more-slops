@@ -1,0 +1,197 @@
+{
+  "schema": "skillmerge_v21_accounting_v1",
+  "tasks": 309,
+  "components": 204,
+  "ordered_pairs": 22794,
+  "capacity_contracts": 159558,
+  "deterministic_output_replays": 478674,
+  "endpoint_score_cells": 1436022,
+  "descriptive_cohorts": 3,
+  "aggregate_rows": 21,
+  "sufficient_transition_events": 3387,
+  "per_pair_capacity_invariant_checks": 159558,
+  "new_model_predictions": 0,
+  "model_api_calls": 0,
+  "new_independent_units": 0,
+  "actual_independent_skill_histories": 0,
+  "qualified_skill_pairs": 0,
+  "behavioral_effect": null,
+  "measured_token_cost": null,
+  "native_benchmark_runs": 0,
+  "new_dependencies": 0,
+  "retained_unique_inputs": 2494,
+  "prior_explicit_responses": 4734,
+  "annotation_sufficient_stratum": {
+    "pairs": 12067,
+    "tasks": 308,
+    "components": 203,
+    "definition": "Both original complete input lists each contain an original rationale; not Q qualification and not necessarily each k-truncated input."
+  },
+  "finite_authored_certificates": {
+    "input_pairs": 3046,
+    "pair_caps": 21322,
+    "guard_true": 19210,
+    "qualified_family_cap_checks": 777333,
+    "guard_false_counterfamilies": 2112,
+    "count_warning": "777333 counts ordered subset-pair checks, not distinct families or independent observations."
+  },
+  "analysis_runs": 1,
+  "verification_attempts": 1,
+  "verification_successes": 1,
+  "verification_failures": 0,
+  "active_skill_promoted": false,
+  "codex_writing_usage": "not_instrumented",
+  "scope": "New deterministic guard analysis of the same exposed bank. Earlier v19 accounting, including its failed verifier, is preserved separately below and not added as independent data. No native task/model/API, Q-qualified histories or cost measurement.",
+  "inherited_v19_accounting": {
+    "schema": "skillmerge_v19_accounting_v1",
+    "tasks": 309,
+    "components": 204,
+    "ordered_pairs": 22794,
+    "capacity_contracts": 159558,
+    "deterministic_output_replays": 319116,
+    "endpoint_score_cells": 957348,
+    "descriptive_cohorts": 3,
+    "aggregate_rows": 63,
+    "sufficient_transition_events": 3387,
+    "per_pair_capacity_invariant_checks": 159558,
+    "new_model_predictions": 0,
+    "model_api_calls": 0,
+    "new_independent_units": 0,
+    "actual_independent_skill_histories": 0,
+    "qualified_skill_pairs": 0,
+    "behavioral_effect": null,
+    "measured_token_cost": null,
+    "native_benchmark_runs": 0,
+    "new_dependencies": 0,
+    "retained_unique_inputs": 2494,
+    "prior_explicit_responses": 4734,
+    "annotation_sufficient_stratum": {
+      "pairs": 12067,
+      "tasks": 308,
+      "components": 203,
+      "definition": "Both original complete input lists each contain an original rationale; not Q qualification and not necessarily each k-truncated input."
+    },
+    "finite_authored_certificates": {
+      "universes": 7,
+      "input_pairs": 3046,
+      "reference_families": 122571,
+      "pair_caps": 21322,
+      "reference_cap_cells": 857997,
+      "changed_set_pair_caps": 2498,
+      "singleton_witness_checks": 2498,
+      "both_sufficient_losses_cap_ge4": 0,
+      "shared_rationale_regressions": 0
+    },
+    "analysis_runs": 1,
+    "verification_attempts": 2,
+    "verification_successes": 1,
+    "verification_failures": 1,
+    "active_skill_promoted": false,
+    "codex_writing_usage": "not_instrumented",
+    "scope": "New exact computations and bounded formal certificates on already exposed constructed diagnostics. No new independent data, qualified skill pair, LLM generation, token-cost measurement, external native benchmark, claim of population collapse, or active-skill promotion."
+  },
+  "policies": 3,
+  "full_guarded_gain_loss_fallback": {
+    "all": {
+      "0": {
+        "pairs": 22794,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 0
+      },
+      "1": {
+        "pairs": 22794,
+        "gain": 563,
+        "loss": 487,
+        "fallback": 2361
+      },
+      "2": {
+        "pairs": 22794,
+        "gain": 95,
+        "loss": 0,
+        "fallback": 34
+      },
+      "3": {
+        "pairs": 22794,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 2
+      },
+      "4": {
+        "pairs": 22794,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 0
+      },
+      "5": {
+        "pairs": 22794,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 0
+      },
+      "6": {
+        "pairs": 22794,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 0
+      }
+    },
+    "both_input_annotation_sufficient": {
+      "0": {
+        "pairs": 12067,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 0
+      },
+      "1": {
+        "pairs": 12067,
+        "gain": 563,
+        "loss": 0,
+        "fallback": 1502
+      },
+      "2": {
+        "pairs": 12067,
+        "gain": 95,
+        "loss": 0,
+        "fallback": 29
+      },
+      "3": {
+        "pairs": 12067,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 2
+      },
+      "4": {
+        "pairs": 12067,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 0
+      },
+      "5": {
+        "pairs": 12067,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 0
+      },
+      "6": {
+        "pairs": 12067,
+        "gain": 0,
+        "loss": 0,
+        "fallback": 0
+      }
+    }
+  },
+  "preserved_v19_verification": {
+    "attempts": 2,
+    "successes": 1,
+    "failures": 1,
+    "scientific_result_changed": false
+  },
+  "literature_review": {
+    "resources": 3,
+    "new_dataset_downloads": 0,
+    "selected_verbatim_utf8_bytes": 360,
+    "native_runs": 0,
+    "repeated_reference19_not_new_evidence": true
+  }
+}

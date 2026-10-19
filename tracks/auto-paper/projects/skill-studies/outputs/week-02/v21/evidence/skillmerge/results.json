@@ -1,0 +1,3425 @@
+{
+  "schema": "skillmerge_v21_guard_results_v1",
+  "status": "completed",
+  "completed_at_utc": "2026-10-19T10:01:11.716886+00:00",
+  "scope": "All source tasks, annotations, prior outputs and v19 findings were already exposed. This is a new finite follow-up, not independent data or a secret held-out trial.",
+  "summary": {
+    "tasks": 309,
+    "components": 204,
+    "ordered_pairs": 22794,
+    "capacities": 7,
+    "guard_decisions": 159558,
+    "deterministic_outputs": 478674,
+    "endpoint_score_cells": 1436022,
+    "aggregate_rows": 21,
+    "new_independent_units": 0,
+    "actual_skill_histories": 0,
+    "qualified_skill_pairs": 0,
+    "model_api_calls": 0,
+    "behavioral_effect": null,
+    "measured_token_cost": null
+  },
+  "aggregates": [
+    {
+      "cohort": "all",
+      "capacity": 0,
+      "pairs": 22794,
+      "tasks": 309,
+      "components": 204,
+      "guard_true": 22794,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 22794,
+        "full_a_retained": 0,
+        "full_b_retained": 0
+      },
+      "reason_partition": {
+        "same_set": 22794,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        }
+      ]
+    },
+    {
+      "cohort": "both_input_annotation_sufficient",
+      "capacity": 0,
+      "pairs": 12067,
+      "tasks": 308,
+      "components": 203,
+      "guard_true": 12067,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 12067,
+        "full_a_retained": 0,
+        "full_b_retained": 0
+      },
+      "reason_partition": {
+        "same_set": 12067,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        }
+      ]
+    },
+    {
+      "cohort": "not_both_input_annotation_sufficient",
+      "capacity": 0,
+      "pairs": 10727,
+      "tasks": 292,
+      "components": 193,
+      "guard_true": 10727,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 10727,
+        "full_a_retained": 0,
+        "full_b_retained": 0
+      },
+      "reason_partition": {
+        "same_set": 10727,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 0,
+          "means": {
+            "pair_pooled": "0",
+            "equal_task": "0",
+            "equal_component": "0"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        }
+      ]
+    },
+    {
+      "cohort": "all",
+      "capacity": 1,
+      "pairs": 22794,
+      "tasks": 309,
+      "components": 204,
+      "guard_true": 20433,
+      "fallback": 2361,
+      "fallback_fraction": "787/7598",
+      "changed_output_vs_rr": 1086,
+      "guard_flags_overlapping": {
+        "same_set": 19347,
+        "full_a_retained": 7386,
+        "full_b_retained": 3491
+      },
+      "reason_partition": {
+        "same_set": 19347,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 1086,
+        "fallback": 2361
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 10038,
+          "means": {
+            "pair_pooled": "1673/3799",
+            "equal_task": "2403899/6067215",
+            "equal_component": "28342669/72099720"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 10038,
+          "means": {
+            "pair_pooled": "1673/3799",
+            "equal_task": "2403899/6067215",
+            "equal_component": "28342669/72099720"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 10038,
+          "means": {
+            "pair_pooled": "1673/3799",
+            "equal_task": "2403899/6067215",
+            "equal_component": "28342669/72099720"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 565,
+          "loss": 2700,
+          "tie": 19529,
+          "passes": 7903,
+          "means": {
+            "pair_pooled": "7903/22794",
+            "equal_task": "5672926783033/17154686379600",
+            "equal_component": "22338810158701/67952544105600"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 565,
+          "loss": 2700,
+          "tie": 19529,
+          "passes": 7903,
+          "means": {
+            "pair_pooled": "7903/22794",
+            "equal_task": "5672926783033/17154686379600",
+            "equal_component": "22338810158701/67952544105600"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 565,
+          "loss": 2700,
+          "tie": 19529,
+          "passes": 7903,
+          "means": {
+            "pair_pooled": "7903/22794",
+            "equal_task": "5672926783033/17154686379600",
+            "equal_component": "22338810158701/67952544105600"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 563,
+          "loss": 487,
+          "tie": 21744,
+          "passes": 10114,
+          "means": {
+            "pair_pooled": "5057/11397",
+            "equal_task": "27609738310703/68618745518400",
+            "equal_component": "12064952765011/30201130713600"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 563,
+          "loss": 487,
+          "tie": 21744,
+          "passes": 10114,
+          "means": {
+            "pair_pooled": "5057/11397",
+            "equal_task": "27609738310703/68618745518400",
+            "equal_component": "12064952765011/30201130713600"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 563,
+          "loss": 487,
+          "tie": 21744,
+          "passes": 10114,
+          "means": {
+            "pair_pooled": "5057/11397",
+            "equal_task": "27609738310703/68618745518400",
+            "equal_component": "12064952765011/30201130713600"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 2213,
+          "loss": 2,
+          "tie": 20579
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 2213,
+          "loss": 2,
+          "tie": 20579
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 2213,
+          "loss": 2,
+          "tie": 20579
+        }
+      ]
+    },
+    {
+      "cohort": "both_input_annotation_sufficient",
+      "capacity": 1,
+      "pairs": 12067,
+      "tasks": 308,
+      "components": 203,
+      "guard_true": 10565,
+      "fallback": 1502,
+      "fallback_fraction": "1502/12067",
+      "changed_output_vs_rr": 566,
+      "guard_flags_overlapping": {
+        "same_set": 9999,
+        "full_a_retained": 3680,
+        "full_b_retained": 1604
+      },
+      "reason_partition": {
+        "same_set": 9999,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 566,
+        "fallback": 1502
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 7452,
+          "means": {
+            "pair_pooled": "7452/12067",
+            "equal_task": "11063161/18498480",
+            "equal_component": "4829729/8128120"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 7452,
+          "means": {
+            "pair_pooled": "7452/12067",
+            "equal_task": "11063161/18498480",
+            "equal_component": "4829729/8128120"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 7452,
+          "means": {
+            "pair_pooled": "7452/12067",
+            "equal_task": "11063161/18498480",
+            "equal_component": "4829729/8128120"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 565,
+          "loss": 1409,
+          "tie": 10093,
+          "passes": 6608,
+          "means": {
+            "pair_pooled": "6608/12067",
+            "equal_task": "245711811463/404006803200",
+            "equal_component": "161585381053/266277211200"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 565,
+          "loss": 1409,
+          "tie": 10093,
+          "passes": 6608,
+          "means": {
+            "pair_pooled": "6608/12067",
+            "equal_task": "245711811463/404006803200",
+            "equal_component": "161585381053/266277211200"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 565,
+          "loss": 1409,
+          "tie": 10093,
+          "passes": 6608,
+          "means": {
+            "pair_pooled": "6608/12067",
+            "equal_task": "245711811463/404006803200",
+            "equal_component": "161585381053/266277211200"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 563,
+          "loss": 0,
+          "tie": 11504,
+          "passes": 8015,
+          "means": {
+            "pair_pooled": "8015/12067",
+            "equal_task": "39594332209/59254331136",
+            "equal_component": "1168903365083/1757429593920"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 563,
+          "loss": 0,
+          "tie": 11504,
+          "passes": 8015,
+          "means": {
+            "pair_pooled": "8015/12067",
+            "equal_task": "39594332209/59254331136",
+            "equal_component": "1168903365083/1757429593920"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 563,
+          "loss": 0,
+          "tie": 11504,
+          "passes": 8015,
+          "means": {
+            "pair_pooled": "8015/12067",
+            "equal_task": "39594332209/59254331136",
+            "equal_component": "1168903365083/1757429593920"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 1409,
+          "loss": 2,
+          "tie": 10656
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 1409,
+          "loss": 2,
+          "tie": 10656
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 1409,
+          "loss": 2,
+          "tie": 10656
+        }
+      ]
+    },
+    {
+      "cohort": "not_both_input_annotation_sufficient",
+      "capacity": 1,
+      "pairs": 10727,
+      "tasks": 292,
+      "components": 193,
+      "guard_true": 9868,
+      "fallback": 859,
+      "fallback_fraction": "859/10727",
+      "changed_output_vs_rr": 520,
+      "guard_flags_overlapping": {
+        "same_set": 9348,
+        "full_a_retained": 3706,
+        "full_b_retained": 1887
+      },
+      "reason_partition": {
+        "same_set": 9348,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 520,
+        "fallback": 859
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 2586,
+          "means": {
+            "pair_pooled": "2586/10727",
+            "equal_task": "5969591/26306280",
+            "equal_component": "70297523/312972660"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 2586,
+          "means": {
+            "pair_pooled": "2586/10727",
+            "equal_task": "5969591/26306280",
+            "equal_component": "70297523/312972660"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 2586,
+          "means": {
+            "pair_pooled": "2586/10727",
+            "equal_task": "5969591/26306280",
+            "equal_component": "70297523/312972660"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 1291,
+          "tie": 9436,
+          "passes": 1295,
+          "means": {
+            "pair_pooled": "1295/10727",
+            "equal_task": "5997311/52612560",
+            "equal_component": "70547003/625945320"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 1291,
+          "tie": 9436,
+          "passes": 1295,
+          "means": {
+            "pair_pooled": "1295/10727",
+            "equal_task": "5997311/52612560",
+            "equal_component": "70547003/625945320"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 1291,
+          "tie": 9436,
+          "passes": 1295,
+          "means": {
+            "pair_pooled": "1295/10727",
+            "equal_task": "5997311/52612560",
+            "equal_component": "70547003/625945320"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 487,
+          "tie": 10240,
+          "passes": 2099,
+          "means": {
+            "pair_pooled": "2099/10727",
+            "equal_task": "24380839/135289440",
+            "equal_component": "664780379/3755671920"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 487,
+          "tie": 10240,
+          "passes": 2099,
+          "means": {
+            "pair_pooled": "2099/10727",
+            "equal_task": "24380839/135289440",
+            "equal_component": "664780379/3755671920"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 487,
+          "tie": 10240,
+          "passes": 2099,
+          "means": {
+            "pair_pooled": "2099/10727",
+            "equal_task": "24380839/135289440",
+            "equal_component": "664780379/3755671920"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 804,
+          "loss": 0,
+          "tie": 9923
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 804,
+          "loss": 0,
+          "tie": 9923
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 804,
+          "loss": 0,
+          "tie": 9923
+        }
+      ]
+    },
+    {
+      "cohort": "all",
+      "capacity": 2,
+      "pairs": 22794,
+      "tasks": 309,
+      "components": 204,
+      "guard_true": 22760,
+      "fallback": 34,
+      "fallback_fraction": "17/11397",
+      "changed_output_vs_rr": 780,
+      "guard_flags_overlapping": {
+        "same_set": 21980,
+        "full_a_retained": 16683,
+        "full_b_retained": 14012
+      },
+      "reason_partition": {
+        "same_set": 21980,
+        "a_retained_only_priority": 712,
+        "b_retained_only_priority": 68,
+        "fallback": 34
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 18674,
+          "means": {
+            "pair_pooled": "9337/11397",
+            "equal_task": "51890244075133/68618745518400",
+            "equal_component": "29189093560657/38830025203200"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 18674,
+          "means": {
+            "pair_pooled": "9337/11397",
+            "equal_task": "51890244075133/68618745518400",
+            "equal_component": "29189093560657/38830025203200"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 654,
+          "means": {
+            "pair_pooled": "109/3799",
+            "equal_task": "1203369707059/34309372759200",
+            "equal_component": "813976186523/22650848035200"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 95,
+          "loss": 25,
+          "tie": 22674,
+          "passes": 18744,
+          "means": {
+            "pair_pooled": "3124/3799",
+            "equal_task": "52229187402053/68618745518400",
+            "equal_component": "205853507970683/271810176422400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 95,
+          "loss": 25,
+          "tie": 22674,
+          "passes": 18744,
+          "means": {
+            "pair_pooled": "3124/3799",
+            "equal_task": "52229187402053/68618745518400",
+            "equal_component": "205853507970683/271810176422400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 66,
+          "loss": 0,
+          "tie": 22728,
+          "passes": 720,
+          "means": {
+            "pair_pooled": "120/3799",
+            "equal_task": "449638705123/11436457586400",
+            "equal_component": "86058417091/2123517003300"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 95,
+          "loss": 0,
+          "tie": 22699,
+          "passes": 18769,
+          "means": {
+            "pair_pooled": "18769/22794",
+            "equal_task": "52282822944421/68618745518400",
+            "equal_component": "68671398424073/90603392140800"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 95,
+          "loss": 0,
+          "tie": 22699,
+          "passes": 18769,
+          "means": {
+            "pair_pooled": "18769/22794",
+            "equal_task": "52282822944421/68618745518400",
+            "equal_component": "68671398424073/90603392140800"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 66,
+          "loss": 0,
+          "tie": 22728,
+          "passes": 720,
+          "means": {
+            "pair_pooled": "120/3799",
+            "equal_task": "449638705123/11436457586400",
+            "equal_component": "86058417091/2123517003300"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 25,
+          "loss": 0,
+          "tie": 22769
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 25,
+          "loss": 0,
+          "tie": 22769
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        }
+      ]
+    },
+    {
+      "cohort": "both_input_annotation_sufficient",
+      "capacity": 2,
+      "pairs": 12067,
+      "tasks": 308,
+      "components": 203,
+      "guard_true": 12038,
+      "fallback": 29,
+      "fallback_fraction": "29/12067",
+      "changed_output_vs_rr": 780,
+      "guard_flags_overlapping": {
+        "same_set": 11258,
+        "full_a_retained": 9126,
+        "full_b_retained": 7719
+      },
+      "reason_partition": {
+        "same_set": 11258,
+        "a_retained_only_priority": 712,
+        "b_retained_only_priority": 68,
+        "fallback": 29
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 11666,
+          "means": {
+            "pair_pooled": "11666/12067",
+            "equal_task": "411738323/437236800",
+            "equal_component": "17057219899/18155264400"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 11666,
+          "means": {
+            "pair_pooled": "11666/12067",
+            "equal_task": "411738323/437236800",
+            "equal_component": "17057219899/18155264400"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 642,
+          "means": {
+            "pair_pooled": "642/12067",
+            "equal_task": "2423510086687/26664449011200",
+            "equal_component": "236234618981/2510613705600"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 95,
+          "loss": 25,
+          "tie": 11947,
+          "passes": 11736,
+          "means": {
+            "pair_pooled": "11736/12067",
+            "equal_task": "1253906933/1311710400",
+            "equal_component": "5785230331/6051754800"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 95,
+          "loss": 25,
+          "tie": 11947,
+          "passes": 11736,
+          "means": {
+            "pair_pooled": "11736/12067",
+            "equal_task": "1253906933/1311710400",
+            "equal_component": "5785230331/6051754800"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 66,
+          "loss": 0,
+          "tie": 12001,
+          "passes": 708,
+          "means": {
+            "pair_pooled": "708/12067",
+            "equal_task": "921530409029/8888149670400",
+            "equal_component": "272134883381/2510613705600"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 95,
+          "loss": 0,
+          "tie": 11972,
+          "passes": 11761,
+          "means": {
+            "pair_pooled": "11761/12067",
+            "equal_task": "1883714387/1967565600",
+            "equal_component": "8687886209/9077632200"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 95,
+          "loss": 0,
+          "tie": 11972,
+          "passes": 11761,
+          "means": {
+            "pair_pooled": "11761/12067",
+            "equal_task": "1883714387/1967565600",
+            "equal_component": "8687886209/9077632200"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 66,
+          "loss": 0,
+          "tie": 12001,
+          "passes": 708,
+          "means": {
+            "pair_pooled": "708/12067",
+            "equal_task": "921530409029/8888149670400",
+            "equal_component": "272134883381/2510613705600"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 25,
+          "loss": 0,
+          "tie": 12042
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 25,
+          "loss": 0,
+          "tie": 12042
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        }
+      ]
+    },
+    {
+      "cohort": "not_both_input_annotation_sufficient",
+      "capacity": 2,
+      "pairs": 10727,
+      "tasks": 292,
+      "components": 193,
+      "guard_true": 10722,
+      "fallback": 5,
+      "fallback_fraction": "5/10727",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 10722,
+        "full_a_retained": 7557,
+        "full_b_retained": 6293
+      },
+      "reason_partition": {
+        "same_set": 10722,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 5
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 7008,
+          "means": {
+            "pair_pooled": "7008/10727",
+            "equal_task": "119002669/189405216",
+            "equal_component": "67093985/107304912"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 7008,
+          "means": {
+            "pair_pooled": "7008/10727",
+            "equal_task": "119002669/189405216",
+            "equal_component": "67093985/107304912"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 12,
+          "means": {
+            "pair_pooled": "12/10727",
+            "equal_task": "27/6643",
+            "equal_component": "80/17563"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 7008,
+          "means": {
+            "pair_pooled": "7008/10727",
+            "equal_task": "119002669/189405216",
+            "equal_component": "67093985/107304912"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 7008,
+          "means": {
+            "pair_pooled": "7008/10727",
+            "equal_task": "119002669/189405216",
+            "equal_component": "67093985/107304912"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 12,
+          "means": {
+            "pair_pooled": "12/10727",
+            "equal_task": "27/6643",
+            "equal_component": "80/17563"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 7008,
+          "means": {
+            "pair_pooled": "7008/10727",
+            "equal_task": "119002669/189405216",
+            "equal_component": "67093985/107304912"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 7008,
+          "means": {
+            "pair_pooled": "7008/10727",
+            "equal_task": "119002669/189405216",
+            "equal_component": "67093985/107304912"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 12,
+          "means": {
+            "pair_pooled": "12/10727",
+            "equal_task": "27/6643",
+            "equal_component": "80/17563"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        }
+      ]
+    },
+    {
+      "cohort": "all",
+      "capacity": 3,
+      "pairs": 22794,
+      "tasks": 309,
+      "components": 204,
+      "guard_true": 22792,
+      "fallback": 2,
+      "fallback_fraction": "1/11397",
+      "changed_output_vs_rr": 26,
+      "guard_flags_overlapping": {
+        "same_set": 22766,
+        "full_a_retained": 21235,
+        "full_b_retained": 20902
+      },
+      "reason_partition": {
+        "same_set": 22766,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 26,
+        "fallback": 2
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20306,
+          "means": {
+            "pair_pooled": "10153/11397",
+            "equal_task": "1743182255539/2079355924800",
+            "equal_component": "226992713072329/271810176422400"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20306,
+          "means": {
+            "pair_pooled": "10153/11397",
+            "equal_task": "1743182255539/2079355924800",
+            "equal_component": "226992713072329/271810176422400"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 2,
+          "tie": 22792,
+          "passes": 20304,
+          "means": {
+            "pair_pooled": "3384/3799",
+            "equal_task": "1742971964689/2079355924800",
+            "equal_component": "226971894278179/271810176422400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 22792,
+          "passes": 20304,
+          "means": {
+            "pair_pooled": "3384/3799",
+            "equal_task": "1742971964689/2079355924800",
+            "equal_component": "226971894278179/271810176422400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20306,
+          "means": {
+            "pair_pooled": "10153/11397",
+            "equal_task": "1743182255539/2079355924800",
+            "equal_component": "226992713072329/271810176422400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20306,
+          "means": {
+            "pair_pooled": "10153/11397",
+            "equal_task": "1743182255539/2079355924800",
+            "equal_component": "226992713072329/271810176422400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 2,
+          "loss": 0,
+          "tie": 22792
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 2,
+          "loss": 0,
+          "tie": 22792
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        }
+      ]
+    },
+    {
+      "cohort": "both_input_annotation_sufficient",
+      "capacity": 3,
+      "pairs": 12067,
+      "tasks": 308,
+      "components": 203,
+      "guard_true": 12065,
+      "fallback": 2,
+      "fallback_fraction": "2/12067",
+      "changed_output_vs_rr": 26,
+      "guard_flags_overlapping": {
+        "same_set": 12039,
+        "full_a_retained": 11747,
+        "full_b_retained": 11581
+      },
+      "reason_partition": {
+        "same_set": 12039,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 26,
+        "fallback": 2
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12060,
+          "means": {
+            "pair_pooled": "12060/12067",
+            "equal_task": "1343/1344",
+            "equal_component": "9739/9744"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12060,
+          "means": {
+            "pair_pooled": "12060/12067",
+            "equal_task": "1343/1344",
+            "equal_component": "9739/9744"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 2,
+          "tie": 12065,
+          "passes": 12058,
+          "means": {
+            "pair_pooled": "12058/12067",
+            "equal_task": "44311/44352",
+            "equal_component": "29213/29232"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 12065,
+          "passes": 12058,
+          "means": {
+            "pair_pooled": "12058/12067",
+            "equal_task": "44311/44352",
+            "equal_component": "29213/29232"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12060,
+          "means": {
+            "pair_pooled": "12060/12067",
+            "equal_task": "1343/1344",
+            "equal_component": "9739/9744"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12060,
+          "means": {
+            "pair_pooled": "12060/12067",
+            "equal_task": "1343/1344",
+            "equal_component": "9739/9744"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 2,
+          "loss": 0,
+          "tie": 12065
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 2,
+          "loss": 0,
+          "tie": 12065
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        }
+      ]
+    },
+    {
+      "cohort": "not_both_input_annotation_sufficient",
+      "capacity": 3,
+      "pairs": 10727,
+      "tasks": 292,
+      "components": 193,
+      "guard_true": 10727,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 10727,
+        "full_a_retained": 9488,
+        "full_b_retained": 9321
+      },
+      "reason_partition": {
+        "same_set": 10727,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        }
+      ]
+    },
+    {
+      "cohort": "all",
+      "capacity": 4,
+      "pairs": 22794,
+      "tasks": 309,
+      "components": 204,
+      "guard_true": 22794,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 2,
+      "guard_flags_overlapping": {
+        "same_set": 22792,
+        "full_a_retained": 22737,
+        "full_b_retained": 22691
+      },
+      "reason_partition": {
+        "same_set": 22792,
+        "a_retained_only_priority": 2,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20506,
+          "means": {
+            "pair_pooled": "10253/11397",
+            "equal_task": "5310145282439/6238067774400",
+            "equal_component": "32944997634509/38830025203200"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20306,
+          "means": {
+            "pair_pooled": "10153/11397",
+            "equal_task": "1743182255539/2079355924800",
+            "equal_component": "226992713072329/271810176422400"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20506,
+          "means": {
+            "pair_pooled": "10253/11397",
+            "equal_task": "5310145282439/6238067774400",
+            "equal_component": "32944997634509/38830025203200"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 22792,
+          "passes": 20304,
+          "means": {
+            "pair_pooled": "3384/3799",
+            "equal_task": "1742971964689/2079355924800",
+            "equal_component": "226971894278179/271810176422400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20506,
+          "means": {
+            "pair_pooled": "10253/11397",
+            "equal_task": "5310145282439/6238067774400",
+            "equal_component": "32944997634509/38830025203200"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 22792,
+          "passes": 20304,
+          "means": {
+            "pair_pooled": "3384/3799",
+            "equal_task": "1742971964689/2079355924800",
+            "equal_component": "226971894278179/271810176422400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        }
+      ]
+    },
+    {
+      "cohort": "both_input_annotation_sufficient",
+      "capacity": 4,
+      "pairs": 12067,
+      "tasks": 308,
+      "components": 203,
+      "guard_true": 12067,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 2,
+      "guard_flags_overlapping": {
+        "same_set": 12065,
+        "full_a_retained": 12059,
+        "full_b_retained": 12055
+      },
+      "reason_partition": {
+        "same_set": 12065,
+        "a_retained_only_priority": 2,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12060,
+          "means": {
+            "pair_pooled": "12060/12067",
+            "equal_task": "1343/1344",
+            "equal_component": "9739/9744"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 12065,
+          "passes": 12058,
+          "means": {
+            "pair_pooled": "12058/12067",
+            "equal_task": "44311/44352",
+            "equal_component": "29213/29232"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 12065,
+          "passes": 12058,
+          "means": {
+            "pair_pooled": "12058/12067",
+            "equal_task": "44311/44352",
+            "equal_component": "29213/29232"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        }
+      ]
+    },
+    {
+      "cohort": "not_both_input_annotation_sufficient",
+      "capacity": 4,
+      "pairs": 10727,
+      "tasks": 292,
+      "components": 193,
+      "guard_true": 10727,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 10727,
+        "full_a_retained": 10678,
+        "full_b_retained": 10636
+      },
+      "reason_partition": {
+        "same_set": 10727,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8439,
+          "means": {
+            "pair_pooled": "8439/10727",
+            "equal_task": "16408349/21523320",
+            "equal_component": "1427148511/1877835960"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8439,
+          "means": {
+            "pair_pooled": "8439/10727",
+            "equal_task": "16408349/21523320",
+            "equal_component": "1427148511/1877835960"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8439,
+          "means": {
+            "pair_pooled": "8439/10727",
+            "equal_task": "16408349/21523320",
+            "equal_component": "1427148511/1877835960"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        }
+      ]
+    },
+    {
+      "cohort": "all",
+      "capacity": 5,
+      "pairs": 22794,
+      "tasks": 309,
+      "components": 204,
+      "guard_true": 22794,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 22794,
+        "full_a_retained": 22794,
+        "full_b_retained": 22788
+      },
+      "reason_partition": {
+        "same_set": 22794,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20536,
+          "means": {
+            "pair_pooled": "10268/11397",
+            "equal_task": "1065565391347/1247613554880",
+            "equal_component": "1028119873087/1208045228544"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20306,
+          "means": {
+            "pair_pooled": "10153/11397",
+            "equal_task": "1743182255539/2079355924800",
+            "equal_component": "226992713072329/271810176422400"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20536,
+          "means": {
+            "pair_pooled": "10268/11397",
+            "equal_task": "1065565391347/1247613554880",
+            "equal_component": "1028119873087/1208045228544"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 22792,
+          "passes": 20304,
+          "means": {
+            "pair_pooled": "3384/3799",
+            "equal_task": "1742971964689/2079355924800",
+            "equal_component": "226971894278179/271810176422400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20536,
+          "means": {
+            "pair_pooled": "10268/11397",
+            "equal_task": "1065565391347/1247613554880",
+            "equal_component": "1028119873087/1208045228544"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 22792,
+          "passes": 20304,
+          "means": {
+            "pair_pooled": "3384/3799",
+            "equal_task": "1742971964689/2079355924800",
+            "equal_component": "226971894278179/271810176422400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        }
+      ]
+    },
+    {
+      "cohort": "both_input_annotation_sufficient",
+      "capacity": 5,
+      "pairs": 12067,
+      "tasks": 308,
+      "components": 203,
+      "guard_true": 12067,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 12067,
+        "full_a_retained": 12067,
+        "full_b_retained": 12067
+      },
+      "reason_partition": {
+        "same_set": 12067,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12060,
+          "means": {
+            "pair_pooled": "12060/12067",
+            "equal_task": "1343/1344",
+            "equal_component": "9739/9744"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 12065,
+          "passes": 12058,
+          "means": {
+            "pair_pooled": "12058/12067",
+            "equal_task": "44311/44352",
+            "equal_component": "29213/29232"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 12065,
+          "passes": 12058,
+          "means": {
+            "pair_pooled": "12058/12067",
+            "equal_task": "44311/44352",
+            "equal_component": "29213/29232"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        }
+      ]
+    },
+    {
+      "cohort": "not_both_input_annotation_sufficient",
+      "capacity": 5,
+      "pairs": 10727,
+      "tasks": 292,
+      "components": 193,
+      "guard_true": 10727,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 10727,
+        "full_a_retained": 10727,
+        "full_b_retained": 10721
+      },
+      "reason_partition": {
+        "same_set": 10727,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8469,
+          "means": {
+            "pair_pooled": "8469/10727",
+            "equal_task": "12093397/15783768",
+            "equal_component": "22758049/29806920"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8469,
+          "means": {
+            "pair_pooled": "8469/10727",
+            "equal_task": "12093397/15783768",
+            "equal_component": "22758049/29806920"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8469,
+          "means": {
+            "pair_pooled": "8469/10727",
+            "equal_task": "12093397/15783768",
+            "equal_component": "22758049/29806920"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        }
+      ]
+    },
+    {
+      "cohort": "all",
+      "capacity": 6,
+      "pairs": 22794,
+      "tasks": 309,
+      "components": 204,
+      "guard_true": 22794,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 22794,
+        "full_a_retained": 22794,
+        "full_b_retained": 22794
+      },
+      "reason_partition": {
+        "same_set": 22794,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20539,
+          "means": {
+            "pair_pooled": "20539/22794",
+            "equal_task": "1066152489067/1247613554880",
+            "equal_component": "1028530269271/1208045228544"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20306,
+          "means": {
+            "pair_pooled": "10153/11397",
+            "equal_task": "1743182255539/2079355924800",
+            "equal_component": "226992713072329/271810176422400"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20539,
+          "means": {
+            "pair_pooled": "20539/22794",
+            "equal_task": "1066152489067/1247613554880",
+            "equal_component": "1028530269271/1208045228544"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 22792,
+          "passes": 20304,
+          "means": {
+            "pair_pooled": "3384/3799",
+            "equal_task": "1742971964689/2079355924800",
+            "equal_component": "226971894278179/271810176422400"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 20539,
+          "means": {
+            "pair_pooled": "20539/22794",
+            "equal_task": "1066152489067/1247613554880",
+            "equal_component": "1028530269271/1208045228544"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 22792,
+          "passes": 20304,
+          "means": {
+            "pair_pooled": "3384/3799",
+            "equal_task": "1742971964689/2079355924800",
+            "equal_component": "226971894278179/271810176422400"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794,
+          "passes": 555,
+          "means": {
+            "pair_pooled": "185/7598",
+            "equal_task": "124883864393/4288671594900",
+            "equal_component": "1336216673903/45301696070400"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 22794
+        }
+      ]
+    },
+    {
+      "cohort": "both_input_annotation_sufficient",
+      "capacity": 6,
+      "pairs": 12067,
+      "tasks": 308,
+      "components": 203,
+      "guard_true": 12067,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 12067,
+        "full_a_retained": 12067,
+        "full_b_retained": 12067
+      },
+      "reason_partition": {
+        "same_set": 12067,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12060,
+          "means": {
+            "pair_pooled": "12060/12067",
+            "equal_task": "1343/1344",
+            "equal_component": "9739/9744"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 12065,
+          "passes": 12058,
+          "means": {
+            "pair_pooled": "12058/12067",
+            "equal_task": "44311/44352",
+            "equal_component": "29213/29232"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 12067,
+          "means": {
+            "pair_pooled": "1",
+            "equal_task": "1",
+            "equal_component": "1"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 2,
+          "tie": 12065,
+          "passes": 12058,
+          "means": {
+            "pair_pooled": "12058/12067",
+            "equal_task": "44311/44352",
+            "equal_component": "29213/29232"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067,
+          "passes": 547,
+          "means": {
+            "pair_pooled": "547/12067",
+            "equal_task": "2177017840687/26664449011200",
+            "equal_component": "207376990181/2510613705600"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 12067
+        }
+      ]
+    },
+    {
+      "cohort": "not_both_input_annotation_sufficient",
+      "capacity": 6,
+      "pairs": 10727,
+      "tasks": 292,
+      "components": 193,
+      "guard_true": 10727,
+      "fallback": 0,
+      "fallback_fraction": "0",
+      "changed_output_vs_rr": 0,
+      "guard_flags_overlapping": {
+        "same_set": 10727,
+        "full_a_retained": 10727,
+        "full_b_retained": 10727
+      },
+      "reason_partition": {
+        "same_set": 10727,
+        "a_retained_only_priority": 0,
+        "b_retained_only_priority": 0,
+        "fallback": 0
+      },
+      "outcomes": [
+        {
+          "method": "round_robin",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8472,
+          "means": {
+            "pair_pooled": "8472/10727",
+            "equal_task": "60511211/78918840",
+            "equal_component": "4553981/5961384"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "round_robin",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8472,
+          "means": {
+            "pair_pooled": "8472/10727",
+            "equal_task": "60511211/78918840",
+            "equal_component": "4553981/5961384"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "stable_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8472,
+          "means": {
+            "pair_pooled": "8472/10727",
+            "equal_task": "60511211/78918840",
+            "equal_component": "4553981/5961384"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8246,
+          "means": {
+            "pair_pooled": "8246/10727",
+            "equal_task": "175877567/236756520",
+            "equal_component": "278061583/375567192"
+          }
+        },
+        {
+          "method": "guarded_promotion",
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727,
+          "passes": 8,
+          "means": {
+            "pair_pooled": "8/10727",
+            "equal_task": "248/99645",
+            "equal_component": "782/263445"
+          }
+        }
+      ],
+      "guarded_vs_promotion": [
+        {
+          "endpoint": "full_sufficient",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "first_three",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        },
+        {
+          "endpoint": "exact_annotated",
+          "gain": 0,
+          "loss": 0,
+          "tie": 10727
+        }
+      ]
+    }
+  ],
+  "finite_certificate_counts": {
+    "input_pairs": 3046,
+    "pair_caps": 21322,
+    "guard_true": 19210,
+    "qualified_family_cap_checks": 777333,
+    "guard_false_counterfamilies": 2112
+  },
+  "artifacts": {
+    "pairs_cap_0.jsonl": "ebde3b568edb26efaacc967e5ed84f43579a4ae80d6d4ff52747a89362b82c8f",
+    "pairs_cap_1.jsonl": "f1bc59e6f3f814a4e76773e8e0a67646515b60fc5502a201442a1100d895030f",
+    "pairs_cap_2.jsonl": "bac5e997fa477362a0fe7757dd025ac12ddbfa5e55faf515100e54eda7cd54ca",
+    "pairs_cap_3.jsonl": "1dd937f4f51e7d1c41e54207a40231dfa04fdd58c618da7899f456d645323702",
+    "pairs_cap_4.jsonl": "49b5b8d0877c8f67dc1dd899f336cf57ebd42b35be1e94c7fa3eee6574ed530e",
+    "pairs_cap_5.jsonl": "63b9d736c62d853e28b73dd425d78e71cacd59079c68962a3298578a07b9fa59",
+    "pairs_cap_6.jsonl": "71617ed7a9664ddd8523f53b37678bfa9790e56b8bcc10bdff62e25ed851a6b8",
+    "finite_certificates.json": "6148f5c3256b1ee6ea3dae54c3fa52c2460c71884e5fe76c59011dc8ffffc6c6",
+    "witnesses.json": "073678957a973c9fffb55637a5c70555814c2c46ad17cc576b8a69a68b57fe5c",
+    "aggregates.json": "18161927f4e716bfac307ff98b40d0a327e260634c270a4dd283ab8d8e0b324a"
+  },
+  "claims_scope": "Conditional annotation guarantee only. Guard evaluation is gold-free; both-sufficient cohort and reference-family certificates are post-construction audit information."
+}

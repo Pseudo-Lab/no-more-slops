@@ -1,0 +1,54 @@
+{
+  "locked_at_utc": "2026-10-19T10:00:56.855065+00:00",
+  "inputs": [
+    {
+      "role": "discovery",
+      "path": "projects/research_advancement_v19_20261019/CURRENT_RESEARCH.json",
+      "snapshot": "inputs/0_CURRENT_RESEARCH.json",
+      "bytes": 25563,
+      "sha256": "70df1f0f461af94afd439a039ace08f2c9510969d841eaee4fb5eb9718a2732c"
+    },
+    {
+      "role": "prior_lock",
+      "path": "runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/input_lock.json",
+      "snapshot": "inputs/1_input_lock.json",
+      "bytes": 3315,
+      "sha256": "5c15bfafeb079f718927e5e503903b65dbf5438457d34341580fc84d042ecdf1"
+    },
+    {
+      "role": "tasks",
+      "path": "runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/inputs/0_0_task_measurements.json",
+      "snapshot": "inputs/2_0_0_task_measurements.json",
+      "bytes": 95819,
+      "sha256": "5c064d56419342da10b1534c828ba446e2b61068f657fc5061cf0ba8eb4874d2"
+    },
+    {
+      "role": "pairs",
+      "path": "runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/inputs/1_pair_rows.jsonl",
+      "snapshot": "inputs/3_1_pair_rows.jsonl",
+      "bytes": 4969491,
+      "sha256": "a929700b78786ae23b17fad391f0b04009fbec4d930372349f5c6f7767760b4d"
+    },
+    {
+      "role": "prior_code",
+      "path": "runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/analyze.py",
+      "snapshot": "inputs/4_analyze.py",
+      "bytes": 18422,
+      "sha256": "eef8bd5769cd9f024cbaea5d62f1cce116639488a6d70a9f2dafeede1f3dd513"
+    },
+    {
+      "role": "prior_results",
+      "path": "runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/results.json",
+      "snapshot": "inputs/5_results.json",
+      "bytes": 4654,
+      "sha256": "e495f64342f8d22c47d39b94f61137e35c9f85f3d0fefa82977aa9df349393af"
+    }
+  ],
+  "code": {
+    "PLAN.json": "423745e502e14fc95e3dc0b008368cca029fb44b7d5288ff25722a9505d873dd",
+    "analyze.py": "bbafca6ef95c8391615430ffbe8cc21b83d2359fd7d4b54b2134e1eac3f80a52",
+    "verify.py": "c44b10c5ca8f44e4cab52556210fac3120013205ff6b3085b1cdd067060321ed"
+  },
+  "python": "3.11.0rc2 (main, Sep 11 2022, 20:22:52) [MSC v.1933 64 bit (AMD64)]",
+  "command": "python -X utf8 -B projects/research_advancement_v21_20261019/skillmerge/analyze.py --out runs/research_advancement_v21_20261019_01/skillmerge/analysis_01"
+}

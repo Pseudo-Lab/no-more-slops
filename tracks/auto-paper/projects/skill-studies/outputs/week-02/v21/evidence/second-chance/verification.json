@@ -1,0 +1,81 @@
+{
+  "schema": "secondchance_v21_independent_arithmetic_verification_v1",
+  "ok": true,
+  "scope": "Same-author separate implementation using unit-interval occupation and complete enumeration; not external empirical replication.",
+  "analysis_input_lock_sha256": "551b432cacda34660a68992b34dc36cd641bf6ca27a8c0fa637c5d3b460f4e0e",
+  "analysis_results_sha256": "c127bf5c6d8d9c65ad827108bbc83d022466bcbfd6ee159893c8a8a0e25a2b81",
+  "verifier_sha256": "4fac59e46776f97ad5d3f37282d6af6cd81a6b6d1d3888e9877fba7272c1edf9",
+  "snapshots_and_originals_checked": 172,
+  "all_legal_schedules_enumerated": 33658,
+  "policy_rows_reproduced": 72,
+  "invalid_schedules_rejected": 14,
+  "structural_projection_has_no_utility_payload": true,
+  "contracts": [
+    {
+      "budget": 5,
+      "query_cap": 1,
+      "schedules_exhausted": 25,
+      "distinct_objective_points": 8,
+      "reachable_subsets": 10,
+      "frontier_points": 1
+    },
+    {
+      "budget": 5,
+      "query_cap": 2,
+      "schedules_exhausted": 207,
+      "distinct_objective_points": 15,
+      "reachable_subsets": 45,
+      "frontier_points": 1
+    },
+    {
+      "budget": 5,
+      "query_cap": 3,
+      "schedules_exhausted": 715,
+      "distinct_objective_points": 20,
+      "reachable_subsets": 106,
+      "frontier_points": 1
+    },
+    {
+      "budget": 5,
+      "query_cap": 4,
+      "schedules_exhausted": 1175,
+      "distinct_objective_points": 23,
+      "reachable_subsets": 154,
+      "frontier_points": 1
+    },
+    {
+      "budget": 8,
+      "query_cap": 1,
+      "schedules_exhausted": 45,
+      "distinct_objective_points": 6,
+      "reachable_subsets": 9,
+      "frontier_points": 1
+    },
+    {
+      "budget": 8,
+      "query_cap": 2,
+      "schedules_exhausted": 753,
+      "distinct_objective_points": 13,
+      "reachable_subsets": 37,
+      "frontier_points": 1
+    },
+    {
+      "budget": 8,
+      "query_cap": 3,
+      "schedules_exhausted": 6009,
+      "distinct_objective_points": 21,
+      "reachable_subsets": 93,
+      "frontier_points": 1
+    },
+    {
+      "budget": 8,
+      "query_cap": 4,
+      "schedules_exhausted": 24729,
+      "distinct_objective_points": 29,
+      "reachable_subsets": 163,
+      "frontier_points": 1
+    }
+  ],
+  "scientific_effect_certification": false,
+  "model_api_calls": 0
+}

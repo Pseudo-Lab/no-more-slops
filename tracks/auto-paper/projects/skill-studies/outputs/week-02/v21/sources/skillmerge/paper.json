@@ -1,0 +1,271 @@
+{
+  "id": "SkillMerge",
+  "title": "SkillMerge: A Conditional Guard for Agreement",
+  "abstract": "Can agreement be promoted without discarding useful evidence? We analyze a reference-blind prefix guard on an already exposed SciFact-derived bank, not a behavioral effect of executable skills. Fixed round-robin and stable common-item promotion orders share an output capacity. The guard accepts promotion when their selected ID sets coincide or promotion preserves either complete input. We prove this condition necessary and sufficient for full-containment no-loss over every reference family making both complete inputs annotation-sufficient; otherwise the policy falls back to round-robin. Among 12,067 such constructed pairs, guarded gain/loss counts are 563/0, 95/0, and 0/0 at capacities one, two, and three. Conservatism discards two promotion gains, while all 22,794 pairs retain 487 losses at capacity one. First-three scoring still fails above capacity three. Frozen computation and separate author verification preserve denominators, counterexamples, and earlier failed checks. Independent skill histories and qualified behavioral effects remain absent.",
+  "status": "Compact working paper v21, 2026-10-19. New conditional theorem and deterministic follow-up on an exposed bank; no independent skill history, native benchmark, model/API call, or professor endorsement. Preserved v20 sources and complete v19 scientific record accompany the supplement.",
+  "contributions": [
+    "An exact reference-blind no-loss certificate for a conditional family of evidence contracts.",
+    "A guarded promotion policy with a sharp length boundary and explicit failure witnesses.",
+    "Paired results exposing conservative rejection, endpoint mismatch, and missing behavioral evidence."
+  ],
+  "sections": [
+    {
+      "heading": "Introduction",
+      "level": 1,
+      "paragraphs": [
+        "When two skill changes help separately, their joint availability may still reduce performance. Possible causes include incompatible requirements, context length, lost evidence, changed ranking, or a restrictive grader. We first isolate the last three mechanisms using fixed evidence-ID lists. Agreement denotes repeated IDs, not semantic agreement or independently sampled reasoning. Figure 1 separates this executed diagnostic lane from the still unexecuted skill-authoring and behavioral-evaluation lane.",
+        "The question is which reference-blind switch between round-robin and common-item promotion can guarantee no full-containment regression, assuming each complete input already contains a valid reference alternative. This assumption enables a stronger guarantee than unrestricted references, but is not independently observed usefulness of executable skills. We prove the exact structural boundary, evaluate its conservative fallback, and retain the unprotected all-pair losses."
+      ],
+      "figures": [
+        {
+          "id": "overview",
+          "caption": "Executed evidence-contract diagnostics and prospective behavioral inference are separate. The inherited source audit contains 531 tasks in 325 structural components; 309 evidence-bearing tasks in 204 components feed the current pair bank. Authoring histories, independently qualified pairs, and fresh behavioral effects remain absent. Counts are nested, not independent integration events."
+        }
+      ]
+    },
+    {
+      "heading": "Related Work",
+      "level": 1,
+      "paragraphs": [
+        "SciFact and FEVER tie correctness to reference evidence [1,3]. The pinned SciFact scorer inspects only three supplied rationale IDs for rationalized abstract correctness [2]. ERASER separates human-rationale agreement from predictive faithfulness [4]; our annotation containment is not its confidence-based sufficiency. CheckList motivates focused invariance and directional tests [5], here of deterministic contracts.",
+        "Multi-metric evaluation [6,7], construct validity [8,9], underspecification [11], documentation [12], benchmark selection [13], and selection bias [21] motivate explicit score-to-claim boundaries. DSPy compilation [10], SkillCommit replay [14], SkillSmith migration [15], SkillCAT assembly [16], and SkillEvoReg regression tests [17] are substantive unexecuted comparisons. Resource controls [18], SkillsBench v1.1 [19], and self-consistency [20] use different information and budgets; sampled-answer voting is not our ID promotion. All 21 inherited references retain their inspection scopes. New prospective benchmark reading is separated in Supplement S22."
+      ]
+    },
+    {
+      "heading": "Problem and Method",
+      "level": 1,
+      "paragraphs": [
+        "References form a finite nonempty family of nonempty ID sets. Full containment passes when any complete alternative occurs anywhere in an ordered output. First-three applies containment only to its first three IDs; exact-annotated requires equality with an enumerated alternative. Distinct, in-range input lists A and B are scanned alternately, retaining first occurrences, to produce the complete round-robin order V. Stable promotion P moves common IDs first and preserves V order within both classes; both outputs are capped at k.",
+        "Write X and Y for their selected ID sets. The guard below reads A, B, k only. If it accepts, H returns promotion; otherwise it returns round-robin. References enter only subsequent scoring and descriptive stratification. The conditional reference class requires some alternative wholly inside each complete input, possibly different alternatives. It does not require each k-truncated input to pass.",
+        "For every family in that class, promotion cannot lose full containment exactly when G=1. Sufficiency follows from identical selected sets or retention of an entire sufficient input. Conversely, if all three tests fail, choose a removed baseline ID and an ID outside Y in each input. At most two singleton alternatives make both inputs sufficient, the baseline successful, and promotion unsuccessful. Supplement S16 proves this reverse construction and its quantifiers.",
+        "Thus the guard is maximal only among binary P-or-V switches promising safety for this conditional reference class. It may reject a gain under the actual annotations. For input lengths at most d, where d is at least two, capacity at least 2d-2 always satisfies the guard; a common-last construction shows sharpness at 2d-3. The earlier length-three/cap-four result is a special case. Empty inputs and cap zero are explicit endpoints. No-loss allows both outputs to fail."
+      ],
+      "equations": [
+        "G = bb(1)[X = Y or \"set\"(A) subset.eq Y or \"set\"(B) subset.eq Y]",
+        "H_k = cases(P_k & G = 1, V_k & \"otherwise\")"
+      ]
+    },
+    {
+      "heading": "Experimental Setup",
+      "level": 1,
+      "paragraphs": [
+        "The unchanged bank contains 309 evidence-bearing tasks, 204 recorded components, 2,494 distinct authored inputs, and 22,794 ordered pairs. Reversed and diagonal pairs are constructed views, not independent histories. Seven capacities yield 159,558 decisions, 478,674 outputs across three policies, and 1,436,022 endpoint cells. They add zero independent observations. Capacity counts output IDs; actual tokens, tools, and authoring costs are unmeasured.",
+        "The fixed both-input annotation-sufficient stratum has 12,067 pairs, 308 tasks, and 203 components. It uses complete original inputs and cannot substitute for held-out Q qualification. Aggregation reports pair-pooled, equal-task, and equal-component means separately. Full, first-three, and exact transitions retain gain, loss, tie, and fallback denominators; false guards remain visible even when falling back produces a score tie.",
+        "A pre-execution plan, two code files, and six consumed sources are hash-frozen. A separately authored implementation reconstructs every output, endpoint cell, and aggregate using scheduled first occurrences and bitmasks. It checks 3,046 authored input pairs across 21,322 pair-cap shapes, including 2,112 explicit rejected-guard counterfamilies, and rejects altered copied inputs and outputs. These are same-author checks, not external replication or independent reference families. Supplement S21 distinguishes this new pass from the preserved earlier failed verifier."
+      ]
+    },
+    {
+      "heading": "Results",
+      "level": 1,
+      "paragraphs": [
+        "Table 1 compares transitions to the same round-robin baseline. In the sufficient-input stratum, guarded full-containment losses are zero at every capacity. At cap one, fallback removes 1,409 promotion losses while sacrificing two of its 565 gains; 563 gains remain. Cap two retains 95 gains without its 25 losses. Cap three repairs two promotion losses but ties round-robin throughout: it adds no gain over baseline. Fallback counts are 1,502, 29, and two respectively.",
+        "The conditional premise matters. Among all pairs, the guard retains 487 cap-one losses despite 2,361 fallbacks. A minimal authored illustration is A=(0,1), B=(1), with reference {0}. Retaining all of B accepts promotion (1), while round-robin (0) succeeds. B is insufficient, so this is outside the theorem. The saved bank also contains this failure shape. Calling the policy unconditionally safe would be false.",
+        "At caps four through six, full-containment transitions tie, but guarded first-three scoring retains two losses. For A=(1,2,0), B=(4,5,0), and alternatives {1,2} or {4,5}, promotion (0,1,4,2) restores full containment at four while its first three still fail. Figure 2 preserves the original endpoint separation; Supplement S18 visualizes the added guard. Exact scores are separately reported, without inheriting the theorem.",
+        "Weighting remains consequential. Unprotected promotion at cap one in the fixed sufficient-input stratum has pooled contrast -844/12067, approximately -0.06994, but equal-component contrast +3363459013/266277211200, approximately +0.01263. A policy cannot choose its preferred weighting retrospectively. These exposed finite contrasts estimate neither natural pair prevalence nor behavioral composition effects.",
+        "The inherited completion-rank identity explains fixed-order full-containment transitions: the first successful capacity is the minimum, across alternatives, of their last required ID rank. It does not automatically apply to a cap-dependent policy switch. The earlier verifier mistakenly asserted guaranteed success for disjoint sufficient inputs; its frozen failure and corrected no-loss check remain preserved. This revision changes neither those results nor their correction history."
+      ],
+      "table": {
+        "caption": "Full-containment gain/loss versus round-robin. Each row reuses 22,794 all pairs or 12,067 sufficient-input pairs. H denotes guarded promotion. Counts are deterministic transitions, not skill trials.",
+        "headers": [
+          "Cap",
+          "P all G/L",
+          "H all G/L",
+          "P sufficient G/L",
+          "H sufficient G/L",
+          "H fallback all/sufficient"
+        ],
+        "rows": [
+          [
+            "0",
+            "0 / 0",
+            "0 / 0",
+            "0 / 0",
+            "0 / 0",
+            "0 / 0"
+          ],
+          [
+            "1",
+            "565 / 2700",
+            "563 / 487",
+            "565 / 1409",
+            "563 / 0",
+            "2361 / 1502"
+          ],
+          [
+            "2",
+            "95 / 25",
+            "95 / 0",
+            "95 / 25",
+            "95 / 0",
+            "34 / 29"
+          ],
+          [
+            "3",
+            "0 / 2",
+            "0 / 0",
+            "0 / 2",
+            "0 / 0",
+            "2 / 2"
+          ],
+          [
+            "4..6",
+            "0 / 0",
+            "0 / 0",
+            "0 / 0",
+            "0 / 0",
+            "0 / 0"
+          ]
+        ]
+      },
+      "figures": [
+        {
+          "id": "capacity-boundary-v19",
+          "caption": "The unchanged capacity audit: full-containment loss counts across output capacities, with a cap-three-to-six zoom contrasting full recovery and persistent first-three losses. Each point reuses the same constructed pair cohort. No curve measures independently qualified skill behavior."
+        }
+      ]
+    },
+    {
+      "heading": "Limitations",
+      "level": 1,
+      "paragraphs": [
+        "The guarantee is about complete-input annotation sufficiency and full containment, not semantic truth, actual Q-qualified skills, arbitrary output policies, first-three, or exact matching. Its necessity quantifies over all admissible families; actual annotations may permit a rejected promotion. Stable class order, equal output count, and the declared union construction matter for the length corollary. Compatibility of natural-language requirements needs separate validation.",
+        "Independent A/B histories, Q-qualified skill pairs, reserved-S outcomes, native-method runs, and measured token costs remain absent; the behavioral effect is null. Future evaluation must freeze source-disjoint D/Q/S, candidate rights, resets, total cost, and rejection before fresh outcomes. FollowBench and ManyIFEval offer constraint controls, not missing skill qualification. SkillsBench supplies native task environments, not evidence that this guard improves agents. Supplement S23 states prospective gates and falsification tests."
+      ]
+    },
+    {
+      "heading": "Conclusion",
+      "level": 1,
+      "paragraphs": [
+        "A reference-blind structural guard exactly characterizes conditional full-containment safety for this binary switch. Its measured benefit is bounded by conservative lost gains, endpoint mismatch, and all-pair failures. Transparent accounting preserves those limits while separating a reproducible evidence-contract result from the independently qualified behavioral study still required."
+      ]
+    }
+  ],
+  "references": [
+    {
+      "number": 1,
+      "text": "David Wadden, Shanchuan Lin, Kyle Lo, Lucy Lu Wang, Madeleine van Zuylen, Arman Cohan, and Hannaneh Hajishirzi. 2020. Fact or Fiction: Verifying Scientific Claims. Proceedings of EMNLP, 7534–7550.",
+      "url": "https://aclanthology.org/2020.emnlp-main.609/",
+      "claim_scope": "ACL bibliographic record and abstract; arXiv v2 Sections 3.3 and 4.1–4.2. Original rationale alternatives, abstract-level containment/cap, and separate sentence-level precision/recall. v2's statement that the longest rationale has three sentences is not transferred to the later local raw snapshot, which contains one four-sentence-only task."
+    },
+    {
+      "number": 2,
+      "text": "Allen Institute for AI. SciFact evaluation implementation, commit 68b98a56d93e0f9da0d2aab4e6c3294699a0f72e. verisci/evaluate/lib/metrics.py and data.py.",
+      "url": "https://github.com/allenai/scifact/blob/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py",
+      "claim_scope": "metrics.py lines 10–52: MAX_ABSTRACT_SENTS=3 and supplied-list slicing before containment. data.py lines 218–242: sentences assigned to prediction rationale without sorting in the inspected parser. Sentence endpoint is separate. Local document-prefix ordering is an authored diagnostic policy, not parser-imposed sorting. V16 reopened the pinned metrics.py source, especially MAX_ABSTRACT_SENTS and is_correct; locally reimplemented conditional scoring, not official end-to-end evaluation."
+    },
+    {
+      "number": 3,
+      "text": "James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. 2018. FEVER: a Large-scale Dataset for Fact Extraction and VERification. Proceedings of NAACL-HLT, 809–819.",
+      "url": "https://aclanthology.org/N18-1074/",
+      "claim_scope": "ACL identity/abstract and original HTML evaluation discussion, including label-plus-evidence versus label-only scoring and Section 5.2 warning that evidence annotations may be incomplete. No reported baseline percentage is imported."
+    },
+    {
+      "number": 4,
+      "text": "Jay DeYoung, Sarthak Jain, Nazneen Fatema Rajani, Eric Lehman, Caiming Xiong, Richard Socher, and Byron C. Wallace. 2020. ERASER: A Benchmark to Evaluate Rationalized NLP Models. Proceedings of ACL, 4443–4458.",
+      "url": "https://aclanthology.org/2020.acl-main.408/",
+      "claim_scope": "ACL identity/abstract and HTML Sections 1 and 4. Agreement with human rationales and faithfulness to the model's prediction are distinct. Its confidence-perturbation sufficiency is not our annotation-set sufficient-containment endpoint. V16 reopened arXiv HTML v2 Sections 1 and 4.1–4.2; plausibility/faithfulness distinction rechecked, no model or official benchmark result reproduced."
+    },
+    {
+      "number": 5,
+      "text": "Marco Tulio Ribeiro, Tongshuang Wu, Carlos Guestrin, and Sameer Singh. 2020. Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. Proceedings of ACL, 4902–4912.",
+      "url": "https://aclanthology.org/2020.acl-main.442/",
+      "claim_scope": "ACL identity/abstract and HTML Section 2.2 minimum functionality, invariance, and directional expectations. Supports focused behavioral/relationship tests; current tests exercise deterministic graders rather than a model through CheckList software."
+    },
+    {
+      "number": 6,
+      "text": "Percy Liang et al. 2023. Holistic Evaluation of Language Models. arXiv:2211.09110v2.",
+      "url": "https://arxiv.org/abs/2211.09110v2",
+      "claim_scope": "Pinned v2 identity and Section 1.1 multi-metric measurement/targeted evaluation/standardization. Supports reporting different task desiderata separately. No external model numbers are copied."
+    },
+    {
+      "number": 7,
+      "text": "Aarohi Srivastava et al. 2023. Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models. arXiv:2206.04615v3.",
+      "url": "https://arxiv.org/abs/2206.04615v3",
+      "claim_scope": "Pinned v3 title/lead author and Sections 3.4.2–3.5. Metric/task specification affects observed capability patterns. Cite the inspected arXiv revision, without guessing a journal publication year."
+    },
+    {
+      "number": 8,
+      "text": "Timo Freiesleben and Sebastian Zezulka. 2025. The Benchmarking Epistemology: Construct Validity for Evaluating Machine Learning Models. arXiv:2510.23191v1.",
+      "url": "https://arxiv.org/html/2510.23191v1",
+      "claim_scope": "Title/authors and Sections 2–3. Score-to-scientific-inference validity depends on intended inference, assumptions, and supporting/refuting evidence. The pinned title is used; later differently titled publisher metadata is not merged."
+    },
+    {
+      "number": 9,
+      "text": "Andrew M. Bean et al. 2025. Measuring what Matters: Construct Validity in Large Language Model Benchmarks. arXiv:2511.04703v1.",
+      "url": "https://arxiv.org/html/2511.04703v1",
+      "claim_scope": "Identity and selected Sections 3.2–3.4 and 3.8. Auxiliary formatting demands, reuse limitations, and phenomenon-to-task-to-code-to-claim links. No survey percentage is imported."
+    },
+    {
+      "number": 10,
+      "text": "Omar Khattab et al. 2023. DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines. arXiv:2310.03714v1.",
+      "url": "https://arxiv.org/html/2310.03714v1",
+      "claim_scope": "Identity and Sections 3–4/Appendix E.1. Declarative modules and compilation; a specified metric filters traces. This is the inspected v1 title, not a merged later conference-title record."
+    },
+    {
+      "number": 11,
+      "text": "Alexander D’Amour et al. 2022. Underspecification Presents Challenges for Credibility in Modern Machine Learning. Journal of Machine Learning Research, 23(226):1–61.",
+      "url": "https://jmlr.org/papers/v23/20-1335.html",
+      "claim_scope": "Official JMLR metadata and abstract only. Similar held-out predictive performance can coexist with different deployment behavior. Full article not claimed as read."
+    },
+    {
+      "number": 12,
+      "text": "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2021. Datasheets for Datasets. arXiv:1803.09010v8.",
+      "url": "https://arxiv.org/html/1803.09010v8",
+      "claim_scope": "Pinned v8 identity/abstract and documentation categories covering motivation, composition, collection, and recommended use. Supports explicit source/split/exposure documentation; no certification of dataset quality."
+    },
+    {
+      "number": 13,
+      "text": "Mostafa Dehghani, Yi Tay, Alexey A. Gritsenko, Zhe Zhao, Neil Houlsby, Fernando Diaz, Donald Metzler, and Oriol Vinyals. 2021. The Benchmark Lottery. arXiv:2107.07002v1.",
+      "url": "https://arxiv.org/html/2107.07002v1",
+      "claim_scope": "Title/authors, abstract, and discussion of benchmark/task choice affecting apparent method rankings. Supports fixing weighting and task family coverage before final comparison; not a local ranking result."
+    },
+    {
+      "number": 14,
+      "text": "Yu He and Weikai Yang. 2026. SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion. arXiv:2608.15165v1.",
+      "url": "https://arxiv.org/html/2608.15165v1",
+      "claim_scope": "Primary identity and selected patch/replay/compatibility/consolidation sections. Source-case replay and narrowing/rejection/splitting before commit. Teacher and executor information access differ. No numerical result is imported."
+    },
+    {
+      "number": 15,
+      "text": "Yangbo Wei et al. 2026. SkillSmith: Co-Evolving Skills and Tools for Self-Improving Agent Systems. arXiv:2606.01314v2.",
+      "url": "https://arxiv.org/html/2606.01314v2",
+      "claim_scope": "Identity, selected typed operations in Section 3.4 and appendix interaction assumptions. Patch/Retype/Extract/Inline and required caller updates. Static legality is not behavioral qualification; its interaction assumptions are not theta_Q."
+    },
+    {
+      "number": 16,
+      "text": "Kunfeng Chen, Qihuang Zhong, Juhua Liu, and Bo Du. 2026. SkillCAT: Contrastive, Assessment-Augmented and Topology-Aware Skill Self-Evolution for LLM Agents. arXiv:2606.13317v2.",
+      "url": "https://arxiv.org/html/2606.13317v2",
+      "claim_scope": "Identity and selected test-time routing/assembly section, equations 5–6. v2 uses an LLM router and an LLM assembler over selected topology nodes. Concatenation is a separate control, not labeled native SkillCAT."
+    },
+    {
+      "number": 17,
+      "text": "Guanyu Nie et al. 2026. SkillEvoReg: Regularizing Agent Skill Evolution Against Overfitting. arXiv:2609.30861v1.",
+      "url": "https://arxiv.org/html/2609.30861v1",
+      "claim_scope": "Identity and selected CCV/counterfactual validation and Section 4 passages. Candidate-conditioned regression validation/repair; the source itself distinguishes its operational analysis from formal causal identification under stochastic or multi-edit settings."
+    },
+    {
+      "number": 18,
+      "text": "Ziyue Yang and Fan Ding. 2026. Signal or Noise? A Benchmark Study of Agent Skills in Web Development. arXiv:2608.23067v1.",
+      "url": "https://arxiv.org/html/2608.23067v1",
+      "claim_scope": "Identity and Section 3 controls C0–C3. SKILL.md injection versus separately mounted assets, target/irrelevant byte-matched instructions, and slices. Byte matching is not equality under the actual model tokenizer; reported performance not imported."
+    },
+    {
+      "number": 19,
+      "text": "BenchFlow contributors. 2026. SkillsBench v1.1: native task.md package release. Official release artifact.",
+      "url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+      "claim_scope": "Official release sections describing task/environment/oracle/verifier packages and pinned 0.6.x tooling. Prospective workflow benchmark requires its native environment and skill/no-skill contract. Release inventory is not reproduced as a local result. V16 reopened official v1.1 release's native package and with-skill/no-skill instructions; release artifact or task execution not downloaded or run."
+    },
+    {
+      "number": 20,
+      "text": "Xuezhi Wang et al. Self-Consistency Improves Chain of Thought Reasoning in Language Models. Author version arXiv:2203.11171v4, 2023.",
+      "url": "https://arxiv.org/abs/2203.11171v4",
+      "claim_scope": "Primary HTML Section 2 and nearby introduction reviewed: sampled reasoning paths and aggregation of final answers. Our sentence-ID intersection is neither a reproduction nor a proxy performance result; no external score imported."
+    },
+    {
+      "number": 21,
+      "text": "Gavin C. Cawley and Nicola L. C. Talbot. On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation. JMLR 11(70):2079-2107, 2010.",
+      "url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "claim_scope": "Official metadata and abstract only. Finite-data selection can overfit; no full-text theorem or model-selection experiment reproduced, and component folds do not restore independent final data."
+    }
+  ]
+}

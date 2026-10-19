@@ -1,0 +1,82 @@
+{
+  "schema": "probeflow_v21_input_lock_v1",
+  "at_utc": "2026-10-19T10:01:20.460405+00:00",
+  "plan_sha256": "6510ee359c6b33eed34211837917a550ef833e7122a3de4c96f0cca5e96e44e6",
+  "code_sha256": "23d567523901ec032067d3a0e0b25780ddbcc3f35b0b091e893cea3ceb48f730",
+  "verifier_sha256": "b8262ba54ca7bf4baee987d1ac724f82b39ea0fd9aa386d86b83d7db902f7e84",
+  "inputs": [
+    {
+      "name": "v19_results.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/results.json",
+      "sha256": "67856fb74a0a5789399c10232f4b432c62a5c8b8a2d09f64caed6e67df4ebf58",
+      "bytes": 47277,
+      "copy": true,
+      "snapshot": "inputs/v19_results.json"
+    },
+    {
+      "name": "v19_input_lock.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/input_lock.json",
+      "sha256": "32bf75d0a242ee59118600351f6d136f4f9aafa8076977d7221010e759dfc510",
+      "bytes": 3991,
+      "copy": true,
+      "snapshot": "inputs/v19_input_lock.json"
+    },
+    {
+      "name": "v19_PLAN.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/PLAN.json",
+      "sha256": "1c80a144244b6160f91e8ff1dcef464fd88bcf38648ae78dc12089e267d04516",
+      "bytes": 7221,
+      "copy": true,
+      "snapshot": "inputs/v19_PLAN.json"
+    },
+    {
+      "name": "observed_means.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/observed_means.json",
+      "sha256": "18b5f48a52f42c3143e63f2f5bcace86cdbb842456a1454fd2ed6db5db12a944",
+      "bytes": 103868,
+      "copy": true,
+      "snapshot": "inputs/observed_means.json"
+    },
+    {
+      "name": "policy_locks.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/policy_locks.json",
+      "sha256": "089ccd3e5effd93fb09369acfebbb36ecd5fd401cc52f8f10c812ac8207b3256",
+      "bytes": 244902,
+      "copy": true,
+      "snapshot": "inputs/policy_locks.json"
+    },
+    {
+      "name": "fitted_gates.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/fitted_gates.json",
+      "sha256": "e2d7a114014c9f8a429f91d0858468502cc5f35ee81c7267d2c62b8c7af527f9",
+      "bytes": 178567,
+      "copy": true,
+      "snapshot": "inputs/fitted_gates.json"
+    },
+    {
+      "name": "policy_results.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/policy_results.json",
+      "sha256": "337c5f57a953347285f68db5ec0e69eae307b3f00b88ed51f162153b9704e46f",
+      "bytes": 508055,
+      "copy": true,
+      "snapshot": "inputs/policy_results.json"
+    },
+    {
+      "name": "profile.txt",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/profile.txt",
+      "sha256": "867987ca884b2f0fd607ad3918329eba887d095af2befa21122cea518eaa584a",
+      "bytes": 31196,
+      "copy": true,
+      "snapshot": "inputs/profile.txt"
+    },
+    {
+      "name": "evaluation_predictions.jsonl",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/evaluation_predictions.jsonl",
+      "sha256": "c8f0f10b71d42970145cde95cf7f0a00c02f23508675c989b489bdb90e0f3c4e",
+      "bytes": 1279678,
+      "copy": true,
+      "snapshot": "inputs/evaluation_predictions.jsonl"
+    }
+  ],
+  "scope": "Post-hoc calculations on exposed evidence; not restored evaluation blindness."
+}

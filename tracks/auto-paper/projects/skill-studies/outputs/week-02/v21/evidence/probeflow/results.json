@@ -1,0 +1,381 @@
+{
+  "schema": "probeflow_v21_frozen_preference_diagnostic_v1",
+  "status": "completed_posthoc_exposed_diagnostic",
+  "preference": "(1-alpha)*component_error_rate + alpha*vector_error_rate + lambda*mean_source_quote/3",
+  "alpha_domain": "[0,1]",
+  "lambda_domain": "[0,infinity)",
+  "cases": {
+    "primary": {
+      "gate_id": "g129",
+      "k": 1,
+      "scenario": "equal_source_quote",
+      "cap": 2,
+      "prices": [
+        1,
+        1,
+        1
+      ],
+      "original_selection_lambda": "1/20",
+      "policy": {
+        "kind": "gate",
+        "root": 2,
+        "threshold_hex": "0x1.1b9228afdadcfp+5",
+        "left_mask": 5,
+        "right_mask": 4
+      },
+      "fixed_mask": 4,
+      "fixed": {
+        "cycles": 421,
+        "component_errors": 798,
+        "vector_errors": 391,
+        "quotes": 421,
+        "component_rate": "399/842",
+        "vector_rate": "391/421",
+        "normalized_quote_rate": "1/3"
+      },
+      "gate": {
+        "cycles": 421,
+        "component_errors": 798,
+        "vector_errors": 391,
+        "quotes": 443,
+        "component_rate": "399/842",
+        "vector_rate": "391/421",
+        "normalized_quote_rate": "443/1263"
+      },
+      "delta_coefficients": {
+        "intercept": "0",
+        "alpha": "0",
+        "lambda_coefficient": "22/1263"
+      },
+      "strata": [
+        {
+          "field": "root_outside_fit_range",
+          "value": false,
+          "fixed": {
+            "cycles": 29,
+            "component_errors": 27,
+            "vector_errors": 27,
+            "quotes": 29,
+            "component_rate": "27/116",
+            "vector_rate": "27/29",
+            "normalized_quote_rate": "1/3"
+          },
+          "gate": {
+            "cycles": 29,
+            "component_errors": 27,
+            "vector_errors": 27,
+            "quotes": 33,
+            "component_rate": "27/116",
+            "vector_rate": "27/29",
+            "normalized_quote_rate": "11/29"
+          },
+          "delta_coefficients": {
+            "intercept": "0",
+            "alpha": "0",
+            "lambda_coefficient": "4/87"
+          }
+        },
+        {
+          "field": "root_outside_fit_range",
+          "value": true,
+          "fixed": {
+            "cycles": 392,
+            "component_errors": 771,
+            "vector_errors": 364,
+            "quotes": 392,
+            "component_rate": "771/1568",
+            "vector_rate": "13/14",
+            "normalized_quote_rate": "1/3"
+          },
+          "gate": {
+            "cycles": 392,
+            "component_errors": 771,
+            "vector_errors": 364,
+            "quotes": 410,
+            "component_rate": "771/1568",
+            "vector_rate": "13/14",
+            "normalized_quote_rate": "205/588"
+          },
+          "delta_coefficients": {
+            "intercept": "0",
+            "alpha": "0",
+            "lambda_coefficient": "3/196"
+          }
+        },
+        {
+          "field": "target_seen_in_fit",
+          "value": false,
+          "fixed": {
+            "cycles": 391,
+            "component_errors": 798,
+            "vector_errors": 391,
+            "quotes": 391,
+            "component_rate": "399/782",
+            "vector_rate": "1",
+            "normalized_quote_rate": "1/3"
+          },
+          "gate": {
+            "cycles": 391,
+            "component_errors": 798,
+            "vector_errors": 391,
+            "quotes": 394,
+            "component_rate": "399/782",
+            "vector_rate": "1",
+            "normalized_quote_rate": "394/1173"
+          },
+          "delta_coefficients": {
+            "intercept": "0",
+            "alpha": "0",
+            "lambda_coefficient": "1/391"
+          }
+        },
+        {
+          "field": "target_seen_in_fit",
+          "value": true,
+          "fixed": {
+            "cycles": 30,
+            "component_errors": 0,
+            "vector_errors": 0,
+            "quotes": 30,
+            "component_rate": "0",
+            "vector_rate": "0",
+            "normalized_quote_rate": "1/3"
+          },
+          "gate": {
+            "cycles": 30,
+            "component_errors": 0,
+            "vector_errors": 0,
+            "quotes": 49,
+            "component_rate": "0",
+            "vector_rate": "0",
+            "normalized_quote_rate": "49/90"
+          },
+          "delta_coefficients": {
+            "intercept": "0",
+            "alpha": "0",
+            "lambda_coefficient": "19/90"
+          }
+        }
+      ],
+      "branch_counts": {
+        "4": 399,
+        "5": 22
+      },
+      "cycle_component_comparison": {
+        "tie": 421
+      },
+      "cycle_vector_comparison": {
+        "tie": 421
+      }
+    },
+    "secondary": {
+      "gate_id": "g301",
+      "k": 3,
+      "scenario": "equal_source_quote",
+      "cap": 2,
+      "prices": [
+        1,
+        1,
+        1
+      ],
+      "original_selection_lambda": "0",
+      "policy": {
+        "kind": "gate",
+        "root": 0,
+        "threshold_hex": "0x1.4211a64531f1ap+7",
+        "left_mask": 1,
+        "right_mask": 3
+      },
+      "fixed_mask": 3,
+      "fixed": {
+        "cycles": 421,
+        "component_errors": 924,
+        "vector_errors": 381,
+        "quotes": 842,
+        "component_rate": "231/421",
+        "vector_rate": "381/421",
+        "normalized_quote_rate": "2/3"
+      },
+      "gate": {
+        "cycles": 421,
+        "component_errors": 861,
+        "vector_errors": 391,
+        "quotes": 518,
+        "component_rate": "861/1684",
+        "vector_rate": "391/421",
+        "normalized_quote_rate": "518/1263"
+      },
+      "delta_coefficients": {
+        "intercept": "-63/1684",
+        "alpha": "103/1684",
+        "lambda_coefficient": "-108/421"
+      },
+      "strata": [
+        {
+          "field": "root_outside_fit_range",
+          "value": false,
+          "fixed": {
+            "cycles": 39,
+            "component_errors": 56,
+            "vector_errors": 23,
+            "quotes": 78,
+            "component_rate": "14/39",
+            "vector_rate": "23/39",
+            "normalized_quote_rate": "2/3"
+          },
+          "gate": {
+            "cycles": 39,
+            "component_errors": 55,
+            "vector_errors": 31,
+            "quotes": 46,
+            "component_rate": "55/156",
+            "vector_rate": "31/39",
+            "normalized_quote_rate": "46/117"
+          },
+          "delta_coefficients": {
+            "intercept": "-1/156",
+            "alpha": "11/52",
+            "lambda_coefficient": "-32/117"
+          }
+        },
+        {
+          "field": "root_outside_fit_range",
+          "value": true,
+          "fixed": {
+            "cycles": 382,
+            "component_errors": 868,
+            "vector_errors": 358,
+            "quotes": 764,
+            "component_rate": "217/382",
+            "vector_rate": "179/191",
+            "normalized_quote_rate": "2/3"
+          },
+          "gate": {
+            "cycles": 382,
+            "component_errors": 806,
+            "vector_errors": 360,
+            "quotes": 472,
+            "component_rate": "403/764",
+            "vector_rate": "180/191",
+            "normalized_quote_rate": "236/573"
+          },
+          "delta_coefficients": {
+            "intercept": "-31/764",
+            "alpha": "35/764",
+            "lambda_coefficient": "-146/573"
+          }
+        },
+        {
+          "field": "target_seen_in_fit",
+          "value": false,
+          "fixed": {
+            "cycles": 391,
+            "component_errors": 924,
+            "vector_errors": 381,
+            "quotes": 782,
+            "component_rate": "231/391",
+            "vector_rate": "381/391",
+            "normalized_quote_rate": "2/3"
+          },
+          "gate": {
+            "cycles": 391,
+            "component_errors": 861,
+            "vector_errors": 391,
+            "quotes": 467,
+            "component_rate": "861/1564",
+            "vector_rate": "1",
+            "normalized_quote_rate": "467/1173"
+          },
+          "delta_coefficients": {
+            "intercept": "-63/1564",
+            "alpha": "103/1564",
+            "lambda_coefficient": "-105/391"
+          }
+        },
+        {
+          "field": "target_seen_in_fit",
+          "value": true,
+          "fixed": {
+            "cycles": 30,
+            "component_errors": 0,
+            "vector_errors": 0,
+            "quotes": 60,
+            "component_rate": "0",
+            "vector_rate": "0",
+            "normalized_quote_rate": "2/3"
+          },
+          "gate": {
+            "cycles": 30,
+            "component_errors": 0,
+            "vector_errors": 0,
+            "quotes": 51,
+            "component_rate": "0",
+            "vector_rate": "0",
+            "normalized_quote_rate": "17/30"
+          },
+          "delta_coefficients": {
+            "intercept": "0",
+            "alpha": "0",
+            "lambda_coefficient": "-1/10"
+          }
+        }
+      ],
+      "branch_counts": {
+        "3": 97,
+        "1": 324
+      },
+      "cycle_component_comparison": {
+        "tie": 338,
+        "gate_worse": 10,
+        "gate_better": 73
+      },
+      "cycle_vector_comparison": {
+        "tie": 411,
+        "gate_worse": 10
+      }
+    }
+  },
+  "pointwise_leaf_certificate": {
+    "cycles": 421,
+    "component_difference_histogram": {
+      "0": 421
+    },
+    "vector_difference_histogram": {
+      "0": 421
+    },
+    "quote_difference": 1,
+    "violations": [],
+    "all_nonnegative": true,
+    "strictly_more_expensive_cycles": 421,
+    "scope": "Only k1 masks4/5 on these421 cycles, equal source prices, cap2, the same frozen predictions."
+  },
+  "secondary_boundary": {
+    "alpha_star_at_lambda_zero": "63/103",
+    "alpha_star": "(63+432*lambda)/103",
+    "lambda_all_alpha_gate_weakly_better": "5/54",
+    "diagonal_alpha_equals_lambda_delta": "(-63-329*alpha)/1684",
+    "meaning": "The originally lambda0-selected g301, never reselected for the new preference."
+  },
+  "counts": {
+    "existing_rigs": 1,
+    "existing_cycles": 625,
+    "evaluation_cycles": 421,
+    "fit_cycles": 102,
+    "dev_cycles": 102,
+    "prediction_cache_rows_read": 16840,
+    "unique_prediction_rows_used": 2105,
+    "new_cycle_metric_rows": 842,
+    "new_leaf_certificate_rows": 421,
+    "new_preference_grid_rows": 60,
+    "new_independent_units": 0,
+    "new_model_calls": 0,
+    "new_predictor_fits": 0,
+    "new_predictor_forward_calls": 0,
+    "new_policy_fits": 0,
+    "new_policy_selections": 0,
+    "new_physical_sensor_experiments": 0,
+    "new_data_downloads": 0
+  },
+  "interpretation": "Finite saved-cohort diagnostic. Primary certificate is conditional, secondary preference sensitivity is not a fair new-lambda winner comparison.",
+  "source_scope": "Observed means and predictions reused verbatim from v19 locks; no raw sensor mean remeasurement or prediction forward pass."
+}

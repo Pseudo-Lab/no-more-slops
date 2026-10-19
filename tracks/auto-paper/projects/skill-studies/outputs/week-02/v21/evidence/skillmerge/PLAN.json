@@ -1,0 +1,31 @@
+{
+  "schema": "skillmerge_v21_guard_plan_v1",
+  "status": "frozen_before_v21_execution",
+  "question": "For fixed RR and stable-common prefixes, which reference-blind P-or-RR switch is universally no-loss under both full inputs being annotation-sufficient?",
+  "exposure": "All source tasks, annotations, prior outputs and v19 findings were already exposed. This is a new finite follow-up, not independent data or a secret held-out trial.",
+  "guard": "G=(set(V_k)==set(P_k)) or set(A)<=set(P_k) or set(B)<=set(P_k). Return P_k if G else V_k. Guard reads A/B/k only; gold enters subsequent scoring and strata only.",
+  "mathematical_targets": [
+    "For equal-cardinality prefix sets in the same union, G is necessary and sufficient for no full-containment regression for every family of nonempty alternatives individually witnessed in both complete inputs.",
+    "When G=false, construct at most two singleton alternatives from IDs outside P_k, one witnessed in each input, including an ID in V_k minus P_k. This is a reference-family countercertificate, not a natural failure rate.",
+    "With input lengths at most d>=2, cap>=2d-2 suffices; a common-last construction at cap2d-3 establishes sharpness of this worst-case bound. For d=0,1 use the nonnegative endpoint separately.",
+    "No-loss is not unconditional success. Neither actual Q qualification nor first-three/exact no-loss follows from the annotation condition."
+  ],
+  "inputs": [
+    {"role":"discovery","path":"projects/research_advancement_v19_20261019/CURRENT_RESEARCH.json"},
+    {"role":"prior_lock","path":"runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/input_lock.json"},
+    {"role":"tasks","path":"runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/inputs/0_0_task_measurements.json"},
+    {"role":"pairs","path":"runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/inputs/1_pair_rows.jsonl"},
+    {"role":"prior_code","path":"runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/analyze.py"},
+    {"role":"prior_results","path":"runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/results.json"}
+  ],
+  "capacities": [0,1,2,3,4,5,6],
+  "methods": ["round_robin","stable_promotion","guarded_promotion"],
+  "endpoints": ["full_sufficient","first_three","exact_annotated"],
+  "cohorts": ["all","both_input_annotation_sufficient","not_both_input_annotation_sufficient"],
+  "aggregates": "Exact pair-pooled, equal-task and equal-component means; transitions paired to RR, and guarded-vs-promotion changes. Preserve gain/loss/tie, empty outputs, active guard flag/reason and fallback denominators.",
+  "bounded_certificate": "ID universes0..6, all distinct-ID input permutations of lengths0..3 whose union is the universe, capacities0..6. Check G=true on all one/two nonempty alternatives selected as subsets of the two complete inputs; G=false gets an explicit singleton counterfamily. Record minimal unconditional guard failure ordered by union size,total input length,cap,lexicographic inputs/reference.",
+  "verification": "Freeze code/plan/input bytes before computation; author a separate checker without importing analyzer functions. Reconstruct policy rows and exact aggregates; bitmask-check finite conditions. Test altered copied input/output rejection while preserving original bytes. Same-author verification is not external replication.",
+  "failure_policy": "Stop on source hash change, pair/task mismatch, conditional full loss or failed theorem/certificate assertion. Preserve failed output directory and diagnostics; correct only in a separately frozen new run.",
+  "limits": {"model_api_calls":0,"external_code_execution":0,"new_dependencies":0,"dataset_downloads":0,"new_independent_units":0,"behavioral_effect":null,"measured_token_cost":null,"runtime_target_seconds":180},
+  "literature_scope": "Review2..4 official primary method/benchmark resources separately; no native run and no new empirical evidence from a repeated source. Main reference list21 remains unchanged."
+}

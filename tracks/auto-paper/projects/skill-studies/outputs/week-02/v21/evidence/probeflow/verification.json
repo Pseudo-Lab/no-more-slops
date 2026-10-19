@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "scope": "Separate same-author raw-cache arithmetic verifier; no analysis import, independent data or external peer review.",
+  "input_hashes": 9,
+  "cycle_policy_checks": 1684,
+  "pointwise_certificate_rows": 421,
+  "preference_cells": 60,
+  "metric_tamper_refused": true,
+  "hash_tamper_refused": true,
+  "authored_counterexample": "One cycle: mask4 has one head error and mask5 none; extra1/60 cannot erase a1/4 error reduction. A different predictor need not obey the certificate.",
+  "results_sha256": "dbffa79e6677abec65c0e7a69232664bd368058045a2f8be4890239ece3cc72b",
+  "new_physical_experiments": 0
+}

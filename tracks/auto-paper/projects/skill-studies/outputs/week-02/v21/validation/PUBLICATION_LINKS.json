@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "documents": [
+    {
+      "path": "sources/skillmerge/EXPLAINER_KO.md",
+      "links_repaired": 10,
+      "only_links_changed": true
+    },
+    {
+      "path": "sources/second-chance/EXPLAINER_KO.md",
+      "links_repaired": 6,
+      "only_links_changed": true
+    },
+    {
+      "path": "sources/probeflow/EXPLAINER_KO.md",
+      "links_repaired": 9,
+      "only_links_changed": true
+    }
+  ],
+  "total_links_repaired": 25,
+  "original_scientific_text_unchanged": true,
+  "scope": "Public Markdown link adapters only; submitted Typst/PDF scientific content and Research Forge originals unchanged."
+}

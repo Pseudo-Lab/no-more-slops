@@ -1,0 +1,131 @@
+{
+  "schema": "probeflow_v21_frozen_preference_plan_v1",
+  "frozen_at_utc": "2026-10-19T10:01:19.625408+00:00",
+  "question": "Do the two inherited frozen contrasts exhibit dominance or preference-dependent tradeoffs when component/vector loss and equal source quotes are reweighted?",
+  "scope": "Post-hoc analysis of previously exposed625 cycles from one rig. No policy fitting, reselection, prediction forward pass, new data, physical acquisition or independent sample. Existing aggregate signs are known.",
+  "contrasts": [
+    {
+      "id": "primary",
+      "gate": "g129",
+      "k": 1,
+      "original_selection_lambda": "1/20",
+      "fixed_mask": 4,
+      "leaf_masks": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "secondary",
+      "gate": "g301",
+      "k": 3,
+      "original_selection_lambda": "0",
+      "fixed_mask": 3,
+      "leaf_masks": [
+        1,
+        3
+      ]
+    }
+  ],
+  "cohorts": {
+    "fit": [
+      1561,
+      1662
+    ],
+    "dev": [
+      1663,
+      1764
+    ],
+    "evaluation": [
+      1785,
+      2205
+    ]
+  },
+  "fixed_contract": {
+    "prices": [
+      1,
+      1,
+      1
+    ],
+    "hardcap": 2,
+    "cost_normalizer": 3,
+    "component_denominator": 1684,
+    "vector_denominator": 421
+  },
+  "primary_certificate": "Exhaustively compare k1 mask4 versus mask5 head and vector errors on each of421 cycles. Preserve every negative exception if present. Claim the all-alpha/all-nonnegative-lambda boundary only if all three objective differences are nonnegative.",
+  "secondary_hypothesis": "Gate-minus-fixed=(-63+103*alpha-432*lambda)/1684. Test raw predictions and locked metrics, preserve exact fractions.",
+  "alpha_grid": [
+    "0",
+    "1/4",
+    "1/2",
+    "63/103",
+    "3/4",
+    "1"
+  ],
+  "lambda_grid": [
+    "0",
+    "1/20",
+    "5/54",
+    "1/10",
+    "1/5"
+  ],
+  "strata": [
+    "root_outside_fit_range false/true using the original policy root",
+    "target_seen_in_fit false/true using original fit labels"
+  ],
+  "strata_scope": "Descriptive dependent diagnostics only; no new cohort selection and no density/causal interpretation.",
+  "verification": "Separate same-author verifier imports no author analysis functions, rehashes snapshots/originals, recomputes raw prediction errors and observed-mean branches, checks locked metrics, literal formula coefficients, exact boundaries, authored counterexample and two tamper refusals.",
+  "expected_accounting": "Two421-row contrasts,421 pointwise leaf certificates,60 dependent preference cells; zero new independent units, policy fits/selections, predictor forward calls, physical measurements or model/API calls.",
+  "stop": "Fresh output only. Abort on input mismatch, invalid cap/mask, incomplete/duplicate bank, metric mismatch or failed arithmetic. Do not alter a failed run.",
+  "analysis_sha256": "23d567523901ec032067d3a0e0b25780ddbcc3f35b0b091e893cea3ceb48f730",
+  "verifier_sha256": "b8262ba54ca7bf4baee987d1ac724f82b39ea0fd9aa386d86b83d7db902f7e84",
+  "inputs": [
+    {
+      "name": "v19_results.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/results.json",
+      "sha256": "67856fb74a0a5789399c10232f4b432c62a5c8b8a2d09f64caed6e67df4ebf58"
+    },
+    {
+      "name": "v19_input_lock.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/input_lock.json",
+      "sha256": "32bf75d0a242ee59118600351f6d136f4f9aafa8076977d7221010e759dfc510"
+    },
+    {
+      "name": "v19_PLAN.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/PLAN.json",
+      "sha256": "1c80a144244b6160f91e8ff1dcef464fd88bcf38648ae78dc12089e267d04516"
+    },
+    {
+      "name": "observed_means.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/observed_means.json",
+      "sha256": "18b5f48a52f42c3143e63f2f5bcace86cdbb842456a1454fd2ed6db5db12a944"
+    },
+    {
+      "name": "policy_locks.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/policy_locks.json",
+      "sha256": "089ccd3e5effd93fb09369acfebbb36ecd5fd401cc52f8f10c812ac8207b3256"
+    },
+    {
+      "name": "fitted_gates.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/fitted_gates.json",
+      "sha256": "e2d7a114014c9f8a429f91d0858468502cc5f35ee81c7267d2c62b8c7af527f9"
+    },
+    {
+      "name": "policy_results.json",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/policy_results.json",
+      "sha256": "337c5f57a953347285f68db5ec0e69eae307b3f00b88ed51f162153b9704e46f"
+    },
+    {
+      "name": "profile.txt",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/profile.txt",
+      "sha256": "867987ca884b2f0fd607ad3918329eba887d095af2befa21122cea518eaa584a"
+    },
+    {
+      "name": "evaluation_predictions.jsonl",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/inputs/evaluation_predictions.jsonl",
+      "sha256": "c8f0f10b71d42970145cde95cf7f0a00c02f23508675c989b489bdb90e0f3c4e"
+    }
+  ],
+  "revision_reason": "Attempt01 used an unavailable selected-TS1 metadata row: primary selected fixed is PS1. Preserve failed run; verify raw TS1 against the prior pair-oracle objective and independently verify selected PS1 metrics. No scientific contract changed.",
+  "failed_attempt_path": "runs/research_advancement_v21_20261019_01/probeflow/analysis_01"
+}

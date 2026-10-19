@@ -1,0 +1,67 @@
+{
+  "schema": "probeflow_v21_claims_v1",
+  "claims": [
+    {
+      "id": "PF19-C01",
+      "kind": "finite_exact_decomposition",
+      "claim": "A new post-hoc diagnostic holds all390 fitted gate-context records, the frozen predictions, prices, hard cap, k and lambda fixed. For each cohort, A is the per-cycle all-feasible-mask oracle mean, P the current two-leaf oracle mean, G the actual gate mean and F the locked fixed-policy mean. The exact identity G-F=-(F-A)+(P-A)+(G-P) splits the difference into negative headroom, the root/leaf/cost-constraint representation gap and privileged routing regret. The last two are not pure learning errors or causal effects: the oracle observes labels and unseen predictions unavailable to an executable policy.",
+      "source_ids": [
+        "PF19-RUN",
+        "PF19-VERIFY"
+      ]
+    },
+    {
+      "id": "PF19-C02",
+      "kind": "conditional_leaf_pair_boundary",
+      "claim": "The primary inherited k1/equal cap2/lambda0.05 forced gate has F=13561/25260,A=10201/25260,P=12391/25260,G=12413/25260 on421 exposed evaluation cycles. Thus H=56/421,E=73/842,R=11/12630 and G-F=-287/6315. The pair oracle equals the existing TS1/k1 objective. No routing of these same two frozen leaves can strictly beat that TS1 comparison on this particular finite cohort and scalar loss. The actual gate retains798/1684 component errors and391/421 vector errors, with22 extra quotes.",
+      "source_ids": [
+        "PF19-RUN",
+        "PF19-VERIFY"
+      ]
+    },
+    {
+      "id": "PF19-C03",
+      "kind": "objective_specific_saved_diagnostic",
+      "claim": "A predetermined secondary k3/equal cap2/lambda0 gate gives component-error counts F924,A625,P789,G861. The exact decomposition is-299+164+72=-63 over1684 component comparisons. The gain coexists with vector error381->391 and quote842->518. We therefore preserve the objective-specific benefit and the complete-diagnosis regression instead of pooling the metrics.",
+      "source_ids": [
+        "PF19-RUN",
+        "PF19-VERIFY"
+      ]
+    },
+    {
+      "id": "PF21-C01",
+      "kind": "finite_pointwise_dominance_certificate",
+      "claim": "On all421 exposed evaluation cycles, frozen k1 masks4 and5 have equal head-error counts and vector errors; mask5 costs one more equal-price quote. Therefore constantTS1 weakly dominates any routing of these two leaves for alpha in[0,1],lambda>=0,cap2. Atlambda0 scalar loss ties. This is not a statement about new leaves, predictors, devices or populations.",
+      "source_ids": [
+        "PF21-RUN",
+        "PF21-VERIFY"
+      ]
+    },
+    {
+      "id": "PF21-C02",
+      "kind": "posthoc_frozen_policy_preference_sensitivity",
+      "claim": "The unchanged lambda0-selected secondary g301 versus fixedmask3 has deltas(-63 component,+10 vector,-324quotes), so delta=(-63+103alpha-432lambda)/1684. Exact ties arealpha63/103 atlambda0 and423/515 atlambda1/20;lambda5/54 reachesalpha1. This is neither new-preference reselection nor three-objective Pareto dominance.",
+      "source_ids": [
+        "PF21-RUN",
+        "PF21-VERIFY"
+      ]
+    },
+    {
+      "id": "PF21-C03",
+      "kind": "descriptive_finite_stratification",
+      "claim": "Among the secondary ten vector regressions, eight are inside the original root fit range and two outside. All421 rows and all adverse cases are retained. These predeclared dependent partitions do not establish a causal or density-support explanation.",
+      "source_ids": [
+        "PF21-RUN",
+        "PF21-VERIFY"
+      ]
+    },
+    {
+      "id": "PF21-C04",
+      "kind": "prospective_resource_contract_review",
+      "claim": "Four official-source reviews connect AFAPE assumptions and three unrun dataset candidates to future group/time/multisensor tests. No dataset, native method or physical acquisition was executed. The gas dataset page has conflicting research-only andCC BY4.0 wording and is not marked license cleared.",
+      "source_ids": [
+        "PF21-RESOURCES"
+      ]
+    }
+  ]
+}

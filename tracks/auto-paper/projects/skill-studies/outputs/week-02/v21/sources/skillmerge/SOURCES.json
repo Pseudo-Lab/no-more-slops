@@ -1,0 +1,196 @@
+{
+  "schema": "skillmerge_v21_sources_v1",
+  "sources": [
+    {
+      "id": "SM17-RUN",
+      "kind": "executed_local_exposed_agreement_audit",
+      "path": "runs/research_advancement_v17_20261019_01/skillmerge/analysis_01/results.json",
+      "sha256": "83550378a0d670aebfe63168c320e2d22743a512deb5d1c6f1ebcd284b1d8dcc",
+      "scope": "New finite computations on exposed public-annotation-derived constructed responses, not new LLM predictions, semantic correctness adjudication, natural consensus frequency or independent qualified skill trials. Actual independent A/B histories=0, qualified pairs=0, target behavioral composition effect=null. Model API, new dependencies and old-run mutations are prohibited."
+    },
+    {
+      "id": "SM17-PRIORITY",
+      "kind": "executed_post_primary_controlled_priority_audit",
+      "path": "runs/research_advancement_v17_20261019_01/skillmerge/priority_audit_01/results.json",
+      "sha256": "defe151ec17fdfab348d331303e294342737c87b0f388df7e8636bb269400109",
+      "scope": "No new predictions, model requests, skills, independent histories or scientific gates; no claim of semantic contradiction or deployment improvement.",
+      "registered_after_primary_analysis": true
+    },
+    {
+      "id": "SM17-SELF-CONSISTENCY",
+      "url": "https://arxiv.org/html/2203.11171v4",
+      "identity": "Xuezhi Wang et al. Self-Consistency Improves Chain of Thought Reasoning in Language Models, author v4 dated 2023-03-07.",
+      "review_scope": "Primary HTML Section 2 and adjacent introduction defining sampled reasoning paths and aggregation of final answers; no PDF downloaded.",
+      "paraphrase": "The method samples multiple reasoning paths and aggregates their final answers. Agreement of final answers differs from intersection of sentence evidence IDs in two fixed constructed lists.",
+      "implemented_here": false,
+      "external_performance_numbers_imported": false,
+      "source_content_sha256": null,
+      "note_path": "projects/research_advancement_v17_20261019/skillmerge/LITERATURE_NOTES.json",
+      "note_sha256": "ea3d4732ab8e8dbb1b54b24bdd0f3d4c92e72cb3997f9b67b75a77b291520f7f"
+    },
+    {
+      "id": "SM17-SELECTION",
+      "url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "identity": "Gavin C. Cawley and Nicola L. C. Talbot. On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation. JMLR 11(70):2079-2107, 2010.",
+      "review_scope": "Official JMLR metadata and abstract only, lines 30-38. No full-text theorem or PDF review.",
+      "paraphrase": "Optimization of a finite-data model-selection criterion can itself overfit and bias performance assessment. This motivates keeping selection data rights distinct from evaluation.",
+      "implemented_here": "A finite candidate-rule selector with disjoint recorded-component folds only; no reproduced learning experiment or independent-final guarantee.",
+      "external_performance_numbers_imported": false,
+      "source_content_sha256": null,
+      "note_path": "projects/research_advancement_v17_20261019/skillmerge/LITERATURE_NOTES.json",
+      "note_sha256": "ea3d4732ab8e8dbb1b54b24bdd0f3d4c92e72cb3997f9b67b75a77b291520f7f"
+    },
+    {
+      "id": "SM19-RUN",
+      "kind": "local_execution",
+      "path": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/results.json",
+      "sha256": "e495f64342f8d22c47d39b94f61137e35c9f85f3d0fefa82977aa9df349393af",
+      "scope": "New exact capacity audit on exposed saved responses."
+    },
+    {
+      "id": "SM19-VERIFY",
+      "kind": "separate_implementation_verification",
+      "path": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/verification_02/verification.json",
+      "sha256": "fabd6c844dc745a3fe3b73008b387b43b540516f611421022247cf8390f452fc",
+      "scope": "Same-author prefix-set and bitmask verification; corrected verifier provenance retained."
+    },
+    {
+      "id": "SM19-PLAN",
+      "kind": "locked_local_plan",
+      "path": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/PLAN.json",
+      "sha256": "8abf1eec6cd63862acf858c9c5da0724eface01265eab6432c9c7e00fcc88624",
+      "scope": "Registered before this run and after inspecting v17."
+    },
+    {
+      "id": "SM19-METHOD",
+      "kind": "authored_derivation",
+      "path": "projects/research_advancement_v19_20261019/skillmerge/METHOD_KO.md",
+      "sha256": "6ce5041e31b026eee03023bae86360b3303e3f26774185f96dfddd1a14bcd3b6",
+      "scope": "Proofs, hand-worked observed witness, limitations and explicit verifier correction."
+    },
+    {
+      "id": "SM19-IN-0",
+      "kind": "inherited_frozen_input",
+      "path": "runs/research_advancement_v17_20261019_01/skillmerge/analysis_01/inputs/0_task_measurements.json",
+      "sha256": "5c064d56419342da10b1534c828ba446e2b61068f657fc5061cf0ba8eb4874d2",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/0_0_task_measurements.json",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-1",
+      "kind": "inherited_frozen_input",
+      "path": "runs/research_advancement_v17_20261019_01/skillmerge/analysis_01/pair_rows.jsonl",
+      "sha256": "a929700b78786ae23b17fad391f0b04009fbec4d930372349f5c6f7767760b4d",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/1_pair_rows.jsonl",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-2",
+      "kind": "inherited_frozen_input",
+      "path": "runs/research_advancement_v17_20261019_01/skillmerge/analysis_01/results.json",
+      "sha256": "83550378a0d670aebfe63168c320e2d22743a512deb5d1c6f1ebcd284b1d8dcc",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/2_results.json",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-3",
+      "kind": "inherited_frozen_input",
+      "path": "runs/research_advancement_v17_20261019_01/skillmerge/priority_audit_01/results.json",
+      "sha256": "defe151ec17fdfab348d331303e294342737c87b0f388df7e8636bb269400109",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/3_results.json",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-4",
+      "kind": "inherited_frozen_input",
+      "path": "runs/research_advancement_v17_20261019_01/skillmerge/priority_audit_01/witnesses.json",
+      "sha256": "1724895a024e806c7c69e57a6b3c4188adce47de5a184277a3f9e5969e39fad2",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/4_witnesses.json",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-5",
+      "kind": "inherited_frozen_input",
+      "path": "projects/research_advancement_v17_20261019/skillmerge/PLAN.json",
+      "sha256": "7716afd2945e5191f34f0ca8c325a8f551284abd95f3bbf3bf92ac5da073269e",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/5_PLAN.json",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-6",
+      "kind": "inherited_frozen_input",
+      "path": "projects/research_advancement_v17_20261019/skillmerge/PRIORITY_PLAN.json",
+      "sha256": "86e020fcce944b271f4cd17348c255d5d6df6002efcefe855a706cfb0f79e49f",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/6_PRIORITY_PLAN.json",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-7",
+      "kind": "inherited_frozen_input",
+      "path": "projects/research_advancement_v17_20261019/skillmerge/analyze.py",
+      "sha256": "79c10dccd758ddca863a4d48b25634fb89d22a5d0d05d7094765483beaf0e32d",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/7_analyze.py",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-8",
+      "kind": "inherited_frozen_input",
+      "path": "projects/research_advancement_v17_20261019/skillmerge/priority_audit.py",
+      "sha256": "9fb90db9a42d639aa01ab6275a6f275361825708c10776282c7e7703fae08c6f",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/8_priority_audit.py",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-9",
+      "kind": "inherited_frozen_input",
+      "path": "projects/research_advancement_v17_20261019/skillmerge/ISSUES.json",
+      "sha256": "7481133c58f1f064fd38505c700b31333f4574a702bb24d4239721c3b306c5a9",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/9_ISSUES.json",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "SM19-IN-10",
+      "kind": "inherited_frozen_input",
+      "path": "projects/research_advancement_v17_20261019/skillmerge/CLAIMS.json",
+      "sha256": "62587bbfcc51f278de2761c8bf70293f623f65f059ffd71431b5c2d5da78e365",
+      "snapshot": "outputs/research_advancement_v19_20261019/skillmerge_analysis_01/inputs/10_CLAIMS.json",
+      "scope": "Read-only inherited v17 material; no new independent evidence."
+    },
+    {
+      "id": "skillmerge19-RESULT",
+      "path": "runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/results.json",
+      "sha256": "e495f64342f8d22c47d39b94f61137e35c9f85f3d0fefa82977aa9df349393af",
+      "kind": "new_finite_saved_evidence_analysis",
+      "scope": "Previously exposed local inputs; no new independent evidence."
+    },
+    {
+      "id": "SM21-RUN",
+      "kind": "executed_exposed_bank_guard_analysis",
+      "path": "runs/research_advancement_v21_20261019_01/skillmerge/analysis_01/results.json",
+      "sha256": "7ba5202f9b317d489710419ea3335427a6af0174bbb00f29686be3927b3b376d",
+      "scope": "New deterministic calculation; zero independent skill histories/Q-qualified pairs/model calls. Full universal guarantee is conditional and endpoint-specific."
+    },
+    {
+      "id": "SM21-VERIFY",
+      "kind": "separate_same_author_implementation",
+      "path": "runs/research_advancement_v21_20261019_01/skillmerge/analysis_01/verification_01/verification.json",
+      "sha256": "e04aeb630a32cc72408f5862726043fc125727832f4514317e4e6f1c4898ff98",
+      "scope": "Independent code path, same author; all159558 rows and21 aggregates verified with copied input/output tamper rejection. Not external replication."
+    },
+    {
+      "id": "SM21-PROOF",
+      "kind": "authored_mathematical_argument",
+      "path": "projects/research_advancement_v21_20261019/skillmerge/GUARD_PROOF.md",
+      "sha256": "5f63a8b51554dbcfab98993af1bdf674f28ba4f5677e22c2f56573195807cac9",
+      "scope": "Exact quantifiers, restricted maximality, sharp general length bound and unconditional counterexample."
+    },
+    {
+      "id": "SM21-READING",
+      "kind": "reviewed_primary_benchmark_resources",
+      "path": "projects/research_advancement_v21_20261019/skillmerge/literature/RESOURCES.json",
+      "sha256": "933eca2f74eb79199786362c0003b3c0fb221ab172e5872eeddf50146223b6c1",
+      "scope": "Three source cards and short excerpt hashes; no new dataset or native benchmark result. Source-specific license/access limits remain explicit."
+    }
+  ],
+  "prior_source_revision": "v17 content, v18 layout"
+}

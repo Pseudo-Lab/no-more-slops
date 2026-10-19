@@ -1,0 +1,119 @@
+{
+  "schema": "forge_benchmark_comparison_v1",
+  "project_id": "skillmerge",
+  "methods": [
+    {
+      "name": "SciFact native retrieval and verification [1,2]",
+      "source_url": "https://aclanthology.org/2020.emnlp-main.609/",
+      "source_scope": "Official paper abstract and pinned scorer; no native model/task rerun.",
+      "our_implementation": "not_run",
+      "data": "Native SciFact documents/claims and original split required; current bank is an exposed diagnostic adaptation.",
+      "information": "Native retrieval, document and verdict prediction; current analysis conditions on correct label and supplied document.",
+      "budget": "Native scorer keeps first three rationale IDs; no official end-to-end budget replay here.",
+      "comparison_scope": "Benchmark task contract only; no leaderboard or external score comparison."
+    },
+    {
+      "name": "Conditional SciFact-style first-three containment",
+      "source_url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py",
+      "source_scope": "Local scoring component mirrors capped reference containment only.",
+      "our_implementation": "implemented_local",
+      "data": "Same309 evidence tasks and22794 constructed ordered response pairs.",
+      "information": "Auditor-correct labels; supplied document and all reference alternatives retained.",
+      "budget": "Output capacities0..6; first-three always examines at most3.",
+      "comparison_scope": "Exact finite grader/operator audit, not native SciFact performance."
+    },
+    {
+      "name": "ERASER rationale agreement and faithfulness [4]",
+      "source_url": "https://arxiv.org/html/1911.03429v2",
+      "source_scope": "Primary HTMLv2 Sections1,4.1,4.2; reference agreement differs from model faithfulness.",
+      "our_implementation": "related_only",
+      "data": "ERASER corpora/models not executed; local SciFact-derived references only.",
+      "information": "No classifier confidence or counterfactual prediction calls; faithfulness unavailable.",
+      "budget": "No ERASER training or inference budget spent.",
+      "comparison_scope": "Methodological alignment only; local sufficient containment is not ERASER confidence sufficiency."
+    },
+    {
+      "name": "CheckList behavioral testing [5]",
+      "source_url": "https://aclanthology.org/2020.acl-main.442/",
+      "source_scope": "Official abstract; relationship-test idea only.",
+      "our_implementation": "related_only",
+      "data": "No CheckList corpus/software run; finite order and capacity relations on saved bank.",
+      "information": "Declared metamorphic relationships, not natural language model predictions.",
+      "budget": "Stdlib local checks only; no model requests.",
+      "comparison_scope": "Testing design comparison; no package reproduction or reported bug-rate comparison."
+    },
+    {
+      "name": "SkillsBench v1.1 native workflow benchmark [19]",
+      "source_url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+      "source_scope": "Pinned official release native task/environment/oracle/verifier and paired skill/no-skill docs.",
+      "our_implementation": "not_run",
+      "data": "Pinned native task packages not installed or downloaded.",
+      "information": "Future declared agent tools, skills and environment; independentA/B andQ/S must be added explicitly.",
+      "budget": "Future native runner, environment, verifier and model/token cost accounting required.",
+      "comparison_scope": "Prospective workflow benchmark; release review is not execution or qualified composition evidence."
+    },
+    {
+      "name": "Four annotation-blind order controls and exact permutation audit",
+      "source_url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py",
+      "source_scope": "Our authored finite controls; source URL is context for the capped evaluator, not source of our method.",
+      "our_implementation": "implemented_local",
+      "data": "2494 retained responses,22794 ordered pairs,309 tasks, 204 components; all already exposed.",
+      "information": "Controls seeA,B only; oracle extrema see gold only at audit time.",
+      "budget": "Four controls x seven capacities=638232 output replays; exact uniform expectation, zero model calls.",
+      "comparison_scope": "Same union and output-ID count; no token-cost match or independent skill-merging superiority."
+    },
+    {
+      "name": "V17 agreement constructors and length-matched controls",
+      "source_url": "local:runs/research_advancement_v17_20261019_01/skillmerge/analysis_01/results.json",
+      "source_scope": "New declared finite audit; official external methods are not the source of these authored rules.",
+      "our_implementation": "implemented_local",
+      "data": "Same 309 tasks / 204 components / 22,794 constructed ordered pairs.",
+      "information": "Constructors see A,B only; references evaluate outputs.",
+      "budget": "Same cap3; intersection control matched pairwise in output length, not tokens.",
+      "comparison_scope": "Primary fixed rules and exact random expectations; no natural skill score."
+    },
+    {
+      "name": "V17 controlled common/noncommon priority",
+      "source_url": "local:runs/research_advancement_v17_20261019_01/skillmerge/priority_audit_01/results.json",
+      "source_scope": "Separate plan after inspecting primary outputs; exploratory audit preserved.",
+      "our_implementation": "implemented_local",
+      "data": "Same saved22794 pairs, no extra independent units.",
+      "information": "RR baseline and same relative noncommon order; labels only in evaluation.",
+      "budget": "Identical union, cap3 and output count.",
+      "comparison_scope": "Common promotion0 gains/2 losses; negative control122 gains/5 losses; not universal policy safety."
+    },
+    {
+      "name": "Self-consistency over sampled reasoning paths [20]",
+      "source_url": "https://arxiv.org/html/2203.11171v4",
+      "source_scope": "Primary Section 2; sampled path and final-answer aggregation contract.",
+      "our_implementation": "related_only",
+      "data": "No language model or original reasoning benchmark executed.",
+      "information": "Final-answer agreement across sampled reasoning paths differs from fixed sentence-ID intersection.",
+      "budget": "No sampling/model-inference budget spent.",
+      "comparison_scope": "Conceptual agreement comparison; no external scores or reproduction claim."
+    },
+    {
+      "name": "Finite-data selection bias [21]",
+      "source_url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "source_scope": "Official metadata/abstract only.",
+      "our_implementation": "related_only",
+      "data": "Local component folds reuse already exposed diagnostics.",
+      "information": "Training components choose a rule; each held-out component scores it once.",
+      "budget": "10 finite rule selections, zero model fit.",
+      "comparison_scope": "Selection-rights discipline; no theorem transfer or independent final guarantee."
+    },
+    {
+      "name": "V19 stable promotion capacity certificates",
+      "source_url": "local:runs/research_advancement_v19_20261019_01/skillmerge/analysis_01/results.json",
+      "source_scope": "New consumed-plan finite analysis and separately recorded arithmetic verification.",
+      "our_implementation": "implemented_local",
+      "data": "Same previously exposed source records; settings and derived cells are not independent samples.",
+      "information": "Auditor-only reference/oracle information is not returned to a causal selector.",
+      "budget": "Same declared capacity/opportunities/source prices and caps; no new physical or remote calls.",
+      "comparison_scope": "Exact finite identities and development replay only; not native external reproduction or a prospective efficacy claim."
+    }
+  ],
+  "scope": "V19 new finite diagnostics are separated from inherited v17 results and external unrun methods. Primary local results, post-primary audit, exact random expectations, gold class bounds, external methods and unrun native benchmarks remain distinct.",
+  "checked_at_utc": "2026-10-19T02:10:39.389320+00:00",
+  "literature_notes_sha256": "ea3d4732ab8e8dbb1b54b24bdd0f3d4c92e72cb3997f9b67b75a77b291520f7f"
+}

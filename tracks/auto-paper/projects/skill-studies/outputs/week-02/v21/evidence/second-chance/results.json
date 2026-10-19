@@ -1,0 +1,681 @@
+{
+  "schema": "secondchance_v21_structural_frontier_results_v1",
+  "status": "completed_exact_saved_stream_analysis",
+  "summary": {
+    "authored_templates": 12,
+    "reused_authored_paths": 168,
+    "complete_state_identities": 9,
+    "contrast_path_records_per_horizon": 24,
+    "budgets": 2,
+    "query_caps": 4,
+    "contracts": 8,
+    "frontier_points": 8,
+    "policy_comparisons": 72,
+    "policy_rows_on_frontier": 28,
+    "policy_rows_dominated": 44,
+    "legal_schedules_across_contracts": 33658,
+    "dp_transitions": 4458,
+    "new_actual_audits": 0,
+    "new_natural_histories": 0,
+    "new_independent_units": 0,
+    "model_api_calls": 0,
+    "physical_latency_measurements": 0,
+    "utility_dependent_optimization_calls": 0
+  },
+  "frontiers": [
+    {
+      "budget": 5,
+      "query_cap": 1,
+      "frontier": [
+        {
+          "final_width_exact": "1/3",
+          "checkpoint_width_area_exact": "31/25",
+          "actions": [
+            {
+              "tick": 2,
+              "state_sha256": "0cc16b9f96283a5dca285fb54fff23c17b3a1cd1381c5141d07b5264ebe5bc0b"
+            }
+          ],
+          "quotes_used": 1,
+          "equal_objective_schedule_count": 2,
+          "equal_objective_terminal_subsets": 1,
+          "width_curve_exact": [
+            "2",
+            "8/5",
+            "6/5",
+            "13/15",
+            "8/15",
+            "1/3"
+          ]
+        }
+      ],
+      "reachable_terminal_subsets": 10,
+      "legal_schedule_count": 25,
+      "dp_transitions": 44,
+      "dp_ledger": [
+        {
+          "tick": 0,
+          "states": 1,
+          "all_schedule_prefixes": 1
+        },
+        {
+          "tick": 1,
+          "states": 3,
+          "all_schedule_prefixes": 3
+        },
+        {
+          "tick": 2,
+          "states": 4,
+          "all_schedule_prefixes": 6
+        },
+        {
+          "tick": 3,
+          "states": 4,
+          "all_schedule_prefixes": 9
+        },
+        {
+          "tick": 4,
+          "states": 8,
+          "all_schedule_prefixes": 16
+        },
+        {
+          "tick": 5,
+          "states": 10,
+          "all_schedule_prefixes": 25
+        }
+      ],
+      "uses_future_structure": true,
+      "uses_utility_payload": false,
+      "online_policy": false
+    },
+    {
+      "budget": 5,
+      "query_cap": 2,
+      "frontier": [
+        {
+          "final_width_exact": "1/5",
+          "checkpoint_width_area_exact": "6/5",
+          "actions": [
+            {
+              "tick": 1,
+              "state_sha256": "aa8bd06ef866ce5ccd80ef8bb80963031c91a54dfc75c083825e4876b0b9aec8"
+            },
+            {
+              "tick": 2,
+              "state_sha256": "0cc16b9f96283a5dca285fb54fff23c17b3a1cd1381c5141d07b5264ebe5bc0b"
+            }
+          ],
+          "quotes_used": 2,
+          "equal_objective_schedule_count": 4,
+          "equal_objective_terminal_subsets": 1,
+          "width_curve_exact": [
+            "2",
+            "8/5",
+            "6/5",
+            "4/5",
+            "2/5",
+            "1/5"
+          ]
+        }
+      ],
+      "reachable_terminal_subsets": 45,
+      "legal_schedule_count": 207,
+      "dp_transitions": 149,
+      "dp_ledger": [
+        {
+          "tick": 0,
+          "states": 1,
+          "all_schedule_prefixes": 1
+        },
+        {
+          "tick": 1,
+          "states": 3,
+          "all_schedule_prefixes": 3
+        },
+        {
+          "tick": 2,
+          "states": 7,
+          "all_schedule_prefixes": 10
+        },
+        {
+          "tick": 3,
+          "states": 7,
+          "all_schedule_prefixes": 23
+        },
+        {
+          "tick": 4,
+          "states": 23,
+          "all_schedule_prefixes": 78
+        },
+        {
+          "tick": 5,
+          "states": 45,
+          "all_schedule_prefixes": 207
+        }
+      ],
+      "uses_future_structure": true,
+      "uses_utility_payload": false,
+      "online_policy": false
+    },
+    {
+      "budget": 5,
+      "query_cap": 3,
+      "frontier": [
+        {
+          "final_width_exact": "2/15",
+          "checkpoint_width_area_exact": "6/5",
+          "actions": [
+            {
+              "tick": 1,
+              "state_sha256": "a8cd6336a49059c9bfc450b7174014a1eed4faac438cbdf1493d3b02742b4ed9"
+            },
+            {
+              "tick": 2,
+              "state_sha256": "0cc16b9f96283a5dca285fb54fff23c17b3a1cd1381c5141d07b5264ebe5bc0b"
+            },
+            {
+              "tick": 3,
+              "state_sha256": "aa8bd06ef866ce5ccd80ef8bb80963031c91a54dfc75c083825e4876b0b9aec8"
+            }
+          ],
+          "quotes_used": 3,
+          "equal_objective_schedule_count": 28,
+          "equal_objective_terminal_subsets": 3,
+          "width_curve_exact": [
+            "2",
+            "8/5",
+            "6/5",
+            "4/5",
+            "2/5",
+            "2/15"
+          ]
+        }
+      ],
+      "reachable_terminal_subsets": 106,
+      "legal_schedule_count": 715,
+      "dp_transitions": 286,
+      "dp_ledger": [
+        {
+          "tick": 0,
+          "states": 1,
+          "all_schedule_prefixes": 1
+        },
+        {
+          "tick": 1,
+          "states": 3,
+          "all_schedule_prefixes": 3
+        },
+        {
+          "tick": 2,
+          "states": 7,
+          "all_schedule_prefixes": 10
+        },
+        {
+          "tick": 3,
+          "states": 8,
+          "all_schedule_prefixes": 27
+        },
+        {
+          "tick": 4,
+          "states": 36,
+          "all_schedule_prefixes": 152
+        },
+        {
+          "tick": 5,
+          "states": 106,
+          "all_schedule_prefixes": 715
+        }
+      ],
+      "uses_future_structure": true,
+      "uses_utility_payload": false,
+      "online_policy": false
+    },
+    {
+      "budget": 5,
+      "query_cap": 4,
+      "frontier": [
+        {
+          "final_width_exact": "1/15",
+          "checkpoint_width_area_exact": "6/5",
+          "actions": [
+            {
+              "tick": 1,
+              "state_sha256": "a8cd6336a49059c9bfc450b7174014a1eed4faac438cbdf1493d3b02742b4ed9"
+            },
+            {
+              "tick": 2,
+              "state_sha256": "0cc16b9f96283a5dca285fb54fff23c17b3a1cd1381c5141d07b5264ebe5bc0b"
+            },
+            {
+              "tick": 3,
+              "state_sha256": "aa8bd06ef866ce5ccd80ef8bb80963031c91a54dfc75c083825e4876b0b9aec8"
+            },
+            {
+              "tick": 4,
+              "state_sha256": "6785b851d64fdd93d95912031ccf5e2b65cbbf102fd60e56eb3499def11fe96b"
+            }
+          ],
+          "quotes_used": 4,
+          "equal_objective_schedule_count": 40,
+          "equal_objective_terminal_subsets": 3,
+          "width_curve_exact": [
+            "2",
+            "8/5",
+            "6/5",
+            "4/5",
+            "2/5",
+            "1/15"
+          ]
+        }
+      ],
+      "reachable_terminal_subsets": 154,
+      "legal_schedule_count": 1175,
+      "dp_transitions": 372,
+      "dp_ledger": [
+        {
+          "tick": 0,
+          "states": 1,
+          "all_schedule_prefixes": 1
+        },
+        {
+          "tick": 1,
+          "states": 3,
+          "all_schedule_prefixes": 3
+        },
+        {
+          "tick": 2,
+          "states": 7,
+          "all_schedule_prefixes": 10
+        },
+        {
+          "tick": 3,
+          "states": 8,
+          "all_schedule_prefixes": 27
+        },
+        {
+          "tick": 4,
+          "states": 40,
+          "all_schedule_prefixes": 168
+        },
+        {
+          "tick": 5,
+          "states": 154,
+          "all_schedule_prefixes": 1175
+        }
+      ],
+      "uses_future_structure": true,
+      "uses_utility_payload": false,
+      "online_policy": false
+    },
+    {
+      "budget": 8,
+      "query_cap": 1,
+      "frontier": [
+        {
+          "final_width_exact": "1/8",
+          "checkpoint_width_area_exact": "75/64",
+          "actions": [
+            {
+              "tick": 1,
+              "state_sha256": "a8cd6336a49059c9bfc450b7174014a1eed4faac438cbdf1493d3b02742b4ed9"
+            }
+          ],
+          "quotes_used": 1,
+          "equal_objective_schedule_count": 12,
+          "equal_objective_terminal_subsets": 3,
+          "width_curve_exact": [
+            "2",
+            "7/4",
+            "3/2",
+            "5/4",
+            "1",
+            "7/8",
+            "5/8",
+            "3/8",
+            "1/8"
+          ]
+        }
+      ],
+      "reachable_terminal_subsets": 9,
+      "legal_schedule_count": 45,
+      "dp_transitions": 88,
+      "dp_ledger": [
+        {
+          "tick": 0,
+          "states": 1,
+          "all_schedule_prefixes": 1
+        },
+        {
+          "tick": 1,
+          "states": 3,
+          "all_schedule_prefixes": 3
+        },
+        {
+          "tick": 2,
+          "states": 3,
+          "all_schedule_prefixes": 5
+        },
+        {
+          "tick": 3,
+          "states": 3,
+          "all_schedule_prefixes": 7
+        },
+        {
+          "tick": 4,
+          "states": 7,
+          "all_schedule_prefixes": 13
+        },
+        {
+          "tick": 5,
+          "states": 9,
+          "all_schedule_prefixes": 21
+        },
+        {
+          "tick": 6,
+          "states": 9,
+          "all_schedule_prefixes": 29
+        },
+        {
+          "tick": 7,
+          "states": 9,
+          "all_schedule_prefixes": 37
+        },
+        {
+          "tick": 8,
+          "states": 9,
+          "all_schedule_prefixes": 45
+        }
+      ],
+      "uses_future_structure": true,
+      "uses_utility_payload": false,
+      "online_policy": false
+    },
+    {
+      "budget": 8,
+      "query_cap": 2,
+      "frontier": [
+        {
+          "final_width_exact": "1/12",
+          "checkpoint_width_area_exact": "37/32",
+          "actions": [
+            {
+              "tick": 1,
+              "state_sha256": "a8cd6336a49059c9bfc450b7174014a1eed4faac438cbdf1493d3b02742b4ed9"
+            },
+            {
+              "tick": 2,
+              "state_sha256": "aa8bd06ef866ce5ccd80ef8bb80963031c91a54dfc75c083825e4876b0b9aec8"
+            }
+          ],
+          "quotes_used": 2,
+          "equal_objective_schedule_count": 36,
+          "equal_objective_terminal_subsets": 3,
+          "width_curve_exact": [
+            "2",
+            "7/4",
+            "3/2",
+            "5/4",
+            "1",
+            "5/6",
+            "7/12",
+            "1/3",
+            "1/12"
+          ]
+        }
+      ],
+      "reachable_terminal_subsets": 37,
+      "legal_schedule_count": 753,
+      "dp_transitions": 406,
+      "dp_ledger": [
+        {
+          "tick": 0,
+          "states": 1,
+          "all_schedule_prefixes": 1
+        },
+        {
+          "tick": 1,
+          "states": 3,
+          "all_schedule_prefixes": 3
+        },
+        {
+          "tick": 2,
+          "states": 4,
+          "all_schedule_prefixes": 7
+        },
+        {
+          "tick": 3,
+          "states": 4,
+          "all_schedule_prefixes": 13
+        },
+        {
+          "tick": 4,
+          "states": 16,
+          "all_schedule_prefixes": 49
+        },
+        {
+          "tick": 5,
+          "states": 36,
+          "all_schedule_prefixes": 141
+        },
+        {
+          "tick": 6,
+          "states": 37,
+          "all_schedule_prefixes": 289
+        },
+        {
+          "tick": 7,
+          "states": 37,
+          "all_schedule_prefixes": 493
+        },
+        {
+          "tick": 8,
+          "states": 37,
+          "all_schedule_prefixes": 753
+        }
+      ],
+      "uses_future_structure": true,
+      "uses_utility_payload": false,
+      "online_policy": false
+    },
+    {
+      "budget": 8,
+      "query_cap": 3,
+      "frontier": [
+        {
+          "final_width_exact": "1/24",
+          "checkpoint_width_area_exact": "73/64",
+          "actions": [
+            {
+              "tick": 1,
+              "state_sha256": "a8cd6336a49059c9bfc450b7174014a1eed4faac438cbdf1493d3b02742b4ed9"
+            },
+            {
+              "tick": 2,
+              "state_sha256": "aa8bd06ef866ce5ccd80ef8bb80963031c91a54dfc75c083825e4876b0b9aec8"
+            },
+            {
+              "tick": 4,
+              "state_sha256": "aa6d20fb002042976aeb34c983d92fda86030eb051a30e976ec78c11161de156"
+            }
+          ],
+          "quotes_used": 3,
+          "equal_objective_schedule_count": 24,
+          "equal_objective_terminal_subsets": 1,
+          "width_curve_exact": [
+            "2",
+            "7/4",
+            "3/2",
+            "5/4",
+            "1",
+            "19/24",
+            "13/24",
+            "7/24",
+            "1/24"
+          ]
+        }
+      ],
+      "reachable_terminal_subsets": 93,
+      "legal_schedule_count": 6009,
+      "dp_transitions": 1112,
+      "dp_ledger": [
+        {
+          "tick": 0,
+          "states": 1,
+          "all_schedule_prefixes": 1
+        },
+        {
+          "tick": 1,
+          "states": 3,
+          "all_schedule_prefixes": 3
+        },
+        {
+          "tick": 2,
+          "states": 4,
+          "all_schedule_prefixes": 7
+        },
+        {
+          "tick": 3,
+          "states": 4,
+          "all_schedule_prefixes": 13
+        },
+        {
+          "tick": 4,
+          "states": 20,
+          "all_schedule_prefixes": 73
+        },
+        {
+          "tick": 5,
+          "states": 70,
+          "all_schedule_prefixes": 381
+        },
+        {
+          "tick": 6,
+          "states": 93,
+          "all_schedule_prefixes": 1249
+        },
+        {
+          "tick": 7,
+          "states": 93,
+          "all_schedule_prefixes": 3013
+        },
+        {
+          "tick": 8,
+          "states": 93,
+          "all_schedule_prefixes": 6009
+        }
+      ],
+      "uses_future_structure": true,
+      "uses_utility_payload": false,
+      "online_policy": false
+    },
+    {
+      "budget": 8,
+      "query_cap": 4,
+      "frontier": [
+        {
+          "final_width_exact": "0",
+          "checkpoint_width_area_exact": "217/192",
+          "actions": [
+            {
+              "tick": 1,
+              "state_sha256": "a8cd6336a49059c9bfc450b7174014a1eed4faac438cbdf1493d3b02742b4ed9"
+            },
+            {
+              "tick": 2,
+              "state_sha256": "aa8bd06ef866ce5ccd80ef8bb80963031c91a54dfc75c083825e4876b0b9aec8"
+            },
+            {
+              "tick": 4,
+              "state_sha256": "aa6d20fb002042976aeb34c983d92fda86030eb051a30e976ec78c11161de156"
+            },
+            {
+              "tick": 5,
+              "state_sha256": "d4d6c80bd5a8992e8c71fb8efcc65d9661b450c66592fb4040796cf8083fdb9d"
+            }
+          ],
+          "quotes_used": 4,
+          "equal_objective_schedule_count": 30,
+          "equal_objective_terminal_subsets": 1,
+          "width_curve_exact": [
+            "2",
+            "7/4",
+            "3/2",
+            "5/4",
+            "1",
+            "19/24",
+            "1/2",
+            "1/4",
+            "0"
+          ]
+        }
+      ],
+      "reachable_terminal_subsets": 163,
+      "legal_schedule_count": 24729,
+      "dp_transitions": 2001,
+      "dp_ledger": [
+        {
+          "tick": 0,
+          "states": 1,
+          "all_schedule_prefixes": 1
+        },
+        {
+          "tick": 1,
+          "states": 3,
+          "all_schedule_prefixes": 3
+        },
+        {
+          "tick": 2,
+          "states": 4,
+          "all_schedule_prefixes": 7
+        },
+        {
+          "tick": 3,
+          "states": 4,
+          "all_schedule_prefixes": 13
+        },
+        {
+          "tick": 4,
+          "states": 20,
+          "all_schedule_prefixes": 73
+        },
+        {
+          "tick": 5,
+          "states": 84,
+          "all_schedule_prefixes": 501
+        },
+        {
+          "tick": 6,
+          "states": 148,
+          "all_schedule_prefixes": 2569
+        },
+        {
+          "tick": 7,
+          "states": 163,
+          "all_schedule_prefixes": 9133
+        },
+        {
+          "tick": 8,
+          "states": 163,
+          "all_schedule_prefixes": 24729
+        }
+      ],
+      "uses_future_structure": true,
+      "uses_utility_payload": false,
+      "online_policy": false
+    }
+  ],
+  "scope": "Exact 2D frontier over all legal schedules on fixed authored streams. Structural future oracle; not an online policy, independent sample or natural recovery claim.",
+  "checks": {
+    "utility_blinding": true,
+    "v19_policy_objective_rows_reproduced": 72,
+    "v19_structural_views_reproduced": 15,
+    "original_input_hashes_unchanged": true
+  },
+  "outputs": {
+    "structure.json": "da027823c4022e125c03b2c565fd81ebb92c19ae7dc17cd01ee33b403baa5eac",
+    "frontiers.json": "f67ae19b3d355ad6c6fd7ab4171edf2145ff6dcb9bbe3a37204e38e2c34e3cd6",
+    "policy_comparisons.json": "bb143275ddc6e72a38b55a0909855f288b28cd9f6d20667d9af90446b00590e5",
+    "case_traces.json": "79f7b797a3a5c6d48216dad274b3193801124c4f553483c4f75f500af7b71718"
+  },
+  "wall_seconds": 10.261141199996928
+}

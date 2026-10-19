@@ -1,0 +1,116 @@
+{
+  "schema": "nms_integrated_research_skill_provenance_v1",
+  "version": "v21.1-20261019",
+  "created_at_utc": "2026-10-19T11:41:06.836885+00:00",
+  "canonical_skill": "tracks/auto-paper/skills/evidence-tracked-research/SKILL.md",
+  "canonical_skill_sha256": "afc477679bfbcd54d6d42b71aeacfe175794a1db3f1e11f370bfe6a97c666415",
+  "status": "candidate_only_behaviorally_unevaluated",
+  "integration": "The complete v13 public SKILL.md is preserved as an exact byte prefix; three scoped v21 decision checks and this provenance link are appended. This is an integrated public revision, not a byte-identical export of the local v21 candidate.",
+  "original_authorship": {
+    "name": "Gyeongtae Im",
+    "github": "darkwingduck-code",
+    "preserved_from_commit": "bd80096c57aa0c8137e54769670845912f754165",
+    "license": "MIT; existing repository attribution and ownership retained"
+  },
+  "sources": [
+    {
+      "role": "public_v13_base",
+      "url": "https://github.com/Pseudo-Lab/no-more-slops/blob/bd80096c57aa0c8137e54769670845912f754165/tracks/auto-paper/skills/evidence-tracked-research/SKILL.md",
+      "commit": "bd80096c57aa0c8137e54769670845912f754165",
+      "sha256": "d805a2372269bf65b5900358896e3c962c7008e72f505e6cd7f578fb20df6d72",
+      "bytes": 14667,
+      "preservation": "exact byte prefix of the integrated public skill"
+    },
+    {
+      "role": "local_v21_candidate",
+      "research_forge_locator": "projects/research_advancement_v21_20261019/skill_candidate/research-pipeline/SKILL.md",
+      "published_source_url": null,
+      "sha256": "7acc2ca75b3e401e3e0e453ace6feb964af16e3a6d5868e9f55b2fd9a73c7408",
+      "bytes": 4373,
+      "status": "unevaluated and not promoted",
+      "byte_identical_to_integrated_public_skill": false
+    },
+    {
+      "role": "local_active_baseline",
+      "research_forge_locator": "skills/research-pipeline/SKILL.md",
+      "published_source_url": null,
+      "sha256": "c6c8b318119eb0f97ba1a56dbbdb10b869a3914f1aeddcc3ecda0c8c3d3d36cc",
+      "bytes": 1980,
+      "changed_by_this_contribution": false
+    }
+  ],
+  "research_support": [
+    {
+      "project": "skillmerge",
+      "research_forge_result_locator": "runs/research_advancement_v21_20261019_portfolio_02/executions/skillmerge/analysis_01/results.json",
+      "results_sha256": "7ba5202f9b317d489710419ea3335427a6af0174bbb00f29686be3927b3b376d",
+      "scope": "기존에 노출된 309과제·204구성요소·22,794쌍의 유한 재분석이다. 159,558은 쌍–용량 조합 수다. 실제 Q자격·독립 A/B이력·reserved S·모델 실행·토큰비용 측정은 없고 행동 효과는 null이다.",
+      "source_urls": [
+        "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+        "https://arxiv.org/html/2310.20410v3",
+        "https://arxiv.org/html/2509.21051v1"
+      ],
+      "source_url_scope": "Related primary-paper, benchmark-release and dataset references reviewed for the research; these sources do not certify the integrated skill or reproduce external benchmarks."
+    },
+    {
+      "project": "second_chance",
+      "research_forge_result_locator": "runs/research_advancement_v21_20261019_portfolio_02/executions/second_chance/analysis_01/results.json",
+      "results_sha256": "c127bf5c6d8d9c65ad827108bbc83d022466bcbfd6ee159893c8a8a0e25a2b81",
+      "scope": "기존 168 authored경로·12template·9state를 재사용한 유한 일정 분석이다. 미래 도착·occupation 구조를 읽는 oracle은 온라인 정책이 아니다. 즉시 quote·동일 state·비정지 복구 시계에 조건부이며 자연 복구 성공이나 독립 이력 효과를 측정하지 않았다.",
+      "source_urls": [
+        "https://arxiv.org/html/2509.25370v1",
+        "https://proceedings.mlr.press/v267/zhang25cq.html",
+        "https://arxiv.org/html/2607.18754v1"
+      ],
+      "source_url_scope": "Related primary-paper, benchmark-release and dataset references reviewed for the research; these sources do not certify the integrated skill or reproduce external benchmarks."
+    },
+    {
+      "project": "probeflow",
+      "research_forge_result_locator": "runs/research_advancement_v21_20261019_portfolio_02/executions/probeflow/analysis_02/results.json",
+      "results_sha256": "dbffa79e6677abec65c0e7a69232664bd368058045a2f8be4890239ece3cc72b",
+      "scope": "기존 한 rig·625cycle 중 노출평가 421cycle의 캐시를 재계산했다. primary는 고정 k1/두 leaf/동일 가격·cap의 조건부 지배이고 secondary는 원래 λ0에서 선택한 정책의 사후 재가중이다. 새 예측·재선택·독립 장치·물리 관측·외부 벤치마크 실행은 0이다.",
+      "source_urls": [
+        "https://www.jmlr.org/papers/v26/23-1635.html",
+        "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+        "https://archive.ics.uci.edu/dataset/224/gas+sensor+array+drift+dataset",
+        "https://archive.ics.uci.edu/dataset/226/opportunity+activity+recognition"
+      ],
+      "source_url_scope": "Related primary-paper, benchmark-release and dataset references reviewed for the research; these sources do not certify the integrated skill or reproduce external benchmarks."
+    }
+  ],
+  "accounting": {
+    "saved_evidence_analysis_runs_reused": 3,
+    "new_independent_scientific_samples": 0,
+    "external_benchmark_reproductions": 0,
+    "new_local_model_executions": 0,
+    "separate_model_api_calls": 0,
+    "actual_professor_consultations": 0,
+    "skill_behavior_comparisons": 0,
+    "promotions": 0,
+    "local_active_skill_changes": 0
+  },
+  "evaluation_limits": [
+    "No replay evaluation of candidate versus baseline skill was performed.",
+    "No independent held-out behavioral evaluation or causal skill-performance estimate was produced.",
+    "Hash, frontmatter and repository checks establish packaging integrity only.",
+    "Native Codex authoring is not represented as an independently measured model experiment or a zero-token activity."
+  ],
+  "publication_boundary": {
+    "scope": "Only the current week-02 upload branch; no pull request is created or updated by this skill edit.",
+    "related_open_pull_requests": [
+      {
+        "number": 11,
+        "url": "https://github.com/Pseudo-Lab/no-more-slops/pull/11",
+        "role": "Original public research-automation skill contribution; its remote branch is not modified."
+      },
+      {
+        "number": 14,
+        "url": "https://github.com/Pseudo-Lab/no-more-slops/pull/14",
+        "role": "Original week-01 studies contribution; its remote branch is not modified."
+      }
+    ],
+    "future_pr_requirement": "Before any future PR, reconcile the canonical SKILL.md with PR11 and any shared project README with PR14, then verify both merge orders. This contribution does not certify PR merge-order independence.",
+    "activation": "Publishing a reusable skill does not activate or promote the local Research Forge candidate."
+  },
+  "acknowledgement": "This work was created as part of the No-More-Slops group activities at Pseudo Lab."
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "forge_research_resources_v21",
+  "project_id": "second_chance",
+  "checked_at": "2026-10-19",
+  "resources": [
+    {
+      "id": "sc21-agentdebug-agenterrorbench",
+      "title": "Where LLM Agents Fail and How They can Learn From Failures / AgentErrorBench",
+      "url": "https://arxiv.org/html/2509.25370v1",
+      "kind": "paper_and_dataset_candidate",
+      "checked_at": "2026-10-19",
+      "review_scope": "Version-one primary HTML: Sections 2.2, 3.2, Algorithm 1, 4.1-4.2; official repository README/LICENSE and linked Drive landing page.",
+      "source_report_ko": "저자는 ALFWorld·GAIA·WebShop 실패 궤적에 오류 주석을 만들고, 진단 후 피드백 재실행을 비교한다. 실패 위치 평가와 복구 성공 평가는 다른 실험이다.",
+      "idea": "오류가 드러난 마지막 단계만 보지 않고, 앞선 원인 후보와 뒤의 복구 결과를 구별해 본다.",
+      "method": "저자 방법은 오류 taxonomy·critical-step 진단·목표 피드백 재실행이다. 우리 새 계산은 고정된 회복 경로의 감사 일정만 최적화하며 오류 수정이나 재실행은 하지 않는다.",
+      "benchmark": "논문은 200개 주석 궤적을 제시한다. 실제 데이터 파일 목록·스키마·개별 완전 상태는 이번에 확인하지 않았다. 원문 Section4.2는 최대5회 재실행과 token-matched 비교를 보고하지만 이를 우리 quote 예산과 동등시하지 않는다.",
+      "use": "우리 제안: 향후 허용된 실패 이력을 고를 때 원인 진단 정확도와 수정 후 통합상태 성공률을 별도 endpoint로 고정한다. 실패 시점에서 다시 시작하려면 외부 도구와 숨은 상태 복원을 먼저 검사한다.",
+      "limits": [
+        "원문 Algorithm1 Stage2는 no-rollout/counterfactuals로 표기하지만 §3.2 Stage2 prose는 counterfactual testing을 서술한다. 실제 구현을 실행·검토해 해소하기 전 확정된 개입 프로토콜로 쓰지 않는다.",
+        "공식 GitHub와 Drive 링크는 접근되지만 Drive 파일 목록은 표시되지 않았다. 데이터 취득·다운로드 성공으로 표시하지 않는다.",
+        "소프트웨어 MIT는 직접 확인했다. 데이터와 vendored 환경의 사용/재배포 조건은 별도 확인이 필요하다.",
+        "대화/행동 궤적은 우리 완전state identity·고정입력·결정적재감사 가정을 자동으로 제공하지 않는다."
+      ],
+      "questions": [
+        "같은 오류 위치에서 재시작할 때 메모리·도구·환경까지 같은 상태를 복원할 수 있는가?",
+        "진단 토큰과 실제 수정 재실행 비용을 같은 총예산 장부에 모두 넣었는가?"
+      ],
+      "data_access_license": {
+        "repository": "https://github.com/ulab-uiuc/AgentDebug",
+        "code_license": "MIT file directly read",
+        "data_url": "https://drive.google.com/drive/folders/1bQe6dQA85pktT63YnKIKJDTVaH3O3Vpu",
+        "data_status": "linked_landing_page_only; inventory and data license unverified",
+        "downloaded": false
+      },
+      "source_passage_ids": [
+        "agentdebug-paper-algorithm",
+        "agentdebug-repository-data",
+        "agentdebug-code-license"
+      ],
+      "executed_native": false
+    },
+    {
+      "id": "sc21-whowhen",
+      "title": "Which Agent Causes Task Failures and When? / Who&When",
+      "url": "https://proceedings.mlr.press/v267/zhang25cq.html",
+      "kind": "paper_and_attribution_benchmark",
+      "checked_at": "2026-10-19",
+      "review_scope": "Official ICML2025 PMLR identity; arXiv2505.00212v3 Sections2-4.2/4.7; official GitHub README/LICENSE and linked public Hugging Face viewer.",
+      "source_report_ko": "누가 어느 단계에서 실패를 유발했는지의 주석과 all-at-once·step-by-step·binary-search 평가를 제공한다. 정답 답안을 진단자에게 주는 설정과 주지 않는 설정이 따로 있다.",
+      "idea": "책임 에이전트와 결정적 단계라는 두 질문을 분리하면, 대충 맞힌 원인과 정확한 위치를 혼동하지 않는다.",
+      "method": "저자 benchmark는 오류 귀속을 평가한다. 우리 frontier는 동일한 회복 stream에서 어떤 상태를 감사할지의 구조 경계이며, 오류 귀속 정답을 회복 효과로 바꾸지 않는다.",
+      "benchmark": "공식 자료는 184개 실패 annotation task를 보고한다. HF 공개뷰에서 126개 algorithm-generated 행과 history/ground_truth/mistake_agent/mistake_step 등의 필드를 확인했다. 총 task 수·system 수·로그 길이를 서로 다른 단위로 둔다.",
+      "use": "우리 제안: 원인 위치 selector를 비교한다면 reference answer의 공개 여부를 고정하고 agent/step 정확도를 별도 기록한다. 그 자료를 복구 평가에 쓰려면 수정 전후 실행·고정입력·비용 정보를 추가로 수집해야 한다.",
+      "limits": [
+        "기본 실패 attribution 주석은 수정 후 paired recovery trajectory나 counterfactual utility table이 아니다.",
+        "검토한 공개 HF card에 데이터 license 표시는 없었다. 공식 GitHub MIT 소프트웨어 허가와 데이터 재배포 허가를 구분한다.",
+        "실패 로그와 일부 system 정보가 있다는 사실만으로 완전 환경 snapshot·동일state 재실행·실제 감사 latency를 가정할 수 없다.",
+        "논문이 두 reference-answer access 설정을 평균내는 경우를 우리 온라인 감사 권한과 직접 비교하지 않는다."
+      ],
+      "questions": [
+        "주어진 ground_truth는 최종 task 답인가, 원인 step 주석인가? 어떤 값이 진단자에게 공개되는가?",
+        "오류 위치가 맞아도 수정 후 같은 later-input 패널을 보존하지 못하는 경우를 어떻게 남길 것인가?"
+      ],
+      "data_access_license": {
+        "repository": "https://github.com/ag2ai/Agents_Failure_Attribution",
+        "code_license": "MIT file directly read",
+        "data_url": "https://huggingface.co/datasets/Kevin355/Who_and_When",
+        "data_status": "public viewer and schema checked; dataset-specific license not established",
+        "downloaded": false
+      },
+      "source_passage_ids": [
+        "whowhen-paper-settings",
+        "whowhen-repository-count",
+        "whowhen-card-schema",
+        "whowhen-code-license"
+      ],
+      "executed_native": false
+    },
+    {
+      "id": "sc21-agentdebugx",
+      "title": "AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents",
+      "url": "https://arxiv.org/html/2607.18754v1",
+      "kind": "paper_and_recovery_infrastructure",
+      "checked_at": "2026-10-19",
+      "review_scope": "Primary version-one HTML Sections3.1-3.2/4 and AppendicesC/E; official README checkpoint/rerun contract and MIT notice.",
+      "source_report_ko": "기록·원인 진단·수정안·재실행 분기를 연결하는 시스템이다. GAIA의 이미 실패한 부분집합에서 한 번 재실행하는 비교는 전체 retry recipe의 평가이며 원인 진단만의 효과는 아니다.",
+      "idea": "복구 제안서와 실제로 다시 실행한 증거를 나누고, 원본과 수정 분기를 모두 남긴다.",
+      "method": "저자 system은 trajectory event와 recovery directive를 runner에 연결한다. 우리 일정 oracle은 저장값 공개만 계산하며 runner 복원·실제 수정·상태 drift를 실행하지 않는다.",
+      "benchmark": "AppendixC의 Who&When attribution은 reference-answer access를 사용한다. GAIA recovery는 고정 실패부분집합·한번의retry·같은 도구스택이라는 조건이다. 이 실험 계약을 우리 감사quote나 독립평가 표본으로 가져오지 않는다.",
+      "use": "우리 제안: 동일 상태 복원 능력이 있는 runner를 확보한 후 원본·수정 분기의 입력과 state/environment hash를 고정한다. 진단 비용, 실제 retry 비용, later-input 보존과 무복구를 함께 기록한다.",
+      "limits": [
+        "README에서 from_event는 runner의 checkpoint 복원/계속실행 지원이 필요하다고 명시한다. 로그만 읽어 완전 복원 가능으로 표시할 수 없다.",
+        "소프트웨어 MIT notice는 확인했으나 개별 공개 trajectory의 데이터 권리와 민감정보 제거 완전성은 확인하지 않았다.",
+        "실패부분집합에서 얻은 recipe 결과는 blind single-shot 성능이나 attribution 자체의 고립된 인과효과가 아니다.",
+        "종속 prompt선택·노출된 benchmark·특권적 답안 접근과 실제비용은 새 실행에서 따로 고정해야 한다."
+      ],
+      "questions": [
+        "선택 event에서 복원되지 않는 외부 도구 상태가 있으면 처음부터 재시작하는 대조와 어떻게 비용을 맞출 것인가?",
+        "진단을 맞힌 경우와 실제 상태를 회복한 경우의 교차표를 남길 수 있는가?"
+      ],
+      "data_access_license": {
+        "repository": "https://github.com/AgentDebugX/AgentDebugX",
+        "code_license": "MIT notice checked in official README; no code installed",
+        "data_url": "https://github.com/AgentDebugX/AgentDebugX/tree/main/trajectory_data",
+        "data_status": "repository directory link seen; no trajectory inventory or individual data license checked",
+        "downloaded": false
+      },
+      "source_passage_ids": [
+        "agentdebugx-paper-limit",
+        "agentdebugx-repository-checkpoint"
+      ],
+      "executed_native": false
+    }
+  ],
+  "selected_passages_path": "literature/SELECTED_PASSAGES.json",
+  "selected_passages_sha256": "7f8d8fa36a2924f8bf9fbd7457d954d3d0f84888039a84c63d4a3b971ae37480",
+  "scope": "Primary-source reading and Forge-authored prospective design criticism, not native reproduction, data acquisition or external performance comparison.",
+  "external_pdf_downloads": 0,
+  "dataset_downloads": 0,
+  "remote_code_executions": 0,
+  "model_api_calls": 0
+}

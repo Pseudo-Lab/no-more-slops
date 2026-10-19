@@ -1,0 +1,10 @@
+{
+  "schema": "nms_public_research_skill_binding_v1",
+  "skill_path": "tracks/auto-paper/skills/evidence-tracked-research/SKILL.md",
+  "skill_sha256": "afc477679bfbcd54d6d42b71aeacfe175794a1db3f1e11f370bfe6a97c666415",
+  "provenance_path": "tracks/auto-paper/skills/evidence-tracked-research/references/v21-provenance.json",
+  "provenance_sha256": "6bc9be04931542b69865ded45923c0be556e04a187b0bed716aae8599c9dc590",
+  "candidate_only": true,
+  "active_research_forge_skill_changed": false,
+  "scope": "Canonical research automation guidance, separate from app/v21 document rebuild helpers; no behavioral skill evaluation or promotion."
+}

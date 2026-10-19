@@ -1,0 +1,102 @@
+{
+  "schema": "forge_document_study_map_v1",
+  "project_id": "second_chance",
+  "rows": [
+    {
+      "main_section": "Introduction",
+      "supplement_section": "S1. Reading route and the recovery contract",
+      "explainer_heading": "1. 이 연구가 해결하는 질문과 해결하지 못한 질문",
+      "question_ko": "재채점은 왜 현재 상태의 회복이 아닌가?"
+    },
+    {
+      "main_section": "Related Work",
+      "supplement_section": "S13. Prospective study and explicit falsification criteria",
+      "explainer_heading": "2. 본문·보충자료·해설을 오가는 독해 지도",
+      "question_ko": "참고 방법은 실제 실행 비교인가, 설계 참고인가?"
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S3. Exact scenario-conditioned and scenario-union intervals",
+      "explainer_heading": "3. 손계산 1: 모든 상태를 알아도 남는 시나리오 불확실성",
+      "question_ko": "시나리오를 아는 폭과 모르는 폭은 어떻게 다른가?"
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S4. Deriving the four-pair pre-outcome objective",
+      "explainer_heading": "3. 손계산 1: 모든 상태를 알아도 남는 시나리오 불확실성",
+      "question_ko": "F의 네 endpoint 조합은 왜 모두 필요한가?"
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S6. Zero-sum L1 tubes: bound, attainment and invariant ranking",
+      "explainer_heading": "4. 선택기가 볼 수 있는 정보부터 확인하기",
+      "question_ko": "왜 uniform tube가 후보 순위를 바꾸지 못하는가?"
+    },
+    {
+      "main_section": "Experimental Setup",
+      "supplement_section": "S8. Nine causal policies and a complementarity warning",
+      "explainer_heading": "4. 선택기가 볼 수 있는 정보부터 확인하기",
+      "question_ko": "선택기는 무엇을 보고 무엇을 보지 못하는가?"
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S9. Checkpoint width area and the B8/q3 case",
+      "explainer_heading": "5. 손계산 2: checkpoint 6과 마지막 checkpoint를 바꾸지 않기",
+      "question_ko": "t6의 7/12와 t8의 1/12를 어떻게 구분하는가?"
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S10. All sixteen paired new-rule contracts",
+      "explainer_heading": "6. 손계산 3: 마지막 폭이 좋은 정책이 면적에서도 좋은가",
+      "question_ko": "네 면적 개선과 나머지 동률을 모두 확인했는가?"
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S11. Eta sensitivity: denominator, retrospective fit and leakage",
+      "explainer_heading": "7. 13개 view와 eta를 읽을 때의 금지된 지름길",
+      "question_ko": "13개 포함 view를 독립 coverage로 부르면 왜 틀리는가?"
+    },
+    {
+      "main_section": "Limitations",
+      "supplement_section": "S12. Verification ledger and assumption-failure checks",
+      "explainer_heading": "8. 스스로 설명하는 확인 문제와 다음 읽기",
+      "question_ko": "어떤 관측이 현재 보장을 중단시키는가?"
+    },
+    {
+      "main_section": "Conclusion",
+      "supplement_section": "S14. Main-to-supplement routing and the preserved full record",
+      "explainer_heading": "8. 스스로 설명하는 확인 문제와 다음 읽기",
+      "question_ko": "압축해도 반드시 남겨야 하는 제한은 무엇인가?"
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S15. Schedule contract and exact audited-set dynamic program",
+      "explainer_heading": "v21 독해 2. 모든 스케줄을 비교한다는 뜻",
+      "question_ko": "도착한 상태만 한 번씩 읽는 전체 일정은 어떻게 셀 수 있나?"
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S16. Eight complete frontiers and the limits of a singleton result",
+      "explainer_heading": "v21 독해 3. 최선 경계가 점 하나라는 결과",
+      "question_ko": "최종 폭과 면적의 충돌이 이번 자료에서는 왜 필수가 아니었나?"
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S17. B8 three-quote trace: structural lookahead removes the family tradeoff",
+      "explainer_heading": "v21 독해 4. B8 세 번 조회를 직접 계산하기",
+      "question_ko": "73/64와 기존 37/32·75/64의 차이를 손으로 계산할 수 있나?"
+    },
+    {
+      "main_section": "Experimental Setup",
+      "supplement_section": "S18. Complete policy comparison and verification ledger",
+      "explainer_heading": "v21 독해 5. 분모와 검산을 혼동하지 않기",
+      "question_ko": "33,658개는 왜 독립 이력이나 고유 스케줄 수가 아닌가?"
+    },
+    {
+      "main_section": "Limitations",
+      "supplement_section": "S19. Primary trajectory resources and an unclosed transfer gate",
+      "explainer_heading": "v21 독해 6. 실제 에이전트 자료로 옮기려면",
+      "question_ko": "오류 위치 데이터와 동일 상태의 복구 재현 자료는 무엇이 다른가?"
+    }
+  ]
+}

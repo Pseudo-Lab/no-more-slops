@@ -1,0 +1,1218 @@
+{
+  "schema": "secondchance_v21_frozen_inputs_v1",
+  "locked_at_utc": "2026-10-19T10:00:01.792177+00:00",
+  "plan_sha256": "364cb03a95013e6ce82f71a73d22245d0483e4faf54643320d31dd624c307a1a",
+  "code_sha256": "8e88e81925e9779da2187616054d80eb671f7a83a522f2626b11b8abf50efacd",
+  "verifier_sha256": "4fac59e46776f97ad5d3f37282d6af6cd81a6b6d1d3888e9877fba7272c1edf9",
+  "inputs": [
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-5-lesson_only.json",
+      "snapshot": "traces/authored-history-01-5-lesson_only.json",
+      "bytes": 2285,
+      "sha256": "ba3e92ce78dcad0c6f44ed5a7a2e0fc93de2219150e9b5da86f157a93ff37c01",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-01-5-neutral_early_stop.json",
+      "bytes": 2459,
+      "sha256": "2443f6696d1b7d0b6f3d29672de785b81794b0f6bed54c8f6e3b0c782cc43a94",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-01-5-neutral_joint.json",
+      "bytes": 2710,
+      "sha256": "a0009b74e3675f62b617ba19f7757a3c4a41967f0b7bc52a9df69e1081bfe49a",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-5-no_repair.json",
+      "snapshot": "traces/authored-history-01-5-no_repair.json",
+      "bytes": 2017,
+      "sha256": "792e3ec6981675b292998fb51e294e94c883c130852ef812436f2aabe3746507",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-5-rescore_only.json",
+      "snapshot": "traces/authored-history-01-5-rescore_only.json",
+      "bytes": 2023,
+      "sha256": "4241a1ff42253ecc592d01e7cb1bf7a7c4fe19e03b1da22d8e1e24b1a2d9d0a8",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-5-selection_only.json",
+      "snapshot": "traces/authored-history-01-5-selection_only.json",
+      "bytes": 2451,
+      "sha256": "0a2d3be6879eebad3feb1164b7332bc30113754865eec6a73d6ac9c96564c821",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-5-selective_joint.json",
+      "snapshot": "traces/authored-history-01-5-selective_joint.json",
+      "bytes": 2716,
+      "sha256": "7ad66413399f5e5d02f0ef78e9cfd811e0870ae586fb5b60089dd30e48ffece5",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-8-lesson_only.json",
+      "snapshot": "traces/authored-history-01-8-lesson_only.json",
+      "bytes": 2286,
+      "sha256": "0563c1b4ab29b76e5f3c1a06aeca81f5dcd43c06703da6b28e3d940a87cacaf0",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-01-8-neutral_early_stop.json",
+      "bytes": 2461,
+      "sha256": "e2c94e7f522c5564fca10e84ccbaec3dab97f75d177bbc3509cfcb3bdf74cd29",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-01-8-neutral_joint.json",
+      "bytes": 2712,
+      "sha256": "64c8ebf8eb2a404d3c5c5536031c8c8aef820c0f2bb54f338da6d4df8a3c58bc",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-8-no_repair.json",
+      "snapshot": "traces/authored-history-01-8-no_repair.json",
+      "bytes": 2018,
+      "sha256": "fdc8e34977676daafd9f60b588651a32f9fdf93fb007bafd67ff292298b4c8d6",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-8-rescore_only.json",
+      "snapshot": "traces/authored-history-01-8-rescore_only.json",
+      "bytes": 2024,
+      "sha256": "870c9d7b50853208eee216a924dcdef40ccfd97b8c3e5ed1fb2f2a9caeec4410",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-8-selection_only.json",
+      "snapshot": "traces/authored-history-01-8-selection_only.json",
+      "bytes": 2453,
+      "sha256": "5e049c1fb92b9c254bd1f6daebd8d5e7d9f6e5931b0dddee2b12267617f0b8cf",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-01-8-selective_joint.json",
+      "snapshot": "traces/authored-history-01-8-selective_joint.json",
+      "bytes": 2716,
+      "sha256": "ca5313675384a7c8c2c7e4c3b02756171b688a1e755fabc4af9d467415c8bda3",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-5-lesson_only.json",
+      "snapshot": "traces/authored-history-02-5-lesson_only.json",
+      "bytes": 2562,
+      "sha256": "785fd1605b5157273032365bc06c8e445d07a080d7706b60a1597c1509c62ab2",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-02-5-neutral_early_stop.json",
+      "bytes": 2565,
+      "sha256": "f804e392c992118355f648f4fe640b29f7e7cd1b1581bd645df62badfd2bea8c",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-02-5-neutral_joint.json",
+      "bytes": 3041,
+      "sha256": "2841de1befe4222bebeca15bfd6866760b382585fa8409e3197f49fa78775f45",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-5-no_repair.json",
+      "snapshot": "traces/authored-history-02-5-no_repair.json",
+      "bytes": 2070,
+      "sha256": "353cf6a494febb62c4c68c0108bc94b21d840dc10e1b7798aa437590992cbfd0",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-5-rescore_only.json",
+      "snapshot": "traces/authored-history-02-5-rescore_only.json",
+      "bytes": 2076,
+      "sha256": "3ea19b6676a4847a6b55f8838e355f130d69860406e83c048b0dfbe230de28bd",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-5-selection_only.json",
+      "snapshot": "traces/authored-history-02-5-selection_only.json",
+      "bytes": 2557,
+      "sha256": "5d6f1fc5c21896093b066eb8ef03b7c156b083471b11f25f0a46cd9d25140c29",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-5-selective_joint.json",
+      "snapshot": "traces/authored-history-02-5-selective_joint.json",
+      "bytes": 3045,
+      "sha256": "38c417f17d599ceeecf50343fa888da9531362c96bc7a8695db1cade3aa1bf4f",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-8-lesson_only.json",
+      "snapshot": "traces/authored-history-02-8-lesson_only.json",
+      "bytes": 2563,
+      "sha256": "5c0f655887df8510351b50fa089049b7cf43061ee56bcc2c05e48aecb101b38a",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-02-8-neutral_early_stop.json",
+      "bytes": 2565,
+      "sha256": "ff206a3cee149686f8fb878abe9795f5807dc30b5a5a471435e17fcd15296371",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-02-8-neutral_joint.json",
+      "bytes": 3052,
+      "sha256": "f4dea94bbef9db7c34471511e51b35c6d5d8c57e4a9797edff7cdb08d88bbf83",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-8-no_repair.json",
+      "snapshot": "traces/authored-history-02-8-no_repair.json",
+      "bytes": 2070,
+      "sha256": "ee48a024bae2c955f880516de49817a4111feb4c4f566e3c6ba26df85a5c3c08",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-8-rescore_only.json",
+      "snapshot": "traces/authored-history-02-8-rescore_only.json",
+      "bytes": 2076,
+      "sha256": "bf4ab5f03b98779d082815b7a43e4c1b8f568748832f9234b711d8b3440b5a52",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-8-selection_only.json",
+      "snapshot": "traces/authored-history-02-8-selection_only.json",
+      "bytes": 2557,
+      "sha256": "11468f626e0bd72d3fc211e3258525b8da28261bf44f481cd31cbb7a5a1971cf",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-02-8-selective_joint.json",
+      "snapshot": "traces/authored-history-02-8-selective_joint.json",
+      "bytes": 3056,
+      "sha256": "896d933aa8d2957a1677eb833dd7a6604ddcc987aed515dbffca341b831c6106",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-5-lesson_only.json",
+      "snapshot": "traces/authored-history-03-5-lesson_only.json",
+      "bytes": 2289,
+      "sha256": "4b3c1e4c469e328ef5e76f7b11374fc8ba39e6bef0c7f7abf2d2a64cdd73104d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-03-5-neutral_early_stop.json",
+      "bytes": 2464,
+      "sha256": "8d4860d0a8f3ff215ff0ae8409b563262f4da508794d860fc7b6e1f1044b5ed7",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-03-5-neutral_joint.json",
+      "bytes": 2715,
+      "sha256": "5d95d3c3d16bd0154be7b1313b4443847254ec067d6a24a9b83498e99cc3cf4a",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-5-no_repair.json",
+      "snapshot": "traces/authored-history-03-5-no_repair.json",
+      "bytes": 2021,
+      "sha256": "1183959034c69c4fca54fa9f0299988bc8891e24ffcb55b60a31e1b1dab6b6a5",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-5-rescore_only.json",
+      "snapshot": "traces/authored-history-03-5-rescore_only.json",
+      "bytes": 2027,
+      "sha256": "8899853a3e3fc4f57a83f85ffec6dec25e25518f0a9570447b6575108292726e",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-5-selection_only.json",
+      "snapshot": "traces/authored-history-03-5-selection_only.json",
+      "bytes": 2481,
+      "sha256": "e46466fec2bcf08bf5650cccc74dc9232d571d831ec540bc931794b0ed96af90",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-5-selective_joint.json",
+      "snapshot": "traces/authored-history-03-5-selective_joint.json",
+      "bytes": 2760,
+      "sha256": "95a4b53eb809b28145ee084be17cd7d65ed1dcaea798427da3d70b2d3c92adac",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-8-lesson_only.json",
+      "snapshot": "traces/authored-history-03-8-lesson_only.json",
+      "bytes": 2289,
+      "sha256": "504967f8b3fa2498b0d56333c1c392e36060f593e74a8b48f6c26fefc11bab37",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-03-8-neutral_early_stop.json",
+      "bytes": 2464,
+      "sha256": "249e04bf21d7dd68451541c524b10f4f0ea3f00f4c747c51f30fbf1528d0ed78",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-03-8-neutral_joint.json",
+      "bytes": 2715,
+      "sha256": "8adc1abc274022deb0470d858c1a369d5126b17670e25c26bba3decd5e4b25bd",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-8-no_repair.json",
+      "snapshot": "traces/authored-history-03-8-no_repair.json",
+      "bytes": 2021,
+      "sha256": "8553b9e988cae80b5d961f858a2d432ceebc4c3f4e30668af1f524514dc7c5a5",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-8-rescore_only.json",
+      "snapshot": "traces/authored-history-03-8-rescore_only.json",
+      "bytes": 2027,
+      "sha256": "d6aead68d130c5fac2f6b67a7fd201b2d742abb99dde40e34df8e734927b4547",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-8-selection_only.json",
+      "snapshot": "traces/authored-history-03-8-selection_only.json",
+      "bytes": 2464,
+      "sha256": "759dc9d16294119c9d9c4680c92471479ac9fbe3ef2f3c0253af73f4463da8d7",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-03-8-selective_joint.json",
+      "snapshot": "traces/authored-history-03-8-selective_joint.json",
+      "bytes": 2743,
+      "sha256": "db472b69ee3a61a1d5a1667a0bf95f95e61a340f1cc73644b6ce6933d430fbc1",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-5-lesson_only.json",
+      "snapshot": "traces/authored-history-04-5-lesson_only.json",
+      "bytes": 2565,
+      "sha256": "4bbaa4c58fa0d0ae53e01cc7b53030d775c5ed2a92d69801e6605d2bf2ad0c33",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-04-5-neutral_early_stop.json",
+      "bytes": 2568,
+      "sha256": "42ddefda018acdc544513a783f22fa5d33e7ea105486a05f8bbaa99f3df96698",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-04-5-neutral_joint.json",
+      "bytes": 3044,
+      "sha256": "b445d73db1ba9630ccb7a6f02a53ceae899ec867f8d429c66c2d2f4d99bc66e5",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-5-no_repair.json",
+      "snapshot": "traces/authored-history-04-5-no_repair.json",
+      "bytes": 2073,
+      "sha256": "e0015a0c8f5262628084fa1b8113c1d79d96f6d573ff8c3cb969bf19874d1ebc",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-5-rescore_only.json",
+      "snapshot": "traces/authored-history-04-5-rescore_only.json",
+      "bytes": 2079,
+      "sha256": "8d2f23a2d141cc47e95f47d63d721599457b144b63739393eaa314351c0ae272",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-5-selection_only.json",
+      "snapshot": "traces/authored-history-04-5-selection_only.json",
+      "bytes": 2588,
+      "sha256": "cb35823745a985bfe652789b41ddce2573cbb506735c9b36fb657b2fe192aafd",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-5-selective_joint.json",
+      "snapshot": "traces/authored-history-04-5-selective_joint.json",
+      "bytes": 3084,
+      "sha256": "e95ae45a74b156247334c04ea5db4cb77550fab60e1d9ea1d332917effa82c51",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-8-lesson_only.json",
+      "snapshot": "traces/authored-history-04-8-lesson_only.json",
+      "bytes": 2566,
+      "sha256": "b6d2cc827ac967a3e0d7a34994e3f78c10c3a62768ed6b9d5805aa4331b7f680",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-04-8-neutral_early_stop.json",
+      "bytes": 2568,
+      "sha256": "485911b52213de8c9af6ffe23d6684527bbcdc59d1891dca15955824eddb2b46",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-04-8-neutral_joint.json",
+      "bytes": 3055,
+      "sha256": "31506a0c97b9465e38a63db7fd20ccac04cf55c8f6bb205c4c2825af35086a3d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-8-no_repair.json",
+      "snapshot": "traces/authored-history-04-8-no_repair.json",
+      "bytes": 2073,
+      "sha256": "1ebcb921529c219b8a2f618f60d6b5224dda4790103c4fedea1caabcd8db898d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-8-rescore_only.json",
+      "snapshot": "traces/authored-history-04-8-rescore_only.json",
+      "bytes": 2079,
+      "sha256": "f12c31fd5cc5bb79557c75a09971e4410ba36cd6643c7a4fbe87c7c1dc12842e",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-8-selection_only.json",
+      "snapshot": "traces/authored-history-04-8-selection_only.json",
+      "bytes": 2571,
+      "sha256": "0a99b901f931ac3c36094a2ee5cb9da7d58f5e62bfad02b4f04221c2bde82182",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-04-8-selective_joint.json",
+      "snapshot": "traces/authored-history-04-8-selective_joint.json",
+      "bytes": 3070,
+      "sha256": "acfe46ebcaee4e0d658d710c9bbde04424a67f34ad8c960954b6dfbcc48f9866",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-5-lesson_only.json",
+      "snapshot": "traces/authored-history-05-5-lesson_only.json",
+      "bytes": 2287,
+      "sha256": "c3f130ca60d90ea637dc3c87b096c47cf1829d367daf7294bc9c9438398526ee",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-05-5-neutral_early_stop.json",
+      "bytes": 2471,
+      "sha256": "88b511299a3fbf2e85b843a92783c3e9b7844d41edbbb391ea883a56811bed62",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-05-5-neutral_joint.json",
+      "bytes": 2291,
+      "sha256": "165d2e9518716a8d788084541868f97ab65f287a2b9143d9e904e185b6bf3d0c",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-5-no_repair.json",
+      "snapshot": "traces/authored-history-05-5-no_repair.json",
+      "bytes": 2019,
+      "sha256": "547eb4946e1c6c4f8bf1d9df6be35ae622f4c5ed55c1150fe746bf2a2384d086",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-5-rescore_only.json",
+      "snapshot": "traces/authored-history-05-5-rescore_only.json",
+      "bytes": 2025,
+      "sha256": "af08195d4a522847e8b86d7ff77eb0f948eb57f64877952325c923a6d6ed540d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-5-selection_only.json",
+      "snapshot": "traces/authored-history-05-5-selection_only.json",
+      "bytes": 2455,
+      "sha256": "ccdc16fd9767283c3596c8cbc822e78ce1e36dd18fc85600c279507d3ca004a8",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-5-selective_joint.json",
+      "snapshot": "traces/authored-history-05-5-selective_joint.json",
+      "bytes": 2718,
+      "sha256": "4e2a0335feb77019d1d82dcea47af089111c754d7a3f233461bd5b720a3d79e3",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-8-lesson_only.json",
+      "snapshot": "traces/authored-history-05-8-lesson_only.json",
+      "bytes": 2287,
+      "sha256": "275c4997991b4a38660fc1cebc1713a169d202b0de3fa5ebff4443a922a9be6c",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-05-8-neutral_early_stop.json",
+      "bytes": 2483,
+      "sha256": "4c3504672393dc4eb1e99da81d87a8a7d228119bf693744076f4d2c92d7b505d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-05-8-neutral_joint.json",
+      "bytes": 2750,
+      "sha256": "06deda29fca22e887c877ad41e3be7624373a1a7f8b62c6fd31e42800334b218",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-8-no_repair.json",
+      "snapshot": "traces/authored-history-05-8-no_repair.json",
+      "bytes": 2019,
+      "sha256": "d57bd1cdcd6f7cbd89625fa212d244d96929edf5eb96a381c1215508e0d827e1",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-8-rescore_only.json",
+      "snapshot": "traces/authored-history-05-8-rescore_only.json",
+      "bytes": 2025,
+      "sha256": "b28e786be6edcc8fc62f8962ce0de9926348d2d50809f78445326b13dc5a1e50",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-8-selection_only.json",
+      "snapshot": "traces/authored-history-05-8-selection_only.json",
+      "bytes": 2455,
+      "sha256": "73453365e6c9e9bfd1eee4d653c7514ad50d9dc6ce5880be3a4bf937bef184b1",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-05-8-selective_joint.json",
+      "snapshot": "traces/authored-history-05-8-selective_joint.json",
+      "bytes": 2718,
+      "sha256": "8fa3f16ee1944a409d19da936e47ac6eeb1a6260b3007816935ca294130e5cc3",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-5-lesson_only.json",
+      "snapshot": "traces/authored-history-06-5-lesson_only.json",
+      "bytes": 2564,
+      "sha256": "c1c666ce1f2c942435bd1f662190c603e5ab53da74284210ab83c5362c65d885",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-06-5-neutral_early_stop.json",
+      "bytes": 2578,
+      "sha256": "a1b4318ea67e21914bb5cf40209561b1da9993505b45581e8bf604e8e2227f22",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-06-5-neutral_joint.json",
+      "bytes": 2567,
+      "sha256": "2aa77832dd7ab7aa73258174f7e6bee1f785b433a53e876edbfa042854d76ca0",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-5-no_repair.json",
+      "snapshot": "traces/authored-history-06-5-no_repair.json",
+      "bytes": 2071,
+      "sha256": "c9b0f9315b2cf18cf0b18484181c801fb5540ab97e5df67ee6908d8b4005bce1",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-5-rescore_only.json",
+      "snapshot": "traces/authored-history-06-5-rescore_only.json",
+      "bytes": 2077,
+      "sha256": "4edce43939c66eaa3980891bc00c9a792530cc39361d5c36c0fa3fdea02511b9",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-5-selection_only.json",
+      "snapshot": "traces/authored-history-06-5-selection_only.json",
+      "bytes": 2559,
+      "sha256": "f58ae7c7c35b5d27769a298835f0354296ef777f5346b6a8335a463efec06c5e",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-5-selective_joint.json",
+      "snapshot": "traces/authored-history-06-5-selective_joint.json",
+      "bytes": 3048,
+      "sha256": "aa416a390e8bbccc753de165c6e27a7a656fc8e806263386b6163f18d40c7e0e",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-8-lesson_only.json",
+      "snapshot": "traces/authored-history-06-8-lesson_only.json",
+      "bytes": 2565,
+      "sha256": "e2d7084b54400dbf11eadb28cd9d05677b7784a6883f7e0d6a27e6411acc415f",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-06-8-neutral_early_stop.json",
+      "bytes": 2590,
+      "sha256": "6bc5a963f4c8b4a09d15e47f62a6fe9525c71810223190ceee4a81d7322e5f7c",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-06-8-neutral_joint.json",
+      "bytes": 3075,
+      "sha256": "8a078b44bd3ff5a5fac5c11ea1ca1acd4f28b815fe75ecc9e348d8778ef7c014",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-8-no_repair.json",
+      "snapshot": "traces/authored-history-06-8-no_repair.json",
+      "bytes": 2071,
+      "sha256": "30f22210d411bf0070ab3af1e5f4b00e6d6a2d9bc2ca3745ba09655f12671427",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-8-rescore_only.json",
+      "snapshot": "traces/authored-history-06-8-rescore_only.json",
+      "bytes": 2077,
+      "sha256": "6db39a10bfca898b5a0589b9f1bd39ab647970649c06c3f8bcfdf16b3de8191d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-8-selection_only.json",
+      "snapshot": "traces/authored-history-06-8-selection_only.json",
+      "bytes": 2559,
+      "sha256": "c545336b72baff3eeaeb42baa158ed3987575eebcb8b148e1872927983bdd0ee",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-06-8-selective_joint.json",
+      "snapshot": "traces/authored-history-06-8-selective_joint.json",
+      "bytes": 3059,
+      "sha256": "aad613fff68c06d321d07fbceae39835985507ab68fa2b25f85d1514c7de46e2",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-5-lesson_only.json",
+      "snapshot": "traces/authored-history-07-5-lesson_only.json",
+      "bytes": 2290,
+      "sha256": "1b21f94273e9a565da97749b8fb287996c094c4b12d0969f5146913e366e17d9",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-07-5-neutral_early_stop.json",
+      "bytes": 2474,
+      "sha256": "df23d157f5f7de45e0ad1835221af6146950092b65aee86bf298b5b72145a899",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-07-5-neutral_joint.json",
+      "bytes": 2294,
+      "sha256": "5b8bf93d08815f4d5cafcc1eaf34bfa13152bfe04e7d522a1bc85aa543e518b5",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-5-no_repair.json",
+      "snapshot": "traces/authored-history-07-5-no_repair.json",
+      "bytes": 2022,
+      "sha256": "60cb58c096d7ca5e0207b72c8efdf16d62cd463afb1ed3837ccac6c6931d427e",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-5-rescore_only.json",
+      "snapshot": "traces/authored-history-07-5-rescore_only.json",
+      "bytes": 2028,
+      "sha256": "05713349a3bdd60f2c5d90910df9eb1490e3b43d4688c9f5f6a6a8f40216569f",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-5-selection_only.json",
+      "snapshot": "traces/authored-history-07-5-selection_only.json",
+      "bytes": 2483,
+      "sha256": "2bf9d7b18f1c26107e635f8d43a6e77737e3e0a7b7d6a7b30cc9a1bcdff5eb27",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-5-selective_joint.json",
+      "snapshot": "traces/authored-history-07-5-selective_joint.json",
+      "bytes": 2762,
+      "sha256": "0042b97dafcaa16be23265d56f354a7504f6da0cc29959840ebabdea48d38bb3",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-8-lesson_only.json",
+      "snapshot": "traces/authored-history-07-8-lesson_only.json",
+      "bytes": 2290,
+      "sha256": "09cc8e9690ec2b366fa98c6e9c098de6aa6f5b75876192f37ef2d37c269be5f2",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-07-8-neutral_early_stop.json",
+      "bytes": 2486,
+      "sha256": "5ad607eead0e935de9db2790e7809f7b3009623e917ffdcba956bdfc5e81a7ff",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-07-8-neutral_joint.json",
+      "bytes": 2753,
+      "sha256": "e93f9f7cb7ceb50a1bfb323de2db4e4a75cdf5d58a3f3bf1da1d089387e642f1",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-8-no_repair.json",
+      "snapshot": "traces/authored-history-07-8-no_repair.json",
+      "bytes": 2022,
+      "sha256": "9160dcd1b86b71b86d0f28f4886d15eb5d3e49812a00128be86d13c51b877dc2",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-8-rescore_only.json",
+      "snapshot": "traces/authored-history-07-8-rescore_only.json",
+      "bytes": 2028,
+      "sha256": "c20a4c2d949aa0ec691ca3e3470086739193a44941c0c5efb4912820f0c03440",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-8-selection_only.json",
+      "snapshot": "traces/authored-history-07-8-selection_only.json",
+      "bytes": 2466,
+      "sha256": "9fd82f2c7e4e4977af4bb3fb4dcae06320e1ab8fd874e3f87649ef08e6e78a5b",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-07-8-selective_joint.json",
+      "snapshot": "traces/authored-history-07-8-selective_joint.json",
+      "bytes": 2745,
+      "sha256": "6cb37074f49566a82acb8ede87bdc2cbb42f0e04fcadf3687d6211ea066ac2f3",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-5-lesson_only.json",
+      "snapshot": "traces/authored-history-08-5-lesson_only.json",
+      "bytes": 2567,
+      "sha256": "b9f253fbb931e2bde38f8e1ccd2b15a478ae689b25fc5b23dd85d53136bb867d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-08-5-neutral_early_stop.json",
+      "bytes": 2581,
+      "sha256": "c872c2dfe1877669f64ee4844a67601e3e552cfcfcdfbbf0e0568bb10963c65f",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-08-5-neutral_joint.json",
+      "bytes": 2570,
+      "sha256": "0ece664c5394982868fb72855d641d0da0e532369d87c088cb294a418b2b73fc",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-5-no_repair.json",
+      "snapshot": "traces/authored-history-08-5-no_repair.json",
+      "bytes": 2074,
+      "sha256": "637f430a1f9092d5706272bfbb8a1a47f4331e0326ea26ee383ab28ccefe9575",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-5-rescore_only.json",
+      "snapshot": "traces/authored-history-08-5-rescore_only.json",
+      "bytes": 2080,
+      "sha256": "2cb9fdcf6c3f287f6a9f3c67c7c24b5de543c3d47875d6a8e60bd406cc0cd1ab",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-5-selection_only.json",
+      "snapshot": "traces/authored-history-08-5-selection_only.json",
+      "bytes": 2590,
+      "sha256": "ad7a19383dbf1501ba71ac5f3740a64664761808904378f78471186040d44123",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-5-selective_joint.json",
+      "snapshot": "traces/authored-history-08-5-selective_joint.json",
+      "bytes": 3087,
+      "sha256": "45994f04248de5e4b8bdf1341c274344607dd67f6ae47562e0ae05eaadb80cbb",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-8-lesson_only.json",
+      "snapshot": "traces/authored-history-08-8-lesson_only.json",
+      "bytes": 2568,
+      "sha256": "f3cdb89c006c79a61428be27803f798d06bc5f71e93cc7b3618b7cb7d38f8919",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-08-8-neutral_early_stop.json",
+      "bytes": 2593,
+      "sha256": "68d6ab51f192364433f0f770fdc9ea38f8a6c2de017e10af5dfeffbeb5dcf1f8",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-08-8-neutral_joint.json",
+      "bytes": 3078,
+      "sha256": "374901bd3261f6e1f2fd6cb06bc24689d385d42213f4519308c680fede03d47f",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-8-no_repair.json",
+      "snapshot": "traces/authored-history-08-8-no_repair.json",
+      "bytes": 2074,
+      "sha256": "e2311fa4a6a8d2f989170698fc91ce35e733b8711d4b1b06fd42ad45a98ee7e3",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-8-rescore_only.json",
+      "snapshot": "traces/authored-history-08-8-rescore_only.json",
+      "bytes": 2080,
+      "sha256": "7cb5042f2d45c5c5829d761d66a3cb81d7b0c4c825398b30e58052f5ffb20d71",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-8-selection_only.json",
+      "snapshot": "traces/authored-history-08-8-selection_only.json",
+      "bytes": 2573,
+      "sha256": "6e033a2e11b34aa01ff33026f261a6e0d4c249dc115b825469bbce93fb683e70",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-08-8-selective_joint.json",
+      "snapshot": "traces/authored-history-08-8-selective_joint.json",
+      "bytes": 3072,
+      "sha256": "e06213eb4722243c60f2b863c362095e58da3b48885aa104a77df5430e6c4617",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-5-lesson_only.json",
+      "snapshot": "traces/authored-history-09-5-lesson_only.json",
+      "bytes": 2287,
+      "sha256": "beadbe52b92b733feccb32515fe55172e5053bcd6b2c1a0124f628e2e3fa4030",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-09-5-neutral_early_stop.json",
+      "bytes": 2471,
+      "sha256": "4d79a547a1a544a118664c4b3c447cea4680839f5329e20f3533cda96c31434d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-09-5-neutral_joint.json",
+      "bytes": 2291,
+      "sha256": "d3ce4a65622958b8b06cad896372f665594eaa9ea3fa79349dca22d784a5f619",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-5-no_repair.json",
+      "snapshot": "traces/authored-history-09-5-no_repair.json",
+      "bytes": 2019,
+      "sha256": "70dec7e745577f7a4c79b27bdd07ea79ee04a959f4f57e6e1bbe9ea82448cd0e",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-5-rescore_only.json",
+      "snapshot": "traces/authored-history-09-5-rescore_only.json",
+      "bytes": 2025,
+      "sha256": "bad7952a8c0c5de82be012cdf64375127cd1816931335376f1c35c5a0f35603c",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-5-selection_only.json",
+      "snapshot": "traces/authored-history-09-5-selection_only.json",
+      "bytes": 2480,
+      "sha256": "21699089f12fdd8f680742325f806aed2cc492fe53fad03fbf67e6f049e8f3ad",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-5-selective_joint.json",
+      "snapshot": "traces/authored-history-09-5-selective_joint.json",
+      "bytes": 2759,
+      "sha256": "f55824b78770e3962b477289a03fd7ff719cc136ef9df05aa131dfad158ae08f",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-8-lesson_only.json",
+      "snapshot": "traces/authored-history-09-8-lesson_only.json",
+      "bytes": 2287,
+      "sha256": "e82b17d9125c4e9409dbddb3c5c2e32cced3487e87759aee4af7152c83ae8b70",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-09-8-neutral_early_stop.json",
+      "bytes": 2483,
+      "sha256": "d7dbdf19716e7547950ab65436a2ad704ca8b87cf10c51ef93019e36ff359319",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-09-8-neutral_joint.json",
+      "bytes": 2750,
+      "sha256": "ecba0392c0f773e8b8f348ae3dfb22d7cb2ed3a7fc271ba6a35abc1fe1b368e6",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-8-no_repair.json",
+      "snapshot": "traces/authored-history-09-8-no_repair.json",
+      "bytes": 2019,
+      "sha256": "f82da80412fb25472eac953fb1c76af9bc242eb6056a15040dd857810dae9fd4",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-8-rescore_only.json",
+      "snapshot": "traces/authored-history-09-8-rescore_only.json",
+      "bytes": 2025,
+      "sha256": "4b7e10f53c96f3b33a26faa049c0539bd0b5c884039d67ca61aaf8814d2478ea",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-8-selection_only.json",
+      "snapshot": "traces/authored-history-09-8-selection_only.json",
+      "bytes": 2463,
+      "sha256": "81596bc28e1e664c19c21a4c2e59036fe66b87cc80627a0da6732b3c7e3d5b9d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-09-8-selective_joint.json",
+      "snapshot": "traces/authored-history-09-8-selective_joint.json",
+      "bytes": 2742,
+      "sha256": "13ab2f45c0789289d58aee13d17dc558b701849ddb984f01c38113b74e6bab5c",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-5-lesson_only.json",
+      "snapshot": "traces/authored-history-10-5-lesson_only.json",
+      "bytes": 2564,
+      "sha256": "5644f1322a7a7026979d2edecdac98a49e7cfd612b81369e4f706a7eda795db3",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-10-5-neutral_early_stop.json",
+      "bytes": 2578,
+      "sha256": "6e74d24330ed4d5d48141255222372e5ab7d228872e598dade6b06fb02b278eb",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-10-5-neutral_joint.json",
+      "bytes": 2567,
+      "sha256": "03b3af31589334fa1164c66bcdc7136bad69ab7acc8d760e30f7df31805bbe39",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-5-no_repair.json",
+      "snapshot": "traces/authored-history-10-5-no_repair.json",
+      "bytes": 2071,
+      "sha256": "53c4b811f6b65579b3d5eedc4220c51522c32d35c5956b06bc5783f5a5d784e7",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-5-rescore_only.json",
+      "snapshot": "traces/authored-history-10-5-rescore_only.json",
+      "bytes": 2077,
+      "sha256": "4802061ede10032a02327f3eec1033867e8dbd4280eaa7ef1ba3dfb7acbc07af",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-5-selection_only.json",
+      "snapshot": "traces/authored-history-10-5-selection_only.json",
+      "bytes": 2587,
+      "sha256": "29ef04c34151e1cc0ca3003533777541ea5fe5906a273013a97562b82e589863",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-5-selective_joint.json",
+      "snapshot": "traces/authored-history-10-5-selective_joint.json",
+      "bytes": 3084,
+      "sha256": "9202520f9600299cf5af8339096aa36c800aad273dd49e25e41bc129b1514bc0",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-8-lesson_only.json",
+      "snapshot": "traces/authored-history-10-8-lesson_only.json",
+      "bytes": 2565,
+      "sha256": "83663ffc4e6be436dd3e544289451dbfbb5894f25d5261dd0c0157e61278fee5",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-10-8-neutral_early_stop.json",
+      "bytes": 2590,
+      "sha256": "621764f2f2c06b92e54cbfbefb19335ec4d6e2942b3eb0c454216b81c3b7da98",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-10-8-neutral_joint.json",
+      "bytes": 3075,
+      "sha256": "cfb08bf86c67d84758ae55542b5eb1d29183c3f3556f2953534ae2e7a93a2f9b",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-8-no_repair.json",
+      "snapshot": "traces/authored-history-10-8-no_repair.json",
+      "bytes": 2071,
+      "sha256": "e09cad83fc151dada8c70dd54c677fb3b14e09830262c83802c1e0373a12d9f7",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-8-rescore_only.json",
+      "snapshot": "traces/authored-history-10-8-rescore_only.json",
+      "bytes": 2077,
+      "sha256": "9958cb621816ac73ecca6f52e2170f38699d3402532726d2f3667fb3dfc1b8c1",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-8-selection_only.json",
+      "snapshot": "traces/authored-history-10-8-selection_only.json",
+      "bytes": 2570,
+      "sha256": "2bb89995d261c8b8ae9b272fe7e562383321bfcf0f5645ebf4a0f6e2672f5dc6",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-10-8-selective_joint.json",
+      "snapshot": "traces/authored-history-10-8-selective_joint.json",
+      "bytes": 3069,
+      "sha256": "7f36f025bce25e3285d7da91d5fed2de11bf25b267a4f15eb8a161ab05715d85",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-5-lesson_only.json",
+      "snapshot": "traces/authored-history-11-5-lesson_only.json",
+      "bytes": 2290,
+      "sha256": "02a65bde856ece904aca7ff530140b4d783a086d3a664618e4637b0f54dc29cb",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-11-5-neutral_early_stop.json",
+      "bytes": 2474,
+      "sha256": "daa4ffc2f88b8625716bee86676d5aafdad68d3f9549d7ea16d0e67926b38d1f",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-11-5-neutral_joint.json",
+      "bytes": 2294,
+      "sha256": "84f834581658c701af6f8190d4c37b7628983c40f59ca360a4d368754259d83d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-5-no_repair.json",
+      "snapshot": "traces/authored-history-11-5-no_repair.json",
+      "bytes": 2022,
+      "sha256": "6170e31ea543c7c8716ebd0c25fa67f65033f8a4a9a9f417687d86dec0d2a987",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-5-rescore_only.json",
+      "snapshot": "traces/authored-history-11-5-rescore_only.json",
+      "bytes": 2028,
+      "sha256": "9dd0667592ecf31aa81222458f92dbc32bad39d3ff30e055bdbd6bf58aa4d7aa",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-5-selection_only.json",
+      "snapshot": "traces/authored-history-11-5-selection_only.json",
+      "bytes": 2483,
+      "sha256": "0305d7a224df8b4e4fe51c228f314fc07598b662adc833835aaa018a055ae79a",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-5-selective_joint.json",
+      "snapshot": "traces/authored-history-11-5-selective_joint.json",
+      "bytes": 2762,
+      "sha256": "33e6ab61144e92defeef096409d91e0b2114d785f7a2178fe488ee1172b5594d",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-8-lesson_only.json",
+      "snapshot": "traces/authored-history-11-8-lesson_only.json",
+      "bytes": 2290,
+      "sha256": "53110cc737d3f0a5cd186991bce735b7cb62b180f9537aa7c071681b32f9ded2",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-11-8-neutral_early_stop.json",
+      "bytes": 2486,
+      "sha256": "fc5267053e892fe85c9361c9efd29c9344ac4b95db32888faeb472a51786912e",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-11-8-neutral_joint.json",
+      "bytes": 2753,
+      "sha256": "c0cd13162bcbe8ae19cdf06f3bf956f53b67714a8477abb702387e1fb7ce0c7c",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-8-no_repair.json",
+      "snapshot": "traces/authored-history-11-8-no_repair.json",
+      "bytes": 2022,
+      "sha256": "62a58210e7f8b5faed46818224b5bf7d57f99eee1391035f9d041e05c4210f04",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-8-rescore_only.json",
+      "snapshot": "traces/authored-history-11-8-rescore_only.json",
+      "bytes": 2028,
+      "sha256": "e04d7e04f9076ab1a25d3d6a04fb333d0583cb3004cbb19ee4d62f90eba7bb52",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-8-selection_only.json",
+      "snapshot": "traces/authored-history-11-8-selection_only.json",
+      "bytes": 2466,
+      "sha256": "055c5715f27aeaf40df1e856079c3692d853b9cf355345052bc8385e1641da7a",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-11-8-selective_joint.json",
+      "snapshot": "traces/authored-history-11-8-selective_joint.json",
+      "bytes": 2745,
+      "sha256": "fe6c0e1cbe3cbfe3a98e6db247b5326c3030db5c67f0529e932946d7a18d1dc2",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-5-lesson_only.json",
+      "snapshot": "traces/authored-history-12-5-lesson_only.json",
+      "bytes": 2567,
+      "sha256": "9866da376d3f3f38a9dfb8d75d824dc516cc28bbf507099d496fc49083d833ba",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-5-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-12-5-neutral_early_stop.json",
+      "bytes": 2581,
+      "sha256": "a84ed2f4f232cc47e3e6f8ca3479baca0a7092a9f3f5b5bc0d622081f04ce533",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-5-neutral_joint.json",
+      "snapshot": "traces/authored-history-12-5-neutral_joint.json",
+      "bytes": 2570,
+      "sha256": "b09c97af1b9bf4b0b7a63fb8c93cade3e61779a60d44cd7b24f1352abb0b0911",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-5-no_repair.json",
+      "snapshot": "traces/authored-history-12-5-no_repair.json",
+      "bytes": 2074,
+      "sha256": "6feb5142b96847ac901539b0fbfd4260271fa83a057585ab80be946f43a068fb",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-5-rescore_only.json",
+      "snapshot": "traces/authored-history-12-5-rescore_only.json",
+      "bytes": 2080,
+      "sha256": "ff7d129096d9cf0ebc888951116d90de148c51a5490a88edb28a2c58e0c43f88",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-5-selection_only.json",
+      "snapshot": "traces/authored-history-12-5-selection_only.json",
+      "bytes": 2590,
+      "sha256": "24b5a76ae95d2f083babe0d868f67ce03af14436ba08cf328d1d6b01627d949f",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-5-selective_joint.json",
+      "snapshot": "traces/authored-history-12-5-selective_joint.json",
+      "bytes": 3087,
+      "sha256": "214ce7110ccc159cd6283a9ef5d62794bf4f376e0457192927f6c9f249530bab",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-8-lesson_only.json",
+      "snapshot": "traces/authored-history-12-8-lesson_only.json",
+      "bytes": 2568,
+      "sha256": "f01e9e90cb09e591ecf73034dfd67ec3ca5a37fa89a283b920a8a1361a24bb98",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-8-neutral_early_stop.json",
+      "snapshot": "traces/authored-history-12-8-neutral_early_stop.json",
+      "bytes": 2593,
+      "sha256": "8a3e6a56a82419ab1ee3ac3f8b22993f9b0db4e31b6b9f51fd4c293f2f41d59e",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-8-neutral_joint.json",
+      "snapshot": "traces/authored-history-12-8-neutral_joint.json",
+      "bytes": 3078,
+      "sha256": "af46f0f7c60d5220af74aa5b78e60ee2350ece91b97428a27ed98b23f6115c39",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-8-no_repair.json",
+      "snapshot": "traces/authored-history-12-8-no_repair.json",
+      "bytes": 2074,
+      "sha256": "bb04bf3016e7e5a76fba192a7341d6a9c8661b38e5ab5c03cc2384b118094a80",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-8-rescore_only.json",
+      "snapshot": "traces/authored-history-12-8-rescore_only.json",
+      "bytes": 2080,
+      "sha256": "fb2cff6c2433ce6683a7f09b01a96b3af4e9a51069ed4efa873d6fa1bd85e7fa",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-8-selection_only.json",
+      "snapshot": "traces/authored-history-12-8-selection_only.json",
+      "bytes": 2573,
+      "sha256": "a78629402ade6930a8cea6d92c2e3bea59404ceea3833e94ff06620080a77183",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/traces/authored-history-12-8-selective_joint.json",
+      "snapshot": "traces/authored-history-12-8-selective_joint.json",
+      "bytes": 3072,
+      "sha256": "7c28fb72f87d904934e56f277c2e06e05d64644b4354fa47e7da475bfd574594",
+      "role": "authored_trace"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/input_lock.json",
+      "snapshot": "prior/input_lock.json",
+      "bytes": 62196,
+      "sha256": "d1635aa8231dfc2824fe019491a7bfe1d91126ce646f21c3302a64c7c8efd665",
+      "role": "prior_result"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/visible_views.json",
+      "snapshot": "prior/visible_views.json",
+      "bytes": 159882,
+      "sha256": "312e0467c614dd40b352cd2551f2bcbed1749391db29c4907e1c4b2ab4bb9493",
+      "role": "prior_result"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/decisions.json",
+      "snapshot": "prior/decisions.json",
+      "bytes": 270103,
+      "sha256": "8b3c08e001908389cb69cca4cae7ab72770aae75b4e8760b66b0d16b648127f0",
+      "role": "prior_result"
+    },
+    {
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/results.json",
+      "snapshot": "prior/results.json",
+      "bytes": 80709,
+      "sha256": "82115c85bd66c798c897ce8827f7a270f2a3a46dbaf05ceb03aa966ba976d9d8",
+      "role": "prior_result"
+    }
+  ],
+  "environment": {
+    "python": "3.11.0rc2",
+    "arithmetic": "fractions.Fraction",
+    "model_calls": 0
+  }
+}

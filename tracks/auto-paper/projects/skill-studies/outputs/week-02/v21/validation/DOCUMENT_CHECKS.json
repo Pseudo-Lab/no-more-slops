@@ -1,0 +1,2120 @@
+{
+  "ok": true,
+  "documents": [
+    {
+      "schema": "forge_layout_document_verification_v21",
+      "project": "skillmerge",
+      "source_snapshot_verified": true,
+      "scope": "Complete current text and figure geometry checks; no scientific-effect certification or style-author endorsement.",
+      "source_inventory": {
+        "sections": 7,
+        "appendices": 0,
+        "references": 21,
+        "figures": 9,
+        "paragraphs": 19,
+        "equations": 2,
+        "tables": 1,
+        "algorithm_lines": 0
+      },
+      "paper": {
+        "pages": 5,
+        "bytes": 275157,
+        "sha256": "0dbcee0ec2f0428eed8efb1bc9ac6bdc54b62e6498ed5651ceb6e4eb4febcbd9",
+        "authored_literals_checked": 77,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "skillmerge",
+            "figure_number": 1,
+            "id": "overview",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_v21.pdf",
+            "pdf_sha256": "0dbcee0ec2f0428eed8efb1bc9ac6bdc54b62e6498ed5651ceb6e4eb4febcbd9",
+            "page": 1,
+            "document_kind": "paper",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/overview.svg",
+            "source_sha256": "f00a68e38fb1489658ece2f201c06539a347ea79a75dbf234ec53a4e3d717262",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              427.32,
+              191.38395
+            ],
+            "pdf_scale": 1.074633963889401,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              421.1466979980469,
+              527.2440795898438,
+              626.8143920898438
+            ],
+            "caption_bbox_pt": [
+              68.34929656982422,
+              633.7073974609375,
+              531.9251098632812,
+              664.0014038085938
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.919461900282027,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 2,
+            "id": "capacity-boundary-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_v21.pdf",
+            "pdf_sha256": "0dbcee0ec2f0428eed8efb1bc9ac6bdc54b62e6498ed5651ceb6e4eb4febcbd9",
+            "page": 4,
+            "document_kind": "paper",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/capacity-boundary-v19.svg",
+            "source_sha256": "6f9bcc0e7d320f61477d3169544112ed05ee7002938debc2ab08682073fa110b",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 0.9999990972581759,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              65.3621826171875,
+              527.2440795898438,
+              335.3619384765625
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              342.2549743652344,
+              532.2428588867188,
+              361.9019775390625
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499999740354639,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "5d5376d8f65b19ceedb9ccd387701cefe480981b777aa1fac84cfed8f6687390"
+      },
+      "supplement": {
+        "pages": 45,
+        "bytes": 1813225,
+        "sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+        "authored_literals_checked": 849,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "skillmerge",
+            "figure_number": 1,
+            "id": "guard-boundary-v21",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 13,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/guard-boundary-v21.svg",
+            "source_sha256": "a62d76fb1e48f8b8d68abbfc8db1fcd1aa60682b531bafaa437bcff38a7b6b10",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.95
+            ],
+            "pdf_scale": 0.9999990474159816,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.0315170288086,
+              377.16021728515625,
+              527.2440795898438,
+              648.1099853515625
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              655.0029296875,
+              530.2413940429688,
+              695.9439697265625
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499999266853376,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 2,
+            "id": "overview",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 20,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/overview.svg",
+            "source_sha256": "f00a68e38fb1489658ece2f201c06539a347ea79a75dbf234ec53a4e3d717262",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              427.32,
+              191.38395
+            ],
+            "pdf_scale": 1.074633963889401,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              166.834228515625,
+              527.2440795898438,
+              372.5019226074219
+            ],
+            "caption_bbox_pt": [
+              73.33079528808594,
+              379.3948974609375,
+              526.943603515625,
+              420.3359069824219
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.919461900282027,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 3,
+            "id": "budget-sensitivity",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 26,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/budget-sensitivity.svg",
+            "source_sha256": "9e2fcb58713fec5cf1d81c403912a4a39f6301d2a81201c663581058df6ce540",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              519.899,
+              328.89484
+            ],
+            "pdf_scale": 0.8832726699220891,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03150177001953,
+              65.3621826171875,
+              527.2440795898438,
+              355.86602783203125
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              362.759033203125,
+              530.2412719726562,
+              393.05303955078125
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999618595684,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 4,
+            "id": "endpoint-controls",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 27,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/endpoint-controls.svg",
+            "source_sha256": "f5d2fae900ee809f92e19c3e44ad8e6e4bba66ee5f07ec07fe9fa04c3cd3d274",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              519.809,
+              313.67637
+            ],
+            "pdf_scale": 0.8834256148878122,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              65.3621826171875,
+              527.2440795898438,
+              342.471923828125
+            ],
+            "caption_bbox_pt": [
+              69.07829284667969,
+              349.3649597167969,
+              529.1945190429688,
+              379.6589660644531
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999759815358,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 5,
+            "id": "identification-bounds",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 28,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/identification-bounds.svg",
+            "source_sha256": "d9621f0e2b19251e29e8f221b633e3cc66d2bc4708524c09b7cf42f02f12dc32",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              320.30399
+            ],
+            "pdf_scale": 0.8503936626293042,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03150177001953,
+              442.0636901855469,
+              527.2440795898438,
+              714.4481811523438
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              721.3411865234375,
+              532.2428588867188,
+              762.2821655273438
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999618595684,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 6,
+            "id": "merge-operator-contrast",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 30,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/merge-operator-contrast.svg",
+            "source_sha256": "67b77847a2b70d72a4d5eb99f53aff6fdf503b20191b8b01e5c6e1210cc72228",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              300.31934
+            ],
+            "pdf_scale": 0.8283054192172845,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              304.82720947265625,
+              527.2440185546875,
+              553.5833740234375
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              560.4763793945312,
+              530.2413940429688,
+              580.1233520507812
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499998630057965,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 7,
+            "id": "order-capacity-frontier",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 33,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/order-capacity-frontier.svg",
+            "source_sha256": "ba66318da4c6144c4b21e17286db8c02233278ebd742bab032541eceaeddc45c",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              1320.0,
+              1191.4117
+            ],
+            "pdf_scale": 0.3478883049704812,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.0315170288086,
+              65.3621826171875,
+              527.2440795898438,
+              479.8404235839844
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              486.7334289550781,
+              530.2413330078125,
+              527.6743774414062
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999336156336,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 8,
+            "id": "agreement-length-priority",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 36,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/agreement-length-priority.svg",
+            "source_sha256": "77392c1014366b29af32978fc8aa4c6d9b15cea0183732f3f372a450e6389867",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              1280.0,
+              911.85264
+            ],
+            "pdf_scale": 0.35875980257987977,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03153228759766,
+              65.36224365234375,
+              527.2440795898438,
+              392.49835205078125
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              399.3913269042969,
+              530.2412719726562,
+              440.3323059082031
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999053716987,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 9,
+            "id": "capacity-boundary-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "c9f0eaceb852c6348ea662398f84c3460c40263ace341f19b8be10fba922af89",
+            "page": 38,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/capacity-boundary-v19.svg",
+            "source_sha256": "6f9bcc0e7d320f61477d3169544112ed05ee7002938debc2ab08682073fa110b",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 0.9999990972581759,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              65.3621826171875,
+              527.2440795898438,
+              335.3619384765625
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              342.2549743652344,
+              532.2428588867188,
+              361.9019775390625
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499999740354639,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "c7519eb35fcbf59fa2258e8c67b24c49cd6d12b35c716b31cddac851c4530847"
+      },
+      "guide": {
+        "pages": 25,
+        "bytes": 1495737,
+        "sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+        "authored_literals_checked": 358,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "skillmerge",
+            "figure_number": 1,
+            "id": "capacity-boundary-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+            "page": 8,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/capacity-boundary-v19.svg",
+            "source_sha256": "6f9bcc0e7d320f61477d3169544112ed05ee7002938debc2ab08682073fa110b",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 1.0246904717590968,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              294.302734375,
+              532.9133911132812,
+              570.9691162109375
+            ],
+            "caption_bbox_pt": [
+              244.21495056152344,
+              579.9379272460938,
+              351.0839538574219,
+              590.4379272460938
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.734568003456966,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 2,
+            "id": "agreement-length-priority",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+            "page": 11,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/agreement-length-priority.svg",
+            "source_sha256": "77392c1014366b29af32978fc8aa4c6d9b15cea0183732f3f372a450e6389867",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              1280.0,
+              911.85264
+            ],
+            "pdf_scale": 0.36761803925037384,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362239837646484,
+              82.81829833984375,
+              532.913330078125,
+              418.03179931640625
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              427.0006103515625,
+              534.4658813476562,
+              481.1258544921875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709874861361396,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 3,
+            "id": "order-capacity-frontier",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+            "page": 14,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/order-capacity-frontier.svg",
+            "source_sha256": "ba66318da4c6144c4b21e17286db8c02233278ebd742bab032541eceaeddc45c",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              1320.0,
+              1191.4117
+            ],
+            "pdf_scale": 0.3564781564654726,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.36222457885742,
+              65.3621826171875,
+              532.9133911132812,
+              490.0744323730469
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              499.04327392578125,
+              524.8692626953125,
+              553.1685180664062
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876273558136,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 4,
+            "id": "merge-operator-contrast",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+            "page": 17,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/merge-operator-contrast.svg",
+            "source_sha256": "67b77847a2b70d72a4d5eb99f53aff6fdf503b20191b8b01e5c6e1210cc72228",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              300.31934
+            ],
+            "pdf_scale": 0.8487575497978178,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              65.3621826171875,
+              532.9133911132812,
+              320.260498046875
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              329.22930908203125,
+              534.3182983398438,
+              441.8715515136719
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 5,
+            "id": "overview",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+            "page": 18,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/overview.svg",
+            "source_sha256": "f00a68e38fb1489658ece2f201c06539a347ea79a75dbf234ec53a4e3d717262",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              427.32,
+              191.38395
+            ],
+            "pdf_scale": 1.1011681774967474,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              357.15533447265625,
+              532.9133911132812,
+              567.9012451171875
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              576.8700561523438,
+              532.402099609375,
+              645.3619995117188
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.139695873223005,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 6,
+            "id": "budget-sensitivity",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+            "page": 19,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/budget-sensitivity.svg",
+            "source_sha256": "9e2fcb58713fec5cf1d81c403912a4a39f6301d2a81201c663581058df6ce540",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              519.899,
+              328.89484
+            ],
+            "pdf_scale": 0.9050819209267764,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              334.37554931640625,
+              532.9133911132812,
+              632.0523071289062
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              641.0211181640625,
+              528.19482421875,
+              738.7716064453125
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 7,
+            "id": "endpoint-controls",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+            "page": 20,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/endpoint-controls.svg",
+            "source_sha256": "f5d2fae900ee809f92e19c3e44ad8e6e4bba66ee5f07ec07fe9fa04c3cd3d274",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              519.809,
+              313.67637
+            ],
+            "pdf_scale": 0.9052386272802321,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              82.8182373046875,
+              532.9133911132812,
+              366.7701721191406
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              375.739013671875,
+              532.3460083007812,
+              473.489501953125
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "skillmerge",
+            "figure_number": 8,
+            "id": "identification-bounds",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/skillmerge/SkillMerge_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "7d813bf2c4004ad6a069fd7b4d8b4c010574c62433b42926bacc55c062bc3a5e",
+            "page": 22,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/skillmerge/identification-bounds.svg",
+            "source_sha256": "d9621f0e2b19251e29e8f221b633e3cc66d2bc4708524c09b7cf42f02f12dc32",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              320.30399
+            ],
+            "pdf_scale": 0.8713910844590929,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              82.8182373046875,
+              532.9133911132812,
+              361.92828369140625
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              370.8970947265625,
+              526.3782958984375,
+              410.65557861328125
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "293a8956582f5408896ef4dfcea103850fbcc2c786de42d1cff9ac08344a4650"
+      },
+      "ok": true
+    },
+    {
+      "schema": "forge_layout_document_verification_v21",
+      "project": "second_chance",
+      "source_snapshot_verified": true,
+      "scope": "Complete current text and figure geometry checks; no scientific-effect certification or style-author endorsement.",
+      "source_inventory": {
+        "sections": 7,
+        "appendices": 0,
+        "references": 21,
+        "figures": 10,
+        "paragraphs": 24,
+        "equations": 3,
+        "tables": 1,
+        "algorithm_lines": 0
+      },
+      "paper": {
+        "pages": 5,
+        "bytes": 288041,
+        "sha256": "db7242d8b9175a2384b0b31d8fc3ae760f4be35295fb4f7569f8421bc3afae56",
+        "authored_literals_checked": 85,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "second_chance",
+            "figure_number": 1,
+            "id": "overview",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_v21.pdf",
+            "pdf_sha256": "db7242d8b9175a2384b0b31d8fc3ae760f4be35295fb4f7569f8421bc3afae56",
+            "page": 1,
+            "document_kind": "paper",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/overview.svg",
+            "source_sha256": "1bf623e6b23b7c69208e0646d856567ab71c25f889bef53b11014e71318e802b",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              427.32,
+              180.72
+            ],
+            "pdf_scale": 1.0746337674948023,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.0315170288086,
+              485.0787048339844,
+              527.2440185546875,
+              679.2865600585938
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              686.1795043945312,
+              530.2412719726562,
+              705.8265380859375
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.919460270206859,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 2,
+            "id": "ambiguity-sensitivity-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_v21.pdf",
+            "pdf_sha256": "db7242d8b9175a2384b0b31d8fc3ae760f4be35295fb4f7569f8421bc3afae56",
+            "page": 4,
+            "document_kind": "paper",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/ambiguity-sensitivity-v19.svg",
+            "source_sha256": "bc70637ef4e2b9845e5e2f42c79205c6af7db64d652e7cd27bf066583af4e1c9",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 0.999998166870548,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              140.57122802734375,
+              527.24365234375,
+              410.57098388671875
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              417.4639587402344,
+              530.2412719726562,
+              437.1109619140625
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499990901664434,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "3df4b22ca9435ff00571ff2d336ffd5aa546335dee76eeabf64367a47909f1d9"
+      },
+      "supplement": {
+        "pages": 43,
+        "bytes": 1825974,
+        "sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+        "authored_literals_checked": 771,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "second_chance",
+            "figure_number": 1,
+            "id": "schedule-frontier-v21",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 10,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/schedule-frontier-v21.svg",
+            "source_sha256": "d394b8a6ddd45d47b9bdd76afcbe6035caf2917ab9e3ad58ef7b7d8b40991f3c",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 0.9999990972581759,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              406.5736999511719,
+              527.2440795898438,
+              676.573486328125
+            ],
+            "caption_bbox_pt": [
+              72.7907943725586,
+              683.4664306640625,
+              525.4819946289062,
+              703.1134643554688
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499999740354639,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 2,
+            "id": "overview",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 15,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/overview.svg",
+            "source_sha256": "1bf623e6b23b7c69208e0646d856567ab71c25f889bef53b11014e71318e802b",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              427.32,
+              180.72
+            ],
+            "pdf_scale": 1.0746337674948023,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.0315170288086,
+              65.3621826171875,
+              527.2440185546875,
+              259.570068359375
+            ],
+            "caption_bbox_pt": [
+              69.32129669189453,
+              266.4630432128906,
+              528.9514770507812,
+              296.7570495605469
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.919460270206859,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 3,
+            "id": "commit-timeline",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 24,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/commit-timeline.svg",
+            "source_sha256": "069dd46dbe54560f9de7c6410fd4ec7726030fac13256ead9d9f000e10b40abe",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              511.294,
+              268.02988
+            ],
+            "pdf_scale": 0.8981380290971902,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              65.3621826171875,
+              527.2440795898438,
+              306.09002685546875
+            ],
+            "caption_bbox_pt": [
+              68.34029388427734,
+              312.9830627441406,
+              529.9325561523438,
+              343.27703857421875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999759815358,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 4,
+            "id": "area-sampling-effects",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 24,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/area-sampling-effects.svg",
+            "source_sha256": "b4b00195b0569afdb22364563625acec18854ec621a63c3f86d866704dc0c85f",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              512.821,
+              325.58375
+            ],
+            "pdf_scale": 0.8954637801993014,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03150939941406,
+              361.47802734375,
+              527.244140625,
+              653.0264892578125
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              659.91943359375,
+              532.2428588867188,
+              690.2134399414062
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.500000607133401,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 5,
+            "id": "censored-area-bounds",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 25,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/censored-area-bounds.svg",
+            "source_sha256": "cb2805490722339a7ac3bd0bfbf5e4e7ecbecb636cebd38907660bbc0a4240f3",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              354.35852
+            ],
+            "pdf_scale": 0.8503937897858797,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              306.42620849609375,
+              527.244140625,
+              607.7705078125
+            ],
+            "caption_bbox_pt": [
+              72.4262924194336,
+              614.6634521484375,
+              525.8464965820312,
+              634.3104248046875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.50000088957275,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 6,
+            "id": "audit-subset-identification",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 26,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/audit-subset-identification.svg",
+            "source_sha256": "8edc8ba41749c8077b7aeba6a36978a1af8a472a098ba26bf847d843448cbd69",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              338.01269
+            ],
+            "pdf_scale": 0.8503936626293042,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03150177001953,
+              275.211181640625,
+              527.2440795898438,
+              562.655029296875
+            ],
+            "caption_bbox_pt": [
+              68.1377944946289,
+              569.5480346679688,
+              530.1350708007812,
+              589.195068359375
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999618595684,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 7,
+            "id": "prospective-audit-order",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 28,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/prospective-audit-order.svg",
+            "source_sha256": "18ab7a76134a8874526be0da884e842c3e2e781607dfe96dc59f0bfbaad11636",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              362.97039
+            ],
+            "pdf_scale": 0.8283054192172845,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              147.64520263671875,
+              527.2440185546875,
+              448.29559326171875
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              455.1885986328125,
+              530.2412719726562,
+              474.8356018066406
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499998630057965,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 8,
+            "id": "prefix-only-audit-width",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 31,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/prefix-only-audit-width.svg",
+            "source_sha256": "965c68e5b169f21768c2ee3a9a8013edace33a16a892f8999b970524a0df4161",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              1280.0,
+              877.18652
+            ],
+            "pdf_scale": 0.35875981450080874,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.0315170288086,
+              65.36224365234375,
+              527.2440795898438,
+              380.0615234375
+            ],
+            "caption_bbox_pt": [
+              68.68679809570312,
+              386.9544982910156,
+              529.5859985351562,
+              406.60150146484375
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999336156336,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 9,
+            "id": "robust-prefix-controls",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 34,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/robust-prefix-controls.svg",
+            "source_sha256": "4b5e0265042805faab3ab9dbca685a373029a8e03a74b52d7cacf3b71929a07f",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              1320.0,
+              1383.3347
+            ],
+            "pdf_scale": 0.3478883223100142,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              202.80621337890625,
+              527.2440795898438,
+              684.0521240234375
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              690.9451904296875,
+              532.2430419921875,
+              731.8861694335938
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999759815358,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 10,
+            "id": "ambiguity-sensitivity-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "b1f619c0905845697ce9c016d3f49cf20cb729ca6d95bd807e0c14c721605535",
+            "page": 36,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/ambiguity-sensitivity-v19.svg",
+            "source_sha256": "bc70637ef4e2b9845e5e2f42c79205c6af7db64d652e7cd27bf066583af4e1c9",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 0.9999990972581759,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              65.3621826171875,
+              527.2440795898438,
+              335.3619384765625
+            ],
+            "caption_bbox_pt": [
+              69.5822982788086,
+              342.2549743652344,
+              528.6904907226562,
+              372.5489807128906
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499999740354639,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "ef8e5a5640ad9aa97bd685b508e09675bb4100cdf41d5f5adfc6526a86f9d235"
+      },
+      "guide": {
+        "pages": 23,
+        "bytes": 1304705,
+        "sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2",
+        "authored_literals_checked": 335,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "second_chance",
+            "figure_number": 1,
+            "id": "ambiguity-sensitivity-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2",
+            "page": 8,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/ambiguity-sensitivity-v19.svg",
+            "source_sha256": "bc70637ef4e2b9845e5e2f42c79205c6af7db64d652e7cd27bf066583af4e1c9",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 1.0246904717590968,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              453.386962890625,
+              532.9133911132812,
+              730.0533447265625
+            ],
+            "caption_bbox_pt": [
+              244.21495056152344,
+              739.0221557617188,
+              351.0839538574219,
+              749.5221557617188
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.734568003456966,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 2,
+            "id": "robust-prefix-controls",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2",
+            "page": 12,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/robust-prefix-controls.svg",
+            "source_sha256": "4b5e0265042805faab3ab9dbca685a373029a8e03a74b52d7cacf3b71929a07f",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              1320.0,
+              1383.3347
+            ],
+            "pdf_scale": 0.35647817091508344,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              65.36224365234375,
+              532.9133911132812,
+              558.4908447265625
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              567.4595947265625,
+              530.2194213867188,
+              621.5848388671875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 3,
+            "id": "prospective-audit-order",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2",
+            "page": 15,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/prospective-audit-order.svg",
+            "source_sha256": "18ab7a76134a8874526be0da884e842c3e2e781607dfe96dc59f0bfbaad11636",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              362.97039
+            ],
+            "pdf_scale": 0.8487575497978178,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              65.3621826171875,
+              532.9133911132812,
+              373.43603515625
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              382.40484619140625,
+              534.4926147460938,
+              480.68035888671875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 4,
+            "id": "censored-area-bounds",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2",
+            "page": 17,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/censored-area-bounds.svg",
+            "source_sha256": "cb2805490722339a7ac3bd0bfbf5e4e7ecbecb636cebd38907660bbc0a4240f3",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              354.35852
+            ],
+            "pdf_scale": 0.8713910844590929,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              305.1170654296875,
+              532.9133911132812,
+              613.9019165039062
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              622.8706665039062,
+              526.6641845703125,
+              749.3546752929688
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 5,
+            "id": "audit-subset-identification",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2",
+            "page": 18,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/audit-subset-identification.svg",
+            "source_sha256": "8edc8ba41749c8077b7aeba6a36978a1af8a472a098ba26bf847d843448cbd69",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              338.01269
+            ],
+            "pdf_scale": 0.8713910773948387,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.36220932006836,
+              134.6934814453125,
+              532.9133911132812,
+              429.2347106933594
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              438.20355224609375,
+              529.433837890625,
+              608.312744140625
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876555997484,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "second_chance",
+            "figure_number": 6,
+            "id": "prefix-only-audit-width",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/second-chance/SecondChance_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "bfaffa1c3ea44cccefe56adf23f1853451e75d154c9abf45bff9ea46b1fd77a2",
+            "page": 22,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/second_chance/prefix-only-audit-width.svg",
+            "source_sha256": "965c68e5b169f21768c2ee3a9a8013edace33a16a892f8999b970524a0df4161",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              1280.0,
+              877.18652
+            ],
+            "pdf_scale": 0.3676180988550186,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.36222457885742,
+              82.81829833984375,
+              532.9133911132812,
+              405.2879638671875
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              414.2567138671875,
+              529.3727416992188,
+              482.7486877441406
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876273558136,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "8feda6b5ffba219fe1ec09d3a5c6209f4b85116cfb58e81d5a34539e1dbb5c73"
+      },
+      "ok": true
+    },
+    {
+      "schema": "forge_layout_document_verification_v21",
+      "project": "probeflow",
+      "source_snapshot_verified": true,
+      "scope": "Complete current text and figure geometry checks; no scientific-effect certification or style-author endorsement.",
+      "source_inventory": {
+        "sections": 7,
+        "appendices": 0,
+        "references": 21,
+        "figures": 10,
+        "paragraphs": 21,
+        "equations": 3,
+        "tables": 1,
+        "algorithm_lines": 0
+      },
+      "paper": {
+        "pages": 5,
+        "bytes": 317622,
+        "sha256": "04f917f6d1f97e7ba93b471827cffb7f1b34571b70dae94286263e876ea5d1d8",
+        "authored_literals_checked": 92,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "probeflow",
+            "figure_number": 1,
+            "id": "overview",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_v21.pdf",
+            "pdf_sha256": "04f917f6d1f97e7ba93b471827cffb7f1b34571b70dae94286263e876ea5d1d8",
+            "page": 1,
+            "document_kind": "paper",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/overview.svg",
+            "source_sha256": "0c8161fddb5711459a7f29b774c4420c60aa87777602f7a79d3ab05da78b7c3d",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              427.32,
+              219.528
+            ],
+            "pdf_scale": 1.074633963889401,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              446.76422119140625,
+              527.2440795898438,
+              682.6764526367188
+            ],
+            "caption_bbox_pt": [
+              77.41229248046875,
+              689.5693969726562,
+              520.8604736328125,
+              698.5693969726562
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.919461900282027,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 2,
+            "id": "oracle-gap-decomposition-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_v21.pdf",
+            "pdf_sha256": "04f917f6d1f97e7ba93b471827cffb7f1b34571b70dae94286263e876ea5d1d8",
+            "page": 4,
+            "document_kind": "paper",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/oracle-gap-decomposition-v19.svg",
+            "source_sha256": "f7cd0d63bbb2faabb17678f306620664b3297b3c70a98d2088af9f138e78bc78",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 0.9999990972581759,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              128.4241943359375,
+              527.2440795898438,
+              398.4239501953125
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              405.3169860839844,
+              530.2412109375,
+              424.9639587402344
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499999740354639,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "3ca883c4a90aca018acdc4d73a54dfece1e5a8eec960df2ca3069e8e8e240a73"
+      },
+      "supplement": {
+        "pages": 38,
+        "bytes": 1492016,
+        "sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+        "authored_literals_checked": 693,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "probeflow",
+            "figure_number": 1,
+            "id": "preference-boundary-v21",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 9,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/preference-boundary-v21.svg",
+            "source_sha256": "b72897eff4d06ded2578694b55b5e84c8063628b6b5cf4d2b8cc8b36af5964ac",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 0.9999990972581759,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              300.753173828125,
+              527.2440795898438,
+              570.7529296875
+            ],
+            "caption_bbox_pt": [
+              68.76329803466797,
+              577.6459350585938,
+              530.2599487304688,
+              597.29296875
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499999740354639,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 2,
+            "id": "overview",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 13,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/overview.svg",
+            "source_sha256": "0c8161fddb5711459a7f29b774c4420c60aa87777602f7a79d3ab05da78b7c3d",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              427.32,
+              219.528
+            ],
+            "pdf_scale": 1.074633963889401,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              267.2562255859375,
+              527.2440795898438,
+              503.16845703125
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              510.0614318847656,
+              530.2413940429688,
+              529.7084350585938
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.919461900282027,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 3,
+            "id": "predictor-mask-errors",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 20,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/predictor-mask-errors.svg",
+            "source_sha256": "4b2c6e6a79d20e41dbabae990b61ae142f80ffca13271176d4c0855ec9d8fc34",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              534.825,
+              232.67888
+            ],
+            "pdf_scale": 0.8586221389224863,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              190.6591796875,
+              527.2440795898438,
+              390.4423828125
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              397.33544921875,
+              533.0758666992188,
+              682.0249633789062
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999759815358,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 4,
+            "id": "support-and-cost",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 21,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/support-and-cost.svg",
+            "source_sha256": "4f079ec61700651d5b3110650f745cdfdf7377195b0fbc778efd16db2e130a86",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              591.899,
+              236.94423
+            ],
+            "pdf_scale": 0.7758292718697442,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03150939941406,
+              117.7772216796875,
+              527.2440795898438,
+              301.60546875
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              308.4984436035156,
+              530.2413940429688,
+              338.79248046875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.49999947737601,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 5,
+            "id": "decision-objective-tradeoffs",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 22,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/decision-objective-tradeoffs.svg",
+            "source_sha256": "e8ccfb8f543ccb7b2d0ec57e28bd4bc867cda5bfc2858e17de39bbc5a9e1b43a",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              322.17343
+            ],
+            "pdf_scale": 0.8503937897858797,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              65.3621826171875,
+              527.244140625,
+              339.3364562988281
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              346.2294616699219,
+              530.2413940429688,
+              376.5234680175781
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.50000088957275,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 6,
+            "id": "joint-support-ceiling",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 23,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/joint-support-ceiling.svg",
+            "source_sha256": "adac0c7f0612983af4d9fbae3ced40fdb76f439c8f1c186fddaf0c52b71dd1e9",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              304.58654
+            ],
+            "pdf_scale": 0.8503936767578125,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              191.67718505859375,
+              527.2440795898438,
+              450.6956481933594
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              457.58868408203125,
+              530.2412719726562,
+              487.8826904296875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.499999759815358,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 7,
+            "id": "compositional-baseline-results",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 25,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/compositional-baseline-results.svg",
+            "source_sha256": "2268928016810783da2be75f235a97d2c63d027d443ac500cce84daa0d656cea",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              317.34157
+            ],
+            "pdf_scale": 0.8283055017864893,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03150939941406,
+              65.3621826171875,
+              527.2440795898438,
+              328.21795654296875
+            ],
+            "caption_bbox_pt": [
+              72.23279571533203,
+              335.1109924316406,
+              526.0401000976562,
+              365.4049987792969
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.49999947737601,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 8,
+            "id": "staged-vs-joint-selection-v16",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 27,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/staged-vs-joint-selection-v16.svg",
+            "source_sha256": "df2912aed8a4cc869027f8b61690db63e69543402ac3cbe5da804ddae09ff663",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              317.34157
+            ],
+            "pdf_scale": 0.8283055017864893,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03150939941406,
+              361.68621826171875,
+              527.2440795898438,
+              624.5419921875
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              631.4349365234375,
+              530.2413330078125,
+              651.0819702148438
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.49999947737601,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 9,
+            "id": "observation-gate-tradeoffs-v17",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 29,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/observation-gate-tradeoffs-v17.svg",
+            "source_sha256": "625e87b1ed49440a9ec89c8717f18917da71988a0dd8d4e03295cb23cee9fa56",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              317.34157
+            ],
+            "pdf_scale": 0.8283055017864893,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.03150939941406,
+              266.062744140625,
+              527.2440795898438,
+              528.9185180664062
+            ],
+            "caption_bbox_pt": [
+              68.031494140625,
+              535.8114624023438,
+              530.2413940429688,
+              566.10546875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.49999947737601,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 10,
+            "id": "oracle-gap-decomposition-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_SUPPLEMENT_v21.pdf",
+            "pdf_sha256": "41a0a7779dacd078c81c4658c4b4034f3b47bb21036eed7ae00043588684fd1c",
+            "page": 31,
+            "document_kind": "supplement",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/oracle-gap-decomposition-v19.svg",
+            "source_sha256": "f7cd0d63bbb2faabb17678f306620664b3297b3c70a98d2088af9f138e78bc78",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 0.9999990972581759,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              68.031494140625,
+              65.3621826171875,
+              527.2440795898438,
+              335.3619384765625
+            ],
+            "caption_bbox_pt": [
+              69.98279571533203,
+              342.2549743652344,
+              528.2901000976562,
+              361.9019775390625
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.499999740354639,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "137a40c08cdf6dda1f3e8643c02fdeecfdab9bd9313a0cd2ffea8e180a455951"
+      },
+      "guide": {
+        "pages": 43,
+        "bytes": 1751424,
+        "sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+        "authored_literals_checked": 899,
+        "authored_literals_missing": [],
+        "figures": [
+          {
+            "project": "probeflow",
+            "figure_number": 1,
+            "id": "oracle-gap-decomposition-v19",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 21,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/oracle-gap-decomposition-v19.svg",
+            "source_sha256": "f7cd0d63bbb2faabb17678f306620664b3297b3c70a98d2088af9f138e78bc78",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              459.213,
+              270.0
+            ],
+            "pdf_scale": 1.0246894084589506,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              65.36224365234375,
+              532.9129028320312,
+              342.02862548828125
+            ],
+            "caption_bbox_pt": [
+              244.21495056152344,
+              350.9974365234375,
+              351.0839538574219,
+              361.4974365234375
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.734557902096737,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 2,
+            "id": "observation-gate-tradeoffs-v17",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 23,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/observation-gate-tradeoffs-v17.svg",
+            "source_sha256": "625e87b1ed49440a9ec89c8717f18917da71988a0dd8d4e03295cb23cee9fa56",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              317.34157
+            ],
+            "pdf_scale": 0.8487575222747494,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362220764160156,
+              453.386962890625,
+              532.9133911132812,
+              722.7330322265625
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              731.7017822265625,
+              528.123779296875,
+              771.4603271484375
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876344167974,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 3,
+            "id": "staged-vs-joint-selection-v16",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 27,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/staged-vs-joint-selection-v16.svg",
+            "source_sha256": "df2912aed8a4cc869027f8b61690db63e69543402ac3cbe5da804ddae09ff663",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              317.34157
+            ],
+            "pdf_scale": 0.8487575222747494,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362220764160156,
+              178.3187255859375,
+              532.9133911132812,
+              447.6647644042969
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              456.63360595703125,
+              532.7450561523438,
+              583.642578125
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876344167974,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 4,
+            "id": "compositional-baseline-results",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 29,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/compositional-baseline-results.svg",
+            "source_sha256": "2268928016810783da2be75f235a97d2c63d027d443ac500cce84daa0d656cea",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              554.4,
+              317.34157
+            ],
+            "pdf_scale": 0.8487575222747494,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362220764160156,
+              268.133544921875,
+              532.9133911132812,
+              537.4796142578125
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              546.4483642578125,
+              528.1527099609375,
+              659.0906372070312
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876344167974,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 5,
+            "id": "overview",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 31,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/overview.svg",
+            "source_sha256": "0c8161fddb5711459a7f29b774c4420c60aa87777602f7a79d3ab05da78b7c3d",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              427.32,
+              219.528
+            ],
+            "pdf_scale": 1.1011681774967474,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              80.7738037109375,
+              532.9133911132812,
+              322.51104736328125
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              331.4798583984375,
+              535.5972900390625,
+              472.3305969238281
+            ],
+            "minimum_font_pt_from_outline_ledger": 9.139695873223005,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 6,
+            "id": "predictor-mask-errors",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 36,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/predictor-mask-errors.svg",
+            "source_sha256": "4b2c6e6a79d20e41dbabae990b61ae142f80ffca13271176d4c0855ec9d8fc34",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              534.825,
+              232.67888
+            ],
+            "pdf_scale": 0.8798227188480533,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              80.7738037109375,
+              532.9133911132812,
+              285.48992919921875
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              294.45880126953125,
+              529.5839233398438,
+              348.58404541015625
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 7,
+            "id": "support-and-cost",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 37,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/support-and-cost.svg",
+            "source_sha256": "4f079ec61700651d5b3110650f745cdfdf7377195b0fbc778efd16db2e130a86",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              591.899,
+              236.94423
+            ],
+            "pdf_scale": 0.7949855873448314,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.36221694946289,
+              80.7738037109375,
+              532.9133911132812,
+              269.14105224609375
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              278.10986328125,
+              533.61279296875,
+              462.5858459472656
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.70987641477781,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 8,
+            "id": "decision-objective-tradeoffs",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 41,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/decision-objective-tradeoffs.svg",
+            "source_sha256": "e8ccfb8f543ccb7b2d0ec57e28bd4bc867cda5bfc2858e17de39bbc5a9e1b43a",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              322.17343
+            ],
+            "pdf_scale": 0.8713910844590929,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              82.8182373046875,
+              532.9133911132812,
+              363.5572814941406
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              372.526123046875,
+              532.8052368164062,
+              426.6513671875
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          },
+          {
+            "project": "probeflow",
+            "figure_number": 9,
+            "id": "joint-support-ceiling",
+            "pdf": "outputs/no-more-slops-week02-v21_20261019/rebuild_01/build/probeflow/ProbeFlow_EXPLAINER_KO_v21.pdf",
+            "pdf_sha256": "ba1ee7de903d2d37217e839d7f0804b263ee68d3d9780acb1a68585cfd98ad2d",
+            "page": 42,
+            "document_kind": "guide",
+            "source_svg": "projects/research_advancement_v21_20261019/figures/probeflow/joint-support-ceiling.svg",
+            "source_sha256": "adac0c7f0612983af4d9fbae3ced40fdb76f439c8f1c186fddaf0c52b71dd1e9",
+            "svg_viewbox": [
+              0.0,
+              0.0,
+              540.0,
+              304.58654
+            ],
+            "pdf_scale": 0.8713910844590929,
+            "pdf_min_text_pt": null,
+            "font_measurement": "physical size from pre-outline ledger scaled by actual PDF canvas; not extracted PDF text",
+            "image_bbox_pt": [
+              62.362205505371094,
+              178.3187255859375,
+              532.9133911132812,
+              443.73272705078125
+            ],
+            "caption_bbox_pt": [
+              62.362205505371094,
+              452.7015380859375,
+              532.9180297851562,
+              767.5282592773438
+            ],
+            "minimum_font_pt_from_outline_ledger": 8.709876626607322,
+            "filled_clip_exceedances": []
+          }
+        ],
+        "text_sha256": "151da31729b9c5b7faed7dd811d10e2dee28e87d7f14b6a0b6b6822d19f46979"
+      },
+      "ok": true
+    }
+  ],
+  "source_comparisons": 162,
+  "scope": "New author-side complete literal, page-bound, figure and credit checks of the submission PDFs; original sources unchanged. Not independent scientific evaluation."
+}

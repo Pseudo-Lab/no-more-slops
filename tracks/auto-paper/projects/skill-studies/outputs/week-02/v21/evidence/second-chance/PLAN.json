@@ -1,0 +1,29 @@
+{
+  "schema": "secondchance_v21_structural_frontier_plan_v1",
+  "locked_before_execution": true,
+  "question": "What is the exact terminal unrestricted safe-width versus left-step checkpoint-width-area Pareto frontier over every arrival-feasible audit schedule on the fixed authored recovery streams?",
+  "input_root": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01",
+  "output_root": "runs/research_advancement_v21_20261019_01/second_chance/analysis_01",
+  "budgets": [5, 8],
+  "query_caps": [1, 2, 3, 4],
+  "contrast_arms": ["neutral_joint", "selective_joint"],
+  "cohort": "Reuse exactly 168 saved paths from 12 authored templates and 9 deterministic complete-state identities. The occupation contrast uses 24 path records per horizon. These are not independent natural histories.",
+  "width": "W_t(A)=sum_{s not in A}|p_t(s)|+2(B-t)/B, evaluated after the checkpoint action. p_t is the mean neutral-minus-selective normalized occupation through t, with fixed denominator 12 per arm.",
+  "area": "J=(1/B)sum_{t=0}^{B-1}W_t(A_t); no t0 quote, one slot at each integer t=1..B. A quote at t=B affects terminal width only, not J.",
+  "feasibility": "At each positive integer checkpoint choose skip or one previously unqueried identity whose first actual arrival is <=t. At most q unique identities; same identity is cached across the fixed contrast stream. No repeated quote, no future identity, no recovery-stream modification, instantaneous quote disclosure at the checkpoint. Recovery cost and quote count are separate coordinates; no physical delay is measured.",
+  "oracle_information": "The offline structural oracle sees the full realized arrival and occupation-coefficient path. It never reads utility payloads to choose or optimize schedules. Future structural information makes it privileged hindsight, NOT an online implementable selector or a guarantee over future streams.",
+  "dynamic_program": "At each (t,audited_mask), retain the smallest cumulative left-step width sum and a lexicographic schedule witness; add the common W_t if t<B. Future options depend only on t and audited_mask, so a larger cumulative sum at the same state cannot improve either endpoint. Keep path multiplicity separately. At t=B take the nondominated 2D terminal-width/area points, grouping ties and retaining a deterministic witness.",
+  "policy_comparison": "Replay saved action schedules of all nine frozen policies, 72 B/q/policy rows. Check exact terminal width and area against v19. Report endpoint-conditioned area gap and area-conditioned endpoint gap to the complete schedule frontier, dominance witnesses, ties, quote counts, and preserved certificate nonattainment. These are hindsight structural gaps, not an achievable online gain or recovery-effect estimate.",
+  "verification": [
+    "Copy PLAN/analyze/verify and 168 raw input snapshots plus prior decisions/results/views; seal all input hashes before computing numeric results.",
+    "Validate repeated complete state values, panel range, fixed history/arm counts and integer commit arrival clocks; distinguish complete deterministic authored identity from untested natural-state completeness.",
+    "Independently rebuild coefficients by integer interval occupancies rather than the analysis segment integral; compare saved v19 views.",
+    "Independently enumerate all legal schedules in every B/q contract and compare complete objective multiplicities, frontier points and witnesses with the dynamic program.",
+    "Reject an audit before arrival, t0 audit, duplicate audit, >one audit per checkpoint, out-of-range checkpoint and over-cap schedule.",
+    "Change or remove utility payloads without changing structural input or frontier; count no utility-dependent optimization calls.",
+    "Preserve all 72 policy rows, positive gaps, ties and unreached certificates. Rehash all original inputs after execution."
+  ],
+  "resources": "Python standard library and exact Fraction arithmetic only. No models, API calls, new dependency, natural history, live audit, independent sample, physical latency measurement, installation or Git/PR action.",
+  "literature": "Separately inspect 2-4 primary public trajectory/debugging resources, preserve only bounded selected passages and source locators. No external performance is pooled with the authored frontier; no native method/data execution.",
+  "refutation": "Any DP/exhaustive frontier mismatch, preserved-policy objective mismatch, invalid arrival accepted or utility-payload-dependent structure invalidates this execution. A positive oracle gap alone cannot establish a realizable online improvement."
+}

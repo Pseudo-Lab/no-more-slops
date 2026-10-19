@@ -1,0 +1,151 @@
+{
+  "schema": "second_chance_v21_sources_v1",
+  "sources": [
+    {
+      "id": "SC17-RUN",
+      "kind": "executed_finite_development_replay",
+      "path": "runs/research_advancement_v17_20261019_01/second_chance/analysis_01/results.json",
+      "sha256": "d1d444897f7958e7b8132a58fc89ee60e2ebd5d798ea2cf93fab81c3a7e98349",
+      "scope": "Local deterministic development replay on already exposed authored logs. Conditional robust objective and constructed counterexample do not establish prospective audit efficiency, natural failure incidence, adaptive-submodular approximation, statistical confidence coverage or model recovery superiority."
+    },
+    {
+      "id": "SC17-MODEL",
+      "kind": "retrospective_coefficient_model_check",
+      "path": "runs/research_advancement_v17_20261019_01/second_chance/analysis_01/model_membership.json",
+      "sha256": "7ba728406dc407d1a787a9165feb36a3c5c34f67f223bbffa7945430153fa0e8",
+      "scope": "Final coefficient vector used by evaluator only; dependent exposed views, not natural failure probability."
+    },
+    {
+      "id": "SC17-WITNESS",
+      "kind": "authored_counterexample",
+      "path": "runs/research_advancement_v17_20261019_01/second_chance/analysis_01/complementarity_witness.json",
+      "sha256": "708024d92beebc7c568185ccd11e0b5bbff436d725cedd0a200280d0c0cd9ee7",
+      "scope": "Four-state local calculation; not a new trace or a refutation of conditional literature theorems."
+    },
+    {
+      "id": "SC17-VERIFY",
+      "kind": "author_separate_formula_verification",
+      "path": "runs/research_advancement_v17_20261019_01/second_chance/analysis_01/verification_01/verification.json",
+      "sha256": "41f0367925f0b8c98a15cffc0927f43dcd890173054daeb57cbdc13b2c11af49",
+      "scope": "Same-author distinct calculation; nonauthor review and scientific replication remain separate."
+    },
+    {
+      "id": "SC17-ADAPTIVE",
+      "url": "https://arxiv.org/html/1003.3967v5",
+      "kind": "versioned_primary_html",
+      "reviewed_scope": "Sections2.1-2.2 partial-observation policies;3.1-3.2 diminishing-returns definitions and conditional greedy-guarantee scope. No PDF download.",
+      "paraphrase": "Greedy guarantees depend on structural properties of an observation-dependent objective; the local robust objective must be checked separately.",
+      "not_implemented": "No Bayesian prior,adaptive-submodular theorem proof or native sensor experiments.",
+      "checked_at_utc": "2026-10-19T04:05:47.095724+00:00",
+      "source_content_sha256": null,
+      "hash_scope": "Scoped review note only; not publisher HTML bytes or factual authentication.",
+      "review_record_path": "projects/research_advancement_v17_20261019/second_chance/SOURCE_REVIEW.json",
+      "review_record_sha256": "bd8f331f03db405f33272d8b8f7c7ba15cb903c191e194c68c6961079ad92051"
+    },
+    {
+      "id": "SC17-COCO",
+      "url": "https://numbbo.github.io/coco-doc/perf-assessment/",
+      "kind": "official_primary_documentation",
+      "reviewed_scope": "Fixed-budget versus fixed-target assessment and missing/unattained target accounting; no benchmark software execution.",
+      "paraphrase": "Final quality and time to a target are different assessments; an unreached target is retained with the spent budget.",
+      "not_implemented": "No optimizer,test-function,restart or external timing benchmark.",
+      "checked_at_utc": "2026-10-19T04:05:47.095724+00:00",
+      "source_content_sha256": null,
+      "hash_scope": "Scoped review note only; not publisher HTML bytes or factual authentication.",
+      "review_record_path": "projects/research_advancement_v17_20261019/second_chance/SOURCE_REVIEW.json",
+      "review_record_sha256": "bd8f331f03db405f33272d8b8f7c7ba15cb903c191e194c68c6961079ad92051"
+    },
+    {
+      "id": "SC19-PLAN",
+      "kind": "predeclared_plan",
+      "path": "projects/research_advancement_v19_20261019/second_chance/PLAN.json",
+      "sha256": "f26e5bd57c5c0b9ed382014e5c28853edca955763e729dac37b4812e4922d68b",
+      "not_a_scientific_truth_certificate": true
+    },
+    {
+      "id": "SC19-RUN",
+      "kind": "local_saved_value_analysis_or_mathematical_verification",
+      "path": "outputs/research_advancement_v19_20261019/second_chance_analysis_01/results.json",
+      "sha256": "82115c85bd66c798c897ce8827f7a270f2a3a46dbaf05ceb03aa966ba976d9d8",
+      "not_a_scientific_truth_certificate": true
+    },
+    {
+      "id": "SC19-VERIFY",
+      "kind": "local_saved_value_analysis_or_mathematical_verification",
+      "path": "outputs/research_advancement_v19_20261019/second_chance_analysis_01/verification_01/verification.json",
+      "sha256": "0858abdbe6d33e0779646144bb02d01a3b3af1c9bf235f86cae05fedbf8a4eab",
+      "not_a_scientific_truth_certificate": true
+    },
+    {
+      "id": "SC19-ENVELOPE",
+      "kind": "local_saved_value_analysis_or_mathematical_verification",
+      "path": "outputs/research_advancement_v19_20261019/second_chance_analysis_01/envelope_verification_01/verification.json",
+      "sha256": "889dba12745cf3776fdbcebf1a47d1c840d025a914ece2ff577e21a0cd0a1bf9",
+      "not_a_scientific_truth_certificate": true
+    },
+    {
+      "id": "SC19-WITNESS",
+      "kind": "local_saved_value_analysis_or_mathematical_verification",
+      "path": "outputs/research_advancement_v19_20261019/second_chance_analysis_01/analytic_witness.json",
+      "sha256": "e94282dd1b09b737c1edf77db9cb458b1b8f6a4b072a0052db4b0d6cff367f21",
+      "not_a_scientific_truth_certificate": true
+    },
+    {
+      "id": "SC19-MEMBERSHIP",
+      "kind": "local_saved_value_analysis_or_mathematical_verification",
+      "path": "outputs/research_advancement_v19_20261019/second_chance_analysis_01/membership_sensitivity.json",
+      "sha256": "877367823a3506b0cfc0ffba837fe6763f545d1a0156bf947317a0e36a3dc654",
+      "not_a_scientific_truth_certificate": true
+    },
+    {
+      "id": "SC19-AMBIGUITY",
+      "kind": "local_saved_value_analysis_or_mathematical_verification",
+      "path": "outputs/research_advancement_v19_20261019/second_chance_analysis_01/scenario_ambiguity.json",
+      "sha256": "a3bd57122fd4d7ce396a8b10eb9ee6ae57e14fd693037d6c0a3eb68836574a2b",
+      "not_a_scientific_truth_certificate": true
+    },
+    {
+      "id": "SC19-PARETO",
+      "kind": "local_saved_value_analysis_or_mathematical_verification",
+      "path": "outputs/research_advancement_v19_20261019/second_chance_analysis_01/finite_family_pareto.json",
+      "sha256": "0db8d77e1efa40a555a9ee30f9528190f28ff1ed4f7496a434b82f179b7bc0ec",
+      "not_a_scientific_truth_certificate": true
+    },
+    {
+      "id": "second_chance19-RESULT",
+      "path": "runs/research_advancement_v19_20261019_01/second_chance/analysis_01/results.json",
+      "sha256": "82115c85bd66c798c897ce8827f7a270f2a3a46dbaf05ceb03aa966ba976d9d8",
+      "kind": "new_finite_saved_evidence_analysis",
+      "scope": "Previously exposed local inputs; no new independent evidence."
+    },
+    {
+      "id": "SC21-PLAN",
+      "path": "runs/research_advancement_v21_20261019_01/second_chance/analysis_01/PLAN.json",
+      "sha256": "364cb03a95013e6ce82f71a73d22245d0483e4faf54643320d31dd624c307a1a",
+      "kind": "sealed_predeclared_finite_schedule_plan",
+      "scope": "Finite saved-stream computation or explicitly scoped reading. No independent natural evidence, native method run, real audit or scientific-truth certification."
+    },
+    {
+      "id": "SC21-RUN",
+      "path": "runs/research_advancement_v21_20261019_01/second_chance/analysis_01/results.json",
+      "sha256": "c127bf5c6d8d9c65ad827108bbc83d022466bcbfd6ee159893c8a8a0e25a2b81",
+      "kind": "executed_exact_fixed_stream_structural_analysis",
+      "scope": "Finite saved-stream computation or explicitly scoped reading. No independent natural evidence, native method run, real audit or scientific-truth certification."
+    },
+    {
+      "id": "SC21-VERIFY",
+      "path": "runs/research_advancement_v21_20261019_01/second_chance/verification_01/verification.json",
+      "sha256": "66d7bc3289c00fedefe3721458c07de7a2683dc930b8fbb47e0cca6af99e560c",
+      "kind": "same_author_distinct_exhaustive_implementation",
+      "scope": "Finite saved-stream computation or explicitly scoped reading. No independent natural evidence, native method run, real audit or scientific-truth certification."
+    },
+    {
+      "id": "SC21-LITERATURE",
+      "path": "projects/research_advancement_v21_20261019/second_chance/literature/RESOURCES.json",
+      "sha256": "a23c001c1ae502ff31f858ec9885dfeb7872529209d6c5bac2a11e0ce1ec07fc",
+      "kind": "bounded_primary_review_and_proposed_transfer_design",
+      "scope": "Finite saved-stream computation or explicitly scoped reading. No independent natural evidence, native method run, real audit or scientific-truth certification."
+    }
+  ],
+  "prior_source_revision": "v17 content, v18 layout"
+}

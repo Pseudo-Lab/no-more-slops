@@ -1,0 +1,224 @@
+{
+  "schema": "forge_document_study_map_v1",
+  "project_id": "skillmerge",
+  "version": "v21-20261019",
+  "scope": "Current compact main, new S15-S24 analysis, Korean v21 prefix and all preserved v20 reading links. New results remain deterministic exposed-bank calculations, not behavioral qualification.",
+  "rows": [
+    {
+      "main_section": "Introduction",
+      "supplement_section": "S1. Scope and exact reading map",
+      "explainer_heading": "1. 일곱 절을 읽는 지도",
+      "question_ko": "이번 논문이 실제로 관측한 것과 아직 계획인 것은 무엇인가?",
+      "main_page": 1,
+      "supplement_page": 1,
+      "explainer_page": 3
+    },
+    {
+      "main_section": "Related Work",
+      "supplement_section": "S10. Strong baselines and restricted selection rights",
+      "explainer_heading": "2. 그림과 정답 묶음을 먼저 구별하기",
+      "question_ko": "다른 연구의 어떤 장점을 비교에 보존해야 하며 무엇을 아직 실행하지 않았나?",
+      "main_page": 2,
+      "supplement_page": 6,
+      "explainer_page": 4
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S2. Evidence contracts and boundary conventions",
+      "explainer_heading": "2. 그림과 정답 묶음을 먼저 구별하기",
+      "question_ko": "전체 포함, 앞 세 개 채점, 정확 일치는 무엇이 다른가?",
+      "main_page": 2,
+      "supplement_page": 1,
+      "explainer_page": 4
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S3. Stable operators and information permissions",
+      "explainer_heading": "6. 수식의 기호와 증명을 읽는 순서",
+      "question_ko": "출력을 만드는 연산은 정답을 읽지 않고 어떤 정보만 쓰는가?",
+      "main_page": 2,
+      "supplement_page": 2,
+      "explainer_page": 5
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S4. Completion ranks and the single-window proof",
+      "explainer_heading": "6. 수식의 기호와 증명을 읽는 순서",
+      "question_ko": "왜 마지막 필요 ID의 순위 중 최소값이 최초 성공 용량이 되는가?",
+      "main_page": 2,
+      "supplement_page": 3,
+      "explainer_page": 5
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S5. Removed IDs and an exact loss certificate",
+      "explainer_heading": "6. 수식의 기호와 증명을 읽는 순서",
+      "question_ko": "어떤 ID를 빼야 기존의 모든 정답 대안이 동시에 무너지는가?",
+      "main_page": 2,
+      "supplement_page": 3,
+      "explainer_page": 5
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S6. Conditional cap-four theorem and its limits",
+      "explainer_heading": "4. 손계산 2: 용량 4는 왜 무회귀이지 전승이 아닌가",
+      "question_ko": "어떤 가정에서 용량 4는 무회귀이며 왜 둘 다 실패할 수도 있는가?",
+      "main_page": 2,
+      "supplement_page": 4,
+      "explainer_page": 4
+    },
+    {
+      "main_section": "Experimental Setup",
+      "supplement_section": "S8. Paired denominators and weighting reversal",
+      "explainer_heading": "5. 손계산 3: 같은 자료의 가중치가 부호를 바꾸는 이유",
+      "question_ko": "같은 쌍을 세어도 쌍·과제·성분 가중치가 다른 답을 주는 이유는 무엇인가?",
+      "main_page": 2,
+      "supplement_page": 5,
+      "explainer_page": 4
+    },
+    {
+      "main_section": "Experimental Setup",
+      "supplement_section": "S11. Frozen execution and provenance ledger",
+      "explainer_heading": "1. 일곱 절을 읽는 지도",
+      "question_ko": "입력·계획·코드·결과의 해시는 무엇을 연결하고 무엇을 보증하지 않는가?",
+      "main_page": 2,
+      "supplement_page": 7,
+      "explainer_page": 3
+    },
+    {
+      "main_section": "Experimental Setup",
+      "supplement_section": "S12. Failed verification and the corrected claim",
+      "explainer_heading": "4. 손계산 2: 용량 4는 왜 무회귀이지 전승이 아닌가",
+      "question_ko": "초기 검산기의 어느 조건만 고쳤고 어떤 원본을 보존했는가?",
+      "main_page": 2,
+      "supplement_page": 8,
+      "explainer_page": 4
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S7. Saved and minimal failure witnesses",
+      "explainer_heading": "3. 손계산 1: 공통 항목 하나가 밀어내는 것",
+      "question_ko": "공통 ID 하나가 실제 저장 반례의 어느 근거를 밀어냈는가?",
+      "main_page": 3,
+      "supplement_page": 5,
+      "explainer_page": 4
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S9. Complete capacity results and endpoint tradeoffs",
+      "explainer_heading": "3. 손계산 1: 공통 항목 하나가 밀어내는 것",
+      "question_ko": "생성 용량은 늘었는데 first-three의 실패는 왜 그대로 남는가?",
+      "main_page": 3,
+      "supplement_page": 6,
+      "explainer_page": 4
+    },
+    {
+      "main_section": "Limitations",
+      "supplement_section": "S13. Prospective independent-history protocol",
+      "explainer_heading": "7. 혼동을 막는 자기점검과 다음 연구",
+      "question_ko": "실제 스킬 결합 효과를 말하려면 D·Q·S와 독립 저술을 어떻게 분리해야 하는가?",
+      "main_page": 4,
+      "supplement_page": 9,
+      "explainer_page": 5
+    },
+    {
+      "main_section": "Conclusion",
+      "supplement_section": "S14. Admission decisions and falsification ledger",
+      "explainer_heading": "7. 혼동을 막는 자기점검과 다음 연구",
+      "question_ko": "현재 결론을 반증할 수 있는 대조는 무엇이며 아직 어떤 배포 근거가 비어 있는가?",
+      "main_page": 4,
+      "supplement_page": 9,
+      "explainer_page": 5
+    },
+    {
+      "main_section": "Introduction",
+      "supplement_section": "S15. The conditional reference class and label-blind switch",
+      "explainer_heading": "v21-1. 이번에 추가한 질문과 읽는 지도",
+      "question_ko": "어떤 조건에서만 공통 항목 승격을 안전하게 선택할 수 있는가?",
+      "main_page": 1,
+      "supplement_page": 10,
+      "explainer_page": 1
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S15. The conditional reference class and label-blind switch",
+      "explainer_heading": "v21-2. 세 가지 검사만으로 고르는 이유",
+      "question_ko": "선택 함수가 정답이나 Q 자격을 읽지 않는지 어떻게 확인하는가?",
+      "main_page": 2,
+      "supplement_page": 10,
+      "explainer_page": 1
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S16. Exact conditional theorem and reverse counterfamily",
+      "explainer_heading": "v21-3. 필요충분의 역방향을 손으로 만들기",
+      "question_ko": "가드가 거짓이면 왜 최대 두 개의 한 항목 정답으로 손실을 만들 수 있는가?",
+      "main_page": 2,
+      "supplement_page": 11,
+      "explainer_page": 1
+    },
+    {
+      "main_section": "Problem and Method",
+      "supplement_section": "S17. Sharp general-length boundary and authored counterexamples",
+      "explainer_heading": "v21-4. 길이가 달라져도 성립하는 경계",
+      "question_ko": "왜 최대 입력 길이 d에서 2d−2부터 무회귀이고 바로 전에는 반례가 있는가?",
+      "main_page": 2,
+      "supplement_page": 11,
+      "explainer_page": 2
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S18. Guarded capacity results and fallback denominators",
+      "explainer_heading": "v21-5. 563개 이득과 487개 손실을 함께 읽기",
+      "question_ko": "조건부 층의 손실 0과 전체 자료의 손실 487은 왜 모순이 아닌가?",
+      "main_page": 3,
+      "supplement_page": 12,
+      "explainer_page": 2
+    },
+    {
+      "main_section": "Results",
+      "supplement_section": "S19. Saved gains, conservative rejection and unconditional failure",
+      "explainer_heading": "v21-6. 안전 때문에 포기한 실제 이득 두 개",
+      "question_ko": "왜 정답상 좋은 승격을 일부 거절하는가?",
+      "main_page": 3,
+      "supplement_page": 13,
+      "explainer_page": 2
+    },
+    {
+      "main_section": "Limitations",
+      "supplement_section": "S20. Endpoints, cap-dependent switching and weighting",
+      "explainer_heading": "v21-7. 같은 집합이어도 앞 세 개는 다르다",
+      "question_ko": "full 무회귀가 first-three나 exact를 보장하지 않는 이유는 무엇인가?",
+      "main_page": 4,
+      "supplement_page": 14,
+      "explainer_page": 2
+    },
+    {
+      "main_section": "Experimental Setup",
+      "supplement_section": "S21. New execution lock and separate author verification",
+      "explainer_heading": "v21-8. 실행 근거와 다음에 읽을 논문",
+      "question_ko": "검산의 계산 수와 독립 연구 표본 수는 왜 다른가?",
+      "main_page": 2,
+      "supplement_page": 15,
+      "explainer_page": 3
+    },
+    {
+      "main_section": "Related Work",
+      "supplement_section": "S22. Primary reading bridge and benchmark admission",
+      "explainer_heading": "v21-8. 실행 근거와 다음에 읽을 논문",
+      "question_ko": "세 비교 자료를 어떤 목적과 권한으로 읽어야 하는가?",
+      "main_page": 2,
+      "supplement_page": 16,
+      "explainer_page": 3
+    },
+    {
+      "main_section": "Conclusion",
+      "supplement_section": "S23. Prospective behavioral gates and falsification decisions",
+      "explainer_heading": "v21-9. 책을 덮고 답해 볼 질문",
+      "question_ko": "이 증명을 실제 스킬 성능으로 옮기려면 어떤 새 근거가 필요한가?",
+      "main_page": 4,
+      "supplement_page": 16,
+      "explainer_page": 3
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+ProbeFlow: Frozen Policies, Changing Preferences
+Research Forge · 19 October 2026 · Layout v21 · Research content v21
+Development paper v21, 2026-10-19. New exact preference diagnostics on already exposed saved evidence; no new 
+independent sample, model call, policy selection, physical experiment or external peer review.
+Abstract
+Adaptive acquisition must survive a strong fixed-source comparison under an explicit loss and cost 
+contract. We analyze frozen policies on one hydraulic rig with 102 policy-fit cycles, 102 develop­
+ment cycles, and 421 previously exposed evaluation cycles. An oracle-separated diagnostic locates 
+constraints without treating hindsight gains as learnable improvements. New per-cycle checks show 
+identical component and complete-diagnosis error counts for the primary TS1 and TS1-plus-PS1 
+leaves on every evaluation cycle; the larger mask only adds a source quote. TS1 therefore weakly 
+dominates this leaf pair for every convex mixture of the two error rates and every nonnegative 
+equal-source cost weight. A secondary frozen gate reduces 63 component errors and 324 quotes but 
+adds ten complete-diagnosis failures. Its exact preference boundary separates that genuine tradeoff 
+from the primary conditional obstruction. Neither retrospective reweighting, repeated diagnostics 
+nor homogeneous policy-fit labels establish independent generalization, physical savings, or native-
+method superiority.
+1 Introduction
+Active feature acquisition chooses which information to buy before predicting. Policy complexity 
+is useful only when its apparent gain survives comparison with an affordable, strong fixed source. 
+Otherwise a favorable contrast may reflect comparator weakness, predictor changes, or a different 
+loss. ProbeFlow asks a narrower diagnostic question: given a frozen predictor and an already fitted 
+observation-dependent gate, where does its remaining objective gap originate? The goal is to identify 
+what a subsequent experiment must change, rather than introduce another acquisition optimizer.
+Our public-data setting uses PS1, FS1, and TS1 records from hydraulic monitoring [1]. A policy first 
+acquires one completed-cycle source mean and then stops or acquires another source. We distinguish 
+this executable offline observation boundary from physical online sensing. Figure 1 preserves the 
+historical support-first rationale. The new question is whether a frozen contrast changes sign when 
+the importance of component errors, complete diagnoses and source quotes changes. A conditional 
+dominance certificate and a preference boundary answer different parts of that question.
+Figure 1: Inherited support-first diagnostic sequence. Historical support and predictor checks motivate bounded 
+acquisition controls; arrows describe study logic, not a causal or universally sufficient guarantee.
+Contributions.
+• A matched, inspectable contract separating acquired observations, frozen predictions, costs, and 
+retrospective oracle rights.
+• An exact finite-cohort oracle decomposition and a directly checked all-preference dominance 
+certificate for the primary frozen leaf pair.
+1
+
+• An exact component/vector/cost boundary for a second frozen contrast, with adverse cases, source-
+specific benchmark plans and an unclosed prospective evidence gate.
+2 Related Work
+AFA spans model-based, model-free, and hybrid policies [13]. Joint acquire-or-classify methods [8, 
+21] and hierarchical costly features [20] connect classification to information prices. EDDI [12] and 
+generative surrogates [9] model missing observations; learned mutual-information selection supplies 
+a stronger greedy comparator [10]. Learning-To-Measure [2], BRiG-AFA [3], offline source planning 
+[4], and pathwise policy gradients [5] address predictor coupling or future consequences. Our small 
+gate is neither a native implementation nor an empirical replacement for these methods.
+Offline acquisition validity depends on observation and deployment assumptions [11]; adaptive-
+submodularity guarantees require their stated distribution and objective properties [7]. Selection bias 
+and structured dependence also constrain interpretation [14–16]. Selective prediction distinguishes 
+risk from coverage [6, 17, 18], while loss-dependent decisions explain why component and joint 
+errors can disagree [19]. We retain these distinctions without transferring external guarantees or 
+benchmark scores. All 21 references and their inherited scopes remain preserved. The v21 resource 
+ledger additionally records a selected official AFAPE body review [11] and three candidate dataset 
+contracts; none was downloaded or run as a new benchmark.
+3 Problem and Method
+A mask is a source set: PS1=1, FS1=2, TS1=4. Each acquired source permits its predefined 
+terminal features; the policy's branch observes only the purchased root mean. The inspected decision 
+interface receives the immutable policy, acquired mask, and disclosed means. Labels, cycle identities, 
+unrequested values, and the prediction bank are excluded. A private executor validates affordability 
+and charges each source once. After STOP, the terminal mask selects an already cached prediction 
+from the same fixed k-neighbor predictor.
+Let L_i(m) be four-head component errors divided by 4, C(m) the sum of declared source prices, and 
+B a per-cycle hard cap. The feasible set includes every mask satisfying that cap, including the empty 
+mask with its frozen fallback. Lambda controls error–quote tradeoffs within feasibility; it cannot 
+purchase permission to exceed B. Quote units are declared proxies, not measured latency, energy, 
+or money. Every oracle comparison holds the predictor k, feasible masks, prices, B, lambda, and 
+cohort fixed.
+Write F for the locked fixed-policy mean and G for the actual gate mean. A is the per-cycle all-
+feasible-mask oracle mean; P restricts that hindsight choice to the gate's two frozen leaves. Thus A≤F 
+and A≤P≤G. Adding and subtracting A and P gives the exact accounting identity below. E includes 
+mandatory-root, leaf-set, and price constraints; R uses labels and unobserved predictions. Neither is 
+a pure learning error or causal effect. Positive R does not prove an observable policy can attain P.
+The distinction between hindsight and executable choice is essential. The all-mask oracle may select 
+a source that the gate can never reach, whereas the pair oracle retains the mandatory root and 
+its purchase cost. A policy cannot replace either oracle's privileged label access with its current 
+confidence. Even a positive difference between G and P combines imperfect branching, restricted 
+observations, and unavoidable uncertainty. Establishing a learnable gain would require a separately 
+trained observable selector and an evaluation that did not help construct it.
+For the new analysis, let alpha in[0,1] mix the component-error rate and the probability of any head 
+error. Add lambda times mean source quote divided by3, with equal prices and the same cap2. Alpha 
+specifies a decision preference, not a fitted parameter. Predictions, thresholds, leaves and original 
+selections remain fixed throughout the sensitivity calculation; k1 and k3 contrasts are never pooled.
+𝑢𝑖(𝑚) = 𝐿𝑖(𝑚) + 𝜆𝐶(𝑚)
+∑3
+𝑗=1 𝑐𝑗
+,
+𝐶(𝑚) ≤𝐵
+(1)
+𝐴= (1
+𝑛) ∑
+𝑛
+𝑖=1
+min
+𝑚∈ℱ︀𝐵
+𝑢𝑖(𝑚),
+𝑃= ( 1
+𝑛) ∑
+𝑛
+𝑖=1
+min(𝑢𝑖(𝑚𝐿), 𝑢𝑖(𝑚𝑅))
+(2)
+𝐻= 𝐹−𝐴,
+𝐸= 𝑃−𝐴,
+𝑅= 𝐺−𝑃,
+𝐺−𝐹= −𝐻+ 𝐸+ 𝑅
+(3)
+4 Experimental Setup
+The frozen predictor was trained on historical cycles 1..1540. Policies use 102 fit cycles 1561..1662, 102 
+development cycles 1663..1764, and 421 evaluation cycles 1785..2205:625 existing cycles from one rig. 
+The evaluation interval was examined in earlier revisions. Recording policy locks before the current 
+2
+
+evaluation replay does not restore blindness or create an independent final. Root means summarize 
+completed 60-second records; terminal features also include population standard deviation and slope. 
+Actual online availability, overlapping-window costs, and sensor failures were not tested.
+The inherited grid contains 90 k/price/cap/lambda contexts and 390 fitted gate-context records. 
+Fit-only quartile thresholds and distinct feasible leaf pairs produce small gates; development selects 
+best-fixed, gate-only, and adaptive-enabled families with recorded deterministic ties. The primary 
+context is k1, equal prices, B2, lambda 1/20; its adaptive-enabled selector retains fixed PS1. We 
+separately inspect its forced gate g129 and a predetermined k3, lambda 0 selected-gate example. 
+The diagnostic reuses all locked records, producing 1170 gate/cohort rows and 4680 support-stratum 
+rows. It performs no new fitting or policy selection.
+Within a setting, the fixed and gate families use identical cached terminal predictions and development 
+loss. Candidate inclusion guarantees only that adaptive-enabled development loss cannot exceed the 
+best fixed development loss under the recorded ordering; it supplies no evaluation guarantee. Across 
+settings, differing normalization, lambda, or k changes the comparison contract. We therefore report 
+primary and secondary examples separately and never average their differently scaled objectives into 
+an overall improvement.
+The v21 continuation snapshots nine existing input files before execution. It checks two predetermined 
+contrasts, 842 policy-cycle rows, 421 leaf certificates and60 dependent preference cells. A failed 
+metadata lookup is preserved separately: historical TS1 was not the primary development-selected 
+fixed policy. A new frozen execution verifies TS1 directly from its cache and the prior pair-oracle 
+objective; it performs no new selection.
+5 Results
+Table 1 reports exact objectives and preserves distinct error denominators. For primary g129, 
+the root is TS1, threshold 35.44636666666667, with leaves 5 and 4. On421 cycles its actual objec­
+tive is 12413/25260 against fixed PS1's13561/25260. The decomposition is H=56/421, E=73/842, 
+R=11/12630, hence G−F=−287/6315. Component errors fall 876→798, but vector errors remain 391 
+and total quotes rise 421→443. A favorable PS1 comparison therefore does not isolate an adaptive-
+routing benefit.
+For primary k1, masks4 and5 have equal component-error counts and equal vector errors on every 
+one of421 cycles; mask5 costs one additional quote. Thus TS1 weakly dominates these two frozen 
+leaves pointwise for every alpha in[0,1] and lambda>=0. Actual g129 takes the larger mask22 times, 
+giving gate-minus-TS1=22lambda/1263, or11/12630 at the original lambda1/20. At lambda0 the 
+scalar losses tie. This directly checked boundary is stronger than the original one-loss oracle equality, 
+but remains conditional on this predictor, pair, cohort and equal-price cap2 contract.
+The predetermined secondary g301 retains k3, equal prices, cap2 and its original lambda0 selection. 
+Fixed and gate counts are924/861 component errors,381/391 vector errors and842/518 quotes. 
+Reweighting these unchanged outputs yields delta=(-63+103alpha-432lambda)/1684. At zero cost 
+weight the gate helps exactly when alpha<63/103; at lambda1/20 the boundary is423/515. For 
+lambda>=5/54 its scalar loss is no worse for any alpha, but the ten extra vector failures remain. This 
+is post-hoc sensitivity, not a newly optimized winner or three-objective Pareto dominance. Figure2 
+preserves the original scale; SupplementS14-S20 derive the new comparisons.
+Every policy-fit target has one tuple, seen in only30/421 evaluation cycles. Primary root means are 
+outside the fit min/max interval in392/421 cases. These counts flag extrapolation, not density support 
+or causality. In the secondary contrast, component errors improve on73 cycles and worsen on10; 
+vector errors worsen on10 and improve on none. Eight vector regressions are inside its original root 
+range and two outside. Range membership alone cannot explain those failures. Repeated settings and 
+overlapping strata remain dependent diagnostics.
+Setting / object
+Mean objective
+Component errors
+Vector errors
+Total quotes
+Primary F: PS1
+13561/25260
+876
+391
+421
+Primary A: all-mask oracle
+10201/25260
+—
+—
+—
+Primary P: two-leaf oracle
+12391/25260
+—
+—
+—
+Primary G: actual gate
+12413/25260
+798
+391
+443
+Primary historical TS1
+12391/25260
+798
+391
+421
+Secondary F: PS1+FS1
+924/1684
+924
+381
+842
+Secondary A: all-mask oracle
+625/1684
+625
+—
+—
+Secondary P: two-leaf oracle
+789/1684
+789
+—
+—
+3
+
+Setting / object
+Mean objective
+Component errors
+Vector errors
+Total quotes
+Secondary G: actual gate
+861/1684
+861
+391
+518
+Table 1: Same frozen predictor and contract within each setting. Component counts use 1684 head decisions; vector 
+counts use 421 cycles. Oracle dashes avoid importing unreported component/cost breakdowns. TS1 is a preserved 
+historical control with different selection access, not a newly selected primary winner.
+Figure 2: Existing exact saved-evidence decomposition: primary normalized loss including quote penalty and secondary 
+component-error counts. Oracle information is privileged; the plotted gaps are not achievable policy gains or new 
+independent experiments.
+6 Limitations
+One rig, chronological dependence, prior evaluation exposure, and homogeneous fit labels prevent 
+an independent generalization claim. Complete-cycle masking does not reproduce the timing or 
+measurement effects of acquiring another physical sensor. Equal caps do not imply equal realized 
+quotes, and those quotes omit offline collection, fitting, tuning, and wall-clock expense. The restricted 
+gate class, fixed predictor, and two loss definitions limit every boundary. A root-range indicator alone 
+cannot identify distributional support or explain individual prediction errors.
+Separate arithmetic verification checked the prior1170 rows/4680 strata and, in the new continua­
+tion,1684 policy-cycle aggregates,421 leaf certificates and60 preference cells, including hash/metric 
+tamper refusals. These are provenance and finite-computation checks, not independent validation. 
+No new predictor forward pass, policy fit, selection, physical acquisition, device or native AFA trial 
+was executed. Candidate HAR, drift and multisensor protocols in the supplement remain proposals, 
+with observation-time, group-split and license limits.
+The negative primary boundary is deliberately useful but local: it can stop one unsupported search 
+claim without proving that adaptation is generally futile. A successful next study must defeat the 
+strong control under its own locked contract, not merely lower error relative to PS1.
+7 Conclusion
+ProbeFlow separates a weak-comparator gain, an exact local dominance obstruction and a real 
+decision tradeoff. The primary frozen pair adds cost without changing errors on any exposed cycle. 
+The secondary contrast exchanges fewer component errors and quotes for more complete-diagnosis 
+failures, with an exact preference boundary. Future evidence must change or validate candidate, 
+predictor, observation and support assumptions on independent groups; reweighting a saved cohort 
+does not supply that evidence.
+Acknowledgements
+This work was created as part of the No-More-Slops group activities at Pseudo Lab.
+4
+
+References
+[1]
+N. Helwig, E. Pignanelli, and A. Schütze. Condition monitoring of hydraulic systems. UCI Machine Learning 
+Repository, 2015.
+[2]
+Y. Kobayashi, Z. Jing, J. Yao, H. Namkoong, and S. Joshi. Learning-To-Measure: In-Context Active Feature 
+Acquisition. arXiv:2510.12624v2, 2026.
+[3]
+J. Feng, Q. Li, and Y. Li. BRiG-AFA: Bellman Risk-to-Go Learning for Non-Myopic Active Feature 
+Acquisition. arXiv:2608.02305v1, 2026.
+[4]
+Z. Zhao, R. Xu, and Q. Ni. Learning Source Acquisition Policies by Offline Planning. arXiv:2609.14299v1, 
+2026.
+[5]
+L. Aronsson and M. Haghir Chehreghani. Non-Myopic Active Feature Acquisition via Pathwise Policy 
+Gradients. arXiv:2605.05511v2, 2026.
+[6]
+Y. Geifman and R. El-Yaniv. Selective Classification for Deep Neural Networks. arXiv:1705.08500v2, 2017.
+[7]
+D. Golovin and A. Krause. Adaptive Submodularity: Theory and Applications in Active Learning and 
+Stochastic Optimization. JAIR 42; arXiv:1003.3967v5, 2011.
+[8]
+H. Shim, S. J. Hwang, and E. Yang. Joint Active Feature Acquisition and Classification with Variable-Size Set 
+Encoding. NeurIPS, 2018.
+[9]
+Y. Li and J. B. Oliva. Active Feature Acquisition with Generative Surrogate Models. ICML, PMLR 
+139:6450-6459, 2021.
+[10] I. C. Covert, W. Qiu, M. Lu, N. Y. Kim, N. J. White, and S.-I. Lee. Learning to Maximize Mutual 
+Information for Dynamic Feature Selection. ICML, PMLR 202:6424-6447, 2023.
+[11] H. von Kleist, A. Zamanian, I. Shpitser, and N. Ahmidi. Evaluation of Active Feature Acquisition Methods for 
+Time-varying Feature Settings. JMLR 26(60):1-84, 2025.
+[12] C. Ma, S. Tschiatschek, K. Palla, J. M. Hernandez-Lobato, S. Nowozin, and C. Zhang. EDDI: Efficient 
+Dynamic Discovery of High-Value Information with Partial VAE. ICML, PMLR 97:4234-4243, 2019.
+[13] L. Aronsson, A. Rahbar, and M. Haghir Chehreghani. A Survey on Active Feature Acquisition Strategies. 
+IJCAI Survey Track, pages 7740-7748, 2026.
+[14] G. C. Cawley and N. L. C. Talbot. On Over-fitting in Model Selection and Subsequent Selection Bias in 
+Performance Evaluation. JMLR 11(70):2079-2107, 2010.
+[15] S. Varma and R. Simon. Bias in error estimation when using cross-validation for model selection. BMC 
+Bioinformatics 7:91, 2006.
+[16] D. R. Roberts et al. Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic 
+structure. Ecography 40:913-929, 2017.
+[17] Y. Geifman and R. El-Yaniv. SelectiveNet: A Deep Neural Network with an Integrated Reject Option. ICML, 
+PMLR 97:2151-2159, 2019.
+[18] R. El-Yaniv and Y. Wiener. On the Foundations of Noise-free Selective Classification. JMLR 
+11(53):1605-1641, 2010.
+[19] K. Dembczyński, W. Waegeman, W. Cheng, and E. Hüllermeier. On label dependence and loss minimization 
+in multi-label classification. Machine Learning 88:5–45, 2012.
+[20] J. Janisch, T. Pevny, and V. Lisy. Classification with costly features in hierarchical deep sets. Machine 
+Learning 113:4487-4522, 2024.
+[21] J. Janisch, T. Pevny, and V. Lisy. Classification with Costly Features Using Deep Reinforcement Learning. 
+AAAI33(01):3959-3966,2019.
+5

@@ -1,0 +1,131 @@
+{
+  "schema": "probeflow_v19_sources_v1",
+  "sources": [
+    {
+      "id": "PF17-RUN",
+      "kind": "executed_offline_policy_learning_and_replay",
+      "path": "runs/research_advancement_v17_20261019_01/probeflow/analysis_01/results.json",
+      "sha256": "a48b411f84cd7e492c5aa3b158c49ed03e5a15edc9900ab9647d31a93211eb82",
+      "scope": "One rig, observed complete-cycle means, cached terminal predictions and historically exposed evaluation. Trusted-code information boundary, not process isolation. No physical deployment or independent final."
+    },
+    {
+      "id": "PF17-SUPPORT",
+      "kind": "posthoc_frozen_label_and_trace_diagnostic",
+      "path": "projects/research_advancement_v17_20261019/probeflow/AUTHOR_DIAGNOSTICS.json",
+      "sha256": "aa44d9fb4e0428c14515d6a5bf54d03bc9b0866d793209e9d2604f1a0411a2e6",
+      "scope": "Finite counts from frozen profile/traces after policy selection. No split changes, policy refit, independent samples or causal attribution."
+    },
+    {
+      "id": "PF17-PRIOR",
+      "kind": "preserved_prior_ledger",
+      "path": "projects/research_advancement_v16_20261019/probeflow/SOURCES.json",
+      "sha256": "4c529f74dab13323ae278164e6a4687db34fc0c1469eac44e58f0fe8e16e8d1c",
+      "scope": "Prior 20 references, fixed benchmarks and their limits remain inherited, not new native reproductions."
+    },
+    {
+      "id": "PF17-BRIG",
+      "url": "https://arxiv.org/html/2608.02305v1",
+      "reviewed_at_utc": "2026-10-19T04:05:54.383791+00:00",
+      "review_scope": "Official HTML Sections 3, 4.1, 4.2, 5.2 and 7 opened through web. Observed-only action rights, frozen-predictor control, unit-cost fixed horizon and offline validity limits.",
+      "excerpt": "At deployment, the policy uses no label, hidden regime, or unobserved candidate value.",
+      "locator": "Introduction following method description",
+      "publisher_response_sha256": null,
+      "native_implementation": false,
+      "excerpt_sha256": "1f39b0d77150faabb73a4453b7197f0edbf24da310dea013c3ba317921e5ea96",
+      "review_record_path": "projects/research_advancement_v17_20261019/probeflow/literature_reviews/PF17-BRIG.json",
+      "review_record_sha256": "4eaf10f74254114811d5ba9952f86f60feda01ddaba26cc9e905582c6fe90bd3"
+    },
+    {
+      "id": "PF17-COST",
+      "url": "https://link.springer.com/article/10.1007/s10994-024-06565-4",
+      "reviewed_at_utc": "2026-10-19T04:05:54.383791+00:00",
+      "review_scope": "Official publisher HTML reopened; methodological cost/budget distinction and validation role previously read in Sections 3.1 and 6.2. No native hierarchical A2C or benchmark reproduction.",
+      "excerpt": "Classification with costly features in hierarchical deep sets",
+      "locator": "Publisher title and method context",
+      "publisher_response_sha256": null,
+      "native_implementation": false,
+      "excerpt_sha256": "08550be59381657fe942f6e3620db265bef272dc65c43e32913641d2a66a9d0f",
+      "review_record_path": "projects/research_advancement_v17_20261019/probeflow/literature_reviews/PF17-COST.json",
+      "review_record_sha256": "bea87845ea83782a81f9031d00abfb32e4f9e9a0d53c969fb0dbf66d319375ec"
+    },
+    {
+      "id": "probeflow19-RESULT",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/results.json",
+      "sha256": "67856fb74a0a5789399c10232f4b432c62a5c8b8a2d09f64caed6e67df4ebf58",
+      "kind": "new_finite_saved_evidence_analysis",
+      "scope": "Previously exposed local inputs; no new independent evidence."
+    },
+    {
+      "id": "PF19-RUN",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/results.json",
+      "sha256": "67856fb74a0a5789399c10232f4b432c62a5c8b8a2d09f64caed6e67df4ebf58",
+      "kind": "executed_oracle_separated_diagnostic",
+      "scope": "Same625 cycles; exact finite diagnostics, not deployable oracle policy or independent evidence."
+    },
+    {
+      "id": "PF19-VERIFY",
+      "path": "runs/research_advancement_v19_20261019_01/probeflow/analysis_01/verification.json",
+      "sha256": "7e62e619860e2ff1ab99b88bd33f96e75ae64895b8e1eabb92618c756a479188",
+      "kind": "alternative_arithmetic_verification",
+      "scope": "Local counterimplementation; not external scientific peer review."
+    },
+    {
+      "id": "PF19-CWCF2019",
+      "title": "Classification with Costly Features Using Deep Reinforcement Learning",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/4287",
+      "locator": "AAAI33(01):3959–3966,2019",
+      "reviewed_at": "2026-10-19",
+      "kind": "primary_source_selected_review",
+      "scope": "Official metadata/abstract and author implementation pointer; acquire-or-classify framing. No full proof/code audit or native execution.",
+      "full_text_archived": false,
+      "source_bytes_sha256": null,
+      "native_method_runs": 0
+    },
+    {
+      "id": "PF19-DIME",
+      "title": "Learning to Maximize Mutual Information for Dynamic Feature Selection",
+      "url": "https://proceedings.mlr.press/v202/covert23a.html",
+      "locator": "ICML2023,PMLR202:6424–6447;selected body §3.2/§4.1",
+      "reviewed_at": "2026-10-19",
+      "kind": "primary_source_selected_review",
+      "scope": "Official metadata/abstract and selected conditional-mutual-information/Bayes-loss argument; not complete proof or native implementation reproduction.",
+      "full_text_archived": false,
+      "source_bytes_sha256": null,
+      "native_method_runs": 0
+    },
+    {
+      "id": "PF19-AFAPE",
+      "title": "Evaluation of Active Feature Acquisition Methods for Time-varying Feature Settings",
+      "url": "https://www.jmlr.org/papers/v26/23-1635.html",
+      "locator": "JMLR26(60):1–84,2025",
+      "reviewed_at": "2026-10-19",
+      "kind": "primary_source_selected_review",
+      "scope": "Official metadata and abstract assumptions NDE/NUC/positivity only. No full84-page review, estimator execution or hydraulic causal-identification certification.",
+      "full_text_archived": false,
+      "source_bytes_sha256": null,
+      "native_method_runs": 0
+    },
+    {
+      "id": "PF21-RUN",
+      "path": "runs/research_advancement_v21_20261019_01/probeflow/analysis_02/results.json",
+      "sha256": "dbffa79e6677abec65c0e7a69232664bd368058045a2f8be4890239ece3cc72b",
+      "kind": "new_exact_posthoc_preference_analysis",
+      "scope": "Previously exposed625 cycles from one rig; no independent evidence or policy reselection."
+    },
+    {
+      "id": "PF21-VERIFY",
+      "path": "runs/research_advancement_v21_20261019_01/probeflow/analysis_02/verification.json",
+      "sha256": "69a29d202ec9a4610ba78c864890d8656b62715353ec5fdf296724b9fdef4b9a",
+      "kind": "same_author_separate_raw_arithmetic_verifier",
+      "scope": "Previously exposed625 cycles from one rig; no independent evidence or policy reselection."
+    },
+    {
+      "id": "PF21-RESOURCES",
+      "path": "projects/research_advancement_v21_20261019/probeflow/literature/RESOURCES.json",
+      "sha256": "ab32cebefbdd6e3166fbdfac30d5b1f12ae350a7c89a2d0151161970adb63228",
+      "kind": "bounded_primary_source_reviews_and_future_protocols",
+      "scope": "Official sources, short excerpts, selected body/metadata/license review only; native runs0."
+    }
+  ],
+  "prior_source_revision": "v17 content, v18 layout"
+}

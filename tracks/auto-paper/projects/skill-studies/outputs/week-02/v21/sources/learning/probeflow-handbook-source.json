@@ -1,0 +1,3786 @@
+{
+  "schema": "forge_benchmark_study_v1",
+  "id": "probeflow-v19-handbook",
+  "paper_id": "probeflow-local-research",
+  "kind": "research_guide",
+  "title_ko": "ProbeFlow v21 · 두 센서의 같은 오류와 손실 선호의 경계",
+  "title_en": "ProbeFlow v21: Pointwise Leaf Dominance and Frozen-Policy Preference Sensitivity",
+  "authors": "Research Forge · Native Codex 작성·범위 한정 검토",
+  "year": 2026,
+  "venue": "로컬 연구 해설 · 학회 게재 논문 아님",
+  "url": "https://arxiv.org/html/2608.02305v1",
+  "projects": [
+    "probeflow"
+  ],
+  "rank": 0,
+  "priority": "research_handbook",
+  "one_sentence": "센서를 왜 더 읽는지부터, 같은 예측기에서 얻을 수 있는 여지와 표현·라우팅 손실의 정확한 분해까지 배운다.",
+  "why": "v20의 교정된 쉬운 해설을 보존하고, 현재 센서 두 조합이 왜 이득을 만들 수 없는지와 개별 오답·완전 진단·비용의 가중치를 바꾸면 무엇이 달라지는지 설명한다.",
+  "prerequisites": [
+    "집합과 평균",
+    "비율의 분자·분모",
+    "최솟값과 부등식",
+    "모르는 값과 아직 획득하지 않은 값을 구분하기"
+  ],
+  "concepts": [
+    "active feature acquisition",
+    "mask",
+    "gate",
+    "STOP",
+    "component/vector",
+    "oracle headroom",
+    "pair gap",
+    "routing regret",
+    "support",
+    "selection bias"
+  ],
+  "source_review": {
+    "checked_at": "2026-10-19",
+    "availability": "body_checked",
+    "scope": "v21은 기존에 노출된421cycle 예측 캐시의 추가 계산이다. 새로운 rig·cycle·모델 예측·정책 재선택·물리 실험은 없다. v20 문서 재구성과 읽기 경로를 추가했다. 기존 교정된 개념도·수식·수치·실제 trace와 원문 검토 범위는 그대로 유지한다. 새로운 실험·독립 표본·외부 방법 재현은 없다. v17/v18 원고·코드·실제 분할과 v19 새 실행/별도 산술 검산을 연결한다. 외부 문헌은 아래 명시한 선택 범위만 검토했다. 교육 반례와 사후 oracle을 실제 배포 성능에서 분리한다."
+  },
+  "sources": [
+    {
+      "id": "data",
+      "title": "UCI Hydraulic 원자료 설명",
+      "url": "https://archive.ics.uci.edu/dataset/447/condition+monitoring+of+hydraulic+systems",
+      "locator": "센서·사이클·목표의 공식 데이터 설명",
+      "review_scope": "기존 원고의 공식 자료 검토와 로컬 파일 차원을 대조했다. 새 장비나 실제 비용을 확보하지 않았다."
+    },
+    {
+      "id": "gsm",
+      "title": "GSM · ICML 2021",
+      "url": "https://proceedings.mlr.press/v139/li21p.html",
+      "locator": "공식 논문 페이지·기존 정독실의 선택 절",
+      "review_scope": "원문의 획득 가치 개념과 현재 단순 gate의 차이만 연결한다. native 구현 미실행."
+    },
+    {
+      "id": "brig",
+      "title": "BRiG-AFA · 고정 v1",
+      "url": "https://arxiv.org/html/2608.02305v1",
+      "locator": "§3–4.2, 동결 예측기·horizon·위험 회귀",
+      "review_scope": "기존 정독실과 이번 공식 본문 확인을 연결했다. 새로운 회귀기나 원문 수치 재현은 없다."
+    },
+    {
+      "id": "hier",
+      "title": "Hierarchical CwCF 2024",
+      "url": "https://link.springer.com/article/10.1007/s10994-024-06565-4",
+      "locator": "기존 정독실의 비용·계층 구조 선택 절",
+      "review_scope": "실제 일반 DAG나 원문 A2C를 재현하지 않았다."
+    },
+    {
+      "id": "cwcf",
+      "title": "CwCF · AAAI 2019",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/4287",
+      "locator": "공식 서지·초록·저자 구현 안내",
+      "review_scope": "획득과 분류/종료 행동, 비용-오류 목적의 저자 보고만 짧게 연결한다. 전체 본문·코드 감사는 하지 않았다."
+    },
+    {
+      "id": "dime",
+      "title": "DIME · ICML 2023",
+      "url": "https://proceedings.mlr.press/v202/covert23a.html",
+      "locator": "공식 서지·초록 및 웹 본문의 §3.2, §4.1",
+      "review_scope": "greedy CMI와 학습 대리 결정, cross-entropy·Bayes 조건을 선택 검토했다. 전체 증명·실험 미재현."
+    },
+    {
+      "id": "afape",
+      "title": "AFAPE · JMLR 2025",
+      "url": "https://www.jmlr.org/papers/v26/23-1635.html",
+      "locator": "공식 서지·초록의 획득 분포 변화·NDE/NUC",
+      "review_scope": "전체84쪽과 모든 식을 검토한 것으로 표시하지 않는다. 현재 유압 replay의 인과 가정을 인증하지 않는다."
+    },
+    {
+      "id": "adaptive",
+      "title": "Adaptive Submodularity · 정정 v5",
+      "url": "https://arxiv.org/html/1003.3967v5",
+      "locator": "기존 정독실의 정의·가정·XOR 반례",
+      "review_scope": "새 데이터에서 정리 조건이 성립한다는 보장을 주장하지 않는다."
+    },
+    {
+      "id": "selection",
+      "title": "Cawley & Talbot 2010",
+      "url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "locator": "기존 정독실의 선택·평가 구분",
+      "review_scope": "새 독립 평가를 얻지 않은 현재 한계와 연결한다."
+    }
+  ],
+  "sections": [
+    {
+      "id": "pf21-pointwise",
+      "title": "v21 · 왜 더 읽어도 정답이 늘지 않는가?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "같은421개 cycle 각각에서 TS1만 읽는 mask4와 TS1+PS1인 mask5의 component 오류 개수와 vector 오류가 모두 같았다. 이는 두 예측 벡터가 같다는 뜻은 아니며, 이 두 오류 점수가 같다는 뜻이다. mask5는 매번 센서 quote 하나를 더 쓴다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "선택",
+            "component 오류 합",
+            "vector 오류 합",
+            "전체 quote"
+          ],
+          "rows": [
+            [
+              "TS1만",
+              "798 /1684",
+              "391 /421",
+              "421"
+            ],
+            [
+              "고정 g129",
+              "798 /1684",
+              "391 /421",
+              "443"
+            ],
+            [
+              "차이",
+              "0",
+              "0",
+              "+22"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "따라서 현재 두 leaf만 쓰는 모든 분기 규칙은, 비음수가중 component/vector 오류와 비음수 관측 가격에서 TS1보다 엄격히 좋아질 수 없다. 비용 가중치가0이면 동률일 수 있고, 양수인데 추가 센서를 사면 비용 손해다. 다른 예측기·센서·데이터·실제 에너지까지 불가능하다는 결론은 아니다."
+        },
+        {
+          "type": "visual",
+          "id": "pf21-leaf-equality",
+          "title": "정보를 더 샀지만 두 오류는 그대로",
+          "caption": "동결 캐시421cycle에서 확인한 오류점수 동률의 교육 도식이다. 새로운 센서 관측이나 예측값 동일성의 주장이 아니다.",
+          "takeaway": "현재 leaf 선택지만 바꾸어서는 오류 개선을 만들 수 없으므로 다음 연구는 센서의 정보 가치와 예측기·자료 지지를 다시 검사해야 한다.",
+          "panels": [
+            {
+              "kind": "diagram",
+              "label": "동일 cycle, 동일 frozen predictor",
+              "nodes": [
+                {
+                  "id": "ts",
+                  "title": "TS1",
+                  "lines": [
+                    "오류: component798 / vector391",
+                    "421 quote"
+                  ],
+                  "col": 0,
+                  "row": 0
+                },
+                {
+                  "id": "gate",
+                  "title": "g129: TS1 또는 TS1+PS1",
+                  "lines": [
+                    "오류: component798 / vector391",
+                    "443 quote"
+                  ],
+                  "col": 1,
+                  "row": 0
+                }
+              ],
+              "edges": [
+                {
+                  "from": "ts",
+                  "to": "gate",
+                  "label": "+22 quote, 오류 이득0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pf21-preference",
+      "title": "v21 · 조금 덜 틀리기와 완전 진단은 다른가?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "secondary의 g301은 component 오류를63개 줄이고 quote를324개 줄이지만 완전 진단 실패 cycle은10개 늘린다. 따라서 무엇을 중요하게 여기는지에 따라 같은 정책의 점수가 달라진다. α는 전체 네 진단 중 하나라도 틀리는 vector 오류의 가중치이고 λ는 센서 quote의 가중치다."
+        },
+        {
+          "type": "formula",
+          "tex": [
+            "\\Delta(\\alpha,\\lambda)=\\frac{-63+103\\alpha-432\\lambda}{1684}"
+          ],
+          "text": "고정 g301의 손실 − 고정 mask3의 손실",
+          "explanation": "α는 vector 오류에 주는0..1 가중치, λ는 정규화 quote의 비음수 가중치다."
+        },
+        {
+          "type": "p",
+          "text": "차이가 음수면 g301이 좋고 양수면 fixed가 좋다. λ=0에서는 α=63/103≈0.612에서 동률이다. λ=1/20이면 경계가423/515≈0.821로 올라가며, λ≥5/54이면 모든α에서 g301이 약하게 좋다. 단 정책은 원래λ0에서 선택한 그대로이므로 새λ에서 다시 고른 정책끼리의 공정한 우열 실험은 아니다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "α",
+            "λ",
+            "g301−fixed",
+            "해석"
+          ],
+          "rows": [
+            [
+              "0",
+              "0",
+              "−63/1684",
+              "component만 보면 g301 우위"
+            ],
+            [
+              "1",
+              "0",
+              "40/1684",
+              "완전 진단만 보면 fixed 우위"
+            ],
+            [
+              "1",
+              "1/20",
+              "(40−21.6)/1684",
+              "quote 절감만으로 이 조건의 vector 손실을 상쇄하지 못함"
+            ],
+            [
+              "1",
+              "5/54",
+              "0",
+              "이 경계에서는 동률"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pf21-next-data",
+      "title": "v21 · 다음 데이터는 무엇을 검증해야 하는가?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "현재 한 rig의 반복 cycle로는 새 장치로의 전이를 검증하지 못한다. HAR는 새 피험자와 센서 묶음, OPPORTUNITY는 subject/run과 결측·미획득 구별, gas drift는 시간 순서 batch의 이동을 검토할 후속 후보이다. 각기 다른 label·관측 시점·독립성 경계가 있으므로 같은 성능표에 수치를 섞지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "완성된60초 신호나 창 전체에서 만든 특징을 나중에 공개하는 replay와, 지금 센서를 켜고 미래 신호를 얻는 온라인 획득은 다르다. quote는 선언한 비용 대용치이며 에너지·지연 실측은 아니다. 데이터 파일은 이번에 다운로드하거나 실행하지 않았다."
+        },
+        {
+          "type": "flow",
+          "steps": [
+            "정책이 값을 볼 수 있는 실제 시각과 sensor group을 고정한다.",
+            "subject/run 또는 시간 batch 경계를 보존하여 fit/dev/test를 나눈다.",
+            "같은 예측기·hard cap·가격으로 강한 fixed와 gate를 비교한다.",
+            "획득 실패·원래 결측·미획득을 나누고 component·vector·quote를 함께 보고한다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v20-document-route",
+      "title": "먼저 읽기 · 본문–Supplement–해설을 오가는 법",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "본문은 연구 질문, 계약, 핵심 결과와 반증 가능한 한계를 한 번에 읽기 위한 짧은 논증이다. Supplement는 증명·전체 표·검산 원장·실패 사례를 검토하는 자료이고, 한국어 해설은 용어와 직접 계산을 배우는 자료다. 세 문서의 역할이 다르며 과학적 근거의 수가 늘어난 것은 아니다."
+        },
+        {
+          "type": "flow",
+          "steps": [
+            "본문에서 무엇을 주장하며 무엇을 아직 주장할 수 없는지 확인한다.",
+            "Supp에서 가정·식의 유도·정확한 분모·강한 비교대상을 확인한다.",
+            "해설의 직접 계산을 따라 한 뒤 원래 조건을 붙여 자기 말로 다시 설명한다."
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "본문 절",
+            "상세 Supp 절",
+            "해설에서 답할 질문"
+          ],
+          "rows": [
+            [
+              "Introduction",
+              "S1. Typed observations and the execution boundary",
+              "이 연구가 실제로 비교하는 정보 획득은 무엇인가?"
+            ],
+            [
+              "Problem and Method",
+              "S2. Feasibility and normalized quote risk",
+              "hard cap과 λ를 왜 따로 고정해야 하는가?"
+            ],
+            [
+              "Experimental Setup",
+              "S3. Complete-cycle features and the physical clock",
+              "완성된 사이클 평균과 실제 온라인 관측은 어떻게 다른가?"
+            ],
+            [
+              "Problem and Method",
+              "S4. Frozen predictions and fair policy matching",
+              "동결 예측 캐시를 정책에 미리 넘기면 어떤 비교가 깨지는가?"
+            ],
+            [
+              "Experimental Setup",
+              "S5. Gate fitting, development selection, and access rights",
+              "fit·dev·노출 evaluation의 각 권한은 무엇인가?"
+            ],
+            [
+              "Problem and Method",
+              "S6. The exact decomposition, one inequality at a time",
+              "G−F=−H+E+R을 유도하고 각 항을 인과 효과와 구별할 수 있는가?"
+            ],
+            [
+              "Results",
+              "S7. Why pair-oracle equality blocks a routing improvement",
+              "평균 pair=TS1이 어떻게 각 cycle의 routing 하한을 주는가?"
+            ],
+            [
+              "Limitations",
+              "S8. Repeated diagnostics and the missing independent denominator",
+              "1170행·4680 strata를 왜 독립 표본으로 세면 안 되는가?"
+            ],
+            [
+              "Results",
+              "S9. Five recorded primary cycles",
+              "임계값 35.446366...과 추가 quote 1/60을 실제 사례에서 계산할 수 있는가?"
+            ],
+            [
+              "Results",
+              "S10. Five recorded secondary cycles",
+              "component −63과 vector +10은 어떻게 동시에 성립하는가?"
+            ],
+            [
+              "Limitations",
+              "S11. Root ranges, label support, and cohort movement",
+              "fit 범위 밖의 관측은 왜 밀도 지지나 오류의 판정이 아닌가?"
+            ],
+            [
+              "Related Work",
+              "S12. What the library comparators would actually test",
+              "각 선행 방법의 강점과 미재현 범위를 어떻게 구분하는가?"
+            ],
+            [
+              "Conclusion",
+              "S13. Negative controls, latency accounting, and falsifiable next evidence",
+              "어떤 새 장치·시간·비용·실패 기록이 있어야 다음 주장을 반증 가능하게 검사하는가?"
+            ]
+          ]
+        },
+        {
+          "type": "visual",
+          "id": "pf20-document-route",
+          "title": "같은 근거를 세 가지 깊이로 읽기",
+          "caption": "문서 독해 순서의 교육 도식이다. 인과적 연구 효과나 새로운 실험을 나타내지 않는다.",
+          "takeaway": "문서가 길어져도 표본과 실험이 추가되는 것은 아니다. 짧은 주장에서 시작해 조건과 검산으로 내려간다.",
+          "panels": [
+            {
+              "kind": "diagram",
+              "label": "본문 → Supplement → 해설",
+              "nodes": [
+                {
+                  "id": "main",
+                  "title": "Compact main",
+                  "lines": [
+                    "질문·계약·결론",
+                    "핵심 대조와 한계"
+                  ],
+                  "col": 0,
+                  "row": 0
+                },
+                {
+                  "id": "supp",
+                  "title": "Detailed supplement",
+                  "lines": [
+                    "증명·전체 표",
+                    "로그·실패·재현"
+                  ],
+                  "col": 1,
+                  "row": 0
+                },
+                {
+                  "id": "explain",
+                  "title": "Worked explanation",
+                  "lines": [
+                    "용어와 쉬운 풀이",
+                    "직접 계산·자기 설명"
+                  ],
+                  "col": 2,
+                  "row": 0
+                }
+              ],
+              "edges": [
+                {
+                  "from": "main",
+                  "to": "supp",
+                  "label": "조건 확인"
+                },
+                {
+                  "from": "supp",
+                  "to": "explain",
+                  "label": "내 말로 풀이"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question",
+      "title": "1. ProbeFlow는 대체 무엇을 고르는 연구인가",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "공장 설비를 진단한다고 생각하자. 모든 센서를 늘 읽으면 편하지만 측정·전송·계산 비용이 생긴다. ProbeFlow의 질문은 ‘분류기를 더 크게 만들까’보다 먼저 ‘이미 가진 정보로 끝낼까, 어떤 정보를 더 살까’다. 정보 획득 정책과 마지막 진단기를 분리해야 이 질문에 답할 수 있다."
+        },
+        {
+          "type": "p",
+          "text": "설명용으로 병원의 검사 순서를 떠올릴 수 있지만 현재 자료는 의료 데이터가 아니다. 실제 로컬 연구는 한 유압 장비의 이미 기록된 60초 사이클을 사용한다. 공개된 센서값에 따라 추가 요청이 달라지는 코드는 존재한다. 그러나 장비에서 새 센서를 켜거나 같은 과거 60초를 뒤늦게 측정한 실험은 아니다."
+        },
+        {
+          "type": "p",
+          "text": "연구가 궁극적으로 보여야 할 것은 같은 정보·같은 예산·같은 진단 기준에서 관측에 따른 선택이 단순한 고정 센서보다 도움이 되는지다. 현재 v19는 그 우월성을 주장하기보다, 저장된 자료에서 개선 여지와 실패 원인을 더 정밀하게 분해한다."
+        },
+        {
+          "type": "visual",
+          "id": "pf19-whole-system",
+          "title": "자료·정책·진단·감사를 서로 다른 상자로 읽기",
+          "caption": "직접 작성한 교육용 구조도다. 아래 연결은 구현의 정보 권한을 설명하며 물리 장비 실험이나 원문 그림의 재현이 아니다.",
+          "takeaway": "정책이 센서를 고를 때와 감사자가 정답으로 채점할 때의 정보 권한이 다르다.",
+          "panels": [
+            {
+              "kind": "diagram",
+              "label": "자료·정책·진단·감사를 서로 다른 상자로 읽기",
+              "nodes": [
+                {
+                  "id": "private",
+                  "title": "비공개 자료",
+                  "lines": [
+                    "센서 기록·정답",
+                    "정책에 직접 전달 금지"
+                  ],
+                  "col": 0,
+                  "row": 0
+                },
+                {
+                  "id": "policy",
+                  "title": "획득 정책",
+                  "lines": [
+                    "공개 관측·남은 cap",
+                    "다음 센서 또는 STOP"
+                  ],
+                  "col": 1,
+                  "row": 1
+                },
+                {
+                  "id": "reveal",
+                  "title": "획득 경계",
+                  "lines": [
+                    "가격 확인·청구",
+                    "선택한 원천만 공개"
+                  ],
+                  "col": 1,
+                  "row": 0
+                },
+                {
+                  "id": "predict",
+                  "title": "동결 진단기",
+                  "lines": [
+                    "종료 mask의 특징",
+                    "네 목표 예측"
+                  ],
+                  "col": 2,
+                  "row": 0
+                },
+                {
+                  "id": "audit",
+                  "title": "사후 평가",
+                  "lines": [
+                    "정답으로 오류 계산",
+                    "oracle은 여기에만"
+                  ],
+                  "col": 2,
+                  "row": 1
+                }
+              ],
+              "edges": [
+                {
+                  "from": "private",
+                  "to": "reveal",
+                  "label": "가려 둔 값"
+                },
+                {
+                  "from": "policy",
+                  "to": "reveal",
+                  "label": "합법 요청"
+                },
+                {
+                  "from": "reveal",
+                  "to": "predict",
+                  "label": "공개 특징"
+                },
+                {
+                  "from": "predict",
+                  "to": "audit",
+                  "label": "예측만"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocabulary",
+      "title": "2. 처음 읽을 때 헷갈리는 말부터 정리하기",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "말",
+            "여기서의 뜻",
+            "혼동하면 생기는 오류"
+          ],
+          "rows": [
+            [
+              "cycle",
+              "이미 기록된 60초 단위 한 행",
+              "625개를 수십만 독립 실험으로 세기"
+            ],
+            [
+              "source",
+              "PS1·FS1·TS1 센서 원천",
+              "원천 하나와 특징 하나를 같은 가격으로 세기"
+            ],
+            [
+              "feature",
+              "원천에서 계산한 평균·표준편차·기울기",
+              "raw 원천을 안 읽고 파생 통계만 무료로 쓰기"
+            ],
+            [
+              "mask",
+              "획득한 원천들의 집합을 나타내는 정수",
+              "mask 5를 센서 다섯 개로 해석하기"
+            ],
+            [
+              "predictor",
+              "공개 특징으로 네 진단을 내는 동결 예측기",
+              "gate를 바꾸면서 진단기도 바꾸고 효과를 혼합하기"
+            ],
+            [
+              "policy / gate",
+              "무엇을 읽고 멈출지 정하는 규칙 / 작은 관측 분기",
+              "단순 분기를 Bellman 신경망 재현이라고 부르기"
+            ],
+            [
+              "quote / cap",
+              "선언한 비용 proxy / 사이클별 지출 상한",
+              "quote를 측정된 원화·전력·지연으로 해석하기"
+            ],
+            [
+              "oracle",
+              "정답과 미관측 예측을 써서 계산한 사후 하한",
+              "현장에서 사용할 수 있는 정책으로 제시하기"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "head는 네 진단 목표 중 하나다. cooler·valve·pump·accumulator에 대한 판단을 따로 세는 component 오류와 네 개를 한꺼번에 맞췄는지 보는 vector 오류는 다른 질문이다. ‘정확도’라는 한 단어로 섞지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "title": "3. 센서 원천 한 번과 특징 세 개는 어떤 관계인가",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "현재 원천은 압력 계열 PS1, 유량 계열 FS1, 온도 계열 TS1이다. 저장 파일의 한 사이클에는 각각 6,000·600·60개 표본이 있다. 정책이 읽는 것은 그중 원천 평균이다. 마지막 진단기는 획득한 원천의 평균·모표준편차·기울기 특징을 사용할 수 있다. 즉 정책의 분기 입력과 진단기의 특징 입력을 구분한다."
+        },
+        {
+          "type": "formula",
+          "text": "원천 평균 = 원천 안 표본의 합 / 표본 개수",
+          "explanation": "i는 사이클, j는 원천, t는 한 원천 안의 표본 번호다. 이 값은 이미 완성된 사이클의 평균이며 사건 이전에 이용 가능한 조기 관측이라는 뜻이 아니다.",
+          "tex": [
+            "\\bar{x}_{i,j}=\\frac{1}{T_j}\\sum_{t=1}^{T_j}x_{i,j,t}",
+            "(T_{\\mathrm{PS1}},T_{\\mathrm{FS1}},T_{\\mathrm{TS1}})=(6000,600,60)"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "원천 획득과 파생 특징 공개가 어떤 비용 계약을 갖는지 먼저 정해야 한다. 현재 원천 수준 실험은 미리 정한 특징 묶음을 사용한다. 더 일반적인 ProbeFlow 아이디어의 공유 작업 DAG에서는 부모 읽기 비용을 한 번만 청구하고 자식 계산 비용을 별도로 둘 수 있다. 그 일반 설계를 이번 세 원천 실측에서 모두 구현한 것처럼 쓰지 않는다."
+        },
+        {
+          "type": "visual",
+          "id": "pf19-source-features",
+          "title": "원천 읽기·공개 평균·마지막 특징의 경계",
+          "caption": "직접 작성한 교육용 구조도다. 아래 연결은 구현의 정보 권한을 설명하며 물리 장비 실험이나 원문 그림의 재현이 아니다.",
+          "takeaway": "원천 파일을 읽었다는 사실만으로 정책에 모든 값과 정답을 넘길 권한이 생기지 않는다.",
+          "panels": [
+            {
+              "kind": "diagram",
+              "label": "원천 읽기·공개 평균·마지막 특징의 경계",
+              "nodes": [
+                {
+                  "id": "source",
+                  "title": "PS1 원천",
+                  "lines": [
+                    "비용 계약에 따라 획득",
+                    "한 사이클 기록"
+                  ],
+                  "col": 0,
+                  "row": 1
+                },
+                {
+                  "id": "mean",
+                  "title": "공개 평균",
+                  "lines": [
+                    "gate 분기에서 사용"
+                  ],
+                  "col": 1,
+                  "row": 0
+                },
+                {
+                  "id": "features",
+                  "title": "특징 묶음",
+                  "lines": [
+                    "평균·표준편차·기울기",
+                    "획득 mask 안에서 사용"
+                  ],
+                  "col": 1,
+                  "row": 2
+                },
+                {
+                  "id": "branch",
+                  "title": "정책의 다음 선택",
+                  "lines": [
+                    "평균과 threshold 비교"
+                  ],
+                  "col": 2,
+                  "row": 0
+                },
+                {
+                  "id": "terminal",
+                  "title": "동결 예측기",
+                  "lines": [
+                    "획득 원천의 특징",
+                    "미획득 특징은 제외"
+                  ],
+                  "col": 2,
+                  "row": 2
+                }
+              ],
+              "edges": [
+                {
+                  "from": "source",
+                  "to": "mean",
+                  "label": "획득 뒤 공개"
+                },
+                {
+                  "from": "source",
+                  "to": "features",
+                  "label": "선언한 특징"
+                },
+                {
+                  "from": "mean",
+                  "to": "branch",
+                  "label": "관측값"
+                },
+                {
+                  "from": "features",
+                  "to": "terminal",
+                  "label": "허용 좌표"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mask",
+      "title": "4. mask 0부터 7까지 직접 읽기",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "mask",
+            "이진 표기",
+            "허용 원천"
+          ],
+          "rows": [
+            [
+              "0",
+              "000",
+              "없음"
+            ],
+            [
+              "1",
+              "001",
+              "PS1"
+            ],
+            [
+              "2",
+              "010",
+              "FS1"
+            ],
+            [
+              "3",
+              "011",
+              "PS1 + FS1"
+            ],
+            [
+              "4",
+              "100",
+              "TS1"
+            ],
+            [
+              "5",
+              "101",
+              "PS1 + TS1"
+            ],
+            [
+              "6",
+              "110",
+              "FS1 + TS1"
+            ],
+            [
+              "7",
+              "111",
+              "PS1 + FS1 + TS1"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "정수 5는 이진수 101이므로 PS1과 TS1을 뜻한다. 센서 다섯 개가 아니다. empty mask 0도 가능한 후보이며 별도로 정의된 fallback 예측을 사용한다. 마스크가 커진다는 말은 정수 크기가 아니라 집합 포함 관계를 뜻해야 한다."
+        },
+        {
+          "type": "p",
+          "text": "모든 정보를 넣으면 항상 더 정확할까? 최적 베이즈 결정자가 정보를 무시할 수 있다면 정보가 늘어나는 것이 불리할 이유가 없다. 하지만 현재 동결된 최근접 이웃 규칙은 좌표가 늘면 이웃과 투표가 바뀐다. 불필요한 좌표를 자유롭게 무시하는 최적화가 없으므로 부분 원천보다 전체 원천의 실측 오류가 클 수 있다. 정보의 이상적 가치와 특정 부정확한 예측기의 출력을 구별해야 한다."
+        }
+      ]
+    },
+    {
+      "id": "predictor",
+      "title": "5. k와 예측 캐시는 무엇이며 왜 동결하는가",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "k는 이웃 투표에 쓰는 이웃 수다. 기존 v15는 학습 bank와 train-only 표준화 정보를 유지한 채 head별 class-balanced kNN의 k=1,3,5,11,31과 여덟 mask에 대한 예측을 만들었다. 현재 gate 연구는 이 중 k1과 k3을 비교하며 예측 캐시를 재사용한다. v19에서 새 예측기를 적합하거나 새 forward를 실행한 것은 아니다."
+        },
+        {
+          "type": "p",
+          "text": "캐시의 키는 (k, mask, cycle)이고 값은 네 목표의 예측 tuple이다. 정책이 멈춘 뒤에만 해당 mask의 예측을 꺼낸다. 최종 점수를 계산하는 감사자는 다른 mask의 예측도 볼 수 있지만, 실행 정책이 이 표 전체를 미리 보고 다음 원천을 고르면 미관측 정보 누출이다."
+        },
+        {
+          "type": "p",
+          "text": "동결은 약점을 감추는 장치가 아니라 효과를 분리하는 장치다. 정책 A와 B가 서로 다른 진단기를 쓰면 차이가 센서 선택 때문인지 예측기 때문인지 알기 어렵다. 먼저 같은 k·학습 bank·예측 캐시로 획득 정책만 대조한 다음, 더 강한 예측기와의 교차 비교를 별도로 설계한다."
+        }
+      ]
+    },
+    {
+      "id": "splits",
+      "title": "6. 네 단계의 시간 분할을 한 장으로 보기",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "역할",
+            "cycle ID",
+            "개수",
+            "이 구간으로 하는 일"
+          ],
+          "rows": [
+            [
+              "predictor train",
+              "1..1540",
+              "1540",
+              "이미 동결된 예측기 bank"
+            ],
+            [
+              "policy fit",
+              "1561..1662",
+              "102",
+              "threshold·leaf 후보 작성"
+            ],
+            [
+              "policy dev",
+              "1663..1764",
+              "102",
+              "작성된 후보 중 정책 선택"
+            ],
+            [
+              "exposed evaluation",
+              "1785..2205",
+              "421",
+              "고정 정책 채점·사후 원인 분석"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "각 구간 사이의 제외 사이클은 분할 계약의 일부다. 제외 간격이 있다는 이유만으로 독립 장비·독립 고장 사건·독립 통계 표본이 되는 것은 아니다. 또한 evaluation은 과거 연구에서 이미 봤다. 이번 실행에서 마지막에 파일을 열었다는 사실은 과거 노출을 지우지 못한다."
+        },
+        {
+          "type": "visual",
+          "id": "pf19-fit-dev-test",
+          "title": "학습·선택·감사의 방향",
+          "caption": "직접 작성한 교육용 구조도다. 아래 연결은 구현의 정보 권한을 설명하며 물리 장비 실험이나 원문 그림의 재현이 아니다.",
+          "takeaway": "정책을 평가한 뒤 더 잘 나온 설정으로 주분석을 바꾸지 않는다.",
+          "panels": [
+            {
+              "kind": "diagram",
+              "label": "학습·선택·감사의 방향",
+              "nodes": [
+                {
+                  "id": "train",
+                  "title": "진단기 bank",
+                  "lines": [
+                    "train1540",
+                    "v19에서 변경 없음"
+                  ],
+                  "col": 0,
+                  "row": 0
+                },
+                {
+                  "id": "fit",
+                  "title": "정책 후보 작성",
+                  "lines": [
+                    "fit102",
+                    "threshold·leaf"
+                  ],
+                  "col": 1,
+                  "row": 0
+                },
+                {
+                  "id": "dev",
+                  "title": "정책 잠금",
+                  "lines": [
+                    "dev102",
+                    "선택·동률 규칙"
+                  ],
+                  "col": 2,
+                  "row": 0
+                },
+                {
+                  "id": "eval",
+                  "title": "노출 평가 채점",
+                  "lines": [
+                    "evaluation421",
+                    "정책을 다시 고르지 않음"
+                  ],
+                  "col": 2,
+                  "row": 1
+                },
+                {
+                  "id": "diagnose",
+                  "title": "v19 원인 진단",
+                  "lines": [
+                    "같은 기록·oracle",
+                    "새 독립 증거 아님"
+                  ],
+                  "col": 1,
+                  "row": 1
+                }
+              ],
+              "edges": [
+                {
+                  "from": "train",
+                  "to": "fit",
+                  "label": "동결 예측"
+                },
+                {
+                  "from": "fit",
+                  "to": "dev",
+                  "label": "후보만"
+                },
+                {
+                  "from": "dev",
+                  "to": "eval",
+                  "label": "선택 고정"
+                },
+                {
+                  "from": "eval",
+                  "to": "diagnose",
+                  "label": "사후 분석"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "title": "7. 비용 항과 hard cap을 동시에 쓰는 이유",
+      "blocks": [
+        {
+          "type": "formula",
+          "text": "합법 mask는 원천 quote의 합이 cap 이하인 집합이다. 목적값은 평균 component 오류와 정규화 비용을 합친다.",
+          "explanation": "c_j는 원천 quote다. C는 원천 비용의 합이며 이 연구의 proxy다. λ는 정확도와 비용의 교환 비율을 선언하는 계수다. cap은 합법 행동을 제한하고 λ는 그 안에서 무엇을 선호할지 정한다.",
+          "tex": [
+            "C(m)=\\sum_{j\\in m}c_j,\\qquad\\mathcal{F}_B=\\{m:C(m)\\leq B\\}",
+            "u_i(m)=\\ell_i(m)+\\lambda\\frac{C(m)}{\\sum_j c_j}",
+            "U(m)=\\frac{1}{n}\\sum_{i=1}^{n}u_i(m)"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "equal quote에서는 원천당 1, 세 원천 합은 3이다. λ=0.05이면 원천 하나의 정규화 비용 항은 0.05/3이다. cap2를 지킨 두 정책도 한 정책은 매번 두 개를 읽고 다른 정책은 일부에서 한 개만 읽을 수 있어 평균 지출은 다르다. 같은 cap과 같은 평균 비용은 같은 말이 아니다."
+        },
+        {
+          "type": "p",
+          "text": "raw quote는 원천당 표본 수를 반영한 6000·600·60의 proxy다. equal quote와 단위가 다르므로 421이라는 숫자를 그대로 다른 가격표와 비교하지 않는다. 실제 원화·전력·네트워크 지연을 측정한 실험이 아니며, 이미 전체 데이터를 저장하는 데 든 비용을 정책 replay가 절감했다는 뜻도 아니다."
+        }
+      ]
+    },
+    {
+      "id": "loss",
+      "title": "8. component와 vector가 서로 반대 결론을 내는 이유",
+      "blocks": [
+        {
+          "type": "formula",
+          "text": "component 오류는 틀린 head 수를 네 번의 판단으로 나눈다. vector 오류는 하나라도 틀렸는지를 센다.",
+          "explanation": "i는 사이클이고 h는 네 진단 목표다. evaluation의 두 분모는 각각 1684와 421이다. 지표를 선택한 뒤 결과에 맞게 바꾸면 안 된다.",
+          "tex": [
+            "\\ell_i(m)=\\frac{1}{4}\\sum_{h=1}^{4}\\mathbf{1}\\{\\hat{y}_{i,h}(m)\\ne y_{i,h}\\}",
+            "E_{\\mathrm{comp}}=\\frac{\\sum_{i,h}\\mathbf{1}\\{\\hat{y}_{i,h}\\ne y_{i,h}\\}}{4n}",
+            "E_{\\mathrm{vec}}=\\frac{1}{n}\\sum_i\\mathbf{1}\\{\\hat{\\mathbf{y}}_i\\ne\\mathbf{y}_i\\}"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "교육용 반례를 직접 세자. 두 사이클에서 A의 오답 head 수가 (4,0), B가 (1,1)이면 A의 component 오류는 4/8, vector 오류는 1/2다. B는 component 2/8로 좋아지지만 vector 2/2로 나빠진다. 오답을 한 사이클에 몰아넣느냐 여러 사이클로 퍼뜨리느냐가 다르기 때문이다."
+        },
+        {
+          "type": "visual",
+          "id": "pf19-two-losses",
+          "title": "판단의 개수와 완전 진단의 개수",
+          "panels": [
+            {
+              "kind": "chart",
+              "label": "교육용 두 사이클 · component",
+              "x_label": "정책: 0=A, 1=B",
+              "y_label": "오류율",
+              "x_range": [
+                -0.5,
+                1.5
+              ],
+              "y_range": [
+                0,
+                1.1
+              ],
+              "series": [
+                {
+                  "label": "교육용 계산",
+                  "style": "bar",
+                  "points": [
+                    [
+                      0,
+                      0.5
+                    ],
+                    [
+                      1,
+                      0.25
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "chart",
+              "label": "교육용 두 사이클 · vector",
+              "x_label": "정책: 0=A, 1=B",
+              "y_label": "오류율",
+              "x_range": [
+                -0.5,
+                1.5
+              ],
+              "y_range": [
+                0,
+                1.1
+              ],
+              "series": [
+                {
+                  "label": "교육용 계산",
+                  "style": "bar",
+                  "points": [
+                    [
+                      0,
+                      0.5
+                    ],
+                    [
+                      1,
+                      1
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "caption": "직접 만든 두 사이클 교육용 반례이며 유압 자료나 외부 논문 실험 결과가 아니다.",
+          "takeaway": "평균 head 오류 개선은 완전한 진단 개선을 보장하지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "title": "9. gate의 실행을 의사코드 대신 말로 따라가기",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "고정 정책은 처음부터 최종 mask를 정한다. gate는 먼저 root 원천 하나를 사고, 공개된 평균이 threshold 이하인지 확인해 두 leaf mask 중 하나를 정한다. 그 leaf에 아직 획득하지 않은 원천이 있으면 추가로 읽고, 없으면 STOP한다. 현재 gate leaf는 root를 포함하고 최대 두 원천을 쓴다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "순서",
+            "허용되는 입력",
+            "결정"
+          ],
+          "rows": [
+            [
+              "1",
+              "원천 목록·가격·cap·선택된 정책",
+              "root를 합법적으로 요청"
+            ],
+            [
+              "2",
+              "공개된 root 평균",
+              "threshold 이하/초과 분기"
+            ],
+            [
+              "3",
+              "선택 leaf와 현재 acquired mask",
+              "누락 원천만 추가 요청"
+            ],
+            [
+              "4",
+              "종료 mask에 해당하는 특징/캐시",
+              "네 목표 예측"
+            ],
+            [
+              "5",
+              "이제 감사자에게만 정답 공개",
+              "오류·quote·oracle 진단"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "주분석 강제 gate의 root는 TS1이다. 어느 구간에서는 TS1로 멈추고 다른 구간에서는 PS1을 더해 mask5가 된다. root=TS1이라고 해서 다른 센서의 값을 이미 알고 분기하는 것이 아니다. v17의 hidden-value poison fixture는 이 코드 경계를 점검했지만 OS 수준 보안 격리나 모든 미래 구현의 무누출을 인증하지는 않는다."
+        }
+      ]
+    },
+    {
+      "id": "fitting",
+      "title": "10. threshold·leaf·정책 선택은 각각 언제 일어나는가",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "fit에서 root 평균의 사분위 위치로 threshold 후보를 만든다. 각 branch에 필요한 최소 개수를 확인하고, 비용과 합법 mask 조건을 지키는 서로 다른 두 leaf를 fit 목적값으로 고른다. dev에서는 이렇게 작성된 fixed와 gate 후보의 오류·비용을 비교한다. 같은 목적값이면 낮은 quote, 단순 fixed 우선 등 이미 선언한 동률 규칙을 적용한다."
+        },
+        {
+          "type": "p",
+          "text": "best_fixed는 합법 고정 mask 전부를 비교한다. gate_only는 gate가 있으면 gate만 고른다. adaptive_enabled는 fixed와 gate의 합집합에서 고른다. 합집합의 dev 최저값이 fixed-only보다 나쁘지 않은 것은 후보 포함 관계의 산술이다. evaluation에서도 낫다는 경험 법칙이나 정리가 아니다."
+        },
+        {
+          "type": "p",
+          "text": "한 설정에서 gate 후보가 없으면 fallback을 그대로 기록한다. gate를 강제로 사용하는 family가 더 복잡하다는 이유만으로 우월하다고 해석하지 않는다. 현재 gate는 최대 두 원천, fixed는 cap이 허용하면 세 원천 모두를 쓸 수 있다. 정책 class의 포함 관계를 이름만 보고 짐작하지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "v17-results",
+      "title": "11. 기존 결과를 가장 강한 대조군까지 읽기",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "equal cap2 조건",
+            "고정 대비 gate component",
+            "vector 변화",
+            "quote 합 변화"
+          ],
+          "rows": [
+            [
+              "k1·λ0.05 주분석 union",
+              "876→876 /1684",
+              "391→391 /421",
+              "421→421"
+            ],
+            [
+              "k1·λ0.05 강제 gate vs PS1",
+              "876→798 /1684",
+              "391→391 /421",
+              "421→443"
+            ],
+            [
+              "같은 강제 gate vs 역사적 TS1",
+              "798→798 /1684",
+              "391→391 /421",
+              "421→443"
+            ],
+            [
+              "k3·λ0 gate vs PS1+FS1",
+              "924→861 /1684",
+              "381→391 /421",
+              "842→518"
+            ],
+            [
+              "k3·λ0.05 gate vs PS1",
+              "799→861 /1684",
+              "391→391 /421",
+              "421→518"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "두 번째 줄만 보면 gate가 뚜렷이 좋다. 세 번째 줄을 붙이면 같은 오류의 TS1이 더 싸다. TS1은 과거 선택 접근이 다른 역사적 대조군이므로 새로운 dev 선택에 몰래 넣어 우승자로 바꾸지는 않는다. 그렇다고 이미 있는 더 강한 반례를 결과에서 지우지도 않는다."
+        },
+        {
+          "type": "p",
+          "text": "k3에서는 목표가 갈린다. λ0의 component 이득은 실제 계산된 로컬 결과지만 vector는 나빠진다. λ0.05에서는 dev의 작은 우위로 고른 gate가 evaluation에서 더 틀리고 더 쓴다. 따라서 ‘복잡한 적응형이 항상 이긴다’도 ‘적응형은 쓸모없다’도 현재 데이터가 뒷받침하지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "12. fit 정답이 한 종류뿐이면 무엇이 부족한가",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "구간",
+            "서로 다른 정답 tuple",
+            "fit에서 본 tuple 수",
+            "fit에서 못 본 tuple 수"
+          ],
+          "rows": [
+            [
+              "fit102",
+              "1",
+              "102",
+              "0"
+            ],
+            [
+              "dev102",
+              "11",
+              "2",
+              "100"
+            ],
+            [
+              "evaluation421",
+              "38",
+              "30",
+              "391"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "여기서 서로 다른 tuple 개수와 개별 사이클 개수를 나눠 읽어야 한다. evaluation의 tuple 종류 38개와 미관측 tuple을 가진 사이클 391개는 같은 수량이 아니다. 앞 102개가 모두 (100,100,0,90)이면 그 구간은 다양한 고장 조합에서 어떤 센서가 유용한지 학습할 대비를 충분히 제공하지 못한다."
+        },
+        {
+          "type": "p",
+          "text": "root 평균이 fit의 최솟값·최댓값 밖인지도 v19에서 따로 진단한다. 범위 안이라고 충분한 밀도 지원이 있다는 뜻은 아니고, 범위 밖이라고 반드시 오답이라는 뜻도 아니다. 정답 tuple 지원과 관측값 범위 지원은 서로 다른 축이다. 비어 있는 strata의 평균은 0이 아니라 null로 남긴다."
+        }
+      ]
+    },
+    {
+      "id": "why-v19",
+      "title": "13. v19: 좋아질 여지와 그 여지를 못 쓴 원인을 분리하기",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "평균 오류 하나만으로는 gate가 실패한 이유를 모른다. 같은 예측기·가격·cap에서 어떤 합법 mask를 골라도 나아질 수 없었을 수도 있다. 더 나은 mask는 있지만 현재 gate의 두 leaf에는 없을 수도 있다. 정답을 아는 특권 oracle은 더 좋은 leaf를 골랐더라도, 그 차이를 현재 공개 관측으로 알아낼 단서가 있었는지는 아직 검증되지 않았다. v19는 이 차이를 정확한 산술로 나누며 관측 가능한 개선량으로 동일시하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "이 작업은 이미 작성된 gate를 다시 학습하지 않는다. 390개 gate-context 기록을 625개의 기존 사이클에서 진단한다. k와 가격표·cap·λ를 고정한 채 비교하고 정답을 쓰는 oracle은 사후 감사에서만 계산한다. oracle로 정책을 다시 고르거나 새 배포 성능을 보고하지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "oracles",
+      "title": "14. 두 oracle을 고르면 원인이 보인다",
+      "blocks": [
+        {
+          "type": "formula",
+          "text": "전체 oracle은 합법 mask 전체에서 사이클별 최저 손실을 고른다. 쌍 oracle은 해당 gate의 두 leaf 중에서만 고른다.",
+          "explanation": "별표는 현장에서 정답을 아는 결정이 아니라 사후 하한이다. 두 leaf 모두 cap 안에 있고 root를 포함한다. 같은 k·가격·λ를 공유해야 포함 관계와 부등식이 성립한다.",
+          "tex": [
+            "a_i=\\min_{m\\in\\mathcal{F}_B}u_i(m)",
+            "b_i=\\min\\{u_i(m_L),u_i(m_R)\\}",
+            "a_i\\leq b_i\\leq u_i(m_{\\mathrm{gate},i})"
+          ]
+        },
+        {
+          "type": "visual",
+          "id": "pf19-oracle-rights",
+          "title": "실제 정책과 두 사후 oracle의 권한",
+          "caption": "직접 작성한 교육용 구조도다. 아래 연결은 구현의 정보 권한을 설명하며 물리 장비 실험이나 원문 그림의 재현이 아니다.",
+          "takeaway": "실행 규칙은 위쪽, 정답을 쓰는 원인 진단은 아래쪽이다. 아래 정보를 정책 입력으로 올리지 않는다.",
+          "panels": [
+            {
+              "kind": "diagram",
+              "label": "실제 정책과 두 사후 oracle의 권한",
+              "nodes": [
+                {
+                  "id": "root",
+                  "title": "실제 공개 평균",
+                  "lines": [
+                    "root만 관측",
+                    "threshold에 따라 분기"
+                  ],
+                  "col": 0,
+                  "row": 0
+                },
+                {
+                  "id": "gate",
+                  "title": "실제 gate",
+                  "lines": [
+                    "두 leaf 중 하나",
+                    "정답·다른 mask 금지"
+                  ],
+                  "col": 1,
+                  "row": 0
+                },
+                {
+                  "id": "loss",
+                  "title": "실제 손실",
+                  "lines": [
+                    "선택 후 감사",
+                    "새 정책 선택에 역류 금지"
+                  ],
+                  "col": 2,
+                  "row": 0
+                },
+                {
+                  "id": "all",
+                  "title": "전체 mask oracle",
+                  "lines": [
+                    "합법 mask와 정답",
+                    "정보 가치의 사후 하한"
+                  ],
+                  "col": 0,
+                  "row": 1
+                },
+                {
+                  "id": "pair",
+                  "title": "두 leaf oracle",
+                  "lines": [
+                    "현재 두 leaf와 정답",
+                    "표현 한계의 사후 하한"
+                  ],
+                  "col": 2,
+                  "row": 1
+                },
+                {
+                  "id": "split",
+                  "title": "원인 분해",
+                  "lines": [
+                    "headroom·표현 gap",
+                    "라우팅 regret"
+                  ],
+                  "col": 1,
+                  "row": 1
+                }
+              ],
+              "edges": [
+                {
+                  "from": "root",
+                  "to": "gate",
+                  "label": "관측만"
+                },
+                {
+                  "from": "gate",
+                  "to": "loss",
+                  "label": "실행"
+                },
+                {
+                  "from": "all",
+                  "to": "split",
+                  "label": "특권 비교"
+                },
+                {
+                  "from": "pair",
+                  "to": "split",
+                  "label": "특권 비교"
+                },
+                {
+                  "from": "loss",
+                  "to": "split",
+                  "label": "실제값"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "15. 핵심 항등식을 직접 유도하기",
+      "blocks": [
+        {
+          "type": "formula",
+          "text": "gate−fixed = −headroom + pair gap + routing regret",
+          "explanation": "F는 잠긴 고정 정책의 평균 목적값, A는 전체 oracle 평균, P는 두 leaf oracle 평균, G는 실제 gate 평균이다. 같은 표본과 목적함수에서 중간항을 더하고 빼는 정확한 항등식이지 통계적 추정 보장이 아니다.",
+          "tex": [
+            "H=F-A\\geq0,\\quad E=P-A\\geq0,\\quad R=G-P\\geq0",
+            "G-F=-(F-A)+(P-A)+(G-P)=-H+E+R"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "H는 현재 고정 정책에서 더 좋아질 수 있는 특권적 여지다. E는 현재 root·두 leaf·비용 제약 묶음으로 표현하지 못한 양이며 순수한 신경망 표현 오차만을 뜻하지 않는다. R은 두 leaf 안에서 실제 분기와 정답을 아는 chooser 사이의 차이다. 관측 정보 부족·정책 제약·동률 선택도 섞여 있으므로 순수 학습 오류나 인과 효과로 단정하지 않는다. 세 양은 비음수지만 H 앞에는 마이너스가 붙는다. H보다 E+R이 크면 gate가 고정보다 나빠진다."
+        },
+        {
+          "type": "p",
+          "text": "고정 정책 F가 그 gate의 두 leaf에 들어 있지 않아도 F는 전체 합법 mask에 들어 있으므로 H는 비음수다. 반대로 pair oracle P가 고정 F보다 항상 낫지는 않다. 그래서 쌍 oracle이 고정 정책조차 이기지 못하면 그 leaf쌍의 라우팅만 바꿔 해당 표본·목표에서 엄격히 이길 수 없다는 조건부 결론을 낼 수 있다."
+        }
+      ]
+    },
+    {
+      "id": "primary",
+      "title": "16. 실제 v19 주분석: 이 두 leaf로 TS1을 이길 수 있는가",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "같은 421개 평가·k1·equal cap2·λ0.05",
+            "평균 목적값의 정확한 값"
+          ],
+          "rows": [
+            [
+              "고정 PS1 F",
+              "13561/25260"
+            ],
+            [
+              "전체 oracle A",
+              "10201/25260"
+            ],
+            [
+              "두 leaf oracle P",
+              "12391/25260"
+            ],
+            [
+              "실제 gate G",
+              "12413/25260"
+            ]
+          ]
+        },
+        {
+          "type": "formula",
+          "text": "H=56/421, E=73/842, R=11/12630, G−F=−287/6315",
+          "explanation": "모두 component 오류와 정규화 quote를 합친 같은 목적 단위다. 오류 개수나 percentage point와 그대로 섞지 않는다. 등식 양변의 분모를 맞춰 계산하면 25260에서 −3360+2190+22=−1148이다.",
+          "tex": [
+            "G-F=-\\frac{3360}{25260}+\\frac{2190}{25260}+\\frac{22}{25260}=-\\frac{1148}{25260}"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이 gate는 TS1만 쓰는 mask4와 TS1+PS1을 쓰는 mask5 중에서 고른다. 두 leaf oracle의 목적값은 역사적 고정 TS1과 정확히 같다. 정답을 아는 특권적 chooser도 같은 평가 기록에서 TS1보다 낮은 평균 목적값을 만들지 못한다. 따라서 현재 두 leaf를 유지하고 threshold만 더 잘 고르는 것으로는 이 특정 TS1 대조를 엄격히 이길 수 없다."
+        },
+        {
+          "type": "p",
+          "text": "실제 gate는 22사이클에서 추가 원천을 요청했고, component 오류는 TS1과 같은 798이다. 22개의 추가 quote가 정규화 비용으로만 남아 routing regret 22/25260이 된다. 이 결론은 현재 동결 예측·두 leaf·421사이클·비용 가정에 묶여 있다. 다른 예측기·새 leaf·다른 장비·다른 손실까지 적응형을 부정하지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "title": "17. 실제 v19 보충 사례: 여지는 있지만 분기에서 놓친 양",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "사전 규칙으로 고른 k3·equal cap2·λ0의 gate에서는 고정 정책의 component 오류 924가 전체 mask oracle에서 625, 두 leaf oracle에서 789, 실제 gate에서 861이 된다. 즉 −299+164+72=−63이며 모두 같은 1684개 head-cycle 판단을 분모로 한다. 숫자가 어떻게 생겼는지 단계를 밟으면 단순한 ‘gate 이득 63’보다 원인이 잘 보인다."
+        },
+        {
+          "type": "visual",
+          "id": "pf19-real-decomposition",
+          "title": "실제 기록에서 세 원인과 관측 결과를 함께 읽기",
+          "panels": [
+            {
+              "kind": "chart",
+              "label": "k3·λ0 · 단계별 component 오류",
+              "x_label": "0=고정, 1=전체 oracle, 2=쌍 oracle, 3=gate",
+              "y_label": "오류 수 /1684",
+              "x_range": [
+                -0.5,
+                3.5
+              ],
+              "y_range": [
+                0,
+                1000
+              ],
+              "series": [
+                {
+                  "label": "저장 예측에서 새로 계산",
+                  "style": "bar",
+                  "points": [
+                    [
+                      0,
+                      924
+                    ],
+                    [
+                      1,
+                      625
+                    ],
+                    [
+                      2,
+                      789
+                    ],
+                    [
+                      3,
+                      861
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "chart",
+              "label": "k3·λ0 · 분해한 변화량",
+              "x_label": "0=−여지, 1=표현 gap, 2=라우팅, 3=순변화",
+              "y_label": "오류 수 변화 /1684",
+              "x_range": [
+                -0.5,
+                3.5
+              ],
+              "y_range": [
+                -330,
+                200
+              ],
+              "series": [
+                {
+                  "label": "정확한 유한 산술",
+                  "style": "bar",
+                  "points": [
+                    [
+                      0,
+                      -299
+                    ],
+                    [
+                      1,
+                      164
+                    ],
+                    [
+                      2,
+                      72
+                    ],
+                    [
+                      3,
+                      -63
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "caption": "v19에서 기존 k3 예측을 새로 분석한 실제 로컬 수치다. 하나의 이미 노출된 장비 자료이며 oracle은 정답을 사용하는 사후 하한이다. 외부 논문 성능이나 새 예측 결과가 아니다.",
+          "takeaway": "순이득이 있어도 표현 gap164와 라우팅 손실72가 남는다. 어느 문제를 고칠지 분리할 수 있다."
+        },
+        {
+          "type": "p",
+          "text": "이 사례는 component 목표에서의 개선 여지를 말한다. 같은 gate의 완전 진단 오류는 381에서 391로 늘고 quote는 842에서 518로 줄었다. 따라서 component 분해가 좋아졌다고 vector의 안전성이 좋아졌다고 결론내리지 않는다. 어떤 실패를 더 중요하게 볼지 연구 목표와 실제 사용자 손실에서 먼저 정해야 한다."
+        }
+      ]
+    },
+    {
+      "id": "trace",
+      "title": "18. 실제 사이클을 추적하는 읽기 절차",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "해설의 다음 표는 v19의 traced_cases.json에 고정한 두 정책 각각의 다섯 사례다. 첫 평가 사이클, 다른 branch, 양의 routing regret 또는 pair gap 등 미리 선언한 설명용 규칙으로 고르며 일부는 결과에 따라 뽑힌 사후 사례다. 이 열 행으로 성능 빈도나 성공률을 추정하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "행을 읽을 때는 먼저 k·가격·cap·λ가 같은지 확인한다. 그다음 root 평균과 threshold를 비교해 선택 leaf를 종이에 쓴다. 요청 원천·총 quote·네 목표 예측을 확인하고 마지막에 정답을 공개한다. 전체 oracle·쌍 oracle의 값은 진단 이후에만 대조한다. 이 순서를 거꾸로 읽으면 정답을 알고 행동을 골라도 되는 것처럼 느끼기 쉽다."
+        },
+        {
+          "type": "p",
+          "text": "primary_forced_gate · g129: k=1, cap=2, λ=1/20"
+        },
+        {
+          "type": "p",
+          "text": "cycle 1785 · 설명 사례 선택: first_evaluation_cycle. 공개 TS1 평균=36.2273, threshold=35.446367, branch=right. 감사 정답=[100, 90, 0, 130]. fit tuple 지원=False, root fit 범위 밖=True."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "31/60"
+            ],
+            [
+              "실제 gate",
+              "4",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "31/60"
+            ],
+            [
+              "두 leaf oracle",
+              "4",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "31/60"
+            ],
+            [
+              "전체 oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "31/60"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "cycle 2184 · 설명 사례 선택: first_left_leaf. 공개 TS1 평균=35.442933, threshold=35.446367, branch=left. 감사 정답=[100, 90, 0, 90]. fit tuple 지원=False, root fit 범위 밖=False."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "1",
+              "[100, 100, 0, 90]",
+              "1",
+              "1",
+              "4/15"
+            ],
+            [
+              "실제 gate",
+              "5",
+              "[100, 100, 0, 90]",
+              "1",
+              "2",
+              "17/60"
+            ],
+            [
+              "두 leaf oracle",
+              "4",
+              "[100, 100, 0, 90]",
+              "1",
+              "1",
+              "4/15"
+            ],
+            [
+              "전체 oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "1",
+              "1",
+              "4/15"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "cycle 1786 · 설명 사례 선택: first_right_leaf. 공개 TS1 평균=36.212483, threshold=35.446367, branch=right. 감사 정답=[100, 90, 0, 130]. fit tuple 지원=False, root fit 범위 밖=True."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "31/60"
+            ],
+            [
+              "실제 gate",
+              "4",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "31/60"
+            ],
+            [
+              "두 leaf oracle",
+              "4",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "31/60"
+            ],
+            [
+              "전체 oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "31/60"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "cycle 2185 · 설명 사례 선택: first_positive_routing_regret. 공개 TS1 평균=35.433333, threshold=35.446367, branch=left. 감사 정답=[100, 90, 0, 90]. fit tuple 지원=False, root fit 범위 밖=False."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "1",
+              "[100, 100, 0, 90]",
+              "1",
+              "1",
+              "4/15"
+            ],
+            [
+              "실제 gate",
+              "5",
+              "[100, 100, 0, 90]",
+              "1",
+              "2",
+              "17/60"
+            ],
+            [
+              "두 leaf oracle",
+              "4",
+              "[100, 100, 0, 90]",
+              "1",
+              "1",
+              "4/15"
+            ],
+            [
+              "전체 oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "1",
+              "1",
+              "4/15"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "cycle 1812 · 설명 사례 선택: first_positive_pair_gap. 공개 TS1 평균=36.191217, threshold=35.446367, branch=right. 감사 정답=[100, 73, 2, 115]. fit tuple 지원=False, root fit 범위 밖=True."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "1",
+              "[100, 100, 0, 90]",
+              "3",
+              "1",
+              "23/30"
+            ],
+            [
+              "실제 gate",
+              "4",
+              "[100, 100, 0, 90]",
+              "3",
+              "1",
+              "23/30"
+            ],
+            [
+              "두 leaf oracle",
+              "4",
+              "[100, 100, 0, 90]",
+              "3",
+              "1",
+              "23/30"
+            ],
+            [
+              "전체 oracle",
+              "2",
+              "[20, 73, 2, 100]",
+              "2",
+              "1",
+              "31/60"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "first_v17_adaptive_selected_gate · g301: k=3, cap=2, λ=0"
+        },
+        {
+          "type": "p",
+          "text": "cycle 1785 · 설명 사례 선택: first_evaluation_cycle. 공개 PS1 평균=161.06345, threshold=161.03447, branch=right. 감사 정답=[100, 90, 0, 130]. fit tuple 지원=False, root fit 범위 밖=False."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "3",
+              "[3, 100, 0, 130]",
+              "2",
+              "2",
+              "1/2"
+            ],
+            [
+              "실제 gate",
+              "3",
+              "[3, 100, 0, 130]",
+              "2",
+              "2",
+              "1/2"
+            ],
+            [
+              "두 leaf oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "1/2"
+            ],
+            [
+              "전체 oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "1/2"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "cycle 1788 · 설명 사례 선택: first_left_leaf. 공개 PS1 평균=161.01096, threshold=161.03447, branch=left. 감사 정답=[100, 100, 0, 130]. fit tuple 지원=False, root fit 범위 밖=False."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "3",
+              "[100, 100, 0, 130]",
+              "0",
+              "2",
+              "0"
+            ],
+            [
+              "실제 gate",
+              "1",
+              "[100, 100, 0, 90]",
+              "1",
+              "1",
+              "1/4"
+            ],
+            [
+              "두 leaf oracle",
+              "3",
+              "[100, 100, 0, 130]",
+              "0",
+              "2",
+              "0"
+            ],
+            [
+              "전체 oracle",
+              "3",
+              "[100, 100, 0, 130]",
+              "0",
+              "2",
+              "0"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "cycle 1786 · 설명 사례 선택: first_right_leaf. 공개 PS1 평균=161.05212, threshold=161.03447, branch=right. 감사 정답=[100, 90, 0, 130]. fit tuple 지원=False, root fit 범위 밖=False."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "3",
+              "[3, 100, 0, 130]",
+              "2",
+              "2",
+              "1/2"
+            ],
+            [
+              "실제 gate",
+              "3",
+              "[3, 100, 0, 130]",
+              "2",
+              "2",
+              "1/2"
+            ],
+            [
+              "두 leaf oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "1/2"
+            ],
+            [
+              "전체 oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "1/2"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "cycle 1789 · 설명 사례 선택: first_positive_routing_regret. 공개 PS1 평균=161.01089, threshold=161.03447, branch=left. 감사 정답=[100, 100, 0, 130]. fit tuple 지원=False, root fit 범위 밖=False."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "3",
+              "[100, 100, 0, 130]",
+              "0",
+              "2",
+              "0"
+            ],
+            [
+              "실제 gate",
+              "1",
+              "[100, 100, 0, 90]",
+              "1",
+              "1",
+              "1/4"
+            ],
+            [
+              "두 leaf oracle",
+              "3",
+              "[100, 100, 0, 130]",
+              "0",
+              "2",
+              "0"
+            ],
+            [
+              "전체 oracle",
+              "3",
+              "[100, 100, 0, 130]",
+              "0",
+              "2",
+              "0"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "cycle 1787 · 설명 사례 선택: first_positive_pair_gap. 공개 PS1 평균=161.05557, threshold=161.03447, branch=right. 감사 정답=[100, 90, 0, 130]. fit tuple 지원=False, root fit 범위 밖=False."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "행동",
+            "mask",
+            "예측 tuple",
+            "head 오류",
+            "quote",
+            "목적값"
+          ],
+          "rows": [
+            [
+              "고정",
+              "3",
+              "[3, 100, 0, 130]",
+              "2",
+              "2",
+              "1/2"
+            ],
+            [
+              "실제 gate",
+              "3",
+              "[3, 100, 0, 130]",
+              "2",
+              "2",
+              "1/2"
+            ],
+            [
+              "두 leaf oracle",
+              "1",
+              "[100, 100, 0, 90]",
+              "2",
+              "1",
+              "1/2"
+            ],
+            [
+              "전체 oracle",
+              "2",
+              "[20, 90, 0, 130]",
+              "1",
+              "1",
+              "1/4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "literature",
+      "title": "19. 어떤 논문에서 무엇을 배워야 하는가",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "필독 축",
+            "먼저 배울 개념",
+            "ProbeFlow와 비교할 경계"
+          ],
+          "rows": [
+            [
+              "GSM · Li & Oliva 2021",
+              "미관측 결과의 조건부 예측과 기대 획득 가치",
+              "현재 gate는 생성 모형을 학습하지 않음"
+            ],
+            [
+              "BRiG-AFA v1",
+              "남은 horizon별 Bellman risk-to-go·동결 예측기",
+              "현재는 작은 threshold gate·비용 proxy·STOP"
+            ],
+            [
+              "Hierarchical CwCF 2024",
+              "공유 원천과 계층 비용·획득 상태",
+              "현재 세 원천 실험이 일반 DAG 전체를 구현하지 않음"
+            ],
+            [
+              "CwCF · Janisch et al. 2019",
+              "획득과 분류·종료를 하나의 순차 행동으로 보기",
+              "공식 초록·저자 구현 안내만 확인, native RL 미실행"
+            ],
+            [
+              "DIME · Covert et al. 2023",
+              "조건부 상호정보량을 배우는 강한 greedy 대조",
+              "cross-entropy/Bayes 전제와 현재 component 목표가 다름"
+            ],
+            [
+              "AFAPE · von Kleist et al. 2025",
+              "획득 정책 변경·오프라인 평가의 가정",
+              "완전 기록 재생이 물리 효과나 인과 가정을 인증하지 않음"
+            ],
+            [
+              "Adaptive Submodularity",
+              "관측 이후 한계 이득 감소의 조건",
+              "XOR 보완성·공유 비용이면 자동 보장 불가"
+            ],
+            [
+              "Cawley & Talbot 2010",
+              "후보 선택 전체의 평가 편향",
+              "현재 exposed 자료를 새 final로 바꾸지 않음"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "읽기 순서는 시스템 이해→비용·권한→고정 예측기와 oracle 분해→근시안/비근시안 비교→평가 가정이다. 한 논문의 멋진 신경망 구조만 가져오는 것으로 공정한 비교가 되지 않는다. 데이터·예측기·행동 공간·선택 정보·비용·중단·평가 접근을 한 표에 맞춘 다음 native 방법과 공통 조건 adapter를 따로 표시한다."
+        }
+      ]
+    },
+    {
+      "id": "next-study",
+      "title": "20. 다음에 무엇을 실제로 더 모아야 하는가",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "가장 중요한 다음 자료는 더 많은 같은 자료의 replay가 아니라 조건이 다양한 policy-fit과 독립적으로 예약한 장비·시간 구간이다. 먼저 어떤 고장 조합과 센서 범위를 policy가 학습할지 정하고, 실제 원천 지연·실패·공유 비용·수집 가능 시간을 측정해야 한다. 신규 전향 자료 없이 현재 결과로 일반화 성능을 보고할 수 없다."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "관측한 진단",
+            "다음 설계 결정",
+            "확인할 대조"
+          ],
+          "rows": [
+            [
+              "현재 두 leaf oracle도 TS1과 동률",
+              "같은 leaf의 threshold 탐색만 늘리지 않기",
+              "leaf 표현·예측기 변경을 별도 축으로 비교"
+            ],
+            [
+              "k3에서 양의 routing regret",
+              "다양한 fit 조건·관측 충분성 확인",
+              "현재 gate·강한 greedy·비근시안·고정 정책"
+            ],
+            [
+              "vector가 나빠지는 component 이득",
+              "진단 목적·head 가중을 사전 고정",
+              "component·vector·head별 오류 모두 보고"
+            ],
+            [
+              "dev→evaluation 역전",
+              "평가 접근을 잠그고 구조적 분할 설계",
+              "독립 조건/장비·전체 실패 원장"
+            ],
+            [
+              "완료 cycle 평균을 쓰는 replay",
+              "실제 시점에서 획득 가능한 관측 정의",
+              "버퍼·재측정·지연의 물리 검증"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "현재 연구의 의미는 실패가 없다고 포장하는 데 있지 않다. 다음 한 번의 비싼 실험에서 무엇을 바꿔야 배울 수 있는지를 분명히 하는 데 있다. v19 분해는 특히 ‘더 긴 계획이 필요한가’라는 질문 전에 ‘현재 선택지에 개선 가능성이 있는가’를 확인하게 한다."
+        }
+      ]
+    },
+    {
+      "id": "reproduce",
+      "title": "21. 파일과 숫자를 직접 확인하는 길",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "PLAN.json은 새 분석이 무엇을 계산하기로 했는지, input_lock.json은 실제 읽은 코드·자료의 hash와 복사/참조 범위를, results.json은 요약을, gate_diagnostics.jsonl은 전체 gate·cohort·지원 strata를 담는다. traced_cases.json은 설명용 열 사례, verification.json은 분석기 함수를 import하지 않는 별도 산술 검산 결과다."
+        },
+        {
+          "type": "p",
+          "text": "25,000개 캐시 행을 읽었다는 것은 25,000개 새 예측이나 독립 사이클이 생겼다는 말이 아니다. v19는 625개 기존 사이클, 한 rig, 새 parameter fit0·forward0·정책 학습0·새 선택0을 유지한다. 원천 평균 재계산, gate별 진단, 각 strata와 재생 수는 별도 ACCOUNTING에서 센다."
+        },
+        {
+          "type": "p",
+          "text": "아래 경로는 현재 연구의 증거를 찾기 위한 주소다. 이전 실행을 덮어쓰거나 현재 계획을 사후 수정하지 않는다. 기존 검산은 읽기 전용으로 다시 실행할 수 있다. 현재 분석기는 이미 존재하는 _01 경로만을 사전에 고정해 허용하므로 그 명령으로 재생성할 수 없다. 새 실행에는 새 계획·출력 설정을 가진 별도 후보를 만들고 다시 입력·코드를 고정해야 한다."
+        }
+      ]
+    },
+    {
+      "id": "teach",
+      "title": "22. 이제 자기 말로 설명할 수 있는지 점검하기",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "첫 설명은 60초로 해 보자. ‘ProbeFlow는 관측에 따라 무엇을 더 읽을지 고른다. 같은 예측기·가격·cap으로 고정 정책과 비교한다. 현재 자료에서는 adaptive family를 넣어도 주분석은 fixed를 유지했다. v19는 그 이유를 정보의 여지, 두 leaf의 표현 한계, 라우팅 손실로 나눴다.’ 이 문장마다 어떤 파일과 숫자가 근거인지 말할 수 있어야 한다."
+        },
+        {
+          "type": "p",
+          "text": "다음 설명은 칠판에 식 없이 한다. 실제 gate를 위쪽에, 정답을 아는 두 oracle을 아래쪽에 그린다. 같은 장부에서 네 목적값 F,A,P,G를 순서대로 놓고 중간 차이를 더하면 G−F가 된다고 보여준다. 마지막에 421·1684·625·390이 각각 무엇을 세는지 구별한다. 아래 문제는 답을 열기 전에 직접 풀어 본다."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "pf19-mask",
+      "prompt": "mask5는 어떤 센서이며 왜 원천 다섯 개가 아닌가?",
+      "hint": "101의 각 bit 위치를 펼친다.",
+      "answer": "mask5는 101이므로 PS1과 TS1이다. 정수의 자릿값으로 집합을 부호화한 것이며 개수가 아니다. FS1은 포함하지 않는다. 원천 개수는 set bit 개수인 2다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-rights",
+      "prompt": "정책에 모든 mask의 예측과 정답을 전달해 다음 센서를 고르면 무엇이 깨지는가?",
+      "hint": "실행과 감사의 상자를 나눈다.",
+      "answer": "정책이 아직 획득하지 않은 값의 결과와 정답을 사용하게 되어 정보 권한이 깨진다. 사후 oracle은 하한 진단에만 쓰고 fit·dev 선택·실행에는 되돌려 주지 않는다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-mean",
+      "prompt": "TS1 평균을 보고 그 사이클 시작 시점의 실시간 진단이라고 말할 수 있는가?",
+      "hint": "평균을 계산하는 시점을 생각한다.",
+      "answer": "현재 평균은 완료된 60초 기록에서 계산한다. 원천을 선택한 시점에 전체 구간이 이용 가능했다는 물리 검증이 없으므로 조기 경보나 실시간 추가 측정의 성과로 해석할 수 없다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-cost",
+      "prompt": "equal quote·λ0.05에서 원천 하나를 더 읽는 목적값 증가는 얼마인가?",
+      "hint": "비용을 세 원천 합3으로 나눈다.",
+      "answer": "같은 오류라면 한 원천의 추가 비용 항은 0.05×1/3=1/60이다. cap 안에서 추가 요청이 합법인 것과 비용 손실이 없는 것은 다르며, 원화나 지연 단위로 해석하지 않는다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-metrics",
+      "prompt": "두 사이클의 오답 head 수가 A=(4,0), B=(1,1)이면 두 지표를 계산하라.",
+      "hint": "component 분모8, vector 분모2다.",
+      "answer": "A는 component4/8와 vector1/2, B는 component2/8와 vector2/2다. B는 틀린 판단 개수를 줄이지만 두 사이클 모두 하나 이상 틀려 완전 진단 지표는 나빠진다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-split",
+      "prompt": "evaluation 파일을 policy lock 뒤에 열었다면 새 blind final인가?",
+      "hint": "과거 접근 이력도 평가 계약이다.",
+      "answer": "아니다. 이번 실행의 정보 순서는 지켰지만 같은 평가 자료를 앞선 연구에서 이미 본 사실은 남는다. 새 시간 분할·새 정책·새 replay가 과거 노출을 되돌리지 않으므로 개발 진단으로 보고한다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-family",
+      "prompt": "adaptive_enabled의 dev 목적값이 best_fixed 이하인 것은 왜 새 일반화 정리가 아닌가?",
+      "hint": "후보 집합 포함 관계다.",
+      "answer": "adaptive_enabled가 고정 후보 전체를 포함하므로 같은 dev에서 최소값을 고르면 나쁘지 않은 것은 기계적 포함 관계다. 후보 수가 늘어 선택 편향이 생길 수 있어 evaluation의 위험 감소는 따로 검증해야 한다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-headroom",
+      "prompt": "H,E,R을 정의하고 G−F 식을 유도하라.",
+      "hint": "A와 P를 더하고 뺀다.",
+      "answer": "H=F−A, E=P−A, R=G−P다. G−F=−(F−A)+(P−A)+(G−P)=−H+E+R이다. H,E,R은 같은 표본·k·가격·cap·λ에서 비음수이고 H만 마이너스로 들어간다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-oracle",
+      "prompt": "쌍 oracle도 TS1과 같은 목적값이면 더 좋은 threshold만으로 엄격히 이길 수 있는가?",
+      "hint": "oracle은 이미 그 두 leaf의 최선이다.",
+      "answer": "현재 동결된 두 leaf와 같은 평가 기록·목적에서는 불가능하다. 실제 라우팅은 정답을 아는 쌍 oracle보다 좋을 수 없기 때문이다. 다른 leaf·예측기·자료·목표로의 일반적인 불가능성을 뜻하지는 않는다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-primary",
+      "prompt": "주분석 분모25260에서 −3360+2190+22를 계산하고 뜻을 설명하라.",
+      "hint": "순변화의 부호와 각 항의 뜻을 분리한다.",
+      "answer": "합은 −1148이므로 G−F=−1148/25260=−287/6315다. PS1 대비 목적값은 좋아지지만 전체 여지3360 중 표현 gap2190과 라우팅22가 남는다. TS1 대비 개선을 뜻하지 않는다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-secondary",
+      "prompt": "k3 사례에서 −299+164+72는 무엇을 세며 vector도 좋아지는가?",
+      "hint": "component 기준과 완전 진단 기준은 다르다.",
+      "answer": "합은 −63개 component 오류이며 분모1684다. 924→625→789→861로 유도한다. 같은 gate의 vector 오류는381→391이므로 완전 진단은 오히려 나빠진다. 서로 다른 분모와 목표를 혼합하지 않는다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-support",
+      "prompt": "fit에서 본 tuple이 evaluation30/421에 있다는 말은 tuple 종류가30개라는 뜻인가?",
+      "hint": "종류와 행 수를 나눈다.",
+      "answer": "아니다. fit에는 한 tuple 종류만 있고 그 tuple을 가진 평가 사이클이30개다. 평가에는 모두38종류의 tuple이 있다. 나머지391개 사이클은 fit에서 보지 못한 tuple을 갖지만 종류391개라는 뜻은 아니다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-counters",
+      "prompt": "390 gate와 수십만 진단 행이 통계 표본을 늘리는가?",
+      "hint": "같은625개 원자료를 반복 사용한다.",
+      "answer": "늘리지 않는다. 설정·cohort·strata별 계산은 같은 장비와 사이클을 반복해서 사용한 산술 단위다. 새 독립 장비·고장·시간 단위를 얻지 않았으므로 이 수를 독립 표본 분모에 넣으면 안 된다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-dime",
+      "prompt": "정보 이득 greedy가 현재 component 목적의 최적 정책이라는 보장을 바로 가져와도 되는가?",
+      "hint": "원문의 loss와 predictor 가정을 확인한다.",
+      "answer": "안 된다. 조건부 상호정보량과 Bayes·cross-entropy 관계는 특정 분포·예측기·목표의 조건을 요구한다. 현재 동결 kNN과 네 head의 component 손실·비용·STOP 계약은 별도로 맞춰 비교해야 한다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-physical",
+      "prompt": "현재 replay가 원천 비용 절감을 실제 장비에서 입증하지 못한 이유 두 가지는?",
+      "hint": "이미 모두 저장한 자료와 proxy quote다.",
+      "answer": "원자료는 이미 전체 수집되어 있고 quote는 표본 수 또는 equal 단위의 proxy다. 실제 전력·지연·실패를 측정하지 않았으며 과거 같은60초를 다시 읽는 물리 가능성도 검증하지 않았다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf19-next",
+      "prompt": "새 자료가 한 번만 가능하다면 무엇부터 고정할 것인가?",
+      "hint": "모델 크기보다 자료·권한·목표·대조 계약을 먼저 쓴다.",
+      "answer": "다양한 policy-fit 조건과 독립 예약 장비·시간 구간, 획득 가능한 관측 시점, 실제 비용, 목표 손실, fixed/greedy/비근시안 대조, 실패·미도달·보류 분모를 먼저 고정한다. oracle 진단으로 새 평가 정책을 사후 선택하지 않는다.",
+      "grading_points": [
+        "계산 단위와 정보 권한을 구분했다.",
+        "가정과 적용 범위를 자기 말로 설명했다.",
+        "실제 결과와 교육용·특권 비교를 섞지 않았다."
+      ]
+    },
+    {
+      "id": "pf20-independent-denominator",
+      "prompt": "Supp가 길어지고 표가 많아지면 새로운 독립 실험 수도 늘어나는가?",
+      "hint": "문서의 개수와 관측 단위의 출처를 따로 센다.",
+      "answer": "아니다. 현재 근거는 같은 한 rig의625cycle과 기존 동결 예측이다. v20은 문서를 압축·분리하고 증명을 더 자세히 설명했을 뿐 새cycle·독립장치·모델학습·물리관측을 추가하지 않았다. 반복 설정과 표의 행을 독립 표본으로 세면 안 된다.",
+      "grading_points": [
+        "문서 재구성과 새 근거를 구별",
+        "기존 한 rig/625cycle 언급",
+        "반복 결과를 독립 표본으로 세지 않음"
+      ]
+    },
+    {
+      "id": "pf20-read-a-boundary",
+      "prompt": "pair oracle=TS1이라는 문장을 본문에서 읽은 뒤 Supp에서 어떤 조건을 다시 확인해야 하는가?",
+      "hint": "선택지·예측기·손실·비용·평가행이 같은지 확인한다.",
+      "answer": "같은 두 frozen leaf, 같은k의 캐시 예측, 동일cap·가격·lambda·scalar loss, 동일한 노출평가421cycle인지 확인한다. oracle에는 정답과미획득mask 예측이 허용되지만 실제정책에는 허용되지 않는다. 따라서 이 경계는 해당action class와cohort의조건부주장이고, 다른예측기·자료·목적까지불가능하다는정리가아니다.",
+      "grading_points": [
+        "동일조건 다섯가지",
+        "oracle 정보 특권",
+        "조건부 경계를 보편 불가능성으로 확대하지 않음"
+      ]
+    },
+    {
+      "id": "pf21-not-new-winner",
+      "prompt": "같은 g301에 새 λ를 곱해서 점수가 좋아졌다면 새λ에서 최적 정책을 찾았는가?",
+      "hint": "무엇을 새로 선택했는지 확인한다.",
+      "answer": "아니다. 원래λ0에서 선택한 정책을 그대로 재평가했다. 이것은 고정 정책의 사후 선호 민감도다. 새λ의 우승 정책을 비교하려면 독립 선택 자료·동일 후보군·동일 예산으로 다시 선택하고 별도 평가해야 한다.",
+      "grading_points": [
+        "사후 민감도와 재선택 구별",
+        "원래 선택λ0",
+        "별도 선택·평가 계약 필요"
+      ]
+    },
+    {
+      "id": "pf21-errors-equal",
+      "prompt": "mask4와5의 오류점수가 매cycle 같다면 센서 추가가 어떤 조건에서 손해인가?",
+      "hint": "오류·가격·λ를 따로 본다.",
+      "answer": "현재421cycle과동결예측기, 두leaf선택지, 비음수component/vector가중치와비음수가격이라는조건에서오류이득은0이다. λ>0이고 추가quote가양수이면더산cycle에서엄격비용손실이다. λ0이나추가획득0이면동률일수있다. 예측벡터동일성이나모든센서획득방법불가능성은증명하지않았다.",
+      "grading_points": [
+        "조건부동률",
+        "λ와추가비용",
+        "보편주장금지"
+      ]
+    }
+  ],
+  "transfer_links": [
+    {
+      "project": "probeflow",
+      "path": "projects/research_advancement_v19_20261019/probeflow/PLAN.json",
+      "symbol": "oracle",
+      "relation": "후속 질문·oracle 권한·동일 손실/비용·사전 설명 사례 규칙"
+    },
+    {
+      "project": "probeflow",
+      "path": "projects/research_advancement_v17_20261019/probeflow/analyze.py",
+      "symbol": "def next_action",
+      "relation": "정책이 실제로 받는 관측과 원천 요청 경계"
+    },
+    {
+      "project": "probeflow",
+      "path": "projects/research_advancement_v19_20261019/probeflow/analyze.py",
+      "symbol": "routing",
+      "relation": "새 gate 손실 분해와 실행·자료 고정"
+    }
+  ],
+  "limits": [
+    "한 장비·625개 기존 사이클을 재사용한다. 새 독립 표본·실제 모델 호출·물리 센서 실험은 없다.",
+    "oracle은 사후 특권 정보 하한이며 실행 정책이나 일반적 불가능성 증명이 아니다.",
+    "학습 기록은 자기보고다. 이 해설을 읽었다고 과학적 근거 게이트가 닫히지 않는다.",
+    "v18 이하의 전체 해설은 PDF의 후반 배경에 그대로 보존한다."
+  ],
+  "trace_source": "outputs/research_advancement_v19_20261019/probeflow_analysis_01/traced_cases.json",
+  "trace_records": {
+    "oracle_scope": "Unimplementable hindsight: sees labels and all frozen mask outputs. Never supplied to a policy or selector.",
+    "cases": [
+      {
+        "case": "primary_forced_gate",
+        "gate_id": "g129",
+        "k": 1,
+        "scenario": "equal_source_quote",
+        "budget": 2,
+        "lambda_exact": "1/20",
+        "policy": {
+          "kind": "gate",
+          "root": 2,
+          "threshold_hex": "0x1.1b9228afdadcfp+5",
+          "left_mask": 5,
+          "right_mask": 4
+        },
+        "policy_selection_scope": "Inherited v17 choice; illustrative cycles chosen by predeclared diagnostic rules after outcomes, never for policy fitting or performance estimation.",
+        "cohort_results": [
+          {
+            "gate_id": "g129",
+            "k": 1,
+            "scenario": "equal_source_quote",
+            "budget": 2,
+            "lambda_exact": "1/20",
+            "cohort": "fit",
+            "policy": {
+              "kind": "gate",
+              "root": 2,
+              "threshold_hex": "0x1.1b9228afdadcfp+5",
+              "left_mask": 5,
+              "right_mask": 4
+            },
+            "selected_families": [
+              "gate_only"
+            ],
+            "locked_fixed_mask": 1,
+            "cycles": 102,
+            "means": {
+              "gate_exact": "16/765",
+              "locked_fixed_exact": "1/60",
+              "all_mask_oracle_exact": "1/60",
+              "pair_oracle_exact": "1/60"
+            },
+            "decomposition": {
+              "all_mask_headroom_exact": "0",
+              "pair_representation_gap_exact": "0",
+              "routing_regret_exact": "13/3060",
+              "actual_minus_fixed_exact": "13/3060"
+            },
+            "gate_component_errors": 0,
+            "fixed_component_errors": 0,
+            "gate_vector_errors": 0,
+            "fixed_vector_errors": 0,
+            "gate_quote_sum": 128,
+            "fixed_quote_sum": 102,
+            "routing_strict_suboptimal_cycles": 26,
+            "pair_strictly_excludes_all_mask_oracle_cycles": 0,
+            "root_fit_range_hex": [
+              "0x1.1b30925d1da0bp+5",
+              "0x1.1c71bb75d4094p+5"
+            ],
+            "root_outside_fit_range_cycles": 0,
+            "branch_counts": {
+              "left": 26,
+              "right": 76
+            },
+            "strata": {
+              "fit_seen_target": {
+                "cycles": 102,
+                "means": {
+                  "gate_exact": "16/765",
+                  "locked_fixed_exact": "1/60",
+                  "all_mask_oracle_exact": "1/60",
+                  "pair_oracle_exact": "1/60"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "13/3060",
+                  "actual_minus_fixed_exact": "13/3060"
+                }
+              },
+              "fit_unseen_target": {
+                "cycles": 0,
+                "means": null,
+                "decomposition": null
+              },
+              "root_inside_fit_range": {
+                "cycles": 102,
+                "means": {
+                  "gate_exact": "16/765",
+                  "locked_fixed_exact": "1/60",
+                  "all_mask_oracle_exact": "1/60",
+                  "pair_oracle_exact": "1/60"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "13/3060",
+                  "actual_minus_fixed_exact": "13/3060"
+                }
+              },
+              "root_outside_fit_range": {
+                "cycles": 0,
+                "means": null,
+                "decomposition": null
+              }
+            }
+          },
+          {
+            "gate_id": "g129",
+            "k": 1,
+            "scenario": "equal_source_quote",
+            "budget": 2,
+            "lambda_exact": "1/20",
+            "cohort": "dev",
+            "policy": {
+              "kind": "gate",
+              "root": 2,
+              "threshold_hex": "0x1.1b9228afdadcfp+5",
+              "left_mask": 5,
+              "right_mask": 4
+            },
+            "selected_families": [
+              "gate_only"
+            ],
+            "locked_fixed_mask": 1,
+            "cycles": 102,
+            "means": {
+              "gate_exact": "1279/2040",
+              "locked_fixed_exact": "1279/2040",
+              "all_mask_oracle_exact": "607/1020",
+              "pair_oracle_exact": "1279/2040"
+            },
+            "decomposition": {
+              "all_mask_headroom_exact": "13/408",
+              "pair_representation_gap_exact": "13/408",
+              "routing_regret_exact": "0",
+              "actual_minus_fixed_exact": "0"
+            },
+            "gate_component_errors": 249,
+            "fixed_component_errors": 249,
+            "gate_vector_errors": 100,
+            "fixed_vector_errors": 100,
+            "gate_quote_sum": 102,
+            "fixed_quote_sum": 102,
+            "routing_strict_suboptimal_cycles": 0,
+            "pair_strictly_excludes_all_mask_oracle_cycles": 13,
+            "root_fit_range_hex": [
+              "0x1.1b30925d1da0bp+5",
+              "0x1.1c71bb75d4094p+5"
+            ],
+            "root_outside_fit_range_cycles": 100,
+            "branch_counts": {
+              "left": 0,
+              "right": 102
+            },
+            "strata": {
+              "fit_seen_target": {
+                "cycles": 2,
+                "means": {
+                  "gate_exact": "1/60",
+                  "locked_fixed_exact": "1/60",
+                  "all_mask_oracle_exact": "1/60",
+                  "pair_oracle_exact": "1/60"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "0"
+                }
+              },
+              "fit_unseen_target": {
+                "cycles": 100,
+                "means": {
+                  "gate_exact": "767/1200",
+                  "locked_fixed_exact": "767/1200",
+                  "all_mask_oracle_exact": "91/150",
+                  "pair_oracle_exact": "767/1200"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "13/400",
+                  "pair_representation_gap_exact": "13/400",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "0"
+                }
+              },
+              "root_inside_fit_range": {
+                "cycles": 2,
+                "means": {
+                  "gate_exact": "17/120",
+                  "locked_fixed_exact": "17/120",
+                  "all_mask_oracle_exact": "17/120",
+                  "pair_oracle_exact": "17/120"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "0"
+                }
+              },
+              "root_outside_fit_range": {
+                "cycles": 100,
+                "means": {
+                  "gate_exact": "191/300",
+                  "locked_fixed_exact": "191/300",
+                  "all_mask_oracle_exact": "29/48",
+                  "pair_oracle_exact": "191/300"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "13/400",
+                  "pair_representation_gap_exact": "13/400",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "0"
+                }
+              }
+            }
+          },
+          {
+            "gate_id": "g129",
+            "k": 1,
+            "scenario": "equal_source_quote",
+            "budget": 2,
+            "lambda_exact": "1/20",
+            "cohort": "evaluation",
+            "policy": {
+              "kind": "gate",
+              "root": 2,
+              "threshold_hex": "0x1.1b9228afdadcfp+5",
+              "left_mask": 5,
+              "right_mask": 4
+            },
+            "selected_families": [
+              "gate_only"
+            ],
+            "locked_fixed_mask": 1,
+            "cycles": 421,
+            "means": {
+              "gate_exact": "12413/25260",
+              "locked_fixed_exact": "13561/25260",
+              "all_mask_oracle_exact": "10201/25260",
+              "pair_oracle_exact": "12391/25260"
+            },
+            "decomposition": {
+              "all_mask_headroom_exact": "56/421",
+              "pair_representation_gap_exact": "73/842",
+              "routing_regret_exact": "11/12630",
+              "actual_minus_fixed_exact": "-287/6315"
+            },
+            "gate_component_errors": 798,
+            "fixed_component_errors": 876,
+            "gate_vector_errors": 391,
+            "fixed_vector_errors": 391,
+            "gate_quote_sum": 443,
+            "fixed_quote_sum": 421,
+            "routing_strict_suboptimal_cycles": 22,
+            "pair_strictly_excludes_all_mask_oracle_cycles": 123,
+            "root_fit_range_hex": [
+              "0x1.1b30925d1da0bp+5",
+              "0x1.1c71bb75d4094p+5"
+            ],
+            "root_outside_fit_range_cycles": 392,
+            "branch_counts": {
+              "left": 22,
+              "right": 399
+            },
+            "strata": {
+              "fit_seen_target": {
+                "cycles": 30,
+                "means": {
+                  "gate_exact": "49/1800",
+                  "locked_fixed_exact": "1/60",
+                  "all_mask_oracle_exact": "1/60",
+                  "pair_oracle_exact": "1/60"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "19/1800",
+                  "actual_minus_fixed_exact": "19/1800"
+                }
+              },
+              "fit_unseen_target": {
+                "cycles": 391,
+                "means": {
+                  "gate_exact": "3091/5865",
+                  "locked_fixed_exact": "13531/23460",
+                  "all_mask_oracle_exact": "10171/23460",
+                  "pair_oracle_exact": "12361/23460"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "56/391",
+                  "pair_representation_gap_exact": "73/782",
+                  "routing_regret_exact": "1/7820",
+                  "actual_minus_fixed_exact": "-389/7820"
+                }
+              },
+              "root_inside_fit_range": {
+                "cycles": 29,
+                "means": {
+                  "gate_exact": "73/290",
+                  "locked_fixed_exact": "4/15",
+                  "all_mask_oracle_exact": "217/870",
+                  "pair_oracle_exact": "217/870"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "1/58",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "1/435",
+                  "actual_minus_fixed_exact": "-13/870"
+                }
+              },
+              "root_outside_fit_range": {
+                "cycles": 392,
+                "means": {
+                  "gate_exact": "2395/4704",
+                  "locked_fixed_exact": "1871/3360",
+                  "all_mask_oracle_exact": "9767/23520",
+                  "pair_oracle_exact": "11957/23520"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "111/784",
+                  "pair_representation_gap_exact": "73/784",
+                  "routing_regret_exact": "3/3920",
+                  "actual_minus_fixed_exact": "-187/3920"
+                }
+              }
+            }
+          }
+        ],
+        "traces": [
+          {
+            "selection_reason": "first_evaluation_cycle",
+            "cycle": 1785,
+            "root_source": "TS1",
+            "observed_root_mean_hex": "0x1.21d182a9930bep+5",
+            "observed_root_mean": 36.2273,
+            "threshold_hex": "0x1.1b9228afdadcfp+5",
+            "threshold": 35.44636666666667,
+            "branch": "right",
+            "target_tuple": [
+              100,
+              90,
+              0,
+              130
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": true,
+            "actions": {
+              "locked_fixed": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              },
+              "gate": {
+                "mask": 4,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              },
+              "pair_oracle": {
+                "mask": 4,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              },
+              "all_mask_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              }
+            }
+          },
+          {
+            "selection_reason": "first_left_leaf",
+            "cycle": 2184,
+            "root_source": "TS1",
+            "observed_root_mean_hex": "0x1.1b8b20a1a7ccbp+5",
+            "observed_root_mean": 35.442933333333336,
+            "threshold_hex": "0x1.1b9228afdadcfp+5",
+            "threshold": 35.44636666666667,
+            "branch": "left",
+            "target_tuple": [
+              100,
+              90,
+              0,
+              90
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": false,
+            "actions": {
+              "locked_fixed": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "4/15"
+              },
+              "gate": {
+                "mask": 5,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 2,
+                "objective_exact": "17/60"
+              },
+              "pair_oracle": {
+                "mask": 4,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "4/15"
+              },
+              "all_mask_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "4/15"
+              }
+            }
+          },
+          {
+            "selection_reason": "first_right_leaf",
+            "cycle": 1786,
+            "root_source": "TS1",
+            "observed_root_mean_hex": "0x1.21b32a763ce4ep+5",
+            "observed_root_mean": 36.21248333333334,
+            "threshold_hex": "0x1.1b9228afdadcfp+5",
+            "threshold": 35.44636666666667,
+            "branch": "right",
+            "target_tuple": [
+              100,
+              90,
+              0,
+              130
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": true,
+            "actions": {
+              "locked_fixed": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              },
+              "gate": {
+                "mask": 4,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              },
+              "pair_oracle": {
+                "mask": 4,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              },
+              "all_mask_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              }
+            }
+          },
+          {
+            "selection_reason": "first_positive_routing_regret",
+            "cycle": 2185,
+            "root_source": "TS1",
+            "observed_root_mean_hex": "0x1.1b77777777777p+5",
+            "observed_root_mean": 35.43333333333333,
+            "threshold_hex": "0x1.1b9228afdadcfp+5",
+            "threshold": 35.44636666666667,
+            "branch": "left",
+            "target_tuple": [
+              100,
+              90,
+              0,
+              90
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": false,
+            "actions": {
+              "locked_fixed": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "4/15"
+              },
+              "gate": {
+                "mask": 5,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 2,
+                "objective_exact": "17/60"
+              },
+              "pair_oracle": {
+                "mask": 4,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "4/15"
+              },
+              "all_mask_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "4/15"
+              }
+            }
+          },
+          {
+            "selection_reason": "first_positive_pair_gap",
+            "cycle": 1812,
+            "root_source": "TS1",
+            "observed_root_mean_hex": "0x1.21879c9a8e449p+5",
+            "observed_root_mean": 36.19121666666667,
+            "threshold_hex": "0x1.1b9228afdadcfp+5",
+            "threshold": 35.44636666666667,
+            "branch": "right",
+            "target_tuple": [
+              100,
+              73,
+              2,
+              115
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": true,
+            "actions": {
+              "locked_fixed": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 3,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "23/30"
+              },
+              "gate": {
+                "mask": 4,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 3,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "23/30"
+              },
+              "pair_oracle": {
+                "mask": 4,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 3,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "23/30"
+              },
+              "all_mask_oracle": {
+                "mask": 2,
+                "prediction": [
+                  20,
+                  73,
+                  2,
+                  100
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "31/60"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "case": "first_v17_adaptive_selected_gate",
+        "gate_id": "g301",
+        "k": 3,
+        "scenario": "equal_source_quote",
+        "budget": 2,
+        "lambda_exact": "0",
+        "policy": {
+          "kind": "gate",
+          "root": 0,
+          "threshold_hex": "0x1.4211a64531f1ap+7",
+          "left_mask": 1,
+          "right_mask": 3
+        },
+        "policy_selection_scope": "Inherited v17 choice; illustrative cycles chosen by predeclared diagnostic rules after outcomes, never for policy fitting or performance estimation.",
+        "cohort_results": [
+          {
+            "gate_id": "g301",
+            "k": 3,
+            "scenario": "equal_source_quote",
+            "budget": 2,
+            "lambda_exact": "0",
+            "cohort": "fit",
+            "policy": {
+              "kind": "gate",
+              "root": 0,
+              "threshold_hex": "0x1.4211a64531f1ap+7",
+              "left_mask": 1,
+              "right_mask": 3
+            },
+            "selected_families": [
+              "gate_only",
+              "adaptive_enabled"
+            ],
+            "locked_fixed_mask": 3,
+            "cycles": 102,
+            "means": {
+              "gate_exact": "0",
+              "locked_fixed_exact": "0",
+              "all_mask_oracle_exact": "0",
+              "pair_oracle_exact": "0"
+            },
+            "decomposition": {
+              "all_mask_headroom_exact": "0",
+              "pair_representation_gap_exact": "0",
+              "routing_regret_exact": "0",
+              "actual_minus_fixed_exact": "0"
+            },
+            "gate_component_errors": 0,
+            "fixed_component_errors": 0,
+            "gate_vector_errors": 0,
+            "fixed_vector_errors": 0,
+            "gate_quote_sum": 153,
+            "fixed_quote_sum": 204,
+            "routing_strict_suboptimal_cycles": 0,
+            "pair_strictly_excludes_all_mask_oracle_cycles": 0,
+            "root_fit_range_hex": [
+              "0x1.41fcfaacd9e84p+7",
+              "0x1.42244a2a3752cp+7"
+            ],
+            "root_outside_fit_range_cycles": 0,
+            "branch_counts": {
+              "left": 51,
+              "right": 51
+            },
+            "strata": {
+              "fit_seen_target": {
+                "cycles": 102,
+                "means": {
+                  "gate_exact": "0",
+                  "locked_fixed_exact": "0",
+                  "all_mask_oracle_exact": "0",
+                  "pair_oracle_exact": "0"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "0"
+                }
+              },
+              "fit_unseen_target": {
+                "cycles": 0,
+                "means": null,
+                "decomposition": null
+              },
+              "root_inside_fit_range": {
+                "cycles": 102,
+                "means": {
+                  "gate_exact": "0",
+                  "locked_fixed_exact": "0",
+                  "all_mask_oracle_exact": "0",
+                  "pair_oracle_exact": "0"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "0"
+                }
+              },
+              "root_outside_fit_range": {
+                "cycles": 0,
+                "means": null,
+                "decomposition": null
+              }
+            }
+          },
+          {
+            "gate_id": "g301",
+            "k": 3,
+            "scenario": "equal_source_quote",
+            "budget": 2,
+            "lambda_exact": "0",
+            "cohort": "dev",
+            "policy": {
+              "kind": "gate",
+              "root": 0,
+              "threshold_hex": "0x1.4211a64531f1ap+7",
+              "left_mask": 1,
+              "right_mask": 3
+            },
+            "selected_families": [
+              "gate_only",
+              "adaptive_enabled"
+            ],
+            "locked_fixed_mask": 3,
+            "cycles": 102,
+            "means": {
+              "gate_exact": "245/408",
+              "locked_fixed_exact": "245/408",
+              "all_mask_oracle_exact": "227/408",
+              "pair_oracle_exact": "61/102"
+            },
+            "decomposition": {
+              "all_mask_headroom_exact": "3/68",
+              "pair_representation_gap_exact": "1/24",
+              "routing_regret_exact": "1/408",
+              "actual_minus_fixed_exact": "0"
+            },
+            "gate_component_errors": 245,
+            "fixed_component_errors": 245,
+            "gate_vector_errors": 97,
+            "fixed_vector_errors": 96,
+            "gate_quote_sum": 119,
+            "fixed_quote_sum": 204,
+            "routing_strict_suboptimal_cycles": 1,
+            "pair_strictly_excludes_all_mask_oracle_cycles": 16,
+            "root_fit_range_hex": [
+              "0x1.41fcfaacd9e84p+7",
+              "0x1.42244a2a3752cp+7"
+            ],
+            "root_outside_fit_range_cycles": 99,
+            "branch_counts": {
+              "left": 85,
+              "right": 17
+            },
+            "strata": {
+              "fit_seen_target": {
+                "cycles": 2,
+                "means": {
+                  "gate_exact": "0",
+                  "locked_fixed_exact": "0",
+                  "all_mask_oracle_exact": "0",
+                  "pair_oracle_exact": "0"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "0"
+                }
+              },
+              "fit_unseen_target": {
+                "cycles": 100,
+                "means": {
+                  "gate_exact": "49/80",
+                  "locked_fixed_exact": "49/80",
+                  "all_mask_oracle_exact": "227/400",
+                  "pair_oracle_exact": "61/100"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "9/200",
+                  "pair_representation_gap_exact": "17/400",
+                  "routing_regret_exact": "1/400",
+                  "actual_minus_fixed_exact": "0"
+                }
+              },
+              "root_inside_fit_range": {
+                "cycles": 3,
+                "means": {
+                  "gate_exact": "1/12",
+                  "locked_fixed_exact": "0",
+                  "all_mask_oracle_exact": "0",
+                  "pair_oracle_exact": "0"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "1/12",
+                  "actual_minus_fixed_exact": "1/12"
+                }
+              },
+              "root_outside_fit_range": {
+                "cycles": 99,
+                "means": {
+                  "gate_exact": "61/99",
+                  "locked_fixed_exact": "245/396",
+                  "all_mask_oracle_exact": "227/396",
+                  "pair_oracle_exact": "61/99"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "1/22",
+                  "pair_representation_gap_exact": "17/396",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "-1/396"
+                }
+              }
+            }
+          },
+          {
+            "gate_id": "g301",
+            "k": 3,
+            "scenario": "equal_source_quote",
+            "budget": 2,
+            "lambda_exact": "0",
+            "cohort": "evaluation",
+            "policy": {
+              "kind": "gate",
+              "root": 0,
+              "threshold_hex": "0x1.4211a64531f1ap+7",
+              "left_mask": 1,
+              "right_mask": 3
+            },
+            "selected_families": [
+              "gate_only",
+              "adaptive_enabled"
+            ],
+            "locked_fixed_mask": 3,
+            "cycles": 421,
+            "means": {
+              "gate_exact": "861/1684",
+              "locked_fixed_exact": "231/421",
+              "all_mask_oracle_exact": "625/1684",
+              "pair_oracle_exact": "789/1684"
+            },
+            "decomposition": {
+              "all_mask_headroom_exact": "299/1684",
+              "pair_representation_gap_exact": "41/421",
+              "routing_regret_exact": "18/421",
+              "actual_minus_fixed_exact": "-63/1684"
+            },
+            "gate_component_errors": 861,
+            "fixed_component_errors": 924,
+            "gate_vector_errors": 391,
+            "fixed_vector_errors": 381,
+            "gate_quote_sum": 518,
+            "fixed_quote_sum": 842,
+            "routing_strict_suboptimal_cycles": 62,
+            "pair_strictly_excludes_all_mask_oracle_cycles": 134,
+            "root_fit_range_hex": [
+              "0x1.41fcfaacd9e84p+7",
+              "0x1.42244a2a3752cp+7"
+            ],
+            "root_outside_fit_range_cycles": 382,
+            "branch_counts": {
+              "left": 324,
+              "right": 97
+            },
+            "strata": {
+              "fit_seen_target": {
+                "cycles": 30,
+                "means": {
+                  "gate_exact": "0",
+                  "locked_fixed_exact": "0",
+                  "all_mask_oracle_exact": "0",
+                  "pair_oracle_exact": "0"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "0",
+                  "pair_representation_gap_exact": "0",
+                  "routing_regret_exact": "0",
+                  "actual_minus_fixed_exact": "0"
+                }
+              },
+              "fit_unseen_target": {
+                "cycles": 391,
+                "means": {
+                  "gate_exact": "861/1564",
+                  "locked_fixed_exact": "231/391",
+                  "all_mask_oracle_exact": "625/1564",
+                  "pair_oracle_exact": "789/1564"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "13/68",
+                  "pair_representation_gap_exact": "41/391",
+                  "routing_regret_exact": "18/391",
+                  "actual_minus_fixed_exact": "-63/1564"
+                }
+              },
+              "root_inside_fit_range": {
+                "cycles": 39,
+                "means": {
+                  "gate_exact": "55/156",
+                  "locked_fixed_exact": "14/39",
+                  "all_mask_oracle_exact": "10/39",
+                  "pair_oracle_exact": "15/52"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "4/39",
+                  "pair_representation_gap_exact": "5/156",
+                  "routing_regret_exact": "5/78",
+                  "actual_minus_fixed_exact": "-1/156"
+                }
+              },
+              "root_outside_fit_range": {
+                "cycles": 382,
+                "means": {
+                  "gate_exact": "403/764",
+                  "locked_fixed_exact": "217/382",
+                  "all_mask_oracle_exact": "585/1528",
+                  "pair_oracle_exact": "93/191"
+                },
+                "decomposition": {
+                  "all_mask_headroom_exact": "283/1528",
+                  "pair_representation_gap_exact": "159/1528",
+                  "routing_regret_exact": "31/764",
+                  "actual_minus_fixed_exact": "-31/764"
+                }
+              }
+            }
+          }
+        ],
+        "traces": [
+          {
+            "selection_reason": "first_evaluation_cycle",
+            "cycle": 1785,
+            "root_source": "PS1",
+            "observed_root_mean_hex": "0x1.42207cbca26b8p+7",
+            "observed_root_mean": 161.06345166666665,
+            "threshold_hex": "0x1.4211a64531f1ap+7",
+            "threshold": 161.03447166666666,
+            "branch": "right",
+            "target_tuple": [
+              100,
+              90,
+              0,
+              130
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": false,
+            "actions": {
+              "locked_fixed": {
+                "mask": 3,
+                "prediction": [
+                  3,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 2,
+                "objective_exact": "1/2"
+              },
+              "gate": {
+                "mask": 3,
+                "prediction": [
+                  3,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 2,
+                "objective_exact": "1/2"
+              },
+              "pair_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "1/2"
+              },
+              "all_mask_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "1/2"
+              }
+            }
+          },
+          {
+            "selection_reason": "first_left_leaf",
+            "cycle": 1788,
+            "root_source": "PS1",
+            "observed_root_mean_hex": "0x1.42059cc47fafap+7",
+            "observed_root_mean": 161.01096166666667,
+            "threshold_hex": "0x1.4211a64531f1ap+7",
+            "threshold": 161.03447166666666,
+            "branch": "left",
+            "target_tuple": [
+              100,
+              100,
+              0,
+              130
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": false,
+            "actions": {
+              "locked_fixed": {
+                "mask": 3,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 0,
+                "vector_error": 0,
+                "quote": 2,
+                "objective_exact": "0"
+              },
+              "gate": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "1/4"
+              },
+              "pair_oracle": {
+                "mask": 3,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 0,
+                "vector_error": 0,
+                "quote": 2,
+                "objective_exact": "0"
+              },
+              "all_mask_oracle": {
+                "mask": 3,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 0,
+                "vector_error": 0,
+                "quote": 2,
+                "objective_exact": "0"
+              }
+            }
+          },
+          {
+            "selection_reason": "first_right_leaf",
+            "cycle": 1786,
+            "root_source": "PS1",
+            "observed_root_mean_hex": "0x1.421aafb0eb7e2p+7",
+            "observed_root_mean": 161.05212166666666,
+            "threshold_hex": "0x1.4211a64531f1ap+7",
+            "threshold": 161.03447166666666,
+            "branch": "right",
+            "target_tuple": [
+              100,
+              90,
+              0,
+              130
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": false,
+            "actions": {
+              "locked_fixed": {
+                "mask": 3,
+                "prediction": [
+                  3,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 2,
+                "objective_exact": "1/2"
+              },
+              "gate": {
+                "mask": 3,
+                "prediction": [
+                  3,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 2,
+                "objective_exact": "1/2"
+              },
+              "pair_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "1/2"
+              },
+              "all_mask_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "1/2"
+              }
+            }
+          },
+          {
+            "selection_reason": "first_positive_routing_regret",
+            "cycle": 1789,
+            "root_source": "PS1",
+            "observed_root_mean_hex": "0x1.42059397b043bp+7",
+            "observed_root_mean": 161.01089166666665,
+            "threshold_hex": "0x1.4211a64531f1ap+7",
+            "threshold": 161.03447166666666,
+            "branch": "left",
+            "target_tuple": [
+              100,
+              100,
+              0,
+              130
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": false,
+            "actions": {
+              "locked_fixed": {
+                "mask": 3,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 0,
+                "vector_error": 0,
+                "quote": 2,
+                "objective_exact": "0"
+              },
+              "gate": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "1/4"
+              },
+              "pair_oracle": {
+                "mask": 3,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 0,
+                "vector_error": 0,
+                "quote": 2,
+                "objective_exact": "0"
+              },
+              "all_mask_oracle": {
+                "mask": 3,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 0,
+                "vector_error": 0,
+                "quote": 2,
+                "objective_exact": "0"
+              }
+            }
+          },
+          {
+            "selection_reason": "first_positive_pair_gap",
+            "cycle": 1787,
+            "root_source": "PS1",
+            "observed_root_mean_hex": "0x1.421c733bf0298p+7",
+            "observed_root_mean": 161.05556666666666,
+            "threshold_hex": "0x1.4211a64531f1ap+7",
+            "threshold": 161.03447166666666,
+            "branch": "right",
+            "target_tuple": [
+              100,
+              90,
+              0,
+              130
+            ],
+            "target_seen_in_fit": false,
+            "root_outside_fit_range": false,
+            "actions": {
+              "locked_fixed": {
+                "mask": 3,
+                "prediction": [
+                  3,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 2,
+                "objective_exact": "1/2"
+              },
+              "gate": {
+                "mask": 3,
+                "prediction": [
+                  3,
+                  100,
+                  0,
+                  130
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 2,
+                "objective_exact": "1/2"
+              },
+              "pair_oracle": {
+                "mask": 1,
+                "prediction": [
+                  100,
+                  100,
+                  0,
+                  90
+                ],
+                "component_errors": 2,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "1/2"
+              },
+              "all_mask_oracle": {
+                "mask": 2,
+                "prediction": [
+                  20,
+                  90,
+                  0,
+                  130
+                ],
+                "component_errors": 1,
+                "vector_error": 1,
+                "quote": 1,
+                "objective_exact": "1/4"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
