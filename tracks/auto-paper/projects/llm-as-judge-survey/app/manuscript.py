@@ -123,8 +123,9 @@ def packs(args):
         if name == "03-overview":
             years = Counter(papers[k]["year"] for k in ext)
             parts.append("### 연도\n\n" + "\n".join(f"- {y or '미상'}: {n}" for y, n in sorted(years.items())))
-            venues = Counter("arXiv" if papers[k]["venue"] in ("arXiv", "arXiv.org", "") and papers[k]["arxiv"]
-                             else "저장소(Zenodo·OSF·SSRN 등)" if re.search(r"Zenodo|OSF|SSRN|Open Science|preprint",
+            venues = Counter("arXiv" if (re.search(r"arxiv", papers[k]["venue"], re.I)
+                                         or not papers[k]["venue"] and papers[k]["arxiv"])
+                             else "저장소(Zenodo·OSF·SSRN·medRxiv 등)" if re.search(r"Zenodo|OSF|SSRN|Open Science|preprint|rxiv|Research Square|Figshare",
                                                                      papers[k]["venue"], re.I)
                              else "학회·저널·기타" for k in ext)
             parts.append("### 출처 유형\n\n" + "\n".join(f"- {v}: {n}" for v, n in venues.most_common()))

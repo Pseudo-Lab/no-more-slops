@@ -1,0 +1,20 @@
+{"id":"2.2-P3","decision":"applied","why":"사람 검수 표본을 r1·r3 각 포함 50·제외 50편으로 명시. docs/screening.md 105-106과 일치"}
+{"id":"2.4-P1","decision":"merged","why":"문장 검토('미리' 삭제)와 문단 검토(직접 비교 기준 이동, 네 방향 정의)를 합침"}
+{"id":"2.4-P2","decision":"applied","why":"주장 기록 점검 문단으로 확장(시범 배치 110편 검토, 형식 검사). docs/synthesis.md c1 근거. 형식 검사가 초록 일치는 못 본다는 단서 추가"}
+{"id":"2.5-P1","decision":"applied","why":"제목 '본문 확인', 7개 질문 선정 기준과 Q-DEBIAS 7·6·7·0, Q-FT 4·2·6·0 한계, 수행 주체(LLM 서브에이전트, 사람 검수 없음) 명시. claims.csv로 재집계"}
+{"id":"2.5-P2","decision":"applied","why":"confirmed/partly/contradicted 정의와 방향 재기록이 다른 축임을 서술. verify.csv 재집계: 75/24/0, 방향 변경 11(confirmed 4, partly 7), 지지1+반박7→조건부, 효과없음→반박2·조건부1"}
+{"id":"2.2-P1","decision":"applied","why":"'1장에서 정한 범위' 참조를 삭제하고 범위(LLM이 생성물을 평가·판정하는 연구)를 직접 서술"}
+{"id":"2.1-P3","decision":"partly","why":"문단 이동 대신 P3에 '아래 병합 오류를 고친 뒤 다시 병합한 결과'를 덧붙임"}
+{"id":"2.6-P1","decision":"applied","why":"2.4 시범 배치·형식 검사 참조, 7개 질문 선정과 LLM 본문 확인 한계, 방향 집계 이유(3.6절) 추가"}
+{"id":"2.4-table","decision":"applied","why":"표 2.1을 표 2-1로 바꿈(굵게, 표 위 유지)"}
+{"id":"3-P1","decision":"applied","why":"'2,185을' -> '2,185편을'"}
+{"id":"3.1-P3","decision":"applied","why":"비심사 다수를 '다수일 수 있다'로 낮춤"}
+{"id":"3.3-P1","decision":"applied","why":"형식 정의는 4.1.1절에서 다룬다고 덧붙임"}
+{"id":"3.3-P3","decision":"applied","why":"4·6장 결과(118/130, 82/140)를 미리 꺼내지 않고 4.2.2·6.2.3절에서 본다는 질문 형태로 바꿈"}
+{"id":"3.4-P1","decision":"applied","why":"'나머지는' -> '그다음으로', 근거 없는 '판정 오류의 비용이 큰' 삭제"}
+{"id":"3.5-P1","decision":"applied","why":"연도 교차 집계 없으므로 '반영된 것으로 보인다'"}
+{"id":"3.5-P2","decision":"applied","why":"'재현성 문제와 직결' -> '이어질 수 있으며'"}
+{"id":"3.6-P3","decision":"applied","why":"'예를 들어 G-Eval' 앞에서 지표 성질 문단과 수치 예시·방향 집계 문단으로 분할"}
+{"id":"3.7-P1","decision":"applied","why":"영어 단독 여부는 코딩하지 않았으므로 '확인되지 않으므로'"}
+{"id":"3.8-P1","decision":"applied","why":"'독립 비교는 적다'를 앙상블·파인튜닝 범위로 낮추고 1.5와 겹치는 장별 RQ 대응 문장을 줄임"}
+{"id":"3-tables","decision":"applied","why":"표 3-1~3-4 캡션을 표 아래 ': 표 3-N.' 형식에서 표 위 '**표 3-N 제목**'으로 이동"}
