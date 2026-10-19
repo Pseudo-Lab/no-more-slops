@@ -18,3 +18,18 @@
 {"key": "arxiv:2505.12301", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.52202/085713-1008", "reason": "doi:10.52202/085713-1008와 같은 연구의 다른 판본"}
 {"key": "doi:10.82419/424", "decision": "exclude", "code": "E7", "duplicate_of": "arxiv:2601.11332", "reason": "arxiv:2601.11332와 같은 연구의 다른 판본"}
 {"key": "arxiv:2504.15205", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.1145/3726302.3730165", "reason": "doi:10.1145/3726302.3730165와 같은 연구의 다른 판본"}
+{"key": "doi:10.1101/2025.04.22.25326219", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.1038/s41746-025-02005-2", "reason": "doi:10.1038/s41746-025-02005-2와 같은 연구의 다른 판본"}
+{"key": "doi:10.1101/2025.10.27.25338910", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.1038/s41746-026-02992-w", "reason": "doi:10.1038/s41746-026-02992-w와 같은 연구의 다른 판본"}
+{"key": "doi:10.1055/s-0045-1810904", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.1007/s00432-026-06489-7", "reason": "doi:10.1007/s00432-026-06489-7와 같은 연구의 다른 판본"}
+{"key": "title:betaconform efficient map estimation of llm ensemble judgment performance with prior transfer", "decision": "exclude", "code": "E7", "duplicate_of": "arxiv:2504.12589", "reason": "arxiv:2504.12589와 같은 연구의 다른 판본"}
+{"key": "arxiv:2510.13501", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.1109/icassp55912.2026.11462883", "reason": "doi:10.1109/icassp55912.2026.11462883와 같은 연구의 다른 판본"}
+{"key": "title:an empirical investigation of practical llm as a judge improvement techniques on rewardbench 2", "decision": "exclude", "code": "E7", "duplicate_of": "arxiv:2604.13717", "reason": "arxiv:2604.13717와 같은 연구의 다른 판본"}
+{"key": "doi:10.5281/zenodo.21797926", "decision": "exclude", "code": "E7", "duplicate_of": "arxiv:2609.00038", "reason": "arxiv:2609.00038와 같은 연구의 다른 판본"}
+{"key": "doi:10.5281/zenodo.20807411", "decision": "exclude", "code": "E7", "duplicate_of": "arxiv:2606.22329", "reason": "arxiv:2606.22329와 같은 연구의 다른 판본"}
+{"key": "doi:10.5281/zenodo.22160954", "decision": "exclude", "code": "E7", "duplicate_of": "arxiv:2608.31016", "reason": "arxiv:2608.31016와 같은 연구의 다른 판본"}
+{"key": "doi:10.5281/zenodo.21299223", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.5281/zenodo.21323784", "reason": "doi:10.5281/zenodo.21323784와 같은 연구의 다른 판본"}
+{"key": "doi:10.5281/zenodo.22949193", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.2139/ssrn.7555380", "reason": "doi:10.2139/ssrn.7555380와 같은 연구의 다른 판본"}
+{"key": "doi:10.20944/preprints202607.1745.v1", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.3390/make8090275", "reason": "doi:10.3390/make8090275와 같은 연구의 다른 판본"}
+{"key": "doi:10.5281/zenodo.17517863", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.5281/zenodo.17832860", "reason": "doi:10.5281/zenodo.17832860와 같은 연구의 다른 판본"}
+{"key": "title:allure a systematic protocol for auditing and improving llm based evaluation of text using iterative in context learning", "decision": "exclude", "code": "E7", "duplicate_of": "arxiv:2309.13701", "reason": "arxiv:2309.13701와 같은 연구의 다른 판본"}
+{"key": "arxiv:2401.02132", "decision": "exclude", "code": "E7", "duplicate_of": "doi:10.18653/v1/2024.emnlp-industry.25", "reason": "doi:10.18653/v1/2024.emnlp-industry.25와 같은 연구의 다른 판본"}

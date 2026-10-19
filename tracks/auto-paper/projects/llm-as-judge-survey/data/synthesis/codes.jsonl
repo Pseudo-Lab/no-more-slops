@@ -98,7 +98,6 @@
 {"key": "arxiv:2504.17087", "biases": [], "mitigation": ["ensemble", "rubric"]}
 {"key": "arxiv:2501.10970", "biases": ["other"], "mitigation": []}
 {"key": "arxiv:2503.19092", "biases": ["other"], "mitigation": []}
-{"key": "doi:10.1101/2025.04.22.25326219", "biases": ["competence"], "mitigation": ["ensemble"]}
 {"key": "arxiv:2410.21545", "biases": ["style"], "mitigation": ["rubric", "fine_tuning"]}
 {"key": "arxiv:2310.17631", "biases": ["position", "competence", "style"], "mitigation": ["fine_tuning", "swap", "reference"]}
 {"key": "arxiv:2503.00596", "biases": ["adversarial"], "mitigation": ["other"]}
@@ -317,7 +316,6 @@
 {"key": "arxiv:2602.15481", "biases": ["inconsistency"], "mitigation": ["other"]}
 {"key": "arxiv:2505.17760", "biases": ["sycophancy"], "mitigation": ["internal", "reference"]}
 {"key": "arxiv:2604.09497", "biases": [], "mitigation": ["fine_tuning"]}
-{"key": "arxiv:2510.13501", "biases": [], "mitigation": ["calibration", "fine_tuning"]}
 {"key": "arxiv:2510.00263", "biases": ["position"], "mitigation": ["calibration", "fine_tuning"]}
 {"key": "arxiv:2410.12784", "biases": ["competence"], "mitigation": []}
 {"key": "arxiv:2606.10315", "biases": ["competence", "criteria"], "mitigation": []}
@@ -398,7 +396,6 @@
 {"key": "doi:10.5753/sbbd.2024.243130", "biases": [], "mitigation": []}
 {"key": "doi:10.1109/aixdke63520.2024.00020", "biases": [], "mitigation": ["rubric"]}
 {"key": "doi:10.48448/wbp4-6q60", "biases": ["competence"], "mitigation": ["ensemble"]}
-{"key": "doi:10.1101/2025.10.27.25338910", "biases": ["leniency", "social", "competence"], "mitigation": ["ensemble"]}
 {"key": "doi:10.3389/fpubh.2026.1874389", "biases": ["leniency"], "mitigation": []}
 {"key": "doi:10.1109/icmla61862.2024.00034", "biases": ["competence"], "mitigation": []}
 {"key": "doi:10.18653/v1/2025.acl-long.513", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
@@ -623,7 +620,6 @@
 {"key": "arxiv:2605.31351", "biases": ["self_preference", "adversarial", "competence"], "mitigation": ["tool_grounding", "decomposition"]}
 {"key": "arxiv:2604.11589", "biases": ["self_preference"], "mitigation": ["ensemble"]}
 {"key": "arxiv:2509.26011", "biases": ["style"], "mitigation": ["fine_tuning"]}
-{"key": "title:an empirical investigation of practical llm as a judge improvement techniques on rewardbench 2", "biases": [], "mitigation": ["other"]}
 {"key": "arxiv:2608.25824", "biases": ["inconsistency"], "mitigation": ["calibration", "abstention"]}
 {"key": "arxiv:2512.05334", "biases": ["other"], "mitigation": []}
 {"key": "arxiv:2602.01528", "biases": ["sycophancy", "authority"], "mitigation": ["fine_tuning"]}
@@ -785,7 +781,6 @@
 {"key": "doi:10.1145/3805689.3806459", "biases": ["social", "leniency", "inconsistency"], "mitigation": ["cot"]}
 {"key": "doi:10.17605/osf.io/jw59c", "biases": ["position"], "mitigation": ["calibration", "swap"]}
 {"key": "doi:10.5281/zenodo.21323784", "biases": [], "mitigation": []}
-{"key": "doi:10.5281/zenodo.21299223", "biases": [], "mitigation": []}
 {"key": "doi:10.1007/978-3-032-39892-5_17", "biases": [], "mitigation": []}
 {"key": "doi:10.1109/access.2026.3726251", "biases": ["competence"], "mitigation": ["calibration", "abstention"]}
 {"key": "doi:10.5281/zenodo.21361919", "biases": ["style", "other"], "mitigation": []}
@@ -796,7 +791,6 @@
 {"key": "doi:10.18653/v1/2026.gem-main.45", "biases": ["sycophancy", "social"], "mitigation": []}
 {"key": "doi:10.1007/978-3-032-33865-5_12", "biases": [], "mitigation": []}
 {"key": "doi:10.1109/cste69562.2026.11647786", "biases": ["adversarial", "leniency", "competence"], "mitigation": ["ensemble", "rubric", "tool_grounding", "human_in_loop"]}
-{"key": "doi:10.5281/zenodo.20807411", "biases": ["position", "verbosity", "inconsistency", "other"], "mitigation": []}
 {"key": "doi:10.5281/zenodo.19201807", "biases": ["competence"], "mitigation": ["critique_refine", "other"]}
 {"key": "doi:10.5281/zenodo.22917751", "biases": [], "mitigation": []}
 {"key": "title:structural biases in llm as a judge systems implications for reliable is adoption", "biases": ["position", "self_preference", "inconsistency"], "mitigation": ["human_in_loop", "ensemble"]}
@@ -877,7 +871,6 @@
 {"key": "doi:10.1145/3805696.3846049", "biases": [], "mitigation": []}
 {"key": "doi:10.1109/access.2026.3739942", "biases": ["leniency"], "mitigation": []}
 {"key": "doi:10.5281/zenodo.21016696", "biases": ["criteria"], "mitigation": ["calibration", "rubric"]}
-{"key": "doi:10.5281/zenodo.22949193", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["calibration"]}
 {"key": "doi:10.13140/rg.2.2.36521.15201", "biases": ["inconsistency"], "mitigation": ["calibration"]}
 {"key": "doi:10.5281/zenodo.22878599", "biases": ["competence"], "mitigation": ["ensemble"]}
 {"key": "doi:10.5281/zenodo.20326022", "biases": ["inconsistency", "competence"], "mitigation": ["tool_grounding"]}
@@ -897,7 +890,6 @@
 {"key": "doi:10.2196/preprints.112207", "biases": ["inconsistency", "leniency", "competence"], "mitigation": ["ensemble"]}
 {"key": "doi:10.17605/osf.io/t68e9", "biases": ["leniency"], "mitigation": []}
 {"key": "doi:10.5281/zenodo.21162712", "biases": ["inconsistency"], "mitigation": []}
-{"key": "doi:10.20944/preprints202607.1745.v1", "biases": ["competence"], "mitigation": []}
 {"key": "doi:10.5281/zenodo.21185717", "biases": ["inconsistency", "adversarial"], "mitigation": ["calibration"]}
 {"key": "doi:10.5753/stil.2026.26484", "biases": ["criteria"], "mitigation": []}
 {"key": "doi:10.5281/zenodo.17832860", "biases": ["criteria", "style"], "mitigation": []}
@@ -932,8 +924,6 @@
 {"key": "doi:10.17605/osf.io/r93e2", "biases": ["leniency"], "mitigation": ["calibration"]}
 {"key": "doi:10.5281/zenodo.19332782", "biases": ["criteria"], "mitigation": []}
 {"key": "doi:10.1007/978-981-92-3381-6_24", "biases": ["competence"], "mitigation": []}
-{"key": "doi:10.5281/zenodo.17517863", "biases": ["style", "criteria"], "mitigation": []}
-{"key": "doi:10.5281/zenodo.22160954", "biases": ["competence"], "mitigation": []}
 {"key": "doi:10.17605/osf.io/9jpn8", "biases": ["social"], "mitigation": []}
 {"key": "doi:10.18653/v1/2026.rag4reports-1.13", "biases": [], "mitigation": []}
 {"key": "doi:10.58425/ajt.v5i12.624", "biases": ["inconsistency"], "mitigation": []}
@@ -945,7 +935,6 @@
 {"key": "doi:10.5281/zenodo.21421024", "biases": ["adversarial"], "mitigation": []}
 {"key": "doi:10.5281/zenodo.21399123", "biases": ["position", "verbosity", "competence"], "mitigation": ["ensemble", "swap"]}
 {"key": "doi:10.5281/zenodo.23138677", "biases": ["inconsistency", "criteria"], "mitigation": []}
-{"key": "doi:10.5281/zenodo.21797926", "biases": ["competence"], "mitigation": ["ensemble", "decomposition"]}
 {"key": "doi:10.1109/tkde.2026.3736381", "biases": ["criteria"], "mitigation": []}
 {"key": "doi:10.5281/zenodo.23311456", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"]}
 {"key": "doi:10.17605/osf.io/8vg5f", "biases": ["competence"], "mitigation": ["tool_grounding"]}
@@ -961,7 +950,6 @@
 {"key": "doi:10.5281/zenodo.23316414", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": []}
 {"key": "doi:10.5281/zenodo.23203399", "biases": ["competence"], "mitigation": []}
 {"key": "doi:10.1109/icsipc69751.2026.11583935", "biases": [], "mitigation": ["prompt_optimization", "critique_refine", "abstention"]}
-{"key": "title:betaconform efficient map estimation of llm ensemble judgment performance with prior transfer", "biases": [], "mitigation": ["ensemble"]}
 {"key": "arxiv:2504.12333", "biases": ["inconsistency", "competence"], "mitigation": []}
 {"key": "arxiv:2609.36086", "biases": ["leniency", "criteria"], "mitigation": ["other"]}
 {"key": "arxiv:2609.33773", "biases": ["adversarial", "competence"], "mitigation": ["other"]}
@@ -1172,7 +1160,6 @@
 {"key": "arxiv:2603.00039", "biases": ["verbosity", "style"], "mitigation": ["ensemble"]}
 {"key": "arxiv:2510.01591", "biases": [], "mitigation": ["internal"]}
 {"key": "arxiv:2503.17755", "biases": [], "mitigation": ["internal"]}
-{"key": "title:allure a systematic protocol for auditing and improving llm based evaluation of text using iterative in context learning", "biases": [], "mitigation": []}
 {"key": "title:examining llm prompting strategies for automatic evaluation of learner created computational artifacts", "biases": [], "mitigation": []}
 {"key": "arxiv:2311.00686", "biases": [], "mitigation": ["cot", "rubric"]}
 {"key": "arxiv:2410.02205", "biases": ["inconsistency"], "mitigation": ["fine_tuning"]}
@@ -1471,7 +1458,6 @@
 {"key": "arxiv:2509.22582", "biases": ["competence"], "mitigation": []}
 {"key": "arxiv:2512.12042", "biases": [], "mitigation": ["cot", "ensemble"]}
 {"key": "arxiv:2402.13249", "biases": ["competence"], "mitigation": []}
-{"key": "arxiv:2401.02132", "biases": [], "mitigation": ["decomposition"]}
 {"key": "arxiv:2602.16802", "biases": [], "mitigation": ["reference"]}
 {"key": "arxiv:2407.12847", "biases": ["verbosity"], "mitigation": ["calibration"]}
 {"key": "arxiv:2401.14640", "biases": [], "mitigation": ["fine_tuning"]}
@@ -1946,7 +1932,6 @@
 {"key": "doi:10.1109/ijcnn64981.2025.11228172", "biases": ["prompt_sensitivity", "criteria"], "mitigation": ["prompt_optimization"]}
 {"key": "doi:10.18653/v1/2025.bea-1.86", "biases": ["competence"], "mitigation": ["rubric", "reference", "decomposition", "abstention"]}
 {"key": "doi:10.5281/zenodo.21210235", "biases": ["criteria"], "mitigation": ["rubric"]}
-{"key": "doi:10.1055/s-0045-1810904", "biases": ["competence"], "mitigation": []}
 {"key": "doi:10.6084/m9.figshare.c.8565287", "biases": ["inconsistency"], "mitigation": []}
 {"key": "doi:10.32614/cran.package.gtheory4llm", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": []}
 {"key": "doi:10.1145/3803730.3803759", "biases": ["criteria"], "mitigation": ["decomposition"]}

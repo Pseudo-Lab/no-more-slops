@@ -96,7 +96,7 @@ def collect(args):
     done = {k: r for k, r in results().items() if k in papers}
     for batch in sorted(p.stem for p in BATCHES.glob("*.jsonl")):
         keys = [json.loads(line)["key"] for line in (BATCHES / f"{batch}.jsonl").open()]
-        missing = [k for k in keys if k not in done]
+        missing = [k for k in keys if k in papers and k not in done]
         if (RESULTS / f"{batch}.jsonl").exists() and missing:
             print(f"WARNING {batch}: {len(missing)} keys without results, e.g. {missing[:2]}")
     bad = {k: v for k, r in done.items() if (v := problems(r))}
