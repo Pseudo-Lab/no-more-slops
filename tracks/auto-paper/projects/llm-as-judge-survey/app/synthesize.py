@@ -3,21 +3,27 @@
 prepare: split included papers without results into data/synthesis/batches/<round>-NN.jsonl
 collect: validate data/synthesis/results/*.jsonl, write data/synthesis/claims.csv,
          data/synthesis/codes.jsonl, and print per-question direction counts
+verify-prepare: pick independent-evaluation claims on conflicting questions for full-text
+                checks into data/synthesis/verify/batches/<round>-NN.jsonl
+verify-collect: merge data/synthesis/verify/results/*.jsonl into data/synthesis/verify.csv
 
 Questions, claim fields and the recoding vocabulary are defined in docs/synthesis.md.
 
 Usage:
   uv run synthesize.py prepare --round c1 --size 110
   uv run synthesize.py collect
+  uv run synthesize.py verify-prepare --round v1 --per-question 15 --size 10
+  uv run synthesize.py verify-collect
 """
 
 import argparse
 import csv
 import json
-from collections import Counter
+from collections import Counter, defaultdict
 
 from common import DATA
 from extract import included
+from screen import candidates
 
 SYN = DATA / "synthesis"
 BATCHES, RESULTS = SYN / "batches", SYN / "results"
@@ -25,6 +31,9 @@ QUESTIONS = ("Q-FORMAT", "Q-MULTI", "Q-SCALE", "Q-SELF", "Q-HARD", "Q-COT", "Q-R
              "Q-DEBIAS", "Q-ATTACK", "Q-DEFENSE")
 DIRECTIONS = ("support", "refute", "conditional", "null")
 BASES = ("own_method", "evaluation")
+VERIFY = SYN / "verify"
+CONFLICTING = ("Q-SCALE", "Q-MULTI", "Q-EXPERT", "Q-COT", "Q-REF", "Q-FORMAT", "Q-DEFENSE")
+CHECKS = ("confirmed", "partly", "contradicted", "unavailable")
 BIASES = {"position", "verbosity", "style", "anchoring", "self_preference", "authority", "sycophancy", "social",
           "inconsistency", "prompt_sensitivity", "leniency", "competence", "criteria", "leakage", "adversarial",
           "other"}
@@ -128,6 +137,63 @@ def collect(args):
         print(f"{field}: " + ", ".join(f"{k} {n}" for k, n in c.most_common()))
 
 
+def verify_prepare(args):
+    """Pick evaluation claims on conflicting questions, spread over directions, most cited first."""
+    papers = {r["key"]: r for r in candidates()}
+    with (SYN / "claims.csv").open(encoding="utf-8") as f:
+        claims = [c for c in csv.DictReader(f) if c["basis"] == "evaluation" and c["question"] in CONFLICTING]
+    # Full text is readable for arXiv papers and the ACL Anthology (DOI prefix 10.18653).
+    readable = [c for c in claims if papers[c["key"]]["arxiv"] or papers[c["key"]]["doi"].startswith("10.18653")]
+    picked = []
+    for q in CONFLICTING:
+        by_dir = defaultdict(list)
+        for c in readable:
+            if c["question"] == q:
+                by_dir[c["direction"]].append(c)
+        for rows in by_dir.values():
+            rows.sort(key=lambda c: -int(papers[c["key"]]["cited_by"] or 0))
+        total = sum(len(v) for v in by_dir.values())
+        # Proportional share per direction, at least 2 (or all) so minority results are always read.
+        quota = {d: max(min(2, len(v)), round(args.per_question * len(v) / total)) for d, v in by_dir.items()}
+        chosen = [c for d, v in by_dir.items() for c in v[:quota[d]]]
+        picked += sorted(chosen, key=lambda c: -int(papers[c["key"]]["cited_by"] or 0))[:max(args.per_question,
+                                                                                               len(by_dir) * 2)]
+    out = VERIFY / "batches"
+    out.mkdir(parents=True, exist_ok=True)
+    for n, i in enumerate(range(0, len(picked), args.size), 1):
+        with (out / f"{args.round}-{n:02d}.jsonl").open("w", encoding="utf-8") as f:
+            for c in picked[i:i + args.size]:
+                r = papers[c["key"]]
+                f.write(json.dumps({"key": c["key"], "title": r["title"], "arxiv": r["arxiv"], "doi": r["doi"],
+                                    "question": c["question"], "direction": c["direction"], "claim": c["claim"],
+                                    "condition": c["condition"]}, ensure_ascii=False) + "\n")
+    print(f"{len(picked)} claims -> {-(-len(picked) // args.size)} batches ({args.round}-NN): "
+          + ", ".join(f"{q} {sum(c['question'] == q for c in picked)}" for q in CONFLICTING))
+
+
+def verify_collect(args):
+    rows = []
+    for path in sorted((VERIFY / "results").glob("*.jsonl")):
+        for line in path.open(encoding="utf-8"):
+            if line.strip():
+                rows.append(json.loads(line) | {"batch": path.stem})
+    bad = [r["key"] for r in rows if r.get("check") not in CHECKS or r.get("direction") not in DIRECTIONS]
+    if bad:
+        print(f"WARNING {len(bad)} invalid records, e.g. {bad[:3]}")
+    fields = ["question", "key", "abstract_direction", "direction", "check", "moderators", "evidence", "note",
+              "source", "batch"]
+    with (SYN / "verify.csv").open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fields, lineterminator="\n")
+        writer.writeheader()
+        for r in rows:
+            writer.writerow({k: " ".join(str("; ".join(r[k]) if isinstance(r.get(k), list) else r.get(k) or "")
+                                         .split()) for k in fields})
+    print(f"verified {len(rows)} claims: " + ", ".join(f"{k} {v}" for k, v in Counter(r.get("check") for r in rows)
+                                                         .items()))
+    changed = [r for r in rows if r.get("direction") != r.get("abstract_direction")]
+    print(f"direction changed after full text: {len(changed)}")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -135,8 +201,14 @@ def main():
     p.add_argument("--round", required=True)
     p.add_argument("--size", type=int, default=110)
     sub.add_parser("collect")
+    v = sub.add_parser("verify-prepare")
+    v.add_argument("--round", required=True)
+    v.add_argument("--per-question", type=int, default=15)
+    v.add_argument("--size", type=int, default=10)
+    sub.add_parser("verify-collect")
     args = parser.parse_args()
-    {"prepare": prepare, "collect": collect}[args.cmd](args)
+    {"prepare": prepare, "collect": collect, "verify-prepare": verify_prepare,
+     "verify-collect": verify_collect}[args.cmd](args)
 
 
 if __name__ == "__main__":

@@ -76,3 +76,12 @@
 - 추출자: Claude Code 서브에이전트 (Sonnet), 배치당 110편, 제목·초록 기준
 - 결과: 형식 오류 0건, 주장 936개. 질문별 집계는 `uv run synthesize.py collect`로 다시 낼 수 있고, 주장 목록은 `data/synthesis/claims.csv`에 있다.
 - 재분류: 편향의 `other`는 599편에서 227편으로, 개선책의 `other`는 330편에서 170편으로 줄었다.
+
+## 전문 확인 (v1)
+
+결과가 갈리는 7개 질문(`Q-SCALE`, `Q-MULTI`, `Q-EXPERT`, `Q-COT`, `Q-REF`, `Q-FORMAT`, `Q-DEFENSE`)에서 독립 평가(`evaluation`) 주장을 골라 본문으로 확인한다.
+
+- 선정: 전문을 읽을 수 있는 논문(arXiv, ACL Anthology)만 대상으로 한다. 질문마다 방향(지지·반박·조건부·효과 없음)별 비율로 나누되 방향마다 최소 2개를 넣고, 인용이 많은 순으로 질문당 최대 15개를 고른다 (`synthesize.py verify-prepare`).
+- 확인 항목: 초록의 주장이 본문 결과와 맞는지(`check`), 본문 기준 방향(`direction`), 결과를 바꾸는 조건(`moderators`: 과제 유형, 판정 모델 크기·종류, 평가 지표, 응답 품질 수준 등), 본문의 근거 수치와 위치(`evidence`).
+- `check` 값: `confirmed`(본문이 초록 주장을 그대로 뒷받침), `partly`(일부 조건에서만 성립하거나 과장됨), `contradicted`(본문 결과가 초록 주장과 다름), `unavailable`(전문을 못 읽음)
+- 결과 파일은 `data/synthesis/verify/results/<batch>.jsonl`이고 `verify-collect`가 `data/synthesis/verify.csv`로 합친다.
