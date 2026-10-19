@@ -87,7 +87,9 @@ def collect(args):
         print(f"invalid decisions: {len(bad)} e.g. {bad[:3]}")
     # Subagents sometimes skim and reuse template reasons; flag batches where >10% of reasons repeat.
     for batch in sorted({r["batch"] for r in done.values()} - {"human"}):
-        reasons = Counter(r.get("reason", "") for r in done.values() if r["batch"] == batch)
+        # No-abstract maybes legitimately share one reason, so leave them out of the repeat count.
+        reasons = Counter(r.get("reason", "") for r in done.values()
+                          if r["batch"] == batch and not (r["decision"] == "maybe" and "초록" in r.get("reason", "")))
         repeated, total = sum(n for n in reasons.values() if n > 1), sum(reasons.values())
         if repeated > total * 0.1:
             print(f"WARNING {batch}: {repeated}/{total} reasons are repeated sentences; re-screen this batch")
@@ -101,21 +103,23 @@ def collect(args):
         if n > 5:
             print(f"WARNING {batch}: {n} reasons also appear in other batches; check for mixed-up results")
 
-    if (SCREEN / "audit.csv").exists() and not args.resample:
-        print("audit sample kept: data/screening/audit.csv (pass --resample to redraw)")
+    audit = SCREEN / args.audit_out
+    if audit.exists() and not args.resample:
+        print(f"audit sample kept: {audit.relative_to(DATA.parent)} (pass --resample to redraw)")
         return
     rng = random.Random(20261019)
-    by = {d: sorted(k for k, r in done.items() if r["decision"] == d) for d in DECISIONS}
+    pool = {k: r for k, r in done.items() if r["batch"].startswith(args.audit_batches)}
+    by = {d: sorted(k for k, r in pool.items() if r["decision"] == d) for d in DECISIONS}
     sample = (rng.sample(by["include"], min(args.audit, len(by["include"]))) +
               rng.sample(by["exclude"], min(args.audit, len(by["exclude"]))) + by["maybe"])
     titles = {r["key"]: r for r in rows}
-    with (SCREEN / "audit.csv").open("w", newline="", encoding="utf-8") as f:
+    with audit.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["key", "title", "llm_decision", "llm_code", "llm_reason", "human_decision", "human_note"])
         for k in sample:
             writer.writerow([k, titles[k]["title"], done[k]["decision"], done[k].get("code", ""),
                              done[k].get("reason", ""), "", ""])
-    print(f"audit sample: {len(sample)} -> data/screening/audit.csv")
+    print(f"audit sample: {len(sample)} -> {audit.relative_to(DATA.parent)}")
 
 
 def audit_import(args):
@@ -128,7 +132,7 @@ def audit_import(args):
         doc = doc.get("data", doc)
         if doc.get("key"):
             human[migrated.get(doc["key"], doc["key"])] = doc
-    path = SCREEN / "audit.csv"
+    path = SCREEN / args.audit
     with path.open(encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     for r in rows:
@@ -161,9 +165,12 @@ def main():
     p.add_argument("--seed", type=int, default=20261019)
     c = sub.add_parser("collect")
     c.add_argument("--audit", type=int, default=50)
-    c.add_argument("--resample", action="store_true", help="overwrite an existing audit.csv")
+    c.add_argument("--resample", action="store_true", help="overwrite an existing audit file")
+    c.add_argument("--audit-out", default="audit.csv", help="audit file name under data/screening")
+    c.add_argument("--audit-batches", default="", help="only sample from batches with this prefix, e.g. r3-")
     i = sub.add_parser("audit-import")
     i.add_argument("export", type=Path, help="directory written by ArtifactData list with out_dir")
+    i.add_argument("--audit", default="audit.csv", help="audit file name under data/screening")
     args = parser.parse_args()
     {"prepare": prepare, "collect": collect, "audit-import": audit_import}[args.cmd](args)
 

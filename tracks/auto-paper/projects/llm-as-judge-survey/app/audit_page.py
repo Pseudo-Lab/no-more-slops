@@ -4,7 +4,7 @@ Embeds the include/exclude audit rows (not the maybe rows) with their
 abstracts and links into templates/audit.html. Human decisions are stored
 in the published page's db collection `audit`, not in this file.
 
-Usage: uv run audit_page.py OUT.html [--include-maybe]
+Usage: uv run audit_page.py OUT.html [--audit audit.csv] [--include-maybe]
 """
 
 import argparse
@@ -21,11 +21,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("out", type=Path)
     parser.add_argument("--include-maybe", action="store_true")
+    parser.add_argument("--audit", default="audit.csv", help="audit file name under data/screening")
     args = parser.parse_args()
 
     with (DATA / "candidates.csv").open(encoding="utf-8") as f:
         papers = {r["key"]: r for r in csv.DictReader(f)}
-    with (DATA / "screening" / "audit.csv").open(encoding="utf-8") as f:
+    with (DATA / "screening" / args.audit).open(encoding="utf-8") as f:
         rows = [r for r in csv.DictReader(f) if args.include_maybe or r["llm_decision"] != "maybe"]
 
     data = [{"key": r["key"], "title": r["title"], "year": papers[r["key"]]["year"],
