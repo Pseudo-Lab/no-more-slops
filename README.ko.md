@@ -62,6 +62,24 @@ Auto-Paper, Auto-Application, Auto-Post 3개의 트랙이 있습니다.
 
 단, 개인 명의로 공개·운영하더라도 다음과 같은 **Acknowledgement를 표시**합니다. 감사의 글, 소개·크레딧, 포스팅 본문 등에 넣으면 됩니다.
 
+제출·게시 언어에 맞춰 아래 한국어 또는 영어 문구 중 하나를 사용하면 됩니다.
+
+**한국어**
+
 > 이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.
 
+**English (영어 제출용)**
+
+> This work was created as part of the No-More-Slops group activities at Pseudo Lab.
+
 제작 시스템을 기여하는 **GitHub 저장소는 가짜연구소 소속**입니다. 기여한 코드·skill·프롬프트·문서는 [MIT License](LICENSE)로 공개되며, 개인 명의로 결과물을 활용해도 이 라이선스는 유지됩니다.
+
+## 기여 안내
+
+[기여 규칙](CONTRIBUTING.md)과 [스킬 역할 안내](docs/skill-catalog.md)를 먼저 확인해 주세요.
+
+- [Auto-Paper](tracks/auto-paper/README.md): 연구·논문과 제작 스킬
+- [Auto-Application](tracks/auto-application/README.md): 앱·서비스와 출시 스킬
+- [Auto-Post](tracks/auto-post/README.md): 게시물·영상과 제작 스킬
+
+재사용 스킬은 각 트랙의 `skills/`, 프로젝트와 주차별 결과물은 `projects/<project>/outputs/week-NN/` 구조로 관리합니다. 같은 작업의 수정은 기존 PR에 추가하고, 새 스킬은 이름과 적용 범위의 중복을 확인합니다.
