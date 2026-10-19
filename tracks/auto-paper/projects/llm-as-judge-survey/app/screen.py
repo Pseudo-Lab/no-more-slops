@@ -9,6 +9,7 @@ Usage:
   uv run screen.py prepare --round r1 --title-hit --size 140
   uv run screen.py prepare --round r2 --title-hit --curated
   uv run screen.py prepare --round r2s --sample 140
+  uv run screen.py prepare --round r4 --maybe-high-value --size 84
   uv run screen.py collect [--audit 50]
   uv run screen.py audit-import EXPORT_DIR
 """
@@ -54,7 +55,13 @@ def prepare(args):
     done = results()
     pending = {p.stem for p in BATCHES.glob("*.jsonl")} - {p.stem for p in RESULTS.glob("*.jsonl")}
     queued = {json.loads(line)["key"] for name in pending for line in (BATCHES / f"{name}.jsonl").open()}
-    rows = [r for r in candidates() if r["key"] not in done and r["key"] not in queued]
+    if args.maybe_high_value:
+        # Second look at first-pass maybes that are curated or cited at least 20 times.
+        rows = [r for r in candidates() if done.get(r["key"], {}).get("decision") == "maybe"
+                and r["key"] not in queued
+                and (any(s in r["sources"] for s in CURATED) or int(r["cited_by"] or 0) >= 20)]
+    else:
+        rows = [r for r in candidates() if r["key"] not in done and r["key"] not in queued]
     if args.title_hit or args.curated:
         rows = [r for r in rows if (args.title_hit and r["title_hit"] == "1")
                 or (args.curated and any(s in r["sources"] for s in CURATED))]
@@ -162,6 +169,8 @@ def main():
     p.add_argument("--title-hit", action="store_true", help="only candidates with a judge-like title")
     p.add_argument("--curated", action="store_true", help="only candidates from awesome lists or survey bibliographies")
     p.add_argument("--sample", type=int, help="random sample of the remaining selection")
+    p.add_argument("--maybe-high-value", action="store_true",
+                   help="re-screen maybes from curated sources or cited >= 20 times")
     p.add_argument("--seed", type=int, default=20261019)
     c = sub.add_parser("collect")
     c.add_argument("--audit", type=int, default=50)
