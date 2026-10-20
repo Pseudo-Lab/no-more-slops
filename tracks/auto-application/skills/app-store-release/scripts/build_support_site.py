@@ -79,10 +79,13 @@ def relative(kit, from_code, to_code, page):
 def render(kit, strings, code, page, title, description, body):
     e = html.escape
     loc = kit.locale(code)
-    langs = "".join(
-        f'<a href="{relative(kit, code, other["code"], page)}" lang="{other["lang"]}" hreflang="{other["lang"]}"'
-        f'{" aria-current=\"page\"" if other["code"] == code else ""}>{e(strings[other["code"]]["native"])}</a>'
-        for other in kit.locales)
+    lang_links = []
+    for other in kit.locales:
+        current = ' aria-current="page"' if other["code"] == code else ""
+        lang_links.append(
+            f'<a href="{relative(kit, code, other["code"], page)}" lang="{other["lang"]}" hreflang="{other["lang"]}"'
+            f'{current}>{e(strings[other["code"]]["native"])}</a>')
+    langs = "".join(lang_links)
     alternates = ""
     if kit.site.get("baseUrl"):
         primary = kit.app.get("primaryLocale", kit.locales[0]["code"])

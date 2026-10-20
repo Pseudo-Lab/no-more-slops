@@ -83,7 +83,7 @@ EOF
 
 echo "== export ($DEST)"
 "${EXPORT_CMD[@]}" > "$OUT/export.log" 2>&1 \
-  || { grep -iE "error" "$OUT/export.log" | tail -10; echo "export failed, full log: $OUT/export.log" >&2; exit 1; }
+  || { grep -iE "error" "$OUT/export.log" | tail -10 || true; echo "export failed, full log: $OUT/export.log" >&2; exit 1; }
 if [ "$DEST" = "upload" ]; then
   grep -q "Upload succeeded" "$OUT/export.log" || { echo "no 'Upload succeeded' in $OUT/export.log" >&2; exit 1; }
   echo "Uploaded $VERSION ($BUILD). App Store Connect processes it in about 10-30 minutes; then pick it in the version page's Build section."
