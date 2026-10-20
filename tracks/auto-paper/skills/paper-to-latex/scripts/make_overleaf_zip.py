@@ -5,6 +5,8 @@ Usage:
     python make_overleaf_zip.py <project_dir> [--zip <path.zip>] [--verify] [--engine pdflatex]
 
 Default ZIP path: <project_dir>/<project_dir_name>_overleaf.zip
+The output must end in .zip and must not overwrite a project source file or
+an existing file that is not a ZIP archive.
 
 Included: every source file of the project (main.tex at the ZIP root,
 references.bib, figures/, tables/, sections/, README.md, any local .cls/.sty/.bst).
@@ -63,8 +65,14 @@ def main():
         sys.exit("main.tex missing at project root; Overleaf would not find the main document")
 
     files = sorted(p for p in root.rglob("*") if p.is_file() and wanted(p.relative_to(root)))
+    if zip_path.suffix != ".zip":
+        sys.exit("ZIP output must use the .zip extension; source files were not changed")
+    if any(zip_path == p.resolve() or (zip_path.exists() and zip_path.samefile(p)) for p in files):
+        sys.exit("ZIP output conflicts with a project source file; source files were not changed")
+    if zip_path.exists() and (not zip_path.is_file() or not zipfile.is_zipfile(zip_path)):
+        sys.exit("ZIP output already exists and is not a ZIP archive; it was not changed")
     if zip_path.exists():
-        zip_path.unlink()  # only ever our own previous archive (*.zip inside/next to project)
+        zip_path.unlink()  # replace only a validated archive, never project source files
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for p in files:
             zf.write(p, p.relative_to(root).as_posix())
