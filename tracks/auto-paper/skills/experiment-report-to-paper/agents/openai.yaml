@@ -1,0 +1,6 @@
+interface:
+  display_name: "실험 보고서에서 학회 논문 작성"
+  short_description: "실험 결과 md를 검증해 학회 형식의 편집 가능한 Word 논문 작성"
+  default_prompt: "$experiment-report-to-paper를 사용해 실험 결과 md를 바탕으로 목표 학회 형식의 편집 가능한 Word 논문을 작성해 줘."
+policy:
+  allow_implicit_invocation: true
