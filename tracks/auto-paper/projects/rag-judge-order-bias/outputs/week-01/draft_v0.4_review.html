@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><title>W41 draft v0.4 (출처 보강판) — 검토용</title>
+<style>
+body{font-family:'Segoe UI','Malgun Gothic',sans-serif;max-width:860px;margin:32px auto;padding:0 20px;color:#1a1a2e;line-height:1.65;background:#fafafa;}
+h1{font-size:22px;border-bottom:3px solid #1652f0;padding-bottom:8px;}
+h2{font-size:17px;margin-top:28px;color:#1652f0;}
+code{background:#eef1f6;padding:1px 5px;border-radius:4px;font-size:0.9em;}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;}
+th,td{border:1px solid #ccc;padding:6px 12px;} th{background:#e8edf7;}
+li{margin:4px 0;}
+details.prov{background:#fff8e6;border:1px solid #e0c96a;border-radius:6px;padding:10px 14px;margin:14px 0;}
+details.prov pre{white-space:pre-wrap;font-size:12px;}
+.review-note{background:#e7f3ea;border-left:4px solid #2e9e5b;padding:10px 14px;border-radius:4px;margin-bottom:18px;}
+</style></head><body>
+<div class="review-note"><strong>검토용 v0.4 (2026-10-10 출처 보강판)</strong> — §3 Data에 LongBench 출처 명시. 확인 포인트: ① §1 Intro(3축 분리 프레이밍) ② §3 Data(출처·구성) ③ §6 Discussion에 arXiv:2509.13332 대조 문단 추가 여부. 승인 후 최종본 승격.</div>
+<h1>Thinking Reverses Position Bias: Order-Invariance and Mode Effects in LLM-as-Judge RAG Evaluation</h1>
+<details class="prov"><summary>Provenance 헤더 (게이트 D/E — 접기/펼치기)</summary><pre>&lt;!--
+Provenance 헤더 (게이트 D/E) — 지우지 않는다:
+- verification_label: partially-verified
+- model: AI3 qwen3.8-27B (사내망, vLLM), judge enable_thinking={false,true}, max_tokens={300,8192}, temp=0
+- prompts/logs: order_bias_v2.py (JUDGE_TMPL), exp2b_better_answer.py, w41_results/calls_{nothink,think,exp2b}.jsonl
+- independent_recalc: (1) 게이트 A 재실행 일치 — tools/run_gate_a.py --rerun, 32개 핵심 수치 cached 대비 0 불일치 (2026-10-09); (2) 플롯-테이블 수치 대조 — tools/check_figures.py --ocr --crosscheck, 24건 문자열 일치; (3) 클러스터 단위 재집계(z 보정)는 리뷰 처분 후 별도 산출
+- upstream_deps: rag_lab kg48c_answers.json (glm-4.6 생성 답변, 수정 시 전체 재검)
+--&gt;</pre></details>
+<p><strong>Draft v0.3 (W41) — 2026-10-08</strong></p>
+<h2>1. Introduction (프레이밍: 신뢰성의 3축 분리 — AI 초안, 인간 검토 대기 v0.4)</h2>
+<p>RAG 시스템 벤치마크에서 pairwise LLM-as-judge는 사실상의 표준이 되었다. 그러나</p>
+<p>&quot;judge가 신뢰할 수 있다&quot;는 주장 안에는 성질이 다른 세 가지 질문이 뭉뚱그려져 있다:</p>
+<ul><li><strong>재현성(reproducibility)</strong>: 같은 입력을 다시 채점하면 같은 판정이 나오는가</li><li><strong>순서 불변성(order-invariance)</strong>: 두 답변의 제시 순서를 바꿔도 승자가 같은가</li><li><strong>모드 의존성(mode-dependence)</strong>: thinking on/off라는 추론 모드 선택과 무관한가</li></ul>
+<p>선행연구는 이 셋을 분리하지 않았다. Zheng et al.(2023)은 temp&gt;0 조건의 위치편향을</p>
+<p>보고했고, Shi et al.(2025)는 위치 일관성·반복 안정성 지표를 체계화했다. reasoning</p>
+<p>모드 효과는 LRM vs LLM 비교(2504.09946, 2601.03630)나 궤적 길이 상관(2605.06672)으로</p>
+<p>간접적으로만 다뤄졌다. 본고는 로컬 운용 가능한 27B judge(qwen3.8-27B, temp=0)로</p>
+<p>2,000회+ 채점을 수행해 세 축을 분리 측정하고, 세 축의 성질이 서로 다르게 무너짐을</p>
+<p>정량화한다:</p>
+<ol><li><strong>재현성은 높다 (nothink)</strong>: temp=0 반복 채점 불일치율 0.003~0.008</li><li><strong>순서 불변은 아니다</strong>: 동일 쌍의 제시 순서 교환 시 17~20% (문항 클러스터 CI</li></ol>
+<p>   [0.112, 0.247])에서 승자 뒤집힘 — 재현 가능하지만 순서-불변은 아니다</p>
+<ol><li><strong>thinking이 편향 방향을 반전시킨다</strong>: nothink는 클러스터 보정 후 위치편향</li></ol>
+<p>   유의하지 않음 (z=0.90) → think P(first)=0.409, 둘째답 선호 (클러스터 z=-6.78,</p>
+<p>   p&lt;0.001), self-consistency 16배 불안정. 토큰 예산 컨파운드는 대조실험으로 배제.</p>
+<p>기여: (a) 재현성/순서불변성/모드의존성 3축 분리 측정 프레임 (b) thinking 모드가</p>
+<p>편향의 부호까지 바꾼다는 첫 정량 보고 (c) pairwise 승률 보고 실무 지침 — 양방향</p>
+<p>순서 교환 CI 병기 + 토큰 상한 length-cut이 긴 답변쌍을 선택적으로 제거하는 MNAR</p>
+<p>파싱 실패(20%→2.8%)의 경고 사례.</p>
+<h2>2. Related Work</h2>
+<ul><li>LLM judge bias: Zheng et al. MT-Bench/Chatbot Arena, 2023 (위치편향 보고, temp&gt;0); Shi et al. 2025 (위치 일관성 지표 체계화)</li><li>reasoning 모드와 평가: Wang et al. 2025 (arXiv:2504.09946, LRM 뒤째 위치 선호) · arXiv:2509.13332 (thinking robustness 향상 주장) · arXiv:2605.06672 (궤적 길이∝위치편향, 인과) · Huang et al. 2026 (arXiv:2601.03630, Qwen3 하이브리드 쌍 통제 비교) · arXiv:2605.10805 (모드 라우팅, 태스크 이질성). 본고는 동일 모델 on/off 토글 + 토큰 예산 대조로 RAG pairwise 3기준에서 편향 부호 반전을 분리 측정</li><li>judge 신뢰성 프레임: arXiv:2610.12083 (재현·순서불변·정확도 통합 지표 T); 측정 프로토콜: arXiv:2610.00054 (첫 토큰 판독의 편향 과대평가 — 생성 기반 판독 필요)</li><li>LightRAG judge 프로토콜 (Comprehensiveness/Diversity/Empowerment 3기준)</li></ul>
+<h2>3. Data</h2>
+<ul><li>코퍼스: LongBench(THUDM)에서 도메인별 샘플링한 61개 영어 장문 문서 — musique 35행,</li></ul>
+<p>  2wikimqa 26행, multifieldqa_en 23행, qasper 21행, hotpotqa 16행, narrativeqa 9행</p>
+<p>  (130행, 문서 단위 61개; datasets/mix.jsonl, label=longbench). 셸리·발자크 등 서사문학,</p>
+<p>  위키 기반 다중 홉 QA 문서, 통계 교재·물리 논문 등 혼합 도메인.</p>
+<ul><li>청킹: 2048자(≈512토큰) 문장 경계 우선, 총 1,404청크 (kg48c_chunks.json)</li><li>질의: 코퍼스에 맞춰 자체 작성한 다중 홉 질문 30개 (kg48c_queries.json)</li><li>답변: 4 RAG 시스템(naive/bm25/graph/chain) x 30질의, glm-4.6 temp=0.3 생성 캐시</li></ul>
+<p>  (kg48c_answers.json)</p>
+<ul><li>채점: qwen3.8-27B (vLLM), temp=0, nothink/think 2조건</li><li>judge 프롬프트: LightRAG(docs/Reproduce.md, batch_eval.py)의 3기준 pairwise와 동일한</li></ul>
+<p>  기준 정의를 사용하되, 출력을 설명 없이 3기준 JSON으로 강제한 경량 변형. 원본 대비</p>
+<p>  결과가 달라질 수 있음을 한계로 명시.</p>
+<h2>4. Methods</h2>
+<ul><li>exp1: 6쌍 x 2순서 x 3반복 x 2모드 = 2,160 채점</li><li>exp2b: 정상/부정인정 답변 쌍 57개 x 2순서 (nothink)</li><li>통계: 이항 정규근사, Wilson CI</li></ul>
+<h2>5. Results</h2>
+<h3>5.1 모드가 편향을 반전시킨다 (Table 1, 핵심)</h3>
+<p>판정 단위 통계는 유사반복(30문항 내 중첩)이므로, 리뷰 지적에 따라</p>
+<p><strong>문항 클러스터 단위 재분석</strong>를 본 통계로 사용한다.</p>
+<table><tr><th>조건</th><th>P(first) 판정단위</th><th>문항평균 (n=30 클러스터)</th><th>z (클러스터)</th><th>self-cons. 불안정</th><th>파싱실패</th></tr><tr><td>nothink</td><td>0.516</td><td>0.516 ± 0.018</td><td>+0.90 (n.s.)</td><td>0.006</td><td>0/1084</td></tr><tr><td>think</td><td>0.409</td><td>0.409 ± 0.013</td><td><strong>-6.78 (p&lt;0.001)</strong></td><td>0.099</td><td>30/1084</td></tr></table>
+<ul><li>nothink의 위치편향은 클러스터 보정 후 <strong>유의하지 않음</strong> (z=0.90) — &quot;경계적&quot;이 아니라</li></ul>
+<p>  &quot;없음&quot;으로 수정. 초안의 p=0.06 주장 철회.</p>
+<ul><li>think의 둘째답 선호는 보정 후에도 강하게 유지 (z=-6.78).</li><li>컨파운드 대조 (nothink + max_tokens=8192, 3문항 x 36호출): P(first)=0.472 =</li></ul>
+<p>  nothink+300과 동일 → 편향 반전은 토큰 예산이 아니라 thinking 자체의 효과.</p>
+<p>think는 답변을 다 읽은 뒤 판단한다 — late-answer 선호가 심화. 모드 선택이</p>
+<p>벤치마크 순위를 바꿀 수 있다는 의미.</p>
+<h3>5.2 재현성 vs 순서불변성 (Table 2)</h3>
+<table><tr><th>지표</th><th>nothink</th><th>think</th></tr><tr><td>반복 불일치율</td><td>0.003~0.008</td><td>0.088~0.113</td></tr><tr><td>순서교환 뒤집힘 (판정단위)</td><td>0.170</td><td>0.203</td></tr><tr><td>순서교환 뒤집힘 (문항평균)</td><td>0.166, CI [0.112, 0.220]</td><td>0.194, CI [0.142, 0.247]</td></tr></table>
+<p>보고된 승률 차가 ~17~20p 이내면 순서 노이즈로 소멸 가능.</p>
+<h3>5.3 &#x27;정보 없음&#x27; 답변의 평가 (Table 3, exp2b)</h3>
+<p>judge는 17.5% 케이스(평균 판별률 0.816, n=57, 위치별 0.825/0.807)에서</p>
+<p>&quot;컨텍스트에 없음&quot; 답변을 승리 판정 (위치 차이 자체는 유의하지 않음 —</p>
+<p>리뷰 MINOR-2 수용, &quot;위치 무관하게 ~17.5%&quot;로 기술).</p>
+<p>이 측정은 ground-truth 정확도가 아니라 &quot;정보 제공 답변 vs 답변 거부 답변의 판별률&quot;</p>
+<p>프록시임을 명시 (리뷰 BLOCKER-2 수용). 3기준 프롬프트가 정보 부재를 벌하지 않음.</p>
+<h3>5.4 Length-cut MNAR (실패 사례)</h3>
+<p>think v1 (max_tokens=2048): 파싱실패 20% — thinking이 상한 소진 시 content=&#x27;&#x27;.</p>
+<p>긴·복잡한 답변쌍에서 선택적 발생 (MNAR). max_tokens=8192로 2.8%까지 감소.</p>
+<p>judge 실패율 보고는 selection bias 점검과 동반되어야 함.</p>
+<h3>5.5 Limitation cases</h3>
+<ul><li>단일 judge 모델/크기 — 일반화에 2+ 모델 필요</li><li>exp2 원설계(gold 기반) 평가셋 불일치로 n=2 → 프록시 재설계(exp2b)로 복구</li><li>think 조건 4.1시간 — 대규모 재현 실험 비용 고지</li></ul>
+<h2>6. Discussion</h2>
+<p>보고 관행 제안: (1) pairwise는 양방향 순서 모두 보고 (2) 승률 차에 순서교환 CI 병기</p>
+<p>(3) judge 모드(thinking on/off)와 max_tokens 명시 (4) &#x27;정보 없음&#x27; 탐지 절차 포함.</p>
+<h2>7. Conclusion</h2>
+<p>temp=0 judge는 재현 가능하지만 순서 불변이 아니며(17~20% 뒤집힘), thinking 모드는</p>
+<p>편향의 방향까지 반전시킨다. judge 신뢰성 주장에는 순서 교환 검증과 모드 명시가 필수다.</p>
+<h2>Reproducibility</h2>
+<ul><li>코드: paper_engine/weeks/2026-W41/{order_bias_v2.py, exp2b_better_answer.py}</li><li>데이터: rag_lab/kg48c_answers.json (30q x 4시스템)</li><li>judge: qwen3.8-27B @ vLLM 사내망, temp=0</li><li>nothink: enable_thinking=false, max_tokens=300 (4.4분)</li><li>think: max_tokens=8192 (4.1시간), 체크포인트 재개 지원</li><li>총 2,282 호출 (폐기 v1 1,084 제외), 결과: w41_results/</li></ul>
+<h2>Figures</h2>
+<ul><li>Fig 1: w41_results/fig1_pfirst.png — (a) 기준별 P(first) 바 + 전체 클러스터 CI, (b) 30문항 분포 히스토그램</li><li>Fig 2: w41_results/fig2_flip.png — 순서교환 뒤집힘률 (클러스터 ±95% CI)</li><li>생성 코드: make_figures.py (OCR 교차검증 완료: 라벨·수치 일치)</li></ul>
+<h2>References (검증됨 — 실존 확인 [x])</h2>
+<ul><li>[x] Zheng, L. et al. &quot;Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.&quot; NeurIPS 2023 D&amp;B. arXiv:2306.05685 (v4 2023-12-24 확인)</li><li>[x] Shi, L., Ma, C., Liang, W., Diao, X., Ma, W., Vosoughi, S. &quot;Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge.&quot; IJCNLP-AACL 2025. arXiv:2406.07791 (ACL Anthology bib 확인) — 15 judge x 15만 평가, position consistency/preference fairness/repetition stability 3지표. 본고의 순서교환·반복지표와 직접 대응</li><li>[x] &quot;Judging the Judges: A Systematic Evaluation of Bias Mitigation Strategies in LLM-as-a-Judge Pipelines.&quot; arXiv:2604.23178 (2026) — position swap이 모델에 따라 +4.6pp~−7.0pp로 양방향 효과. 본고 &quot;swap 만능 아님&quot; 논지와 부합</li><li>[x] LightRAG judge 프로토콜: HKUDS/LightRAG docs/Reproduce.md, reproduce/batch_eval.py (EMNLP 2025) — 3기준 pairwise 프롬프트 원문 확인 (https://github.com/HKUDS/LightRAG). 본고 프롬프트는 동일 3기준+JSON 출력 변형임을 Methods에 명시</li><li>[x] &quot;Assessing Judging Bias in Large Reasoning Models: An Empirical Study.&quot; arXiv:2504.09946 (2025) — LRM(DeepSeek-R1/o1) judge도 위치편향 잔존, <strong>뒤째 위치 선호</strong> 보고. 본고 think P(first)=0.409 둘째답 선호와 방향 일치 — 차별화: LRM 비교가 아닌 동일 모델 thinking on/off 토글 실험으로 모드 효과를 분리·인과 배제(토큰 예산 대조)</li><li>[x] &quot;Explicit Reasoning Makes Better Judges: A Systematic Study on Accuracy, Efficiency, and Robustness.&quot; arXiv:2509.13332 (2025) — Qwen3 4B SLM에서 thinking 모드가 bias robustness 향상(위치 bias 일관성 95.25→91.27 등) 보고. 본고 think 둘째답 편향 강화(z=-6.78)와 대조되는 결과 — 태스크(RewardBench vs RAG pairwise 3기준)·모델 크기·temp 차이로 설명 가능, Discussion에서 다룸</li><li>[x] &quot;More Thinking, More Bias: Length-Driven Position Bias in Reasoning Models.&quot; arXiv:2605.06672 (2026) — reasoning 궤적 길이가 길수록 위치편향 강화(ρ=0.11~0.41, truncation 인과증명). &quot;생각=디바이어싱&quot; 통념 반박 — 본고 think 편향 강화와 메커니즘 차원에서 부합</li><li>[x] Huang, H. et al. &quot;Reasoning Model Is Superior LLM-Judge, Yet Suffers from Biases.&quot; EvalEval@ACL 2026. arXiv:2601.03630 — Qwen3 하이브리드 모드 쌍(Instruct vs Thinking) 통제 비교로 reasoning만 분리. LRM이 accuracy는 우세하나 표면품질 bias에 취약 — 본고와 같은 통제 설계, 정반대 결론 지점</li><li>[x] &quot;Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge.&quot; arXiv:2605.10805 (2026) — Qwen3 하이브리드 on/off 쌍으로 태스크별 reasoning 효과 이질성(수학·코딩만 이득). 본고 &#x27;모드 선택이 순위를 바꾼다&#x27; 논지의 외부 지지</li><li>[x] &quot;All Verdicts are Not Equal: Rethinking LLM Judge Reliability.&quot; arXiv:2610.12083 (2026) — 재현성·순서불변·정확도를 결합한 신뢰 지표 T(trustworthy verdict rate) 제안, &quot;reliability is item-specific&quot;. 본고 3축 분리 프레임과 직접 공명</li><li>[x] &quot;The First Token Is Not the Verdict: Hidden Costs of Reading LLM Judges Without Generating.&quot; arXiv:2610.00054 (2026) — 첫 토큰 로짓 판독이 위치편향을 과대평가(upper bound). Qwen3 enable_thinking=False 세팅 명시 — 본고 측정 프로토콜(생성 기반 판독)의 타당성 근거</li></ul>
+</body></html>
