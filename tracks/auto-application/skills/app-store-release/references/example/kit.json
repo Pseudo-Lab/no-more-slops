@@ -1,0 +1,54 @@
+{
+  "app": {
+    "name": "Tonlit",
+    "bundleId": "com.example.tonlit",
+    "version": "1.0",
+    "build": "21",
+    "primaryLocale": "en-US",
+    "brandPrefixes": ["Tonlit", "톤릿"]
+  },
+  "metadataDir": "metadata",
+  "locales": [
+    {"code": "en-US", "label": "영어(미국)", "folder": "", "lang": "en", "appLanguage": "en", "region": "en_US"},
+    {"code": "ko", "label": "한국어", "folder": "ko", "lang": "ko", "appLanguage": "ko", "region": "ko_KR"}
+  ],
+  "site": {
+    "baseUrl": "https://example.github.io/tonlit/",
+    "email": "support@example.com",
+    "strings": "site-strings.json",
+    "out": "site",
+    "mark": "tonlit",
+    "live": false
+  },
+  "screenshots": {
+    "dir": "screenshots/6.3-inch",
+    "slot": "Dynamic Island 지원 iPhone (중형 디스플레이)",
+    "size": "1206x2622",
+    "launchArgs": ["-acceptTerms"],
+    "shots": [
+      {"name": "1-home", "wait": 9, "args": []},
+      {"name": "2-reading", "wait": 4, "args": ["-autoOpenSample", "-editorTab", "analysis"]},
+      {"name": "3-shades", "wait": 10, "args": ["-homeSection", "shades"]},
+      {"name": "4-recipes", "wait": 9, "args": ["-autoOpenSample", "-editorTab", "tone", "-recipe", "bright"]},
+      {"name": "5-draping", "wait": 9, "args": ["-screen", "draping"]},
+      {"name": "6-save", "wait": 10, "args": ["-screen", "export", "-recipe", "bright"]}
+    ]
+  },
+  "review": {
+    "firstName": "",
+    "lastName": "",
+    "email": "support@example.com",
+    "phone": "",
+    "signInRequired": false,
+    "notes": "review-notes.md"
+  },
+  "common": [
+    {"page": "앱 정보", "field": "카테고리", "value": "기본: 사진 및 비디오, 보조: 라이프스타일", "copy": false},
+    {"page": "앱 정보", "field": "콘텐츠 권한", "value": "아니요", "copy": false, "hint": "샘플 인물 사진은 운영자가 AI로 생성한 이미지라 제3자 콘텐츠가 아니에요. 생성 서비스 약관이 상업적 이용을 허용하는지만 확인합니다."},
+    {"page": "앱 정보", "field": "연령 등급", "value": "모든 항목 없음 / 아니요", "copy": false, "hint": "웹 접근(제한 없는 웹 액세스)이 기본값 예로 되어 있으면 아니요로 바꿉니다. 약관이 13세 미만을 대상으로 하지 않으면 13+를 고릅니다."},
+    {"page": "앱이 수집하는 개인정보", "field": "데이터 유형", "value": "아니요, 이 앱에서 데이터를 수집하지 않습니다", "copy": false, "hint": "저장한 뒤 오른쪽 위 게시를 눌러야 반영돼요."},
+    {"page": "가격 및 사용 가능 여부", "field": "가격", "value": "기준 국가 미국, 2.99 USD", "copy": false, "hint": "다른 나라 가격은 자동으로 맞춰져요. 앱 내 구입과 구독은 없어요."},
+    {"page": "가격 및 사용 가능 여부", "field": "판매 국가", "value": "중국 본토 제외", "copy": false, "hint": "중국 본토는 ICP 등록 번호가 있어야 배포할 수 있어요. Mac(Apple Silicon)과 Apple Vision Pro는 테스트하지 않았으면 체크를 해제합니다."},
+    {"page": "비즈니스", "field": "유료 앱 계약", "value": "활성", "copy": false, "hint": "유료 앱 계약, 은행 계좌, 세금 양식(한국 개인 개발자는 W-8BEN)이 끝나야 유료로 팔 수 있어요."}
+  ]
+}

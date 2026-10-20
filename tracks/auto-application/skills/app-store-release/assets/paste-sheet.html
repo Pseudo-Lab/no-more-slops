@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>__TITLE__</title>
+<style>
+/* One left-aligned column in App Store Connect page order; a sticky language bar switches every per-language field at once. */
+:root{
+  --paper:#FFFFFF; --mist:#EEEFF1; --ink:#000000; --graphite:#62656D; --quiet:#9A9DA5; --hairline:#DCDEE2;
+  --warn-bg:#FFF1C9; --warn-ink:#6B4E00; --ok-bg:#DDF2E3; --ok-ink:#1F6B3A; --over:#C0261D;
+  --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Apple SD Gothic Neo","Noto Sans KR","Hiragino Sans","PingFang SC","Helvetica Neue",Arial,sans-serif;
+  --literal:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--paper:#000;--mist:#1A1B1E;--ink:#FFF;--graphite:#A3A6AD;--quiet:#6D7078;--hairline:#2A2C31;--warn-bg:#3A2E0A;--warn-ink:#F5D57A;--ok-bg:#12301D;--ok-ink:#8FD9A8;--over:#FF7B72;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#000;--mist:#1A1B1E;--ink:#FFF;--graphite:#A3A6AD;--quiet:#6D7078;--hairline:#2A2C31;--warn-bg:#3A2E0A;--warn-ink:#F5D57A;--ok-bg:#12301D;--ok-ink:#8FD9A8;--over:#FF7B72;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased;padding:0 20px}
+.page{max-width:820px;margin:0 auto;padding-block:36px 96px}
+h1{font-size:30px;line-height:1.15;letter-spacing:-.02em;margin:0 0 8px;text-wrap:balance}
+.lead{color:var(--graphite);margin:0;max-width:62ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin:20px 0 0;font-size:13px;color:var(--graphite)}
+.facts b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.langbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);margin:32px 0 0;padding-block:12px;border-bottom:1px solid var(--hairline)}
+.langbar-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.langbar-row::-webkit-scrollbar{display:none}
+.chip{flex:none;font:600 13px/1 var(--body);padding:9px 12px;border-radius:999px;border:1px solid var(--hairline);background:var(--paper);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .done{width:7px;height:7px;border-radius:50%;background:var(--ok-ink);display:none}
+.chip.is-done .done{display:block}
+.langbar-note{font-size:12px;color:var(--quiet);margin:8px 0 0}
+.part{margin-top:56px}
+.part>h2{font-size:22px;letter-spacing:-.01em;margin:0 0 4px}
+.where{color:var(--graphite);font-size:13px;margin:0 0 8px}
+.field{display:grid;gap:8px;padding-block:22px;border-top:1px solid var(--hairline)}
+.field-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px}
+.field-head h3{font-size:16px;font-weight:700;margin:0}
+.tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--mist);color:var(--graphite)}
+.tag.warn{background:var(--warn-bg);color:var(--warn-ink)}
+.tag.ok{background:var(--ok-bg);color:var(--ok-ink)}
+.count{margin-left:auto;font-size:12px;color:var(--quiet);font-variant-numeric:tabular-nums}
+.count.over{color:var(--over);font-weight:600}
+.well{display:flex;gap:10px;align-items:flex-start;background:var(--mist);border-radius:12px;padding:12px 12px 12px 14px}
+.value{flex:1;min-width:0;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;font:inherit}
+.value.long{max-height:260px;overflow-y:auto}
+.value.literal{font-family:var(--literal);font-size:13.5px}
+.copy{flex:none;font:600 13px/1 var(--body);padding:8px 12px;border-radius:8px;border:0;background:var(--ink);color:var(--paper);cursor:pointer;min-width:58px}
+.copy.copied{background:var(--ok-bg);color:var(--ok-ink)}
+.hint{font-size:13px;color:var(--graphite);margin:0;max-width:68ch}
+.hint b{color:var(--ink)}
+.shots{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;font-variant-numeric:tabular-nums}
+.shots span{background:var(--mist);border-radius:8px;padding:6px 10px}
+.done-row{display:flex;align-items:center;gap:10px;margin-top:28px;padding:14px 16px;border-radius:12px;background:var(--mist);font-weight:600}
+.done-row input{width:18px;height:18px;accent-color:var(--ok-ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media (max-width:480px){h1{font-size:25px}.count{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 id="title"></h1>
+  <p class="lead">App Store Connect 페이지의 위에서 아래 순서대로 정리했어요. 언어를 고르면 언어별 항목이 그 언어로 바뀌고, 복사 버튼을 누르면 칸에 그대로 붙여 넣을 수 있어요.</p>
+  <div class="facts" id="facts"></div>
+
+  <nav class="langbar" aria-label="언어">
+    <div class="langbar-row" id="langs"></div>
+    <p class="langbar-note" id="langnote"></p>
+  </nav>
+
+  <section class="part" id="version">
+    <h2 id="version-title"></h2>
+    <p class="where">배포 › iOS 앱 › 제출 준비 중인 버전. 오른쪽 위 언어 메뉴에서 언어를 바꾸며 언어별 항목을 채웁니다.</p>
+    <div class="field">
+      <div class="field-head"><h3>앱 미리보기 및 스크린샷</h3><span class="tag" data-loc-tag></span></div>
+      <p class="hint" id="shots-hint"></p>
+      <div class="shots" id="shots"></div>
+    </div>
+    <div class="field" data-field="promo" data-limit="170">
+      <div class="field-head"><h3>프로모션 텍스트</h3><span class="tag" data-loc-tag></span><span class="count"></span></div>
+      <div class="well"><p class="value"></p><button class="copy" type="button">복사</button></div>
+      <p class="hint">심사 없이 언제든 바꿀 수 있어요.</p>
+    </div>
+    <div class="field" data-field="description" data-limit="4000">
+      <div class="field-head"><h3>설명</h3><span class="tag" data-loc-tag></span><span class="count"></span></div>
+      <div class="well"><p class="value long"></p><button class="copy" type="button">복사</button></div>
+    </div>
+    <div class="field" data-field="keywords" data-limit="100">
+      <div class="field-head"><h3>키워드</h3><span class="tag" data-loc-tag></span><span class="count"></span></div>
+      <div class="well"><p class="value"></p><button class="copy" type="button">복사</button></div>
+      <p class="hint">쉼표 뒤에 띄어쓰기를 넣지 않습니다. 이름과 부제의 단어는 이미 검색되므로 반복하지 않아요.</p>
+    </div>
+    <div class="field" data-field="whatsNew" data-limit="4000" data-optional>
+      <div class="field-head"><h3>이 버전의 새로운 기능</h3><span class="tag" data-loc-tag></span><span class="count"></span></div>
+      <div class="well"><p class="value"></p><button class="copy" type="button">복사</button></div>
+    </div>
+    <div class="field" data-field="support">
+      <div class="field-head"><h3>지원 URL</h3><span class="tag" data-loc-tag></span><span class="tag" data-site-tag></span></div>
+      <div class="well"><p class="value literal"></p><button class="copy" type="button">복사</button></div>
+      <p class="hint" data-site-note><b>아직 게시 확인 전이에요. 열리지 않는 주소를 넣으면 심사에서 거절돼요.</b></p>
+    </div>
+    <div class="field" data-field="marketing">
+      <div class="field-head"><h3>마케팅 URL</h3><span class="tag" data-loc-tag></span><span class="tag">선택</span></div>
+      <div class="well"><p class="value literal"></p><button class="copy" type="button">복사</button></div>
+    </div>
+    <div class="field">
+      <div class="field-head"><h3>빌드</h3><span class="tag warn">업로드 후 선택</span></div>
+      <p class="hint" id="build-hint"></p>
+    </div>
+    <div class="field" id="review">
+      <div class="field-head"><h3>앱 심사 정보</h3><span class="tag">모든 언어 공통</span></div>
+      <p class="hint" id="signin-hint"></p>
+      <div id="contact"></div>
+    </div>
+    <div class="field" id="notes-field">
+      <div class="field-head"><h3>메모</h3><span class="tag">모든 언어 공통</span><span class="count" id="notes-count"></span></div>
+      <div class="well"><p class="value long" id="notes"></p><button class="copy" type="button">복사</button></div>
+    </div>
+  </section>
+
+  <section class="part" id="appinfo">
+    <h2>앱 정보</h2>
+    <p class="where">일반 정보 › 앱 정보. 새 언어는 이 페이지 오른쪽 위 언어 메뉴에서 추가해요.</p>
+    <div class="field" data-field="name" data-limit="30">
+      <div class="field-head"><h3>이름</h3><span class="tag" data-loc-tag></span><span class="count"></span></div>
+      <div class="well"><p class="value"></p><button class="copy" type="button">복사</button></div>
+    </div>
+    <div class="field" data-field="subtitle" data-limit="30">
+      <div class="field-head"><h3>부제</h3><span class="tag" data-loc-tag></span><span class="count"></span></div>
+      <div class="well"><p class="value"></p><button class="copy" type="button">복사</button></div>
+    </div>
+  </section>
+
+  <section class="part" id="privacy">
+    <h2>앱이 수집하는 개인정보</h2>
+    <p class="where">신뢰 및 안전 › 앱이 수집하는 개인정보. 개인정보 처리방침 URL은 앱 정보가 아니라 이 페이지에 있어요.</p>
+    <div class="field" data-field="privacy">
+      <div class="field-head"><h3>개인정보 처리방침 URL</h3><span class="tag" data-loc-tag></span><span class="tag" data-site-tag></span></div>
+      <div class="well"><p class="value literal"></p><button class="copy" type="button">복사</button></div>
+      <p class="hint">개인정보 처리방침 옆 <b>편집</b>을 눌러 언어별로 넣습니다.</p>
+    </div>
+  </section>
+
+  <div id="common"></div>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const KEY = DATA.app.bundleId || DATA.app.name || 'app';
+const STORE = { get(k){ try { return localStorage.getItem(KEY + '.' + k) } catch { return null } }, set(k, v){ try { localStorage.setItem(KEY + '.' + k, v) } catch {} } };
+const codes = DATA.locales.map(d => d.code);
+let current = codes.includes(STORE.get('locale')) ? STORE.get('locale') : codes[0];
+const done = new Set((STORE.get('done') || '').split(',').filter(Boolean));
+const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n };
+
+function copyText(text, button){
+  const ok = () => { button.textContent = '복사됨'; button.classList.add('copied'); setTimeout(() => { button.textContent = '복사'; button.classList.remove('copied') }, 1400) };
+  const fallback = () => {
+    const area = el('textarea'); area.value = text; area.setAttribute('readonly', ''); area.style.position = 'fixed'; area.style.opacity = '0';
+    document.body.appendChild(area); area.select();
+    let copied = false; try { copied = document.execCommand('copy') } catch {}
+    area.remove();
+    if (copied) return ok();
+    const range = document.createRange(); range.selectNodeContents(button.parentElement.querySelector('.value'));
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range); button.textContent = '⌘C';
+  };
+  if (navigator.clipboard?.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
+}
+
+function well(value, { literal = false, copy = true } = {}){
+  const w = el('div', 'well'); w.appendChild(el('p', 'value' + (literal ? ' literal' : ''), value));
+  if (copy){ const b = el('button', 'copy', '복사'); b.type = 'button'; w.appendChild(b) }
+  return w;
+}
+
+function renderStatic(){
+  const a = DATA.app;
+  document.title = `${a.name} 제출 시트`;
+  document.getElementById('title').textContent = `${a.name} App Store Connect 입력값`;
+  const facts = document.getElementById('facts');
+  [['번들 ID', a.bundleId], ['버전', a.build ? `${a.version} (${a.build})` : a.version], ['기본 언어', DATA.locales.find(d => d.code === a.primaryLocale)?.label]]
+    .filter(([, v]) => v).forEach(([k, v]) => { const s = el('span', null, k + ' '); s.appendChild(el('b', null, v)); facts.appendChild(s) });
+  document.getElementById('version-title').textContent = `iOS 앱 버전 ${a.version || ''}`.trim();
+  document.getElementById('build-hint').innerHTML = '';
+  document.getElementById('build-hint').append(
+    `업로드가 끝나고 처리되면(보통 10~30분, 완료 메일이 와요) 빌드 칸의 빌드 추가 버튼으로 ${a.build ? `${a.version} (${a.build})` : '올린 빌드'}를 고릅니다. 빌드는 모든 언어 공통이에요.`);
+  const r = DATA.review || {};
+  document.getElementById('signin-hint').textContent = r.signInRequired
+    ? '로그인 필요를 체크하고 심사용 계정의 사용자 이름과 암호를 넣습니다.'
+    : '로그인 필요의 체크를 해제합니다. 계정이 없는 앱이라 사용자 이름과 암호 칸은 비워 둡니다.';
+  const contact = document.getElementById('contact'); contact.style.display = 'grid'; contact.style.gap = '8px';
+  [['성', r.lastName], ['이름', r.firstName], ['전화번호', r.phone], ['이메일', r.email]].forEach(([k, v]) => {
+    const box = el('div'); box.appendChild(el('p', 'hint', k));
+    box.appendChild(v ? well(v, { literal: k !== '성' && k !== '이름' }) : el('p', 'hint', '직접 입력 (심사팀만 봐요)'));
+    contact.appendChild(box);
+  });
+  const notes = DATA.notes || '';
+  document.getElementById('notes').textContent = notes || '(메모 없음)';
+  document.getElementById('notes-count').textContent = `${notes.length.toLocaleString()} / 4,000`;
+  const common = document.getElementById('common');
+  const pages = [];
+  (DATA.common || []).forEach(item => { let p = pages.find(x => x.page === item.page); if (!p){ p = { page: item.page, items: [] }; pages.push(p) } p.items.push(item) });
+  pages.forEach(p => {
+    const sec = el('section', 'part'); sec.appendChild(el('h2', null, p.page)); sec.appendChild(el('p', 'where', '모든 언어 공통'));
+    p.items.forEach(item => {
+      const f = el('div', 'field'); const head = el('div', 'field-head'); head.appendChild(el('h3', null, item.field)); f.appendChild(head);
+      if (item.value) f.appendChild(well(item.value, { copy: item.copy !== false }));
+      if (item.hint) f.appendChild(el('p', 'hint', item.hint));
+      sec.appendChild(f);
+    });
+    common.appendChild(sec);
+  });
+}
+
+function renderLangs(){
+  const row = document.getElementById('langs'); row.innerHTML = '';
+  DATA.locales.forEach(d => {
+    const b = el('button', 'chip' + (done.has(d.code) ? ' is-done' : '')); b.type = 'button';
+    b.setAttribute('aria-pressed', d.code === current);
+    const dot = el('span', 'done'); dot.setAttribute('aria-hidden', 'true'); b.append(dot, d.label);
+    b.addEventListener('click', () => { current = d.code; STORE.set('locale', current); render() });
+    row.appendChild(b);
+  });
+  document.getElementById('langnote').textContent = `${done.size} / ${DATA.locales.length}개 언어 입력 완료`;
+}
+
+function render(){
+  const d = DATA.locales.find(x => x.code === current);
+  renderLangs();
+  document.querySelectorAll('[data-loc-tag]').forEach(t => t.textContent = d.label);
+  const values = { ...d.fields, ...d.urls };
+  document.querySelectorAll('[data-field]').forEach(f => {
+    const v = values[f.dataset.field] || '';
+    f.hidden = f.hasAttribute('data-optional') && !v;
+    f.querySelector('.value').textContent = v || '(비어 있음)';
+    const limit = +f.dataset.limit, count = f.querySelector('.count');
+    if (limit && count){ count.textContent = `${v.length.toLocaleString()} / ${limit.toLocaleString()}`; count.classList.toggle('over', v.length > limit) }
+  });
+  document.querySelectorAll('[data-site-tag]').forEach(t => { t.textContent = DATA.siteLive ? '열림 확인됨' : '게시 확인 전'; t.className = 'tag ' + (DATA.siteLive ? 'ok' : 'warn') });
+  document.querySelectorAll('[data-site-note]').forEach(n => n.hidden = DATA.siteLive);
+  const s = DATA.screenshots || {};
+  const hint = document.getElementById('shots-hint'); hint.innerHTML = '';
+  hint.append(el('b', null, d.shotsDir), ` 폴더의 ${(s.files || []).length}장을 순서대로 `, el('b', null, s.slot || '해당 크기'), ` 칸에 끌어다 놓습니다${s.size ? ` (${s.size})` : ''}. 헤더 및 검색 결과 탭에 넣으면 크기 오류가 나요.`);
+  const shots = document.getElementById('shots'); shots.innerHTML = '';
+  (s.files || []).forEach(n => shots.appendChild(el('span', null, n)));
+  let box = document.getElementById('done-box');
+  if (!box){ box = el('label', 'done-row'); box.id = 'done-box'; const c = el('input'); c.type = 'checkbox'; c.id = 'locale-done'; box.append(c, el('span')); document.getElementById('privacy').appendChild(box) }
+  box.querySelector('span').textContent = `${d.label} 언어별 항목을 모두 넣었어요`;
+  const check = box.querySelector('input'); check.checked = done.has(current);
+  check.onchange = () => { check.checked ? done.add(current) : done.delete(current); STORE.set('done', [...done].join(',')); renderLangs() };
+}
+
+document.addEventListener('click', e => { const b = e.target.closest('.copy'); if (b) copyText(b.parentElement.querySelector('.value').textContent, b) });
+renderStatic();
+render();
+</script>
+</body>
+</html>
