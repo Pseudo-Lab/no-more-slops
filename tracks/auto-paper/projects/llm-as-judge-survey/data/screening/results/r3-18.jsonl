@@ -1,0 +1,140 @@
+{"key": "doi:10.18653/v1/2025.sigdial-1.29", "decision": "exclude", "code": "E1", "reason": "LLM을 다중 관점 판정자로 써서 인터뷰 발화를 고르는 구성요소일 뿐 판정 자체는 분석하지 않는 인터뷰 에이전트 논문"}
+{"key": "doi:10.1007/s13369-025-11021-z", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로는 판정 연구인지 알 수 없는 움라 여행 계획 에이전트 논문"}
+{"key": "doi:10.1109/access.2026.3677050", "decision": "exclude", "code": "E1", "reason": "소셜 미디어 정치 분석 파이프라인의 보고서 품질을 LLM 판정 점수로 비교만 한 논문"}
+{"key": "doi:10.3390/app16041875", "decision": "exclude", "code": "E1", "reason": "RAG 코드 리뷰 생성의 평가 지표로 LLM-as-a-Judge를 쓰고 사람 검토는 보조로만 쓴 논문"}
+{"key": "doi:10.18653/v1/2023.emnlp-main.912", "decision": "exclude", "code": "E2", "reason": "삼단논법에서 부정어에 대한 단계별 추론의 견고성을 보는 LLM 능력 분석으로 평가자 역할이 없음"}
+{"key": "doi:10.22541/au.175407960.09643230/v1", "decision": "maybe", "code": "M", "reason": "LLM 판정자 합의로 학생 모델을 감독하는 비용 절감 학습 프레임워크이고 판정 자체를 어느 정도 다루는지 초록으로 불분명"}
+{"key": "doi:10.1145/3770762.3772576", "decision": "include", "code": "I5", "reason": "컴파일러 오류 설명 평가에서 LLM 판정과 전문가의 평가자 간 일치를 확인해 교육 분야 판정을 검증"}
+{"key": "doi:10.1145/3772363.3799364", "decision": "include", "code": "I5", "reason": "웹 UI의 의미적 접근성 위반 탐지에 LLM 판정을 결함 주입 재현율과 사람 주석으로 검증"}
+{"key": "doi:10.3389/fdgth.2026.1761601", "decision": "exclude", "code": "E1", "reason": "의료 요약 연구 보고 체크리스트가 주제이고 LLM-as-judge는 체크 항목 중 하나로만 언급됨"}
+{"key": "doi:10.1145/3746252.3761151", "decision": "exclude", "code": "E1", "reason": "법률 RAG 구성요소 분석에서 LLM 판정을 전문가 답변과 비교하는 지표로만 사용"}
+{"key": "doi:10.1016/j.rineng.2026.109461", "decision": "exclude", "code": "E1", "reason": "냉동기 전문가 시스템 평가에 LLM 판정 점수를 여러 지표 중 하나로 사용했을 뿐 판정을 분석하지 않음"}
+{"key": "doi:10.1007/s10916-026-02440-y", "decision": "maybe", "code": "M", "reason": "초록이 없으나 제목이 검증자 간 불일치와 자동 평가의 함의를 다룬다고 밝혀 전문 검토 필요"}
+{"key": "doi:10.3390/a19030215", "decision": "exclude", "code": "E1", "reason": "임상 정보 추출 방식 비교에서 LLM 판정은 의미 정확도 측정 도구로만 쓰임"}
+{"key": "doi:10.3233/shti250995", "decision": "include", "code": "I5", "reason": "응급실 기록 평가용 LLM 평가 프레임워크의 CoT 전략별 전문가 평가 상관(r=0.680)을 비교"}
+{"key": "doi:10.1145/3616855.3635744", "decision": "exclude", "code": "E1", "reason": "환각 완화 솔루션 발표로 LLM 기반 평가는 품질 확인용으로 쓰이며 초록뿐인 발표 성격"}
+{"key": "doi:10.1038/s41746-026-02951-5", "decision": "exclude", "code": "E2", "reason": "종양학 노트 해석에서 GPT-4의 추론 오류를 분류하는 연구로 LLM 평가자 부분은 부수적 관찰"}
+{"key": "doi:10.1162/tacl_a_00700", "decision": "maybe", "code": "M", "reason": "채팅 번역 평가 지표 메타평가이고 LLM 기반 Context-MQM의 인간 상관 검증이 일부 있어 판정 연구 해당 여부가 불분명"}
+{"key": "doi:10.1145/3639631.3639658", "decision": "include", "code": "I1", "reason": "LLM이 번역을 다듬어 평가하는 EvLP를 제안하고 인간 평가와의 정합성 및 LLM 생성문 편향을 논의"}
+{"key": "doi:10.1016/j.knosys.2025.113409", "decision": "maybe", "code": "M", "reason": "초록이 없고 장문 과학 문서 요약 논문이라 판정 관련성을 제목으로 알 수 없음"}
+{"key": "doi:10.1109/indin58382.2024.10774285", "decision": "exclude", "code": "E1", "reason": "해충 관리 조언 생성을 LLM 기반 점수로 평가하나 평가자 검증 없이 지표로만 사용"}
+{"key": "doi:10.3390/info17010095", "decision": "include", "code": "I2", "reason": "저자 표기(인간 대 AI)에 따라 LLM의 문학 품질 평가가 달라지는 저자 편향을 4개 모델로 측정"}
+{"key": "doi:10.1002/csr.70257", "decision": "exclude", "code": "E1", "reason": "지속가능성 보고서 분석에 TF-IDF와 LLM 평가를 분석 도구로만 사용한 기업 사회적 책임 연구"}
+{"key": "doi:10.1109/tla.2025.11231222", "decision": "exclude", "code": "E1", "reason": "RAG 메타데이터 필터링 방법을 통계 모델로 평가하며 LLM 평가는 측정 수단일 뿐"}
+{"key": "doi:10.48448/4fna-xe32", "decision": "exclude", "code": "E2", "reason": "MCQA 벤치마크의 정답 편향과 데이터 오염 관계를 다루며 LLM 평가자가 아닌 평가 대상 분석"}
+{"key": "doi:10.2139/ssrn.7490919", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 LLM 평가의 모델 제외 규칙을 다룬다고 해 판정 연구일 가능성이 있음"}
+{"key": "doi:10.3384/nejlt.2000-1533.2025.5256", "decision": "exclude", "code": "E2", "reason": "인과 이동 구문 이해를 LLM 대상으로 검사하는 코퍼스 구축 연구로 LLM은 평가 대상"}
+{"key": "doi:10.1007/978-3-032-13426-4_30", "decision": "exclude", "code": "E2", "reason": "프로세스 마이닝 기반으로 대규모 추론 모델의 추론 단계를 분석하는 벤치마크로 LLM은 평가 대상"}
+{"key": "doi:10.1109/tnnls.2025.3636917", "decision": "exclude", "code": "E2", "reason": "28개 LLM의 개체명 인식 성능을 평가하는 벤치마크성 연구로 LLM 판정이 없음"}
+{"key": "doi:10.1109/ictc61510.2024.10601918", "decision": "exclude", "code": "E2", "reason": "LLM 평가 데이터셋 147개를 정리한 서베이로 판정 모델이 아닌 일반 벤치마크 목록"}
+{"key": "doi:10.18653/v1/2026.acl-short.22", "decision": "exclude", "code": "E1", "reason": "재현 가능한 LLM 파이프라인 평가 보고 표준으로 판정 설정을 산출물 중 하나로 열거할 뿐 판정을 분석하지 않음"}
+{"key": "doi:10.3390/electronics13081409", "decision": "exclude", "code": "E1", "reason": "페르소나 챗봇 데이터 변환 방법의 성능을 자동 및 LLM 평가로 보인 논문"}
+{"key": "doi:10.1007/978-981-97-1717-0_3", "decision": "maybe", "code": "M", "reason": "초록이 없고 CMed-Baichuan 프롬프트 방법 논문이라 판정 관련성을 알 수 없음"}
+{"key": "doi:10.1109/igarss55030.2025.11243488", "decision": "exclude", "code": "E2", "reason": "지구과학용 오픈소스 LLM을 비교 벤치마킹하는 연구로 LLM 평가자 분석이 아님"}
+{"key": "doi:10.2139/ssrn.5252888", "decision": "exclude", "code": "E1", "reason": "은행 규제 질의응답 프롬프트 개선 논문이며 LLM evaluator는 답변 비교용 지표로만 구축"}
+{"key": "doi:10.1016/j.ipm.2025.104270", "decision": "maybe", "code": "M", "reason": "초록이 없으나 제목이 점수형과 쌍비교를 결합한 평가 프레임워크라 판정 방식 제안일 가능성이 있음"}
+{"key": "doi:10.1007/978-3-031-79029-4_32", "decision": "maybe", "code": "M", "reason": "초록이 없고 세법 추론 평가 논문이라 LLM이 평가자인지 대상인지 불분명"}
+{"key": "doi:10.1109/iccns66249.2025.11428578", "decision": "exclude", "code": "E2", "reason": "코드 생성 도구와 파인튜닝 기법을 비교하는 개관으로 LLM 판정이 없음"}
+{"key": "doi:10.1109/ic2e362166.2024.10827103", "decision": "exclude", "code": "E2", "reason": "인도어 다국어 감성 분석에서 생성형 LLM 성능을 비교한 연구로 LLM은 평가 대상"}
+{"key": "doi:10.1007/s11432-024-4404-4", "decision": "maybe", "code": "M", "reason": "초록이 없고 내비게이션 과제 생성 논문이라 판정 관련성을 알 수 없음"}
+{"key": "doi:10.1109/ictcs65341.2025.10989446", "decision": "exclude", "code": "E2", "reason": "JAIS 기반 아랍어 의료 QA의 RAG 효과를 정확도로 측정한 연구로 판정이 없음"}
+{"key": "doi:10.1145/3746265.3759675", "decision": "exclude", "code": "E1", "reason": "음성 위조 탐지 모델에 LLM이 진위를 검증하는 구성요소를 붙인 것일 뿐 판정 모델 연구가 아님"}
+{"key": "doi:10.1007/978-3-031-56072-9_2", "decision": "maybe", "code": "M", "reason": "초록이 없는 CLEF 2024 Monster Track 랩 개요로 판정 관련성을 알 수 없음"}
+{"key": "doi:10.31219/osf.io/w5rsu", "decision": "exclude", "code": "E2", "reason": "설문 척도로 GPT-4와 Llama3의 공감 능력을 인간과 비교하는 연구로 LLM은 평가 대상"}
+{"key": "doi:10.21203/rs.3.rs-5702357/v1", "decision": "maybe", "code": "M", "reason": "초록이 없고 NLP·LLM 시스템 평가 관행의 문헌 조사라 판정이 포함되는지 알 수 없음"}
+{"key": "doi:10.1145/3711896.3737249", "decision": "exclude", "code": "E1", "reason": "능동 정보탐색 멀티에이전트의 답변 품질을 nugget 기반으로 평가한 시스템 논문"}
+{"key": "doi:10.1111/odi.70334", "decision": "exclude", "code": "E4", "reason": "구강편평태선 FAQ에 대한 LLM 답변을 전문가 14명이 QAMAI로 채점한 연구로 LLM 판정 없음"}
+{"key": "doi:10.1609/aaai.v40i30.39773", "decision": "exclude", "code": "E2", "reason": "에피소드 기억을 갖춘 LLM 에이전트 구조를 제안하며 판정과 무관"}
+{"key": "doi:10.3390/app16062966", "decision": "include", "code": "I2", "reason": "RPG 시나리오 생성 평가에서 LLM 평가자의 자기선호 편향과 사람 평가자와의 점수 차이를 따로 분석"}
+{"key": "doi:10.1109/ojim.2025.3592284", "decision": "exclude", "code": "E2", "reason": "AFM 이미지 결함 분류와 LLM 안내 보조 시스템으로 LLM 판정과 무관"}
+{"key": "doi:10.1007/s10956-026-10310-y", "decision": "exclude", "code": "E2", "reason": "히브리어 화학 시험에서 LLM과 고교생 성적을 비교하는 벤치마크로 LLM은 평가 대상"}
+{"key": "doi:10.48448/yzp8-8y15", "decision": "include", "code": "I1", "reason": "장면 그래프 파싱 기반 차트 평가 지표를 제안하고 4K 차트의 인간 평점과 GPT-Score 대비 상관을 직접 비교"}
+{"key": "doi:10.1016/j.eswa.2026.132631", "decision": "exclude", "code": "E1", "reason": "로봇 설명 생성 RAG 구조의 품질 평가에 LLM 기준 평가를 지표로만 사용"}
+{"key": "doi:10.1177/15910199251396358", "decision": "exclude", "code": "E4", "reason": "신경중재 환자 질문에 대한 LLM 답변을 8명의 사람 평가자가 채점한 연구로 LLM 판정이 없음"}
+{"key": "arxiv:2602.03910", "decision": "exclude", "code": "E1", "reason": "방사선 보고서 초안의 불확실성 보정 연구로 독립 LLM 판정은 일치도 확인용 보조 지표"}
+{"key": "doi:10.15588/1607-3274-2025-2-12", "decision": "exclude", "code": "E2", "reason": "양자화 LLM 요약 성능을 BLEU 등 다기준으로 평가하는 연구로 LLM 판정이 없음"}
+{"key": "doi:10.1016/j.egyai.2026.100710", "decision": "exclude", "code": "E1", "reason": "결정 구조 생성 에이전트에서 Claude 감독자가 출력을 확인하는 구성요소로만 쓰이고 판정 연구가 아님"}
+{"key": "doi:10.3390/app16052546", "decision": "include", "code": "I1", "reason": "페이지 단위 적응형 채점과 Paged-RAG 사실 검증으로 긴 보고서를 평가하는 판정 프레임워크이며 인간 판단과의 상관을 보고"}
+{"key": "arxiv:2510.03771", "decision": "exclude", "code": "E1", "reason": "쿼리 재작성 최적화에서 시뮬레이션 고객 에이전트 점수를 보상으로 쓸 뿐 판정 자체는 분석하지 않음"}
+{"key": "doi:10.22260/crc-csce-2025/0042", "decision": "exclude", "code": "E1", "reason": "건설 지식 핸드북 생성에서 LLM judge를 SME 검토와 함께 검증 수단으로 썼을 뿐 판정을 분석하지 않음"}
+{"key": "doi:10.1609/aiide.v21i1.36841", "decision": "exclude", "code": "E1", "reason": "서사 에이전트 프레임워크 평가에 자동 LLM 판정과 사람 평가를 지표로 병행 사용"}
+{"key": "doi:10.1109/iccubea69821.2026.11702324", "decision": "exclude", "code": "E1", "reason": "환각 탐지 웹 도구가 LLM-as-a-Judge를 여러 점수 방식 중 하나로 호출할 뿐 판정 신뢰성은 분석하지 않음"}
+{"key": "title:interactive large language models for reliable answering under incomplete context", "decision": "maybe", "code": "M", "reason": "초록이 없고 불완전한 맥락에서의 신뢰할 수 있는 응답을 다룬다는 제목만으로 판정 관련성을 알 수 없음"}
+{"key": "title:enabling trait based personality simulation in conversational llm agents case study of customer assistance in french", "decision": "maybe", "code": "M", "reason": "초록이 없고 성격 시뮬레이션 대화 에이전트 논문이라 판정 관련성을 알 수 없음"}
+{"key": "doi:10.18653/v1/2025.naacl-long.55", "decision": "maybe", "code": "M", "reason": "질문 분해 합성 데이터 생성에서 LLM-as-judge와 재순위를 새롭게 확장해 쓰나 판정이 주 기여인지 초록으로 불분명"}
+{"key": "title:nycu nlp at exist 2025 an empirical study of annotator aware two stage pipeline for sexism detection in tweets", "decision": "maybe", "code": "M", "reason": "초록이 없고 EXIST 2025 성차별 탐지 시스템 논문이라 판정 관련성을 알 수 없음"}
+{"key": "title:comparing human and llm evaluations on ai generated critical thinking items implications for valid applications of automatic item generation", "decision": "maybe", "code": "M", "reason": "초록이 없으나 제목이 AI 생성 비판적 사고 문항에 대한 사람과 LLM 평가 비교라 판정 검증일 가능성이 있음"}
+{"key": "arxiv:2610.08761", "decision": "include", "code": "I3", "reason": "사람 지침으로 공동 보정하며 판정자를 개선하는 Judge Improvement Loop를 갖춘 구체화 추론 검증 프레임워크"}
+{"key": "arxiv:2608.29685", "decision": "exclude", "code": "E2", "reason": "장기 에이전트의 불확실성 신호로 실패를 예측하는 분석이며 LLM 판정자가 아님"}
+{"key": "arxiv:2608.21601", "decision": "exclude", "code": "E1", "reason": "과학 에이전트 요청 벤치마크로 세 LLM 판정자를 점수화에 쓰나 판정 신뢰성 분석은 부수적"}
+{"key": "arxiv:2607.08046", "decision": "exclude", "code": "E2", "reason": "예측 LLM의 내부 표상 탐침으로 보정과 충실도를 다루며 LLM 판정과 무관"}
+{"key": "arxiv:2607.01181", "decision": "exclude", "code": "E3", "reason": "인간 시연으로 학습한 판별기를 RLVR 보상에 더하는 연구로 LLM 판정과 비교하지 않음"}
+{"key": "arxiv:2607.00918", "decision": "exclude", "code": "E1", "reason": "장편 서사 멀티에이전트 생성의 평가에 LLM 편집자 주석과 루브릭 점수를 쓴 논문"}
+{"key": "arxiv:2606.28791", "decision": "exclude", "code": "E2", "reason": "AI 네이티브 소프트웨어 공학의 역할 변화를 논하는 에세이로 LLM 판정과 무관"}
+{"key": "arxiv:2608.07494", "decision": "exclude", "code": "E2", "reason": "사용자 관점의 LLM 프롬프트 작성 서베이로 LLM 판정과 무관"}
+{"key": "arxiv:2606.03650", "decision": "include", "code": "I3", "reason": "교사·학생·판정자 역할을 순환하는 앙상블 자기 평가로 판정자별 합의 가중, 장황함 편향 상쇄를 검증"}
+{"key": "arxiv:2606.01230", "decision": "exclude", "code": "E2", "reason": "스마트홈 에이전트 학습 데이터 플라이휠 연구로 검증은 시뮬레이션 상태 조건 기반이며 LLM 판정 없음"}
+{"key": "arxiv:2605.29275", "decision": "maybe", "code": "M", "reason": "프롬프트별 루브릭과 전역 점수를 합친 보상 명세가 보상 모델식 응답 순위에서 평가되나 판정 연구인지 불분명"}
+{"key": "arxiv:2605.30085", "decision": "exclude", "code": "E3", "reason": "추론 trace 접두부의 정합성을 공형 예측으로 보증하는 연구로 LLM 판정과 비교하지 않음"}
+{"key": "arxiv:2605.29893", "decision": "maybe", "code": "M", "reason": "LLM을 중복 단계 탐지기로 평가하는 벤치마크로 궤적 단계 판정 연구에 가까운지 초록만으로 불분명"}
+{"key": "arxiv:2605.17829", "decision": "exclude", "code": "E2", "reason": "상호작용형 평가의 설계 원칙을 논하는 입장문이며 LLM 판정자를 주제로 하지 않음"}
+{"key": "arxiv:2605.13631", "decision": "exclude", "code": "E2", "reason": "컴퓨터 사용 에이전트의 안전 모니터링 방법으로 LLM 판정과 무관"}
+{"key": "doi:10.1145/3811825", "decision": "include", "code": "I1", "reason": "멀티에이전트 Profiler·Critic·Judge로 패치 정확성을 판정하고 기존 학습형 방법과 비교하는 코드 판정 프레임워크"}
+{"key": "arxiv:2605.14163", "decision": "maybe", "code": "M", "reason": "비판자-비교자 선택기가 후보 중 정답을 고르는 능력을 다루나 LLM 판정 연구인지 불분명"}
+{"key": "arxiv:2605.11128", "decision": "exclude", "code": "E2", "reason": "LLM 디코딩 다양성 붕괴를 보정 관점에서 분석하는 논문으로 판정과 무관"}
+{"key": "arxiv:2605.03179", "decision": "exclude", "code": "E1", "reason": "악성 코드 프롬프트 은행 구축에 5개 LLM 판정자 다수결 라벨링을 쓰고 kappa를 보고하나 주 기여는 데이터"}
+{"key": "arxiv:2605.02168", "decision": "exclude", "code": "E1", "reason": "플래너 강화학습의 궤적 보상으로 VLM-as-judge를 사용할 뿐 판정 자체는 연구하지 않음"}
+{"key": "arxiv:2605.01698", "decision": "exclude", "code": "E2", "reason": "BIM 정보 추출을 위한 적응 탐색 에이전트와 벤치마크로 판정과 무관"}
+{"key": "arxiv:2604.27321", "decision": "exclude", "code": "E2", "reason": "보안 운영 센터용 LLM 탐지·쿼리 생성 프레임워크로 판정과 무관"}
+{"key": "arxiv:2604.24071", "decision": "maybe", "code": "M", "reason": "루브릭 기반 LLM 평가를 포함한 동료 심사 품질 평가 플랫폼 데모로 판정 검증 여부가 초록에 없음"}
+{"key": "arxiv:2604.22239", "decision": "exclude", "code": "E2", "reason": "다중 문서 분석형 QA 벤치마크로 평가 프로토콜은 정확도와 사실 포함도 기반이고 판정 연구가 아님"}
+{"key": "arxiv:2604.20544", "decision": "include", "code": "I1", "reason": "분해 후 평가 방식으로 시각 지시 데이터의 결함을 감사하는 프레임워크와 결함 주입 벤치마크를 제안"}
+{"key": "arxiv:2604.18892", "decision": "include", "code": "I1", "reason": "검증기 통과 궤적을 한 번에 순위화하는 Groupwise Ranking Reward를 보상 모델 및 생성형 보상과 직접 비교"}
+{"key": "arxiv:2609.00491", "decision": "exclude", "code": "E2", "reason": "문화 간 밈 해석 데이터셋 구축으로 GPT 분류 검증은 보조일 뿐 판정 연구가 아님"}
+{"key": "arxiv:2604.13979", "decision": "exclude", "code": "E2", "reason": "LLM과 GNN을 결합한 개방형 KGQA 시스템으로 판정과 무관"}
+{"key": "arxiv:2604.09791", "decision": "exclude", "code": "E2", "reason": "소형 언어모델 지속 개선 에이전트로 판정과 무관"}
+{"key": "arxiv:2604.05051", "decision": "exclude", "code": "E2", "reason": "환자 질문 표현 방식에 대한 LLM 응답 일관성 평가로 LLM은 평가 대상"}
+{"key": "arxiv:2604.00931", "decision": "exclude", "code": "E1", "reason": "심리 상담 에이전트 점수 비교에 평가 차원을 쓸 뿐 판정 자체는 다루지 않음"}
+{"key": "doi:10.1145/3742413.3789077", "decision": "exclude", "code": "E2", "reason": "비판적 사고 추론 흔적 시스템 사용자 연구로 LLM 판정과 무관"}
+{"key": "arxiv:2603.19118", "decision": "exclude", "code": "E2", "reason": "추론 모델의 샘플링에 따른 불확실성 추정 스케일링 연구로 판정과 무관"}
+{"key": "doi:10.1109/saner67736.2026.00050", "decision": "exclude", "code": "E2", "reason": "코볼-자바 번역을 자연어 요약으로 보강하는 번역 연구로 판정과 무관"}
+{"key": "arxiv:2603.15061", "decision": "exclude", "code": "E1", "reason": "개방형 글쓰기 RL용 루브릭을 생성하는 파이프라인이며 평가자 견고성은 보조 분석일 뿐"}
+{"key": "doi:10.1609/aaai.v40i41.40762", "decision": "maybe", "code": "M", "reason": "환각 탐지 모델을 DPO로 학습하고 PRM과 융합하는 추론 판정 모델 연구인지 초록만으로 불분명"}
+{"key": "arxiv:2603.07339", "decision": "exclude", "code": "E2", "reason": "AI 페르소나를 이용한 합의 형성 교육 플랫폼으로 판정과 무관"}
+{"key": "arxiv:2603.06485", "decision": "exclude", "code": "E1", "reason": "설명 생성의 검증-정제 루프 평가에 자동 평가를 쓴 XAI 프레임워크로 판정 분석은 없음"}
+{"key": "arxiv:2602.16429", "decision": "exclude", "code": "E2", "reason": "에이전트 결정 요소를 표형 분류기로 대체하는 비용 절감 프레임워크로 텍스트 판정을 다루지 않음"}
+{"key": "arxiv:2602.14989", "decision": "exclude", "code": "E2", "reason": "열화상 VQA 벤치마크로 VLM은 평가 대상일 뿐"}
+{"key": "arxiv:2602.00597", "decision": "exclude", "code": "E2", "reason": "자막 번역 LLM 프레임워크로 판정과 무관"}
+{"key": "arxiv:2601.23220", "decision": "exclude", "code": "E2", "reason": "의료 MLLM의 기하 지각 강화학습으로 검증 가능한 보상을 쓰며 LLM 판정과 무관"}
+{"key": "arxiv:2601.13115", "decision": "exclude", "code": "E2", "reason": "대화형 검색 에이전트 강화학습 연구로 판정과 무관"}
+{"key": "arxiv:2601.06552", "decision": "exclude", "code": "E2", "reason": "보조 로봇 모델 조정 설명 프레임워크로 판정과 무관"}
+{"key": "arxiv:2512.12543", "decision": "exclude", "code": "E2", "reason": "그래프 중심성 기반 신경망 가지치기 연구로 LLM 판정과 무관"}
+{"key": "arxiv:2512.00834", "decision": "exclude", "code": "E2", "reason": "차량 네트워크 궤적 예측 에이전트 AI로 판정과 무관"}
+{"key": "arxiv:2511.21066", "decision": "exclude", "code": "E2", "reason": "풍자 탐지 프롬프팅에 검색 맥락을 더한 연구로 판정과 무관"}
+{"key": "arxiv:2511.14531", "decision": "exclude", "code": "E2", "reason": "RAG 평가용 합성 QA 데이터셋과 IRT 난이도 분석으로 LLM 판정자를 다루지 않음"}
+{"key": "arxiv:2510.27256", "decision": "exclude", "code": "E2", "reason": "VLM 라우팅 프레임워크로 판정과 무관"}
+{"key": "arxiv:2510.25039", "decision": "exclude", "code": "E2", "reason": "LLM으로 벤치마크 난이도를 자동 조정하는 설계 연구로 판정이 아님"}
+{"key": "arxiv:2510.20498", "decision": "exclude", "code": "E3", "reason": "디렉션 이웃 합의로 선호 정렬 견고성을 높이는 방법으로 LLM 판정과 비교하지 않음"}
+{"key": "arxiv:2510.17476", "decision": "exclude", "code": "E2", "reason": "다국어 의료 QA의 언어 간 사실 정렬 격차 분석으로 판정과 무관"}
+{"key": "arxiv:2510.13395", "decision": "exclude", "code": "E2", "reason": "멀티에이전트 시뮬레이션의 마음 이론 능력 검사로 LLM은 평가 대상"}
+{"key": "arxiv:2510.09724", "decision": "exclude", "code": "E1", "reason": "상호작용형 과학 시연 코드 벤치마크에 시각 정성 테스트를 평가 수단으로 포함하나 판정 분석은 아님"}
+{"key": "arxiv:2510.06823", "decision": "exclude", "code": "E2", "reason": "생성 엔진의 인용 출처 오염 취약성 분석으로 판정과 무관"}
+{"key": "arxiv:2510.07488", "decision": "exclude", "code": "E2", "reason": "인간 팀 과학을 멀티에이전트에 적용해 팀 구조별 성능을 보는 연구로 판정과 무관"}
+{"key": "arxiv:2510.03762", "decision": "exclude", "code": "E2", "reason": "불균형 few-shot 예시가 다국어 단어 의미 중의성 해소에 미치는 영향 연구로 판정과 무관"}
+{"key": "doi:10.1016/j.dss.2025.114554", "decision": "maybe", "code": "M", "reason": "초록이 없고 사용자 생성 콘텐츠 기반 아이디어 생성 방법이라 판정 관련성을 알 수 없음"}
+{"key": "doi:10.5753/stil.2025.37825", "decision": "exclude", "code": "E2", "reason": "인간과 LLM 에세이 코퍼스 벤치마크로 자동 지표의 한계를 보이나 LLM 판정자는 다루지 않음"}
+{"key": "arxiv:2509.25477", "decision": "exclude", "code": "E2", "reason": "아프리카 NLP 연구 동향 서베이로 판정과 무관"}
+{"key": "arxiv:2509.21170", "decision": "exclude", "code": "E2", "reason": "멀티 차원 코드 리뷰를 위한 CoT 파인튜닝 방법으로 평가자 연구가 아님"}
+{"key": "arxiv:2509.16400", "decision": "exclude", "code": "E2", "reason": "대학 입학 결정에서 LLM의 사회경제적 지위 편향 감사로 LLM이 의사결정자일 뿐 텍스트 판정자가 아님"}
+{"key": "arxiv:2509.16360", "decision": "exclude", "code": "E2", "reason": "공중보건 QA 가독성 벤치마크로 평가 지표는 가독성 공식이며 LLM 판정 없음"}
+{"key": "doi:10.1109/ieee-ch65308.2025.11279315", "decision": "exclude", "code": "E2", "reason": "프랑스 희곡의 시공간 정보 추출 성능을 수작업 코퍼스와 비교하는 연구로 판정과 무관"}
+{"key": "arxiv:2509.04072", "decision": "exclude", "code": "E2", "reason": "표현적 TTS를 위한 오디오북 데이터셋 구축으로 판정과 무관"}
+{"key": "arxiv:2509.03809", "decision": "maybe", "code": "M", "reason": "초록상 인간 MQM과 상관이 높은 장문 번역 평가 프레임워크이나 LLM 판정자를 쓰는지 불분명"}
+{"key": "arxiv:2509.00891", "decision": "exclude", "code": "E2", "reason": "당뇨 설득 대화 벤치마크로 시뮬레이션 환자 기반이며 판정 연구가 아님"}
+{"key": "arxiv:2509.04239", "decision": "exclude", "code": "E4", "reason": "전문가 델파이 패널로 게임 서사 품질 차원을 도출하는 연구로 LLM 판정이 없음"}
+{"key": "arxiv:2508.16517", "decision": "exclude", "code": "E2", "reason": "Verilog 설계 자동 수리 시스템으로 판정과 무관"}
+{"key": "arxiv:2509.25195", "decision": "exclude", "code": "E4", "reason": "ML 시스템 모니터링에 대한 실무자 설문으로 LLM 판정과 무관"}
+{"key": "arxiv:2508.12903", "decision": "exclude", "code": "E2", "reason": "생성 중 선제적 자기 정제 방법으로 판정과 무관"}
+{"key": "arxiv:2508.06178", "decision": "exclude", "code": "E2", "reason": "저자원 환경에서의 지식 주입 방법 비교로 판정과 무관"}
+{"key": "arxiv:2508.03628", "decision": "exclude", "code": "E1", "reason": "광고 키프레이즈 추천에서 LLM을 사람 판단의 대리 라벨러로 쓰는 증류 연구로 판정 자체는 분석하지 않음"}
+{"key": "arxiv:2507.22940", "decision": "exclude", "code": "E1", "reason": "추론 단계 사실성 분류기를 GRPO 보상에 쓰는 프레임워크로 분류기를 LLM 판정과 비교하지 않음"}

@@ -1,0 +1,51 @@
+run_at,step,source,query,records,file
+2026-10-19T10:19:16,search,openalex,LLM-as-a-jury,14,data/raw/search/openalex/llm-as-a-jury.jsonl
+2026-10-19T10:19:18,search,openalex,language model as a judge,112,data/raw/search/openalex/language-model-as-a-judge.jsonl
+2026-10-19T10:19:39,search,arxiv,LLM-as-a-judge,1294,data/raw/search/arxiv/llm-as-a-judge.jsonl
+2026-10-19T10:19:49,search,arxiv,LLM-as-judge,690,data/raw/search/arxiv/llm-as-judge.jsonl
+2026-10-19T10:19:59,search,arxiv,LLMs as judges,690,data/raw/search/arxiv/llms-as-judges.jsonl
+2026-10-19T10:20:13,search,arxiv,LLM judge,1186,data/raw/search/arxiv/llm-judge.jsonl
+2026-10-19T10:20:22,search,arxiv,LLM evaluator,967,data/raw/search/arxiv/llm-evaluator.jsonl
+2026-10-19T10:20:27,search,arxiv,LLM-based evaluation,277,data/raw/search/arxiv/llm-based-evaluation.jsonl
+2026-10-19T10:20:31,search,arxiv,LLM-as-a-jury,12,data/raw/search/arxiv/llm-as-a-jury.jsonl
+2026-10-19T10:20:35,search,arxiv,language model as a judge,56,data/raw/search/arxiv/language-model-as-a-judge.jsonl
+2026-10-19T10:20:39,search,arxiv,judge model,234,data/raw/search/arxiv/judge-model.jsonl
+2026-10-19T10:21:37,search,s2,LLM-as-a-judge,1722,data/raw/search/s2/llm-as-a-judge.jsonl
+2026-10-19T10:25:31,search,s2,LLMs as judges,878,data/raw/search/s2/llms-as-judges.jsonl
+2026-10-19T10:25:56,search,s2,LLM judge,1343,data/raw/search/s2/llm-judge.jsonl
+2026-10-19T10:26:07,search,s2,LLM evaluator,1429,data/raw/search/s2/llm-evaluator.jsonl
+2026-10-19T10:26:10,search,s2,LLM-based evaluation,422,data/raw/search/s2/llm-based-evaluation.jsonl
+2026-10-19T10:26:20,search,s2,LLM-as-a-jury,12,data/raw/search/s2/llm-as-a-jury.jsonl
+2026-10-19T10:26:28,search,s2,language model as a judge,71,data/raw/search/s2/language-model-as-a-judge.jsonl
+2026-10-19T10:26:33,search,s2,judge model,294,data/raw/search/s2/judge-model.jsonl
+2026-10-19T10:26:58,search,openalex,LLM-as-a-judge,2614,data/raw/search/openalex/llm-as-a-judge.jsonl
+2026-10-19T10:27:12,search,openalex,LLM-as-judge,1399,data/raw/search/openalex/llm-as-judge.jsonl
+2026-10-19T10:27:26,search,openalex,LLMs as judges,1395,data/raw/search/openalex/llms-as-judges.jsonl
+2026-10-19T10:27:46,search,openalex,LLM judge,2023,data/raw/search/openalex/llm-judge.jsonl
+2026-10-19T10:28:04,search,openalex,LLM evaluator,2141,data/raw/search/openalex/llm-evaluator.jsonl
+2026-10-19T10:28:11,search,openalex,LLM-based evaluation,561,data/raw/search/openalex/llm-based-evaluation.jsonl
+2026-10-19T10:28:13,search,openalex,LLM-as-a-jury,14,data/raw/search/openalex/llm-as-a-jury.jsonl
+2026-10-19T10:28:17,search,openalex,language model as a judge,112,data/raw/search/openalex/language-model-as-a-judge.jsonl
+2026-10-19T10:28:24,search,openalex,judge model,485,data/raw/search/openalex/judge-model.jsonl
+2026-10-19T10:31:03,search,s2,LLM-as-judge,878,data/raw/search/s2/llm-as-judge.jsonl
+2026-10-19T10:34:29,seeds,awesome,llm-as-a-judge/Awesome-LLM-as-a-judge,473,data/raw/seeds/awesome/llm-as-a-judge-awesome-llm-as-a-judge.jsonl
+2026-10-19T10:34:48,seeds,awesome,CSHaitao/Awesome-LLMs-as-Judges,198,data/raw/seeds/awesome/cshaitao-awesome-llms-as-judges.jsonl
+2026-10-19T10:39:00,seeds,survey,surveys,6,data/raw/seeds/survey/surveys.jsonl
+2026-10-19T10:39:00,snowball,references,references:2411.15594,0,data/raw/snowball/references/references-2411-15594.jsonl
+2026-10-19T10:39:24,snowball,citations,citations:2411.15594,1955,data/raw/snowball/citations/citations-2411-15594.jsonl
+2026-10-19T10:39:26,snowball,references,references:2411.16594,315,data/raw/snowball/references/references-2411-16594.jsonl
+2026-10-19T10:39:29,snowball,citations,citations:2411.16594,728,data/raw/snowball/citations/citations-2411-16594.jsonl
+2026-10-19T10:39:31,snowball,references,references:2412.05579,0,data/raw/snowball/references/references-2412-05579.jsonl
+2026-10-19T10:39:34,snowball,citations,citations:2412.05579,656,data/raw/snowball/citations/citations-2412-05579.jsonl
+2026-10-19T10:39:35,snowball,references,references:2603.29403,0,data/raw/snowball/references/references-2603-29403.jsonl
+2026-10-19T10:39:45,snowball,citations,citations:2603.29403,4,data/raw/snowball/citations/citations-2603-29403.jsonl
+2026-10-19T10:39:49,snowball,references,references:2605.25273,138,data/raw/snowball/references/references-2605-25273.jsonl
+2026-10-19T10:39:51,snowball,citations,citations:2605.25273,2,data/raw/snowball/citations/citations-2605-25273.jsonl
+2026-10-19T10:39:55,snowball,references,references:2510.24367,103,data/raw/snowball/references/references-2510-24367.jsonl
+2026-10-19T10:40:03,snowball,citations,citations:2510.24367,0,data/raw/snowball/citations/citations-2510-24367.jsonl
+2026-10-19T10:40:40,snowball,bib,bib:2411.15594,111,data/raw/snowball/bib/bib-2411-15594.jsonl
+2026-10-19T10:40:43,snowball,bib,bib:2411.16594,273,data/raw/snowball/bib/bib-2411-16594.jsonl
+2026-10-19T10:44:39,snowball,bib,bib:2412.05579,223,data/raw/snowball/bib/bib-2412-05579.jsonl
+2026-10-19T10:45:47,snowball,bib,bib:2603.29403,19,data/raw/snowball/bib/bib-2603-29403.jsonl
+2026-10-19T10:46:55,snowball,bib,bib:2605.25273,85,data/raw/snowball/bib/bib-2605-25273.jsonl
+2026-10-19T10:48:05,snowball,bib,bib:2510.24367,61,data/raw/snowball/bib/bib-2510-24367.jsonl

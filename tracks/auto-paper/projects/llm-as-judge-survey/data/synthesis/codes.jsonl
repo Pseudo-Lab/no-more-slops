@@ -1,0 +1,2185 @@
+{"key": "arxiv:2306.05685", "biases": ["position", "verbosity", "self_preference", "competence"], "mitigation": ["swap", "cot", "reference"]}
+{"key": "arxiv:2305.17926", "biases": ["position"], "mitigation": ["cot", "swap", "ensemble", "human_in_loop", "calibration"]}
+{"key": "arxiv:2404.04475", "biases": ["verbosity"], "mitigation": ["calibration"]}
+{"key": "arxiv:2303.04048", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2302.14520", "biases": ["other"], "mitigation": ["reference"]}
+{"key": "arxiv:2403.13787", "biases": ["competence", "other"], "mitigation": []}
+{"key": "arxiv:2406.18403", "biases": ["competence", "criteria"], "mitigation": []}
+{"key": "arxiv:2304.09161", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2504.02495", "biases": ["other"], "mitigation": ["fine_tuning", "ensemble", "rubric", "critique_refine"]}
+{"key": "arxiv:2407.19594", "biases": [], "mitigation": ["critique_refine", "fine_tuning"]}
+{"key": "arxiv:2310.05470", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2505.02387", "biases": [], "mitigation": ["cot", "rubric", "fine_tuning"]}
+{"key": "arxiv:2411.15594", "biases": [], "mitigation": []}
+{"key": "arxiv:2410.12832", "biases": ["inconsistency"], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2311.09766", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2411.16594", "biases": [], "mitigation": []}
+{"key": "arxiv:2408.11791", "biases": [], "mitigation": ["cot", "critique_refine", "ensemble", "fine_tuning"]}
+{"key": "arxiv:2411.17451", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2504.00891", "biases": [], "mitigation": ["cot", "tool_grounding", "fine_tuning", "ensemble"]}
+{"key": "arxiv:2501.18099", "biases": [], "mitigation": ["cot", "decomposition", "fine_tuning"]}
+{"key": "arxiv:2504.00050", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2404.13076", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2411.16646", "biases": [], "mitigation": ["critique_refine", "fine_tuning", "cot"]}
+{"key": "arxiv:2502.04426", "biases": ["competence", "criteria"], "mitigation": []}
+{"key": "arxiv:2407.04842", "biases": ["social", "other"], "mitigation": []}
+{"key": "arxiv:2410.20266", "biases": ["competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2309.17012", "biases": ["self_preference", "position", "verbosity", "other"], "mitigation": []}
+{"key": "arxiv:2403.17710", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2308.07201", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2503.05061", "biases": ["competence"], "mitigation": ["reference", "human_in_loop"]}
+{"key": "arxiv:2312.15407", "biases": ["adversarial"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2409.15133", "biases": ["other"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2509.26346", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2502.06193", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2602.05125", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2410.13341", "biases": ["self_preference"], "mitigation": ["calibration"]}
+{"key": "arxiv:2410.12855", "biases": ["competence", "adversarial"], "mitigation": ["fine_tuning", "ensemble", "cot"]}
+{"key": "arxiv:2406.03248", "biases": [], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "arxiv:2503.03064", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2410.16256", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2305.13091", "biases": ["inconsistency", "competence", "criteria"], "mitigation": []}
+{"key": "arxiv:2508.06709", "biases": ["self_preference"], "mitigation": ["calibration"]}
+{"key": "arxiv:2407.04873", "biases": [], "mitigation": []}
+{"key": "arxiv:2504.15253", "biases": ["competence"], "mitigation": ["critique_refine"]}
+{"key": "doi:10.1038/s41746-025-02005-2", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2504.04953", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2504.03846", "biases": ["self_preference", "competence"], "mitigation": ["cot"]}
+{"key": "arxiv:2501.17202", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2408.10718", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2405.05600", "biases": ["other"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2402.15754", "biases": [], "mitigation": ["decomposition", "calibration"]}
+{"key": "arxiv:2410.03775", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2502.14074", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "doi:10.3390/app15020671", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2406.13439", "biases": ["competence"], "mitigation": ["reference"]}
+{"key": "arxiv:2506.05598", "biases": ["other"], "mitigation": ["prompt_optimization", "cot"]}
+{"key": "arxiv:2403.19216", "biases": ["position"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2403.02839", "biases": ["competence", "other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2402.14016", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2410.03742", "biases": ["other"], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2504.09946", "biases": ["social", "authority", "position", "other"], "mitigation": ["other", "critique_refine"]}
+{"key": "arxiv:2412.05579", "biases": [], "mitigation": []}
+{"key": "title:learning llm as a judge for preference alignment", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2503.17489", "biases": ["other", "competence"], "mitigation": []}
+{"key": "arxiv:2506.09443", "biases": ["adversarial", "prompt_sensitivity"], "mitigation": ["other"]}
+{"key": "arxiv:2507.21028", "biases": [], "mitigation": ["ensemble", "decomposition"]}
+{"key": "arxiv:2411.01077", "biases": ["adversarial"], "mitigation": []}
+{"key": "doi:10.1109/icmctc62214.2025.11196295", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2401.15641", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2502.12468", "biases": ["competence"], "mitigation": ["decomposition", "cot"]}
+{"key": "arxiv:2412.13746", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2609.26550", "biases": ["style", "competence"], "mitigation": ["abstention", "calibration"]}
+{"key": "arxiv:2606.19544", "biases": ["position", "verbosity", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2406.11370", "biases": ["position", "prompt_sensitivity"], "mitigation": ["prompt_optimization", "calibration"]}
+{"key": "arxiv:2605.29800", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.09738", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2404.06503", "biases": [], "mitigation": []}
+{"key": "arxiv:2509.16533", "biases": ["sycophancy"], "mitigation": []}
+{"key": "arxiv:2501.00192", "biases": ["other"], "mitigation": ["rubric", "decomposition", "cot", "calibration"]}
+{"key": "arxiv:2410.05495", "biases": [], "mitigation": ["fine_tuning", "calibration", "cot"]}
+{"key": "arxiv:2406.07791", "biases": ["position"], "mitigation": []}
+{"key": "arxiv:2403.08010", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2504.12558", "biases": [], "mitigation": []}
+{"key": "arxiv:2506.03637", "biases": ["criteria"], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2410.05193", "biases": ["other"], "mitigation": ["reference", "critique_refine"]}
+{"key": "arxiv:2409.14335", "biases": ["competence", "criteria"], "mitigation": ["critique_refine"]}
+{"key": "arxiv:2507.16587", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2407.05216", "biases": ["adversarial", "competence"], "mitigation": []}
+{"key": "arxiv:2601.20913", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2310.01432", "biases": ["position", "inconsistency"], "mitigation": ["decomposition", "calibration"]}
+{"key": "arxiv:2409.04168", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2402.11253", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2407.03479", "biases": [], "mitigation": ["human_in_loop", "rubric"]}
+{"key": "arxiv:2505.14268", "biases": [], "mitigation": ["cot", "fine_tuning"]}
+{"key": "arxiv:2406.11657", "biases": ["competence", "criteria"], "mitigation": ["abstention"]}
+{"key": "arxiv:2510.18941", "biases": ["self_preference"], "mitigation": ["other"]}
+{"key": "arxiv:2403.18405", "biases": [], "mitigation": ["decomposition", "human_in_loop", "fine_tuning"]}
+{"key": "arxiv:2504.17087", "biases": [], "mitigation": ["ensemble", "rubric"]}
+{"key": "arxiv:2501.10970", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2503.19092", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2410.21545", "biases": ["style"], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2310.17631", "biases": ["position", "competence", "style"], "mitigation": ["fine_tuning", "swap", "reference"]}
+{"key": "arxiv:2503.00596", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2603.06594", "biases": ["adversarial", "competence"], "mitigation": []}
+{"key": "arxiv:2512.16899", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2502.11250", "biases": ["other"], "mitigation": ["calibration", "abstention"]}
+{"key": "arxiv:2510.11822", "biases": ["leniency"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2601.05111", "biases": [], "mitigation": []}
+{"key": "arxiv:2408.13704", "biases": [], "mitigation": []}
+{"key": "arxiv:2509.24384", "biases": ["criteria", "competence"], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2603.25133", "biases": ["competence"], "mitigation": ["cot", "rubric"]}
+{"key": "doi:10.1145/3807246.3807349", "biases": ["other"], "mitigation": ["calibration", "abstention"]}
+{"key": "arxiv:2410.18359", "biases": [], "mitigation": ["fine_tuning", "critique_refine", "tool_grounding"]}
+{"key": "arxiv:2508.02994", "biases": [], "mitigation": []}
+{"key": "arxiv:2510.23038", "biases": ["competence"], "mitigation": ["tool_grounding", "fine_tuning"]}
+{"key": "arxiv:2509.26072", "biases": ["authority", "other"], "mitigation": []}
+{"key": "arxiv:2505.17100", "biases": ["verbosity", "position", "sycophancy", "style"], "mitigation": ["critique_refine", "fine_tuning"]}
+{"key": "arxiv:2308.01862", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2406.11629", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2407.12943", "biases": ["competence"], "mitigation": ["fine_tuning", "tool_grounding"]}
+{"key": "arxiv:2409.00630", "biases": [], "mitigation": []}
+{"key": "arxiv:2411.15488", "biases": ["competence"], "mitigation": ["fine_tuning", "decomposition"]}
+{"key": "arxiv:2408.08781", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2501.07301", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2406.12845", "biases": ["verbosity"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2408.09235", "biases": [], "mitigation": ["ensemble", "reference"]}
+{"key": "arxiv:2510.07550", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2503.05977", "biases": ["competence"], "mitigation": ["ensemble", "fine_tuning"]}
+{"key": "arxiv:2401.06591", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2602.00521", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2508.03550", "biases": [], "mitigation": ["internal"]}
+{"key": "arxiv:2404.18796", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2602.13110", "biases": ["position", "other"], "mitigation": ["swap", "calibration", "abstention"]}
+{"key": "arxiv:2602.09383", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2510.18560", "biases": ["competence", "other"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2405.01724", "biases": ["other", "leniency", "anchoring", "inconsistency", "prompt_sensitivity"], "mitigation": ["other"]}
+{"key": "arxiv:2510.08783", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2603.08035", "biases": ["verbosity", "position"], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2505.13348", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2502.08922", "biases": ["inconsistency"], "mitigation": ["other"]}
+{"key": "doi:10.3389/fdata.2025.1611389", "biases": [], "mitigation": ["other"]}
+{"key": "doi:10.3390/info16080652", "biases": ["position", "prompt_sensitivity", "inconsistency"], "mitigation": []}
+{"key": "doi:10.18653/v1/2025.bionlp-1.19", "biases": ["competence", "leniency"], "mitigation": []}
+{"key": "arxiv:2502.18817", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2507.09104", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2604.18240", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2602.04649", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2508.10014", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2603.12246", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2501.17178", "biases": [], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2509.20293", "biases": ["criteria", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2505.12531", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2407.04622", "biases": ["sycophancy"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2403.18771", "biases": ["inconsistency", "criteria"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2604.23478", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2504.12408", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2505.19236", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2412.01333", "biases": ["prompt_sensitivity"], "mitigation": ["cot", "other"]}
+{"key": "doi:10.18653/v1/2025.acl-long.716", "biases": ["prompt_sensitivity"], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "arxiv:2505.15249", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2407.06551", "biases": ["verbosity", "style", "other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2603.08091", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2410.02736", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2510.24367", "biases": [], "mitigation": []}
+{"key": "arxiv:2508.05508", "biases": [], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2510.27106", "biases": ["inconsistency"], "mitigation": []}
+{"key": "arxiv:2504.11934", "biases": [], "mitigation": ["cot"]}
+{"key": "arxiv:2508.07805", "biases": ["authority", "sycophancy", "adversarial"], "mitigation": []}
+{"key": "arxiv:2604.22891", "biases": ["self_preference"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2309.13308", "biases": ["criteria"], "mitigation": ["calibration", "prompt_optimization"]}
+{"key": "arxiv:2402.12055", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2601.13537", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2309.07462", "biases": ["leniency", "social"], "mitigation": ["calibration"]}
+{"key": "arxiv:2505.08468", "biases": ["position", "verbosity"], "mitigation": []}
+{"key": "arxiv:2409.00935", "biases": [], "mitigation": ["fine_tuning", "reference", "abstention", "calibration"]}
+{"key": "arxiv:2505.13346", "biases": ["position", "competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2601.05420", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2408.08808", "biases": [], "mitigation": []}
+{"key": "arxiv:2506.00777", "biases": ["competence"], "mitigation": ["fine_tuning", "other"]}
+{"key": "arxiv:2601.21817", "biases": ["other"], "mitigation": ["calibration", "ensemble"]}
+{"key": "arxiv:2504.02867", "biases": ["leniency"], "mitigation": ["prompt_optimization", "calibration"]}
+{"key": "arxiv:2506.10903", "biases": ["criteria"], "mitigation": ["ensemble", "decomposition"]}
+{"key": "arxiv:2605.06161", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2607.08535", "biases": ["position", "verbosity", "inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2607.20083", "biases": ["other"], "mitigation": ["rubric"]}
+{"key": "arxiv:2603.12520", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2603.04738", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2505.13403", "biases": ["competence"], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2605.19196", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2402.10669", "biases": ["authority", "social", "style", "competence", "adversarial"], "mitigation": []}
+{"key": "arxiv:2408.13006", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2605.30568", "biases": [], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2507.02186", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2607.05904", "biases": ["anchoring", "adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2603.05399", "biases": ["inconsistency", "style", "verbosity"], "mitigation": []}
+{"key": "arxiv:2602.16610", "biases": ["inconsistency"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2512.22245", "biases": [], "mitigation": ["internal", "calibration"]}
+{"key": "arxiv:2406.15053", "biases": ["self_preference", "social"], "mitigation": []}
+{"key": "arxiv:2403.16950", "biases": ["inconsistency"], "mitigation": ["calibration", "swap"]}
+{"key": "arxiv:2509.25154", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3729176.3729199", "biases": ["criteria"], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "doi:10.3390/designs9050118", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2509.25602", "biases": ["prompt_sensitivity"], "mitigation": ["rubric"]}
+{"key": "arxiv:2406.12624", "biases": ["leniency", "prompt_sensitivity", "verbosity"], "mitigation": []}
+{"key": "arxiv:2510.12462", "biases": ["other", "style", "authority", "sycophancy"], "mitigation": ["fine_tuning", "other"]}
+{"key": "arxiv:2601.22588", "biases": ["prompt_sensitivity"], "mitigation": ["internal"]}
+{"key": "arxiv:2509.22957", "biases": ["social"], "mitigation": ["calibration"]}
+{"key": "arxiv:2502.18018", "biases": ["inconsistency"], "mitigation": ["ensemble", "critique_refine", "decomposition"]}
+{"key": "arxiv:2508.12792", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2506.02945", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2606.12071", "biases": ["competence", "leniency"], "mitigation": []}
+{"key": "arxiv:2606.00093", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2606.15474", "biases": ["inconsistency"], "mitigation": ["calibration"]}
+{"key": "doi:10.18653/v1/2025.acl-industry.67", "biases": [], "mitigation": ["prompt_optimization", "human_in_loop"]}
+{"key": "arxiv:2408.08896", "biases": ["leakage", "self_preference"], "mitigation": []}
+{"key": "arxiv:2408.01363", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2412.13268", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2501.13007", "biases": ["inconsistency"], "mitigation": ["cot", "fine_tuning"]}
+{"key": "arxiv:2502.15278", "biases": [], "mitigation": ["ensemble", "other"]}
+{"key": "arxiv:2603.00539", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2601.07506", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2411.18499", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2603.16848", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2606.13685", "biases": ["inconsistency", "position", "prompt_sensitivity"], "mitigation": ["ensemble", "swap"]}
+{"key": "arxiv:2604.23178", "biases": ["style", "position", "verbosity"], "mitigation": ["swap", "calibration", "ensemble", "rubric"]}
+{"key": "arxiv:2508.02921", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2506.10403", "biases": ["other"], "mitigation": ["tool_grounding", "decomposition", "fine_tuning"]}
+{"key": "arxiv:2602.02219", "biases": ["position"], "mitigation": ["swap"]}
+{"key": "arxiv:2412.12509", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2603.28304", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2511.10865", "biases": ["criteria"], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "arxiv:2509.25818", "biases": [], "mitigation": []}
+{"key": "arxiv:2511.20604", "biases": [], "mitigation": []}
+{"key": "arxiv:2411.18444", "biases": ["competence"], "mitigation": ["decomposition", "ensemble", "fine_tuning"]}
+{"key": "arxiv:2404.00998", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2508.20916", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.3390/diagnostics16010003", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.2196/67661", "biases": ["leniency"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.3390/bioengineering13010108", "biases": [], "mitigation": ["cot", "rubric", "human_in_loop"]}
+{"key": "arxiv:2504.14401", "biases": [], "mitigation": ["rubric", "cot", "ensemble"]}
+{"key": "doi:10.63317/2ecq8riwk5ay", "biases": ["prompt_sensitivity", "other"], "mitigation": []}
+{"key": "arxiv:2506.11221", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2502.02988", "biases": [], "mitigation": ["fine_tuning", "reference", "other"]}
+{"key": "arxiv:2507.10535", "biases": ["position", "inconsistency", "competence"], "mitigation": ["cot"]}
+{"key": "arxiv:2503.17039", "biases": [], "mitigation": []}
+{"key": "arxiv:2503.15620", "biases": ["criteria", "competence"], "mitigation": []}
+{"key": "arxiv:2512.05145", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2604.12312", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2509.23542", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2602.04796", "biases": ["position", "other"], "mitigation": []}
+{"key": "arxiv:2505.12201", "biases": ["inconsistency", "other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2601.13649", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2602.06625", "biases": ["position", "verbosity", "style", "self_preference", "inconsistency", "criteria"], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2604.05593", "biases": ["social"], "mitigation": []}
+{"key": "arxiv:2506.22316", "biases": ["position", "anchoring", "prompt_sensitivity", "other"], "mitigation": []}
+{"key": "arxiv:2606.29920", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": ["ensemble", "rubric"]}
+{"key": "arxiv:2505.15240", "biases": ["other"], "mitigation": ["calibration", "other"]}
+{"key": "arxiv:2402.04788", "biases": ["inconsistency", "other"], "mitigation": []}
+{"key": "arxiv:2508.08777", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2603.11027", "biases": ["criteria", "style", "inconsistency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2609.29769", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2508.02827", "biases": [], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2506.09147", "biases": [], "mitigation": []}
+{"key": "arxiv:2503.04360", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2410.20833", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2505.17691", "biases": ["inconsistency"], "mitigation": ["fine_tuning", "other"]}
+{"key": "arxiv:2412.05206", "biases": [], "mitigation": ["decomposition", "ensemble"]}
+{"key": "arxiv:2603.05167", "biases": ["leniency", "competence"], "mitigation": []}
+{"key": "arxiv:2504.12589", "biases": [], "mitigation": []}
+{"key": "arxiv:2604.06756", "biases": ["style", "competence"], "mitigation": []}
+{"key": "doi:10.1038/s41746-026-02992-w", "biases": ["leniency", "social"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2607.12835", "biases": ["leniency", "criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2604.24074", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2505.14279", "biases": ["leniency"], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2606.03116", "biases": [], "mitigation": ["rubric", "decomposition", "cot", "fine_tuning"]}
+{"key": "arxiv:2603.28005", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2505.11875", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2503.04381", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2603.00993", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2410.21819", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2505.15365", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2410.10934", "biases": [], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "arxiv:2602.11136", "biases": [], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "arxiv:2408.11729", "biases": [], "mitigation": ["tool_grounding", "other"]}
+{"key": "arxiv:2604.07650", "biases": ["leniency", "other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2607.11871", "biases": ["other"], "mitigation": ["internal"]}
+{"key": "arxiv:2605.09702", "biases": [], "mitigation": ["calibration", "ensemble"]}
+{"key": "arxiv:2601.14691", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2406.12319", "biases": ["verbosity", "authority"], "mitigation": ["cot", "decomposition"]}
+{"key": "arxiv:2510.06538", "biases": ["criteria"], "mitigation": ["ensemble", "prompt_optimization"]}
+{"key": "arxiv:2505.21972", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2605.22148", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.1109/ase63991.2025.00214", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2509.22099", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.12885", "biases": ["leniency", "anchoring"], "mitigation": ["reference", "calibration"]}
+{"key": "arxiv:2501.08167", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.18601", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2502.11689", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2503.09347", "biases": ["style", "verbosity"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.08120", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2603.29403", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2506.11237", "biases": [], "mitigation": ["decomposition", "tool_grounding", "critique_refine"]}
+{"key": "arxiv:2604.16790", "biases": ["prompt_sensitivity", "inconsistency", "anchoring"], "mitigation": []}
+{"key": "arxiv:2508.12158", "biases": [], "mitigation": []}
+{"key": "arxiv:2605.06939", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2604.02118", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2603.07019", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2510.07243", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2604.16383", "biases": ["competence", "criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2608.24419", "biases": ["criteria", "style"], "mitigation": []}
+{"key": "arxiv:2512.17375", "biases": ["adversarial"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.13347", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2508.16889", "biases": ["competence"], "mitigation": ["abstention"]}
+{"key": "arxiv:2605.26156", "biases": ["adversarial", "style", "verbosity"], "mitigation": []}
+{"key": "arxiv:2511.15958", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2602.15481", "biases": ["inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2505.17760", "biases": ["sycophancy"], "mitigation": ["internal", "reference"]}
+{"key": "arxiv:2604.09497", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2510.00263", "biases": ["position"], "mitigation": ["calibration", "fine_tuning"]}
+{"key": "arxiv:2410.12784", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2606.10315", "biases": ["competence", "criteria"], "mitigation": []}
+{"key": "arxiv:2606.07874", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2603.01865", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2511.18597", "biases": ["competence", "other"], "mitigation": []}
+{"key": "arxiv:2604.15302", "biases": ["inconsistency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2509.03647", "biases": ["self_preference"], "mitigation": ["internal"]}
+{"key": "arxiv:2606.27226", "biases": ["leniency"], "mitigation": ["decomposition", "rubric", "prompt_optimization"]}
+{"key": "arxiv:2602.13243", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.19334", "biases": ["leniency"], "mitigation": ["other"]}
+{"key": "arxiv:2605.30803", "biases": ["other"], "mitigation": ["rubric"]}
+{"key": "arxiv:2509.21451", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2512.11150", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "doi:10.52202/085713-1008", "biases": ["other"], "mitigation": ["fine_tuning", "calibration"]}
+{"key": "doi:10.3390/digital6010008", "biases": ["leniency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2405.08029", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2604.17768", "biases": ["other", "style"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2604.18164", "biases": ["competence", "prompt_sensitivity", "other"], "mitigation": []}
+{"key": "arxiv:2602.09411", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2602.07773", "biases": ["competence"], "mitigation": ["fine_tuning", "decomposition"]}
+{"key": "arxiv:2603.00546", "biases": ["verbosity", "competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2506.02592", "biases": ["self_preference", "style"], "mitigation": ["other"]}
+{"key": "arxiv:2505.19176", "biases": ["self_preference"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2605.23261", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2407.18370", "biases": ["other"], "mitigation": ["calibration", "abstention", "ensemble"]}
+{"key": "arxiv:2506.20128", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2602.07996", "biases": ["social", "authority", "other"], "mitigation": []}
+{"key": "arxiv:2410.09775", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.07810", "biases": ["competence"], "mitigation": ["ensemble", "cot"]}
+{"key": "arxiv:2607.28609", "biases": ["leniency"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.25640", "biases": [], "mitigation": []}
+{"key": "arxiv:2606.01629", "biases": ["inconsistency", "competence"], "mitigation": ["rubric", "reference"]}
+{"key": "arxiv:2502.12501", "biases": ["other"], "mitigation": ["ensemble", "decomposition"]}
+{"key": "arxiv:2601.03444", "biases": ["leniency", "inconsistency", "social"], "mitigation": []}
+{"key": "arxiv:2502.13396", "biases": ["criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2506.13639", "biases": ["inconsistency"], "mitigation": ["cot", "rubric"]}
+{"key": "arxiv:2509.18658", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.02942", "biases": ["criteria", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2609.12191", "biases": ["criteria", "other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2604.27727", "biases": ["inconsistency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2601.17312", "biases": ["prompt_sensitivity", "verbosity"], "mitigation": ["critique_refine"]}
+{"key": "arxiv:2604.13717", "biases": ["inconsistency"], "mitigation": ["ensemble", "rubric", "calibration", "abstention"]}
+{"key": "arxiv:2509.13332", "biases": ["position", "social", "prompt_sensitivity"], "mitigation": ["cot", "reference", "rubric", "ensemble"]}
+{"key": "arxiv:2603.10351", "biases": ["style", "other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2502.15094", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2604.22597", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2609.02246", "biases": ["leakage", "adversarial", "other"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2606.02578", "biases": ["anchoring", "other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2508.00454", "biases": ["other"], "mitigation": ["ensemble", "fine_tuning"]}
+{"key": "arxiv:2408.02666", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2501.09993", "biases": ["competence"], "mitigation": ["decomposition", "critique_refine", "tool_grounding"]}
+{"key": "arxiv:2510.08145", "biases": ["self_preference"], "mitigation": ["ensemble", "fine_tuning"]}
+{"key": "arxiv:2512.06751", "biases": ["inconsistency"], "mitigation": ["prompt_optimization", "critique_refine"]}
+{"key": "arxiv:2605.16354", "biases": [], "mitigation": ["human_in_loop", "calibration"]}
+{"key": "arxiv:2510.22827", "biases": ["social"], "mitigation": ["abstention", "rubric"]}
+{"key": "arxiv:2402.12146", "biases": ["competence"], "mitigation": ["ensemble", "reference"]}
+{"key": "arxiv:2606.03043", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2410.08442", "biases": [], "mitigation": ["ensemble", "fine_tuning"]}
+{"key": "arxiv:2603.06942", "biases": ["criteria"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2511.09195", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2602.13576", "biases": ["adversarial", "criteria"], "mitigation": []}
+{"key": "arxiv:2606.25487", "biases": ["adversarial", "leniency"], "mitigation": []}
+{"key": "arxiv:2410.20774", "biases": ["style", "other"], "mitigation": []}
+{"key": "arxiv:2406.09972", "biases": ["prompt_sensitivity"], "mitigation": ["cot", "prompt_optimization"]}
+{"key": "arxiv:2511.10871", "biases": ["sycophancy"], "mitigation": []}
+{"key": "arxiv:2502.13031", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2606.29719", "biases": ["inconsistency", "self_preference"], "mitigation": []}
+{"key": "arxiv:2506.05062", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2601.08343", "biases": ["inconsistency"], "mitigation": []}
+{"key": "arxiv:2606.15608", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2603.18557", "biases": ["other"], "mitigation": ["decomposition", "rubric"]}
+{"key": "arxiv:2609.34862", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.01830", "biases": ["criteria"], "mitigation": ["rubric", "ensemble"]}
+{"key": "doi:10.2139/ssrn.5188865", "biases": [], "mitigation": []}
+{"key": "doi:10.31219/osf.io/8y3km", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.1609/aaai.v39i28.35351", "biases": ["position"], "mitigation": ["swap", "calibration", "rubric"]}
+{"key": "doi:10.5753/sbbd.2024.243130", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/aixdke63520.2024.00020", "biases": [], "mitigation": ["rubric"]}
+{"key": "doi:10.48448/wbp4-6q60", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "doi:10.3389/fpubh.2026.1874389", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.1109/icmla61862.2024.00034", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.18653/v1/2025.acl-long.513", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2311.09204", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2501.13261", "biases": ["competence"], "mitigation": ["reference"]}
+{"key": "arxiv:2502.04997", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2510.25860", "biases": ["criteria"], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2503.19877", "biases": [], "mitigation": ["cot", "decomposition"]}
+{"key": "arxiv:2601.01751", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2405.11874", "biases": ["leakage"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2608.02620", "biases": [], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2608.24314", "biases": ["prompt_sensitivity", "criteria"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2609.00088", "biases": ["adversarial", "anchoring", "competence"], "mitigation": ["tool_grounding", "reference"]}
+{"key": "arxiv:2510.03376", "biases": [], "mitigation": ["critique_refine"]}
+{"key": "arxiv:2605.31381", "biases": ["inconsistency", "criteria", "style"], "mitigation": []}
+{"key": "arxiv:2502.01534", "biases": ["self_preference", "leakage"], "mitigation": []}
+{"key": "arxiv:2601.04029", "biases": ["other", "leniency"], "mitigation": []}
+{"key": "arxiv:2509.21117", "biases": ["inconsistency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2411.10954", "biases": ["social", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2510.05135", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2605.10805", "biases": [], "mitigation": ["cot", "ensemble"]}
+{"key": "arxiv:2603.17145", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2512.20159", "biases": ["criteria"], "mitigation": ["calibration"]}
+{"key": "arxiv:2512.03019", "biases": ["inconsistency"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2503.02246", "biases": [], "mitigation": []}
+{"key": "arxiv:2510.18196", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2607.01103", "biases": ["self_preference", "competence"], "mitigation": ["abstention"]}
+{"key": "arxiv:2608.26623", "biases": ["competence", "anchoring"], "mitigation": ["reference", "cot", "rubric"]}
+{"key": "arxiv:2508.09724", "biases": ["self_preference"], "mitigation": ["calibration", "ensemble"]}
+{"key": "arxiv:2604.18835", "biases": ["position", "leniency"], "mitigation": []}
+{"key": "arxiv:2410.17578", "biases": ["social", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2603.04033", "biases": ["self_preference", "competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.08092", "biases": ["inconsistency"], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "arxiv:2601.22230", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.13221", "biases": ["position", "self_preference", "inconsistency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.19802", "biases": [], "mitigation": ["ensemble", "abstention"]}
+{"key": "arxiv:2408.15240", "biases": [], "mitigation": ["fine_tuning", "cot", "ensemble"]}
+{"key": "arxiv:2401.10019", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2504.09781", "biases": [], "mitigation": ["critique_refine", "tool_grounding", "ensemble"]}
+{"key": "arxiv:2606.04867", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2606.26185", "biases": ["inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2410.15393", "biases": ["position"], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.01666", "biases": ["style"], "mitigation": ["other"]}
+{"key": "arxiv:2509.19880", "biases": ["prompt_sensitivity"], "mitigation": ["reference"]}
+{"key": "arxiv:2601.05114", "biases": ["inconsistency", "leniency", "criteria"], "mitigation": []}
+{"key": "arxiv:2412.09569", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2606.30931", "biases": ["sycophancy", "adversarial"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.20721", "biases": ["criteria", "competence"], "mitigation": []}
+{"key": "arxiv:2608.17994", "biases": ["competence"], "mitigation": ["abstention", "tool_grounding", "calibration"]}
+{"key": "arxiv:2404.01667", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2602.08672", "biases": ["criteria", "competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2505.16222", "biases": ["style"], "mitigation": ["other"]}
+{"key": "arxiv:2409.15268", "biases": ["style", "other"], "mitigation": []}
+{"key": "arxiv:2604.03376", "biases": ["competence"], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "arxiv:2606.01034", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.00038", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2607.02104", "biases": ["verbosity", "style"], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.30005", "biases": [], "mitigation": ["internal"]}
+{"key": "arxiv:2607.07436", "biases": ["leniency"], "mitigation": ["other"]}
+{"key": "doi:10.1145/3742414.3795100", "biases": ["criteria"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.1109/bigdata62323.2024.10825592", "biases": ["other"], "mitigation": ["other"]}
+{"key": "doi:10.1186/s40536-026-00287-w", "biases": [], "mitigation": ["reference", "rubric"]}
+{"key": "doi:10.5753/stil.2025.37829", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.5281/zenodo.20581781", "biases": ["inconsistency"], "mitigation": ["other"]}
+{"key": "doi:10.18653/v1/2025.emnlp-industry.82", "biases": ["criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "doi:10.18653/v1/2025.findings-emnlp.941", "biases": ["position", "verbosity", "social", "other"], "mitigation": ["ensemble", "other"]}
+{"key": "doi:10.18653/v1/2025.findings-emnlp.805", "biases": ["anchoring", "competence"], "mitigation": ["other"]}
+{"key": "doi:10.1145/3773966.3779384", "biases": ["anchoring"], "mitigation": ["other"]}
+{"key": "doi:10.48448/jaf8-g429", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2411.17793", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2502.12052", "biases": [], "mitigation": []}
+{"key": "arxiv:2607.05742", "biases": ["criteria"], "mitigation": ["other"]}
+{"key": "arxiv:2601.06106", "biases": [], "mitigation": []}
+{"key": "arxiv:2409.14664", "biases": ["position", "verbosity"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2409.06595", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2604.15224", "biases": ["leniency"], "mitigation": []}
+{"key": "arxiv:2606.24648", "biases": ["competence", "other"], "mitigation": ["abstention"]}
+{"key": "arxiv:2607.02235", "biases": ["inconsistency", "other"], "mitigation": []}
+{"key": "arxiv:2605.15416", "biases": [], "mitigation": ["calibration", "abstention"]}
+{"key": "arxiv:2606.11196", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.22329", "biases": ["position", "verbosity", "inconsistency", "other"], "mitigation": []}
+{"key": "arxiv:2509.08777", "biases": ["other"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2505.10320", "biases": ["position"], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2602.11911", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2503.04474", "biases": ["style", "adversarial", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2504.11972", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2510.27244", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2608.10908", "biases": ["position"], "mitigation": []}
+{"key": "arxiv:2410.11594", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2512.16041", "biases": ["inconsistency"], "mitigation": ["ensemble", "cot", "fine_tuning"]}
+{"key": "arxiv:2503.05965", "biases": ["criteria"], "mitigation": ["other"]}
+{"key": "arxiv:2605.25273", "biases": [], "mitigation": []}
+{"key": "arxiv:2609.06367", "biases": [], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2605.21748", "biases": [], "mitigation": []}
+{"key": "arxiv:2609.10996", "biases": ["other"], "mitigation": ["calibration", "critique_refine"]}
+{"key": "arxiv:2508.06225", "biases": ["other"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2602.11340", "biases": ["criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2604.02359", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2606.19714", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2603.03319", "biases": ["other", "style"], "mitigation": []}
+{"key": "arxiv:2610.00406", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2604.25933", "biases": [], "mitigation": []}
+{"key": "arxiv:2409.11239", "biases": ["competence", "social"], "mitigation": []}
+{"key": "arxiv:2604.20726", "biases": ["leniency"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2605.16023", "biases": ["prompt_sensitivity"], "mitigation": ["internal"]}
+{"key": "arxiv:2502.16457", "biases": [], "mitigation": []}
+{"key": "arxiv:2609.37145", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2512.01232", "biases": ["other"], "mitigation": ["rubric"]}
+{"key": "arxiv:2603.14732", "biases": ["anchoring", "leniency", "competence"], "mitigation": ["reference", "ensemble"]}
+{"key": "arxiv:2608.25869", "biases": ["anchoring"], "mitigation": ["cot", "other"]}
+{"key": "arxiv:2509.12382", "biases": [], "mitigation": []}
+{"key": "arxiv:2608.27746", "biases": ["leniency"], "mitigation": []}
+{"key": "arxiv:2601.22336", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.19060", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2411.15396", "biases": ["other", "social"], "mitigation": []}
+{"key": "arxiv:2605.09227", "biases": ["leniency", "verbosity"], "mitigation": ["calibration"]}
+{"key": "arxiv:2507.06774", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2511.04478", "biases": ["criteria"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2511.21140", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2507.08794", "biases": ["adversarial"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2601.03630", "biases": ["other", "adversarial"], "mitigation": ["cot"]}
+{"key": "arxiv:2504.18333", "biases": ["adversarial"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2507.17015", "biases": ["style"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2609.37577", "biases": ["position", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2606.28050", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.14278", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2609.13824", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2512.08121", "biases": [], "mitigation": []}
+{"key": "arxiv:2601.20327", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2603.05485", "biases": ["style"], "mitigation": ["calibration"]}
+{"key": "arxiv:2408.03907", "biases": ["social"], "mitigation": []}
+{"key": "arxiv:2501.13080", "biases": ["adversarial"], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2503.13102", "biases": ["position", "verbosity", "competence"], "mitigation": []}
+{"key": "arxiv:2505.04209", "biases": [], "mitigation": []}
+{"key": "arxiv:2502.17163", "biases": [], "mitigation": []}
+{"key": "arxiv:2607.22561", "biases": [], "mitigation": ["ensemble", "fine_tuning", "abstention"]}
+{"key": "arxiv:2608.18091", "biases": ["self_preference", "anchoring"], "mitigation": []}
+{"key": "arxiv:2602.02287", "biases": ["inconsistency", "other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.05573", "biases": ["competence"], "mitigation": ["tool_grounding", "other"]}
+{"key": "arxiv:2609.36979", "biases": ["style"], "mitigation": []}
+{"key": "arxiv:2602.05110", "biases": ["self_preference", "leniency"], "mitigation": []}
+{"key": "arxiv:2607.14480", "biases": ["social", "leniency"], "mitigation": []}
+{"key": "arxiv:2605.13695", "biases": ["competence"], "mitigation": ["cot", "ensemble", "critique_refine", "calibration"]}
+{"key": "arxiv:2609.29709", "biases": [], "mitigation": []}
+{"key": "arxiv:2605.23362", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2410.12869", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2601.08654", "biases": ["criteria", "prompt_sensitivity"], "mitigation": ["rubric", "calibration"]}
+{"key": "arxiv:2410.21071", "biases": [], "mitigation": []}
+{"key": "arxiv:2604.00008", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2606.17507", "biases": [], "mitigation": ["rubric", "decomposition", "reference"]}
+{"key": "arxiv:2608.24231", "biases": ["other"], "mitigation": ["fine_tuning", "critique_refine"]}
+{"key": "arxiv:2509.08593", "biases": ["competence"], "mitigation": ["other"]}
+{"key": "arxiv:2609.17857", "biases": ["self_preference", "position"], "mitigation": ["swap"]}
+{"key": "arxiv:2508.08236", "biases": [], "mitigation": ["cot", "rubric", "decomposition"]}
+{"key": "arxiv:2511.23312", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2606.05384", "biases": ["authority", "inconsistency", "adversarial"], "mitigation": []}
+{"key": "arxiv:2508.18076", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2608.11434", "biases": ["leniency"], "mitigation": []}
+{"key": "arxiv:2510.12697", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2501.18536", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2412.11453", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2412.00543", "biases": ["inconsistency"], "mitigation": []}
+{"key": "arxiv:2411.04424", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2601.22548", "biases": ["self_preference"], "mitigation": ["other"]}
+{"key": "arxiv:2507.02950", "biases": ["leniency", "competence"], "mitigation": []}
+{"key": "arxiv:2310.19740", "biases": ["criteria", "competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2512.01786", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2603.20562", "biases": ["position"], "mitigation": ["swap", "ensemble"]}
+{"key": "arxiv:2601.01862", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2510.20369", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2609.22512", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2606.15029", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2605.25652", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2604.25224", "biases": ["verbosity", "criteria"], "mitigation": ["other"]}
+{"key": "arxiv:2603.17172", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.27955", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2605.26046", "biases": ["criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2608.16253", "biases": ["prompt_sensitivity", "position"], "mitigation": ["other"]}
+{"key": "arxiv:2609.32407", "biases": ["position", "verbosity", "style"], "mitigation": ["internal"]}
+{"key": "arxiv:2608.25937", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2610.13303", "biases": ["criteria"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2608.31016", "biases": ["competence"], "mitigation": ["decomposition", "prompt_optimization", "ensemble"]}
+{"key": "arxiv:2608.29517", "biases": ["leniency", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2609.29431", "biases": ["position", "competence"], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.21277", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2602.17170", "biases": ["leniency", "verbosity", "style"], "mitigation": []}
+{"key": "arxiv:2608.12645", "biases": ["sycophancy", "inconsistency", "adversarial"], "mitigation": []}
+{"key": "arxiv:2608.12097", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2609.34198", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2607.28128", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2608.00004", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2608.20607", "biases": ["competence", "inconsistency"], "mitigation": ["reference", "tool_grounding", "ensemble"]}
+{"key": "doi:10.3390/electronics15030659", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.63317/2kdt525sk8is", "biases": [], "mitigation": ["ensemble", "fine_tuning", "reference"]}
+{"key": "doi:10.3390/electronics14214199", "biases": [], "mitigation": []}
+{"key": "doi:10.54254/2755-2721/2026.tj29492", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "doi:10.1145/3746252.3760922", "biases": [], "mitigation": []}
+{"key": "doi:10.31234/osf.io/4hsyx_v1", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.1016/j.procs.2026.01.060", "biases": ["other"], "mitigation": ["ensemble", "calibration", "critique_refine"]}
+{"key": "doi:10.1145/3805712.3808601", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/ictai66417.2025.00112", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.15680/ijirset.2025.1406011", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21270267", "biases": ["competence"], "mitigation": ["ensemble", "reference", "tool_grounding", "calibration"]}
+{"key": "doi:10.48448/vgtc-pb03", "biases": ["social", "sycophancy"], "mitigation": []}
+{"key": "doi:10.18653/v1/2025.acl-industry.12", "biases": ["leniency", "competence"], "mitigation": ["rubric", "decomposition"]}
+{"key": "doi:10.3390/jcp6050153", "biases": ["leniency", "competence"], "mitigation": ["reference", "tool_grounding", "calibration"]}
+{"key": "doi:10.1080/01639374.2026.2714375", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.18653/v1/2025.trl-1.9", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.1007/s10462-026-11652-0", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["cot", "rubric", "ensemble", "tool_grounding"]}
+{"key": "doi:10.3389/feduc.2026.1756673", "biases": [], "mitigation": ["prompt_optimization", "decomposition"]}
+{"key": "doi:10.1007/978-981-95-0014-7_14", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2025.emnlp-main.1267", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "doi:10.17605/osf.io/gv6n9", "biases": ["self_preference"], "mitigation": []}
+{"key": "doi:10.7249/tla4547-1", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.1109/icbc64466.2025.11114647", "biases": ["competence"], "mitigation": ["fine_tuning", "tool_grounding"]}
+{"key": "arxiv:2501.09164", "biases": ["competence"], "mitigation": ["other"]}
+{"key": "arxiv:2505.22777", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2410.00873", "biases": ["criteria"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.1145/3776591.3836647", "biases": ["social"], "mitigation": []}
+{"key": "arxiv:2609.00222", "biases": ["social"], "mitigation": ["other"]}
+{"key": "arxiv:2608.13564", "biases": ["leniency"], "mitigation": ["rubric", "prompt_optimization"]}
+{"key": "arxiv:2605.31351", "biases": ["self_preference", "adversarial", "competence"], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "arxiv:2604.11589", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2509.26011", "biases": ["style"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2608.25824", "biases": ["inconsistency"], "mitigation": ["calibration", "abstention"]}
+{"key": "arxiv:2512.05334", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2602.01528", "biases": ["sycophancy", "authority"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2603.11665", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2610.16814", "biases": ["adversarial"], "mitigation": ["tool_grounding", "fine_tuning"]}
+{"key": "arxiv:2608.29168", "biases": ["position"], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "arxiv:2609.28478", "biases": ["leniency"], "mitigation": ["ensemble", "rubric"]}
+{"key": "arxiv:2604.19405", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2608.20432", "biases": [], "mitigation": ["tool_grounding", "rubric"]}
+{"key": "arxiv:2609.09703", "biases": ["prompt_sensitivity", "leniency"], "mitigation": []}
+{"key": "arxiv:2609.34314", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2608.30373", "biases": ["leniency", "other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2609.23264", "biases": ["style", "verbosity"], "mitigation": []}
+{"key": "arxiv:2606.21627", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2510.00324", "biases": [], "mitigation": []}
+{"key": "arxiv:2608.09930", "biases": ["competence", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2606.03189", "biases": ["position"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.16173", "biases": [], "mitigation": []}
+{"key": "arxiv:2603.22214", "biases": [], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "arxiv:2610.14029", "biases": ["inconsistency"], "mitigation": ["ensemble", "abstention"]}
+{"key": "arxiv:2602.20379", "biases": ["leniency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2607.28641", "biases": ["adversarial", "sycophancy", "style"], "mitigation": []}
+{"key": "arxiv:2610.05094", "biases": ["leniency", "prompt_sensitivity"], "mitigation": ["rubric"]}
+{"key": "arxiv:2609.33955", "biases": [], "mitigation": ["decomposition", "human_in_loop"]}
+{"key": "arxiv:2608.05726", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2605.28710", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2610.08923", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2608.18300", "biases": [], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "arxiv:2610.02877", "biases": ["criteria", "leniency"], "mitigation": []}
+{"key": "arxiv:2605.12422", "biases": ["criteria"], "mitigation": ["abstention", "human_in_loop"]}
+{"key": "arxiv:2609.12439", "biases": ["style", "anchoring"], "mitigation": ["swap", "prompt_optimization"]}
+{"key": "arxiv:2609.03432", "biases": ["verbosity", "leniency"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2610.07109", "biases": ["inconsistency"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2609.01604", "biases": ["other"], "mitigation": ["internal"]}
+{"key": "arxiv:2510.04633", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2610.18108", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["calibration"]}
+{"key": "arxiv:2603.04417", "biases": ["inconsistency", "leniency"], "mitigation": []}
+{"key": "arxiv:2609.31857", "biases": [], "mitigation": []}
+{"key": "arxiv:2506.03083", "biases": [], "mitigation": []}
+{"key": "arxiv:2607.10080", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2607.10511", "biases": ["criteria", "verbosity"], "mitigation": []}
+{"key": "arxiv:2606.07520", "biases": ["other"], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "arxiv:2609.11067", "biases": ["social", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2505.24616", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2601.08849", "biases": ["verbosity", "adversarial"], "mitigation": ["reference"]}
+{"key": "arxiv:2610.12083", "biases": ["position", "inconsistency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2608.26982", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2609.01073", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.13773", "biases": ["verbosity", "competence"], "mitigation": []}
+{"key": "arxiv:2607.28439", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2605.26955", "biases": ["competence", "social"], "mitigation": []}
+{"key": "arxiv:2610.09554", "biases": ["anchoring", "competence"], "mitigation": ["other"]}
+{"key": "arxiv:2608.26529", "biases": [], "mitigation": ["ensemble", "abstention", "calibration"]}
+{"key": "arxiv:2609.12002", "biases": ["leniency"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2608.07641", "biases": [], "mitigation": ["fine_tuning", "tool_grounding"]}
+{"key": "arxiv:2607.10626", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2608.19002", "biases": [], "mitigation": []}
+{"key": "arxiv:2608.14950", "biases": ["anchoring"], "mitigation": ["calibration", "reference"]}
+{"key": "arxiv:2609.12822", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2509.20982", "biases": [], "mitigation": ["reference", "decomposition", "rubric"]}
+{"key": "arxiv:2608.12585", "biases": ["competence"], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "arxiv:2609.31215", "biases": ["position"], "mitigation": ["calibration", "human_in_loop", "swap"]}
+{"key": "arxiv:2601.04455", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2610.15938", "biases": ["anchoring"], "mitigation": ["reference"]}
+{"key": "arxiv:2608.21097", "biases": ["authority", "criteria"], "mitigation": []}
+{"key": "arxiv:2608.01810", "biases": ["criteria"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2607.13707", "biases": ["style", "other"], "mitigation": ["other"]}
+{"key": "arxiv:2608.18303", "biases": ["criteria"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2512.15617", "biases": ["competence"], "mitigation": ["ensemble", "abstention", "human_in_loop"]}
+{"key": "arxiv:2609.30290", "biases": ["competence"], "mitigation": ["ensemble", "abstention"]}
+{"key": "arxiv:2608.14329", "biases": ["adversarial", "competence"], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.24516", "biases": [], "mitigation": []}
+{"key": "arxiv:2607.27674", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.33044", "biases": ["inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2609.08236", "biases": ["style", "adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2610.19314", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2604.05371", "biases": [], "mitigation": []}
+{"key": "arxiv:2606.25782", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2608.05353", "biases": ["inconsistency", "position"], "mitigation": ["cot"]}
+{"key": "arxiv:2609.15561", "biases": ["competence"], "mitigation": ["other"]}
+{"key": "arxiv:2606.31371", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2510.25884", "biases": ["prompt_sensitivity"], "mitigation": ["ensemble", "rubric"]}
+{"key": "arxiv:2605.11334", "biases": [], "mitigation": ["decomposition", "calibration"]}
+{"key": "arxiv:2610.09229", "biases": ["position", "competence"], "mitigation": []}
+{"key": "arxiv:2511.21700", "biases": [], "mitigation": ["ensemble", "fine_tuning"]}
+{"key": "arxiv:2608.24258", "biases": ["competence"], "mitigation": ["other"]}
+{"key": "arxiv:2608.24899", "biases": ["self_preference", "leniency", "sycophancy"], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "arxiv:2606.07040", "biases": [], "mitigation": ["rubric", "prompt_optimization"]}
+{"key": "arxiv:2604.03742", "biases": ["inconsistency"], "mitigation": ["decomposition", "calibration"]}
+{"key": "arxiv:2512.01958", "biases": ["criteria"], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2605.17382", "biases": ["inconsistency", "criteria"], "mitigation": ["rubric", "calibration"]}
+{"key": "arxiv:2607.27984", "biases": [], "mitigation": ["rubric", "fine_tuning", "abstention"]}
+{"key": "arxiv:2609.22599", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2610.21214", "biases": [], "mitigation": ["calibration", "decomposition", "rubric"]}
+{"key": "arxiv:2610.07755", "biases": ["position"], "mitigation": ["swap"]}
+{"key": "arxiv:2606.10254", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2609.36705", "biases": ["criteria", "inconsistency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.15015", "biases": [], "mitigation": []}
+{"key": "arxiv:2610.17895", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2610.11116", "biases": ["position"], "mitigation": ["swap", "calibration"]}
+{"key": "arxiv:2609.06444", "biases": [], "mitigation": ["abstention", "human_in_loop", "calibration"]}
+{"key": "arxiv:2609.13422", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2609.35815", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2610.05452", "biases": ["inconsistency"], "mitigation": ["internal", "fine_tuning", "calibration"]}
+{"key": "arxiv:2608.22432", "biases": ["inconsistency", "social"], "mitigation": ["calibration"]}
+{"key": "arxiv:2610.17158", "biases": ["position", "leniency"], "mitigation": []}
+{"key": "arxiv:2605.23970", "biases": ["anchoring", "verbosity", "social", "adversarial"], "mitigation": ["cot", "other"]}
+{"key": "arxiv:2607.18529", "biases": [], "mitigation": ["rubric", "decomposition", "ensemble", "human_in_loop"]}
+{"key": "arxiv:2608.29127", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2608.14684", "biases": ["inconsistency", "criteria"], "mitigation": ["fine_tuning", "decomposition"]}
+{"key": "arxiv:2608.07920", "biases": ["anchoring", "adversarial"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2609.27954", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.27309", "biases": ["leniency", "social"], "mitigation": []}
+{"key": "arxiv:2610.00054", "biases": ["position"], "mitigation": []}
+{"key": "arxiv:2610.02492", "biases": ["leniency", "competence"], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.07813", "biases": ["competence"], "mitigation": ["other"]}
+{"key": "arxiv:2609.38792", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.07834", "biases": ["competence"], "mitigation": ["ensemble", "abstention", "decomposition"]}
+{"key": "arxiv:2610.18122", "biases": ["position", "style", "authority", "social"], "mitigation": ["calibration"]}
+{"key": "arxiv:2606.15610", "biases": ["inconsistency"], "mitigation": []}
+{"key": "arxiv:2610.19166", "biases": [], "mitigation": ["calibration", "ensemble"]}
+{"key": "arxiv:2605.03858", "biases": ["inconsistency", "competence"], "mitigation": ["cot"]}
+{"key": "arxiv:2609.30751", "biases": ["position"], "mitigation": ["ensemble", "reference", "swap"]}
+{"key": "arxiv:2607.28636", "biases": ["authority", "sycophancy", "social", "other"], "mitigation": ["critique_refine", "ensemble"]}
+{"key": "arxiv:2510.15746", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2609.19599", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2608.11493", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2609.24200", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2609.04194", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.18086", "biases": ["leniency"], "mitigation": []}
+{"key": "arxiv:2610.19992", "biases": ["criteria", "competence"], "mitigation": ["rubric", "tool_grounding", "calibration", "human_in_loop"]}
+{"key": "arxiv:2610.00071", "biases": ["social", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2609.10594", "biases": [], "mitigation": []}
+{"key": "arxiv:2607.18828", "biases": ["self_preference", "leniency"], "mitigation": []}
+{"key": "arxiv:2610.21179", "biases": ["inconsistency"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2610.08055", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2610.17820", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2610.07115", "biases": ["position"], "mitigation": ["internal"]}
+{"key": "arxiv:2610.15778", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2608.18719", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2610.17747", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2605.19665", "biases": ["criteria"], "mitigation": ["rubric", "decomposition", "swap"]}
+{"key": "arxiv:2609.08826", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2609.35739", "biases": [], "mitigation": ["calibration", "rubric"]}
+{"key": "doi:10.1016/j.eswa.2026.133992", "biases": ["adversarial"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21980066", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.3390/ai7080286", "biases": ["competence", "inconsistency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22640839", "biases": ["criteria"], "mitigation": ["prompt_optimization", "human_in_loop"]}
+{"key": "title:llm as a judge rubric wording sensitivity", "biases": ["prompt_sensitivity", "leniency"], "mitigation": ["rubric", "cot"]}
+{"key": "doi:10.18653/v1/2026.mme-main.12", "biases": ["criteria"], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "doi:10.5281/zenodo.21865042", "biases": ["prompt_sensitivity", "position", "inconsistency"], "mitigation": ["cot", "rubric", "swap", "calibration"]}
+{"key": "title:human subject studies for the alignment of llm as a judge evaluation metric for science news", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20788786", "biases": [], "mitigation": []}
+{"key": "doi:10.21950/vbg0hp", "biases": [], "mitigation": ["critique_refine", "fine_tuning"]}
+{"key": "doi:10.1007/s11219-026-09785-0", "biases": ["inconsistency", "other"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21149148", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/phrv2", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22659211", "biases": ["self_preference", "verbosity", "position"], "mitigation": ["swap"]}
+{"key": "doi:10.1145/3805689.3806459", "biases": ["social", "leniency", "inconsistency"], "mitigation": ["cot"]}
+{"key": "doi:10.17605/osf.io/jw59c", "biases": ["position"], "mitigation": ["calibration", "swap"]}
+{"key": "doi:10.5281/zenodo.21323784", "biases": [], "mitigation": []}
+{"key": "doi:10.1007/978-3-032-39892-5_17", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/access.2026.3726251", "biases": ["competence"], "mitigation": ["calibration", "abstention"]}
+{"key": "doi:10.5281/zenodo.21361919", "biases": ["style", "other"], "mitigation": []}
+{"key": "doi:10.18653/v1/2026.bionlp-1.55", "biases": ["leniency", "competence"], "mitigation": ["other"]}
+{"key": "doi:10.1109/acit69831.2026.11699959", "biases": ["position"], "mitigation": ["other"]}
+{"key": "doi:10.48448/e8kb-xw03", "biases": ["position", "verbosity", "anchoring"], "mitigation": ["calibration"]}
+{"key": "doi:10.48448/vjgj-gv50", "biases": ["leniency"], "mitigation": ["calibration", "rubric"]}
+{"key": "doi:10.18653/v1/2026.gem-main.45", "biases": ["sycophancy", "social"], "mitigation": []}
+{"key": "doi:10.1007/978-3-032-33865-5_12", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/cste69562.2026.11647786", "biases": ["adversarial", "leniency", "competence"], "mitigation": ["ensemble", "rubric", "tool_grounding", "human_in_loop"]}
+{"key": "doi:10.5281/zenodo.19201807", "biases": ["competence"], "mitigation": ["critique_refine", "other"]}
+{"key": "doi:10.5281/zenodo.22917751", "biases": [], "mitigation": []}
+{"key": "title:structural biases in llm as a judge systems implications for reliable is adoption", "biases": ["position", "self_preference", "inconsistency"], "mitigation": ["human_in_loop", "ensemble"]}
+{"key": "doi:10.5281/zenodo.21158213", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["swap", "ensemble", "calibration"]}
+{"key": "doi:10.1145/3748522.3779926", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20063835", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.1145/3773078.3841257", "biases": ["anchoring"], "mitigation": []}
+{"key": "doi:10.1145/3770501.3770530", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.21227/nmdc-wc69", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5114/ait/221943", "biases": ["prompt_sensitivity"], "mitigation": ["decomposition", "rubric"]}
+{"key": "doi:10.2139/ssrn.7548649", "biases": [], "mitigation": []}
+{"key": "doi:10.13140/rg.2.2.21697.62562", "biases": [], "mitigation": ["calibration"]}
+{"key": "doi:10.1145/3838938.3838949", "biases": ["adversarial", "inconsistency", "other"], "mitigation": ["ensemble", "human_in_loop", "other"]}
+{"key": "doi:10.5281/zenodo.21499822", "biases": ["sycophancy", "anchoring", "other"], "mitigation": []}
+{"key": "doi:10.13140/rg.2.2.11234.29121", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2026.acl-srw.33", "biases": ["style"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22368666", "biases": ["inconsistency", "criteria"], "mitigation": ["ensemble", "tool_grounding", "abstention"]}
+{"key": "title:bias aware llm as a judge with position invariant pairwise evaluation and confidence calibration", "biases": ["position", "inconsistency"], "mitigation": ["swap", "calibration", "abstention"]}
+{"key": "doi:10.1007/978-981-92-3426-4_43", "biases": [], "mitigation": ["calibration"]}
+{"key": "doi:10.5626/ktcp.2026.32.3.126", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": ["rubric"]}
+{"key": "doi:10.54254/2753-8818/2026.33416", "biases": ["position"], "mitigation": []}
+{"key": "doi:10.1016/j.bas.2026.106844", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/icosaas68663.2026.11648543", "biases": ["criteria", "competence"], "mitigation": ["abstention", "human_in_loop", "rubric"]}
+{"key": "doi:10.1145/3786175.3788342", "biases": ["criteria", "inconsistency"], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "doi:10.1007/s12525-026-00890-3", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.23036796", "biases": [], "mitigation": []}
+{"key": "doi:10.2139/ssrn.5249953", "biases": ["other"], "mitigation": ["other"]}
+{"key": "doi:10.63317/3axxq3b2dynj", "biases": [], "mitigation": []}
+{"key": "doi:10.3389/frai.2026.1768005", "biases": ["criteria", "prompt_sensitivity"], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "doi:10.18653/v1/2026.gem-main.55", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.63317/4n9skmf9rive", "biases": [], "mitigation": []}
+{"key": "doi:10.3390/educsci16091505", "biases": ["leniency", "competence", "criteria"], "mitigation": []}
+{"key": "doi:10.71569/gvyy-1q86", "biases": ["criteria"], "mitigation": ["reference"]}
+{"key": "doi:10.1109/gaiis69281.2026.11519324", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "title:llm as a judge for multilingual question answering evaluation an experimental study on an english turkish bilingual squad dataset", "biases": ["prompt_sensitivity", "criteria"], "mitigation": ["rubric"]}
+{"key": "doi:10.48448/ytbt-6r06", "biases": [], "mitigation": []}
+{"key": "doi:10.21045/1811-0185-2026-10-80-89", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.1007/978-3-032-37249-9_46", "biases": [], "mitigation": []}
+{"key": "title:adaptaci n de llm as a judge y creaci n de recursos para la evaluaci n del dialecto chilenoa", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21462978", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.1109/icnlp69856.2026.11527976", "biases": ["competence"], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "doi:10.5281/zenodo.21921828", "biases": ["inconsistency"], "mitigation": ["ensemble", "other"]}
+{"key": "doi:10.5281/zenodo.21716866", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.22117857", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["swap", "calibration"]}
+{"key": "doi:10.21086/ksles.2026.4.33.2.105", "biases": ["criteria"], "mitigation": ["human_in_loop", "rubric"]}
+{"key": "doi:10.5753/sbsi_estendido.2026.249124", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.18653/v1/2026.rag4reports-1.9", "biases": [], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "doi:10.48448/we46-vf16", "biases": ["competence"], "mitigation": ["reference"]}
+{"key": "doi:10.1038/s41746-026-03248-3", "biases": ["criteria", "competence"], "mitigation": ["ensemble", "rubric"]}
+{"key": "doi:10.5281/zenodo.23135733", "biases": [], "mitigation": ["calibration"]}
+{"key": "doi:10.63317/3bhnb2uoif7o", "biases": ["competence", "criteria"], "mitigation": ["rubric"]}
+{"key": "doi:10.1007/s10489-026-07244-8", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2026.findings-acl.1351", "biases": ["criteria"], "mitigation": ["ensemble", "decomposition"]}
+{"key": "doi:10.5281/zenodo.23181928", "biases": ["position"], "mitigation": ["swap"]}
+{"key": "doi:10.15439/2026f9874", "biases": ["position"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21761151", "biases": [], "mitigation": ["calibration"]}
+{"key": "doi:10.62408/ai-ling.v2i2.22", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization"]}
+{"key": "doi:10.5281/zenodo.21782379", "biases": ["criteria", "competence"], "mitigation": []}
+{"key": "doi:10.21203/rs.3.rs-10304807/v1", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.1145/3794786.3830782", "biases": ["criteria"], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "doi:10.5281/zenodo.19859339", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.22994056", "biases": ["inconsistency"], "mitigation": ["tool_grounding", "ensemble", "critique_refine"]}
+{"key": "doi:10.5281/zenodo.22849705", "biases": ["criteria", "other"], "mitigation": ["rubric", "decomposition"]}
+{"key": "doi:10.18653/v1/2026.acl-long.2006", "biases": ["verbosity", "style", "criteria"], "mitigation": []}
+{"key": "doi:10.2139/ssrn.7147562", "biases": ["authority", "competence"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22207382", "biases": ["inconsistency", "criteria"], "mitigation": []}
+{"key": "doi:10.3390/bioengineering13101115", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.1016/j.jss.2026.113036", "biases": ["competence"], "mitigation": ["rubric", "decomposition", "human_in_loop"]}
+{"key": "doi:10.5281/zenodo.21314102", "biases": ["position", "anchoring"], "mitigation": ["internal"]}
+{"key": "doi:10.21203/rs.3.rs-11022502/v1", "biases": ["self_preference"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22901852", "biases": [], "mitigation": []}
+{"key": "doi:10.2139/ssrn.7555380", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "doi:10.5281/zenodo.20435190", "biases": ["other"], "mitigation": ["other"]}
+{"key": "doi:10.5281/zenodo.20620454", "biases": ["competence"], "mitigation": ["abstention", "human_in_loop"]}
+{"key": "title:llm as judge for reliable crack segmentation in edge based structural inspection", "biases": [], "mitigation": []}
+{"key": "doi:10.13140/rg.2.2.10613.54240", "biases": [], "mitigation": []}
+{"key": "doi:10.6084/m9.figshare.31791526", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.1145/3805696.3846049", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/access.2026.3739942", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21016696", "biases": ["criteria"], "mitigation": ["calibration", "rubric"]}
+{"key": "doi:10.13140/rg.2.2.36521.15201", "biases": ["inconsistency"], "mitigation": ["calibration"]}
+{"key": "doi:10.5281/zenodo.22878599", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.20326022", "biases": ["inconsistency", "competence"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.5281/zenodo.22828264", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2026.findings-acl.2029", "biases": ["competence"], "mitigation": ["fine_tuning", "tool_grounding"]}
+{"key": "doi:10.5281/zenodo.17602598", "biases": ["inconsistency", "social", "adversarial"], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "doi:10.1109/icosaas68663.2026.11649465", "biases": ["inconsistency"], "mitigation": ["calibration", "ensemble"]}
+{"key": "doi:10.1145/3786175.3788345", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.18653/v1/2026.findings-acl.1473", "biases": ["competence", "sycophancy"], "mitigation": ["critique_refine", "ensemble"]}
+{"key": "doi:10.1109/access.2026.3700697", "biases": [], "mitigation": ["fine_tuning", "decomposition"]}
+{"key": "doi:10.5281/zenodo.21918866", "biases": ["style", "criteria"], "mitigation": ["rubric"]}
+{"key": "doi:10.36227/techrxiv.174584742.28568002/v1", "biases": ["leniency", "competence"], "mitigation": ["rubric", "decomposition"]}
+{"key": "doi:10.5281/zenodo.22395364", "biases": ["self_preference", "position"], "mitigation": []}
+{"key": "doi:10.1109/aiotc71250.2026.11688433", "biases": ["position", "leniency", "competence"], "mitigation": []}
+{"key": "doi:10.2139/ssrn.6482162", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.5281/zenodo.20620870", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.2196/preprints.112207", "biases": ["inconsistency", "leniency", "competence"], "mitigation": ["ensemble"]}
+{"key": "doi:10.17605/osf.io/t68e9", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21162712", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21185717", "biases": ["inconsistency", "adversarial"], "mitigation": ["calibration"]}
+{"key": "doi:10.5753/stil.2026.26484", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.17832860", "biases": ["criteria", "style"], "mitigation": []}
+{"key": "doi:10.3390/make8090275", "biases": ["competence"], "mitigation": ["abstention"]}
+{"key": "doi:10.5281/zenodo.23038175", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "doi:10.5281/zenodo.20624687", "biases": ["social", "sycophancy"], "mitigation": []}
+{"key": "doi:10.21203/rs.3.rs-10688342/v1", "biases": ["sycophancy"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21154336", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "doi:10.1016/j.iswa.2026.200738", "biases": [], "mitigation": ["other"]}
+{"key": "doi:10.1145/3701716.3715586", "biases": [], "mitigation": ["cot"]}
+{"key": "doi:10.63317/54qbtfwgkz9j", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3786579.3804927", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.1016/j.ipm.2026.105154", "biases": ["criteria", "leniency"], "mitigation": ["rubric", "fine_tuning", "decomposition"]}
+{"key": "doi:10.31979/etd.nfqd-nzvn", "biases": ["self_preference", "inconsistency"], "mitigation": ["ensemble", "calibration"]}
+{"key": "title:committee of judges multi agent consensus for reliable llm evaluation under difficult reasoning tasks", "biases": ["competence"], "mitigation": ["ensemble", "tool_grounding", "critique_refine"]}
+{"key": "doi:10.13140/rg.2.2.15460.95367", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.30574/wjaets.2026.18.3.0182", "biases": ["inconsistency", "self_preference"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.23143530", "biases": ["inconsistency", "criteria"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22681323", "biases": ["other"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.18653/v1/2025.wmt-1.67", "biases": ["inconsistency"], "mitigation": ["ensemble", "decomposition"]}
+{"key": "doi:10.24406/publica-9744", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.1016/j.techfore.2026.124894", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.1109/acdsa67686.2026.11468180", "biases": ["social"], "mitigation": ["ensemble"]}
+{"key": "doi:10.1145/3837062.3839375", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/kzx9g", "biases": ["competence", "other"], "mitigation": []}
+{"key": "title:when should llm judges abstain", "biases": ["competence"], "mitigation": ["abstention"]}
+{"key": "doi:10.82419/300", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1145/3803437.3805263", "biases": ["criteria"], "mitigation": ["rubric", "prompt_optimization"]}
+{"key": "doi:10.5281/zenodo.21806464", "biases": ["position", "verbosity", "sycophancy", "inconsistency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.23060932", "biases": [], "mitigation": []}
+{"key": "doi:10.64898/2026.09.16.26363176", "biases": ["criteria", "competence"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/r93e2", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "doi:10.5281/zenodo.19332782", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.1007/978-981-92-3381-6_24", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/9jpn8", "biases": ["social"], "mitigation": []}
+{"key": "doi:10.18653/v1/2026.rag4reports-1.13", "biases": [], "mitigation": []}
+{"key": "doi:10.58425/ajt.v5i12.624", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21878046", "biases": ["anchoring", "competence"], "mitigation": ["tool_grounding", "critique_refine", "other"]}
+{"key": "doi:10.5281/zenodo.21879446", "biases": ["competence", "other"], "mitigation": ["cot"]}
+{"key": "doi:10.5281/zenodo.20673056", "biases": ["position"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.5281/zenodo.21017683", "biases": ["leniency", "adversarial", "competence"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.21429139", "biases": ["adversarial", "leakage", "self_preference"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.5281/zenodo.21421024", "biases": ["adversarial"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21399123", "biases": ["position", "verbosity", "competence"], "mitigation": ["ensemble", "swap"]}
+{"key": "doi:10.5281/zenodo.23138677", "biases": ["inconsistency", "criteria"], "mitigation": []}
+{"key": "doi:10.1109/tkde.2026.3736381", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.23311456", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "doi:10.17605/osf.io/8vg5f", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.5281/zenodo.21402453", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/ej79f", "biases": ["competence"], "mitigation": []}
+{"key": "title:do output length caps hide llm judges mistakes yikes ai marked maths and released commercial judge data", "biases": ["competence", "other"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21737025", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.23199459", "biases": ["criteria", "style"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21856957", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/xszfh", "biases": ["leniency", "other"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.23033126", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22677220", "biases": ["inconsistency", "leniency"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.23316414", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.23203399", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.1109/icsipc69751.2026.11583935", "biases": [], "mitigation": ["prompt_optimization", "critique_refine", "abstention"]}
+{"key": "arxiv:2504.12333", "biases": ["inconsistency", "competence"], "mitigation": []}
+{"key": "arxiv:2609.36086", "biases": ["leniency", "criteria"], "mitigation": ["other"]}
+{"key": "arxiv:2609.33773", "biases": ["adversarial", "competence"], "mitigation": ["other"]}
+{"key": "arxiv:2610.00111", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2608.02975", "biases": ["competence"], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "arxiv:2607.16239", "biases": ["inconsistency", "other"], "mitigation": ["calibration", "human_in_loop", "ensemble"]}
+{"key": "arxiv:2506.05142", "biases": ["social", "criteria"], "mitigation": []}
+{"key": "doi:10.1109/tlt.2026.3716609", "biases": ["style", "prompt_sensitivity", "competence"], "mitigation": []}
+{"key": "doi:10.18653/v1/2026.gem-main.42", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2610.11050", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2609.37863", "biases": ["anchoring", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2606.30887", "biases": ["competence"], "mitigation": ["fine_tuning", "critique_refine"]}
+{"key": "arxiv:2609.03611", "biases": ["leniency", "competence"], "mitigation": ["fine_tuning", "other"]}
+{"key": "doi:10.1109/isncc70543.2026.11693865", "biases": ["criteria", "prompt_sensitivity"], "mitigation": []}
+{"key": "doi:10.1007/s44217-026-01837-8", "biases": ["leniency", "inconsistency"], "mitigation": ["rubric"]}
+{"key": "doi:10.1109/icst69053.2026.00094", "biases": ["criteria"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2305.14251", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2303.16634", "biases": ["self_preference"], "mitigation": ["cot", "rubric"]}
+{"key": "arxiv:2309.00267", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2310.08491", "biases": ["criteria"], "mitigation": ["fine_tuning", "rubric", "reference"]}
+{"key": "arxiv:2405.01535", "biases": ["criteria"], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2302.04166", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2311.09476", "biases": [], "mitigation": ["fine_tuning", "calibration", "human_in_loop"]}
+{"key": "arxiv:2306.05087", "biases": ["style", "criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2507.17746", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2504.01848", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2402.06782", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2305.01937", "biases": [], "mitigation": []}
+{"key": "arxiv:2309.10621", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2402.05044", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2402.04792", "biases": [], "mitigation": []}
+{"key": "arxiv:2406.04770", "biases": ["verbosity"], "mitigation": ["rubric", "cot", "other"]}
+{"key": "arxiv:2306.04181", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2307.10928", "biases": [], "mitigation": ["decomposition"]}
+{"key": "doi:10.18653/v1/2024.findings-eacl.61", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1016/j.tsc.2023.101356", "biases": [], "mitigation": []}
+{"key": "arxiv:2304.02554", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2504.01382", "biases": [], "mitigation": []}
+{"key": "arxiv:2403.18802", "biases": [], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "doi:10.63317/48d359hjdvog", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2402.01383", "biases": [], "mitigation": []}
+{"key": "arxiv:2305.13711", "biases": [], "mitigation": []}
+{"key": "arxiv:2410.02712", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2404.12272", "biases": ["criteria"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2310.15123", "biases": ["position", "verbosity", "inconsistency"], "mitigation": ["decomposition"]}
+{"key": "doi:10.2196/49324", "biases": [], "mitigation": []}
+{"key": "arxiv:2310.08118", "biases": ["competence"], "mitigation": ["critique_refine", "tool_grounding"]}
+{"key": "arxiv:2407.00908", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2503.08569", "biases": [], "mitigation": ["fine_tuning", "tool_grounding", "decomposition"]}
+{"key": "arxiv:2304.00723", "biases": [], "mitigation": []}
+{"key": "arxiv:2308.04592", "biases": [], "mitigation": ["fine_tuning", "critique_refine"]}
+{"key": "arxiv:2504.08942", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2305.11116", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2305.11171", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2303.15078", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2312.09300", "biases": [], "mitigation": ["abstention", "calibration"]}
+{"key": "arxiv:2304.14317", "biases": [], "mitigation": []}
+{"key": "arxiv:2307.07889", "biases": ["position"], "mitigation": ["other"]}
+{"key": "arxiv:2310.10076", "biases": ["verbosity"], "mitigation": []}
+{"key": "arxiv:2305.06311", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2311.08516", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2310.00752", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2412.09416", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.23802", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2309.13633", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2410.03608", "biases": [], "mitigation": ["decomposition", "rubric"]}
+{"key": "arxiv:2308.02490", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.19955", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2403.07008", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2406.06004", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2306.01200", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2311.18702", "biases": [], "mitigation": ["fine_tuning", "reference"]}
+{"key": "arxiv:2501.17969", "biases": ["adversarial", "other"], "mitigation": []}
+{"key": "arxiv:2501.03200", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2410.14632", "biases": ["style", "criteria"], "mitigation": ["other"]}
+{"key": "arxiv:2504.10481", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2512.16853", "biases": ["other"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2410.07137", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2503.12329", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3664190.3672511", "biases": [], "mitigation": ["decomposition", "human_in_loop", "rubric"]}
+{"key": "arxiv:2507.00769", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2410.18697", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2504.15068", "biases": [], "mitigation": ["decomposition", "human_in_loop"]}
+{"key": "arxiv:2503.05142", "biases": ["position", "competence"], "mitigation": ["decomposition", "rubric", "calibration"]}
+{"key": "arxiv:2507.02856", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2412.13018", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2504.18838", "biases": [], "mitigation": []}
+{"key": "arxiv:2402.13758", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2310.03304", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2410.12735", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2505.14674", "biases": [], "mitigation": ["cot", "fine_tuning"]}
+{"key": "arxiv:2507.04952", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2310.00074", "biases": [], "mitigation": ["cot"]}
+{"key": "arxiv:2311.03754", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2408.05534", "biases": [], "mitigation": ["abstention"]}
+{"key": "arxiv:2311.08788", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1016/j.ipm.2024.103973", "biases": [], "mitigation": []}
+{"key": "arxiv:2508.05929", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2505.04847", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2508.08285", "biases": [], "mitigation": []}
+{"key": "arxiv:2407.10241", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2501.14956", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2406.07070", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2412.13091", "biases": [], "mitigation": ["decomposition", "fine_tuning", "rubric"]}
+{"key": "arxiv:2504.14716", "biases": ["other", "adversarial"], "mitigation": []}
+{"key": "arxiv:2310.13800", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2023.findings-emnlp.599", "biases": [], "mitigation": ["cot"]}
+{"key": "arxiv:2411.09768", "biases": ["verbosity", "other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2410.03131", "biases": ["competence"], "mitigation": ["decomposition", "cot"]}
+{"key": "arxiv:2511.08723", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2401.15042", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2506.21621", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1145/3626772.3661346", "biases": [], "mitigation": []}
+{"key": "arxiv:2401.06568", "biases": ["competence"], "mitigation": ["reference", "fine_tuning"]}
+{"key": "doi:10.18653/v1/2025.acl-long.179", "biases": [], "mitigation": ["fine_tuning", "critique_refine"]}
+{"key": "arxiv:2604.11978", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2509.18030", "biases": [], "mitigation": []}
+{"key": "arxiv:2504.19076", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2311.09581", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2504.10337", "biases": ["competence"], "mitigation": ["fine_tuning", "ensemble", "cot"]}
+{"key": "arxiv:2403.19305", "biases": ["inconsistency"], "mitigation": ["ensemble", "cot", "critique_refine"]}
+{"key": "arxiv:2602.14069", "biases": ["other"], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "arxiv:2511.21654", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2023.nllp-1.13", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2410.08851", "biases": ["position", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2504.01995", "biases": ["competence"], "mitigation": []}
+{"key": "title:criticeval evaluating large scale language model as critic", "biases": [], "mitigation": []}
+{"key": "arxiv:2507.07988", "biases": [], "mitigation": ["reference", "decomposition"]}
+{"key": "arxiv:2507.13300", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2503.12600", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2410.13716", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2506.07927", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2601.03555", "biases": ["inconsistency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2312.10321", "biases": [], "mitigation": ["cot", "decomposition"]}
+{"key": "arxiv:2410.07069", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2410.13394", "biases": [], "mitigation": ["fine_tuning", "reference"]}
+{"key": "arxiv:2305.14282", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2406.18365", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2501.00269", "biases": [], "mitigation": []}
+{"key": "arxiv:2510.24592", "biases": [], "mitigation": ["critique_refine", "fine_tuning"]}
+{"key": "arxiv:2401.07103", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/tvcg.2024.3456354", "biases": [], "mitigation": []}
+{"key": "arxiv:2502.16182", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2408.03837", "biases": [], "mitigation": []}
+{"key": "arxiv:2507.09075", "biases": [], "mitigation": ["critique_refine", "fine_tuning"]}
+{"key": "arxiv:2409.01941", "biases": [], "mitigation": []}
+{"key": "arxiv:2401.00437", "biases": ["prompt_sensitivity"], "mitigation": ["other"]}
+{"key": "arxiv:2410.03837", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2504.01282", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.1145/3613905.3650774", "biases": [], "mitigation": []}
+{"key": "arxiv:2501.03545", "biases": [], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2605.28091", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2404.10595", "biases": [], "mitigation": []}
+{"key": "arxiv:2506.05735", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2503.02574", "biases": [], "mitigation": []}
+{"key": "arxiv:2508.05470", "biases": ["prompt_sensitivity", "other"], "mitigation": []}
+{"key": "arxiv:2508.18240", "biases": ["position", "verbosity"], "mitigation": []}
+{"key": "arxiv:2412.09269", "biases": ["inconsistency", "competence"], "mitigation": []}
+{"key": "doi:10.1001/jamanetworkopen.2025.29418", "biases": [], "mitigation": []}
+{"key": "arxiv:2411.13281", "biases": [], "mitigation": []}
+{"key": "arxiv:2401.10020", "biases": [], "mitigation": []}
+{"key": "arxiv:2305.12421", "biases": [], "mitigation": []}
+{"key": "arxiv:2404.05692", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2307.02762", "biases": ["self_preference", "position"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2410.04663", "biases": ["position", "verbosity"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2404.11791", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2504.01001", "biases": [], "mitigation": []}
+{"key": "arxiv:2512.03109", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2410.18927", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2406.09008", "biases": [], "mitigation": []}
+{"key": "arxiv:2410.18889", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2603.29139", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2404.08137", "biases": [], "mitigation": []}
+{"key": "arxiv:2410.15287", "biases": [], "mitigation": ["fine_tuning", "ensemble", "critique_refine"]}
+{"key": "arxiv:2408.10902", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2505.00662", "biases": [], "mitigation": ["fine_tuning", "critique_refine", "decomposition"]}
+{"key": "arxiv:2407.10817", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2509.09716", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2603.20882", "biases": [], "mitigation": ["rubric", "tool_grounding"]}
+{"key": "arxiv:2311.14906", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2501.10421", "biases": [], "mitigation": ["cot", "ensemble"]}
+{"key": "arxiv:2503.01372", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1145/3626772.3657675", "biases": [], "mitigation": ["cot", "ensemble"]}
+{"key": "doi:10.1109/ichi61247.2024.00058", "biases": [], "mitigation": ["cot", "other"]}
+{"key": "doi:10.18653/v1/2024.emnlp-main.1085", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2412.11912", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2502.08514", "biases": ["style"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2505.15433", "biases": ["position", "inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2504.11101", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2606.04923", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2506.17863", "biases": [], "mitigation": ["critique_refine", "human_in_loop", "rubric"]}
+{"key": "arxiv:2504.04596", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2405.15329", "biases": [], "mitigation": ["decomposition", "ensemble"]}
+{"key": "arxiv:2404.19563", "biases": [], "mitigation": ["internal"]}
+{"key": "arxiv:2402.11676", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2312.07398", "biases": [], "mitigation": []}
+{"key": "arxiv:2606.09863", "biases": ["competence", "style"], "mitigation": ["other"]}
+{"key": "arxiv:2504.08697", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2604.11581", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2408.08688", "biases": [], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "arxiv:2603.15164", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2410.03278", "biases": [], "mitigation": ["cot", "reference"]}
+{"key": "arxiv:2310.07641", "biases": ["style"], "mitigation": ["other"]}
+{"key": "arxiv:2502.16903", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2507.15157", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2511.18491", "biases": [], "mitigation": []}
+{"key": "arxiv:2602.10367", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2603.00039", "biases": ["verbosity", "style"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.01591", "biases": [], "mitigation": ["internal"]}
+{"key": "arxiv:2503.17755", "biases": [], "mitigation": ["internal"]}
+{"key": "title:examining llm prompting strategies for automatic evaluation of learner created computational artifacts", "biases": [], "mitigation": []}
+{"key": "arxiv:2311.00686", "biases": [], "mitigation": ["cot", "rubric"]}
+{"key": "arxiv:2410.02205", "biases": ["inconsistency"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2502.11368", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2024.emnlp-main.691", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.17853", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2511.13027", "biases": ["prompt_sensitivity", "style"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2509.21823", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2505.18659", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2505.08498", "biases": ["leniency", "inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2505.12570", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2307.03025", "biases": ["criteria", "competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2502.04718", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2608.11669", "biases": ["other"], "mitigation": ["rubric", "other"]}
+{"key": "arxiv:2410.04838", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2501.16655", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2504.20090", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2507.04278", "biases": [], "mitigation": []}
+{"key": "arxiv:2412.15524", "biases": ["other"], "mitigation": ["reference"]}
+{"key": "arxiv:2602.05088", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2308.16890", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2502.10563", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2408.06352", "biases": [], "mitigation": []}
+{"key": "arxiv:2604.23581", "biases": [], "mitigation": ["decomposition", "calibration"]}
+{"key": "arxiv:2609.29429", "biases": [], "mitigation": ["fine_tuning", "calibration"]}
+{"key": "doi:10.18653/v1/2024.findings-acl.597", "biases": ["self_preference"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2410.14165", "biases": [], "mitigation": []}
+{"key": "arxiv:2406.09295", "biases": [], "mitigation": ["fine_tuning", "calibration"]}
+{"key": "arxiv:2605.27761", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2508.15218", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2506.13326", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2603.19191", "biases": [], "mitigation": ["decomposition", "critique_refine", "ensemble"]}
+{"key": "arxiv:2511.20513", "biases": ["criteria"], "mitigation": ["fine_tuning", "other"]}
+{"key": "arxiv:2412.15298", "biases": [], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2503.01670", "biases": ["competence", "other"], "mitigation": []}
+{"key": "arxiv:2506.06877", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2506.01789", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2503.08542", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2501.15595", "biases": [], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2607.02577", "biases": ["inconsistency", "criteria"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2510.01146", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "doi:10.1007/s12194-025-00941-y", "biases": [], "mitigation": []}
+{"key": "doi:10.5220/0012466600003636", "biases": ["leniency", "competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2501.17581", "biases": [], "mitigation": ["cot", "calibration"]}
+{"key": "arxiv:2506.22157", "biases": [], "mitigation": ["critique_refine", "fine_tuning"]}
+{"key": "arxiv:2504.15689", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2412.20127", "biases": [], "mitigation": ["ensemble", "decomposition"]}
+{"key": "arxiv:2502.09387", "biases": [], "mitigation": []}
+{"key": "arxiv:2602.03053", "biases": ["inconsistency"], "mitigation": []}
+{"key": "arxiv:2507.03772", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2508.07955", "biases": [], "mitigation": ["decomposition", "other"]}
+{"key": "arxiv:2603.23519", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2407.00747", "biases": [], "mitigation": []}
+{"key": "arxiv:2411.01281", "biases": [], "mitigation": []}
+{"key": "arxiv:2405.06034", "biases": ["other"], "mitigation": ["human_in_loop", "calibration"]}
+{"key": "arxiv:2508.10028", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2602.06221", "biases": [], "mitigation": []}
+{"key": "arxiv:2601.15161", "biases": [], "mitigation": ["rubric", "tool_grounding", "decomposition"]}
+{"key": "arxiv:2410.12222", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2502.07352", "biases": [], "mitigation": []}
+{"key": "arxiv:2503.11229", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2503.11858", "biases": [], "mitigation": ["ensemble", "fine_tuning"]}
+{"key": "arxiv:2308.04386", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2603.23522", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2510.23854", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2506.18102", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2509.18641", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.23950", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2607.01236", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2406.11939", "biases": [], "mitigation": []}
+{"key": "arxiv:2602.14367", "biases": [], "mitigation": ["ensemble", "tool_grounding", "decomposition"]}
+{"key": "arxiv:2601.07338", "biases": ["inconsistency", "other"], "mitigation": ["tool_grounding", "critique_refine"]}
+{"key": "arxiv:2505.12864", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2405.05894", "biases": [], "mitigation": []}
+{"key": "arxiv:2406.14598", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2504.21117", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2503.00847", "biases": [], "mitigation": []}
+{"key": "arxiv:2403.08314", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2408.13545", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2410.10724", "biases": ["criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2407.03841", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2601.08843", "biases": ["competence", "prompt_sensitivity", "adversarial"], "mitigation": ["abstention", "rubric"]}
+{"key": "arxiv:2511.18852", "biases": ["social"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1145/3746027.3758230", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2510.22798", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2503.08965", "biases": ["competence"], "mitigation": ["other"]}
+{"key": "arxiv:2505.13972", "biases": ["self_preference"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2409.16788", "biases": ["verbosity", "style"], "mitigation": ["calibration", "fine_tuning"]}
+{"key": "arxiv:2407.08488", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2512.03994", "biases": [], "mitigation": ["internal"]}
+{"key": "arxiv:2510.07861", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.12808", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2512.02282", "biases": ["other"], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "arxiv:2412.05288", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2402.10083", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2407.17022", "biases": ["competence", "criteria"], "mitigation": []}
+{"key": "arxiv:2504.18114", "biases": [], "mitigation": []}
+{"key": "arxiv:2404.02512", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2507.17717", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2508.19163", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2608.29856", "biases": [], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2405.20267", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2406.18064", "biases": [], "mitigation": []}
+{"key": "arxiv:2507.09483", "biases": [], "mitigation": []}
+{"key": "arxiv:2307.11088", "biases": [], "mitigation": []}
+{"key": "arxiv:2608.19760", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2510.08847", "biases": [], "mitigation": ["decomposition", "prompt_optimization"]}
+{"key": "doi:10.3390/info16110926", "biases": [], "mitigation": ["rubric"]}
+{"key": "doi:10.1007/s12282-025-01719-1", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.1145/3726302.3730165", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.18653/v1/2024.emnlp-industry.25", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2503.03303", "biases": [], "mitigation": []}
+{"key": "arxiv:2503.20648", "biases": ["competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2509.14834", "biases": [], "mitigation": ["ensemble", "rubric"]}
+{"key": "arxiv:2508.00630", "biases": ["competence"], "mitigation": ["decomposition", "ensemble"]}
+{"key": "arxiv:2504.18413", "biases": ["style", "verbosity", "other"], "mitigation": ["decomposition"]}
+{"key": "doi:10.1145/3705328.3748167", "biases": [], "mitigation": ["ensemble", "other"]}
+{"key": "arxiv:2605.28805", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2511.03051", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2509.17694", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.15795", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2406.14783", "biases": [], "mitigation": []}
+{"key": "arxiv:2601.21278", "biases": [], "mitigation": []}
+{"key": "arxiv:2412.06060", "biases": ["competence"], "mitigation": ["internal"]}
+{"key": "arxiv:2511.06396", "biases": [], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "arxiv:2509.18401", "biases": [], "mitigation": []}
+{"key": "arxiv:2512.09874", "biases": [], "mitigation": []}
+{"key": "arxiv:2512.10449", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2512.23213", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2605.20531", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2607.08065", "biases": ["position", "other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2403.01002", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2406.03339", "biases": [], "mitigation": ["decomposition", "human_in_loop"]}
+{"key": "arxiv:2509.16093", "biases": [], "mitigation": ["decomposition", "reference"]}
+{"key": "arxiv:2509.18965", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2601.13742", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2406.11044", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.08827", "biases": [], "mitigation": []}
+{"key": "arxiv:2608.22808", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2025.wmt-1.23", "biases": [], "mitigation": []}
+{"key": "doi:10.1609/aaaiss.v4i1.31771", "biases": ["position", "verbosity"], "mitigation": ["cot", "ensemble"]}
+{"key": "doi:10.1111/jebm.70017", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.2196/75932", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2402.13764", "biases": [], "mitigation": []}
+{"key": "arxiv:2404.12273", "biases": ["other"], "mitigation": ["ensemble", "fine_tuning"]}
+{"key": "arxiv:2504.13472", "biases": [], "mitigation": ["decomposition", "tool_grounding", "ensemble"]}
+{"key": "arxiv:2603.20172", "biases": ["criteria", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2602.23199", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2509.02761", "biases": [], "mitigation": ["critique_refine"]}
+{"key": "arxiv:2603.21016", "biases": ["position", "prompt_sensitivity"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2507.13758", "biases": ["style", "competence"], "mitigation": ["critique_refine"]}
+{"key": "arxiv:2503.13038", "biases": [], "mitigation": []}
+{"key": "arxiv:2509.24678", "biases": ["leniency", "inconsistency"], "mitigation": ["internal", "calibration"]}
+{"key": "arxiv:2602.08259", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2508.13214", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2511.01014", "biases": [], "mitigation": ["decomposition", "fine_tuning"]}
+{"key": "arxiv:2508.16347", "biases": ["style", "competence"], "mitigation": []}
+{"key": "arxiv:2507.11508", "biases": ["leniency", "competence"], "mitigation": []}
+{"key": "arxiv:2412.10424", "biases": ["verbosity", "inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2605.07395", "biases": ["verbosity"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "arxiv:2603.09100", "biases": [], "mitigation": ["cot", "human_in_loop"]}
+{"key": "arxiv:2603.22529", "biases": [], "mitigation": []}
+{"key": "arxiv:2605.17360", "biases": [], "mitigation": []}
+{"key": "arxiv:2508.21164", "biases": ["self_preference", "authority"], "mitigation": ["ensemble", "other"]}
+{"key": "arxiv:2508.06374", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.24891", "biases": [], "mitigation": []}
+{"key": "arxiv:2408.04650", "biases": [], "mitigation": ["reference", "rubric", "tool_grounding"]}
+{"key": "arxiv:2309.13701", "biases": ["competence"], "mitigation": ["prompt_optimization", "human_in_loop"]}
+{"key": "arxiv:2507.14552", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2405.09935", "biases": ["style"], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "arxiv:2507.10906", "biases": [], "mitigation": ["cot"]}
+{"key": "arxiv:2607.12252", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2602.02589", "biases": ["self_preference", "position"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "arxiv:2510.19032", "biases": ["leniency", "competence"], "mitigation": []}
+{"key": "arxiv:2502.06655", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2601.13227", "biases": ["leakage", "adversarial"], "mitigation": []}
+{"key": "arxiv:2604.18547", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2604.02450", "biases": ["inconsistency", "prompt_sensitivity", "competence"], "mitigation": ["prompt_optimization", "ensemble"]}
+{"key": "doi:10.1093/jamiaopen/ooag054", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2504.02106", "biases": ["other"], "mitigation": ["other"]}
+{"key": "doi:10.1186/s40635-026-00900-w", "biases": [], "mitigation": []}
+{"key": "arxiv:2502.07399", "biases": [], "mitigation": ["critique_refine", "tool_grounding"]}
+{"key": "arxiv:2502.19064", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2607.28282", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2606.09076", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2601.01530", "biases": [], "mitigation": []}
+{"key": "arxiv:2510.24636", "biases": [], "mitigation": ["tool_grounding", "fine_tuning"]}
+{"key": "arxiv:2509.03764", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2507.17788", "biases": ["position", "inconsistency"], "mitigation": ["swap", "ensemble"]}
+{"key": "arxiv:2502.16838", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.18653/v1/2025.eval4nlp-1.10", "biases": ["style"], "mitigation": []}
+{"key": "arxiv:2512.01330", "biases": ["prompt_sensitivity", "leniency"], "mitigation": ["ensemble", "prompt_optimization"]}
+{"key": "arxiv:2510.09021", "biases": ["leniency"], "mitigation": ["reference", "rubric", "decomposition"]}
+{"key": "doi:10.1136/archdischild-2025-329846", "biases": [], "mitigation": []}
+{"key": "arxiv:2502.19209", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.10142", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2512.18292", "biases": [], "mitigation": []}
+{"key": "arxiv:2511.19925", "biases": ["style"], "mitigation": []}
+{"key": "arxiv:2510.22028", "biases": ["verbosity"], "mitigation": ["other"]}
+{"key": "arxiv:2505.06698", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2505.17267", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2603.01204", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2506.03785", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2512.02763", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2511.08283", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2506.01793", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2507.07155", "biases": [], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2502.20635", "biases": ["competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2601.16444", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2601.00166", "biases": ["criteria"], "mitigation": ["cot", "rubric"]}
+{"key": "arxiv:2507.15557", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2408.11987", "biases": [], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "arxiv:2606.04507", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2603.18652", "biases": [], "mitigation": []}
+{"key": "arxiv:2605.31545", "biases": ["criteria"], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2602.20629", "biases": ["leniency", "competence"], "mitigation": []}
+{"key": "arxiv:2409.16191", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2606.18203", "biases": ["inconsistency"], "mitigation": ["rubric", "human_in_loop", "decomposition"]}
+{"key": "arxiv:2410.10215", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2508.11310", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2605.06283", "biases": ["position", "criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2504.01369", "biases": [], "mitigation": ["decomposition", "ensemble"]}
+{"key": "arxiv:2311.09184", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2505.07247", "biases": ["competence"], "mitigation": ["other"]}
+{"key": "arxiv:2603.19775", "biases": [], "mitigation": ["internal"]}
+{"key": "arxiv:2404.14397", "biases": ["competence", "social"], "mitigation": []}
+{"key": "arxiv:2504.15784", "biases": [], "mitigation": ["reference", "rubric"]}
+{"key": "arxiv:2502.20647", "biases": [], "mitigation": []}
+{"key": "arxiv:2405.10516", "biases": [], "mitigation": ["internal"]}
+{"key": "arxiv:2509.26601", "biases": ["competence"], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2502.03253", "biases": ["anchoring"], "mitigation": ["reference"]}
+{"key": "arxiv:2607.28631", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2606.07441", "biases": ["sycophancy"], "mitigation": ["other"]}
+{"key": "arxiv:2607.19322", "biases": ["inconsistency"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2602.18446", "biases": ["verbosity", "adversarial", "competence"], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "arxiv:2606.21710", "biases": ["competence"], "mitigation": ["reference", "fine_tuning"]}
+{"key": "arxiv:2506.08584", "biases": ["leniency", "competence"], "mitigation": []}
+{"key": "doi:10.1039/d5ra09726f", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.1007/s00766-026-00462-z", "biases": [], "mitigation": []}
+{"key": "doi:10.35542/osf.io/tuvks", "biases": [], "mitigation": ["cot"]}
+{"key": "doi:10.18653/v1/2024.eacl-short.9", "biases": [], "mitigation": []}
+{"key": "doi:10.3897/jucs.137103", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.3390/computers14120530", "biases": ["competence", "inconsistency"], "mitigation": ["ensemble", "rubric", "human_in_loop"]}
+{"key": "doi:10.1007/s10726-025-09935-y", "biases": [], "mitigation": []}
+{"key": "arxiv:2410.04601", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2410.02755", "biases": [], "mitigation": ["fine_tuning", "human_in_loop"]}
+{"key": "arxiv:2505.13862", "biases": ["inconsistency"], "mitigation": []}
+{"key": "arxiv:2505.17897", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2412.00314", "biases": [], "mitigation": ["decomposition", "reference"]}
+{"key": "arxiv:2510.16194", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2509.21679", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2604.14892", "biases": ["leniency", "self_preference"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2510.22967", "biases": [], "mitigation": ["ensemble", "decomposition"]}
+{"key": "arxiv:2511.22258", "biases": [], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2510.19844", "biases": ["adversarial"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2606.09389", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2508.06046", "biases": [], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2506.04772", "biases": ["competence"], "mitigation": ["reference"]}
+{"key": "arxiv:2511.02246", "biases": ["inconsistency", "social"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2508.15085", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2511.00924", "biases": ["social", "leniency"], "mitigation": []}
+{"key": "arxiv:2510.15313", "biases": ["competence", "other"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2604.06996", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2601.01842", "biases": ["criteria"], "mitigation": ["rubric", "critique_refine"]}
+{"key": "arxiv:2509.11206", "biases": [], "mitigation": ["decomposition", "human_in_loop"]}
+{"key": "arxiv:2510.21193", "biases": [], "mitigation": []}
+{"key": "arxiv:2501.16672", "biases": [], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "arxiv:2504.07385", "biases": ["leniency", "competence"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2602.06486", "biases": ["inconsistency"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2502.04313", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2604.06216", "biases": ["competence"], "mitigation": ["decomposition", "human_in_loop"]}
+{"key": "arxiv:2605.25510", "biases": [], "mitigation": ["rubric", "fine_tuning"]}
+{"key": "arxiv:2504.07174", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2608.04783", "biases": ["inconsistency"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2604.01977", "biases": ["leniency"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2502.17943", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.02820", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2508.10971", "biases": [], "mitigation": []}
+{"key": "arxiv:2410.01553", "biases": [], "mitigation": []}
+{"key": "arxiv:2604.03695", "biases": [], "mitigation": []}
+{"key": "arxiv:2508.13816", "biases": ["inconsistency", "criteria"], "mitigation": []}
+{"key": "arxiv:2602.11304", "biases": ["competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2601.15307", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2505.20451", "biases": ["criteria"], "mitigation": ["decomposition", "ensemble"]}
+{"key": "arxiv:2608.27463", "biases": ["leniency", "inconsistency", "prompt_sensitivity", "social"], "mitigation": ["calibration"]}
+{"key": "arxiv:2607.25485", "biases": [], "mitigation": ["ensemble", "rubric"]}
+{"key": "arxiv:2607.06118", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2509.09702", "biases": ["criteria", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2604.05005", "biases": ["competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2410.12265", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2603.18008", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2507.23453", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2506.09359", "biases": [], "mitigation": []}
+{"key": "arxiv:2504.10768", "biases": [], "mitigation": []}
+{"key": "arxiv:2505.16281", "biases": ["competence"], "mitigation": ["decomposition", "critique_refine", "ensemble"]}
+{"key": "arxiv:2509.22582", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2512.12042", "biases": [], "mitigation": ["cot", "ensemble"]}
+{"key": "arxiv:2402.13249", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2602.16802", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2407.12847", "biases": ["verbosity"], "mitigation": ["calibration"]}
+{"key": "arxiv:2401.14640", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2508.03686", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2402.01830", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2509.18575", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2407.10725", "biases": ["criteria"], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "arxiv:2604.19786", "biases": ["prompt_sensitivity"], "mitigation": ["rubric", "ensemble"]}
+{"key": "arxiv:2512.09066", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2601.07984", "biases": ["competence"], "mitigation": ["calibration", "rubric"]}
+{"key": "arxiv:2601.17003", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2607.12790", "biases": ["other"], "mitigation": ["decomposition", "prompt_optimization"]}
+{"key": "arxiv:2607.27686", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.08539", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2607.06799", "biases": ["competence"], "mitigation": ["ensemble", "fine_tuning", "abstention", "calibration"]}
+{"key": "arxiv:2603.22744", "biases": [], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "doi:10.1145/3774935.3812703", "biases": ["social", "other"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1109/etfa65518.2025.11205762", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3788872", "biases": ["adversarial", "other", "leniency"], "mitigation": []}
+{"key": "doi:10.1109/o-cocosda68185.2025.11385094", "biases": [], "mitigation": []}
+{"key": "doi:10.3390/electronics14132577", "biases": [], "mitigation": ["ensemble", "rubric"]}
+{"key": "doi:10.1145/3770762.3772576", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3772363.3799364", "biases": [], "mitigation": []}
+{"key": "doi:10.3233/shti250995", "biases": [], "mitigation": ["cot"]}
+{"key": "doi:10.1145/3639631.3639658", "biases": ["self_preference"], "mitigation": ["critique_refine"]}
+{"key": "doi:10.3390/info17010095", "biases": ["social"], "mitigation": []}
+{"key": "doi:10.3390/app16052546", "biases": [], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "arxiv:2505.12795", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2508.12922", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2610.08761", "biases": [], "mitigation": ["calibration", "human_in_loop", "rubric"]}
+{"key": "arxiv:2606.03650", "biases": ["verbosity", "self_preference"], "mitigation": ["ensemble"]}
+{"key": "doi:10.1145/3811825", "biases": [], "mitigation": ["ensemble", "critique_refine", "tool_grounding"]}
+{"key": "arxiv:2604.18892", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2606.28673", "biases": [], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "arxiv:2407.10999", "biases": [], "mitigation": ["rubric", "prompt_optimization"]}
+{"key": "arxiv:2404.00942", "biases": [], "mitigation": []}
+{"key": "arxiv:2503.23730", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2601.06193", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2409.06820", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2507.08459", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2601.19350", "biases": [], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2606.16262", "biases": ["inconsistency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2608.06329", "biases": [], "mitigation": []}
+{"key": "arxiv:2512.22650", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2607.01153", "biases": ["competence", "anchoring"], "mitigation": []}
+{"key": "arxiv:2607.00139", "biases": ["leniency", "competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2501.17195", "biases": ["prompt_sensitivity"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2407.01085", "biases": ["verbosity"], "mitigation": ["calibration"]}
+{"key": "arxiv:2602.06013", "biases": ["inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2605.13596", "biases": ["style", "competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2604.19071", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2606.19057", "biases": ["verbosity"], "mitigation": ["calibration"]}
+{"key": "arxiv:2602.12639", "biases": ["inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2511.04502", "biases": [], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2602.15778", "biases": [], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2503.21157", "biases": [], "mitigation": []}
+{"key": "arxiv:2504.14804", "biases": [], "mitigation": []}
+{"key": "arxiv:2607.22658", "biases": ["position", "leniency", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2606.16368", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2609.31184", "biases": ["position", "verbosity", "leniency", "self_preference"], "mitigation": ["calibration"]}
+{"key": "arxiv:2604.12161", "biases": [], "mitigation": []}
+{"key": "arxiv:2503.05328", "biases": [], "mitigation": []}
+{"key": "arxiv:2601.11903", "biases": ["inconsistency"], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "arxiv:2504.12931", "biases": ["inconsistency"], "mitigation": ["rubric", "abstention", "tool_grounding"]}
+{"key": "arxiv:2601.11332", "biases": [], "mitigation": []}
+{"key": "arxiv:2510.13494", "biases": [], "mitigation": []}
+{"key": "arxiv:2503.00771", "biases": ["other"], "mitigation": ["reference", "human_in_loop"]}
+{"key": "arxiv:2505.20195", "biases": ["competence"], "mitigation": ["decomposition", "human_in_loop"]}
+{"key": "arxiv:2608.23705", "biases": ["style", "criteria"], "mitigation": []}
+{"key": "arxiv:2606.29997", "biases": ["other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2411.09834", "biases": [], "mitigation": []}
+{"key": "arxiv:2511.16544", "biases": ["criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2605.23497", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2608.30047", "biases": [], "mitigation": []}
+{"key": "arxiv:2409.20565", "biases": ["adversarial", "criteria"], "mitigation": ["other"]}
+{"key": "arxiv:2505.20088", "biases": ["criteria"], "mitigation": ["other"]}
+{"key": "arxiv:2603.15187", "biases": ["criteria", "social"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2512.01089", "biases": [], "mitigation": []}
+{"key": "arxiv:2502.10709", "biases": ["inconsistency"], "mitigation": ["fine_tuning", "calibration"]}
+{"key": "arxiv:2503.21613", "biases": ["self_preference", "style"], "mitigation": []}
+{"key": "arxiv:2605.04503", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2608.17168", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2601.07648", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2608.05223", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2602.18583", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2608.22459", "biases": [], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "arxiv:2503.06139", "biases": ["leniency", "position"], "mitigation": ["other"]}
+{"key": "arxiv:2502.01436", "biases": [], "mitigation": []}
+{"key": "arxiv:2605.13318", "biases": ["inconsistency"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2505.20538", "biases": [], "mitigation": []}
+{"key": "arxiv:2605.16386", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2506.00641", "biases": ["competence", "criteria"], "mitigation": ["cot", "other"]}
+{"key": "arxiv:2406.10421", "biases": [], "mitigation": []}
+{"key": "arxiv:2601.11783", "biases": ["inconsistency"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2412.03205", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2508.10161", "biases": [], "mitigation": []}
+{"key": "arxiv:2607.01040", "biases": ["criteria"], "mitigation": ["other"]}
+{"key": "arxiv:2607.05031", "biases": [], "mitigation": []}
+{"key": "arxiv:2604.24525", "biases": ["criteria", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2507.03152", "biases": ["competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2609.16816", "biases": ["adversarial", "criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2601.18777", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2512.10415", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2511.10303", "biases": ["self_preference", "other"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2504.09394", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2601.05267", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2511.07659", "biases": [], "mitigation": []}
+{"key": "arxiv:2509.16975", "biases": [], "mitigation": ["cot", "fine_tuning"]}
+{"key": "arxiv:2509.07309", "biases": [], "mitigation": []}
+{"key": "arxiv:2412.14140", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2406.08598", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2605.31278", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2506.04078", "biases": [], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "arxiv:2603.21362", "biases": ["criteria"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2311.18743", "biases": [], "mitigation": ["reference", "cot", "rubric"]}
+{"key": "arxiv:2604.18234", "biases": ["competence"], "mitigation": ["other"]}
+{"key": "arxiv:2604.14829", "biases": ["criteria"], "mitigation": ["rubric", "tool_grounding"]}
+{"key": "arxiv:2310.14422", "biases": ["leniency", "other"], "mitigation": ["cot", "other"]}
+{"key": "arxiv:2504.21299", "biases": ["criteria"], "mitigation": ["cot", "fine_tuning"]}
+{"key": "arxiv:2510.00821", "biases": [], "mitigation": ["abstention"]}
+{"key": "arxiv:2608.26674", "biases": ["criteria"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2607.07989", "biases": [], "mitigation": ["ensemble", "fine_tuning"]}
+{"key": "arxiv:2508.03085", "biases": [], "mitigation": []}
+{"key": "arxiv:2510.05154", "biases": ["social"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2601.08919", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2603.20252", "biases": [], "mitigation": []}
+{"key": "arxiv:2602.05381", "biases": ["leniency"], "mitigation": []}
+{"key": "arxiv:2512.16272", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2510.25434", "biases": ["style", "leniency"], "mitigation": []}
+{"key": "arxiv:2604.25665", "biases": [], "mitigation": ["critique_refine"]}
+{"key": "arxiv:2505.12273", "biases": ["competence"], "mitigation": ["fine_tuning", "other"]}
+{"key": "arxiv:2506.18387", "biases": [], "mitigation": []}
+{"key": "arxiv:2601.19693", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2406.02863", "biases": ["prompt_sensitivity"], "mitigation": ["cot"]}
+{"key": "arxiv:2506.15215", "biases": ["criteria"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2402.15987", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2412.11261", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2602.18823", "biases": ["prompt_sensitivity"], "mitigation": ["other"]}
+{"key": "arxiv:2505.15792", "biases": ["adversarial", "competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2601.10406", "biases": ["leniency", "competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2501.06741", "biases": ["criteria"], "mitigation": ["decomposition", "fine_tuning"]}
+{"key": "arxiv:2310.10495", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2509.12405", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2607.29252", "biases": ["criteria"], "mitigation": ["rubric", "calibration"]}
+{"key": "arxiv:2603.00077", "biases": ["position", "inconsistency", "criteria", "leniency"], "mitigation": ["rubric", "swap", "ensemble", "abstention", "calibration", "decomposition"]}
+{"key": "arxiv:2410.00477", "biases": [], "mitigation": []}
+{"key": "arxiv:2605.24904", "biases": [], "mitigation": []}
+{"key": "arxiv:2604.25200", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2607.22218", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2510.22593", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2601.00223", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2411.16077", "biases": ["inconsistency"], "mitigation": ["critique_refine"]}
+{"key": "arxiv:2512.09662", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2608.26159", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2504.08120", "biases": ["competence"], "mitigation": ["cot"]}
+{"key": "arxiv:2604.22971", "biases": ["sycophancy", "social"], "mitigation": ["ensemble", "other"]}
+{"key": "arxiv:2606.27287", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2601.04574", "biases": ["criteria"], "mitigation": ["fine_tuning", "decomposition"]}
+{"key": "arxiv:2603.24359", "biases": ["social"], "mitigation": []}
+{"key": "arxiv:2606.08077", "biases": ["criteria", "competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2607.15781", "biases": ["inconsistency"], "mitigation": ["decomposition", "critique_refine"]}
+{"key": "arxiv:2411.15560", "biases": ["self_preference"], "mitigation": []}
+{"key": "arxiv:2410.02902", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2603.24586", "biases": ["verbosity", "criteria"], "mitigation": []}
+{"key": "arxiv:2608.08852", "biases": ["competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2606.05308", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2603.10807", "biases": ["adversarial"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2610.00609", "biases": [], "mitigation": ["rubric", "tool_grounding"]}
+{"key": "arxiv:2601.15808", "biases": ["competence"], "mitigation": ["rubric", "critique_refine", "fine_tuning"]}
+{"key": "arxiv:2610.20690", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2606.05268", "biases": ["competence"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "arxiv:2601.10896", "biases": ["sycophancy", "prompt_sensitivity"], "mitigation": ["calibration"]}
+{"key": "arxiv:2603.18390", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2608.29696", "biases": ["competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2604.02368", "biases": ["self_preference"], "mitigation": ["calibration", "rubric"]}
+{"key": "arxiv:2608.04077", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "doi:10.5281/zenodo.18611444", "biases": [], "mitigation": ["other"]}
+{"key": "doi:10.63317/3rkabnqpbd84", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3785022.3785109", "biases": [], "mitigation": ["other"]}
+{"key": "doi:10.36871/2618-9976.2025.05.003", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "doi:10.1097/hc9.0000000000000983", "biases": ["leniency"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.1117/12.3109283", "biases": ["criteria", "leniency"], "mitigation": []}
+{"key": "doi:10.1038/s43856-026-01875-1", "biases": [], "mitigation": ["rubric"]}
+{"key": "doi:10.3233/faia251579", "biases": [], "mitigation": ["other"]}
+{"key": "doi:10.26434/chemrxiv.10001644/v1", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.1109/icassp55912.2026.11462883", "biases": [], "mitigation": ["fine_tuning", "calibration"]}
+{"key": "doi:10.18653/v1/2025.nlperspectives-1.2", "biases": ["social"], "mitigation": ["other"]}
+{"key": "doi:10.20944/preprints202509.0042.v1", "biases": [], "mitigation": ["human_in_loop", "ensemble"]}
+{"key": "doi:10.1007/s00432-026-06489-7", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/icdmw69685.2025.00080", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.48448/49hq-m276", "biases": [], "mitigation": ["cot", "critique_refine"]}
+{"key": "doi:10.22214/ijraset.2026.79309", "biases": ["self_preference", "competence"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.2196/85960", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/ase63991.2025.00021", "biases": ["leakage"], "mitigation": ["fine_tuning", "ensemble"]}
+{"key": "doi:10.1101/2025.08.14.25332839", "biases": [], "mitigation": ["decomposition"]}
+{"key": "doi:10.3233/faia251428", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.32388/b69sky", "biases": [], "mitigation": ["ensemble", "reference"]}
+{"key": "doi:10.1145/3774905.3795458", "biases": ["inconsistency"], "mitigation": ["decomposition", "ensemble"]}
+{"key": "doi:10.18653/v1/2025.emnlp-main.1307", "biases": ["self_preference"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "doi:10.3390/analytics5020018", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.18369061", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3722237.3722338", "biases": [], "mitigation": []}
+{"key": "doi:10.4324/9781003597711-11", "biases": [], "mitigation": ["cot", "other"]}
+{"key": "doi:10.1128/jmbe.00095-26", "biases": ["criteria", "inconsistency"], "mitigation": ["calibration"]}
+{"key": "doi:10.3389/fmed.2026.1866674", "biases": ["competence", "criteria"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.5281/zenodo.23197641", "biases": ["sycophancy", "competence"], "mitigation": ["ensemble"]}
+{"key": "doi:10.1145/3805712.3809981", "biases": [], "mitigation": ["decomposition"]}
+{"key": "doi:10.18653/v1/2026.gem-main.61", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2412.11068", "biases": [], "mitigation": ["other"]}
+{"key": "doi:10.1145/3779211.3795738", "biases": [], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "doi:10.18653/v1/2023.eval4nlp-1.19", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2410.09418", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2411.02448", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2501.06728", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2502.18874", "biases": ["criteria"], "mitigation": ["fine_tuning", "decomposition", "tool_grounding", "critique_refine"]}
+{"key": "arxiv:2505.01761", "biases": ["other"], "mitigation": ["fine_tuning", "decomposition"]}
+{"key": "arxiv:2609.22942", "biases": ["criteria"], "mitigation": ["decomposition", "calibration", "tool_grounding"]}
+{"key": "arxiv:2609.02231", "biases": ["competence"], "mitigation": ["fine_tuning", "rubric", "tool_grounding"]}
+{"key": "arxiv:2607.08257", "biases": [], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "doi:10.1007/s00521-026-12053-8", "biases": [], "mitigation": []}
+{"key": "arxiv:2605.04083", "biases": ["inconsistency"], "mitigation": ["ensemble", "rubric"]}
+{"key": "arxiv:2604.08126", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2603.02029", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2602.16039", "biases": ["inconsistency"], "mitigation": ["abstention"]}
+{"key": "doi:10.15441/ceem.25.153", "biases": [], "mitigation": ["cot", "rubric"]}
+{"key": "arxiv:2512.00349", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.22212", "biases": [], "mitigation": ["fine_tuning", "other"]}
+{"key": "doi:10.1145/3765612.3767224", "biases": ["criteria"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2510.07912", "biases": [], "mitigation": ["reference", "decomposition"]}
+{"key": "arxiv:2509.15241", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2508.18636", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2508.17571", "biases": [], "mitigation": ["cot"]}
+{"key": "doi:10.1109/access.2026.3701927", "biases": ["competence"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "doi:10.1109/cscwd68734.2026.11582729", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2610.01471", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2609.29803", "biases": ["criteria"], "mitigation": ["decomposition", "fine_tuning"]}
+{"key": "arxiv:2608.20107", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2507.12414", "biases": ["competence"], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2605.01630", "biases": ["prompt_sensitivity"], "mitigation": ["rubric", "decomposition", "ensemble"]}
+{"key": "arxiv:2608.03675", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2610.01664", "biases": ["other"], "mitigation": ["other"]}
+{"key": "arxiv:2610.15179", "biases": ["leniency"], "mitigation": ["other"]}
+{"key": "arxiv:2510.15514", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2610.04829", "biases": ["competence"], "mitigation": ["ensemble", "abstention"]}
+{"key": "arxiv:2609.30471", "biases": ["anchoring"], "mitigation": ["reference", "decomposition", "abstention"]}
+{"key": "arxiv:2608.07038", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization", "cot"]}
+{"key": "arxiv:2605.19141", "biases": ["inconsistency"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2605.05902", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2509.02855", "biases": ["criteria", "competence"], "mitigation": []}
+{"key": "arxiv:2608.21057", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2601.02586", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2604.02207", "biases": ["self_preference", "leniency"], "mitigation": []}
+{"key": "arxiv:2609.16487", "biases": [], "mitigation": ["reference", "tool_grounding", "decomposition"]}
+{"key": "arxiv:2610.09820", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2609.36201", "biases": ["competence"], "mitigation": ["rubric", "tool_grounding", "critique_refine"]}
+{"key": "arxiv:2510.02337", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2609.01139", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2601.07186", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2510.01469", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2606.16794", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2607.18068", "biases": [], "mitigation": ["human_in_loop", "calibration"]}
+{"key": "arxiv:2604.08595", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2503.16674", "biases": ["social"], "mitigation": []}
+{"key": "arxiv:2601.11769", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2605.30521", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "arxiv:2602.20800", "biases": ["leakage"], "mitigation": ["other"]}
+{"key": "arxiv:2605.28183", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2607.21961", "biases": [], "mitigation": ["critique_refine"]}
+{"key": "arxiv:2609.09428", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2603.01952", "biases": [], "mitigation": ["abstention", "human_in_loop"]}
+{"key": "arxiv:2609.18204", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2508.03990", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2610.01548", "biases": [], "mitigation": ["calibration"]}
+{"key": "arxiv:2505.16003", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.23783", "biases": ["criteria"], "mitigation": ["decomposition", "critique_refine", "fine_tuning"]}
+{"key": "arxiv:2608.21374", "biases": ["criteria"], "mitigation": ["fine_tuning", "calibration"]}
+{"key": "arxiv:2610.06366", "biases": ["competence"], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "arxiv:2607.12085", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2603.21359", "biases": ["social"], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "arxiv:2605.10853", "biases": [], "mitigation": []}
+{"key": "arxiv:2609.20584", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2608.03095", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2605.24211", "biases": [], "mitigation": []}
+{"key": "arxiv:2604.03257", "biases": ["other"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2608.09857", "biases": ["adversarial"], "mitigation": ["ensemble", "cot", "human_in_loop"]}
+{"key": "arxiv:2610.16569", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2605.29711", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "arxiv:2602.05392", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2608.26180", "biases": ["competence"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2609.00498", "biases": ["criteria"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2609.03953", "biases": ["competence"], "mitigation": ["human_in_loop", "ensemble"]}
+{"key": "arxiv:2606.31608", "biases": ["verbosity", "self_preference", "competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2603.28295", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2608.26131", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2602.07673", "biases": ["self_preference", "verbosity", "position"], "mitigation": []}
+{"key": "arxiv:2606.27666", "biases": ["competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2601.15706", "biases": ["social", "inconsistency"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2607.18665", "biases": ["criteria"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2608.22938", "biases": ["inconsistency", "anchoring"], "mitigation": ["tool_grounding", "ensemble", "fine_tuning"]}
+{"key": "arxiv:2608.04240", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2604.17260", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2605.09661", "biases": ["competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2509.15690", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2601.00641", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2603.04992", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.06641", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2604.11655", "biases": ["sycophancy"], "mitigation": ["decomposition", "cot", "rubric"]}
+{"key": "arxiv:2607.06196", "biases": ["social"], "mitigation": ["ensemble", "abstention"]}
+{"key": "arxiv:2609.00494", "biases": ["criteria", "leniency"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2609.39607", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2606.05001", "biases": [], "mitigation": ["decomposition"]}
+{"key": "arxiv:2609.00434", "biases": ["competence"], "mitigation": ["decomposition", "abstention", "tool_grounding"]}
+{"key": "arxiv:2605.16650", "biases": ["inconsistency"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2604.00477", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2608.07762", "biases": ["social", "authority"], "mitigation": ["other"]}
+{"key": "arxiv:2504.12732", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2609.32533", "biases": ["position", "criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.02049", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2608.29948", "biases": ["prompt_sensitivity"], "mitigation": ["fine_tuning", "decomposition"]}
+{"key": "arxiv:2609.22603", "biases": ["leniency"], "mitigation": ["decomposition", "reference"]}
+{"key": "arxiv:2606.08893", "biases": ["adversarial"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2606.06754", "biases": ["leniency", "inconsistency"], "mitigation": ["ensemble", "critique_refine", "reference", "calibration"]}
+{"key": "arxiv:2510.27052", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2607.27066", "biases": ["leniency"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.19678", "biases": ["competence", "leniency"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2608.14457", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2602.21941", "biases": ["leniency"], "mitigation": ["decomposition", "fine_tuning"]}
+{"key": "arxiv:2609.30467", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2603.10570", "biases": [], "mitigation": ["abstention", "reference"]}
+{"key": "arxiv:2607.19219", "biases": ["leniency"], "mitigation": ["fine_tuning", "rubric", "calibration"]}
+{"key": "arxiv:2510.05710", "biases": ["position", "leniency", "verbosity"], "mitigation": ["rubric", "other"]}
+{"key": "arxiv:2506.23527", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2610.00073", "biases": [], "mitigation": ["rubric", "calibration"]}
+{"key": "arxiv:2609.20712", "biases": ["style"], "mitigation": []}
+{"key": "arxiv:2412.07429", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2609.33467", "biases": [], "mitigation": []}
+{"key": "arxiv:2609.32622", "biases": ["competence", "anchoring"], "mitigation": []}
+{"key": "arxiv:2607.01152", "biases": ["leniency"], "mitigation": ["calibration", "fine_tuning"]}
+{"key": "arxiv:2509.12750", "biases": ["criteria", "competence"], "mitigation": []}
+{"key": "arxiv:2606.17506", "biases": ["social"], "mitigation": []}
+{"key": "arxiv:2602.07840", "biases": ["criteria"], "mitigation": ["calibration", "rubric", "fine_tuning"]}
+{"key": "arxiv:2604.22770", "biases": ["inconsistency"], "mitigation": ["ensemble", "rubric"]}
+{"key": "arxiv:2409.06883", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2603.22935", "biases": ["competence"], "mitigation": ["prompt_optimization", "human_in_loop"]}
+{"key": "arxiv:2607.12467", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2507.20774", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization"]}
+{"key": "arxiv:2512.23837", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2510.08671", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2608.21850", "biases": ["self_preference"], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "arxiv:2510.07061", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2603.10477", "biases": ["adversarial", "prompt_sensitivity"], "mitigation": ["rubric", "prompt_optimization"]}
+{"key": "arxiv:2609.02745", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "arxiv:2509.20097", "biases": ["criteria"], "mitigation": ["ensemble", "decomposition", "critique_refine"]}
+{"key": "arxiv:2606.17634", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": ["other"]}
+{"key": "arxiv:2606.02282", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2608.08143", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2609.37322", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "arxiv:2601.18253", "biases": ["criteria"], "mitigation": ["internal", "rubric"]}
+{"key": "arxiv:2602.23603", "biases": ["position", "verbosity", "inconsistency", "adversarial"], "mitigation": ["rubric"]}
+{"key": "arxiv:2610.19915", "biases": ["criteria"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2603.02097", "biases": ["criteria"], "mitigation": ["rubric", "human_in_loop", "ensemble"]}
+{"key": "arxiv:2602.09624", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2608.21376", "biases": ["style", "other"], "mitigation": []}
+{"key": "arxiv:2608.01629", "biases": ["social"], "mitigation": []}
+{"key": "arxiv:2507.22359", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2606.11931", "biases": ["leakage"], "mitigation": ["fine_tuning", "reference"]}
+{"key": "arxiv:2608.30754", "biases": ["prompt_sensitivity", "criteria"], "mitigation": []}
+{"key": "arxiv:2606.18797", "biases": ["leniency", "competence"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2607.20425", "biases": ["style", "anchoring"], "mitigation": []}
+{"key": "arxiv:2602.14433", "biases": ["social"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2606.06546", "biases": ["self_preference"], "mitigation": ["rubric", "reference"]}
+{"key": "arxiv:2610.01218", "biases": ["competence"], "mitigation": ["abstention", "tool_grounding"]}
+{"key": "arxiv:2605.07102", "biases": ["criteria"], "mitigation": ["decomposition", "critique_refine"]}
+{"key": "arxiv:2606.29672", "biases": ["criteria"], "mitigation": ["cot"]}
+{"key": "arxiv:2512.21066", "biases": ["leniency"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2609.15180", "biases": ["leniency", "competence"], "mitigation": []}
+{"key": "arxiv:2608.29206", "biases": ["social", "leniency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2610.11281", "biases": ["adversarial", "sycophancy"], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.22559", "biases": ["criteria"], "mitigation": ["rubric", "tool_grounding"]}
+{"key": "arxiv:2610.11464", "biases": ["adversarial", "criteria"], "mitigation": ["rubric", "tool_grounding", "human_in_loop"]}
+{"key": "arxiv:2508.00889", "biases": ["criteria"], "mitigation": ["decomposition", "rubric"]}
+{"key": "arxiv:2609.00805", "biases": ["inconsistency"], "mitigation": ["rubric", "calibration"]}
+{"key": "arxiv:2607.08700", "biases": ["leniency", "criteria"], "mitigation": ["rubric", "calibration"]}
+{"key": "arxiv:2607.01223", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2605.26878", "biases": ["inconsistency", "criteria"], "mitigation": ["decomposition", "calibration"]}
+{"key": "arxiv:2609.13475", "biases": ["criteria"], "mitigation": ["tool_grounding", "human_in_loop"]}
+{"key": "arxiv:2609.35812", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2609.32082", "biases": ["criteria"], "mitigation": ["calibration"]}
+{"key": "arxiv:2608.00243", "biases": ["inconsistency"], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "arxiv:2609.27787", "biases": ["position", "inconsistency"], "mitigation": ["swap", "ensemble"]}
+{"key": "arxiv:2610.03315", "biases": ["competence"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2609.20827", "biases": ["social", "competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2609.16023", "biases": ["criteria", "leniency"], "mitigation": ["rubric", "decomposition"]}
+{"key": "arxiv:2609.13062", "biases": ["criteria"], "mitigation": ["tool_grounding", "human_in_loop"]}
+{"key": "arxiv:2606.22706", "biases": ["criteria"], "mitigation": ["rubric", "ensemble"]}
+{"key": "arxiv:2606.28815", "biases": ["competence", "anchoring"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2610.19306", "biases": ["inconsistency", "criteria"], "mitigation": ["decomposition", "abstention"]}
+{"key": "arxiv:2608.06940", "biases": ["inconsistency"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "arxiv:2610.17633", "biases": ["competence", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2607.14673", "biases": ["criteria"], "mitigation": ["rubric", "human_in_loop", "abstention"]}
+{"key": "arxiv:2609.09458", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2603.09820", "biases": ["inconsistency"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2606.02109", "biases": ["criteria"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2601.13600", "biases": ["inconsistency"], "mitigation": ["decomposition", "critique_refine"]}
+{"key": "arxiv:2602.08808", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2603.10400", "biases": ["other"], "mitigation": ["human_in_loop", "calibration"]}
+{"key": "arxiv:2608.29209", "biases": ["social", "inconsistency"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2610.12778", "biases": ["leakage", "verbosity"], "mitigation": ["decomposition"]}
+{"key": "arxiv:2610.21483", "biases": [], "mitigation": ["internal"]}
+{"key": "arxiv:2608.06422", "biases": ["competence", "adversarial"], "mitigation": ["decomposition", "ensemble"]}
+{"key": "arxiv:2609.29578", "biases": ["adversarial"], "mitigation": []}
+{"key": "arxiv:2610.06413", "biases": ["competence"], "mitigation": ["fine_tuning", "decomposition"]}
+{"key": "arxiv:2607.27687", "biases": ["competence", "inconsistency"], "mitigation": ["other"]}
+{"key": "arxiv:2603.08412", "biases": ["sycophancy", "inconsistency", "anchoring"], "mitigation": []}
+{"key": "arxiv:2510.24358", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "arxiv:2602.08149", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2610.07359", "biases": ["inconsistency", "competence"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "arxiv:2608.25180", "biases": ["competence"], "mitigation": ["human_in_loop"]}
+{"key": "arxiv:2609.24128", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["swap", "calibration"]}
+{"key": "arxiv:2609.35797", "biases": ["sycophancy", "leniency"], "mitigation": ["other"]}
+{"key": "arxiv:2507.09884", "biases": ["inconsistency", "competence"], "mitigation": []}
+{"key": "arxiv:2609.07162", "biases": ["competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2610.08026", "biases": ["criteria", "anchoring", "leniency"], "mitigation": ["rubric"]}
+{"key": "arxiv:2606.31002", "biases": ["competence", "self_preference"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "arxiv:2609.20250", "biases": ["leniency", "verbosity"], "mitigation": ["rubric", "decomposition", "calibration"]}
+{"key": "title:voiko teko ly arvioida teko ly automaattisen llm arviointialustan suunnittelu ja toteutus yritysten generatiivisille teko lyj rjestelmille", "biases": ["inconsistency"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.17605/osf.io/85hg9", "biases": ["criteria", "social"], "mitigation": ["rubric"]}
+{"key": "doi:10.5281/zenodo.22723936", "biases": ["prompt_sensitivity"], "mitigation": ["rubric"]}
+{"key": "doi:10.1134/s1064229325605529", "biases": [], "mitigation": []}
+{"key": "title:evaluation framework for domain specific llm based products", "biases": ["inconsistency"], "mitigation": ["human_in_loop", "rubric"]}
+{"key": "doi:10.5281/zenodo.22891935", "biases": ["competence", "criteria"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.5281/zenodo.21511378", "biases": ["style", "inconsistency"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.1016/j.ijmedinf.2026.106599", "biases": ["competence"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.1109/access.2026.3693072", "biases": ["criteria"], "mitigation": ["decomposition", "ensemble", "calibration"]}
+{"key": "doi:10.17605/osf.io/j6snm", "biases": ["adversarial"], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "doi:10.1145/3746058.3758457", "biases": ["competence"], "mitigation": ["human_in_loop", "abstention"]}
+{"key": "doi:10.64898/2026.05.26.26353612", "biases": ["criteria", "competence"], "mitigation": ["decomposition"]}
+{"key": "doi:10.3390/ai7100389", "biases": ["competence", "inconsistency"], "mitigation": ["cot"]}
+{"key": "doi:10.1145/3805696.3846028", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "doi:10.24251/hicss.2026.350", "biases": ["criteria"], "mitigation": ["cot"]}
+{"key": "doi:10.18419/opus-17544", "biases": ["criteria"], "mitigation": ["cot"]}
+{"key": "doi:10.22266/ijies2025.0930.50", "biases": ["adversarial"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5753/sast.2026.31307", "biases": ["criteria", "style"], "mitigation": ["rubric"]}
+{"key": "doi:10.1145/3742414.3795096", "biases": ["criteria"], "mitigation": ["decomposition"]}
+{"key": "title:a comparative evaluation of hallucination detection methods for rag systems", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "title:utv rderar utv rderarna j mf r spr kmodell som bed mare ramverk f r referensfri utv rdering av ett verkligt informationss kningsf rst rkt system", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.18738764", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.59490/6a91ad3d6096c5874dfb3663", "biases": ["criteria"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.48448/2p3q-q344", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1145/3805712.3809934", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22838900", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.19311333", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "doi:10.1145/3726302.3730063", "biases": ["self_preference", "verbosity"], "mitigation": ["calibration"]}
+{"key": "doi:10.5281/zenodo.20409416", "biases": ["sycophancy", "authority"], "mitigation": ["ensemble"]}
+{"key": "doi:10.2196/92470", "biases": ["social"], "mitigation": ["fine_tuning", "human_in_loop"]}
+{"key": "title:evaluation of data driven report generation pipelines large language models for decision support in smart agriculture", "biases": ["anchoring", "criteria"], "mitigation": ["reference"]}
+{"key": "doi:10.2514/6.2026-4618", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.18252584", "biases": ["social"], "mitigation": ["ensemble"]}
+{"key": "doi:10.18653/v1/2026.gem-main.46", "biases": ["inconsistency"], "mitigation": ["ensemble", "abstention", "human_in_loop"]}
+{"key": "doi:10.5281/zenodo.20665996", "biases": ["self_preference"], "mitigation": []}
+{"key": "doi:10.62036/isd.2025.50", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.5753/stil.2026.25414", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.31234/osf.io/3b9vn_v1", "biases": ["competence", "criteria", "social"], "mitigation": []}
+{"key": "doi:10.48448/835e-0c95", "biases": ["criteria"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.5281/zenodo.21185823", "biases": ["inconsistency", "leakage", "other"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20836003", "biases": ["self_preference", "inconsistency", "prompt_sensitivity", "social"], "mitigation": ["ensemble"]}
+{"key": "doi:10.24963/ijcai.2026/614", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.23919/splitech65624.2025.11091635", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.1145/3805713.3820418", "biases": ["inconsistency", "other"], "mitigation": ["decomposition"]}
+{"key": "doi:10.2196/preprints.105820", "biases": ["competence"], "mitigation": ["human_in_loop"]}
+{"key": "title:strategies for creating naturalistic peer mentoring dialogs using generative language models", "biases": ["self_preference"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1109/ijcnn64981.2025.11228172", "biases": ["prompt_sensitivity", "criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "doi:10.18653/v1/2025.bea-1.86", "biases": ["competence"], "mitigation": ["rubric", "reference", "decomposition", "abstention"]}
+{"key": "doi:10.5281/zenodo.21210235", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "doi:10.6084/m9.figshare.c.8565287", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.32614/cran.package.gtheory4llm", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": []}
+{"key": "doi:10.1145/3803730.3803759", "biases": ["criteria"], "mitigation": ["decomposition"]}
+{"key": "doi:10.48448/0zh4-9g62", "biases": ["criteria"], "mitigation": ["ensemble", "critique_refine", "rubric"]}
+{"key": "doi:10.1145/3773078.3831842", "biases": ["other"], "mitigation": ["other"]}
+{"key": "doi:10.18653/v1/2025.findings-naacl.308", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.2196/preprints.94741", "biases": ["criteria"], "mitigation": ["decomposition"]}
+{"key": "doi:10.3390/info17010035", "biases": ["self_preference", "criteria"], "mitigation": ["rubric"]}
+{"key": "title:advanced rag systems for historical documents", "biases": ["inconsistency", "competence"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.35542/osf.io/6h387_v1", "biases": ["criteria"], "mitigation": ["rubric", "human_in_loop"]}
+{"key": "doi:10.63317/3xgwaboh563b", "biases": ["criteria"], "mitigation": ["decomposition", "tool_grounding", "reference"]}
+{"key": "doi:10.1109/access.2026.3736407", "biases": ["inconsistency", "prompt_sensitivity", "competence"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.48448/ewhh-5j24", "biases": ["criteria"], "mitigation": ["fine_tuning", "rubric", "calibration"]}
+{"key": "doi:10.25231/pee.2025.31.2.191", "biases": ["inconsistency", "criteria"], "mitigation": ["rubric", "critique_refine"]}
+{"key": "doi:10.21950/hezraq", "biases": ["criteria"], "mitigation": ["rubric", "fine_tuning", "reference"]}
+{"key": "doi:10.1186/s42400-026-00633-z", "biases": ["adversarial", "inconsistency"], "mitigation": ["tool_grounding", "internal"]}
+{"key": "title:toward trustworthy power line perception from aerial imagery segmentation and reliability monitoring", "biases": ["inconsistency"], "mitigation": ["abstention"]}
+{"key": "doi:10.1109/access.2026.3727977", "biases": ["prompt_sensitivity", "criteria"], "mitigation": ["rubric", "prompt_optimization"]}
+{"key": "doi:10.1162/coli.a.619", "biases": ["inconsistency"], "mitigation": ["decomposition"]}
+{"key": "title:a critical analysis of llm creativity evaluation", "biases": ["self_preference", "style", "criteria"], "mitigation": []}
+{"key": "doi:10.5715/jnlp.33.1615", "biases": ["competence"], "mitigation": []}
+{"key": "title:f rst rkningsinl rning fr n m nsklig terkoppling f r informationsutvinning av juridisk tekst", "biases": ["criteria"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.5281/zenodo.20409634", "biases": ["criteria"], "mitigation": ["rubric"]}
+{"key": "doi:10.6084/m9.figshare.30947210", "biases": ["criteria"], "mitigation": []}
+{"key": "title:multisynds large scale multilingual synthetic discharge summary generation by means of generative llms and clinical case report transformation", "biases": ["criteria", "competence"], "mitigation": ["rubric"]}
+{"key": "title:llm based log analysis evaluating llm based log analysis in industrial ci environ ments technical metrics practitioner perspectives and per ceived workflow impact", "biases": ["criteria", "competence"], "mitigation": []}
+{"key": "doi:10.1136/bmjmilitary-2025-nato.14", "biases": [], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.5281/zenodo.21154334", "biases": ["competence", "leniency"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "doi:10.17605/osf.io/q43dj", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.19852628", "biases": ["social", "self_preference"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.20487690", "biases": ["self_preference", "prompt_sensitivity"], "mitigation": []}
+{"key": "doi:10.21203/rs.3.rs-9916397/v1", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/ycru2", "biases": ["social"], "mitigation": []}
+{"key": "doi:10.36948/ijfmr.2026.v08i03.81173", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.20944/preprints202607.1999.v1", "biases": ["inconsistency", "leniency"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.5281/zenodo.22030910", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.21149156", "biases": ["leniency"], "mitigation": ["human_in_loop"]}
+{"key": "doi:10.1109/icecce67514.2025.11257953", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20682897", "biases": ["other"], "mitigation": ["other"]}
+{"key": "doi:10.5281/zenodo.20409685", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20027840", "biases": ["other"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "doi:10.5281/zenodo.21983487", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.1109/icassp55912.2026.11462359", "biases": ["other"], "mitigation": ["decomposition"]}
+{"key": "title:deploying agentic llm pipelines at scale quality gated ensemble governance for enterprise news intelligence", "biases": [], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "doi:10.5281/zenodo.20814615", "biases": [], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "doi:10.5281/zenodo.20818610", "biases": ["competence", "inconsistency"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.24963/ijcai.2026/659", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.1109/icsscna68616.2026.11546931", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.2139/ssrn.5008637", "biases": [], "mitigation": ["decomposition"]}
+{"key": "doi:10.48448/peav-4d86", "biases": ["criteria"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "doi:10.7717/peerj-cs.3906", "biases": [], "mitigation": []}
+{"key": "doi:10.62760/iteecs.4.4.2025.131", "biases": [], "mitigation": ["ensemble", "decomposition"]}
+{"key": "doi:10.2139/ssrn.7422696", "biases": ["leniency"], "mitigation": ["calibration"]}
+{"key": "doi:10.5281/zenodo.19685571", "biases": ["competence"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "title:data to digest edge ready fine tuning guided by prompt informed metrics", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization", "fine_tuning"]}
+{"key": "doi:10.63278/jicrcr.vi.3783", "biases": ["leniency"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "doi:10.5281/zenodo.23108038", "biases": ["competence"], "mitigation": ["tool_grounding", "rubric"]}
+{"key": "doi:10.5281/zenodo.20147209", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "title:generation of semantically consistent text and its evaluation", "biases": [], "mitigation": ["decomposition"]}
+{"key": "doi:10.5281/zenodo.21511582", "biases": ["competence", "leniency"], "mitigation": ["rubric", "tool_grounding"]}
+{"key": "doi:10.5281/zenodo.21839471", "biases": ["prompt_sensitivity", "sycophancy"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.23227934", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.21154330", "biases": ["competence", "leniency"], "mitigation": ["ensemble"]}
+{"key": "title:hotel highlights a case study in llm summarization and evaluation", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.31234/osf.io/ztpk5_v1", "biases": ["self_preference", "leniency"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22302105", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "title:atomic claim verification for clinical diagnostic reasoning decomposing and validating llm reasoning steps against medical evidence", "biases": ["inconsistency", "prompt_sensitivity", "competence"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "doi:10.2196/preprints.103608", "biases": ["self_preference", "leniency"], "mitigation": ["calibration"]}
+{"key": "title:the digital muse advancing llm based methods for poetry generation and automated evaluation", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.2196/103220", "biases": ["self_preference"], "mitigation": ["rubric", "ensemble"]}
+{"key": "doi:10.5281/zenodo.23385704", "biases": ["inconsistency"], "mitigation": ["ensemble"]}
+{"key": "doi:10.1587/transinf.2025kbl0002", "biases": ["criteria"], "mitigation": ["calibration"]}
+{"key": "doi:10.1145/3765766.3765841", "biases": [], "mitigation": ["prompt_optimization"]}
+{"key": "doi:10.1109/wi-iat67162.2025.00115", "biases": [], "mitigation": ["decomposition", "reference"]}
+{"key": "title:explainable llm based evaluation for nlg using error analysis", "biases": [], "mitigation": ["ensemble", "fine_tuning", "decomposition"]}
+{"key": "doi:10.5281/zenodo.20395370", "biases": ["criteria"], "mitigation": ["cot", "rubric", "decomposition"]}
+{"key": "doi:10.1109/iecon58223.2025.11221958", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization", "tool_grounding"]}
+{"key": "doi:10.26599/commtr.2026.9640041", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.47459/cndcgs.2026.71", "biases": ["criteria"], "mitigation": ["decomposition", "rubric"]}
+{"key": "doi:10.1109/inmic64792.2024.11004416", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "title:llm based pedagogical evaluation for microteaching simulation automated feedback for teaching assistants", "biases": [], "mitigation": ["rubric", "decomposition", "human_in_loop", "abstention"]}
+{"key": "doi:10.26219/heal.aueb.10397", "biases": ["inconsistency"], "mitigation": ["rubric", "decomposition"]}
+{"key": "title:evaluating llm outputs with humans and llms", "biases": ["leakage"], "mitigation": ["ensemble", "decomposition"]}
+{"key": "doi:10.18653/v1/2025.eval4nlp-1.6", "biases": ["style"], "mitigation": ["reference"]}
+{"key": "doi:10.1117/12.3104111", "biases": ["leniency"], "mitigation": ["rubric"]}
+{"key": "doi:10.17863/cam.131188", "biases": ["inconsistency"], "mitigation": ["decomposition"]}
+{"key": "title:concept and implementation of an automated pentesting approach for large language models", "biases": ["adversarial"], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.3390/electronics15020380", "biases": ["criteria"], "mitigation": ["ensemble", "decomposition"]}
+{"key": "doi:10.3233/faia251612", "biases": [], "mitigation": ["rubric"]}
+{"key": "doi:10.5715/jnlp.33.1233", "biases": ["criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "doi:10.6084/m9.figshare.33158699", "biases": ["criteria"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "doi:10.1109/cbms69103.2026.00201", "biases": ["competence"], "mitigation": ["ensemble", "tool_grounding"]}
+{"key": "doi:10.1145/3809182", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "doi:10.2514/6.2026-4615", "biases": [], "mitigation": ["decomposition"]}
+{"key": "doi:10.1109/punecon67554.2025.11379082", "biases": ["inconsistency"], "mitigation": ["ensemble", "rubric"]}
+{"key": "doi:10.1007/s44163-026-02268-y", "biases": ["authority", "social"], "mitigation": []}
+{"key": "doi:10.1007/s11192-026-05792-x", "biases": ["other", "competence"], "mitigation": ["ensemble"]}
+{"key": "doi:10.1016/j.engappai.2026.116334", "biases": ["competence"], "mitigation": ["decomposition"]}
+{"key": "doi:10.1007/s11606-026-10806-8", "biases": ["social", "inconsistency"], "mitigation": []}
+{"key": "doi:10.1007/s10115-026-02910-2", "biases": ["leniency"], "mitigation": ["cot", "decomposition"]}
+{"key": "doi:10.1016/j.asoc.2026.116417", "biases": ["criteria"], "mitigation": ["ensemble"]}
+{"key": "doi:10.17605/osf.io/qhzmd", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20717307", "biases": ["self_preference", "criteria"], "mitigation": []}
+{"key": "title:beyond agreement structural alignment in hybrid human llm evaluation systems", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.65286/icic.v21i4.11558", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.1109/prml66062.2025.11159734", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.1002/iis2.70245", "biases": ["competence", "inconsistency"], "mitigation": []}
+{"key": "doi:10.1145/3832928.3833041", "biases": ["inconsistency"], "mitigation": ["ensemble", "critique_refine"]}
+{"key": "doi:10.17605/osf.io/5c9nk", "biases": [], "mitigation": ["ensemble", "critique_refine", "rubric"]}
+{"key": "doi:10.7249/rra4618-1", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21811718", "biases": [], "mitigation": []}
+{"key": "doi:10.31235/osf.io/t7jup_v1", "biases": ["leniency", "inconsistency"], "mitigation": []}
+{"key": "doi:10.21275/sr26924024938", "biases": ["competence", "inconsistency"], "mitigation": ["ensemble"]}
+{"key": "doi:10.17632/y2pgcb4t5r", "biases": [], "mitigation": ["prompt_optimization"]}
+{"key": "doi:10.5281/zenodo.20245520", "biases": ["adversarial", "other"], "mitigation": ["other"]}
+{"key": "doi:10.1109/ichi69079.2026.00249", "biases": [], "mitigation": ["rubric", "decomposition"]}
+{"key": "doi:10.5281/zenodo.18366788", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/rdxkv", "biases": ["social"], "mitigation": ["rubric"]}
+{"key": "doi:10.18653/v1/2026.findings-acl.472", "biases": ["criteria"], "mitigation": ["prompt_optimization"]}
+{"key": "doi:10.31234/osf.io/35utw_v1", "biases": ["self_preference", "style"], "mitigation": []}
+{"key": "title:how un faithful are explainable llm based nlg metrics", "biases": ["inconsistency"], "mitigation": []}
+{"key": "doi:10.17605/osf.io/68bwp", "biases": ["social", "style"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20849618", "biases": ["other"], "mitigation": ["ensemble", "calibration", "critique_refine"]}
+{"key": "doi:10.1109/memea69746.2026.11537334", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.1109/smartindustrycon68821.2026.11492857", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.21203/rs.3.rs-10152272/v1", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/ieem63636.2025.11357620", "biases": ["social"], "mitigation": ["ensemble"]}
+{"key": "doi:10.17605/osf.io/nq9s8", "biases": ["prompt_sensitivity"], "mitigation": []}
+{"key": "doi:10.21227/1t9p-tf31", "biases": [], "mitigation": ["human_in_loop", "rubric"]}
+{"key": "doi:10.48448/8p1h-qf35", "biases": ["criteria"], "mitigation": ["human_in_loop", "rubric", "decomposition"]}
+{"key": "doi:10.5281/zenodo.23093195", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.18187033", "biases": [], "mitigation": []}
+{"key": "doi:10.1016/j.asw.2026.101090", "biases": ["social", "criteria"], "mitigation": []}
+{"key": "doi:10.1145/3761843.3769266", "biases": [], "mitigation": ["decomposition", "tool_grounding", "cot"]}
+{"key": "doi:10.18260/1-2--59260", "biases": ["criteria"], "mitigation": ["reference", "rubric"]}
+{"key": "doi:10.17605/osf.io/dfhzn", "biases": ["social"], "mitigation": ["rubric"]}
+{"key": "doi:10.5281/zenodo.21954789", "biases": ["position"], "mitigation": ["reference"]}
+{"key": "doi:10.5281/zenodo.19839959", "biases": ["inconsistency", "authority", "self_preference"], "mitigation": []}
+{"key": "doi:10.1038/s41746-026-03341-7", "biases": [], "mitigation": ["calibration", "tool_grounding", "human_in_loop"]}
+{"key": "doi:10.31222/osf.io/6ja2r_v1", "biases": ["other", "criteria"], "mitigation": []}
+{"key": "doi:10.1016/j.caeai.2026.100663", "biases": ["leniency"], "mitigation": ["rubric"]}
+{"key": "doi:10.18653/v1/2026.argmining-1.3", "biases": [], "mitigation": ["cot", "rubric"]}
+{"key": "doi:10.14293/pr2199.003509.v1", "biases": ["verbosity", "position"], "mitigation": ["calibration", "other"]}
+{"key": "doi:10.3390/informatics13090149", "biases": ["prompt_sensitivity", "inconsistency", "leniency"], "mitigation": []}
+{"key": "doi:10.1016/j.aei.2026.105329", "biases": [], "mitigation": ["rubric", "tool_grounding", "decomposition"]}
+{"key": "doi:10.7302/27262", "biases": ["other"], "mitigation": ["calibration"]}
+{"key": "doi:10.5281/zenodo.23357211", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "title:an empirical evaluation of llms for the assessment of subjective qualities", "biases": ["style"], "mitigation": ["rubric"]}
+{"key": "doi:10.3390/zoonoticdis6040040", "biases": [], "mitigation": ["ensemble", "rubric"]}
+{"key": "doi:10.5281/zenodo.20773176", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20679063", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.47852/bonviewmedin62029207", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.1177/20420986261460173", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.64898/2026.08.12.26360276", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.17605/osf.io/68sca", "biases": ["other"], "mitigation": ["cot"]}
+{"key": "doi:10.5281/zenodo.22975038", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20804436", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3805712.3809867", "biases": ["criteria"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20034376", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.1145/3832783.3837558", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.20356526", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.19812428", "biases": [], "mitigation": []}
+{"key": "doi:10.3390/ai7100409", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.19656141", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.3390/mca31050174", "biases": ["self_preference"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.22100604", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21421022", "biases": ["adversarial"], "mitigation": ["other"]}
+{"key": "doi:10.5281/zenodo.21853966", "biases": ["competence"], "mitigation": ["tool_grounding", "abstention"]}
+{"key": "doi:10.1038/s44484-026-00025-3", "biases": ["competence"], "mitigation": ["ensemble"]}
+{"key": "doi:10.5281/zenodo.22885408", "biases": [], "mitigation": []}
+{"key": "doi:10.18653/v1/2026.acl-long.1612", "biases": ["competence"], "mitigation": ["tool_grounding", "decomposition"]}
+{"key": "doi:10.1145/3805712.3809882", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.21275/sr25906035244", "biases": [], "mitigation": ["other"]}
+{"key": "title:redtwiz guard adversarial jailbreak detection in multi turn conversations", "biases": ["adversarial"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.23154464", "biases": [], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21235384", "biases": ["inconsistency", "prompt_sensitivity", "adversarial"], "mitigation": ["ensemble"]}
+{"key": "doi:10.1145/3774905.3794657", "biases": [], "mitigation": ["other"]}
+{"key": "doi:10.5281/zenodo.21933833", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.3390/healthcare14111490", "biases": ["social", "competence"], "mitigation": []}
+{"key": "doi:10.5281/zenodo.21025601", "biases": ["inconsistency"], "mitigation": ["ensemble", "human_in_loop"]}
+{"key": "doi:10.1109/siu71813.2026.11636663", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/icstsdg69220.2026.11708240", "biases": ["self_preference"], "mitigation": ["ensemble"]}
+{"key": "doi:10.3390/make8090256", "biases": ["other"], "mitigation": []}
+{"key": "doi:10.1109/mipr70517.2026.00067", "biases": [], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.1145/3805689.3812212", "biases": ["social"], "mitigation": []}
+{"key": "doi:10.1109/iicai70155.2026.11621019", "biases": [], "mitigation": ["calibration"]}
+{"key": "doi:10.1145/3773078.3841258", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/educon67543.2026.11574092", "biases": ["leniency"], "mitigation": ["rubric"]}
+{"key": "doi:10.1109/compsac69091.2026.00352", "biases": [], "mitigation": []}
+{"key": "doi:10.1145/3770855.3819027", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/iciet69664.2026.11561663", "biases": ["competence"], "mitigation": []}
+{"key": "doi:10.1109/haxd70072.2026.11620617", "biases": ["leniency"], "mitigation": ["rubric"]}
+{"key": "doi:10.1109/bigdataservice70481.2026.00017", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/pacificvis68791.2026.00031", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/ichms69701.2026.11602292", "biases": [], "mitigation": []}
+{"key": "doi:10.1109/compsac69091.2026.00027", "biases": ["competence"], "mitigation": ["rubric"]}
+{"key": "doi:10.1109/iccvbic71195.2026.11688311", "biases": [], "mitigation": ["ensemble"]}
+{"key": "doi:10.1109/cifer67845.2026.11692374", "biases": ["inconsistency"], "mitigation": ["decomposition"]}
+{"key": "doi:10.1109/srse70977.2026.11694565", "biases": ["other"], "mitigation": ["ensemble", "rubric"]}
+{"key": "doi:10.3390/make8100327", "biases": ["adversarial", "anchoring"], "mitigation": []}
+{"key": "arxiv:2610.13375", "biases": [], "mitigation": ["rubric", "decomposition", "prompt_optimization"]}
+{"key": "arxiv:2609.39229", "biases": ["other"], "mitigation": ["ensemble", "calibration"]}
+{"key": "arxiv:2609.32413", "biases": [], "mitigation": ["rubric", "tool_grounding"]}
+{"key": "doi:10.3390/electronics15184331", "biases": ["leniency", "inconsistency"], "mitigation": []}
+{"key": "arxiv:2609.22778", "biases": ["competence"], "mitigation": ["fine_tuning", "cot"]}
+{"key": "arxiv:2609.04867", "biases": [], "mitigation": ["reference"]}
+{"key": "arxiv:2609.05289", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": []}
+{"key": "arxiv:2609.04198", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": []}
+{"key": "doi:10.3390/asi9090174", "biases": ["leniency"], "mitigation": []}
+{"key": "doi:10.3390/make8080252", "biases": ["other"], "mitigation": []}
+{"key": "arxiv:2608.17938", "biases": ["verbosity", "self_preference"], "mitigation": ["rubric", "reference"]}
+{"key": "arxiv:2608.16003", "biases": ["leniency"], "mitigation": []}
+{"key": "arxiv:2608.14948", "biases": [], "mitigation": ["human_in_loop", "rubric"]}
+{"key": "doi:10.3390/electronics15163614", "biases": [], "mitigation": ["human_in_loop", "ensemble"]}
+{"key": "arxiv:2608.02446", "biases": [], "mitigation": []}
+{"key": "arxiv:2609.20829", "biases": [], "mitigation": ["decomposition", "rubric", "tool_grounding"]}
+{"key": "arxiv:2607.01973", "biases": ["authority", "social"], "mitigation": []}
+{"key": "doi:10.3390/info17070649", "biases": [], "mitigation": ["other"]}
+{"key": "arxiv:2607.02802", "biases": ["adversarial", "sycophancy"], "mitigation": []}
+{"key": "arxiv:2606.15887", "biases": [], "mitigation": ["rubric"]}
+{"key": "arxiv:2605.28313", "biases": [], "mitigation": ["cot"]}
+{"key": "arxiv:2605.28734", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2605.00238", "biases": ["competence", "leniency"], "mitigation": []}
+{"key": "doi:10.1145/3774904.3792299", "biases": [], "mitigation": ["rubric"]}
+{"key": "doi:10.68485/ijmada.20266116", "biases": ["position"], "mitigation": ["tool_grounding", "calibration"]}
+{"key": "doi:10.1109/telfor67910.2025.11314465", "biases": [], "mitigation": []}
+{"key": "arxiv:2510.27196", "biases": ["other"], "mitigation": ["ensemble"]}
+{"key": "arxiv:2510.06242", "biases": [], "mitigation": ["decomposition"]}
+{"key": "doi:10.5220/0014837300004018", "biases": [], "mitigation": []}
+{"key": "doi:10.63317/4z4gj3h8jmc7", "biases": ["criteria", "inconsistency"], "mitigation": []}
+{"key": "title:uantitative llm j udges", "biases": [], "mitigation": []}
+{"key": "title:s marter s ampling for llm j udges r eliable e valuation on a b udget", "biases": [], "mitigation": []}
+{"key": "title:r ethinking llm j udges c hain of t hought and m ulti s tep p ipelines for m ath g rading", "biases": [], "mitigation": ["cot", "decomposition"]}
+{"key": "arxiv:2610.17724", "biases": ["competence"], "mitigation": ["tool_grounding"]}
+{"key": "doi:10.1117/12.3132247", "biases": ["criteria"], "mitigation": []}
+{"key": "arxiv:2609.19879", "biases": ["leniency", "criteria"], "mitigation": []}
+{"key": "arxiv:2608.15404", "biases": [], "mitigation": ["ensemble"]}
+{"key": "arxiv:2608.12970", "biases": [], "mitigation": ["abstention", "calibration"]}
+{"key": "arxiv:2604.00586", "biases": ["other"], "mitigation": ["fine_tuning", "rubric"]}
+{"key": "doi:10.1109/cste69562.2026.11649758", "biases": ["adversarial", "style"], "mitigation": ["decomposition", "tool_grounding"]}
+{"key": "arxiv:2603.29497", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.3390/math14020210", "biases": [], "mitigation": []}
+{"key": "arxiv:2610.11598", "biases": [], "mitigation": []}
+{"key": "arxiv:2609.25790", "biases": [], "mitigation": ["rubric"]}
+{"key": "doi:10.3390/publications14030055", "biases": ["leniency"], "mitigation": ["calibration", "human_in_loop"]}
+{"key": "arxiv:2608.12387", "biases": ["position"], "mitigation": []}
+{"key": "arxiv:2605.29897", "biases": [], "mitigation": ["fine_tuning"]}
+{"key": "doi:10.1145/3795766.3799760", "biases": ["competence"], "mitigation": []}
+{"key": "arxiv:2605.19815", "biases": ["criteria", "competence"], "mitigation": ["rubric"]}
+{"key": "arxiv:2511.04133", "biases": [], "mitigation": []}
+{"key": "arxiv:2503.17136", "biases": [], "mitigation": ["cot", "fine_tuning"]}

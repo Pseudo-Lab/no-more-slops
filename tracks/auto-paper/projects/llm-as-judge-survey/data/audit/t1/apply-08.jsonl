@@ -1,0 +1,19 @@
+{"id":"8-P1","decision":"applied","why":"번역투 수정"}
+{"id":"8.1.1-P8","decision":"partly","why":"plateau는 decisions.md대로 '해킹이 멈추는 수준'으로 서술. 검토자의 '정체 구간' 대신 원문(plateau)에 가까운 표현"}
+{"id":"8.1.2-P1","decision":"merged","why":"범주별 다섯 문단 분할(문단 검토)과 '관문' 문법 수정(문장 검토) 합침"}
+{"id":"8.2.1-title","decision":"applied","why":"소절 제목을 '질문 (`Q-ID`)' 형식으로"}
+{"id":"8.2.2-title","decision":"applied","why":"소절 제목을 '질문 (`Q-ID`)' 형식으로"}
+{"id":"8.2.1-P3","decision":"applied","why":"표 8-1(45/49, 8/9)로 확인"}
+{"id":"8.2.1-P4","decision":"applied","why":"claims.csv 2503.00596은 1% 오염 3배만 보고"}
+{"id":"8.2.1-P5","decision":"applied","why":"판정 형식 주제에서 문단 분할"}
+{"id":"8.2.2-P7","decision":"merged","why":"'경우가 많다' 완화(문장)와 CoT 두 문장 이동(문단)"}
+{"id":"8.2.2-P8","decision":"applied","why":"CoT 문장을 P7로 이동"}
+{"id":"8.2.2-P9","decision":"applied","why":"claims.csv Q-DEFENSE own_method refute 2개 = BITE(2605.26156), 2605.30521 확인. 두 사례를 모두 서술"}
+{"id":"8.3.1-P1","decision":"applied","why":"원인을 해석 요인으로 한정"}
+{"id":"8.3.1-P2","decision":"merged","why":"네 문단 분할과 근거 없는 '지시 이행 능력' 일반 명제 삭제, 합의 패널 단일 연구로 한정"}
+{"id":"8.3.1-P3","decision":"applied","why":"'다만' 연속 해소, '같은 방식' 명확화"}
+{"id":"8.3.1-P4","decision":"partly","why":"8.3.3 신설로 이동. 마지막 문장은 레드팀·탈옥 평가(2603.06594, 2610.19306: 판정 모델이 성공을 채점)에 한정하고 이 장 인용 성공률 중 해당 개수는 세지 않았다고 명시. [확인] 표기 제거"}
+{"id":"8.3.3","decision":"applied","why":"측정 도구로 쓰인 판정 모델 소절 신설"}
+{"id":"8.3.2-P2","decision":"applied","why":"단정과 유보 충돌 해소"}
+{"id":"8.4-P2","decision":"applied","why":"'본문 확인' 중복 제거"}
+{"id":"8.4-P8","decision":"partly","why":"검토자 after 채택하되 '본문 확인된 방어 모두 대가' 단정은 근거가 3편(2506.09443, 2601.14691, 2501.18536)뿐이라 '세 편 보고'로, 일반화는 '여럿'으로 낮춤"}

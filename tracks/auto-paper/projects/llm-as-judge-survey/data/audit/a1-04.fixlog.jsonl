@@ -1,0 +1,7 @@
+{"line":21,"decision":"applied","reason":"listwise 63편 중 ir_rag 10, general 34","new":"순위 형식은 63편 중 검색 영역이 10편이고 일반 영역이 34편으로 특정 영역에 몰려 있지 않다."}
+{"line":77,"decision":"applied","reason":"토론 대 앙상블 직접 비교는 1편","new":"토론은 독립 평가에서 단일 판정보다 나쁜 결과가 더 자주 보고됐다."}
+{"line":75,"decision":"applied","reason":"21개 중 오류 상관 근거 약 9~10개","new":"독립 평가의 반박 21개 중 상당수는 ..."}
+{"line":89,"decision":"applied","reason":"own_method 6개 중 3개","new":"절반은 쌍비교를 순위 집계나 토너먼트와 결합한 새 방법이라"}
+{"line":99,"decision":"applied","reason":"집계 근거 없음","new":"제안 방법 논문이 구성원 간 오류 상관을 재는지는 이 서베이가 따로 집계하지 않았다."}
+{"line":105,"decision":"applied","reason":"2610.00406은 언어 간 비교 아님","new":"... 루마니아어 RAG 평가에서는 지표별로 최적 전략이 달랐지만 [@arxiv:2610.00406] 근거가 소수다."}
+{"line":21,"decision":"applied","reason":"FActScore는 binary 코딩 아님, 집계 없음","new":"분해와 결합되기도 한다"}

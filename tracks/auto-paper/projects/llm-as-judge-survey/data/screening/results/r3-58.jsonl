@@ -1,0 +1,17 @@
+{"key":"doi:10.5220/0014467300004052","decision":"maybe","code":"M","reason":"LLM으로 개체 필드를 의미 매칭해 평가하고 사람 검증을 결합하는 프레임워크지만, 판정 모델 자체의 검증 비중은 초록만으로 불분명하다."}
+{"key":"doi:10.18653/v1/2026.findings-eacl.125","decision":"maybe","code":"M","reason":"초록이 쉼표뿐이라 LLM 군중 집계가 판정·주석 모델 연구인지 알 수 없어 전문 검토가 필요하다."}
+{"key":"doi:10.18653/v1/2026.rag4reports-1.10","decision":"maybe","code":"M","reason":"쌍대 선호 판정에서 너깃을 뽑아 보고서를 평가하는 방식이라 판정 방식 제안(I1)일 수 있으나 초록이 짧아 확정하기 어렵다."}
+{"key":"arxiv:2604.20166","decision":"maybe","code":"M","reason":"초록이 없고 정신건강 AI 신뢰 서베이·포지션 논문이라 LLM 판정 주제와의 관련 여부를 제목만으로 알 수 없다."}
+{"key":"doi:10.18653/v1/2026.findings-acl.332","decision":"maybe","code":"M","reason":"초록이 쉼표뿐이고 질의응답 평가용 계층적 채점 프레임워크라 LLM 판정 연구일 가능성이 있어 보류한다."}
+{"key":"title:beyond statistical parroting hard coding truth into llms via ontologies","decision":"maybe","code":"M","reason":"초록이 없고 온톨로지로 LLM에 진실을 주입한다는 제목만 있어 판정 연구 여부를 판단할 수 없다."}
+{"key":"title:evaluation of multi agent llms in multidisciplinary team decision making for challenging cancer cases","decision":"maybe","code":"M","reason":"초록이 없고 다학제 암 진료 의사결정에서 다중 에이전트 LLM을 평가한다는 제목만 있어 판정 모델 검증 여부가 불분명하다."}
+{"key":"title:o rchestrating s ynthetic d ata with r easoning","decision":"maybe","code":"M","reason":"초록과 연도가 없고 추론 기반 합성 데이터 오케스트레이션이라는 제목만으로는 판정 연구 여부를 알 수 없다."}
+{"key":"title:beyond grey box assumptions uncertainty guided example selection for black box language models","decision":"maybe","code":"M","reason":"초록이 없고 블랙박스 모델의 불확실성 기반 예시 선택이라는 제목만으로는 판정 관련성을 판단할 수 없다."}
+{"key":"title:evaluating llm generated topic names via text reconstruction","decision":"maybe","code":"M","reason":"초록이 없고 텍스트 재구성으로 LLM 생성 토픽명을 평가한다는 제목이라 평가자 연구인지 확인이 필요하다."}
+{"key":"title:evalugator rapid agile development and evaluation of retrieval augmented generation systems without labels","decision":"maybe","code":"M","reason":"초록이 없고 레이블 없는 RAG 평가 도구라는 제목이라 LLM 판정 활용·검증 여부를 전문에서 확인해야 한다."}
+{"key":"title:a ttention h ead e ntropy of llm s p redicts a n swer c orrectness","decision":"maybe","code":"M","reason":"초록이 없고 어텐션 헤드 엔트로피로 답 정답 여부를 예측한다는 제목이라 판정 대안일 가능성을 배제할 수 없다."}
+{"key":"title:uva dare digital academic repository sound and complete neurosymbolic reasoning with llm grounded interpretations","decision":"maybe","code":"M","reason":"초록이 없고 신경기호 추론 논문으로 보이나 제목만으로 판정 연구와의 관련성을 확정할 수 없다."}
+{"key":"title:multiagent systems for improved decision making in industrial value chains","decision":"maybe","code":"M","reason":"초록이 없고 산업 가치사슬의 다중 에이전트 의사결정이라는 제목만으로는 판정 연구 여부를 알 수 없다."}
+{"key":"title:citadel citation driven draft evaluate loop","decision":"maybe","code":"M","reason":"초록이 없고 인용 기반 초안 작성·평가 루프라는 제목이라 LLM 평가자 역할의 검증 여부를 판단할 수 없다."}
+{"key":"arxiv:2610.01756","decision":"exclude","code":"E1","reason":"탈중앙 에이전트 경제의 보안·정산 보장을 체계화한 SoK이며 모델 판정은 승인 증거 구분에 언급될 뿐 연구 대상이 아니다."}
+{"key":"arxiv:2608.24850","decision":"exclude","code":"E2","reason":"사이버보안 연구 방법론의 서술적 리뷰와 실행 가이드로 LLM 판정과 무관하다."}

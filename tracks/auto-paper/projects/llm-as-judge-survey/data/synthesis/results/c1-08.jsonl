@@ -1,0 +1,110 @@
+{"key": "doi:10.1016/j.eswa.2026.133992", "biases": ["adversarial"], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.21980066", "biases": ["criteria"], "mitigation": [], "claims": []}
+{"key": "doi:10.3390/ai7080286", "biases": ["competence", "inconsistency"], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.22640839", "biases": ["criteria"], "mitigation": ["prompt_optimization", "human_in_loop"], "claims": []}
+{"key": "title:llm as a judge rubric wording sensitivity", "biases": ["prompt_sensitivity", "leniency"], "mitigation": ["rubric", "cot"], "claims": []}
+{"key": "doi:10.18653/v1/2026.mme-main.12", "biases": ["criteria"], "mitigation": ["ensemble", "human_in_loop"], "claims": []}
+{"key": "doi:10.5281/zenodo.21865042", "biases": ["prompt_sensitivity", "position", "inconsistency"], "mitigation": ["cot", "rubric", "swap", "calibration"], "claims": [{"question": "Q-COT", "direction": "support", "claim": "MT-Bench에서 Claude Sonnet 4의 사람 일치도는 CoT 구성에서 기준선보다 높아졌고 통계 보정 후에도 유지되었다.", "condition": "MT-Bench 400개 사람 라벨 쌍비교, 판정 모델 5종; 다른 모델의 개선은 불확실로 남음", "evidence": "Claude Sonnet 4 사람 일치도 0.588(기준선) → 0.660(CoT) → 0.700(결합 전략)", "basis": "evaluation"}]}
+{"key": "title:human subject studies for the alignment of llm as a judge evaluation metric for science news", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.20788786", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.21950/vbg0hp", "biases": [], "mitigation": ["critique_refine", "fine_tuning"], "claims": []}
+{"key": "doi:10.1007/s11219-026-09785-0", "biases": ["inconsistency", "other"], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.21149148", "biases": ["other"], "mitigation": [], "claims": []}
+{"key": "doi:10.17605/osf.io/phrv2", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.22659211", "biases": ["self_preference", "verbosity", "position"], "mitigation": ["swap"], "claims": []}
+{"key": "doi:10.1145/3805689.3806459", "biases": ["social", "leniency", "inconsistency"], "mitigation": ["cot"], "claims": []}
+{"key": "doi:10.17605/osf.io/jw59c", "biases": ["position"], "mitigation": ["calibration", "swap"], "claims": []}
+{"key": "doi:10.5281/zenodo.21323784", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.21299223", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.1007/978-3-032-39892-5_17", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.1109/access.2026.3726251", "biases": ["competence"], "mitigation": ["calibration", "abstention"], "claims": []}
+{"key": "doi:10.5281/zenodo.21361919", "biases": ["style", "other"], "mitigation": [], "claims": []}
+{"key": "doi:10.18653/v1/2026.bionlp-1.55", "biases": ["leniency", "competence"], "mitigation": ["other"], "claims": [{"question": "Q-EXPERT", "direction": "conditional", "claim": "의료 용어 단순화 평가에서 LLM 판정은 사람 전문가와 순위 경향은 비슷했지만 정확성 항목에서는 더 관대했다.", "condition": "뇌종양 용어 단순화(BrainCancerDB), LLM 6종, 정확성·가독성·완결성, 전문가 주석 대비", "evidence": null, "basis": "evaluation"}]}
+{"key": "doi:10.1109/acit69831.2026.11699959", "biases": ["position"], "mitigation": ["other"], "claims": []}
+{"key": "doi:10.48448/e8kb-xw03", "biases": ["position", "verbosity", "anchoring"], "mitigation": ["calibration"], "claims": [{"question": "Q-DEBIAS", "direction": "support", "claim": "제안한 섭동 기반 보정 PeBC가 평가 편향을 완화하고 기존 최고 기법보다 사람 판단과 더 잘 일치했다.", "condition": "LLMBar-Natural, LLMBar-Adversarial 메타평가, 기존 SOTA 기법과 비교", "evidence": null, "basis": "own_method"}]}
+{"key": "doi:10.48448/vjgj-gv50", "biases": ["leniency"], "mitigation": ["calibration", "rubric"], "claims": [{"question": "Q-DEBIAS", "direction": "support", "claim": "소수의 사람 라벨로 학습한 보정 헤드가 보정하지 않은 판정보다 사람 정렬 성능을 높였다.", "condition": "MT-Bench 쌍비교 선호, 고정 구조화 루브릭 프롬프트 1회 호출, 보정 없는 판정과 비교", "evidence": "MT-Bench 쌍비교 F1 86% (보정 전 78%)", "basis": "own_method"}]}
+{"key": "doi:10.18653/v1/2026.gem-main.45", "biases": ["sycophancy", "social"], "mitigation": [], "claims": []}
+{"key": "doi:10.1007/978-3-032-33865-5_12", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.1109/cste69562.2026.11647786", "biases": ["adversarial", "leniency", "competence"], "mitigation": ["ensemble", "rubric", "tool_grounding", "human_in_loop"], "claims": []}
+{"key": "doi:10.5281/zenodo.20807411", "biases": ["position", "verbosity", "inconsistency", "other"], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.19201807", "biases": ["competence"], "mitigation": ["critique_refine", "other"], "claims": []}
+{"key": "doi:10.5281/zenodo.22917751", "biases": [], "mitigation": [], "claims": []}
+{"key": "title:structural biases in llm as a judge systems implications for reliable is adoption", "biases": ["position", "self_preference", "inconsistency"], "mitigation": ["human_in_loop", "ensemble"], "claims": [{"question": "Q-SELF", "direction": "support", "claim": "사전 정의 평가에서 모델이 자기 출력을 판정할 때 자기선호 편향이 크게 나타났다.", "condition": "영어 사전 5종과 LLM 4종의 정의 8,000건 블라인드 쌍비교, 판정 LLM 4종", "evidence": "자기 출력 판정 시 최대 +73.3%p, A 정의 선호 65.7%, Fleiss' kappa = 0.357", "basis": "evaluation"}]}
+{"key": "doi:10.5281/zenodo.21158213", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["swap", "ensemble", "calibration"], "claims": [{"question": "Q-DEBIAS", "direction": "support", "claim": "제안한 편향 인식 패널 JURY가 순서·길이·자기선호 편향을 거의 중립으로 낮추고 정답 일치와 보정 오차를 개선했다.", "condition": "VERDICT-BENCH 시뮬레이션 쌍비교 100만 건 이상; 단일 판정, 순서 교환 단독, 단순 패널과 비교", "evidence": "단일 판정 정답 일치 87.6% → JURY 98.1%, 편향률 0.73 → 약 0.5, 길이 유발 오류 28.9% → 0.9%, 보정 오류 0.10 → 0.01", "basis": "own_method"}, {"question": "Q-MULTI", "direction": "conditional", "claim": "편향을 고려한 패널 집계는 단일 판정보다 낫지만, 단순 패널과 순서 교환 단독은 편향 하나만 고치거나 다른 편향을 악화시킬 수 있다.", "condition": "시뮬레이션 쌍비교, 단일 판정 대 단순 패널 대 JURY", "evidence": "단일 판정 정답 일치 87.6%, JURY 98.1%", "basis": "own_method"}]}
+{"key": "doi:10.1145/3748522.3779926", "biases": ["competence"], "mitigation": [], "claims": [{"question": "Q-SCALE", "direction": "support", "claim": "교육용 문항 품질 검증에서 최신·대형 모델이 더 정밀했고 오경보가 거의 없었으며 대부분의 품질 문제를 탐지했다.", "condition": "교육 시험 문항과 인위적 결함 문항, 상용·오픈소스 LLM 17종", "evidence": null, "basis": "evaluation"}]}
+{"key": "doi:10.5281/zenodo.20063835", "biases": [], "mitigation": ["ensemble"], "claims": []}
+{"key": "doi:10.1145/3773078.3841257", "biases": ["anchoring"], "mitigation": [], "claims": []}
+{"key": "doi:10.1145/3770501.3770530", "biases": [], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "LLM 판정 라벨로 파인튜닝한 소형 트랜스포머(TaaJ)가 클라우드 기반 판정과 경쟁력 있는 정확도를 보이면서 지연 시간을 크게 줄였다.", "condition": "농업 자문 텍스트 평가, 라즈베리 파이 5 온디바이스, 클라우드 LLM 판정과 비교", "evidence": null, "basis": "own_method"}]}
+{"key": "doi:10.21227/nmdc-wc69", "biases": ["inconsistency"], "mitigation": ["ensemble"], "claims": []}
+{"key": "doi:10.5114/ait/221943", "biases": ["prompt_sensitivity"], "mitigation": ["decomposition", "rubric"], "claims": []}
+{"key": "doi:10.2139/ssrn.7548649", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.13140/rg.2.2.21697.62562", "biases": [], "mitigation": ["calibration"], "claims": []}
+{"key": "doi:10.1145/3838938.3838949", "biases": ["adversarial", "inconsistency", "other"], "mitigation": ["ensemble", "human_in_loop", "other"], "claims": []}
+{"key": "doi:10.5281/zenodo.21499822", "biases": ["sycophancy", "anchoring", "other"], "mitigation": [], "claims": []}
+{"key": "doi:10.13140/rg.2.2.11234.29121", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.18653/v1/2026.acl-srw.33", "biases": ["style"], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.22368666", "biases": ["inconsistency", "criteria"], "mitigation": ["ensemble", "tool_grounding", "abstention"], "claims": []}
+{"key": "title:bias aware llm as a judge with position invariant pairwise evaluation and confidence calibration", "biases": ["position", "inconsistency"], "mitigation": ["swap", "calibration", "abstention"], "claims": [{"question": "Q-DEBIAS", "direction": "conditional", "claim": "순서 불변 구성은 위치 일관성을 100%까지 끌어올렸지만 정확도 향상은 통계적으로 확정적이지 않았다.", "condition": "JudgeBench 620쌍(GPT-4o, Claude-3.5-Sonnet 응답), 순서 있는 판정자와 swap 증강·반대칭·2회 융합 비교", "evidence": "순서 판정자 정확도 57.26%, A/B 교환 후 일관성 53.71%; swap 증강 정확도 58.39%, 일관성 99.35%; 반대칭·2회 융합 일관성 100%; 융합 정확도 +1.13점, 구간 [-2.45, 4.81], McNemar p=0.597", "basis": "own_method"}]}
+{"key": "doi:10.1007/978-981-92-3426-4_43", "biases": [], "mitigation": ["calibration"], "claims": []}
+{"key": "doi:10.5626/ktcp.2026.32.3.126", "biases": ["prompt_sensitivity", "inconsistency"], "mitigation": ["rubric"], "claims": []}
+{"key": "doi:10.54254/2753-8818/2026.33416", "biases": ["position"], "mitigation": [], "claims": []}
+{"key": "doi:10.1016/j.bas.2026.106844", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.1109/icosaas68663.2026.11648543", "biases": ["criteria", "competence"], "mitigation": ["abstention", "human_in_loop", "rubric"], "claims": []}
+{"key": "doi:10.1145/3786175.3788342", "biases": ["criteria", "inconsistency"], "mitigation": ["rubric", "human_in_loop"], "claims": []}
+{"key": "doi:10.1007/s12525-026-00890-3", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.23036796", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.2139/ssrn.5249953", "biases": ["other"], "mitigation": ["other"], "claims": []}
+{"key": "doi:10.63317/3axxq3b2dynj", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.3389/frai.2026.1768005", "biases": ["criteria", "prompt_sensitivity"], "mitigation": ["fine_tuning", "rubric"], "claims": []}
+{"key": "doi:10.18653/v1/2026.gem-main.55", "biases": ["competence"], "mitigation": [], "claims": []}
+{"key": "doi:10.63317/4n9skmf9rive", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.3390/educsci16091505", "biases": ["leniency", "competence", "criteria"], "mitigation": [], "claims": [{"question": "Q-EXPERT", "direction": "refute", "claim": "의료 교육의 공감 평가에서 LLM 판정은 전문가 점수와 일치도가 낮고 체계적으로 과대평가해 인증 용도로는 쓸 수 없었다.", "condition": "GPT-3.5-Turbo 기반 ATENA, 학생 시뮬레이션 129건, ECCS 전문가 코딩 대비", "evidence": "ICC = 0.146, 과대평가 +0.80점, 일치 한계 [−1.57; +3.16], 점수의 76%가 4.2–4.3에 압축", "basis": "evaluation"}]}
+{"key": "doi:10.71569/gvyy-1q86", "biases": ["criteria"], "mitigation": ["reference"], "claims": []}
+{"key": "doi:10.1109/gaiis69281.2026.11519324", "biases": [], "mitigation": ["fine_tuning", "cot"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "폐쇄형 교사 모델의 CoT를 증류한 경량 오픈소스 판정 모델이 평가 정확도를 높이고 오류를 줄였으며 이질적 대상 데이터셋에서도 제로샷 전이를 유지했다.", "condition": "생의학 관계 추출 평가, 교사는 폐쇄형 모델, 원천 도메인 대 대상 데이터셋", "evidence": null, "basis": "own_method"}]}
+{"key": "title:llm as a judge for multilingual question answering evaluation an experimental study on an english turkish bilingual squad dataset", "biases": ["prompt_sensitivity", "criteria"], "mitigation": ["rubric"], "claims": []}
+{"key": "doi:10.48448/ytbt-6r06", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.21045/1811-0185-2026-10-80-89", "biases": ["competence"], "mitigation": [], "claims": [{"question": "Q-EXPERT", "direction": "conditional", "claim": "의료 RAG 평가에서 LLM 판정은 BERTScore보다 전문가 점수와 훨씬 높은 상관을 보였으나 전문가 평가를 완전히 대체할 수 있는지는 추가 연구가 필요하다고 결론지었다.", "condition": "ND-77 방사선 질의응답 77건, 판정 모델 Mistral-Small3.2:24b(DeepEval), 전문가 5점 척도 대비", "evidence": "전문가 점수와의 Spearman ρ = 0.711 (BERTScore F1 ρ = 0.267)", "basis": "evaluation"}]}
+{"key": "doi:10.1007/978-3-032-37249-9_46", "biases": [], "mitigation": [], "claims": []}
+{"key": "title:adaptaci n de llm as a judge y creaci n de recursos para la evaluaci n del dialecto chilenoa", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.21462978", "biases": ["other"], "mitigation": [], "claims": []}
+{"key": "doi:10.1109/icnlp69856.2026.11527976", "biases": ["competence"], "mitigation": ["ensemble", "human_in_loop"], "claims": []}
+{"key": "doi:10.5281/zenodo.21921828", "biases": ["inconsistency"], "mitigation": ["ensemble", "other"], "claims": []}
+{"key": "doi:10.5281/zenodo.21716866", "biases": ["self_preference"], "mitigation": ["ensemble"], "claims": []}
+{"key": "doi:10.5281/zenodo.22117857", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["swap", "calibration"], "claims": []}
+{"key": "doi:10.21086/ksles.2026.4.33.2.105", "biases": ["criteria"], "mitigation": ["human_in_loop", "rubric"], "claims": []}
+{"key": "doi:10.5753/sbsi_estendido.2026.249124", "biases": [], "mitigation": ["ensemble"], "claims": [{"question": "Q-EXPERT", "direction": "support", "claim": "컴퓨터 교육용 대화 에이전트 평가에서 여러 AI 판정의 합의가 인간 전문가의 분석과 일관되고 가까웠다.", "condition": "컴퓨터과학 교육 챗봇 응답, AI 합의 대 인간 전문가 1인", "evidence": null, "basis": "own_method"}]}
+{"key": "doi:10.18653/v1/2026.rag4reports-1.9", "biases": [], "mitigation": ["tool_grounding", "decomposition"], "claims": []}
+{"key": "doi:10.48448/we46-vf16", "biases": ["competence"], "mitigation": ["reference"], "claims": [{"question": "Q-HARD", "direction": "support", "claim": "능력이 비슷한 시스템 쌍을 구분하는 현실적 설정에서 LLM 평가자와 사람 판단의 상관이 크게 떨어졌다.", "condition": "능력 차이가 작은 시험 시스템 쌍을 구분하는 새 메타평가 방식, 단일 참조 평가자", "evidence": "사람과의 상관 약 0.8에서 약 0.3으로 하락", "basis": "evaluation"}]}
+{"key": "doi:10.1038/s41746-026-03248-3", "biases": ["criteria", "competence"], "mitigation": ["ensemble", "rubric"], "claims": [{"question": "Q-MULTI", "direction": "null", "claim": "반복 실행과 다중 모델 패널은 최고의 단일 모델을 넘어서는 일관된 정렬 개선을 주지 못했다.", "condition": "임상 의사결정 지원 AI(PANDA) 응답 118건, 의사 5명과 LLM 7종, 루브릭 7개", "evidence": null, "basis": "evaluation"}, {"question": "Q-EXPERT", "direction": "conditional", "claim": "임상 평가에서 LLM 판정은 충실성·완결성 같은 텍스트 비교 루브릭에서는 높은 일치를 보였으나 추론·안전성 같은 해석적 차원에서는 일치가 약했다.", "condition": "소아병원 RAG 임상 의사결정 지원 AI 응답, 의사 5명 대비 LLM 7종, 루브릭 7개", "evidence": null, "basis": "evaluation"}]}
+{"key": "doi:10.5281/zenodo.23135733", "biases": [], "mitigation": ["calibration"], "claims": []}
+{"key": "doi:10.63317/3bhnb2uoif7o", "biases": ["competence", "criteria"], "mitigation": ["rubric"], "claims": [{"question": "Q-SCALE", "direction": "support", "claim": "정교화 단순화 평가에서 작은 LLM의 판정은 사람과 상관이 낮았고 구조화된 프롬프트를 쓴 큰 모델은 더 높은 일치를 보였다.", "condition": "LLM이 생성한 정교화에 대한 응집성·정보성 사람 평가 대비", "evidence": null, "basis": "evaluation"}]}
+{"key": "doi:10.1007/s10489-026-07244-8", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.18653/v1/2026.findings-acl.1351", "biases": ["criteria"], "mitigation": ["ensemble", "decomposition"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "다중 기준과 다중 LLM을 가중 집계하는 MAPLE이 기준선보다 사람 평가와 더 잘 정렬되었다.", "condition": "개방형 질문 응답의 기준별 쌍비교, 오픈소스·폐쇄형 모델", "evidence": null, "basis": "own_method"}]}
+{"key": "doi:10.5281/zenodo.23181928", "biases": ["position"], "mitigation": ["swap"], "claims": []}
+{"key": "doi:10.15439/2026f9874", "biases": ["position"], "mitigation": [], "claims": [{"question": "Q-SCALE", "direction": "support", "claim": "10B 미만 소형 판정자는 심한 위치 편향으로 신뢰할 수 없었고 20B 초과 대형 판정자는 더 견고했지만 순서 효과가 완전히 없지는 않았다.", "condition": "폴란드어 RAG 평가, 공개 가중치 판정자, 점수화와 순서 통제 쌍비교 A/B", "evidence": null, "basis": "evaluation"}]}
+{"key": "doi:10.5281/zenodo.21761151", "biases": [], "mitigation": ["calibration"], "claims": []}
+{"key": "doi:10.62408/ai-ling.v2i2.22", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization"], "claims": []}
+{"key": "doi:10.5281/zenodo.21782379", "biases": ["criteria", "competence"], "mitigation": [], "claims": []}
+{"key": "doi:10.21203/rs.3.rs-10304807/v1", "biases": ["competence"], "mitigation": [], "claims": []}
+{"key": "doi:10.1145/3794786.3830782", "biases": ["criteria"], "mitigation": ["tool_grounding", "decomposition"], "claims": []}
+{"key": "doi:10.5281/zenodo.19859339", "biases": [], "mitigation": ["ensemble"], "claims": []}
+{"key": "doi:10.5281/zenodo.22994056", "biases": ["inconsistency"], "mitigation": ["tool_grounding", "ensemble", "critique_refine"], "claims": []}
+{"key": "doi:10.5281/zenodo.22849705", "biases": ["criteria", "other"], "mitigation": ["rubric", "decomposition"], "claims": []}
+{"key": "doi:10.18653/v1/2026.acl-long.2006", "biases": ["verbosity", "style", "criteria"], "mitigation": [], "claims": []}
+{"key": "doi:10.2139/ssrn.7147562", "biases": ["authority", "competence"], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.22207382", "biases": ["inconsistency", "criteria"], "mitigation": [], "claims": []}
+{"key": "doi:10.3390/bioengineering13101115", "biases": [], "mitigation": ["human_in_loop"], "claims": [{"question": "Q-EXPERT", "direction": "support", "claim": "주수술기 환자 질문 응답 평가에서 임상 검증된 LLM 판정이 의사 평가와 높은 일치를 보였다.", "condition": "Mayo Clinic 2개 기관, 환자-AIVA 상호작용 1285건, 의사 분류 대비, 단일 판정 프레임워크", "evidence": "4분류 일치 93.1% (95% CI 91.7–94.5%), Cohen's κ = 0.852, 이진 정확도 93.4%, F1 0.954", "basis": "own_method"}]}
+{"key": "doi:10.1016/j.jss.2026.113036", "biases": ["competence"], "mitigation": ["rubric", "decomposition", "human_in_loop"], "claims": []}
+{"key": "doi:10.5281/zenodo.21314102", "biases": ["position", "anchoring"], "mitigation": ["internal"], "claims": []}
+{"key": "doi:10.21203/rs.3.rs-11022502/v1", "biases": ["self_preference"], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.22901852", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.2139/ssrn.7555380", "biases": ["other"], "mitigation": ["calibration"], "claims": []}
+{"key": "doi:10.5281/zenodo.20435190", "biases": ["other"], "mitigation": ["other"], "claims": []}
+{"key": "doi:10.5281/zenodo.20620454", "biases": ["competence"], "mitigation": ["abstention", "human_in_loop"], "claims": []}
+{"key": "title:llm as judge for reliable crack segmentation in edge based structural inspection", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.13140/rg.2.2.10613.54240", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.6084/m9.figshare.31791526", "biases": ["criteria"], "mitigation": [], "claims": []}
+{"key": "doi:10.1145/3805696.3846049", "biases": [], "mitigation": [], "claims": []}
+{"key": "doi:10.1109/access.2026.3739942", "biases": ["leniency"], "mitigation": [], "claims": []}
+{"key": "doi:10.5281/zenodo.21016696", "biases": ["criteria"], "mitigation": ["calibration", "rubric"], "claims": []}
+{"key": "doi:10.5281/zenodo.22949193", "biases": ["position", "verbosity", "self_preference"], "mitigation": ["calibration"], "claims": [{"question": "Q-SELF", "direction": "conditional", "claim": "소형 오픈 가중치 판정 모델 3종의 블라인드 자기선호 점수 차는 모델마다 방향과 크기가 달라 일관된 자기선호로 볼 수 없었다.", "condition": "glm-4-9b-chat, Llama-3.1-8B-Instruct, qwen3-8b, 0–10점 척도, 5개 편향 유형 사전등록 배터리 741회 호출", "evidence": "블라인드 자기선호 점수 차 +4.53에서 −5.71", "basis": "evaluation"}]}
