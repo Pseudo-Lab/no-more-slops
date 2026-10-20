@@ -1,0 +1,823 @@
+{
+  "schema": "rf.skillmerge.sources.v5",
+  "id": "SkillMerge",
+  "created_date": "2026-10-12",
+  "primary_only": true,
+  "external_search_performed": true,
+  "scope": "Source-based design review, current/prior local documentation and code reading. No external source code, model, benchmark or original ZIP code executed by this v5 authoring task.",
+  "review_semantics": {
+    "abstract_metadata": "Confirms identity and author-reported summary; does not certify detailed implementation or results.",
+    "selected_html_methods": "Confirms the specified method passages were inspected; uninspected sections/code are pending.",
+    "selected_repository_files": "Static selected-file review; commands are data, not execution instructions.",
+    "local_artifact_read": "Hash links the specific local artifact inspected; unsigned local consistency is not source or execution authentication.",
+    "prior_review_reuse": "The same bounded v4 source review is reused and identified. It is not silently upgraded to complete-source audit.",
+    "no_absence_proof": "Not finding a protocol in inspected passages does not prove it absent. Novelty and complete implementation-level overlap remain open."
+  },
+  "primary_sources": [
+    {
+      "id": "paper_skillsbench_v4",
+      "primary": true,
+      "title": "Li et al. SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks. arXiv:2602.12670v4, 2026.",
+      "url": "https://arxiv.org/abs/2602.12670v4",
+      "accessed_date": "2026-10-12",
+      "review_scope": "Official abstract and bibliographic metadata reviewed for v4. No full paper/code reproduction; v1.1 release/task metadata are separate sources.",
+      "claim_scope": "Skill benchmark motivation; latest abstract metadata, not local reproduction. Release pins are recorded separately in SOURCES.json.",
+      "local_source_bytes_sha256": null,
+      "external_effects_reproduced": false
+    },
+    {
+      "id": "paper_signal_noise_v1",
+      "primary": true,
+      "title": "Yang and Ding. Signal or Noise? A Benchmark Study of Agent Skills in Web Development. arXiv:2608.23067v1, 2026.",
+      "url": "https://arxiv.org/abs/2608.23067v1",
+      "accessed_date": "2026-10-12",
+      "review_scope": "Official abstract and HTML §3 conditions/workspace injection plus selected interpretation/limitations read. No output or code reproduction.",
+      "claim_scope": "Existing injection-harm and length/content-control study; inspected HTML methods, no reproduced effects.",
+      "local_source_bytes_sha256": null,
+      "external_effects_reproduced": false
+    },
+    {
+      "id": "paper_instruction_bleed_v1",
+      "primary": true,
+      "title": "Lin and Liu. Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems. arXiv:2606.26356v1, 2026.",
+      "url": "https://arxiv.org/abs/2606.26356v1",
+      "accessed_date": "2026-10-12",
+      "review_scope": "Official abstract and HTML §3.3 volume/content/form conditions, sampling and limitations read. No reproduction.",
+      "claim_scope": "Existing volume/content/form interference protocol; selected HTML methods reviewed.",
+      "local_source_bytes_sha256": null,
+      "external_effects_reproduced": false
+    },
+    {
+      "id": "paper_skillcommit_v1",
+      "primary": true,
+      "title": "He and Yang. SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion. arXiv:2608.15165v1, 2026.",
+      "url": "https://arxiv.org/abs/2608.15165v1",
+      "accessed_date": "2026-10-12",
+      "review_scope": "Official abstract and HTML method sections: source-replay validation, directed compatibility grouping, source-preserving consolidation. No full prompt/code reproduction.",
+      "claim_scope": "Existing source validation, cross-instance replay, and behavior-preserving consolidation; selected HTML methods reviewed.",
+      "local_source_bytes_sha256": null,
+      "external_effects_reproduced": false
+    },
+    {
+      "id": "paper_skillsmith_v2",
+      "primary": true,
+      "title": "Wei et al. SkillSmith: Co-Evolving Skills and Tools for Self-Improving Agent Systems. arXiv:2606.01314v2, 2026.",
+      "url": "https://arxiv.org/abs/2606.01314v2",
+      "accessed_date": "2026-10-12",
+      "review_scope": "Official abstract and selected HTML §2.1, §3, Appendix A.5/B: typed interfaces, synchronized/atomic migration and scoped failure memory. Full paper/code reproduction not done.",
+      "claim_scope": "Existing skill interactions, typed tools, atomic interface migration and scoped failure memory; selected HTML setup and Appendix A.5 read.",
+      "local_source_bytes_sha256": null,
+      "external_effects_reproduced": false
+    },
+    {
+      "id": "paper_skillevoreg_v1",
+      "primary": true,
+      "title": "Nie et al. SkillEvoReg: Regularizing Agent Skill Evolution Against Overfitting. arXiv:2609.30861v1, 2026.",
+      "url": "https://arxiv.org/abs/2609.30861v1",
+      "accessed_date": "2026-10-12",
+      "review_scope": "Official abstract and bibliographic metadata only. Full methods/code audit pending.",
+      "claim_scope": "Abstract reports skill-evolution regularization and candidate-specific regression validation. Full methods/code audit pending.",
+      "local_source_bytes_sha256": null,
+      "external_effects_reproduced": false
+    },
+    {
+      "id": "paper_scifact",
+      "primary": true,
+      "title": "Wadden et al. Fact or Fiction: Verifying Scientific Claims. EMNLP, 2020.",
+      "url": "https://aclanthology.org/2020.emnlp-main.609/",
+      "accessed_date": "2026-10-12",
+      "review_scope": "Official ACL metadata/abstract; original repository schema, evaluator and license files separately reviewed. The local adapted counts do not come from this paper.",
+      "claim_scope": "Scientific-claim dataset identity. Our 531-case adaptation/counts arise from local preparation, not this paper.",
+      "local_source_bytes_sha256": null,
+      "external_effects_reproduced": false
+    },
+    {
+      "id": "paper_swe_bench_v3",
+      "primary": true,
+      "title": "Jimenez et al. SWE-bench: Can Language Models Resolve Real-World GitHub Issues? arXiv:2310.06770v3, 2024.",
+      "url": "https://arxiv.org/abs/2310.06770v3",
+      "accessed_date": "2026-10-12",
+      "review_scope": "Official arXiv v3 bibliographic metadata/abstract. Verified subset metadata from its official card separately; native execution not reproduced.",
+      "claim_scope": "Repository issue-resolution task identity. Verified subset counts are from its official dataset card, not the original paper.",
+      "local_source_bytes_sha256": null,
+      "external_effects_reproduced": false
+    },
+    {
+      "id": "sb_release",
+      "title": "SkillsBench v1.1 release",
+      "url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "release metadata and task roster",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "release metadata and task roster",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_commit",
+      "title": "SkillsBench release/tooling commit",
+      "url": "https://github.com/benchflow-ai/skillsbench/commit/b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "commit explanation and selected diff",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "commit explanation and selected diff",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_registry",
+      "title": "SkillsBench pinned registry",
+      "url": "https://raw.githubusercontent.com/benchflow-ai/skillsbench/b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af/registry.json",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "version 1.1 and selected task metadata; not a local artifact hash audit",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "version 1.1 and selected task metadata; not a local artifact hash audit",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_readme",
+      "title": "SkillsBench v1.1 README",
+      "url": "https://raw.githubusercontent.com/benchflow-ai/skillsbench/v1.1/README.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "README full text",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "README full text",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_pyproject",
+      "title": "SkillsBench pinned pyproject",
+      "url": "https://raw.githubusercontent.com/benchflow-ai/skillsbench/b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af/pyproject.toml",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "selected repository file full text",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "selected repository file full text",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_contributing",
+      "title": "SkillsBench task/skill/verifier contract",
+      "url": "https://raw.githubusercontent.com/benchflow-ai/skillsbench/v1.1/CONTRIBUTING.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "task structure and evaluation guidance",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "task structure and evaluation guidance",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_pdf_task",
+      "title": "SkillsBench pdf-excel-diff task",
+      "url": "https://raw.githubusercontent.com/benchflow-ai/skillsbench/v1.1/tasks/pdf-excel-diff/task.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "selected task full text",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "selected task full text",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_pdf_skill",
+      "title": "SkillsBench bundled PDF skill",
+      "url": "https://raw.githubusercontent.com/benchflow-ai/skillsbench/v1.1/tasks/pdf-excel-diff/environment/skills/pdf/SKILL.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "selected skill full text; commands treated as data",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "selected skill full text; commands treated as data",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_pdf_verifier",
+      "title": "SkillsBench PDF/Excel verifier",
+      "url": "https://raw.githubusercontent.com/benchflow-ai/skillsbench/v1.1/tasks/pdf-excel-diff/verifier/test_outputs.py",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "selected verifier code read only",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "selected verifier code read only",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_skills_tree",
+      "title": "SkillsBench PDF/Excel skill folders",
+      "url": "https://github.com/benchflow-ai/skillsbench/tree/v1.1/tasks/pdf-excel-diff/environment/skills",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "directory listing only",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "directory listing only",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sb_license",
+      "title": "SkillsBench repository LICENSE",
+      "url": "https://raw.githubusercontent.com/benchflow-ai/skillsbench/v1.1/LICENSE",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "license identity; per-asset terms not audited",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "license identity; per-asset terms not audited",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sf_readme",
+      "title": "SciFact author README",
+      "url": "https://raw.githubusercontent.com/allenai/scifact/master/README.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "dataset/evaluation sections",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "dataset/evaluation sections",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sf_schema",
+      "title": "SciFact author data schema",
+      "url": "https://raw.githubusercontent.com/allenai/scifact/master/doc/data.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "schema full text",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "schema full text",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sf_eval_doc",
+      "title": "SciFact scoring specification",
+      "url": "https://raw.githubusercontent.com/allenai/scifact/master/doc/evaluation.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "scoring guide full text",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "scoring guide full text",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sf_metrics",
+      "title": "SciFact metrics implementation",
+      "url": "https://raw.githubusercontent.com/allenai/scifact/master/verisci/evaluate/lib/metrics.py",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "selected evaluator module full text read only",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "selected evaluator module full text read only",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sf_license",
+      "title": "SciFact component licenses",
+      "url": "https://raw.githubusercontent.com/allenai/scifact/master/LICENSE.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "license file full text",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "license file full text",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sf_card",
+      "title": "SciFact Hugging Face card",
+      "url": "https://huggingface.co/datasets/allenai/scifact/raw/main/README.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "card license, row metadata and schema",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "card license, row metadata and schema",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "sf_download",
+      "title": "SciFact author acquisition locator",
+      "url": "https://raw.githubusercontent.com/allenai/scifact/master/script/download-data.sh",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "script text read; not executed",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "script text read; not executed",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "swe_repo",
+      "title": "SWE-bench repository",
+      "url": "https://github.com/SWE-bench/SWE-bench",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "repository metadata and README summary",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "repository metadata and README summary",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "swe_card",
+      "title": "SWE-bench Verified official card",
+      "url": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified/blob/main/README.md",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "card metadata and schema",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "card metadata and schema",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "swe_setup",
+      "title": "SWE-bench official quickstart",
+      "url": "https://www.swebench.com/SWE-bench/guides/quickstart/",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "setup and dataset access documentation",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "setup and dataset access documentation",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "swe_license",
+      "title": "SWE-bench harness license",
+      "url": "https://raw.githubusercontent.com/SWE-bench/SWE-bench/main/LICENSE",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "repository license identity",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "repository license identity",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    },
+    {
+      "id": "swe_skills_paper",
+      "title": "SWE-Skills-Bench author paper",
+      "url": "https://arxiv.org/abs/2603.15401v1",
+      "primary": true,
+      "accessed_date": "2026-10-12",
+      "coverage": "abstract/metadata only; official repository fetch unavailable",
+      "local_raw_asset_sha256": null,
+      "review_record_reused_from": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "review_scope": "abstract/metadata only; official repository fetch unavailable",
+      "external_code_executed": false,
+      "source_asset_download_in_v5": false
+    }
+  ],
+  "local_artifacts": [
+    {
+      "path": "projects/skill_research_v3_20261012/skillmerge/experiment.py",
+      "bytes": 52171,
+      "sha256": "26aa966955c75f9441e2e0358cf6134c2fe7c547a37464e59a4adbf8592167d2",
+      "read_scope": "Current code previously authored/reviewed in v3; relevant grading, packet, import and verify boundaries reviewed. Not executed in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/skillmerge/METHODS.md",
+      "bytes": 10894,
+      "sha256": "b06757603f11bdbfa889562090bae630635974281e6f7c5796902ecb636b25b6",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/skillmerge/README_KO.md",
+      "bytes": 13375,
+      "sha256": "75d1a3fce6192c470b7c34837aff083451f3397dccce3a0dc15662b57482f8fc",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/skillmerge/protocol.json",
+      "bytes": 5394,
+      "sha256": "6e7d662ffb34a331a189f9c5b8f8ca82ea6bfe551b946577e093e172c09f7d60",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/skillmerge/validation_v2.json",
+      "bytes": 15003,
+      "sha256": "069421c70a35b126bf52786cf64169734bfa1ded82a8bb2836cf30fba8cbdf52",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/skillmerge/task_suite_v2/public/tasks.json",
+      "bytes": 26965,
+      "sha256": "9a7a8040b58c520bff2f0fd3f18108d09ed50b7819820088ca52aae949ebacb1",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/papers_v3/sources/SkillMerge.json",
+      "bytes": 20893,
+      "sha256": "84978daf68736c791b4f2182bfcd56fe2dd88fdbce014879b99453e8f6aa785f",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/evaluation_design/DESIGN.md",
+      "bytes": 31148,
+      "sha256": "7c14c0795ce836de88d5bb27ddd9bdd0257ed983e92cdfddf4879e8425c7d123",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/catalog.json",
+      "bytes": 53927,
+      "sha256": "b187437e822e0841989b821c56c959f5800d01d2df51df05cefac0f26c9cdd7b",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/REVIEW.md",
+      "bytes": 26075,
+      "sha256": "db5a8b205c15fe85d950038f5a0647af9bcd9a951ba9ee05a74180db3ef67226",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/agent_benchmarks/shortlist_contract.json",
+      "bytes": 14278,
+      "sha256": "d27f34ff1679e2a6438176508e29aaf8dabd05e4eb99e866ab00e560e72f68b6",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/manifest.json",
+      "bytes": 4707,
+      "sha256": "d73a92b6654c0086b8e349136ec4a46e23460df7b95cff971f37e8cc145e2fb0",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/split_audit.json",
+      "bytes": 2520,
+      "sha256": "e36745aec61be6f2f5bb2e64f1717fca868074824d4a243108aa331a75854a77",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/NOTICE.json",
+      "bytes": 761,
+      "sha256": "68525d76ba2e2b71f802a1627b2e44d3481231c8d0565149c422664f9ab49815",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/SOURCE_LICENSE.md",
+      "bytes": 542,
+      "sha256": "56ee69bc639cbab8f0b2e4b67091ec5e9390aa99a1d65f0a35e4274686c9a806",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/tools/prepare_datasets.py",
+      "bytes": 17708,
+      "sha256": "3c2b1729010dfbe69e934b01d215a759c54d2aa17077e748de7893d8c479a5b3",
+      "read_scope": "Selected source preparation and grade_response code statically reviewed; not executed in v5.",
+      "source_bytes_modified": false
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/VALIDATION.json",
+      "bytes": 859,
+      "sha256": "81cc6329bd2c5cd10d3a6cb86a4d9d4546b199185a82be397e9c4ba883a8d59a",
+      "read_scope": "Document/JSON reviewed in this or prior bounded task; hashes freshly read in v5.",
+      "source_bytes_modified": false
+    }
+  ],
+  "source_version_pins": {
+    "skillsbench": {
+      "release_tooling_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+      "registry_task_tree_commit": "55bfe693f2a19f6b2f29aca3f54fe98b9d994668",
+      "meaning": "Distinct tooling/registry versus task-content revisions, not competing aliases.",
+      "local_downloaded_task_hashes": null,
+      "paper_version": "2602.12670v4"
+    },
+    "scifact": {
+      "code_revision": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+      "local_manifest": "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/manifest.json",
+      "source_hashes": {
+        "corpus_jsonl": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62",
+        "claims_train_jsonl": "f4c8fa82d8bd0653a9cc8d61a6ea48c25eacea64e90af5dbf390ebb1b74372f0",
+        "claims_dev_jsonl": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217",
+        "license_md": "56ee69bc639cbab8f0b2e4b67091ec5e9390aa99a1d65f0a35e4274686c9a806"
+      },
+      "boundary": "Root-prepared original bytes and local adaptation; this v5 task neither downloaded nor reran original code."
+    },
+    "swe_verified": {
+      "dataset_revision": null,
+      "harness_commit": null,
+      "image_digests": null,
+      "reason": "External replication plan only; no local asset acquisition or native verification."
+    }
+  },
+  "claim_evidence": [
+    {
+      "id": "C1",
+      "claim": "Generic skill-injection harm and co-resident module interference have prior literature.",
+      "kind": "prior_author_reports",
+      "source_ids": [
+        "paper_signal_noise_v1",
+        "paper_instruction_bleed_v1"
+      ],
+      "paper_pages": [
+        1
+      ],
+      "explainer_sections": [
+        2,
+        13
+      ],
+      "does_not_establish": "Our natural failure rate or a general attention-level causal theorem."
+    },
+    {
+      "id": "C2",
+      "claim": "Behavior-preserving consolidation, typed migrations, interaction modeling and candidate-regression validation overlap prior work.",
+      "kind": "prior_method_reading",
+      "source_ids": [
+        "paper_skillcommit_v1",
+        "paper_skillsmith_v2",
+        "paper_skillevoreg_v1"
+      ],
+      "paper_pages": [
+        1,
+        2
+      ],
+      "explainer_sections": [
+        2,
+        6,
+        16
+      ],
+      "does_not_establish": "A complete source-code comparison or novelty certification; SkillEvoReg evidence is abstract only."
+    },
+    {
+      "id": "P1",
+      "claim": "Q-conditioned theta and Q/C/S/D boundaries define the proposed measurement.",
+      "kind": "author_protocol",
+      "local_paths": [
+        "projects/skill_research_dataset_v4_20261012/evaluation_design/DESIGN.md"
+      ],
+      "paper_pages": [
+        1,
+        2,
+        3
+      ],
+      "explainer_sections": [
+        3,
+        7,
+        8,
+        9
+      ],
+      "does_not_establish": "Actual independent qualification, causal identification of a textual mechanism, or preregistration."
+    },
+    {
+      "id": "F1",
+      "claim": "Defined toy functions have success counts (1,2,2,0), adapter count3, and a t0 strict1110 witness.",
+      "kind": "author_deterministic_model",
+      "local_paths": [
+        "projects/skill_research_v5_20261012/skillmerge/METHODS_CONTRACT.json"
+      ],
+      "paper_pages": [
+        2
+      ],
+      "explainer_sections": [
+        5
+      ],
+      "does_not_establish": "Empirical candidate authorship independence or any model observation."
+    },
+    {
+      "id": "F2",
+      "claim": "Semantic precondition containment and postcondition correctness imply deterministic composition correctness by substitution.",
+      "kind": "author_sufficient_condition",
+      "source_ids": [
+        "paper_skillsmith_v2"
+      ],
+      "paper_pages": [
+        2
+      ],
+      "explainer_sections": [
+        4,
+        6
+      ],
+      "does_not_establish": "A novel theorem or a stochastic LLM guarantee; reference acknowledges related interface-migration theory."
+    },
+    {
+      "id": "E1",
+      "claim": "v3 has four authored contract families, actual skill files, packet/import/semantic-verification mechanics and 31 recorded passing local tests.",
+      "kind": "local_software_receipt",
+      "local_paths": [
+        "projects/skill_research_v3_20261012/skillmerge/validation_v2.json",
+        "projects/skill_research_v3_20261012/skillmerge/METHODS.md"
+      ],
+      "paper_pages": [
+        3
+      ],
+      "explainer_sections": [
+        12,
+        14,
+        17
+      ],
+      "does_not_establish": "Skill semantics executed by an LLM, natural composition prevalence, authenticated model runs or policy superiority."
+    },
+    {
+      "id": "E2",
+      "claim": "SciFact adaptation has531 cases/325components, splits306/100/125, and44 separate constructed training-label faults.",
+      "kind": "local_preparation_audit",
+      "local_paths": [
+        "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/manifest.json",
+        "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/split_audit.json",
+        "projects/skill_research_dataset_v4_20261012/VALIDATION.json"
+      ],
+      "paper_pages": [
+        3
+      ],
+      "explainer_sections": [
+        8,
+        11
+      ],
+      "does_not_establish": "531 skill events,44 actual errors or recoveries, original leaderboard success or contamination freedom."
+    },
+    {
+      "id": "E3",
+      "claim": "SkillsBench v1.1 inventory87 native tasks/8categories and distinct release/task-tree pins are reviewed.",
+      "kind": "external_release_metadata",
+      "source_ids": [
+        "sb_release",
+        "sb_commit",
+        "sb_registry",
+        "paper_skillsbench_v4"
+      ],
+      "paper_pages": [
+        3
+      ],
+      "explainer_sections": [
+        10
+      ],
+      "does_not_establish": "Local native environment/oracle readiness, independent family count, asset-license audit or actual model effects."
+    },
+    {
+      "id": "E4",
+      "claim": "SWE-bench Verified official card reports500 test instances and issue-resolution schema.",
+      "kind": "external_dataset_metadata",
+      "source_ids": [
+        "swe_card",
+        "swe_setup",
+        "paper_swe_bench_v3"
+      ],
+      "paper_pages": [
+        3,
+        4
+      ],
+      "explainer_sections": [
+        12,
+        19
+      ],
+      "does_not_establish": "Local environment readiness or Verified-specific claims from the original SWE-bench paper."
+    },
+    {
+      "id": "B1",
+      "claim": "F_H and R_excess are distinct fresh metrics, while empty or unaudited cohorts require explicit absence reporting.",
+      "kind": "author_metric_definitions",
+      "local_paths": [
+        "projects/skill_research_v3_20261012/skillmerge/METHODS.md",
+        "projects/skill_research_dataset_v4_20261012/evaluation_design/DESIGN.md"
+      ],
+      "paper_pages": [
+        4
+      ],
+      "explainer_sections": [
+        8,
+        15,
+        18
+      ],
+      "does_not_establish": "Observed regression/no-gain/retention values."
+    },
+    {
+      "id": "B2",
+      "claim": "Equal-budget integration must share candidates, development information and cache/cost rules.",
+      "kind": "author_secondary_protocol",
+      "local_paths": [
+        "projects/skill_research_v5_20261012/skillmerge/METHODS_CONTRACT.json"
+      ],
+      "paper_pages": [
+        4
+      ],
+      "explainer_sections": [
+        16,
+        17
+      ],
+      "does_not_establish": "Adaptive-policy implementation, economic savings, deployment readiness or continual-evolution benefit."
+    },
+    {
+      "id": "L1",
+      "claim": "Repository code licenses do not certify every bundled skill/input/patch asset; individual unknowns remain.",
+      "kind": "source_scope_inventory",
+      "source_ids": [
+        "sb_license",
+        "sb_pdf_skill",
+        "sf_license",
+        "sf_card",
+        "swe_license",
+        "swe_card"
+      ],
+      "paper_pages": [
+        3,
+        4
+      ],
+      "explainer_sections": [
+        10,
+        11,
+        19
+      ],
+      "does_not_establish": "Legal certification or permission to redistribute unreviewed third-party bundles."
+    }
+  ],
+  "verified_preparation_facts": {
+    "v3_tests_recorded": 31,
+    "v4_tests_recorded": 13,
+    "scifact_prepared_inputs": 531,
+    "scifact_components": 325,
+    "actual_model_calls_in_v5": 0,
+    "authenticated_integration_histories": 0,
+    "scientific_results": "NR"
+  },
+  "quotation_policy": {
+    "verbatim_passages": [],
+    "style": "Own paraphrases and source titles; no paper/table text reproduced.",
+    "max_non_lyrical_verbatim_words_per_source": 25,
+    "source_word_budget": 200
+  },
+  "remaining_uncertainties": [
+    "Full prior-method/code overlap and novelty judgment",
+    "Native task/reset/oracle verification",
+    "Per-asset license terms",
+    "Unseen-family sampling and public-data contamination",
+    "Actual model/tokenizer and resource caps",
+    "Independent authoring/auditor execution infrastructure",
+    "Qualification/witness thresholds and effective cluster counts",
+    "Authenticated model histories and empirical effects"
+  ],
+  "local_content_validation": {
+    "status": "passed_author_content_checks",
+    "files": 4,
+    "pages": 4,
+    "page_words_including_top_or_references": [
+      410,
+      364,
+      399,
+      370
+    ],
+    "total_page_words": 1543,
+    "abstract_words": 130,
+    "explainer_characters": 41507,
+    "explainer_hangul_syllables": 20631,
+    "numbered_sections": 20,
+    "qa": 15,
+    "primary_sources": 31,
+    "local_source_hashes_checked": 17,
+    "claim_links_checked": 12,
+    "toy_counts_and_scalar_examples": "passed",
+    "live_model_calls": 0,
+    "scientific_results": "NR",
+    "checked_date": "2026-10-12",
+    "scope": "Author static document/schema/source-link/hash checks and scalar examples; no benchmark/model tests.",
+    "parent_report": "Root separately reported independent five-arm toy verification and four-page/full-prose/math compilation; final integration receipts are root-owned."
+  }
+}

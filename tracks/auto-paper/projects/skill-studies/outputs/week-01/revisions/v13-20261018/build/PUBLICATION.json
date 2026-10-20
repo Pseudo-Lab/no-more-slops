@@ -1,0 +1,209 @@
+{
+  "schema": "nms_v13_submission_publication_v1",
+  "version": "v13-20261018",
+  "writer": "@darkwingduck-code",
+  "track": "Auto-Paper",
+  "week": "Week 01",
+  "original_pr": 14,
+  "scope": "Derived repository PDF contribution, not conference submission, peer review, a new experiment or scientific-effect reproduction.",
+  "acknowledgement": "This work was created as part of the No-More-Slops group activities at Pseudo Lab.",
+  "only_manuscript_change": "One unnumbered Acknowledgements section immediately before References; source JSON, equations, tables, figures, references and appendices preserved.",
+  "inputs": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018",
+  "output": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build",
+  "original_bindings": {
+    "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/ORIGINAL_BINDINGS.json",
+    "bytes": 9536,
+    "sha256": "a6d3cd5a36ee7163dedfc9f34c446536a3c66a64eac65808fd0b5b36741f8852"
+  },
+  "renderer": {
+    "path": "tracks/auto-paper/projects/skill-studies/app/v13/typeset.py",
+    "bytes": 20181,
+    "sha256": "a8b02ee71f56a1f83b12b8ec416551f47a76d8a14058f3d21d7a17b2a3ea78ba"
+  },
+  "style": {
+    "path": "tracks/auto-paper/projects/skill-studies/app/v13/conference.typ",
+    "bytes": 2082,
+    "sha256": "aae95db9c2600ac7e100c9aaaaf8ee43c71819dc5b9c9818774de67d55745890"
+  },
+  "regression_test": {
+    "path": "tracks/auto-paper/projects/skill-studies/app/v13/test_typeset.py",
+    "bytes": 3192,
+    "sha256": "5e0a867be611d2ef113e3a5c5fbf51da1ee124e31a617f2b863647f7f83e4538"
+  },
+  "environment": {
+    "typst": "typst 0.15.1 (9dfd3a08)",
+    "pymupdf": "1.26.4"
+  },
+  "projects": [
+    {
+      "id": "skillmerge",
+      "source": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/skillmerge/paper.json",
+        "sha256": "486786b74c0540f28bce1fc4dc762b9c067b47cb2d9a40d8b3c31fc69b9e1caf",
+        "bytes": 54708
+      },
+      "original_source_sha256": "486786b74c0540f28bce1fc4dc762b9c067b47cb2d9a40d8b3c31fc69b9e1caf",
+      "original_pdf_sha256": "84f3d8d1052f65d156189ecf1154ad26b863bd746e2abf7d90623d675eda6e64",
+      "original_pdf_pages": 12,
+      "submission_pdf": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/skillmerge/SkillMerge_v13_nms.pdf",
+        "bytes": 210631,
+        "sha256": "fe11031c05eaf5929528807f16a9900b1a64ee55319332770825c7ec303787d6"
+      },
+      "typst_source": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/skillmerge/SkillMerge_v13_nms.typ",
+        "bytes": 53354,
+        "sha256": "409c0ab5a0d5d6449d3d2d4de214186c9c5b6a8fc83e296b85684ef907993e13"
+      },
+      "style_copy": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/skillmerge/conference.typ",
+        "bytes": 2082,
+        "sha256": "aae95db9c2600ac7e100c9aaaaf8ee43c71819dc5b9c9818774de67d55745890"
+      },
+      "figure_copies": [
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/skillmerge/figures/budget-sensitivity.svg",
+          "bytes": 22221,
+          "sha256": "f058786f4ed151b5b3911e39ca2de37852872a35a7de1d9506c83c3d11957f60"
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/skillmerge/figures/endpoint-controls.svg",
+          "bytes": 14921,
+          "sha256": "e904a39980bb0d14b2ae8176b879773f07a0cc2fc54d37c664436ab9f7a00e70"
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/skillmerge/figures/overview.svg",
+          "bytes": 9337,
+          "sha256": "a7e6ef4e6e70bb59c2e54bbe999903d0ae629a0f235646930e8fd4da6686afce"
+        }
+      ],
+      "pages": 13,
+      "references": 19,
+      "figures": 3
+    },
+    {
+      "id": "second_chance",
+      "source": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/second_chance/paper.json",
+        "sha256": "b3c4fb79a999232444ba384801114f0ef033b47a78a8ca07dea0592f94565c33",
+        "bytes": 67663
+      },
+      "original_source_sha256": "b3c4fb79a999232444ba384801114f0ef033b47a78a8ca07dea0592f94565c33",
+      "original_pdf_sha256": "79b613694195c19d9b7f7e7ed054c158a1e1bcfe41504e39f49450a7f3d19452",
+      "original_pdf_pages": 14,
+      "submission_pdf": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/second_chance/SecondChance_v13_nms.pdf",
+        "bytes": 247231,
+        "sha256": "a533560c4c6e2a1d0017e6097755348231c4fcb6b2a07b7db1f4097a738acfe7"
+      },
+      "typst_source": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/second_chance/SecondChance_v13_nms.typ",
+        "bytes": 64662,
+        "sha256": "3d079d37898b63ea91975feab280064411f4d76c755a6878d42063c9f4d44220"
+      },
+      "style_copy": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/second_chance/conference.typ",
+        "bytes": 2082,
+        "sha256": "aae95db9c2600ac7e100c9aaaaf8ee43c71819dc5b9c9818774de67d55745890"
+      },
+      "figure_copies": [
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/second_chance/figures/area-sampling-effects.svg",
+          "bytes": 13546,
+          "sha256": "24d7c00c62d76809f8bcc9272cd9cc2c4461afa0b164a44c4d5fcbf48be69082"
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/second_chance/figures/commit-timeline.svg",
+          "bytes": 10477,
+          "sha256": "64b78600ac0f06bf5f1d75f05db047d20f1c95875eca123f71d51d24630c188f"
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/second_chance/figures/overview.svg",
+          "bytes": 5681,
+          "sha256": "60b7e8f84ac1a10c7d186ddc63c2897dfd52cb5f141557fe8eb1aee0f2ff82aa"
+        }
+      ],
+      "pages": 14,
+      "references": 19,
+      "figures": 3
+    },
+    {
+      "id": "probeflow",
+      "source": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/probeflow/paper.json",
+        "sha256": "a92bbcfe88bb2897867020b6e4764227fed1e761e53eb1a6d1a0a33850a7008d",
+        "bytes": 57113
+      },
+      "original_source_sha256": "a92bbcfe88bb2897867020b6e4764227fed1e761e53eb1a6d1a0a33850a7008d",
+      "original_pdf_sha256": "4038d756ebcc46c3617255ea49aa8ffcc147cc72da8c63f7ca3b9ee83415e9fa",
+      "original_pdf_pages": 12,
+      "submission_pdf": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/probeflow/ProbeFlow_v13_nms.pdf",
+        "bytes": 222347,
+        "sha256": "1ccd6fd02ce5472e1be604de4f226c8838237b13b0ae017a43f277ef67c5edb9"
+      },
+      "typst_source": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/probeflow/ProbeFlow_v13_nms.typ",
+        "bytes": 54614,
+        "sha256": "2ef054ed1fb9eb67930c6ac4f0fb2e786afdbdddc284e35ac962bb82805edde9"
+      },
+      "style_copy": {
+        "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/probeflow/conference.typ",
+        "bytes": 2082,
+        "sha256": "aae95db9c2600ac7e100c9aaaaf8ee43c71819dc5b9c9818774de67d55745890"
+      },
+      "figure_copies": [
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/probeflow/figures/overview.svg",
+          "bytes": 8294,
+          "sha256": "66f8a066b8ec837a56b99f8d882dc35d299ce40d7729c68c088fb6dab13368e0"
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/probeflow/figures/predictor-mask-errors.svg",
+          "bytes": 17445,
+          "sha256": "d9cb478e575e7273b14f1ba94d3c29376be9501f9af60610605d643c07137b1d"
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/probeflow/figures/support-and-cost.svg",
+          "bytes": 25149,
+          "sha256": "014faf356617b12456140af4163dabfacc1a6148ba55e403f1db2251e726bbcd"
+        }
+      ],
+      "pages": 12,
+      "references": 18,
+      "figures": 3
+    }
+  ],
+  "historical_binaries": [
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/explainers/probeflow_EXPLAINER_KO.pdf",
+      "bytes": 389584,
+      "sha256": "61e1d75ba16de4e49e7b6bf3e8868cccd0416a047e0662268f278bbdc83a0e8f"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/explainers/second_chance_EXPLAINER_KO.pdf",
+      "bytes": 296080,
+      "sha256": "73762d3e9cb1ef1868fb7e0676d28173cce9495cad8121e8f48c173dd81cee93"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/explainers/skillmerge_EXPLAINER_KO.pdf",
+      "bytes": 383148,
+      "sha256": "3b0f0e7b9211db598afc84a3bd0c1a2de941f55ef5b9f68190225d61c9180968"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/papers/ProbeFlow_Week1_4p.pdf",
+      "bytes": 76884,
+      "sha256": "09e355db59b269f7a30be78a5e49de6b5e56db6154265cfcdae9349d24105a0f"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/papers/SecondChance_Week1_4p.pdf",
+      "bytes": 79232,
+      "sha256": "5097a3a0ab73f0148d0d5fc16002b597538e87da4401f66094db1157708b41f1"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/papers/SkillMerge_Week1_4p.pdf",
+      "bytes": 78799,
+      "sha256": "5ff2613a52bb9f3798b4a3a9906e8f9375615cd2fd14121762b36d706af6a3e6"
+    }
+  ]
+}

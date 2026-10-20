@@ -1,0 +1,60 @@
+{
+  "schema": "nms_v13_document_validation_v1",
+  "publication_sha256": "b1458e0cef0fbf84814c727e85d8c9b685093adda3f4facb31c6db4669741331",
+  "checks": [
+    {
+      "pages": 13,
+      "expected_text_blocks": 195,
+      "missing_text_blocks": 0,
+      "outside_page_words": 0,
+      "references": 19,
+      "figures": 3,
+      "acknowledgement_count": 1,
+      "fonts": [
+        "AJIYOA+NewCM10-Regular-Identity-H",
+        "AOFAVU+DejaVuSansMono",
+        "QVSUZX+NewCM10-Bold-Identity-H",
+        "VLLLYQ+NewCMMath-Book-Identity-H"
+      ],
+      "reference_urls_verified": 19,
+      "project": "skillmerge"
+    },
+    {
+      "pages": 14,
+      "expected_text_blocks": 342,
+      "missing_text_blocks": 0,
+      "outside_page_words": 0,
+      "references": 19,
+      "figures": 3,
+      "acknowledgement_count": 1,
+      "fonts": [
+        "MDLYTE+NewCM10-Bold-Identity-H",
+        "MPINOJ+NewCMMath-Book-Identity-H",
+        "TNNNEG+NewCM10-Regular-Identity-H"
+      ],
+      "reference_urls_verified": 19,
+      "project": "second_chance"
+    },
+    {
+      "pages": 12,
+      "expected_text_blocks": 310,
+      "missing_text_blocks": 0,
+      "outside_page_words": 0,
+      "references": 18,
+      "figures": 3,
+      "acknowledgement_count": 1,
+      "fonts": [
+        "PAWMBJ+NewCMMath-Book-Identity-H",
+        "SJATZM+NewCM10-Regular-Identity-H",
+        "TJPFEE+NewCM10-Bold-Identity-H"
+      ],
+      "reference_urls_verified": 18,
+      "project": "probeflow"
+    }
+  ],
+  "historical_binary_count": 6,
+  "historical_binary_changes": 0,
+  "new_model_calls": 0,
+  "new_scientific_experiments": 0,
+  "scope": "JSON/SVG identity, ack-only generated-source difference, native math compilation, all authored PDF prose/table/caption/reference/scope blocks, URL links, page bounds and preserved historical binary hashes. PDF text normalization ignores punctuation; it does not prove mathematical or scientific validity."
+}

@@ -1,0 +1,47 @@
+{
+  "SkillMerge": {
+    "source": "skillmerge/paper.json",
+    "source_sha256": "faae0f4de7979db7cbaaa070f00de52912c779072fe394de9c251510e50f8dfd",
+    "typst": "papers/SkillMerge_Week1_4p.typ",
+    "pdf": "papers/SkillMerge_Week1_4p.pdf",
+    "pdf_sha256": "5ff2613a52bb9f3798b4a3a9906e8f9375615cd2fd14121762b36d706af6a3e6",
+    "pages": 4,
+    "semantic_page_headings": [
+      "1. Question, estimand, and contribution boundary",
+      "2. Contract model and independent measurement",
+      "3. Implementable evaluation and current evidence",
+      "4. Secondary integration, falsification, and limits"
+    ],
+    "authored_prose_truncated": false
+  },
+  "SecondChance": {
+    "source": "second_chance/paper.json",
+    "source_sha256": "bad1427ffc50609f76d807833334cae1ff514a46f76327eea0e33b42e84c94a6",
+    "typst": "papers/SecondChance_Week1_4p.typ",
+    "pdf": "papers/SecondChance_Week1_4p.pdf",
+    "pdf_sha256": "5097a3a0ab73f0148d0d5fc16002b597538e87da4401f66094db1157708b41f1",
+    "pages": 4,
+    "semantic_page_headings": [
+      "Problem and contribution",
+      "Formal statements and experimental intervention",
+      "Tasks, comparisons and quantitative endpoints",
+      "Interpretation, risks and first-week decisions"
+    ],
+    "authored_prose_truncated": false
+  },
+  "ProbeFlow": {
+    "source": "probeflow/paper.json",
+    "source_sha256": "8e00eb50a12d4f0511a9c9915254c2da6d16e0fe62dc89d01d8728c1bd7722d4",
+    "typst": "papers/ProbeFlow_Week1_4p.typ",
+    "pdf": "papers/ProbeFlow_Week1_4p.pdf",
+    "pdf_sha256": "09e355db59b269f7a30be78a5e49de6b5e56db6154265cfcdae9349d24105a0f",
+    "pages": 4,
+    "semantic_page_headings": [
+      "1. Question and evidence boundary",
+      "2. Ledger state and greedy failure conditions",
+      "3. Pipeline and quantitative evaluation",
+      "4. Limited guarantees and refutation"
+    ],
+    "authored_prose_truncated": false
+  }
+}

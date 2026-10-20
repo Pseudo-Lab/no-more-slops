@@ -1,0 +1,650 @@
+{
+  "schema": "secondchance_v13_claim_ledger",
+  "scope": "Important factual, formal, negative, literature and unmeasured claims; editorial manuscript is not a peer-review certificate.",
+  "claims": [
+    {
+      "id": "SC13-C01",
+      "claim": "Saved-score improvement does not imply current recovery in the authored fixture.",
+      "status": "executed_authored_counterexample",
+      "evidence": [
+        {
+          "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+          "key": "summaries[budget=8,policy=rescore_only]",
+          "saved_improved_histories": 12,
+          "initial_recovery_count": 0
+        }
+      ],
+      "manuscript_locations": [
+        "abstract",
+        "Introduction",
+        "Saved-score improvement is not current-state recovery",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "SC13-C02",
+      "claim": "Fresh development success does not imply current initial-input recovery.",
+      "status": "executed_authored_counterexample",
+      "evidence": [
+        {
+          "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+          "key": "summaries[budget=8,policy=selection_only]",
+          "fresh_candidate_development_success_count": 12,
+          "initial_recovery_count": 4
+        }
+      ],
+      "manuscript_locations": [
+        "abstract",
+        "Introduction",
+        "Saved-score improvement is not current-state recovery"
+      ]
+    },
+    {
+      "id": "SC13-C03",
+      "claim": "At budget five neutral joint ties terminal recovery with lower authored cost and collateral loss than selective joint.",
+      "status": "executed_negative_policy_result",
+      "evidence": [
+        {
+          "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+          "key": "summaries[budget=5,policy=neutral_joint]",
+          "later_success_count": 4,
+          "mean_spent_authored_work_units": 3,
+          "mean_unaffected_incremental_loss": 0
+        },
+        {
+          "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+          "key": "summaries[budget=5,policy=selective_joint]",
+          "later_success_count": 4,
+          "mean_spent_authored_work_units": 5,
+          "mean_unaffected_incremental_loss": 0.6666666666666666
+        }
+      ],
+      "manuscript_locations": [
+        "abstract",
+        "Introduction",
+        "A strong neutral baseline limits the policy claim",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "SC13-C04",
+      "claim": "The fixed-artifact lesson fork changes two of twelve later-panel pairs and leaves ten unchanged.",
+      "status": "executed_authored_mechanism_check",
+      "evidence": [
+        {
+          "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+          "key": "paired_memory_forks",
+          "inspection": "12 retained state pairs, two effect=1; programmed lesson rule"
+        }
+      ],
+      "manuscript_locations": [
+        "A strong neutral baseline limits the policy claim",
+        "Endpoint denominators and the lesson contrast"
+      ]
+    },
+    {
+      "id": "SC13-C05",
+      "claim": "The original cohort has twelve authored templates and 168 nested trajectories, not 168 independent natural histories.",
+      "status": "execution_design_and_limit",
+      "evidence": [
+        {
+          "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+          "key": "policy_budget_trajectories",
+          "value": 168
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "authored_history_templates",
+          "value": 12
+        }
+      ],
+      "manuscript_locations": [
+        "abstract",
+        "Experimental Setup",
+        "Analysis unit and resource accounting",
+        "Identification assumptions and threats to validity"
+      ]
+    },
+    {
+      "id": "SC13-C06",
+      "claim": "The complete follow-up uses 292 fresh subprocesses, 876 panel outputs and zero failed calls.",
+      "status": "executed_authored_state_audit",
+      "evidence": [
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "fresh_subprocess_calls",
+          "value": 292
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "fresh_panel_predictions",
+          "value": 876
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "fresh_subprocess_failures",
+          "value": 0
+        }
+      ],
+      "manuscript_locations": [
+        "abstract",
+        "Fresh state audits reveal two directions of sampling error",
+        "Analysis unit and resource accounting"
+      ]
+    },
+    {
+      "id": "SC13-C07",
+      "claim": "Sixteen frozen trajectories gain initial utility area 0.2 each under commit-resolved observation, with 152 unchanged.",
+      "status": "executed_authored_measurement",
+      "evidence": [
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "trajectories_with_positive_initial_area_difference",
+          "value": 16
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "maximum_absolute_initial_area_difference",
+          "value": 0.2
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "trajectories_with_zero_initial_area_difference",
+          "value": 152
+        }
+      ],
+      "manuscript_locations": [
+        "abstract",
+        "Reading the area and terminal outcomes together",
+        "Fresh state audits reveal two directions of sampling error"
+      ]
+    },
+    {
+      "id": "SC13-C08",
+      "claim": "Thirty-two unaffected-panel utility areas decrease under commit observation; coarse utility is not universally conservative.",
+      "status": "executed_authored_counterexample_and_trace_reaggregation",
+      "evidence": [
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "summaries[].panels.unaffected.mean_difference",
+          "trace_source": "commit_audit_02/traces/*.json; read-only verifier checks all paths"
+        }
+      ],
+      "manuscript_locations": [
+        "abstract",
+        "Fresh state audits reveal two directions of sampling error",
+        "Reading the area and terminal outcomes together",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "SC13-C09",
+      "claim": "Complete deterministic state logs and fresh audits identify a stepwise state-path area.",
+      "status": "conditional_author_argument",
+      "assumptions": [
+        "complete state-changing commit log",
+        "complete execution state",
+        "pure deterministic executor on fixed input",
+        "fresh valid audit of every positive-width state"
+      ],
+      "evidence": [
+        {
+          "path": "projects/research_manuscripts_v12_20261018/second_chance/commit_audit.py",
+          "key": "commit_areas and reconstruction logic"
+        }
+      ],
+      "manuscript_locations": [
+        "Cost-indexed recovery utility",
+        "Proof details and missing observations",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "SC13-C10",
+      "claim": "The absolute coarse/commit area discrepancy is bounded by first-interior-commit exposure under utilities in [0,1].",
+      "status": "conditional_author_proof_and_authored_selfchecks",
+      "evidence": [
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "selfchecks[id=all_observed_area_errors_within_geometry_bound]",
+          "passed": true
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "selfchecks[id=coarse_exposure_bound_is_one_fifth]",
+          "passed": true
+        }
+      ],
+      "manuscript_locations": [
+        "Commit reconstruction and an error bound",
+        "Proof details and missing observations",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "SC13-C11",
+      "claim": "The earlier schedule used 840 coarse audits; twenty-four memory contrast audits are separate.",
+      "status": "execution_resource_accounting",
+      "evidence": [
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "prior_five_point_checkpoint_audit_calls",
+          "value": 840
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "prior_memory_contrast_audits_excluded_from_coarse_count",
+          "value": 24
+        }
+      ],
+      "manuscript_locations": [
+        "Analysis unit and resource accounting",
+        "Fresh state audits reveal two directions of sampling error"
+      ]
+    },
+    {
+      "id": "SC13-C12",
+      "claim": "No policy, terminal state or natural history is newly generated by the v12 measurement follow-up or the v13 editorial revision.",
+      "status": "design_boundary",
+      "evidence": [
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "new_policy_trials",
+          "value": 0
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "new_model_requests",
+          "value": 0
+        },
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "new_natural_histories",
+          "value": 0
+        }
+      ],
+      "manuscript_locations": [
+        "Experimental Setup",
+        "Frozen-trajectory committed-state re-audit",
+        "Discussion and Limitations"
+      ]
+    },
+    {
+      "id": "SC13-C13",
+      "claim": "The later panel is a different input to the same final checkpoint; long-term recurrence and native-method superiority remain unmeasured.",
+      "status": "unmeasured_boundary",
+      "evidence": [
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+          "key": "deferred"
+        }
+      ],
+      "manuscript_locations": [
+        "abstract",
+        "Endpoint denominators and the lesson contrast",
+        "Identification assumptions and threats to validity",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "SC13-C14",
+      "claim": "Natural-model confirmation needs independently approved fixed-requirement corrections, authentic candidate histories, common data rights and complete resource records.",
+      "status": "proposed_future_protocol_not_executed",
+      "evidence": [],
+      "manuscript_locations": [
+        "A staged real-model confirmation study",
+        "Benchmark choice and falsifiable next hypotheses"
+      ]
+    },
+    {
+      "id": "SC13-C15",
+      "claim": "The first v12 attempt failed after one completed state subprocess; its outputs are preserved outside successful aggregates.",
+      "status": "retained_failed_attempt",
+      "evidence": [
+        {
+          "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_01/failure.json",
+          "key": "failure record"
+        }
+      ],
+      "manuscript_locations": [
+        "Frozen-trajectory committed-state re-audit",
+        "Reproducibility and failed attempts"
+      ]
+    },
+    {
+      "id": "SC13-LIT-01",
+      "claim": "Author arXiv abstract and HTML Sections 3.1/3.5; bounded edits, validation gate and rejected-edit feedback only. No native execution or superiority comparison.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R01",
+      "reference_number": 1,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2605.23904v2",
+          "additional_method_url": "https://arxiv.org/html/2605.23904v2"
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-02",
+      "claim": "Official conference abstract; selected method Section 3 of arXiv:2303.11366v4 reviewed separately. Different author lists are not merged.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R02",
+      "reference_number": 2,
+      "evidence": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+          "additional_method_url": "https://arxiv.org/html/2303.11366v4"
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-03",
+      "claim": "Official abstract and arXiv:2303.17651v2 Section 2; same-model generation/feedback/refinement loop. Published effects are not imported.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R03",
+      "reference_number": 3,
+      "evidence": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+          "additional_method_url": "https://arxiv.org/html/2303.17651v2"
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-04",
+      "claim": "Official abstract and arXiv:2305.11738v4 Section 3/Algorithm 1; tool-derived feedback and output revision, not retrospective archive repair.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R04",
+      "reference_number": 4,
+      "evidence": [
+        {
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/fef126561bbf9d4467dbb8d27334b8fe-Abstract-Conference.html",
+          "additional_method_url": "https://arxiv.org/html/2305.11738v4"
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-05",
+      "claim": "Official abstract only: intrinsic reasoning self-correction without external feedback. HTML v3 retrieval failed; no full-text or universal impossibility claim.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R05",
+      "reference_number": 5,
+      "evidence": [
+        {
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-06",
+      "claim": "Official abstract only: SCoRe online multi-turn RL and self-generated correction traces. No assertion of failure under later methods.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R06",
+      "reference_number": 6,
+      "evidence": [
+        {
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-07",
+      "claim": "Author arXiv abstract: generate candidates and select using a verifier. No GSM8K execution or external performance transfer.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R07",
+      "reference_number": 7,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2110.14168v2",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-08",
+      "claim": "Author abstract and HTML Section 2.2.3: temporal validity/edge invalidation. World changes are distinguished from fixed-requirement correction.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R08",
+      "reference_number": 8,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2501.13956v1",
+          "additional_method_url": "https://arxiv.org/html/2501.13956v1"
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-09",
+      "claim": "Official abstract: proxy versus gold-reward optimization. No numerical scaling law is claimed for our deterministic fixture.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R09",
+      "reference_number": 9,
+      "evidence": [
+        {
+          "url": "https://proceedings.mlr.press/v202/gao23h.html",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-10",
+      "claim": "Official abstract: overfitting a finite-sample selection criterion and biased performance evaluation. Motivates protected audit roles; no theorem transfer.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R10",
+      "reference_number": 10,
+      "evidence": [
+        {
+          "url": "https://jmlr.org/papers/v11/cawley10a.html",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-11",
+      "claim": "Author abstract: adaptive reuse can overfit a holdout. No privacy mechanism or guarantee is implemented here.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R11",
+      "reference_number": 11,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/1506.02629v2",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-12",
+      "claim": "Author abstract and official AAAI search result; concerns nondeterminism, variability and experimental reporting. No RL experiment here.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R12",
+      "reference_number": 12,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/1709.06560",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-13",
+      "claim": "Author abstract: finite-run uncertainty and aggregate evaluation. We do not attach population intervals to designed templates.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R13",
+      "reference_number": 13,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2108.13264v4",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-14",
+      "claim": "Publisher abstract/bibliography only: distribution functions of a performance metric. Not claimed as a recovery-area theorem.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R14",
+      "reference_number": 14,
+      "evidence": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s101070100263",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-15",
+      "claim": "Author abstract: problem instances, target values and objective-call runtime. Resource-accounting motivation only; no optimizer benchmark.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R15",
+      "reference_number": 15,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/1603.08785v4",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-16",
+      "claim": "Author abstract: any-time evaluation using objective evaluations to targets. Distinguished from area under possibly decreasing utility.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R16",
+      "reference_number": 16,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/1605.03560v1",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-17",
+      "claim": "Official abstract: test augmentation and previously undetected errors. Does not establish natural evaluator-correction histories.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R17",
+      "reference_number": 17,
+      "evidence": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/43e9d647ccd3e4b7b5baab53f0368686-Abstract.html",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-18",
+      "claim": "Official abstract: repository issue resolution through code edits. Future environment candidate only; no acquisition, execution or correction-history labels.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R18",
+      "reference_number": 18,
+      "evidence": [
+        {
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/edac78c3e300629acfe6cbe9ca88fb84-Abstract-Conference.html",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    },
+    {
+      "id": "SC13-LIT-19",
+      "claim": "Author abstract: interleaved reasoning and environment actions. Motivates recording tool/environment state; no direct recovery comparison.",
+      "status": "primary_author_report_with_narrow_review_scope",
+      "source_id": "SC13-R19",
+      "reference_number": 19,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2210.03629v3",
+          "additional_method_url": null
+        }
+      ],
+      "manuscript_locations": [
+        "Related Work and its subsections; specific numeric bracket citation"
+      ],
+      "native_reproduction": false
+    }
+  ],
+  "local_evidence_bindings": [
+    {
+      "path": "runs/research_progress_v11_20261018_01/second_chance/results.json",
+      "bytes": 27560,
+      "sha256": "2523b4e08df9324a18639a62ebc7887c0b69b63b3c0c31e4b8775abde3945c3c"
+    },
+    {
+      "path": "runs/research_manuscripts_v12_20261018_01/second_chance/commit_audit_02/results.json",
+      "bytes": 8648,
+      "sha256": "11654fe78a1d7ed4953cd5f1370c46c4ab25d26f40e4107a0b3df4a7a32eea2d"
+    }
+  ]
+}

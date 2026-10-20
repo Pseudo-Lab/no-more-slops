@@ -1,0 +1,20 @@
+[
+  {
+    "source": "skillmerge/EXPLAINER_KO.md",
+    "source_sha256": "013366b24b7b37b435c2da4c9841041da54f48a639568ca4f732a86255db05bd",
+    "pdf": "explainers/skillmerge_EXPLAINER_KO.pdf",
+    "pdf_sha256": "3b0f0e7b9211db598afc84a3bd0c1a2de941f55ef5b9f68190225d61c9180968"
+  },
+  {
+    "source": "second_chance/EXPLAINER_KO.md",
+    "source_sha256": "3ee3d23d9d817610674757fa49ee906676ed0f7b93fb4a27583e7a97bfd36408",
+    "pdf": "explainers/second_chance_EXPLAINER_KO.pdf",
+    "pdf_sha256": "73762d3e9cb1ef1868fb7e0676d28173cce9495cad8121e8f48c173dd81cee93"
+  },
+  {
+    "source": "probeflow/EXPLAINER_KO.md",
+    "source_sha256": "1c622326080e23cdc2267e3cd951cf8523e0c7e45748e1ba872f879e63e387a0",
+    "pdf": "explainers/probeflow_EXPLAINER_KO.pdf",
+    "pdf_sha256": "61e1d75ba16de4e49e7b6bf3e8868cccd0416a047e0662268f278bbdc83a0e8f"
+  }
+]
