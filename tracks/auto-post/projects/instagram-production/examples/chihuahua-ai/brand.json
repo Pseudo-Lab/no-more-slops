@@ -1,0 +1,11 @@
+{
+  "handle": "chihuahua_ai",
+  "display_name": "치와와 AI Lab",
+  "background": "#FF4D00",
+  "text": "#000000",
+  "width": 1080,
+  "height": 1350,
+  "timezone": "Asia/Seoul",
+  "acknowledgement": "이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.",
+  "character_asset_status": "draft_not_final_approval"
+}

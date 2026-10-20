@@ -1,0 +1,93 @@
+{
+  "demo": true,
+  "content_type": "evergreen",
+  "topic": "Editorial layout demonstration",
+  "brand": {
+    "background": "#2457FF",
+    "text": "#FFFFFF"
+  },
+  "caption": "A demonstration of four editorial layouts. Replace the sample content and media before publication.",
+  "sources": [],
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "A VISUAL START",
+      "title": [
+        "Make room",
+        "for ideas"
+      ],
+      "image": {
+        "path": "../assets/layout-sample.png",
+        "kind": "illustration",
+        "credit": "Layout sample / illustration"
+      },
+      "body": [
+        "Give one thought space to stand out"
+      ]
+    },
+    {
+      "layout": "photo",
+      "kicker": "SHOW THE DETAIL",
+      "title": [
+        "Let the image",
+        "tell the story"
+      ],
+      "image": {
+        "path": "../assets/layout-sample.png",
+        "kind": "illustration",
+        "credit": "Layout sample / illustration"
+      },
+      "body": [
+        "Pair a relevant picture",
+        "with a concise explanation"
+      ]
+    },
+    {
+      "layout": "facts",
+      "kicker": "KEEP A CLEAR ORDER",
+      "title": [
+        "One point",
+        "at a time"
+      ],
+      "rows": [
+        {
+          "label": "01 / Focus",
+          "heading": "Choose the message",
+          "detail": [
+            "A short headline gives",
+            "the slide a clear purpose."
+          ]
+        },
+        {
+          "label": "02 / Image",
+          "heading": "Show the subject",
+          "detail": [
+            "Keep important details",
+            "inside the visible crop."
+          ]
+        },
+        {
+          "label": "03 / Finish",
+          "heading": "Review at small size",
+          "detail": [
+            "Look at the exported slides",
+            "before sharing them."
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "closing",
+      "kicker": "CONTINUE THE CONVERSATION",
+      "title": [
+        "What would you",
+        "like to make next?"
+      ],
+      "image": {
+        "path": "../assets/layout-sample.png",
+        "kind": "illustration",
+        "credit": "Layout sample / illustration"
+      }
+    }
+  ]
+}
