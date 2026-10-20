@@ -1,9 +1,11 @@
 // 데이터 저장소. .env 에 Supabase 키가 있으면 Supabase, 없으면 이 브라우저(localStorage)에 저장한다.
 import { createClient } from '@supabase/supabase-js';
+import { createSessionGuard } from './session.js';
 
 const URL = import.meta.env.VITE_SUPABASE_URL;
 const KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const sb = URL && KEY ? createClient(URL, KEY) : null;
+const sessionOwner = sb ? createSessionGuard(sb) : null;
 
 export const isShared = !!sb;
 
@@ -34,6 +36,7 @@ function blobToDataURL(blob) {
 
 async function uploadPhoto(blob, folder) {
   if (!sb) return blobToDataURL(blob);
+  await sessionOwner();
   const path = `${folder}/${crypto.randomUUID()}.jpg`;
   const { error } = await sb.storage.from('photos').upload(path, blob, { contentType: 'image/jpeg' });
   if (error) throw error;
@@ -72,13 +75,13 @@ export async function loadPlaces() {
 }
 
 export async function loadMyDogs() {
-  const me = deviceId();
   if (sb) {
-    const { data, error } = await sb.from('dogs').select('*').eq('device_id', me).order('created_at');
+    const owner = await sessionOwner();
+    const { data, error } = await sb.from('dogs').select('*').eq('owner_id', owner).order('created_at');
     if (error) throw error;
     return data;
   }
-  return readLS('kk_db', { dogs: [] }).dogs.filter((d) => d.device_id === me);
+  return readLS('kk_db', { dogs: [] }).dogs.filter((d) => d.device_id === deviceId());
 }
 
 // ---------- 쓰기 ----------
@@ -93,22 +96,25 @@ function localInsert(table, row) {
 
 async function insert(table, row) {
   if (!sb) return localInsert(table, row);
+  await sessionOwner();
   const { data, error } = await sb.from(table).insert(row).select().single();
   if (error) throw error;
   return data;
 }
 
 export async function addDog({ name, breed, age, intro, avatar }) {
+  const owner_id = sb ? await sessionOwner() : null;
   const avatar_url = avatar ? await uploadPhoto(avatar, 'dogs') : null;
-  return insert('dogs', { device_id: deviceId(), name, breed, age, intro, avatar_url });
+  return insert('dogs', { device_id: deviceId(), ...(sb ? { owner_id } : {}), name, breed, age, intro, avatar_url });
 }
 
 // 내 강아지 정보 수정. avatar 를 안 바꾸면 기존 사진 유지.
 export async function updateDog(id, { name, breed, age, intro, avatar }) {
+  if (sb) await sessionOwner();
   const avatar_url = avatar ? await uploadPhoto(avatar, 'dogs') : null;
   if (sb) {
     const { data, error } = await sb.rpc('update_dog', {
-      p_id: id, p_device: deviceId(), p_name: name, p_breed: breed, p_age: age, p_intro: intro, p_avatar_url: avatar_url,
+      p_id: id, p_name: name, p_breed: breed, p_age: age, p_intro: intro, p_avatar_url: avatar_url,
     });
     if (error) throw error;
     return data;
@@ -123,6 +129,14 @@ export async function updateDog(id, { name, breed, age, intro, avatar }) {
 // place: 기존 장소면 { id }, 새 장소면 { name, lat, lng }
 // 강아지면 dogId, 길고양이면 cat: { type, name }
 export async function addPost({ place, dogId = null, cat = null, photo, caption, takenAt }) {
+  if (sb) {
+    const owner = await sessionOwner();
+    if (dogId) {
+      const { data, error } = await sb.from('dogs').select('id').eq('id', dogId).eq('owner_id', owner).maybeSingle();
+      if (error) throw error;
+      if (!data) throw new Error('내 강아지로만 사진을 올릴 수 있어요.');
+    }
+  }
   const placeId = place.id ?? (await insert('places', { name: place.name, lat: place.lat, lng: place.lng })).id;
   const photo_url = await uploadPhoto(photo, 'posts');
   return insert('posts', {
@@ -134,6 +148,7 @@ export async function addPost({ place, dogId = null, cat = null, photo, caption,
 export async function toggleHeart(postId) {
   let count;
   if (sb) {
+    await sessionOwner();
     const { data, error } = await sb.rpc('toggle_heart', { p_post: postId, p_device: deviceId() });
     if (error) throw error;
     count = data;

@@ -1,5 +1,7 @@
 -- 킁킁지도 스키마. Supabase 대시보드 > SQL Editor 에 통째로 붙여넣고 Run.
--- 로그인 없는 MVP: 브라우저마다 생성되는 device_id 로 "내 강아지"와 하트를 구분한다.
+-- 로그인 화면 없이 Supabase 익명 세션으로 강아지 소유권을 확인한다.
+-- 기존 공개 device_id 는 소유권 증명이 아니므로 owner_id 를 자동으로 채우지 않는다.
+begin;
 
 create table if not exists dogs (
   id uuid primary key default gen_random_uuid(),
@@ -11,6 +13,9 @@ create table if not exists dogs (
   avatar_url text,
   created_at timestamptz not null default now()
 );
+
+alter table dogs add column if not exists owner_id uuid references auth.users(id);
+create index if not exists dogs_owner_idx on dogs(owner_id);
 
 create table if not exists places (
   id uuid primary key default gen_random_uuid(),
@@ -54,43 +59,47 @@ begin
   return n;
 end $$;
 
--- 내 강아지 수정: 등록한 브라우저(device_id)만 고칠 수 있다. 사진을 안 바꾸면 기존 사진 유지.
-create or replace function update_dog(p_id uuid, p_device text, p_name text, p_breed text, p_age text, p_intro text, p_avatar_url text)
+-- 공개 device_id 를 믿던 RPC 는 제거하고, 서버에서 확인한 세션 소유자만 수정한다.
+drop function if exists update_dog(uuid, text, text, text, text, text, text);
+create or replace function update_dog(p_id uuid, p_name text, p_breed text, p_age text, p_intro text, p_avatar_url text)
 returns dogs language plpgsql security definer set search_path = public as $$
 declare d dogs;
 begin
+  if auth.uid() is null then raise exception '저장 세션을 먼저 확인해 주세요'; end if;
   update dogs set name = p_name, breed = p_breed, age = p_age, intro = p_intro,
     avatar_url = coalesce(p_avatar_url, avatar_url)
-  where id = p_id and device_id = p_device
+  where id = p_id and owner_id = auth.uid()
   returning * into d;
   if d.id is null then raise exception '내 강아지만 수정할 수 있어요'; end if;
   return d;
 end $$;
 
--- 누구나 읽고 올릴 수 있게 (수정/삭제는 막음)
+-- 공개 읽기, 쓰기는 세션이 있는 사용자만. 직접 수정/삭제는 막음.
 alter table dogs enable row level security;
 alter table places enable row level security;
 alter table posts enable row level security;
 alter table hearts enable row level security;
 
 drop policy if exists "read dogs" on dogs;      create policy "read dogs" on dogs for select using (true);
-drop policy if exists "add dogs" on dogs;       create policy "add dogs" on dogs for insert with check (true);
+drop policy if exists "add dogs" on dogs;       create policy "add dogs" on dogs for insert to authenticated with check (owner_id = auth.uid());
 drop policy if exists "read places" on places;  create policy "read places" on places for select using (true);
-drop policy if exists "add places" on places;   create policy "add places" on places for insert with check (true);
+drop policy if exists "add places" on places;   create policy "add places" on places for insert to authenticated with check (auth.uid() is not null);
 drop policy if exists "read posts" on posts;    create policy "read posts" on posts for select using (true);
-drop policy if exists "add posts" on posts;     create policy "add posts" on posts for insert with check (heart_count = 0);
+drop policy if exists "add posts" on posts;
 drop policy if exists "read hearts" on hearts;  create policy "read hearts" on hearts for select using (true);
 
-grant execute on function toggle_heart(uuid, text) to anon, authenticated;
-grant execute on function update_dog(uuid, text, text, text, text, text, text) to anon, authenticated;
+revoke execute on function toggle_heart(uuid, text) from public, anon;
+grant execute on function toggle_heart(uuid, text) to authenticated;
+revoke execute on function update_dog(uuid, text, text, text, text, text) from public, anon;
+grant execute on function update_dog(uuid, text, text, text, text, text) to authenticated;
 
--- 사진 저장소 (공개 읽기, 누구나 업로드)
+-- 사진 저장소 (공개 읽기, 익명 세션을 포함한 인증 사용자만 업로드)
 insert into storage.buckets (id, name, public) values ('photos', 'photos', true)
 on conflict (id) do nothing;
 
 drop policy if exists "upload photos" on storage.objects;
-create policy "upload photos" on storage.objects for insert to anon, authenticated
-  with check (bucket_id = 'photos');
+create policy "upload photos" on storage.objects for insert to authenticated
+  with check (bucket_id = 'photos' and auth.uid() is not null);
 
 -- 길고양이: 등록된 강아지(dog_id) 대신 무늬(cat_type)와 동네에서 부르는 이름(cat_name)으로 남긴다.
 alter table posts alter column dog_id drop not null;
@@ -98,6 +107,15 @@ alter table posts add column if not exists cat_type text;
 alter table posts add column if not exists cat_name text check (char_length(cat_name) <= 20);
 alter table posts drop constraint if exists posts_who;
 alter table posts add constraint posts_who check (dog_id is not null or cat_type is not null);
+
+-- 길고양이 등록에는 강아지가 필요 없고, 강아지 글에는 세션 소유권이 필요하다.
+-- cat_type 을 함께 넣어도 다른 사람의 dog_id 로 우회할 수 없다.
+create policy "add posts" on posts for insert to authenticated with check (
+  auth.uid() is not null and heart_count = 0 and (
+    (dog_id is null and cat_type is not null) or
+    (cat_type is null and exists (select 1 from dogs where dogs.id = posts.dog_id and dogs.owner_id = auth.uid()))
+  )
+);
 
 -- 욕설 막기: 브라우저에서 먼저 막고, 우회해서 보내도 DB에서 한 번 더 막는다.
 -- 한글·영문만 남겨서 검사 ("시 1 발" 같은 우회 대응). src/moderation.js 의 목록과 맞춘다.
@@ -123,3 +141,5 @@ drop trigger if exists places_bad_words on places;
 create trigger places_bad_words before insert or update on places for each row execute function block_bad_words('name');
 drop trigger if exists posts_bad_words on posts;
 create trigger posts_bad_words before insert or update on posts for each row execute function block_bad_words('caption', 'cat_name');
+
+commit;

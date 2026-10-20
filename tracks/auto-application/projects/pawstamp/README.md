@@ -27,7 +27,8 @@
 app/
   src/main.js         화면·지도·올리기 흐름
   src/map.js          카카오맵 래퍼 (마커, 장소 검색)
-  src/store.js        Supabase 저장소 (키가 없으면 localStorage)
+  src/store.js        Supabase 저장소 (Supabase 키가 없으면 localStorage)
+  src/session.js      로그인 화면 없는 Supabase 익명 세션 확인
   src/moderation.js   욕설 필터, 얼굴 감지·모자이크 (MediaPipe)
   src/breeds.js       견종·고양이 프리셋과 캐릭터 이미지
   supabase/schema.sql 테이블, RLS, 하트·수정 RPC, 욕설 트리거
@@ -45,15 +46,26 @@ DECISIONS.md          로그인·얼굴 처리 의사결정 메모
 ```bash
 cd app
 npm install
-npm run dev          # .env 없으면 브라우저 저장소 모드로 바로 실행
+cp .env.example .env # VITE_KAKAO_MAP_KEY 입력은 항상 필요
+npm run dev          # Supabase 두 값이 없으면 브라우저 저장소 모드
 ```
+
+카카오 개발자 콘솔에서 JavaScript 키를 발급하고 로컬·배포 도메인을 등록한 뒤 카카오맵 사용 설정을 켜야 한다. 브라우저 저장소 모드에도 지도가 필요하므로 카카오 키 없이 업로드를 끝낼 수 없다.
 
 여럿이 같이 쓰려면:
 
-1. Supabase 프로젝트를 만들고 SQL Editor에서 `supabase/schema.sql` 실행
-2. 카카오 개발자 콘솔에서 앱 생성 → JavaScript 키 발급 → 사이트 도메인(로컬·배포 주소) 등록 → 카카오맵 사용 설정 ON
+1. Supabase 프로젝트의 Authentication 설정에서 **익명 로그인(Anonymous Sign-Ins)**을 켠다. 사용자는 로그인 화면 없이 발급된 세션으로 바로 이용한다. 익명 세션 발급이 실패하면 공유 저장소에 쓰지 않는다.
+2. Supabase SQL Editor에서 `app/supabase/schema.sql`을 실행한 뒤 아래 기존 서비스 적용 안내를 확인한다.
 3. `.env.example`을 `.env`로 복사해 세 값 입력 (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_KAKAO_MAP_KEY`)
 4. `npx vercel deploy --prod`
+
+### 기존 서비스에 적용할 때
+
+- 익명 로그인을 켜고 스키마를 먼저 적용한 뒤 이 앱을 배포한다. 이번 PR 수정은 운영 Supabase 설정 변경·스키마 실행·Vercel 배포를 포함하지 않는다.
+- 스키마는 `dogs.owner_id`를 추가하고, 강아지 수정·강아지로 글 올리기를 서버의 `auth.uid()`와 대조한다. 로그인 화면은 없으며, 브라우저의 익명 세션을 지우거나 다른 기기를 쓰면 이전 소유권을 자동으로 복구할 수 없다.
+- 기존 `device_id`는 공개되어 있었으므로 기존 강아지의 `owner_id`를 자동으로 채우지 않는다. 이전 강아지와 글은 공개 조회되지만 기존 강아지 수정·그 강아지로 새 글 올리기는 막힌다. 관리자가 별도로 소유자를 확인한 경우에만 해당 익명 사용자의 UID를 배정해야 한다. `device_id`가 같다는 사실만으로 배정하면 안 된다.
+- 기존 7개 인자의 `update_dog` RPC가 제거되므로 이전 앱의 공유 쓰기는 더 이상 호환되지 않는다. 기존 데이터는 삭제하지 않는다. 별도로 추가한 RLS 정책이 있다면 스키마에 없는 허용 정책이 제한을 우회하지 않는지 관리자가 확인해야 한다.
+- 회귀 검증은 `app/`에서 `npm test`로 실행한다. 테스트용 PostgreSQL 환경만 사용하며 운영 Supabase·카카오 연결, 실제 사진 업로드·배포는 별도 확인이 필요하다.
 
 카드뉴스와 릴스:
 
