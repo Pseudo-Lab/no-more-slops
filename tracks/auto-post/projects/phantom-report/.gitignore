@@ -1,0 +1,4 @@
+__pycache__/
+.claude/settings.local.json
+outputs/week-*/*/*.png
+.claude/skills/
