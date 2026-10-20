@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "evidence_basis": "existing_production_records",
+  "rerendered_for_this_submission": false,
+  "artifacts": [
+    {
+      "provider": "MiniMax",
+      "model": "MiniMax-M3",
+      "role": "scene_analysis_draft_followed_by_visual_caption_corrections_and_local_editing",
+      "filename": "minimax-result.mp4",
+      "duration_seconds": 45.5,
+      "sha256": "acc9f4d5dd08b47b25b35ce1cea8cba6197459899ab5f9e4e864b882d7f3edeb",
+      "qa": {
+        "scope": "final_technical_qa",
+        "passed": true,
+        "true_peak_dbfs": -2.17,
+        "integrated_lufs": -16.31,
+        "source_sample_frames_reviewed": 18,
+        "caption_count": 13,
+        "continuous_motion_reviewed": false,
+        "audio_listened": false,
+        "user_final_adoption": "pending"
+      }
+    },
+    {
+      "provider": "BytePlus ModelArk",
+      "model": "Dreamina-Seedance-2.5",
+      "role": "first_text_only_object_and_landscape_generation_candidate",
+      "filename": "seedance-result.mp4",
+      "planned_duration_seconds": 5,
+      "duration_seconds": 5.041667,
+      "sha256": "19a9086ef1077916d223fe0dbcd1f8c50b2ef92f329b47c867c04517ae0514a5",
+      "qa": {
+        "scope": "candidate_format_duration_and_decode_checks",
+        "format_and_duration_passed": true,
+        "full_decode_passed": true,
+        "width": 1080,
+        "height": 1920,
+        "sample_frames_reviewed": 6,
+        "continuous_motion_reviewed": false,
+        "audio_listened": false,
+        "user_quality_feedback": "unsatisfactory_length_quality_and_source_connection",
+        "user_final_adoption": "not_adopted"
+      }
+    },
+    {
+      "provider": "BytePlus ModelArk",
+      "model": "Dreamina-Seedance-2.5",
+      "role": "additional_text_only_object_and_landscape_generation_candidate",
+      "filename": "candidate.mp4",
+      "planned_duration_seconds": 15,
+      "duration_seconds": 15.041667,
+      "sha256": "0626dcadb8657699c40b7c95fef99dc5dafd36d89abe23386bb152748e10d3e5",
+      "qa": {
+        "scope": "candidate_format_and_duration_checks",
+        "format_and_duration_passed": true,
+        "width": 1080,
+        "height": 1920,
+        "sample_frames_reviewed": 9,
+        "source_structure_match": "inexact",
+        "continuous_motion_reviewed": false,
+        "audio_listened": false,
+        "user_final_adoption": "pending"
+      }
+    },
+    {
+      "provider": "Local editing with a Seedance-generated candidate",
+      "role": "source_and_ai_intercut_review_edit",
+      "filename": "contextual-reel.mp4",
+      "duration_seconds": 32.4,
+      "original_seconds": 17.4,
+      "original_freeze_seconds_included": 0.3,
+      "ai_seconds": 15,
+      "sha256": "9b41226d80025db5bcf1f851a9ac6d97b7bfbe29850b63d0d561ecb14fa8525e",
+      "qa": {
+        "scope": "final_technical_qa",
+        "passed": true,
+        "true_peak_dbfs": -2.48,
+        "integrated_lufs": -17.06,
+        "sample_frames_reviewed": 9,
+        "continuous_motion_reviewed": false,
+        "audio_listened": false,
+        "user_final_adoption": "pending"
+      }
+    }
+  ]
+}
