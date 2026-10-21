@@ -1,0 +1,23 @@
+% Main comparison table, CV-venue layout (CVPR / ICCV / ECCV): wide, per-dataset or
+% per-category columns, single point values, Method [n] citations.
+% Incompatible-protocol rows go in a separate, unranked block marked \incompat.
+\begin{table*}[t]
+\centering
+\caption{<Metric> (\%) on <Dataset-1>, <Dataset-2> and <Dataset-3>.
+\pub: from the original paper; \repro: reproduced by us (official code, same backbone and
+resolution); \incompat: different protocol (<what differs>), shown for reference only and
+not ranked. Best comparable result per column in \textbf{bold}.}
+\label{tab:main-cv}
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+Method & Backbone & <Dataset-1> & <Dataset-2> & <Dataset-3> & Mean \\
+\midrule
+<Method-A>~\cite{<keyA>}\pub   & <bb> & xx.x & xx.x & xx.x & xx.x \\
+<Method-B>~\cite{<keyB>}\repro & <bb> & xx.x & xx.x & xx.x & xx.x \\
+\oursrow <Ours>                & <bb> & \best{xx.x} & \best{xx.x} & \best{xx.x} & \best{xx.x} \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Not directly comparable (different protocol):}} \\
+\textcolor{gray}{<Method-D>~\cite{<keyD>}\incompat} & \textcolor{gray}{<bb>} & \textcolor{gray}{xx.x} & \textcolor{gray}{xx.x} & \textcolor{gray}{\na} & \textcolor{gray}{\na} \\
+\bottomrule
+\end{tabular}
+\end{table*}

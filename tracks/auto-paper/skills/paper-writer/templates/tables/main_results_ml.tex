@@ -1,0 +1,27 @@
+% Main comparison table, ML-venue layout (NeurIPS / ICML / ICLR / AAAI).
+% - Established method names + citations; your configurations do NOT appear here
+%   except the proposed method (variants go to the ablation table).
+% - Blocks: published baselines | reproduced baselines | ours. Bold/underline only
+%   within comparable rows. No p-value / CI columns (paper_standards.md §5.3);
+%   if a stats column is scientifically required, add a line:  % stats-ok: <reason>
+% - Replace xx.x with real values only; never invent numbers. Missing = \na + note.
+\begin{table}[t]
+\centering
+\caption{Main results on \textsc{<Benchmark>} (<split>, <metric> $\uparrow$).
+\pub: published in the cited paper; \repro: reproduced by us with the official code
+under our protocol. Our runs report mean$\pm$std over <k> seeds.
+Best comparable result in \textbf{bold}, second \underline{underlined}.}
+\label{tab:main}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Method & Backbone & <Metric-1> $\uparrow$ & <Metric-2> $\uparrow$ & Avg. $\uparrow$ \\
+\midrule
+<Method-A>~\cite{<keyA>}\pub & <bb> & xx.x & xx.x & xx.x \\
+<Method-B>~\cite{<keyB>}\pub & <bb> & xx.x & \na  & \na  \\
+\midrule
+<Method-C>~\cite{<keyC>}\repro & <bb> & \pmstd{xx.x}{x.x} & \pmstd{xx.x}{x.x} & \second{xx.x} \\
+\midrule
+\oursrow <Ours> & <bb> & \best{\pmstd{xx.x}{x.x}} & \best{\pmstd{xx.x}{x.x}} & \best{xx.x} \\
+\bottomrule
+\end{tabular}
+\end{table}

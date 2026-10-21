@@ -304,7 +304,7 @@ the original topic is secondary.
 ## Priority Reference
 
 `~/.claude/skills/benchmark-finder/references/research_advice.md`
-(`C:\Users\elika\.claude\skills\benchmark-finder\references\research_advice.md`)
+(`C:\Users\<user>\.claude\skills\benchmark-finder\references\research_advice.md`)
 is the PRIMARY and HIGHEST-PRIORITY research-planning reference for this
 project, and is the FIRST planning reference the pipeline reads.
 
@@ -1052,9 +1052,11 @@ and passes:
 | 9 | Benchmark validity passes | benchmark-finder; planner Step 1 | EXACT / DIRECT, SAME-TASK, comparability, and V1–V4 on the final question |
 | 10 | Fits four working days (or the user's D) | compute-planner | FITS DURATION at level L |
 | 11 | Evaluation supports a meaningful scientific conclusion | Advisor Step 5b; advisor Step 5c item 7; planner Step 8b | Required controls, SESOI and MDE are in the design; the expected effect is at least the MDE (or S3 is rated accordingly); the expected contribution type (A–D) is supported by its evidence |
+| 12 | Mechanism and domain validity (gate 12) | Advisor Step 5c item 8 (shared definitions §9) | Q1–Q10 answered with sources; verdict PASS, or PASS-EXPLORATORY with all four §9c conditions; E-level consistent with S2; the Q9 discriminating experiment is in the MVRD; claims scoped to the Q10 problem classes |
+| 13 | Literature review complete beyond a list | Evidence Report (resource §2d, §4a, §5a) | Eight-field literature map present, including evidence against the hypothesis and potentially overlooked work; closest papers read to pass 2, strongest baseline and closest paper to pass 3; novelty type assigned; the targeted performance-claim level (§4f) is consistent with the baseline trace |
 
 **Outcome.**
-- **All 11 pass:** the candidate may be GO. The only permitted condition
+- **All 13 pass:** the candidate may be GO. The only permitted condition
   is unconfirmed compute allocation.
 - **Any check fails:** the candidate is **not GO**. A positive readiness
   rating, high novelty strength, or a favourable matrix row never
@@ -1062,8 +1064,9 @@ and passes:
   failed:
   - checks 1–5 → prior-work-checker. Resolve it in Stage 3 if possible;
     otherwise FAIL, then benchmark-finder regeneration (Step 2b loop);
-  - checks 6–8 and 11 → research-readiness-advisor redesign (advisor
+  - checks 6–8, 11 and 12 → research-readiness-advisor redesign (advisor
     Step 7; shared definitions §6);
+  - check 13 → prior-work-checker (Stage 2/3 completion);
   - check 9 → benchmark-finder;
   - check 10 → the planner Step 6 redesign sequence.
 
@@ -1277,8 +1280,18 @@ Prior work (concise; the full inventory is in the archive file):
   (FINAL; evidence quality)
 - Expected contribution type: A / B / C / D, with its supporting evidence
   (research-planner Step 8b)
-- Pre-implementation evidence gate (Step 5b): 11/11 PASS, or the failed
+- Novelty type: NT-A / NT-B / NT-C / NT-D (resource §5a)
+- Pre-implementation evidence gate (Step 5b): 13/13 PASS, or the failed
   check and its routing
+
+Mechanism and domain validity (gate 12, shared definitions §9):
+- Verdict and evidence level (E0–E3):
+- Q1 problem / Q2 evidence / Q3 causal chain:
+- Q4 assumptions → Q5 validity on this benchmark:
+- Q6 failure conditions / Q7 alternative explanations:
+- Q8 simplest equivalent method → Q9 discriminating experiment:
+- Q10 generalization / claim scope:
+- Targeted performance-claim level (§4f):
 
 Do not reproduce the full prior-work inventory, search log, or benchmark
 history in the main report.

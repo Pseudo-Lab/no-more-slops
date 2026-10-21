@@ -1,0 +1,21 @@
+% Diagnostic / factorial study: arms are defined conditions (no established method to name).
+% Give each arm a short defined name and cite the method it is built on in the caption/text.
+% The interaction test is the main claim here, so its result may sit in the caption:
+% stats-ok: main claim is a statistical interaction (paper_standards.md §5.3 rule 2)
+\begin{table}[t]
+\centering
+\caption{<Metric> on <Benchmark> by condition (<generator>~\cite{<keyGen>} as the base
+system). G: <factor-1 definition>; P: <factor-2 definition>. Interaction test:
+<test>, <statistic>, $p=$x.xx (full results in Appendix~\ref{app:stats}).}
+\label{tab:arms}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Condition & <Metric-1> $\uparrow$ & <Metric-2> $\downarrow$ \\
+\midrule
+Base~\cite{<keyGen>} & xx.x & xx.x \\
++G                   & xx.x & xx.x \\
++P                   & xx.x & xx.x \\
++G+P                 & xx.x & xx.x \\
+\bottomrule
+\end{tabular}
+\end{table}

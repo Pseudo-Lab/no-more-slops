@@ -240,6 +240,20 @@ Requirements:
   or an `n` column).
 - Include uncertainty (CI, SE, SD) **only** if it was actually computed;
   state which kind and the level (e.g. "95% bootstrap CI").
+- Follow `~/.claude/skills/paper-writer/references/paper_standards.md`
+  §4–§5 (added 2026-10-17):
+  - main comparison tables use established method names with citations;
+  - every number is marked PUBLISHED (`*`), REPRODUCED (`†`), OURS, or
+    INCOMPATIBLE (`‡`, separate unranked block), with markers defined;
+  - experimental configurations belong in ablation/analysis tables;
+  - main tables carry point estimates (`± std` where the venue family
+    reports it), but no p-value or CI columns unless a §5.3 condition
+    holds (then add `% stats-ok: <reason>`). Full statistics go in an
+    appendix table (`paper-writer/templates/tables/stats_appendix.tex`).
+  - Start from the venue-family templates in
+    `paper-writer/templates/tables/`. Run `paper-writer/scripts/check_tables.py`
+    on the result.
+  Uncertainty in **figures** (error bars) stays expected.
 - Preserve negative and null results in the same table as positive ones.
 - Separate directly comparable from non-comparable baselines (a rule, a
   sub-header, or a dagger with a note). Do not rank non-comparable rows.

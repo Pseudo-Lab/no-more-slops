@@ -27,7 +27,7 @@ The user provides:
 
 Read the global compute file
 `~/.claude/skills/compute-planner/references/compute.md`
-(`C:\Users\elika\.claude\skills\compute-planner\references\compute.md`)
+(`C:\Users\<user>\.claude\skills\compute-planner\references\compute.md`)
 for available compute resources. It is the single authoritative source
 (its "Source of Truth" section). A project-local `compute.md` is only a
 mirror: never required, never a fallback, and its absence, emptiness or

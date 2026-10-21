@@ -60,6 +60,12 @@ class RepositoryRulesTest(unittest.TestCase):
             "tracks/auto-application/projects/demo/app/tests/fixtures/sample.pdf": "fixture",
         }), [])
 
+    def test_auto_paper_skills_workflow_readme(self):
+        self.assertEqual(self.check({"tracks/auto-paper/skills/README.md": "Workflow"}), [])
+        errors = self.check({"tracks/auto-post/skills/README.md": "Workflow",
+                             "tracks/auto-paper/skills/notes.md": "Notes"})
+        self.assertEqual(len([e for e in errors if "expected skills/<name>" in e]), 2)
+
 
 if __name__ == "__main__":
     unittest.main()

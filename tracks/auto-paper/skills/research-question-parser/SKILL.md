@@ -16,7 +16,7 @@ The user provides:
 ## Priority Reference
 
 `~/.claude/skills/benchmark-finder/references/research_advice.md`
-(`C:\Users\elika\.claude\skills\benchmark-finder\references\research_advice.md`)
+(`C:\Users\<user>\.claude\skills\benchmark-finder\references\research_advice.md`)
 is the PRIMARY and HIGHEST-PRIORITY research-planning reference for this
 project. Read it before extracting. If it conflicts with the default behavior
 of this skill, follow it. It is mentorship guidance, not scientific evidence,
