@@ -26,7 +26,7 @@ Iteration Loop).
 ## Priority Reference
 
 `~/.claude/skills/benchmark-finder/references/research_advice.md`
-(`C:\Users\elika\.claude\skills\benchmark-finder\references\research_advice.md`)
+(`C:\Users\<user>\.claude\skills\benchmark-finder\references\research_advice.md`)
 is the PRIMARY and HIGHEST-PRIORITY research-planning reference. Read it
 before checking. It is mentorship guidance, not scientific evidence: it must
 NOT be used as evidence that a gap exists or that a contribution is novel.
@@ -255,6 +255,19 @@ only when fewer exist, and say why. Each row records:
 
 Verify each paper's bibliographic identity from the primary source.
 
+**Reading depth and literature map (resource §2d, §4a; added
+2026-10-17).**
+- Read every ledger paper to pass 1 (five Cs). Read the three closest
+  papers and the strongest baseline paper to pass 2. Read the strongest
+  comparable baseline and the single closest paper to pass 3 ("virtual
+  re-implementation": list their implicit assumptions and evaluation
+  weaknesses).
+- Grow the survey by snowballing: shared citations, repeated authors,
+  recent top-venue proceedings.
+- Fill the eight-field literature map, including **evidence against the
+  hypothesis** and **potentially overlooked work**. Both searches are
+  mandatory, and an empty result is recorded with its queries.
+
 ### Step 4: Trace the baselines
 
 For the baseline named in the research question, extract from the source
@@ -323,6 +336,17 @@ Rules:
   answer. Otherwise the gap is SUBSTANTIALLY ANSWERED.
 - "NOVEL" is an internal label. The gap-statement wording rule in
   Step 5 still applies.
+- Also assign the **novelty type** (resource §5a): NT-A new application /
+  NT-B modification / NT-C new mechanism / NT-D implementation
+  correction. Use the weakest type the evidence forces. NT-C requires a
+  mechanism-level search of resembling mechanisms. The type caps novelty
+  strength. It does not change PASS / FAIL.
+- In the baseline trace (Step 4), keep the four performance-claim levels
+  apart (shared definitions §4f): overall SOTA on the standard protocol;
+  the best **reproducible** baseline; any selected baseline; results
+  under restricted protocols. Record which published numbers are
+  reproducible (code or outputs released) and which use incompatible
+  protocols.
 
 ### Step 6: Decide PASS / FAIL
 

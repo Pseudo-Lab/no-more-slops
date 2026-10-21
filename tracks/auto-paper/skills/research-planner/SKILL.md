@@ -63,7 +63,7 @@ sufficient support for a final recommended plan.
 ## Priority Reference
 
 `~/.claude/skills/benchmark-finder/references/research_advice.md`
-(`C:\Users\elika\.claude\skills\benchmark-finder\references\research_advice.md`)
+(`C:\Users\<user>\.claude\skills\benchmark-finder\references\research_advice.md`)
 is the PRIMARY and HIGHEST-PRIORITY research-planning reference for this
 project. Read and follow it before constructing or ranking plans.
 
@@ -337,8 +337,18 @@ Strongest comparable baseline:
 Documented weakness:
 Specific gap:
 Proposed intervention (mechanism):
+Why it should work (causal chain, MDV Q3) and evidence level (E0–E3):
+Assumptions and their validity on this benchmark (MDV Q4–Q5):
+Simplest alternative explanation and the experiment that separates it
+(MDV Q8–Q9; must be in the minimum experiment, Step 4):
+Scope of the claim (problem classes where it should and should not
+hold; MDV Q6, Q10):
 Depth case (technical depth PASS):
 Main comparison:
+Targeted claim level (§4f: overall SOTA / best reproducible baseline /
+selected baseline / restricted protocol):
+Novelty type (NT-A application / NT-B modification / NT-C new mechanism
+/ NT-D implementation correction; from the Evidence Report):
 Expected contribution even if result is negative:
 (Take this from research-readiness-advisor's Negative-Result
 Interpretability Review, "Negative-result contribution"; do not re-derive
@@ -668,6 +678,8 @@ authoritative source**. The planner judges only the last two columns.
 | SOTA potential | HIGH / MEDIUM / LOW / UNKNOWN, with S1–S4 | research-readiness-advisor Step 5c |
 | Improvement mechanism | The evidence-supported explanation: targeted failure mode, cause evidence, and complementarity for combinations | research-readiness-advisor Step 5c items 2–4 |
 | Technical depth | PASS / FAIL | research-readiness-advisor Step 5d |
+| Mechanism and domain validity | PASS / PASS-EXPLORATORY / FLAG / FAIL, E-level, and whether the Q9 discriminating experiment is in the design | research-readiness-advisor Step 5c item 8 (shared definitions §9) |
+| Novelty type | NT-A / NT-B / NT-C / NT-D | Evidence Report (prior-work-checker, resource §5a) |
 | Four-day feasibility | FITS DURATION / DOES NOT FIT DURATION / UNKNOWN at D and L | compute-planner (authoritative) |
 | Negative-result readiness | PASS / CONDITIONAL / FAIL | research-readiness-advisor Step 5b |
 | Expected contribution | A / B / C / D (below) | Planner, from the evidence above |
@@ -713,7 +725,7 @@ How the types interact with ranking and gates:
 
 | Decision | Meaning |
 |---|---|
-| **GO** | Every Step 8 gate passes. The Evidence Report is FINAL, and the research-pipeline evidence gate passes. The only allowed condition is unconfirmed compute allocation |
+| **GO** | Every Step 8 gate passes, including MDV (gate 12) PASS or PASS-EXPLORATORY. The Evidence Report is FINAL, and the research-pipeline evidence gate passes. The only allowed condition is unconfirmed compute allocation. A FLAG on MDV is REVISE, never GO |
 | **REVISE** | A gate or rating fails, but a redesign lever (shared definitions §6; advisor Step 7) or a named, permitted measurement could fix it. REVISE is a working state. It never appears in the final portfolio as GO and is never a "conditional GO" |
 | **NO-GO** | It fails a gate after at least one meaningful redesign attempt, or it is ALREADY STUDIED with no different question available. The slot then follows the existing replacement search (Step 6). If that also fails, the slot is labelled UNRESOLVED |
 

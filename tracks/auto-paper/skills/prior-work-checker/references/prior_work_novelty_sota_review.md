@@ -213,6 +213,48 @@ verification levels of the decision-relevant papers.
 
 ---
 
+### 2d. Reading depth and survey method (from Keshav, "How to Read a Paper", 2007; added 2026-10-17)
+
+The search above finds papers. This section sets **how deeply** each one
+is read and how the survey grows. Depth is matched to the paper's role,
+so the four-day budget holds.
+
+**Three passes.**
+
+| Pass | What is read | Time (beginner) | Required for |
+|---|---|---|---|
+| 1. Survey | Title, abstract, introduction; section headings; conclusion; glance at references. Output: the **five Cs** (Category, Context, Correctness of assumptions, Contributions, Clarity) | 5–10 min | every paper in the ledger |
+| 2. Content | Whole paper except proofs. Figures and tables checked: are axes labelled? Are results shown with error bars or tests? Do the reported numbers support the claims? Mark unread references that matter | up to ~1 h | the three closest papers and the strongest baseline paper (they are also FULL-TEXT READ, §2a-3) |
+| 3. Virtual re-implementation | Re-create the paper's method and experiment under its own assumptions. Challenge every assumption. Record implicit assumptions, missing citations, and issues with the experimental or analytical technique | ~1 h per paper in planning (deeper during execution) | the strongest comparable baseline and the single closest prior work |
+
+The pass-3 notes feed the MDV gate (shared definitions §9):
+- implicit assumptions of the baseline → Q1 and Q4;
+- weaknesses in its evaluation → Q2 and Q7;
+- its experimental technique → the protocol-compatibility check
+  (paper_standards.md §4.2).
+
+Record the pass reached for each ledger paper (`P1` / `P2` / `P3`).
+
+**Survey growth (snowball).**
+1. Seed with three to five **recent** papers found with Q1–Q9.
+2. Make a first pass on each. Read their related-work sections. If a
+   recent survey exists, read it first.
+3. Find **shared citations and repeated author names** across the seeds'
+   bibliographies. These are the key papers and researchers. Add the key
+   papers. Check the key researchers' recent publications (their pages,
+   Google Scholar, DBLP).
+4. Scan the **recent proceedings of the top venues** where those papers
+   appeared (e.g. the last one or two NeurIPS/ICML/ICLR or CVPR/ICCV/ECCV
+   cycles; ACL Anthology for NLP), using the venue's paper search with the
+   method and benchmark terms.
+5. Iterate: if a key paper keeps being cited but was not found, obtain
+   and read it. Stop when a new round adds no paper with overlap degree
+   PARTIAL or higher.
+
+Record the snowball rounds in the search log. A "potentially overlooked
+work" entry (§4a) is a paper repeatedly cited by the seeds that could
+not be read.
+
 ## 3. Systematic combination analysis
 
 When a proposal combines k methodological components:
@@ -285,6 +327,23 @@ detail cannot be verified, write `UNVERIFIED`.
 
 ---
 
+### 4a. Literature map per research direction (mandatory; added 2026-10-17)
+
+A literature review is not a list of related papers. For every direction
+that reaches Stage 2, the Evidence Report contains this map. Each cell
+has sources, or `NONE FOUND (searched: ...)`.
+
+| Field | Content |
+|---|---|
+| Closest prior methods | The three closest papers (§4 table) |
+| Strongest comparable baselines | The baseline defined in shared definitions §4a + the strongest overall method (number, location, protocol) |
+| Relevant recent papers | Last 12–18 months, from the Stage 3 recency search and the venue-proceedings scan (§2d) |
+| Resembling mechanisms | Existing methods that use the **same mechanism** under another name, task or domain (search by mechanism, not by method name) |
+| Differences | The operational difference between the proposed mechanism and each resembling one |
+| Evidence for the gap | Sources showing the limitation exists (feeds MDV Q2) |
+| Evidence against the hypothesis | Sources reporting that this or a similar mechanism did **not** help, helped only on narrow subsets, or that the baseline's failure has another cause. Searching for this is mandatory (queries such as "<mechanism> does not improve", "<mechanism> limitations", "negative results <task>") |
+| Potentially overlooked work | Repeatedly cited but unread papers, adjacent communities not searched (e.g. software-engineering venues for code testing, statistics venues for calibration), non-English or non-indexed sources. Say how each could change the verdict |
+
 ## 5. Novelty classification
 
 Assign exactly one classification to the candidate's **contribution**,
@@ -321,6 +380,34 @@ wording: "No directly equivalent experiment was found in the searched
 literature". Never write "novel", "first" or "unexplored" as a claim.
 
 ---
+
+### 5a. Novelty type (NT-A to NT-D; recorded with every classification; added 2026-10-17)
+
+The classification above says **whether** prior work answers the
+question. The novelty type says **what kind** of novelty remains. These
+types are not equally strong contributions.
+
+| Type | Definition | Example | Strongest allowed paper wording |
+|---|---|---|---|
+| **NT-A** New application of an existing mechanism | An existing mechanism, essentially unchanged, applied to a new task, benchmark or domain | a published calibration method applied to a new anomaly benchmark | "we apply / adapt M to T" |
+| **NT-B** Modification of an existing mechanism | A changed component of an existing mechanism, with a reason tied to a documented failure | replacing M's fixed threshold with a learned, data-dependent one because of a documented failure | "we extend M with ..." |
+| **NT-C** Genuinely new mechanism | A causal ingredient (signal, objective, procedure) not present in the closest prior work or in resembling mechanisms (§4a), checked by a mechanism-level search | | "we propose ..." (still never "first" / "novel" as a claim) |
+| **NT-D** Correction or improvement of an existing implementation | Fixing a bug, a leakage, an evaluation error or a weak implementation detail of an existing method or benchmark | a corrected scorer, de-duplicated test set, fixed preprocessing | "we identify and correct ..." |
+
+Rules:
+- Assign the **weakest** type the evidence forces. A modification
+  described as a new mechanism is NT-B.
+- NT-C requires the "resembling mechanisms" row of §4a to be searched
+  and to contain no mechanism-level equivalent.
+- Novelty strength (§8) is capped by type. NT-A → at most LOW, unless the
+  gap passes the "untested on this benchmark" rule with a strong
+  benchmark-specific reason (then MEDIUM). NT-D → at most MEDIUM. Its
+  value is usually SOTA or validity, not novelty. NT-B → MEDIUM or HIGH.
+  NT-C → as the classification allows.
+- **Not to be confused** with research-planner's "Expected contribution"
+  types A–D (SOTA improvement / combination / complementary failure modes
+  / mechanistic understanding). Those describe the outcome; NT types
+  describe the novelty. Both are recorded.
 
 ## 6. Mapping to the existing novelty gate (PASS / FAIL)
 
@@ -377,6 +464,9 @@ Archive: prior_work_<benchmark>.md (if it exists)
 | Closest prior work | Three papers (§4 table, below) |
 | Existing combinations | Per-subset table (§3, below) |
 | Novelty classification | NOVEL / PARTIAL OVERLAP / ALREADY STUDIED / UNCERTAIN, plus the six-point explanation (§5) |
+| Novelty type | NT-A application / NT-B modification / NT-C new mechanism / NT-D implementation correction, with justification (§5a) |
+| Literature map | The eight-field map (§4a), including evidence against the hypothesis and potentially overlooked work |
+| Reading depth | Pass reached (P1/P2/P3, §2d) for each closest paper and the strongest baseline; pass-3 notes on implicit assumptions |
 | Existing novelty gate | PASS / FAIL-<reason> per §6; or "unresolved: Stage 3 pending" while DRAFT |
 | Methodological difference | The exact difference from the closest work |
 | Benchmark overlap | Same benchmark / comparable benchmark / different setting, for each closest paper |
@@ -455,6 +545,10 @@ decision-critical paper is FULL-TEXT.)
 | PARTIAL OVERLAP + PASS with a narrow but clearly defensible gap, or NOVEL with Partial evidence | MEDIUM |
 | PARTIAL OVERLAP + PASS whose gap is only a new benchmark or setting, or a new combination of known methods | LOW |
 | ALREADY STUDIED / UNCERTAIN | Not rated: the gate has FAILED |
+
+After reading the table, apply the novelty-type cap (§5a). NT-A is at
+most LOW (MEDIUM with a strong benchmark-specific reason), and NT-D is at
+most MEDIUM.
 
 Novelty strength stays a secondary ranking criterion (shared definitions
 §8, criterion 5). It never raises SOTA potential.

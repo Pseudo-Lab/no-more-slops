@@ -64,6 +64,8 @@ def inspect(root, files):
             continue
         if parts[2] == "README.md" and len(parts) == 3:
             continue
+        if parts[1:] == ("auto-paper", "skills", "README.md"):
+            continue
         if parts[2] not in {"skills", "projects"} or len(parts) < 5:
             errors.append(f"{filename}: expected skills/<name> or projects/<name>")
             continue

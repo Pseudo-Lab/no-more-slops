@@ -379,6 +379,26 @@ Label every number as one of: `MEASURED` (this run), `PUBLISHED` (with
 source), `DECISION` (implementation decision), `INTERPRETATION`. Never
 present a published number as measured or vice versa.
 
+For the paper's tables (added 2026-10-17;
+`~/.claude/skills/paper-writer/references/paper_standards.md` §4–§5):
+- In section 5, a baseline re-run by this experiment is `MEASURED
+  (REPRODUCED: official code @ commit / reimplementation)`.
+- For every PUBLISHED number used in a comparison, record the
+  protocol-compatibility fields: dataset version, split, metric/scorer,
+  model size, training data, inference budget, seeds. Label it
+  COMPATIBLE or INCOMPATIBLE (what differs).
+- Use the established method name for every baseline, and record its
+  citation key.
+- Section 7 always contains the full pre-registered statistics (effect,
+  CI, test, statistic, p raw/adjusted, n, correction) plus `mean ± std`
+  over seeds where seeds were run. These are saved even though the paper
+  will usually show only point estimates (± std) in its main table and
+  the test result in text or appendix. Rigor is never dropped for
+  presentation.
+- If the plan includes the MDV Q9 discriminating experiment (matched
+  budget vs the simplest alternative), report it as its own item in
+  section 6 with the outcome predicted under each explanation.
+
 Also save machine-readable outputs in `experiments_RQk/outputs/` (e.g.
 `results_RQk.json` with all headline numbers, per-item predictions/decisions
 as CSV when the plan calls for them) and reference their paths in
