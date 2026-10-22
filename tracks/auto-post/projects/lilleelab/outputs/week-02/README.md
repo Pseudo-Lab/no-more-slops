@@ -4,7 +4,7 @@
 - 트랙: auto-post
 - 원본 PR: [#23](https://github.com/Pseudo-Lab/no-more-slops/pull/23)
 - 결과물: 토리든 다이브인 세럼 광고
-  - 릴스 (19초, 9:16): https://www.instagram.com/lilleelab.kr/reel/Dep-DD3IBy9/
+  - 릴스 (19초, 9:16): https://www.instagram.com/lilleelab.kr/reel/DezGPimou4-/
   - 제작 노트 캐러셀: https://www.instagram.com/p/Dep1c03kwMU/
 - 사용한 스킬: [ad-planning](../../../../skills/ad-planning/SKILL.md), [product-cgi-render](../../../../skills/product-cgi-render/SKILL.md)
 
