@@ -38,6 +38,7 @@
 | [app-store-release](../tracks/auto-application/skills/app-store-release/SKILL.md) | iOS 앱의 스토어 메타데이터·스크린샷·심사 제출 묶음을 준비합니다. | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
 | [constitution-first](../tracks/auto-application/skills/constitution-first/SKILL.md) | 서비스의 개발 원칙과 사람의 의사결정 경계를 먼저 정합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [core-feature-with-review](../tracks/auto-application/skills/core-feature-with-review/SKILL.md) | 핵심 기능에 사람이 결과를 확인하는 단계를 포함합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
+| [design-conductor](../tracks/auto-application/skills/design-conductor/SKILL.md) | 웹 UI를 만들거나 다듬을 때 impeccable·taste-skill·Emil skills·Playwright MCP를 정해진 순서로 돌리고 충돌을 중재합니다. 네이티브 앱 화면을 검토하는 `app-design-review`와 달리 웹 화면의 제작·검증·수정 반복을 지휘합니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [env-split](../tracks/auto-application/skills/env-split/SKILL.md) | 개발·운영 환경과 비밀 설정을 분리합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [glance-and-guardrails](../tracks/auto-application/skills/glance-and-guardrails/SKILL.md) | 웹 서비스의 정보 위계와 파괴적 동작·사용량 보호 장치를 정리합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [global-localization](../tracks/auto-application/skills/global-localization/SKILL.md) | 앱의 언어별 문자열·레이아웃·지역 기본값을 점검합니다. | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |

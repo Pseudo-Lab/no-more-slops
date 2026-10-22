@@ -10,6 +10,7 @@
 
 | 프로젝트 | 기여자 | PR |
 | --- | --- | --- |
+| [projects/pain-radar](projects/pain-radar/README.md) | @Woo-Yeol | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [projects/pawstamp](projects/pawstamp/README.md) | @bea-kang | [#2](https://github.com/Pseudo-Lab/no-more-slops/pull/2) |
 | [projects/tonlit](projects/tonlit/README.md) | @gogoymh | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
 | [projects/oraeorae](projects/oraeorae/README.md) | @Woo-Yeol | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
