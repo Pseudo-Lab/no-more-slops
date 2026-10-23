@@ -2,7 +2,7 @@
 
 auto-post 트랙의 [@xiyoon](https://github.com/xiyoon) 기여입니다. 원 PR: [#23](https://github.com/Pseudo-Lab/no-more-slops/pull/23).
 
-사람 없이 제품만 나오는 화장품 3D 광고를 만들어 인스타그램 [@lilleelab.kr](https://www.instagram.com/lilleelab.kr/)에 올리는 프로젝트입니다. 역할별 AI 에이전트가 기획·콘티·렌더·캡션을 만들고, 제품 선정과 콘티 확정, 게시는 사람이 합니다.
+화장품 3D 광고를 만들어 인스타그램 [@lilleelab.kr](https://www.instagram.com/lilleelab.kr/)에 올리는 프로젝트입니다. 역할별 AI 에이전트가 기획·콘티·렌더·캡션을 만들고, 제품 선정과 콘티 확정, 게시는 사람이 합니다.
 
 ## 재사용 스킬
 
