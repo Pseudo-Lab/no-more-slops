@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper-Code Audit"
+  short_description: "Check a paper's method, settings and numbers against its code and run records"
+  default_prompt: "Use $paper-code-audit to check this paper against the code and the run records, recompute its numbers, and report verified findings."
