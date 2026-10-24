@@ -1,0 +1,41 @@
+{
+  "name": "example-generic-reel",
+  "note": "예시 설정. 실제 작업에서는 posts/<id>/production/ 아래에 복사해 쓴다. 상대 경로는 이 파일 기준",
+  "fps": 30,
+  "size": [1080, 1920],
+  "product": "test-bottle.json",
+  "cuts_dir": "cuts",
+  "assembly_out": "video/assembly-latest.mp4",
+  "look": {
+    "liquid": {"rgb": [0.88, 0.955, 1.0]},
+    "render": {"samples": 64}
+  },
+  "cuts": [
+    {"id": "c01", "duration": 1.5, "desc": "훅: 스포이트가 위에서 내려와 꽂힌다 (MS)",
+     "blender": {"motion_blur": 0.5, "blur_position": "END", "budget_min": 20,
+                 "camera": [{"f": 0, "target": [0, 0, 2.0], "yaw": 14, "pitch": 9, "dist": 17.4, "fov": 27},
+                            {"f": 44, "target": [0, 0, 1.75], "pitch": 8, "ease": "out"}],
+                 "bottle": [{"f": 0, "yaw": 24}],
+                 "closure": [{"f": 0, "lift": 3.8}, {"f": 38, "lift": 0.3, "ease": "out"}, {"f": 44, "lift": 0.0, "ease": "in"}]}},
+    {"id": "c02", "duration": 2.0, "desc": "반 바퀴 돌아 정면에 멈춘다 (CU, 느린 푸시)",
+     "blender": {"motion_blur": 0.5, "jiggle": {"f0": 0, "amp": 0.012, "decay": 4, "until": 12},
+                 "camera": [{"f": 0, "target": [0, 0, 1.68], "yaw": 0, "pitch": 4, "dist": 10.1, "fov": 27},
+                            {"f": 59, "dist": 9.3, "ease": "linear"}],
+                 "bottle": [{"f": 0, "yaw": -180}, {"f": 24, "yaw": 1.5, "ease": "out"}, {"f": 30, "yaw": 0, "ease": "smooth"}],
+                 "closure": [{"f": 0, "lift": 0}]}},
+    {"id": "c03", "duration": 1.0, "desc": "라벨 매크로 → 액체 속 기포로 초점 (ECU)",
+     "blender": {"camera": [{"f": 0, "target": [0.05, 0, 1.0], "yaw": 0, "pitch": 2, "dist": 4.0, "fov": 18, "fstop": 2.8},
+                            {"f": 29, "dist": 3.6, "focus": 3.9, "ease": "linear"}]}},
+    {"id": "c04", "duration": 1.5, "desc": "엔딩: 정면 정지 → 첫 컷 배경색으로 이어지는 루프",
+     "text": {"html": "overlay-type-a.html", "start": 0.25, "query": "text=SAMPLE%7CSERUM&size=118&y=290&dur=1.25"},
+     "blender": {"camera": [{"f": 0, "target": [0, 0, 1.68], "yaw": 0, "pitch": 4, "dist": 9.3, "fov": 27}],
+                 "bg_tint": [{"f": 0, "v": 0}, {"f": 30, "v": 0}, {"f": 44, "v": 1, "ease": "in"}]}}
+  ],
+  "audio": {
+    "normalize": "loudness", "lufs": -14, "true_peak": -1.5, "loop_tail": true,
+    "sfx": [
+      {"file": "sfx/tap.wav", "at": 1.0, "gain_db": -3, "fade_in": 0.002, "fade_out": 0.015, "license": "CC0", "source": "출처 URL을 적는다"},
+      {"file": "sfx/ting.wav", "at": 3.5, "gain_db": -5, "fade_out": 0.35, "license": "CC0", "source": "출처 URL을 적는다"}
+    ]
+  }
+}
