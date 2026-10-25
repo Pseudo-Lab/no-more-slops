@@ -6,6 +6,7 @@
 - 결과물: 토리든 다이브인 세럼 광고
   - 릴스 (19초, 9:16): https://www.instagram.com/lilleelab.kr/reel/DezGPimou4-/
   - 제작 노트 캐러셀: https://www.instagram.com/p/Dep1c03kwMU/
+- 상태: 공개 (릴스 수정본 2026-10-22 게시)
 - 사용한 스킬: [ad-planning](../../../../skills/ad-planning/SKILL.md), [product-cgi-render](../../../../skills/product-cgi-render/SKILL.md)
 
 ## 폴더
@@ -20,7 +21,7 @@
 
 ## 검증
 
-- 렌더 스킬 테스트 23개 중 22개 통과 (Blender 실행 테스트는 제외)
+- 렌더 스킬 테스트: `sh tracks/auto-post/skills/product-cgi-render/tests/run_tests.sh` → 23개 중 22개 통과 (Blender 실행 테스트는 제외)
 - 최종 영상: 흰색으로 날아간 픽셀 0개, 반복 이음매의 색 차이 3.5 (기준 10 이하)
 - 영상 원본을 올리지 않아 위 수치는 이 저장소에서 다시 잴 수 없습니다.
 
