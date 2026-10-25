@@ -53,9 +53,11 @@
 
 | 스킬 | 적용 범위 | 최초 정리 PR |
 | --- | --- | --- |
+| [ad-planning](../tracks/auto-post/skills/ad-planning/SKILL.md) | 사람 없이 제품만 나오는 숏폼 광고의 제품 분석·스토리라인·컷별 그림 콘티와 새 컨텍스트 검토 기준을 제공합니다. | [#23](https://github.com/Pseudo-Lab/no-more-slops/pull/23) |
 | [design-punctuation](../tracks/auto-post/skills/design-punctuation/SKILL.md) | 제목·캡션 같은 짧은 시각 문구의 불필요한 끝마침표를 정리합니다. 다른 트랙에서도 링크로 재사용합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
 | [family-reel-meme-preflight](../tracks/auto-post/skills/family-reel-meme-preflight/SKILL.md) | 릴스 편집 전에 국가·플랫폼별 밈 근거와 아기 안전을 선별합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) |
 | [instagram-content](../tracks/auto-post/skills/instagram-content/SKILL.md) | 계정 설정과 출처를 확인하며 사진 중심 캐러셀·프로필을 제작합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
 | [instagram-reel](../tracks/auto-post/skills/instagram-reel/SKILL.md) | 가족 촬영 영상을 세로 릴스로 편집하고 자막·음량·화질을 확인합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) · [#15](https://github.com/Pseudo-Lab/no-more-slops/pull/15) |
 | [phantom-images](../tracks/auto-post/skills/phantom-images/SKILL.md) | Phantom Report의 프로젝트 규칙에 맞춘 사건 이미지와 캐러셀을 제작합니다. | [#3](https://github.com/Pseudo-Lab/no-more-slops/pull/3) |
 | [phantom-weekly](../tracks/auto-post/skills/phantom-weekly/SKILL.md) | Phantom Report의 주간 수집·사실 확인·집필·이미지 제작을 조합합니다. | [#3](https://github.com/Pseudo-Lab/no-more-slops/pull/3) |
+| [product-cgi-render](../tracks/auto-post/skills/product-cgi-render/SKILL.md) | 확정 콘티에서 회전체 용기 제품을 Blender로 렌더하고 마감·효과음·조립·수치 QC까지 합니다. 촬영 소스 없이 제품 프로필 JSON으로 동작합니다. | [#23](https://github.com/Pseudo-Lab/no-more-slops/pull/23) |
