@@ -7,6 +7,7 @@
   - 릴스 (19초, 9:16): https://www.instagram.com/lilleelab.kr/reel/De1whVaIB_R/
   - 준비 컷 캐러셀: https://www.instagram.com/p/De1l2Rrkxmw/
   - 제작 노트 캐러셀: https://www.instagram.com/p/De1pmpZE2w2/
+- 상태: 공개 (2026-10-23 게시)
 - 사용한 스킬: [ad-planning](../../../../skills/ad-planning/SKILL.md), [ig-publish](../../../../skills/ig-publish/SKILL.md)
 
 ## 폴더
