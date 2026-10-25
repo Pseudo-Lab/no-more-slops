@@ -4,6 +4,7 @@
 - 트랙: auto-paper
 - 원본 PR: [#22](https://github.com/Pseudo-Lab/no-more-slops/pull/22)
 - 결과물: [원고 PDF](paper.pdf) (영문, 본문 4쪽, ACL 2027 short paper 투고 예정)
+- 상태: 투고 전 초안. 리뷰 반영본 PDF를 공개합니다.
 - 사용한 스킬: [paper-readability-pass](../../../../skills/paper-readability-pass/SKILL.md)
 
 ## 결과
@@ -18,6 +19,11 @@
 - 가독성 리뷰 점수: 1~4회차 2.5, 본 실험 결과를 넣은 5회차 3
 - 글만 고쳐서는 리뷰 점수가 오르지 않았습니다. 실험이 필요한 지적은 다음 실험으로 넘겼습니다.
 - 표 넘침과 쪽수 초과는 쪽 이미지를 직접 봐야 찾을 수 있었습니다.
+
+## 재현 및 검증
+
+- 스킬 테스트: `python3 -m pytest tracks/auto-paper/skills/paper-readability-pass/tests` → 21개 통과
+- 저장소 검사: `python3 scripts/check_repository.py` → 오류 0건
 
 ## 확인하지 못한 범위
 
