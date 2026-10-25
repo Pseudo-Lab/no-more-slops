@@ -5,7 +5,7 @@
 - 상태: Week 03 결과물 (toego 퇴고와 심사 4라운드, 최종 Minor revision 반영)
 - 원고 언어: 한국어 (영문 초록 병기)
 
-LLM·RAG 애플리케이션 평가용 골든 데이터셋을 어떻게 구축하고, 어떤 측면에서 검증하며, 어떤 조건에서 "골든"이라 부를 수 있는지를 정리한 4–6쪽 분량의 미니 리뷰입니다. 이전 작업인 [LLM-as-a-Judge 서베이](https://github.com/Pseudo-Lab/no-more-slops/tree/auto-paper/llm-as-judge-survey/tracks/auto-paper/projects/llm-as-judge-survey)(2,185편 망라 서베이)가 분량이 너무 길었던 점을 반영해, 좁은 주제를 다루는 Frontiers Mini Review 형식을 따랐습니다. 리뷰 유형을 고른 근거는 [docs/review-type.md](docs/review-type.md)에 있습니다.
+LLM·RAG 애플리케이션 평가용 골든 데이터셋을 어떻게 구축하고, 어떤 측면에서 검증하며, 어떤 조건에서 "골든"이라 부를 수 있는지를 정리한 4쪽 미니 리뷰입니다(6쪽 확장판 별도). 이전 작업인 [LLM-as-a-Judge 서베이](https://github.com/Pseudo-Lab/no-more-slops/tree/auto-paper/llm-as-judge-survey/tracks/auto-paper/projects/llm-as-judge-survey)(2,185편 망라 서베이)가 분량이 너무 길었던 점을 반영해, 좁은 주제를 다루는 Frontiers Mini Review 형식을 따랐습니다. 리뷰 유형을 고른 근거는 [docs/review-type.md](docs/review-type.md)에 있습니다.
 
 ## 결과물
 
@@ -38,7 +38,9 @@ LLM·RAG 애플리케이션 평가용 골든 데이터셋을 어떻게 구축하
 ```sh
 cd app
 uv run build.py        # source.md + references.md -> manuscript/paper.md (인용 번호 부여, 본문 분량 출력)
-uv run pdf.py          # paper.md -> outputs/week-03/paper.pdf (A4 2단)
+uv run pdf.py --out ../outputs/week-03/paper-extended.pdf   # 6쪽 확장판
+uv run build.py --src source-4p.md --out paper-4p.md
+uv run pdf.py --keep-all --src ../manuscript/paper-4p.md --out ../outputs/week-03/paper.pdf   # 4쪽 최종본
 uv run check_pdf.py --png-dir ../reviews/png/final   # 쪽수 확인, 쪽별 PNG
 ```
 

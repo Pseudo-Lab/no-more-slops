@@ -4,15 +4,16 @@ LLM·RAG 애플리케이션 평가용 골든 데이터셋의 구축과 검증을
 
 | 결과물 | 파일 | 상태 |
 | --- | --- | --- |
-| 최종 원고 PDF (A4 2단 6쪽) | [paper.pdf](paper.pdf) | 4차 재심 반영본 v8. 저자 정보·연구비·이해상충·데이터 DOI는 `[추후 기입]` |
-| 최종 원고 Markdown (번호 인용 빌드본) | [paper.md](paper.md) | `manuscript/source.md` + `manuscript/references.md`에서 생성 |
-| 4쪽 압축판 PDF / Markdown (A4 2단 4쪽) | [paper-4p.pdf](paper-4p.pdf), [paper-4p.md](paper-4p.md) | 최초 목표(4쪽)에 맞춘 판. 6쪽 최종본에서 1장·3장·4장을 압축하고 2장·5장은 그대로 둠(참고문헌 61편). 별도 심사 2회(1차 Major: 필수 3·권고 14, 재심 Minor: 필수 4·권고 6) 후 전부 반영: [reviews/4p/](../../reviews/4p/). 빌드: `uv run build.py --src source-4p.md --out paper-4p.md && uv run pdf.py --keep-all --src ../manuscript/paper-4p.md --out ../outputs/week-03/paper-4p.pdf` |
+| **최종 원고 (A4 2단 4쪽)** | [paper.pdf](paper.pdf), [paper.md](paper.md) | 주 결과물. 확장판을 4쪽으로 압축한 뒤 별도 심사 2회(1차 Major: 필수 3·권고 14, 재심 Minor: 필수 4·권고 6)를 모두 반영: [reviews/4p/](../../reviews/4p/). 원본 `manuscript/source-4p.md`. 빌드: `uv run build.py --src source-4p.md --out paper-4p.md && uv run pdf.py --keep-all --src ../manuscript/paper-4p.md --out ../outputs/week-03/paper.pdf` |
+| 확장판 (A4 2단 6쪽) | [paper-extended.pdf](paper-extended.pdf), [paper-extended.md](paper-extended.md) | 본 심사 4라운드를 모두 반영한 전체 원고(본문 3,000어절, 참고문헌 79편). 원본 `manuscript/source.md`. 빌드: `uv run build.py && uv run pdf.py --out ../outputs/week-03/paper-extended.pdf` |
 | 중간 원고 PDF | [drafts/](drafts/) | v2–v7. 심사 기록의 `reviews/roundN/paper-vX.pdf` 경로는 이 폴더의 같은 파일명을 가리킨다 |
+
+저자 정보, 연구비, 이해상충, 데이터 DOI는 `[추후 기입]`으로 남아 있다.
 
 ## 형식과 분량
 
 - 형식: Frontiers Mini Review(Abstract → Introduction → 주제 소절 → Discussion), 근거는 [docs/review-type.md](../../docs/review-type.md)
-- 분량: 본문(1–6장, 표·표 주·수식 제외) 3,000어절, 표 2개, 참고문헌 79편, 6쪽(저자 목표 4쪽 + 허용 2쪽)
+- 분량: 최종 원고 4쪽(참고문헌 62편, 표 2개). 확장판은 본문 3,000어절, 참고문헌 79편, 6쪽
 
 ## 진행 기록(End-to-End 4회)
 

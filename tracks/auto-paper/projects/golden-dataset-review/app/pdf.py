@@ -10,7 +10,7 @@ authors, affiliation, type, date. A line `<!-- wide -->` before a table or figur
 span both columns.
 
 Usage:
-    uv run pdf.py [--src ../manuscript/paper.md] [--out ../outputs/week-03/paper.pdf]
+    uv run pdf.py [--src ../manuscript/paper.md] [--out ../outputs/week-03/paper-extended.pdf]
 """
 import argparse
 import html
@@ -230,7 +230,7 @@ def font_faces(out_dir):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--src", type=Path, default=ROOT / "manuscript" / "paper.md")
-    parser.add_argument("--out", type=Path, default=ROOT / "outputs" / "week-03" / "paper.pdf")
+    parser.add_argument("--out", type=Path, default=ROOT / "outputs" / "week-03" / "paper-extended.pdf")
     parser.add_argument("--keep-all", action="store_true", help="break Korean text only between words (eojeol)")
     args = parser.parse_args()
 
