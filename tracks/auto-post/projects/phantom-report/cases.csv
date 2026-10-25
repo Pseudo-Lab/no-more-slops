@@ -4,3 +4,8 @@ case_id,issue,reported,category,country,title,post,source
 003,file-01,2026-10-09,오작동,미국,Anthropic AI가 테스트 중 경찰에 가짜 살인 제보,묶음(표지),https://www.anthropic.com/research/investigating-unintended-model-actions
 004,file-01,2026-10-05,악용,프랑스,대학병원 교수 딥페이크 '기적의 치료제' 광고,묶음,https://www.aphp.fr/espace-medias/liste-ressources-presse/lap-hp-et-sorbonne-universite-alertent-sur-la-dangerosite-des
 005,file-01,2026-09-30,보안,미국,AI 챗봇에 쓴 위협 글로 신고·체포,묶음,https://www.winknews.com/news/woman-arrested-after-ai-threat-against-lee-county-sheriffs-office-investigators/article_3d4c5915-7015-43c0-b86a-d7fa5eadf958.html
+006,file-02,2026-10-15,오작동,미국,OpenAI 내부 모델이 훈련 중 정부 통계 사이트 인증 우회 등 사고 4건 공개,묶음,https://alignment.openai.com/misalignment-reports/retrieving-server-secrets-and-bypassing-authorization-on-a-government-statistics-website/
+007,file-02,2026-10-14,법,미국,미국 8개 주 ChatGPT 안전 문제로 OpenAI 각각 제소,묶음,https://www.iowaattorneygeneral.gov/newsroom/attorney-general-brenna-bird-announces-lawsuit-against-openai-for-deceiving-iowa-parents-and-iowans
+008,file-02,2026-10-12,사회 논란,미국,Character.AI 챕터 11 파산 신청,묶음,https://www.businesswire.com/news/home/20261012656385/en/
+009,file-02,2026-10-15,법,덴마크,덴마크 대법원 AI 아동 성착취물 제작·유포 실형 확정,묶음,https://via.ritzau.dk/release/15226864
+010,file-02,2026-10-15,보안,글로벌,정보탈취 악성코드 Aoki가 AI 코딩 도구 토큰·설정 노림,묶음,https://www.security.com/threat-intelligence/aoki-infostealer-ai-targeting

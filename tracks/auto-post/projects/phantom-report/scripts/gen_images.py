@@ -28,7 +28,8 @@ def gen(path, prompt):
         f"Reply with the saved path only.\n\nPROMPT: {STYLE}{prompt}"
     )
     r = subprocess.run(
-        ["codex", "exec", "-s", "workspace-write", "--skip-git-repo-check", task],
+        # effort를 low로 고정: 기본값(xhigh)이면 한 장이 600초를 넘겨 타임아웃된다
+        ["codex", "exec", "-c", "model_reasoning_effort=low", "-s", "workspace-write", "--skip-git-repo-check", task],
         cwd=ROOT, capture_output=True, text=True, timeout=600,
     )
     print("ok" if path.exists() else f"fail ({r.stderr.strip()[-300:]})", path)
