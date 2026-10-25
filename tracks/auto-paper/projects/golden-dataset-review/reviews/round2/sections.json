@@ -1,0 +1,203 @@
+{
+ "title": "Round 2 퇴고 — 골든 데이터셋 미니 리뷰 (toego:revise)",
+ "reviewer_comment": "Round 1 심사 반영본(v3)의 문장·문단·사실 재점검. 이전 반영을 되돌리지 않고 근거 범위, 시제, 괄식, 용어 통일, 다주제 문단, 결론 대응을 점검.",
+ "evidence_sources": [
+  "research/r1-*.md",
+  "research/r2-verification.md",
+  "research/r3-referee-additions.md",
+  "research/r4-round2-checks.md",
+  "reviews/round2/lint.json"
+ ],
+ "sections": [
+  {
+   "id": "abs",
+   "title": "초록",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "'여럿'·쟁점 이름·한 하위 영역 반영"
+  },
+  {
+   "id": "1",
+   "title": "1. 서론",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "유지, 1-P3 범위 한정"
+  },
+  {
+   "id": "2.1",
+   "title": "2.1",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "HealthBench 합의 기준·주제별, HLE 보상 구조 귀속"
+  },
+  {
+   "id": "2.2",
+   "title": "2.2",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "필터 단계 추가"
+  },
+  {
+   "id": "2.3",
+   "title": "2.3",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "위험→보완 순"
+  },
+  {
+   "id": "2.4",
+   "title": "2.4",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "표현 수정"
+  },
+  {
+   "id": "2.5",
+   "title": "2.5",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "두 문단 분할"
+  },
+  {
+   "id": "2.6",
+   "title": "2.6",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "세 문단 분할, OR-Bench 위양성률"
+  },
+  {
+   "id": "3",
+   "title": "3",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "사례별 통과·실패 측면 명명"
+  },
+  {
+   "id": "3.3",
+   "title": "3.3",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "두 문단 분할, 하한 범위 한정"
+  },
+  {
+   "id": "3.4",
+   "title": "3.4",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "신호 정의 수정"
+  },
+  {
+   "id": "3.5",
+   "title": "3.5",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "두 문단 분할, 인용 정정"
+  },
+  {
+   "id": "4.1",
+   "title": "4",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "제목 변경, 4.1–4.4 재편, SimpleQA 조건별 판정"
+  },
+  {
+   "id": "5.1",
+   "title": "5.1",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "입장 선제시, 4.4 참조, 셋째 쟁점 범위 한정"
+  },
+  {
+   "id": "6",
+   "title": "6",
+   "pattern": "-",
+   "flow_before": "reviews/round2/para.md 참조",
+   "flow_after": "reviews/round2/para.md 제안 구조대로 반영",
+   "verdict": "쟁점 입장·불리한 결과 추가"
+  }
+ ],
+ "structure": {
+  "before": [
+   "4. 무엇을 골든이라 부를 수 있는가: 4.1 개념의 변천과 정의, 4.2 2단 구성과 핵심셋의 규모"
+  ],
+  "after": [
+   "4. 골든의 정의와 적용: 4.1 개념의 변천, 4.2 정의와 일곱 조건, 4.3 적용 예: SimpleQA, 4.4 2단 구성과 핵심셋 설계",
+   "2.7 종합 신설"
+  ],
+  "reasons": [
+   [
+    "4장 재편",
+    "제목이 4.2를 덮지 못함, SimpleQA 판정이 최소 기준을 적용하지 않음"
+   ],
+   [
+    "2.7 종합",
+    "장 종합이 2.6 안에 있었음"
+   ]
+  ]
+ },
+ "global_flow": {
+  "question_to_conclusion": [
+   [
+    "Q1",
+    "2장, 2.7",
+    "결론 첫째"
+   ],
+   [
+    "Q2",
+    "3장",
+    "결론 둘째(두 사례, 하한)"
+   ],
+   [
+    "Q3",
+    "4.2–4.3",
+    "결론 셋째(SimpleQA 적용 결과)"
+   ],
+   [
+    "쟁점 1–4",
+    "5.1",
+    "결론 쟁점 문장"
+   ]
+  ],
+  "verdict": "결론이 Q1–Q3과 네 쟁점 입장, 불리한 결과를 모두 반영.",
+  "paragraph_chain": "reviews/round2/para.md"
+ },
+ "author_checks": [
+  "HealthBench 주제별 범위 → r4 확인(7개 주제)",
+  "GSM1k 8%는 %p → r4 확인",
+  "HLE 15.4%는 출시 전 감사 → r4 확인",
+  "SimpleQA 일치도·데이터 카드 없음 → r4 확인",
+  "Bean 권고 번호 → r4 확인",
+  "재계산 수행자 → 고지에 명시"
+ ],
+ "fact_checks": [
+  [
+   "SimpleQA 최소 층 135, CI 반폭 ±8.4%p",
+   "본고 계산",
+   "1.96×√(0.25/135)"
+  ],
+  [
+   "오류율 상한 3.8%",
+   "본고 계산",
+   "0.028+1.96×√(0.028×0.972/1000)"
+  ],
+  [
+   "MDE 3.0%p",
+   "본고 계산",
+   "2.802×√(0.5/4326)"
+  ]
+ ]
+}
