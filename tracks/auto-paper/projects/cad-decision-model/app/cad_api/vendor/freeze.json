@@ -1,0 +1,28 @@
+{
+  "revision": "geometry-local-route-v12",
+  "source_files": {
+    "run_page.py": "0614667d7542175e5c33b73381b630045dc9b2c39c20a94cbe235e78adcb8517",
+    "page_cv.py": "1e8154afb6d50d87fc1784ca022cc94a3eff9d7992b88f2f02040a5b794a8ca1",
+    "symbol_geometry.py": "7a13aaf695dd16f9beff492ee0a370ef885bc1ab2f7025b5ca86ee4c0628b9c6",
+    "logic_geometry.py": "46c82c08bbf3e80118a94f41cf26118dc703ffe8dfddb77b547bbec43e9a03f8",
+    "equipment_geometry.py": "27ae020b94422a9611633c447cea0b3feedb80028eee45f937552048ee56de76",
+    "arrow_geometry.py": "7a8971f54086d080f01b3aad7f6659f5e2d052266c2e29321ca799756567b7d3",
+    "connection_geometry.py": "8bd94b87ccb2bb619f6ef881092227ca6a6b25db0d3d2bc0c8f1160d765f94bf",
+    "crossing_geometry.py": "a0eec3bdffdfe95b007b1dbc303f1ac3251b9be6e141710d78f5fb4b2a96306a",
+    "drawing_kind.py": "223367a1cdf3254c442e505b9b900611437518ec12d81fba374c0f81ffdc37ab",
+    "signal_geometry.py": "82731492260e243d2bd9eb260c13e3ce8e61e571b04795b1735a9febffc9595a",
+    "frame_geometry.py": "c1028f5a209a0b60eac020991acedca634d61815b68655730d4285f190996448",
+    "port_geometry.py": "2fce921c7826fcd74740bd0b8abb943354a4dd5d762a737059b8054a469e7a39",
+    "text_geometry.py": "1b825ce0ad363c00892c334492255b419a92d30f2e7c24e1f3c317efaffd9735",
+    "visualize.py": "69ee8ded91d56183d57f9bb7acc9ac20f08d149ce349bf42ec1e2dc696b2aea0",
+    "regression_review.py": "400e3a61ed2eeb567e01b92d70d4185c44f85669687eb4f127e3059d63e27e4e",
+    "regression_suite.py": "d90ec5f2a76ec6a36c571d36575d8da5ec78ae0abb0cfd0848e8d012dc6adc36",
+    "regression_output_retention.py": "748103cdd3e142b0f0ee4ca0fd3aa398b6f291c16c8585771ef5e8535cf900ab",
+    "classification_detail.py": "aaebedc7ef87566f094d60f770db2100d52bd3cb5ea5a3a5cc516df2ac56a081",
+    "views.py": "3108b97604734bd751baf0ce9595c929d1a4ea5a53a42dba45899202b37a9e9b",
+    "p0_refine.py": "ae4dea224d3c443244221fc5b409e39b87735b6d4c1dc962354afe2a5965b43e",
+    "p0_bench.py": "0c6e1aeb2854a2bd899d35a2fb95858b59356a7911f51f3633ba56417d5260a1",
+    "round_body_geometry.py": "84d7c642b831b447542708e827fd01bd994bffa7db1a7cb4e61b4c86841bc612"
+  },
+  "source_freeze_sha256": "4cc5173bd32e18c4f0fc4451a4534ef1584164d71bd542813967c23a5ef12b93"
+}

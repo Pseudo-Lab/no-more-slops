@@ -1,0 +1,112 @@
+\begingroup
+\definecolor{cadnavy}{HTML}{233D5B}
+\definecolor{cadteal}{HTML}{187A77}
+\definecolor{cadred}{HTML}{B83F4B}
+\definecolor{cadblue}{HTML}{3473B8}
+\begin{tikzpicture}[
+ x=1cm,y=1cm,
+ font=\sffamily\fontsize{8}{9.2}\selectfont,
+ head/.style={font=\sffamily\bfseries\fontsize{8.5}{9.5}\selectfont,text=cadnavy,anchor=west},
+ note/.style={font=\sffamily\fontsize{7.5}{8.5}\selectfont,align=center},
+ flow/.style={-{Stealth[length=3.8pt,width=3.8pt]},draw=cadnavy,line width=.75pt},
+ ink/.style={draw=black!80,line width=.7pt},
+ crop/.style={draw=black!25,fill=white,line width=.45pt},
+ port/.style={fill=cadteal,draw=white,line width=.3pt},
+ auditflow/.style={-{Stealth[length=3pt,width=3pt]},draw=black!45,line width=.5pt}
+]
+\path[use as bounding box](0,0)rectangle(17.7,3.52);
+\foreach \xx in {0,3.6,7.2,10.8,14.4}{
+ \draw[cadteal!70,line width=1.05pt](\xx+.05,3.02)--(\xx+3.25,3.02);
+}
+\node[head]at(.08,3.25){(a) Prepare \& propose};
+\node[head]at(3.68,3.25){(b) Fit \& classify};
+\node[head]at(7.28,3.25){(c) Propose connections};
+\node[head]at(10.88,3.25){(d) Verify connections};
+\node[head]at(14.48,3.25){(e) Text \& export};
+
+% (a) The raster is searched for candidates before any class/box judgment.
+\draw[crop](.35,1.72)rectangle(2.95,2.78);
+\draw[black!55,line width=.55pt](.54,2.17)--(.84,2.17);
+\draw[ink](1.10,2.17)circle(.26);
+\draw[ink](1.36,2.17)--(1.83,2.17);
+\draw[ink](1.83,1.98)--(2.21,2.36)--(2.21,1.98)--(1.83,2.36)--cycle;
+\draw[ink](2.21,2.17)--(2.72,2.17);
+\draw[cadteal,line width=.75pt](.77,1.84)rectangle(1.43,2.50);
+\draw[cadteal,line width=.75pt](1.73,1.87)rectangle(2.31,2.47);
+\node[note,text=black!60]at(1.65,1.48){raster $X$ $\rightarrow$ candidate boxes};
+
+% (b) Two existing boxes are compared; the retained class survives repair.
+\foreach \xx in {4.42,6.07}{
+ \draw[crop](\xx-.54,1.87)rectangle(\xx+.54,2.76);
+ \draw[black!50,line width=.7pt](\xx,2.31)circle(.27);
+ \draw[ink](\xx+.27,2.31)--(\xx+.47,2.31);
+}
+\draw[black!55,line width=.75pt](4.22,2.11)rectangle(4.62,2.51);
+\draw[cadteal,line width=.9pt](5.74,1.98)rectangle(6.40,2.64);
+\node[note]at(4.42,1.68){$b_1$};
+\node[note]at(6.07,1.68){$b_2$};
+\draw[draw=cadnavy,<->,line width=.65pt](4.98,2.30)--(5.49,2.30);
+\node[note,text=black!60]at(5.25,1.46){box alternatives; class $c_i$};
+
+% (c) Geometry produces a net, its ports, and source-pixel route hypotheses.
+\draw[ink](7.89,2.12)--(9.81,2.12);
+\draw[ink](8.85,2.12)--(8.85,2.55);
+\foreach \xx/\yy in {7.70/2.12,10.00/2.12,8.85/2.74}{
+ \draw[black!45,fill=white,line width=.6pt](\xx,\yy)circle(.19);
+}
+\foreach \xx/\yy in {7.89/2.12,9.81/2.12,8.85/2.55}{
+ \draw[port](\xx,\yy)circle(.05);
+}
+\node[note]at(7.70,2.12){$u$};
+\node[note]at(10.00,2.12){$v$};
+\node[note]at(8.85,2.74){$w$};
+\node[note,text=black!60]at(8.85,1.48){hypothesis $(u,v,n,\pi)$};
+
+% (d) Both presentations retain the source ink and exchange endpoint colors.
+\foreach \xx/\name/\lc/\rc in {11.04/A/cadred/cadblue,12.65/B/cadblue/cadred}{
+ \draw[crop](\xx,2.08)rectangle(\xx+1.39,2.74);
+ \draw[ink](\xx+.23,2.40)circle(.10);
+ \draw[ink](\xx+1.16,2.40)circle(.10);
+ \draw[ink](\xx+.33,2.40)--(\xx+.62,2.40)--(\xx+.62,2.52)--(\xx+1.06,2.52)--(\xx+1.06,2.40);
+ \draw[\lc,line width=.85pt](\xx+.08,2.25)rectangle(\xx+.38,2.55);
+ \draw[\rc,line width=.85pt](\xx+1.01,2.25)rectangle(\xx+1.31,2.55);
+ \node[note]at(\xx+.695,1.90){\name};
+}
+\node[note,text=cadnavy]at(12.45,1.48){paired scores; local evidence};
+
+% (e) A text-to-symbol containment relation remains distinct from the edge.
+\draw[cadnavy,line width=.9pt](15.12,2.32)--(17.01,2.32);
+\foreach \xx/\name in {15.12/u,17.01/v}{
+ \draw[ink,fill=white](\xx,2.32)circle(.23);
+ \node[note]at(\xx,2.32){$\name$};
+}
+\node[crop,minimum width=.37cm,minimum height=.25cm,inner sep=1pt]at(15.12,1.70){$t$};
+\draw[flow](15.12,1.84)--(15.12,2.07);
+\node[note,anchor=west]at(15.34,1.93){$I$};
+\node[note,text=cadnavy]at(16.42,1.65){$\mathcal G=(V,E,I,\rho)$};
+
+% Only the five major outputs are connected: no long return or bypass arrows.
+\foreach \xa/\xb in {3.28/3.56,6.88/7.16,10.48/10.76,14.08/14.36}{
+ \draw[flow](\xa,2.32)--(\xb,2.32);
+}
+\node[note]at(1.65,1.03){Preprocess $\rightarrow$ S0$^*$ $\rightarrow$ S1\\Geometry $\rightarrow$ S2};
+\node[note]at(5.25,1.03){B6$^*$ $\rightarrow$ deduplicate $\rightarrow$ C1\\C2$^*$ $\rightarrow$ repair / cleanup};
+\node[note]at(8.85,1.03){Body mask $\rightarrow$ nets $\rightarrow$ ports\\BFS / tree $\rightarrow$ pair proposals};
+\node[note]at(12.45,1.03){K3: global acceptance\\K5$^*$ / K6$^*$: review or recovery};
+\node[note]at(16.05,1.03){Text candidates $\rightarrow$ T1 $\rightarrow$ T2$^*$\\Text geometry $\rightarrow$ $I$ $\rightarrow$ export};
+\node[note,anchor=west,text=black!60]at(.10,.56)
+ {$^*$ Conditional call; question IDs and panel letters are distinct. Exact scope follows in the matching Method subsection.};
+
+% (f) Retention audit is visibly separate and consumes saved graphs only.
+\draw[black!25,line width=.45pt](.05,.35)--(17.65,.35);
+\node[head,font=\sffamily\bfseries\fontsize{8}{9}\selectfont]at(.08,.13){(f) Offline audit};
+\node[note]at(4.30,.13){saved old + new graphs};
+\node[note]at(8.33,.13){object correspondence $f$};
+\node[note]at(12.28,.13){compare $E$, $I$, within-net $R$};
+\node[note]at(16.05,.13){retained / lost / unmapped};
+\draw[auditflow](2.50,.13)--(2.96,.13);
+\draw[auditflow](5.78,.13)--(6.68,.13);
+\draw[auditflow](9.97,.13)--(10.54,.13);
+\draw[auditflow](14.02,.13)--(14.41,.13);
+\end{tikzpicture}
+\endgroup

@@ -1,0 +1,96 @@
+{
+  "classes": [
+    {
+      "key": "logic_gate/or",
+      "text": "OR gate: a circle with a vertical input bar on its left side where the input lines end."
+    },
+    {
+      "key": "logic_gate/and",
+      "text": "AND gate: a small square box with a vertical input bar on its left side where the input lines end."
+    },
+    {
+      "key": "logic_gate/coincidence",
+      "text": "Coincidence gate: a square box with a fraction such as A/B or 2/3 written inside, with a vertical input bar."
+    },
+    {
+      "key": "logic_gate/not",
+      "text": "NOT gate: a square with an X drawn across it."
+    },
+    {
+      "key": "delay_timer/on_delay",
+      "text": "ON DELAY timer: a small box with one rounded end and the word ON inside."
+    },
+    {
+      "key": "delay_timer/off_delay",
+      "text": "OFF DELAY timer: a small box with one rounded end and the word OFF inside."
+    },
+    {
+      "key": "delay_timer/pulse",
+      "text": "PULSE: a square with a pulse waveform (a raised step) drawn inside."
+    },
+    {
+      "key": "memory/sr",
+      "text": "S-R memory: two small square cells stacked vertically, with the letter S in the top cell and R in the bottom cell."
+    },
+    {
+      "key": "memory/latch",
+      "text": "Latch memory: two small square cells stacked vertically, with the letters L and R."
+    },
+    {
+      "key": "memory/toggle",
+      "text": "Toggle memory: three small square cells stacked vertically, with the letters S, T and R."
+    },
+    {
+      "key": "special_function/iso",
+      "text": "Isolation function: a wide rectangle with the word ISO inside."
+    },
+    {
+      "key": "special_function/flasher",
+      "text": "Flasher: a wide rectangle with the word FLASHER inside."
+    },
+    {
+      "key": "special_function/pupf",
+      "text": "Power-up pulse unit: a wide rectangle with the word PUPF inside."
+    },
+    {
+      "key": "indicator_light",
+      "text": "Indicator light (lamp): a circle with one letter (R, G, O, Y or W) inside and four short rays at its corners."
+    },
+    {
+      "key": "continuation/same_drawing",
+      "text": "Continuation on the same drawing: a short arrow-shaped (pentagon) box with a notch on one end and a single number inside."
+    },
+    {
+      "key": "continuation/other_drawing",
+      "text": "Continuation to another drawing: a long arrow-shaped box containing a drawing number such as 700-J158-010 and a sheet number."
+    },
+    {
+      "key": "manual_input",
+      "text": "Manual input: a small open circle (or a filled dot) at the very start of a signal line, with the control switch tag (such as HS-0111 ...) written above the line."
+    },
+    {
+      "key": "process_input",
+      "text": "Process input: a small arrow head on a line, next to an instrument tag."
+    },
+    {
+      "key": "io_marker/hardwired",
+      "text": "MMIS hardwired input/output: a small filled black square on a line."
+    },
+    {
+      "key": "io_marker/data",
+      "text": "MMIS data communication input/output: a small filled black diamond on a line."
+    },
+    {
+      "key": "alarm",
+      "text": "Alarm: a circle with an alarm code over a number (such as UA over 001), often inside a square."
+    },
+    {
+      "key": "system_block",
+      "text": "System block: a large rectangle with the name of a plant system written inside (for example REACTOR REGULATING SYSTEM)."
+    },
+    {
+      "key": "other",
+      "text": "None of these: text, a table cell, a junction dot, an empty area between wires, or only part of a symbol."
+    }
+  ]
+}
