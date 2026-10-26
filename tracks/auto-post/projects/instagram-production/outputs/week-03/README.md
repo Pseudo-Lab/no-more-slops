@@ -49,8 +49,8 @@ python3 scripts/check_repository.py
 git diff --check
 ```
 
-[edition.json](edition.json)은 두 소재의 선언한 원본 발표일과 시작 주소, 이용 조건, 파일을 연결합니다. 사전 점검 통과 기록은 [preflight-report.json](preflight-report.json), 측정 값은 [카드 보고서](carousel/production-report.json)와 [영상 보고서](reel/production-report.json)에 있습니다. 기존 렌더러 사용 방법은 [캐러셀 하네스](../../../../skills/instagram-content/references/harness.md)와 [릴스 하네스](../../../../skills/instagram-content/references/reel-harness.md)를 참고합니다. 원본 외부 영상이 없는 이 공개 제출만으로 동일한 릴스를 다시 인코딩할 수는 없습니다.
+[edition.json](edition.json)은 두 소재의 선언한 원본 발표일과 시작 주소, 이용 조건, 파일을 연결합니다. 사전 점검은 [preflight-report.json](preflight-report.json), 테스트 45개와 네 가지 병합 순서 확인은 [validation.json](validation.json)에 기록했습니다. 측정 값은 [카드 보고서](carousel/production-report.json)와 [영상 보고서](reel/production-report.json)에 있습니다. 기존 렌더러 사용 방법은 [캐러셀 하네스](../../../../skills/instagram-content/references/harness.md)와 [릴스 하네스](../../../../skills/instagram-content/references/reel-harness.md)를 참고합니다. 원본 외부 영상이 없는 이 공개 제출만으로 동일한 릴스를 다시 인코딩할 수는 없습니다.
 
 최근 안내 페이지를 신규 출시 근거로 삼았던 소재를 교체했습니다. 앞으로 원본 출시일과 독자가 바로 할 수 있는 일을 소재 선정 단계에서 함께 확인합니다. 이번에 확인한 값은 제작 규격과 로컬 검수 결과이며 조회수나 반응 수치를 측정하지 않았습니다.
 
-관련 PR은 [2주차 #18](https://github.com/Pseudo-Lab/no-more-slops/pull/18)입니다. 공통 스킬과 제작 기반은 두 PR의 병합 순서에 맞춰 확인하고, 이번 주 산출물은 `outputs/week-03/`에 따로 보관합니다. 리뷰에서는 소재의 새로움, 전체 프롬프트의 유용성, 시연 중심 제작 기준을 확인해 주세요.
+관련 PR은 [2주차 #18](https://github.com/Pseudo-Lab/no-more-slops/pull/18)입니다. 공통 스킬, CI와 카탈로그를 같은 내용으로 정리했고, 두 병합 순서를 merge commit과 squash 방식으로 각각 확인했습니다. 네 경우의 최종 트리가 같습니다. 3주차의 독립 추가분은 소재 사전 점검 도구와 테스트, 두 실용 소재의 입력과 프롬프트, 공개 카드 발췌와 도식, 검수 기록입니다. 이번 주 산출물은 `outputs/week-03/`에 따로 보관합니다. 리뷰에서는 소재의 새로움, 전체 프롬프트의 유용성, 시연 중심 제작 기준을 확인해 주세요.
