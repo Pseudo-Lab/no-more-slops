@@ -1,0 +1,184 @@
+{
+ "title": "Round 3 퇴고 — 골든 데이터셋 미니 리뷰 (toego:revise)",
+ "reviewer_comment": "Round 2 심사 반영본(v5)의 문장·문단 재점검. 분량 3,000어절 한도 유지.",
+ "evidence_sources": [
+  "research/r1–r5",
+  "reviews/round3/lint.json"
+ ],
+ "sections": [
+  {
+   "id": "abs",
+   "title": "초록",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "2단 구성 두 역할, 골든셋 아님 명시"
+  },
+  {
+   "id": "1",
+   "title": "1",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "Q3에 운영 포함"
+  },
+  {
+   "id": "2.1",
+   "title": "2.1",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "주제문에 보상 구조, 합의 기준 34개"
+  },
+  {
+   "id": "2.5",
+   "title": "2.5",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "주제문 확장"
+  },
+  {
+   "id": "2.6",
+   "title": "2.6",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "두괄식, 안전성 주제문"
+  },
+  {
+   "id": "3",
+   "title": "3",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "GSM8K 사례 압축"
+  },
+  {
+   "id": "3.3",
+   "title": "3.3",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "하한→재감사→보조 도구→결론 순"
+  },
+  {
+   "id": "3.4",
+   "title": "3.4",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "두 문단, 모니터링 한정 이유"
+  },
+  {
+   "id": "4.2",
+   "title": "4.2",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "정의/기준 도출 분할, δ/2 이유, Shankar 이동"
+  },
+  {
+   "id": "4.3",
+   "title": "4.3",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "판정 선제시, C1·C3·C4 재판정"
+  },
+  {
+   "id": "4.4",
+   "title": "4.4",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "두 역할 선제시"
+  },
+  {
+   "id": "5.1",
+   "title": "5.1",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "4.4 참조, 표 2 C2 참조, OR-Bench 단서"
+  },
+  {
+   "id": "5.2",
+   "title": "5.2",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "기준 엄격성·승인 기준값"
+  },
+  {
+   "id": "6",
+   "title": "6",
+   "pattern": "-",
+   "flow_before": "reviews/round3/para.md",
+   "flow_after": "reviews/round3/para.md 제안대로 반영",
+   "verdict": "불리한 결과·엄격성 추가"
+  }
+ ],
+ "structure": {
+  "before": [
+   "4.3 판정 후치, 4.4 단일 핵심셋 정의"
+  ],
+  "after": [
+   "4.3 판정 선제시",
+   "4.4 두 역할(보정용 확률 표본 / 큐레이션 핵심셋)"
+  ],
+  "reasons": [
+   [
+    "4.4",
+    "정의와 PPI 가정의 충돌 해소"
+   ]
+  ]
+ },
+ "global_flow": {
+  "question_to_conclusion": [
+   [
+    "Q1",
+    "2장",
+    "결론 첫째"
+   ],
+   [
+    "Q2",
+    "3장",
+    "결론 둘째(+탐지 성능 한계)"
+   ],
+   [
+    "Q3",
+    "4장",
+    "결론 셋째(+엄격성, 운영)"
+   ]
+  ],
+  "verdict": "질문–결론 대응 완결",
+  "paragraph_chain": "reviews/round3/para.md"
+ },
+ "author_checks": [
+  "HealthBench 합의 기준 34개를 262명 전체가 작성했는지",
+  "C4 경계 판정(쌍체 비교 기준으로 충족)"
+ ],
+ "fact_checks": [
+  [
+   "C1 최소 주제 MDE 17%p",
+   "재계산 17.05%p",
+   "2.802×√(0.5/135)"
+  ],
+  [
+   "C4 독립 최악 4,361문항",
+   "재계산",
+   "7.849×0.5/0.0009"
+  ],
+  [
+   "C4 쌍체 p_d 임계 약 0.497",
+   "재계산",
+   "4326×0.0009/7.849+0.0009"
+  ],
+  [
+   "864/428",
+   "재계산",
+   "7.849(p_d−0.0009)/0.0009"
+  ]
+ ]
+}
