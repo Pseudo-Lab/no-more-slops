@@ -20,7 +20,7 @@ Evaluation sets for LLM and RAG applications are often called golden datasets, y
 
 ## 1. 서론
 
-LLM 애플리케이션 개발에서 평가셋은 프롬프트, 모델, 검색기를 바꿀 때마다 결과를 비교하는 기준이며, 실무에서는 이를 골든 데이터셋(이하 골든셋)이라 부른다[1,2]. 그러나 정답 자체가 틀릴 수 있다. 널리 쓰이는 평가셋 10종의 라벨 오류율은 평균 3.3% 이상으로 추정되었고[3], MMLU 문항의 6.49%가 오류(모호 문항 포함)로 추정되었으며[4], GSM8K를 재검수하자 원래 똑같이 45개를 틀린 두 모델이 각각 2개와 17개를 틀렸다[5]. 기존 서베이와 벤치마크 품질 연구는 평가 방법 일반이나 공개 벤치마크를 다루었고[6–10], 특정 애플리케이션의 평가셋을 만들고 검증하는 절차와 골든이라 부를 조건을 묶은 리뷰는 본고의 검색 범위에서 찾지 못하였다. 본고는 (Q1) 구축 출처와 위험, (Q2) 검증 측면, (Q3) 골든의 조건과 이를 충족하는 구축·승인 절차를 다룬다. 문헌은 2026년 10월에 arXiv, ACL Anthology, 학회 논문집, 개발사 문서에서 골든 데이터셋, 벤치마크 타당도, 주석 품질, RAG 평가 등의 검색어로 찾고 인용을 추적하였으며, 평가셋의 구축·검증 절차나 그 근거를 보고한 문헌을 포함하였다(출처 기록 약 120건, 회색 문헌은 구분, 검색 기록은 저장소에 공개).
+LLM 애플리케이션 개발에서 평가셋은 프롬프트, 모델, 검색기를 바꿀 때마다 결과를 비교하는 기준이며, 실무에서는 이를 골든 데이터셋(이하 골든셋)이라 부른다[1,2]. 그러나 정답 자체가 틀릴 수 있다. 널리 쓰이는 평가셋 10종의 라벨 오류율은 평균 3.3% 이상으로 추정되었고[3], MMLU 문항의 6.49%가 오류(모호 문항 포함)로 추정되었으며[4], GSM8K를 재검수하자 원래 똑같이 45개를 틀린 두 모델이 각각 2개와 17개를 틀렸다[5]. 기존 서베이와 벤치마크 품질 연구는 평가 방법 일반이나 공개 벤치마크를 다루었고[6–10], 특정 애플리케이션의 평가셋을 만들고 검증하는 절차와 골든이라 부를 조건을 묶은 리뷰는 본고의 검색 범위에서 찾지 못하였다. 본고는 (Q1) 구축 출처와 위험, (Q2) 검증 측면, (Q3) 골든의 조건과 이를 충족하는 구축·승인 절차를 다룬다. 문헌은 2026년 10월에 arXiv, ACL Anthology, 학회 논문집, 개발사 문서에서 골든 데이터셋, 벤치마크 타당도, 주석 품질, RAG 평가 등의 검색어로 찾고 인용을 추적하였으며, 평가셋의 구축·검증 절차나 그 근거를 보고한 문헌을 포함하였다(출처 기록 약 120건, 회색 문헌은 구분, 검색 기록은 저장소 docs/search-log.md에 공개).
 
 ## 2. 구축: 네 가지 출처와 애플리케이션별 요건
 
@@ -49,19 +49,36 @@ LLM 애플리케이션 개발에서 평가셋은 프롬프트, 모델, 검색기
 
 ### 2.3 LLM 합성
 
-LLM 합성은 적은 비용으로 규모와 범위를 확보하지만 정답의 정확성과 생성 모델의 편향을 따로 검증해야 한다. Self-Instruct에서도 표본 200개 중 모두 올바른 항목은 54%였다[17]. 판정 모델로 쓰인 GPT-4와 Llama 2는 자신의 출력을 구별하였고 자기 인식 능력과 자기 선호의 강도가 함께 변하였으므로[18], 생성 모델이 판정 모델을 겸하면 편향이 더해질 수 있다. 보완 절차로, ARES는 생성 질의가 자신의 원문 단락을 1위로 검색하는 경우만 남긴 뒤 사람 라벨 150–300개로 판정 모델을 보정하였고[19], MT-Bench-101은 주석자 다섯 명 모두가 승인한 생성 대화만 남겼다[20].
+LLM 합성은 적은 비용으로 규모와 범위를 확보하지만 정답의 정확성과 생성 모델의 편향을 따로 검증해야 한다. Self-Instruct에서도 표본 200개 중 모두 올바른 항목은 54%였다[17]. 판정 모델로 쓰인 GPT-4와 Llama 2는 자신의 출력을 구별하였고 자기 인식 능력과 자기 선호의 강도가 함께 변하였으므로[18], 생성 모델이 판정 모델을 겸하면 편향이 더해질 수 있다. 보완 절차로, ARES는 생성 질의가 자신의 원문 단락을 1위로 검색하는 경우만 남긴 뒤 사람 라벨 150–300개로 판정 모델을 보정하였다[19].
 
 ### 2.4 적대적 수집
 
-모델을 틀리게 하는 문항을 사람이 작성하는 적대적 수집은 난이도를 높이지만, 정답이 모호하거나 틀린 문항이 섞일 수 있다. 이 방식은 주석 흔적(가설 문장만으로 SNLI의 약 67%를 맞힘)[21]에 대응하는 방법으로 쓰였으나, ANLI에서 모델을 속인 것으로 보인 사례(18.54%)의 약 절반은 독립 검증자의 동의를 얻지 못하였다(9.52%)[22].
+모델을 틀리게 하는 문항을 사람이 작성하는 적대적 수집은 난이도를 높이지만, 정답이 모호하거나 틀린 문항이 섞일 수 있다. 이 방식은 주석 흔적(가설 문장만으로 SNLI의 약 67%를 맞힘)[20]에 대응하는 방법으로 쓰였으나, ANLI에서 모델을 속인 것으로 보인 사례(18.54%)의 약 절반은 독립 검증자의 동의를 얻지 못하였다(9.52%)[21].
 
 ### 2.5 RAG 평가셋
 
-RAG 평가셋에서는 관련성과 근거 귀속 판정의 불완전성이 결과를 바꿀 수 있다. 어휘 기반 후보만 판정한 BEIR의 TREC-COVID에서 밀집 검색기 상위 10개 결과의 최대 31.8%가 미판정 문서였고, 980건을 추가 판정하자 DPR의 nDCG@10이 0.332에서 0.445로 올랐다[23]. 근거 귀속을 NLI 모델로 판정한 ALCE의 사람 일치도는 인용 정밀도 0.525에 그쳤다[24]. 따라서 본고는 RAG 문항을 질의, 답 가능 여부, 코퍼스 버전과 기준 시점, 등급별 관련 문서, 근거 구간, 원자적 정답 주장, 허용 답으로 기록하고, 관련 문서 후보를 여러 검색기 결과의 합집합에서 뽑고 새 검색기 상위 k개의 미판정률이 사전 임계값 이하가 될 때까지 추가 판정하며, 검색·답 정확성·근거 충실성·거부를 따로 채점하기를 권한다. 질의 범위는 층화와 답할 수 없는 질의로 설계한다. CRAG는 4,409개 질의를 영역, 유형, 인기도, 시간 변동성으로 층화하여 인기도가 낮고 변동이 큰 층의 낮은 정확도를 드러냈고[25], MultiHop-RAG는 답할 수 없는 질의 301개로 응답 거부를 평가하였다[26].
+RAG 평가셋에서는 관련성과 근거 귀속 판정의 불완전성이 결과를 바꿀 수 있다. 어휘 기반 후보만 판정한 BEIR의 TREC-COVID에서 밀집 검색기 상위 10개 결과의 최대 31.8%가 미판정 문서였고, 980건을 추가 판정하자 DPR의 nDCG@10이 0.332에서 0.445로 올랐다[22]. 근거 귀속을 NLI 모델로 판정한 ALCE의 사람 일치도는 인용 정밀도 0.525에 그쳤다[23]. 따라서 본고는 RAG 문항을 질의, 답 가능 여부, 코퍼스 버전과 기준 시점, 등급별 관련 문서, 근거 구간, 원자적 정답 주장, 허용 답으로 기록하고, 관련 문서 후보를 여러 검색기 결과의 합집합에서 뽑고 새 검색기 상위 k개의 미판정률이 사전 임계값 이하가 될 때까지 추가 판정하며, 검색·답 정확성·근거 충실성·거부를 따로 채점하기를 권한다. 질의 범위는 층화와 답할 수 없는 질의로 설계한다. CRAG는 4,409개 질의를 영역, 유형, 인기도, 시간 변동성으로 층화하여 인기도가 낮고 변동이 큰 층의 낮은 정확도를 드러냈고[24], MultiHop-RAG는 답할 수 없는 질의 301개로 응답 거부를 평가하였다[25].
+
+<!-- wide -->
+<!-- cols: 12, 37, 39, 12 -->
+**표 2.** 골든셋 구축·승인 8단계와 단계별 통과 기준(본고 제안)
+
+| 단계(조건) | 할 일 | 통과 기준 | 산출물 |
+| --- | --- | --- | --- |
+| 1 평가 계약(C1) | 사용 사례, 일차 지표와 효과 판정 규칙, 최소 차이 δ, 오류 비용, 판정 모델 목표 성능, 위험 층 | 정의서 승인, 모델 의존 선별의 편향 평가 | 평가 정의서 |
+| 2 파일럿(C1) | 층별 후보 수집(2.7)·포함 확률 기록, 스키마(RAG는 2.5), 파일럿 주석으로 지침 개정, p<sub>d</sub>·분산 추정 | 스키마·지침 확정 | 표집 계획, 지침 |
+| 3 규모 결정(C4) | 식 (1) 또는 시뮬레이션으로 전체·핵심 층의 필요 문항 수 n<sub>h</sub> 산정 | 최종 문항 수 N<sub>h</sub> ≥ n<sub>h</sub>(부족하면 추가 수집) | 분석 계획 |
+| 4 본 주석(C2) | 2인 이상 독립 주석, 불일치를 모호·복수 정답·지침 결함·본질적 주관으로 분류 | 층별 α의 95% 부트스트랩 CI 하한 ≥ 0.800(0.667–0.800은 탐색용). 앞 세 유형은 수정·제외 | 비집계 라벨, 조정 기록 |
+| 5 맹검 감사(C3) | 불참 감사자가 라벨 없이 무작위 표본의 답·근거 재도출, 불일치는 독립 조정자가 라벨 오류·감사자 오류·판정 불능으로 확정 | 라벨 오류율의 양측 95% Wilson 상한 ≤ δ/4(고위험 층은 별도 상한). 실패 시 지침 수정, 해당 층 재주석, 새 표본 재감사 | 감사 표본, 오류 목록 |
+| 6 동결(C5) | 해시·비공개 분할·접근 기록, 근접 중복 검사, 판정 모델·프롬프트·인덱스 고정, 반복 수 사전 결정 | 확인된 학습 중복 0건(또는 제거판), 독립 실행 두 배치의 평균 차 95% CI ⊂ [−δ/2, δ/2] | 중복 판정표, 실행 원자료 |
+| 7 문서화(C6) | 데이터시트[26]와 Croissant-RAI[27] 필수 항목 | 필수 항목 누락 없음 | 데이터시트 |
+| 8 유지(C7) | 정오표, 채점 기준 버전, 정답 유효 기간 | 라벨 수정 → 4–5단계, 코퍼스 갱신 → 2·5·6단계, 평가용 프롬프트·판정 모델 변경 → 6단계와 판정 모델 승인, 사용 사례 변경 → 1단계부터[28] | 버전 기록 |
+
+주: 기존 기준과의 대응은 1–5단계가 Bowman과 Dahl[8]의 1–4와 Bean 등[10]의 1–4·6–8, 6단계가 Bean 5, 7–8단계가 BetterBench[9]의 문서화·유지이다.
 
 ### 2.6 에이전트, 안전성, 다국어 평가셋
 
-에이전트 평가셋에서는 최종 상태가 정답이고 반복 실행의 일관성도 측정 대상이다. τ-bench는 대화 후 데이터베이스 상태로 채점하고 k번의 독립 시행이 모두 성공할 확률 pass<sup>k</sup>를 정의하였는데, GPT-4o의 소매 영역 성공률은 pass<sup>1</sup> 약 61%에서 pass<sup>8</sup> 약 25%로 떨어졌다[27]. 안전성 평가셋은 오류 비용이 다른 두 유형, 곧 거부해야 할 문항과 거부하면 안 되는 문항을 함께 둔다. HarmBench는 공격 성공 분류기를 사람 라벨과 대조하였고[28], XSTest는 안전한 프롬프트 250개와 대조용 위험 프롬프트 200개를 손으로 작성하였다[29]. LLM 세 개의 다수결로 라벨링한 OR-Bench에서는 100문항 검증 정확도(93.0%)가 저자(94.0%)에 근접하였으나 소수 문항인 유해 범주의 위양성률은 16.0%로 저자(8.0%)의 두 배였다[30]. 다국어 평가셋에서는 번역 품질과 문화적 편향이 검증 대상이다. KMMLU는 한국 원어 시험으로 35,030문항을 구축하고 공개 후 741문항을 수정하였고[31], Global-MMLU 주석 표본에서는 문항의 28%가 서구 문화 지식을 요구하였다[32].
+에이전트 평가셋에서는 최종 상태가 정답이고 반복 실행의 일관성도 측정 대상이다. τ-bench는 대화 후 데이터베이스 상태로 채점하고 k번의 독립 시행이 모두 성공할 확률 pass<sup>k</sup>를 정의하였는데, GPT-4o의 소매 영역 성공률은 pass<sup>1</sup> 약 61%에서 pass<sup>8</sup> 약 25%로 떨어졌다[29]. 안전성 평가셋은 오류 비용이 다른 두 유형, 곧 거부해야 할 문항과 거부하면 안 되는 문항을 함께 둔다. XSTest는 안전한 프롬프트 250개와 대조용 위험 프롬프트 200개를 손으로 작성하였다[30]. LLM 세 개의 다수결로 라벨링한 OR-Bench에서는 100문항 검증 정확도(93.0%)가 저자(94.0%)에 근접하였으나 소수 문항인 유해 범주의 위양성률은 16.0%로 저자(8.0%)의 두 배였다[31]. 다국어 평가셋에서는 번역 품질과 문화적 편향이 검증 대상이다. KMMLU는 한국 원어 시험으로 35,030문항을 구축하고 공개 후 741문항을 수정하였고[32], Global-MMLU 주석 표본에서는 문항의 28%가 서구 문화 지식을 요구하였다[33].
 
 ### 2.7 종합: 출처는 고르지 않고 조합한다
 
@@ -69,54 +86,37 @@ RAG 평가셋에서는 관련성과 근거 귀속 판정의 불완전성이 결�
 
 ## 3. 검증: 다섯 측면
 
-본고는 검증을 구성 타당도, 라벨 신뢰도, 오류 감사, 통계적 충분성, 오염·재현성 통제의 다섯 측면으로 정리하며, 한 측면의 점검이 다른 측면의 결함을 배제하지 않는다. 선별을 거친 SWE-bench Verified에서도 2026년 분석에서 오염이 드러나 OpenAI는 이를 자사 평가에서 제외하였다[33].
+본고는 검증을 구성 타당도, 라벨 신뢰도, 오류 감사, 통계적 충분성, 오염·재현성 통제의 다섯 측면으로 정리하며, 한 측면의 점검이 다른 측면의 결함을 배제하지 않는다. 선별을 거친 SWE-bench Verified에서도 2026년 분석에서 오염이 드러나 OpenAI는 이를 자사 평가에서 제외하였다[34].
 
-**구성 타당도.** 벤치마크 445개 중 측정 대상을 정의한 78.2%에서도 정의의 47.8%는 합의되지 않은 개념이었다[10]. 애플리케이션 평가셋에서는 과제 정의서와 층별 구성이 증거이다. **라벨 신뢰도.** Krippendorff는 α 0.800 이상(잠정 결론에 0.667)을 제시하였으나[34], 범주 분포가 치우치면 일치율 0.96에서도 우연 보정 계수가 0.65에 그친다[35]. 높은 일치도는 정답의 정확성을 보장하지 않으며(같은 잘못된 출처를 본 두 주석자는 일치하며 함께 틀린다), 불일치를 신호로 보아야 한다는 주장도 있다[36,37]. **오류 감사.** 모델 불일치로 찾은 오류는 모든 모델이 공유하는 오류를 놓치므로 하한이다[38]. HLE의 화학·생물 문항은 외부 재감사에서 29±3.7%(95% CI)가 문헌과 충돌하였고[14], SWE-bench Verified에서 o3가 매번 풀지는 못한 138문항 중 59.4%에 결함이 있었다[33]. 따라서 오류율은 라벨을 보지 않은 검토자가 무작위 표본의 모든 문항에서 정답을 다시 도출하는 독립 재도출 감사로 추정해야 한다. **통계적 충분성.** 오차 막대 보고가 권고되었으나[39] NLP 비교의 상당수는 검정력이 부족하였으며[40], 벤치마크의 16.0%만 불확실성 추정·검정을 썼다[10]. **오염·재현성.** 새 평가셋 GSM1k에서 최대 8%p 하락한 모델이 있었고[41], 갱신(LiveBench)과 공개 시점 기록(LiveCodeBench)이 대응책이며[42,43], 실행 환경과 프롬프트도 점수를 바꾸었다[44,45].
+**구성 타당도.** 벤치마크 445개 중 측정 대상을 정의한 78.2%에서도 정의의 47.8%는 합의되지 않은 개념이었다[10]. 애플리케이션 평가셋에서는 과제 정의서와 층별 구성이 증거이다. **라벨 신뢰도.** Krippendorff는 α 0.800 이상(잠정 결론에 0.667)을 제시하였으나[35], 범주 분포가 치우치면 일치율 0.96에서도 우연 보정 계수가 0.65에 그친다[36]. 높은 일치도는 정답의 정확성을 보장하지 않으며(같은 잘못된 출처를 본 두 주석자는 일치하며 함께 틀린다), 불일치를 신호로 보아야 한다는 주장도 있다[37,38]. **오류 감사.** 모델 불일치로 찾은 오류는 모든 모델이 공유하는 오류를 놓치므로 하한이다[39]. HLE의 화학·생물 문항은 외부 재감사에서 29±3.7%(95% CI)가 문헌과 충돌하였고[14], SWE-bench Verified에서 o3가 매번 풀지는 못한 138문항 중 59.4%에 결함이 있었다[34]. 따라서 오류율은 라벨을 보지 않은 검토자가 무작위 표본의 모든 문항에서 정답을 다시 도출하는 독립 재도출 감사로 추정해야 한다. **통계적 충분성.** 오차 막대 보고가 권고되었으나[40] NLP 비교의 상당수는 검정력이 부족하였으며[41], 벤치마크의 16.0%만 불확실성 추정·검정을 썼다[10]. **오염·재현성.** 새 평가셋 GSM1k에서 최대 8%p 하락한 모델이 있었고[42], 갱신(LiveBench)과 공개 시점 기록(LiveCodeBench)이 대응책이며[43,44], 실행 환경과 프롬프트도 점수를 바꾸었다[45,46].
 
 ## 4. 골든의 정의와 구축·승인 절차
 
-"골드 표준"은 절대 정답이 아니라 순위 안정성에 기댄 기준이었고[46], 이후 은 표준과 플래티넘이 구분되었으며[38,47], 영원한 정답이라는 주석의 신화도 비판되었다[48]. 따라서 본고는 골든셋을 **명시된 평가 목적과 버전에 대해 일곱 조건(C1–C7)을 충족한다는 증거가 문서로 남은 평가셋**으로 정의하고, 이를 표 2의 8단계로 운영한다. 순서는 파일럿으로 규모를 정한 뒤 최종 구축과 감사를 하는 것이다. 채점 기준, 프롬프트, 검색 인덱스, 실행 환경도 점수를 정하므로 승인 단위는 이들을 묶은 버전된 평가 패키지이다.
+"골드 표준"은 절대 정답이 아니라 순위 안정성에 기댄 기준이었고[47], 이후 은 표준과 플래티넘이 구분되었으며[39,48], 영원한 정답이라는 주석의 신화도 비판되었다[49]. 따라서 본고는 골든셋을 **명시된 평가 목적과 버전에 대해 일곱 조건(C1–C7)을 충족한다는 증거가 문서로 남은 평가셋**으로 정의하고, 이를 표 2의 8단계로 운영한다. 순서는 파일럿으로 규모를 정한 뒤 최종 구축과 감사를 하는 것이다. 채점 기준, 프롬프트, 검색 인덱스, 실행 환경도 점수를 정하므로 승인 단위는 이들을 묶은 버전된 평가 패키지이다. 평가 대상 시스템이 바뀌면 패키지를 다시 승인하지 않고 새로 실행한다.
 
-<!-- wide -->
-<!-- cols: 12, 35, 39, 14 -->
-**표 2.** 골든셋 구축·승인 8단계와 단계별 통과 기준(본고 제안)
-
-| 단계(조건) | 할 일 | 통과 기준 | 산출물 |
-| --- | --- | --- | --- |
-| 1 평가 계약(C1) | 사용 사례, 일차 지표와 다중 지표 결정 규칙, 배포 결정을 바꾸는 최소 차이 δ, 오류 비용, 위험 층 정의 | 정의서 승인, 모델 의존 선별의 기록·편향 평가 | 평가 정의서 |
-| 2 파일럿(C1) | 층별 후보 수집(2.7)과 포함 확률 기록, 문항 스키마(RAG는 2.5), 파일럿 주석으로 지침 개정, p<sub>d</sub>·분산 추정 | 스키마·지침 확정 | 표집 계획, 지침 |
-| 3 규모 결정(C4) | 식 (1) 또는 시뮬레이션으로 전체·핵심 층의 필요 문항 수 n<sub>h</sub> 산정 | 최종 문항 수 N<sub>h</sub> ≥ n<sub>h</sub>(부족하면 추가 수집) | 분석 계획 |
-| 4 본 주석(C2) | 2인 이상 독립 주석, 불일치를 모호·복수 정답·지침 결함·본질적 주관으로 분류 | 층별 α의 95% CI 하한 ≥ 0.800(0.667–0.800은 탐색용). 앞 세 유형은 수정·제외 | 비집계 라벨, 조정 기록 |
-| 5 맹검 감사(C3) | 작성·조정에 불참한 감사자가 라벨을 보지 않고 무작위 표본의 답·근거 재도출. 불일치는 독립 조정자가 기존 라벨 오류·감사자 오류·판정 불능으로 확정 | 기존 라벨 오류율의 양측 95% Wilson 상한 ≤ δ/4, 고위험 층은 별도 상한. 실패 시 지침을 고치고 해당 오류 유형의 층을 재주석한 뒤 새 표본으로 재감사 | 감사 표본, 오류 목록 |
-| 6 동결(C5) | 해시·비공개 분할·접근 기록, 근접 중복 검사, 모델·프롬프트·인덱스·채점기 고정 | 오염: 확인된 학습 중복 0건(또는 제거한 새 버전). 재현: 독립 실행 두 배치의 평균 차 95% CI가 [−δ/2, δ/2] 안 | 중복 판정표, 실행 원자료 |
-| 7 문서화(C6) | 데이터시트[49]와 Croissant-RAI[50] 필수 항목 | 필수 항목 누락 없음 | 데이터시트 |
-| 8 유지(C7) | 정오표, 채점 기준 버전, 정답 유효 기간 | 라벨 수정은 4–5단계, 코퍼스 갱신은 2·5·6단계, 프롬프트·채점기·모델 변경은 6단계와 판정 모델 승인, 사용 사례 변경은 1단계부터 재실행[51] | 버전 기록 |
-
-주: 기존 기준과의 대응은 1–5단계가 Bowman과 Dahl[8]의 1–4와 Bean 등[10]의 1–4·6–8, 6단계가 Bean 5, 7–8단계가 BetterBench[9]의 문서화·유지이다.
-
-표 2의 기준값은 문항별 0/1 정확도의 쌍체 비교를 전제로 한 본고의 보수적 충분조건이다. 라벨 오류율이 e이면 한 모델은 참 정답을, 다른 모델은 잘못된 라벨과 같은 답을 내는 문항 때문에 정답률 차이가 최대 2e 왜곡되므로, 5단계는 이 왜곡을 δ/2 이하로 묶는다. 오류 0건이면 δ=10, 5, 3%p에서 각각 150, 304, 509문항을 감사해야 하고, 1,000문항 감사에서는 각각 15, 5, 2건까지 허용된다(유한 모집단 보정 없음, 본고 계산). 6단계의 δ/2는 실행 변동이 목표 차이의 절반을 넘어 이를 가리지 않게 하는 기준이다. 3단계의 문항 수는 두 모델의 정오가 엇갈린 문항 비율 p<sub>d</sub>(p<sub>10</sub>+p<sub>01</sub>)와 z<sub>1−α/2</sub>=1.960, z<sub>1−β</sub>=0.842(α=0.05, 검정력 80%)로 식 (1)에서 구하며(Connor 근사, 연속성 보정 없음)[52], δ=3%p, p<sub>d</sub>=0.10이면 약 870문항이다. nDCG, 연속 점수, pass<sup>k</sup> 같은 지표는 라벨 오류와 실행 변동을 넣은 시뮬레이션으로 결정이 뒤바뀔 확률을 제한한다.
+1단계의 효과 판정 규칙은 예컨대 "점추정 ≥ δ이고 95% CI가 0을 제외"이다. 표 2의 기준값은 문항별 0/1 정확도의 쌍체 비교를 전제로 한 본고의 보수적 충분조건이다. 라벨 오류율이 e이면 한 모델은 참 정답을, 다른 모델은 잘못된 라벨과 같은 답을 내는 문항 때문에 정답률 차이가 최대 2e 왜곡되므로, 5단계는 이 왜곡을 δ/2 이하로 묶는다. 오류 0건이면 δ=10, 5, 3%p에서 각각 150, 304, 509문항을 감사해야 하고, 1,000문항 감사에서는 각각 15, 5, 2건까지 허용된다(본고 계산). 6단계의 δ/2는 실행 변동이 목표 차이의 절반을 넘어 이를 가리지 않게 하는 기준이다. 3단계의 문항 수는 두 모델의 정오가 엇갈린 문항 비율 p<sub>d</sub>(p<sub>10</sub>+p<sub>01</sub>)와 z<sub>1−α/2</sub>=1.960, z<sub>1−β</sub>=0.842(α=0.05, 검정력 80%)로 식 (1)에서 구하며(Connor 근사, 연속성 보정 없음)[50], δ=3%p, p<sub>d</sub>=0.10이면 약 870문항이다. 비교할 모델 쌍이 없으면 최악값 p<sub>d</sub>=0.5(약 4,360문항)를 쓴다. nDCG, 연속 점수, pass<sup>k</sup>는 파일럿 점수를 재표집하고 라벨 오류를 주입하여 결정이 뒤바뀔 확률이 사전 한도 이하가 되는 문항 수를 정한다. 셋이 작아 감사 표본이 셋의 큰 비율을 차지하면 초기하분포(유한 모집단 보정)로 감사 수를 줄일 수 있다.
 
 =: n = [z<sub>1−α/2</sub>√p<sub>d</sub> + z<sub>1−β</sub>√(p<sub>d</sub> − δ<sup>2</sup>)]<sup>2</sup> / δ<sup>2</sup>  (1)
 
-SimpleQA[15]는 전체 정답률 차이를 3%p 수준에서 판정하는 목적에 대해 골든셋이 아니다. 결정적 결함은 5단계이다. 불일치 문항만 검토하여 확인된 오류가 이미 1,000문항 중 28건(Wilson 하한 1.9%, 본고 계산)이어서, 검토되지 않은 일치 문항의 오류를 0으로 보아도 δ/4(0.75%)를 넘는다. 4단계의 94.4%는 제3 작성자의 답을 자동 채점기가 기준 답과 비교한 정확도여서 주석자 간 신뢰도를 대신하지 못하므로 판정할 수 없다. 3단계도 4,326문항은 p<sub>d</sub> ≤ 0.496이면 충분하나(본고 계산) 비교할 모델 쌍의 p<sub>d</sub>가 보고되지 않아 판정할 수 없다. 1단계는 적대적 선별의 GPT-4 계열 편향이 평가되지 않았고 주제 편향이 지적되어[53], 7단계는 기계 판독 메타데이터가 없어 부분 충족이며, 6·8단계의 증거는 확인되지 않았다.
+SimpleQA[15]는 전체 정답률 차이를 3%p 수준에서 판정하는 목적에 대해 골든셋이 아니다. 결정적 결함은 5단계이다. 불일치 문항만 검토하여 확인된 오류가 이미 1,000문항 중 28건(Wilson 하한 1.9%, 본고 계산)이어서, 검토되지 않은 일치 문항의 오류를 0으로 보아도 δ/4(0.75%)를 넘는다. 4단계의 94.4%는 제3 작성자의 답을 자동 채점기가 기준 답과 비교한 정확도여서 주석자 간 신뢰도를 대신하지 못하므로 판정할 수 없다. 3단계도 4,326문항은 p<sub>d</sub> ≤ 0.496이면 충분하나(본고 계산) 비교할 모델 쌍의 p<sub>d</sub>가 보고되지 않아 판정할 수 없다. 1단계는 적대적 선별의 GPT-4 계열 편향이 평가되지 않았고 주제 편향이 지적되어[51], 7단계는 기계 판독 메타데이터가 없어 부분 충족이며, 6·8단계의 증거는 확인되지 않았다.
 
-사람 라벨은 두 역할로 나누어 운영한다. 하나는 합성·로그 기반 보조셋에 대한 자동 판정 점수의 편향을 예측 기반 추론(PPI)으로 보정하여 모집단 점수와 신뢰구간을 추정하는 확률 표본이다[54,55]. PPI는 라벨 표본이 예측 표본과 같은 분포에서 독립 추출되었다고 가정하므로, 보조셋에서 무작위 또는 가중치를 아는 층화 표집으로 질의를 뽑고 새 릴리스 후보마다 그 응답을 사람이 새로 판정한다. 다른 하나는 정답을 사람이 확정한 큐레이션 핵심셋으로, 매 변경의 회귀 검사와 판정 모델 승인에 쓴다. 판정 모델 승인에는 일치율과 점수 차이를 함께 보며[56], 본고는 질의–응답 쌍을 단위로 층별 평균 편향의 95% CI가 [−δ/4, δ/4] 안에 들고 비용이 큰 오류 유형의 민감도·특이도 하한이 평가 계약의 기준 이상일 것을 제안한다. 표본 수는 편향 신뢰구간의 반폭과 희귀 오류 유형의 최소 양성 수로 정한다. 핵심셋은 큐레이션된 분포를 추정하므로 보정용 표본을 대신할 수 없으나, 가중치를 알고 오류를 수정한 층화 확률 표본은 두 역할을 겸할 수 있다.
+사람 라벨은 두 역할로 나누어 운영한다. 하나는 합성·로그 기반 보조셋에 대한 자동 판정 점수의 편향을 예측 기반 추론(PPI)으로 보정하여 모집단 점수와 신뢰구간을 추정하는 확률 표본이다[52,53]. PPI는 라벨 표본이 예측 표본과 같은 분포에서 독립 추출되었다고 가정하므로, 보조셋에서 무작위 또는 가중치를 아는 층화 표집으로 질의를 뽑고 새 릴리스 후보마다 그 응답을 사람이 새로 판정한다. 다른 하나는 정답을 사람이 확정한 큐레이션 핵심셋으로, 매 변경의 회귀 검사와 판정 모델 승인에 쓴다. 판정 모델 승인에는 일치율과 점수 차이를 함께 보며[54], 본고는 질의–응답 쌍을 단위로 층별 평균 편향의 95% CI가 [−δ/4, δ/4] 안에 들고 비용이 큰 오류 유형의 민감도·특이도 하한이 평가 계약의 기준 이상일 것을 제안한다. 표본 수는 편향 신뢰구간의 반폭과 희귀 오류 유형의 최소 양성 수로 정한다. 핵심셋은 큐레이션된 분포를 추정하므로 보정용 표본을 대신할 수 없으나, 가중치를 알고 오류를 수정한 층화 확률 표본은 두 역할을 겸할 수 있다.
 
 ## 5. 논의
 
 ### 5.1 쟁점
 
-첫째 쟁점은 규모와 품질이며, 2단 운영으로 두 입장을 결합하되 그 이득에 상한이 있다고 본다. Anthropic은 자동 채점 문항을 많이 두라고 권고하였고[2], AutoEval은 GPT-4 실험에서 PPI로 사람 라벨의 유효 표본 크기를 최대 50% 늘렸다[57]. 반면 벤치마크 연구는 철저히 검증되고 모호하지 않은 문항을 요구하였다[8,38]. 판정 모델이 평가 대상보다 정확하지 않으면 줄일 수 있는 사람 라벨은 최대 절반이며[58], 필요 문항 수가 1/δ<sup>2</sup>로 늘므로 차이가 작은 비교에서는 사람 라벨 표본 자체를 키워야 한다.
+첫째 쟁점은 규모와 품질이며, 2단 운영으로 두 입장을 결합하되 그 이득에 상한이 있다고 본다. Anthropic은 자동 채점 문항을 많이 두라고 권고하였고[2], AutoEval은 GPT-4 실험에서 PPI로 사람 라벨의 유효 표본 크기를 최대 50% 늘렸다[55]. 판정 모델이 평가 대상보다 정확하지 않으면 줄일 수 있는 사람 라벨은 최대 절반이며[56], 필요 문항 수가 1/δ<sup>2</sup>로 늘므로 차이가 작은 비교에서는 사람 라벨 표본 자체를 키워야 한다.
 
-둘째 쟁점은 단일 정답과 관점주의이며, 문항을 정답형과 분포형으로 나누는 절충을 제안한다. 주관적 평가에서는 라벨 분포를 보존하는 편이 타당하다는 주장이 있으나[36,37,59], 회귀 검사는 고정된 합격 기준을 요구한다. 근거 자료로 해소되지 않고 평가 계약이 단일 최적 답을 요구하지 않는 불일치만 본질적 주관으로 분류한다. 정답형 문항은 단일 정답으로 채점하고, 분포형 문항은 모델 응답에 동의한 주석자 비율로 채점하되 합격 임계값을 따로 정한다.
+둘째 쟁점은 단일 정답과 관점주의이며, 문항을 정답형과 분포형으로 나누는 절충을 제안한다. 주관적 평가에서는 라벨 분포를 보존하는 편이 타당하다는 주장이 있으나[37,38,57], 회귀 검사는 고정된 합격 기준을 요구한다. 근거 자료로 해소되지 않고 평가 계약이 단일 최적 답을 요구하지 않는 불일치만 본질적 주관으로 분류한다. 정답형 문항은 단일 정답으로 채점하고, 분포형 문항은 모델 응답에 동의한 주석자 비율로 채점하되 합격 임계값을 따로 정한다.
 
-셋째 쟁점은 정답 라벨 생성에서 사람을 LLM으로 대체하는 문제이며, LLM 라벨을 사람 라벨로 검증된 은 표준으로 한정할 것을 제안한다. ChatGPT의 제로샷 주석 정확도는 군중 작업자보다 평균 약 25%p 높고 비용은 약 30분의 1이었으며[60], Bing 관련성 판정[61]과 OR-Bench(유해 범주 제외)[30]에서도 LLM이 제3자·군중 작업자보다 정확하였다. 그러나 27개 주석 과제 중 9개에서 LLM의 정밀도나 재현율이 0.5 미만이어서 과제마다 사람 검증이 필요하였다[62]. 따라서 핵심셋의 정답은 사람이 확정한다. 판정의 자기 선호[18]가 라벨 생성에도 나타나는지는 확인한 문헌 범위에서 보고되지 않았다.
+셋째 쟁점은 정답 라벨 생성에서 사람을 LLM으로 대체하는 문제이며, LLM 라벨을 사람 라벨로 검증된 은 표준으로 한정할 것을 제안한다. ChatGPT의 제로샷 주석 정확도는 군중 작업자보다 평균 약 25%p 높고 비용은 약 30분의 1이었으며[58], Bing 관련성 판정[59]과 OR-Bench(유해 범주 제외)[31]에서도 LLM이 제3자·군중 작업자보다 정확하였다. 그러나 27개 주석 과제 중 9개에서 LLM의 정밀도나 재현율이 0.5 미만이어서 과제마다 사람 검증이 필요하였다[60]. 따라서 핵심셋의 정답은 사람이 확정한다. 판정의 자기 선호[18]가 라벨 생성에도 나타나는지는 확인한 문헌 범위에서 보고되지 않았다.
 
-넷째 쟁점은 정적 평가셋과 동적 평가셋이며, 고정 스냅숏과 갱신 분할을 함께 두는 절충을 제안한다. 갱신형 평가셋은 오염과 포화를 늦추지만[13,42,43], 회귀 검사는 시점이 다른 모델을 같은 척도로 비교하는 고정 셋에 의존한다. 고정 스냅숏을 회귀 기준으로, 갱신 분할을 별도 버전으로 두고 두 점수를 함께 보고하되(8단계), 시간 민감 문항은 정답 유효 기간이 지나면 정오표로 고친다.
+넷째 쟁점은 정적 평가셋과 동적 평가셋이며, 고정 스냅숏과 갱신 분할을 함께 두는 절충을 제안한다. 갱신형 평가셋은 오염과 포화를 늦추지만[13,43,44], 회귀 검사는 시점이 다른 모델을 같은 척도로 비교하는 고정 셋에 의존한다. 고정 스냅숏을 회귀 기준으로, 갱신 분할을 별도 버전으로 두고 두 점수를 함께 보고하되(8단계), 시간 민감 문항은 정답 유효 기간이 지나면 정오표로 고친다.
 
 ### 5.2 연구 공백과 본고의 한계
 
-첫째, 평가셋 오류가 배포 결정을 얼마나 바꾸는지는 순위나 모델 간 차이가 바뀐 사례[3,5]를 넘어 정량화되지 않았다. 둘째, RAG 지식 베이스 문서가 갱신될 때 정답과 근거 라벨을 함께 갱신하는 절차는 질의 수준의 시간 변동 층화[25] 외에 찾지 못하였다. 셋째, 한국어 RAG·에이전트 평가셋에서 일치도 기준값과 필요 문항 수를 실증한 연구는 원어 구축 사례[31] 외에 드물었다. 넷째, 표 2의 기준값은 문헌 합의가 아니라 본고가 도출한 보수적 운용 기준이다. 공개 평가셋 10종의 평균 오류율이 3.3% 이상이었으므로[3] 이 엄격성과 결론 안정성의 관계를 실증해야 한다. 본고는 체계적 문헌고찰이 아닌 서술형 종합이어서 누락 문헌이 있을 수 있고, 검색과 요약에 LLM 에이전트를 썼으며, 회색 문헌은 바뀔 수 있다(OpenAI Evals는 2026년 11월 30일 종료 예정[1]).
+첫째, 평가셋 오류가 배포 결정을 얼마나 바꾸는지는 순위나 모델 간 차이가 바뀐 사례[3,5]를 넘어 정량화되지 않았다. 둘째, RAG 지식 베이스 문서가 갱신될 때 정답과 근거 라벨을 함께 갱신하는 절차는 질의 수준의 시간 변동 층화[24] 외에 찾지 못하였다. 셋째, 한국어 RAG·에이전트 평가셋에서 일치도 기준값과 필요 문항 수를 실증한 연구는 원어 구축 사례[32] 외에 드물었다. 넷째, 표 2의 기준값은 문헌 합의가 아니라 본고가 도출한 보수적 운용 기준이다. 공개 평가셋 10종의 평균 오류율이 3.3% 이상이었으므로[3] 이 엄격성과 결론 안정성의 관계를 실증해야 한다. 본고는 체계적 문헌고찰이 아닌 서술형 종합이어서 누락 문헌이 있을 수 있고, 검색과 요약에 LLM 에이전트를 썼으며, 회색 문헌은 바뀔 수 있다.
 
 ## 6. 결론
 
@@ -147,46 +147,44 @@ SimpleQA[15]는 전체 정답률 차이를 3%p 수준에서 판정하는 목적�
 17. Wang Y, Kordi Y, Mishra S, Liu A, Smith NA, Khashabi D, et al. Self-Instruct: aligning language models with self-generated instructions. In: Proc ACL; 2023. p. 13484–13508. doi:10.18653/v1/2023.acl-long.754.
 18. Panickssery A, Bowman SR, Feng S. LLM evaluators recognize and favor their own generations. In: Proc NeurIPS; 2024. arXiv:2404.13076.
 19. Saad-Falcon J, Khattab O, Potts C, Zaharia M. ARES: an automated evaluation framework for retrieval-augmented generation systems. In: Proc NAACL; 2024. p. 338–354. doi:10.18653/v1/2024.naacl-long.20.
-20. Bai G, Liu J, Bu X, He Y, Liu J, Zhou Z, et al. MT-Bench-101: a fine-grained benchmark for evaluating large language models in multi-turn dialogues. In: Proc ACL; 2024. p. 7421–7454. doi:10.18653/v1/2024.acl-long.401.
-21. Gururangan S, Swayamdipta S, Levy O, Schwartz R, Bowman S, Smith NA. Annotation artifacts in natural language inference data. In: Proc NAACL; 2018. p. 107–112. doi:10.18653/v1/N18-2017.
-22. Nie Y, Williams A, Dinan E, Bansal M, Weston J, Kiela D. Adversarial NLI: a new benchmark for natural language understanding. In: Proc ACL; 2020. p. 4885–4901. doi:10.18653/v1/2020.acl-main.441.
-23. Thakur N, Reimers N, Rücklé A, Srivastava A, Gurevych I. BEIR: a heterogenous benchmark for zero-shot evaluation of information retrieval models. In: Proc NeurIPS Datasets and Benchmarks Track; 2021. arXiv:2104.08663.
-24. Gao T, Yen H, Yu J, Chen D. Enabling large language models to generate text with citations. In: Proc EMNLP; 2023. p. 6465–6488. doi:10.18653/v1/2023.emnlp-main.398.
-25. Yang X, Sun K, Xin H, Sun Y, Bhalla N, Chen X, et al. CRAG – comprehensive RAG benchmark. In: Proc NeurIPS Datasets and Benchmarks Track; 2024. arXiv:2406.04744.
-26. Tang Y, Yang Y. MultiHop-RAG: benchmarking retrieval-augmented generation for multi-hop queries. In: Proc COLM; 2024. arXiv:2401.15391.
-27. Yao S, Shinn N, Razavi P, Narasimhan K. τ-bench: a benchmark for tool-agent-user interaction in real-world domains. In: Proc ICLR; 2025. arXiv:2406.12045.
-28. Mazeika M, Phan L, Yin X, Zou A, Wang Z, Mu N, et al. HarmBench: a standardized evaluation framework for automated red teaming and robust refusal. In: Proc ICML (PMLR 235); 2024. p. 35181–35224. arXiv:2402.04249.
-29. Röttger P, Kirk H, Vidgen B, Attanasio G, Bianchi F, Hovy D. XSTest: a test suite for identifying exaggerated safety behaviours in large language models. In: Proc NAACL; 2024. p. 5377–5400. doi:10.18653/v1/2024.naacl-long.301.
-30. Cui J, Chiang WL, Stoica I, Hsieh CJ. OR-Bench: an over-refusal benchmark for large language models. In: Proc ICML (PMLR 267); 2025. p. 11515–11542. arXiv:2405.20947.
-31. Son G, Lee H, Kim S, Kim S, Muennighoff N, Choi T, et al. KMMLU: measuring massive multitask language understanding in Korean. In: Proc NAACL; 2025. p. 4076–4104. doi:10.18653/v1/2025.naacl-long.206.
-32. Singh S, Romanou A, Fourrier C, Adelani DI, Ngui JG, Vila-Suero D, et al. Global MMLU: understanding and addressing cultural and linguistic biases in multilingual evaluation. In: Proc ACL; 2025. p. 18761–18799. doi:10.18653/v1/2025.acl-long.919.
-33. OpenAI. Why SWE-bench Verified no longer measures frontier coding capabilities [Internet]. OpenAI; 2026 Feb 23 [cited 2026 Oct 25]. Available from: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/
-34. Krippendorff K. Reliability in content analysis: some common misconceptions and recommendations. Hum Commun Res. 2004;30(3):411–433. doi:10.1111/j.1468-2958.2004.tb00738.x.
-35. Artstein R, Poesio M. Inter-coder agreement for computational linguistics. Comput Linguist. 2008;34(4):555–596. doi:10.1162/coli.07-034-R2.
-36. Plank B. The "problem" of human label variation: on ground truth in data, modeling and evaluation. In: Proc EMNLP; 2022. p. 10671–10682. doi:10.18653/v1/2022.emnlp-main.731.
-37. Cabitza F, Campagner A, Basile V. Toward a perspectivist turn in ground truthing for predictive computing. Proc AAAI Conf Artif Intell. 2023;37(6):6860–6868. doi:10.1609/aaai.v37i6.25840.
-38. Vendrow J, Vendrow E, Beery S, Madry A. Do large language model benchmarks test reliability? arXiv:2502.03461. 2025.
-39. Miller E. Adding error bars to evals: a statistical approach to language model evaluations. arXiv:2411.00640. 2024.
-40. Card D, Henderson P, Khandelwal U, Jia R, Mahowald K, Jurafsky D. With little power comes great responsibility. In: Proc EMNLP; 2020. p. 9263–9274. doi:10.18653/v1/2020.emnlp-main.745.
-41. Zhang H, Da J, Lee D, Robinson V, Wu C, Song W, et al. A careful examination of large language model performance on grade school arithmetic. In: Proc NeurIPS Datasets and Benchmarks Track; 2024. arXiv:2405.00332.
-42. White C, Dooley S, Roberts M, Pal A, Feuer B, Jain S, et al. LiveBench: a challenging, contamination-limited LLM benchmark. In: Proc ICLR; 2025. arXiv:2406.19314.
-43. Jain N, Han K, Gu A, Li WD, Yan F, Zhang T, et al. LiveCodeBench: holistic and contamination free evaluation of large language models for code. In: Proc ICLR; 2025. arXiv:2403.07974.
-44. Epoch AI. SWE-bench Verified [Internet]. Epoch AI Benchmarking Hub; n.d. [cited 2026 Oct 25]. Available from: https://epoch.ai/benchmarks/swe-bench-verified
-45. Biderman S, Schoelkopf H, Sutawika L, Gao L, Tow J, Abbasi B, et al. Lessons from the trenches on reproducible evaluation of language models. arXiv:2405.14782. 2024.
-46. Voorhees EM. Variations in relevance judgments and the measurement of retrieval effectiveness. Inf Process Manag. 2000;36(5):697–716. doi:10.1016/S0306-4573(00)00010-8.
-47. Rebholz-Schuhmann D, Jimeno Yepes AJ, van Mulligen EM, Kang N, Kors J, Milward D, et al. CALBC silver standard corpus. J Bioinform Comput Biol. 2010;8(1):163–179. doi:10.1142/S0219720010004562.
-48. Aroyo L, Welty C. Truth is a lie: crowd truth and the seven myths of human annotation. AI Mag. 2015;36(1):15–24. doi:10.1609/aimag.v36i1.2564.
-49. Gebru T, Morgenstern J, Vecchione B, Vaughan JW, Wallach H, Daumé III H, et al. Datasheets for datasets. Commun ACM. 2021;64(12):86–92. doi:10.1145/3458723.
-50. Jain N, Akhtar M, Giner-Miguelez J, Shinde R, Vanschoren J, Vogler S, et al. A standardized machine-readable dataset documentation format for responsible AI. arXiv:2407.16883. 2024.
-51. Shankar S, Zamfirescu-Pereira JD, Hartmann B, Parameswaran A, Arawjo I. Who validates the validators? Aligning LLM-assisted evaluation of LLM outputs with human preferences. In: Proc ACM UIST; 2024. doi:10.1145/3654777.3676450.
-52. Connor RJ. Sample size for testing differences in proportions for the paired-sample design. Biometrics. 1987;43(1):207–211. doi:10.2307/2531961.
-53. Haas L, Yona G, D'Antonio G, Goldshtein S, Das D. SimpleQA Verified: a reliable factuality benchmark to measure parametric knowledge. arXiv:2509.07968. 2025.
-54. Angelopoulos AN, Bates S, Fannjiang C, Jordan MI, Zrnic T. Prediction-powered inference. Science. 2023;382(6671):669–674. doi:10.1126/science.adi6000.
-55. Fisch A, Maynez J, Hofer RA, Dhingra B, Globerson A, Cohen WW. Stratified prediction-powered inference for effective hybrid evaluation of language models. In: Proc NeurIPS; 2024. arXiv:2406.04291.
-56. Thakur AS, Choudhary K, Ramayapally VS, Vaidyanathan S, Hupkes D. Judging the judges: evaluating alignment and vulnerabilities in LLMs-as-judges. In: Proc GEM² Workshop; 2025. p. 404–430. arXiv:2406.12624.
-57. Boyeau P, Angelopoulos AN, Li T, Yosef N, Malik J, Jordan MI. AutoEval done right: using synthetic data for model evaluation. In: Proc ICML (PMLR 267); 2025. p. 5276–5290. arXiv:2403.07008.
-58. Dorner FE, Nastl VY, Hardt M. Limits to scalable evaluation at the frontier: LLM as judge won't beat twice the data. In: Proc ICLR; 2025. arXiv:2410.13341.
-59. Pavlick E, Kwiatkowski T. Inherent disagreements in human textual inferences. Trans Assoc Comput Linguist. 2019;7:677–694. doi:10.1162/tacl_a_00293.
-60. Gilardi F, Alizadeh M, Kubli M. ChatGPT outperforms crowd workers for text-annotation tasks. Proc Natl Acad Sci U S A. 2023;120(30):e2305016120. doi:10.1073/pnas.2305016120.
-61. Thomas P, Spielman S, Craswell N, Mitra B. Large language models can accurately predict searcher preferences. In: Proc SIGIR; 2024. p. 1930–1940. doi:10.1145/3626772.3657707.
-62. Pangakis N, Wolken S, Fasching N. Automated annotation with generative AI requires validation. arXiv:2306.00176. 2023.
+20. Gururangan S, Swayamdipta S, Levy O, Schwartz R, Bowman S, Smith NA. Annotation artifacts in natural language inference data. In: Proc NAACL; 2018. p. 107–112. doi:10.18653/v1/N18-2017.
+21. Nie Y, Williams A, Dinan E, Bansal M, Weston J, Kiela D. Adversarial NLI: a new benchmark for natural language understanding. In: Proc ACL; 2020. p. 4885–4901. doi:10.18653/v1/2020.acl-main.441.
+22. Thakur N, Reimers N, Rücklé A, Srivastava A, Gurevych I. BEIR: a heterogenous benchmark for zero-shot evaluation of information retrieval models. In: Proc NeurIPS Datasets and Benchmarks Track; 2021. arXiv:2104.08663.
+23. Gao T, Yen H, Yu J, Chen D. Enabling large language models to generate text with citations. In: Proc EMNLP; 2023. p. 6465–6488. doi:10.18653/v1/2023.emnlp-main.398.
+24. Yang X, Sun K, Xin H, Sun Y, Bhalla N, Chen X, et al. CRAG – comprehensive RAG benchmark. In: Proc NeurIPS Datasets and Benchmarks Track; 2024. arXiv:2406.04744.
+25. Tang Y, Yang Y. MultiHop-RAG: benchmarking retrieval-augmented generation for multi-hop queries. In: Proc COLM; 2024. arXiv:2401.15391.
+26. Gebru T, Morgenstern J, Vecchione B, Vaughan JW, Wallach H, Daumé III H, et al. Datasheets for datasets. Commun ACM. 2021;64(12):86–92. doi:10.1145/3458723.
+27. Jain N, Akhtar M, Giner-Miguelez J, Shinde R, Vanschoren J, Vogler S, et al. A standardized machine-readable dataset documentation format for responsible AI. arXiv:2407.16883. 2024.
+28. Shankar S, Zamfirescu-Pereira JD, Hartmann B, Parameswaran A, Arawjo I. Who validates the validators? Aligning LLM-assisted evaluation of LLM outputs with human preferences. In: Proc ACM UIST; 2024. doi:10.1145/3654777.3676450.
+29. Yao S, Shinn N, Razavi P, Narasimhan K. τ-bench: a benchmark for tool-agent-user interaction in real-world domains. In: Proc ICLR; 2025. arXiv:2406.12045.
+30. Röttger P, Kirk H, Vidgen B, Attanasio G, Bianchi F, Hovy D. XSTest: a test suite for identifying exaggerated safety behaviours in large language models. In: Proc NAACL; 2024. p. 5377–5400. doi:10.18653/v1/2024.naacl-long.301.
+31. Cui J, Chiang WL, Stoica I, Hsieh CJ. OR-Bench: an over-refusal benchmark for large language models. In: Proc ICML (PMLR 267); 2025. p. 11515–11542. arXiv:2405.20947.
+32. Son G, Lee H, Kim S, Kim S, Muennighoff N, Choi T, et al. KMMLU: measuring massive multitask language understanding in Korean. In: Proc NAACL; 2025. p. 4076–4104. doi:10.18653/v1/2025.naacl-long.206.
+33. Singh S, Romanou A, Fourrier C, Adelani DI, Ngui JG, Vila-Suero D, et al. Global MMLU: understanding and addressing cultural and linguistic biases in multilingual evaluation. In: Proc ACL; 2025. p. 18761–18799. doi:10.18653/v1/2025.acl-long.919.
+34. OpenAI. Why SWE-bench Verified no longer measures frontier coding capabilities [Internet]. OpenAI; 2026 Feb 23 [cited 2026 Oct 25]. Available from: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/
+35. Krippendorff K. Reliability in content analysis: some common misconceptions and recommendations. Hum Commun Res. 2004;30(3):411–433. doi:10.1111/j.1468-2958.2004.tb00738.x.
+36. Artstein R, Poesio M. Inter-coder agreement for computational linguistics. Comput Linguist. 2008;34(4):555–596. doi:10.1162/coli.07-034-R2.
+37. Plank B. The "problem" of human label variation: on ground truth in data, modeling and evaluation. In: Proc EMNLP; 2022. p. 10671–10682. doi:10.18653/v1/2022.emnlp-main.731.
+38. Cabitza F, Campagner A, Basile V. Toward a perspectivist turn in ground truthing for predictive computing. Proc AAAI Conf Artif Intell. 2023;37(6):6860–6868. doi:10.1609/aaai.v37i6.25840.
+39. Vendrow J, Vendrow E, Beery S, Madry A. Do large language model benchmarks test reliability? arXiv:2502.03461. 2025.
+40. Miller E. Adding error bars to evals: a statistical approach to language model evaluations. arXiv:2411.00640. 2024.
+41. Card D, Henderson P, Khandelwal U, Jia R, Mahowald K, Jurafsky D. With little power comes great responsibility. In: Proc EMNLP; 2020. p. 9263–9274. doi:10.18653/v1/2020.emnlp-main.745.
+42. Zhang H, Da J, Lee D, Robinson V, Wu C, Song W, et al. A careful examination of large language model performance on grade school arithmetic. In: Proc NeurIPS Datasets and Benchmarks Track; 2024. arXiv:2405.00332.
+43. White C, Dooley S, Roberts M, Pal A, Feuer B, Jain S, et al. LiveBench: a challenging, contamination-limited LLM benchmark. In: Proc ICLR; 2025. arXiv:2406.19314.
+44. Jain N, Han K, Gu A, Li WD, Yan F, Zhang T, et al. LiveCodeBench: holistic and contamination free evaluation of large language models for code. In: Proc ICLR; 2025. arXiv:2403.07974.
+45. Epoch AI. SWE-bench Verified [Internet]. Epoch AI Benchmarking Hub; n.d. [cited 2026 Oct 25]. Available from: https://epoch.ai/benchmarks/swe-bench-verified
+46. Biderman S, Schoelkopf H, Sutawika L, Gao L, Tow J, Abbasi B, et al. Lessons from the trenches on reproducible evaluation of language models. arXiv:2405.14782. 2024.
+47. Voorhees EM. Variations in relevance judgments and the measurement of retrieval effectiveness. Inf Process Manag. 2000;36(5):697–716. doi:10.1016/S0306-4573(00)00010-8.
+48. Rebholz-Schuhmann D, Jimeno Yepes AJ, van Mulligen EM, Kang N, Kors J, Milward D, et al. CALBC silver standard corpus. J Bioinform Comput Biol. 2010;8(1):163–179. doi:10.1142/S0219720010004562.
+49. Aroyo L, Welty C. Truth is a lie: crowd truth and the seven myths of human annotation. AI Mag. 2015;36(1):15–24. doi:10.1609/aimag.v36i1.2564.
+50. Connor RJ. Sample size for testing differences in proportions for the paired-sample design. Biometrics. 1987;43(1):207–211. doi:10.2307/2531961.
+51. Haas L, Yona G, D'Antonio G, Goldshtein S, Das D. SimpleQA Verified: a reliable factuality benchmark to measure parametric knowledge. arXiv:2509.07968. 2025.
+52. Angelopoulos AN, Bates S, Fannjiang C, Jordan MI, Zrnic T. Prediction-powered inference. Science. 2023;382(6671):669–674. doi:10.1126/science.adi6000.
+53. Fisch A, Maynez J, Hofer RA, Dhingra B, Globerson A, Cohen WW. Stratified prediction-powered inference for effective hybrid evaluation of language models. In: Proc NeurIPS; 2024. arXiv:2406.04291.
+54. Thakur AS, Choudhary K, Ramayapally VS, Vaidyanathan S, Hupkes D. Judging the judges: evaluating alignment and vulnerabilities in LLMs-as-judges. In: Proc GEM² Workshop; 2025. p. 404–430. arXiv:2406.12624.
+55. Boyeau P, Angelopoulos AN, Li T, Yosef N, Malik J, Jordan MI. AutoEval done right: using synthetic data for model evaluation. In: Proc ICML (PMLR 267); 2025. p. 5276–5290. arXiv:2403.07008.
+56. Dorner FE, Nastl VY, Hardt M. Limits to scalable evaluation at the frontier: LLM as judge won't beat twice the data. In: Proc ICLR; 2025. arXiv:2410.13341.
+57. Pavlick E, Kwiatkowski T. Inherent disagreements in human textual inferences. Trans Assoc Comput Linguist. 2019;7:677–694. doi:10.1162/tacl_a_00293.
+58. Gilardi F, Alizadeh M, Kubli M. ChatGPT outperforms crowd workers for text-annotation tasks. Proc Natl Acad Sci U S A. 2023;120(30):e2305016120. doi:10.1073/pnas.2305016120.
+59. Thomas P, Spielman S, Craswell N, Mitra B. Large language models can accurately predict searcher preferences. In: Proc SIGIR; 2024. p. 1930–1940. doi:10.1145/3626772.3657707.
+60. Pangakis N, Wolken S, Fasching N. Automated annotation with generative AI requires validation. arXiv:2306.00176. 2023.

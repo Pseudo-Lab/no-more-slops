@@ -22,7 +22,7 @@ LLM·RAG 애플리케이션 평가용 골든 데이터셋을 어떻게 구축하
 | 5 | 심사위원 에이전트 심사 → 지적 전부 반영 → 부족한 자료 추가 조사 | `reviews/round*/referee.md`, `response.md` |
 | 6 | 4–5단계를 라운드마다 반복(3회 + 확인 재심 1회) | `reviews/round1/`–`round4/` |
 | 7 | 4쪽판 압축과 별도 심사 3회 | `reviews/4p/` |
-| 8 | Codex·Gemini CLI headless 외부 심사 2라운드(실무 지침성 강화) | `reviews/ext-r1/`, `reviews/ext-r2/` |
+| 8 | Codex·Gemini CLI headless 외부 심사 2라운드(실무 지침성 강화) | `reviews/ext-r1/`, `reviews/ext-r2/`, 확인 심사 `reviews/ext-check/` |
 
 라운드별 산출물은 다음과 같습니다.
 
