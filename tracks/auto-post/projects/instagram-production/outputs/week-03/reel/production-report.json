@@ -1,0 +1,57 @@
+{
+  "dimensions": [
+    2160,
+    3840
+  ],
+  "aspect_ratio": "9:16",
+  "duration_seconds": 60.0,
+  "fps": 30,
+  "frames": 1800,
+  "audio_streams": 0,
+  "codec": "h264",
+  "pixel_format": "yuv420p",
+  "color_space": "bt709",
+  "file_bytes": 108959117,
+  "caption_characters": 361,
+  "hashtags": 3,
+  "scene_segments": 8,
+  "main_copy_logical_safe_area": {
+    "x": [
+      120,
+      890
+    ],
+    "y": [
+      280,
+      1660
+    ]
+  },
+  "source_resolutions": [
+    "1664×1248",
+    "1280×704"
+  ],
+  "test_execution_in_service": false,
+  "manual_playback_review": {
+    "status": "complete",
+    "method": "All three actual MP4 files played from 0 to 60 at 1x in the in-app browser, viewed at 320px width",
+    "ending_observation": {
+      "master": 60,
+      "stress_1080": 60,
+      "stress_720": 60,
+      "ended": true,
+      "playback_rate": 1,
+      "media_errors": 0
+    },
+    "frames_reviewed": "Early, middle and late encoded frames for each of 8 chapters",
+    "findings": [
+      "Primary copy remains clear of top, right and bottom control areas",
+      "No embedded source captions collide with the Korean explanations",
+      "Source films supply meaningful motion; no animated still-photo panning",
+      "Stress encodes soften fine film detail but primary Korean text remains readable at phone size"
+    ],
+    "scope": "Local playback and recompression checks; no Instagram upload test"
+  },
+  "stress_previews": [
+    "local 1080×1920 / target 5.6 Mbps",
+    "local 720×1280 / target 1.8 Mbps"
+  ]
+}

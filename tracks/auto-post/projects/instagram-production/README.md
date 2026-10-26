@@ -4,7 +4,7 @@
 
 Owner: [유민형 · gogoymh](https://github.com/gogoymh). Original contribution: [PR #5](https://github.com/Pseudo-Lab/no-more-slops/pull/5).
 
-All repository commands below run from the repository root. The canonical skills live in `tracks/auto-post/skills/`; account inputs live in `examples/` and shared production results in [outputs/week-01/](outputs/week-01/README.md).
+All repository commands below run from the repository root. The canonical skills live in `tracks/auto-post/skills/`; account inputs live in `examples/` and shared production results in [Week 01](outputs/week-01/README.md) and [Week 03](outputs/week-03/README.md).
 
 ## Production skills
 
@@ -12,7 +12,7 @@ The reusable skills in `tracks/auto-post/skills/` can be installed for use acros
 
 | Skill | Purpose |
 | --- | --- |
-| [instagram-content](../../skills/instagram-content/SKILL.md) | Create Instagram brand identities, photo-led carousels and reference-based profile images or characters. Supply the account, topic, language, colors and media for each task. Includes optional local renderers. |
+| [instagram-content](../../skills/instagram-content/SKILL.md) | Create photo-led carousels, silent demo-led Reels and reference-based profiles. Keep the selected account brief separate from reusable instructions; includes local production and validation helpers. |
 | [design-punctuation](../../skills/design-punctuation/SKILL.md) | Omit unnecessary terminal periods in headings, short captions and large display copy across content and web design, while preserving punctuation needed for meaning and data. |
 
 For a first local installation, run from this repository:

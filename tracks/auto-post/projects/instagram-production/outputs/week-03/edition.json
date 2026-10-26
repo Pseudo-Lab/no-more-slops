@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "edition_date": "2026-10-26",
+  "freshness_window_days": 7,
+  "account_url": "https://www.instagram.com/chihuahua_ai.lab/",
+  "stories": [
+    {
+      "format": "carousel",
+      "title": "Perplexity Computer의 Mac 완전 로컬 실행",
+      "change_summary": "Apple Silicon Mac에서 로컬 모델과 에이전트 실행을 제공하는 10월 20일 출시",
+      "announcement_date": "2026-10-20",
+      "announcement_url": "https://www.perplexity.ai/hub/blog/perplexity-computer-now-runs-fully-local-on-mac",
+      "entry_url": "https://www.perplexity.ai/personal-computer-setup",
+      "access_conditions": "Pro, Max, Enterprise 구독과 Apple Silicon Mac, macOS 15 이상. 메모리 36GB 이상 권장",
+      "evidence_status": "공식 발표와 제품 안내를 확인한 활용 예시. 직접 작성한 프롬프트이며 서비스에서 실행하지 않음",
+      "prompt_file": "carousel/prompt.txt",
+      "caption_file": "carousel/caption.txt",
+      "caption_max_characters": 499,
+      "max_hashtags": 3
+    },
+    {
+      "format": "reel",
+      "title": "Pixazo Agent P의 대화형 영상 제작",
+      "change_summary": "대화로 장면을 계획하고 모델 선택과 여러 장면 연결을 진행하는 Agent P 출시",
+      "announcement_date": "2026-10-21",
+      "announcement_url": "https://finance.yahoo.com/technology/ai/articles/pixazo-launches-agent-p-conversational-112000825.html",
+      "entry_url": "https://playground.pixazo.ai/playground/agentic",
+      "access_conditions": "7일 체험은 카드 등록 후 자동 결제되며 체험 결과의 상업 이용이 제한됨. 실행 전 현재 요금제 확인",
+      "evidence_status": "회사 보도자료와 공식 생성 예시를 확인함. 제공 프롬프트는 직접 작성했으며 실행하지 않음",
+      "prompt_file": "reel/prompt.txt",
+      "caption_file": "reel/caption.txt",
+      "caption_max_characters": 499,
+      "max_hashtags": 3
+    }
+  ]
+}

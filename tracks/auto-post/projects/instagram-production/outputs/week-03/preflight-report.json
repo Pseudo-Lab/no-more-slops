@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "scope": "declared metadata and companion files; manual source/media review required",
+  "stories": [
+    {
+      "title": "Perplexity Computer의 Mac 완전 로컬 실행",
+      "announcement_age_days": 6,
+      "caption_characters": 379,
+      "hashtags": 3,
+      "passed": true
+    },
+    {
+      "title": "Pixazo Agent P의 대화형 영상 제작",
+      "announcement_age_days": 5,
+      "caption_characters": 361,
+      "hashtags": 3,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

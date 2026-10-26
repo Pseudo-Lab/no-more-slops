@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "demo": false,
+  "slides": 9,
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "caption_characters": 379,
+  "character_count_method": "Unicode code points, including final newline",
+  "hashtags": 3,
+  "sources": 3,
+  "punctuation_review": [],
+  "exports_verified": true,
+  "manual_review": [
+    "Open the exported slides and contact sheet to review crops, typography and phone-size readability.",
+    "Check that originals support each claim, dates are accurate and media rights/credits are satisfied. The harness does not research or certify these."
+  ],
+  "zip_entries": 13,
+  "manual_visual_review": "Complete; see ../visual-review.md"
+}
