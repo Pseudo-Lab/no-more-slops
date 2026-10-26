@@ -1,0 +1,4 @@
+interface:
+  display_name: "글로벌 기본값 현지화"
+  short_description: "한 나라 기준을 기본값으로 두지 않고, 모든 언어의 문자열·레이아웃·스토어 문구를 함께 맞춥니다"
+  default_prompt: "$global-localization으로 이 앱의 문자열 카탈로그를 검사하고, 특정 나라 기준으로 굳어진 기본값과 긴 언어에서 깨지는 화면을 찾아줘."

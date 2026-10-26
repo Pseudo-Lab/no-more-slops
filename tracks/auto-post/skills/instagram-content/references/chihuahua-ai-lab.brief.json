@@ -1,5 +1,5 @@
 {
-  "profile_name": "Chihuahua AI Lab — approved editorial Reels",
+  "profile_name": "Chihuahua AI Lab / approved demo-led Reels",
   "selection": "Use only when the user names 치와와 AI Lab or chihuahua_ai.lab, or explicitly selects this account profile",
   "account": {
     "display_name": "치와와 AI Lab",
@@ -15,10 +15,10 @@
     "text": "#F3F2EB",
     "avoid": "large orange backgrounds or an orange tint over photography"
   },
-  "visual_treatment": "large_editorial_fixed_photo",
+  "visual_treatment": "large_demo_led",
   "visual_layout": {
-    "photography": "fixed real photograph with natural colors; fixed neutral contrast layer when needed",
-    "information": "large type and open comparisons directly across the protected screen area",
+    "photography": "fallback only: relevant fixed real photograph, without ornamental panning or zooming",
+    "information": "large unboxed Korean headline and short stable explanation matched to the visible demonstration",
     "avoid": [
       "small enclosing explanation panels",
       "mascot in videos",
@@ -55,16 +55,30 @@
       "approved_at": "2026-10-17",
       "supersedes": "Older important-content cutoff at logical y=1440"
     },
-    "default_layout": "expanded_lower_space_editorial"
+    "default_layout": "expanded_lower_space_demo_led",
+    "demonstration": "large actual product demo, official sample or relevant licensed moving footage; preserve geometry and original visual detail",
+    "reference": "references/demo-led-reels.md"
   },
   "motion_policy": {
     "mode": "information_linked",
+    "style": "demo_led",
     "reading_holds_allowed": true,
-    "photograph": "fixed",
-    "information": "reveal each new fact once, then retain it",
-    "transitions": "soft",
+    "primary_motion": "Actual source footage and meaningful changes in the demonstration carry the motion",
+    "information": "One visible action or useful fact per scene; keep explanatory copy stable while read",
+    "transitions": "Cut at a meaningful change of subject or use a soft handoff; avoid rapid unrelated cuts",
     "progress": "one segment per actual scene",
-    "supersedes": "Earlier uninterrupted-motion and mandatory-white-panel preferences; restore only if the latest user request changes this"
+    "reject": [
+      "small demonstration thumbnails beneath oversized decoration",
+      "long repeated static lists",
+      "progress-bar-only movement",
+      "unnecessary infographic metaphors",
+      "moving a still photograph merely to add motion",
+      "mascot in videos"
+    ],
+    "review": "Watch the full final encoded MP4 at phone size and 1x; compare early, middle and late states per chapter and review local recompression variants",
+    "approved_at": "2026-10-25",
+    "reference_treatment": "2026-10-25 Lemo-Opuscar Reel: large actual demo excerpts, short Korean copy, practical prompt and segmented progress",
+    "supersedes": "The 2026-10-23 fixed-photo staged editorial treatment as the default for future Reels; keep it as an optional fallback"
   },
   "deliverable": {
     "type": "reel",
@@ -96,6 +110,28 @@
     "require_review": true
   },
   "news_policy": "Verify a fresh official source for each new edition; preserve source dates and separate announced plans from releases",
-  "approved_at": "2026-10-17",
-  "scope": "Future Reels for this named account; does not authorize publishing or impose a scene count"
+  "approved_at": "2026-10-25",
+  "scope": "Future Reels for this named account; does not authorize publishing or impose a scene count",
+  "content_policy": {
+    "mode": "practical_ai_news",
+    "audience": "새 AI 도구를 직접 써보고 싶은 일반 독자",
+    "selection": "주제를 새로 고를 때는 현재 이용할 수 있는 서비스나 기능에 실제 활용 예시를 붙일 수 있는 소식을 우선 선택",
+    "example": "익숙한 작업 하나, 공식 서비스 주소, 실제 시작 위치와 입력 방법, 복사해서 쓸 전체 프롬프트 또는 단계별 사용 방법",
+    "conditions": "요금제, 연령과 순차 제공 등 사용에 필요한 조건을 해당 예시와 함께 표시",
+    "evidence": "직접 작성한 프롬프트, 공식 시연 화면, 실제 테스트 결과를 구분하며 요청값을 측정값으로 쓰지 않음",
+    "companion_files": [
+      "prompt.txt",
+      "followup-prompts.txt when useful"
+    ],
+    "reference": "references/practical-ai-news.md",
+    "approved_at": "2026-10-24",
+    "scope": "Future news for this named account; an explicit requested topic or different audience overrides this preference",
+    "freshness": {
+      "default_window_days": 7,
+      "date_basis": "original feature or service announcement, separately from edition date",
+      "rule": "새 소식을 요청받으면 실제 신규 출시나 기능 변경을 확인하고, 기존 기능의 활용 팁을 신규 출시로 선정하지 않음",
+      "override": "사용자가 지정한 기간이나 소재를 우선 적용",
+      "recorded_at": "2026-10-26"
+    }
+  }
 }

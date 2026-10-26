@@ -1,0 +1,2 @@
+# Preserve original generated SVG bytes, including path-line trailing spaces.
+*.svg -text whitespace=cr-at-eol,-blank-at-eol

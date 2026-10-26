@@ -1,0 +1,642 @@
+{
+  "schema": "probeflow_v13_claims_v1",
+  "recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+  "working_epoch": "v13 editorial and bounded source review of preserved v11/v12 evidence",
+  "new_experiment": false,
+  "claim_count": 31,
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "The local study uses three channels and 2205 completed Hydraulic cycles with four target heads.",
+      "evidence_type": "local_asset_identity_and_primary_metadata",
+      "evidence": [
+        {
+          "artifact_id": "A08",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/source_receipt.json",
+          "selector": "raw_files",
+          "sha256": "ae10c1486cc888edd1b47b6d67a88500a9d4a318268654b1d9437f4ef3085395"
+        },
+        {
+          "source_id": "R01"
+        }
+      ],
+      "permitted_scope": "The cached subset, not the full sensor bank or an online control task.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "Training1540, selection204, evaluation421; evaluation was previously exposed.",
+      "evidence_type": "executed_plan_and_exposure_disclosure",
+      "evidence": [
+        {
+          "artifact_id": "A09",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/locked_plan.json",
+          "selector": "entire plan",
+          "sha256": "8f364f9a254b97d15fc67b07ab1d956089e04df35bc58b6f615b82f1f807b3c6"
+        },
+        {
+          "artifact_id": "A15",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/events.json",
+          "selector": "model_selection_and_conditional_policy_masks_frozen_before_current_eval_decode",
+          "sha256": "a32c38f6d100cd6be195a164706b081f6e7004efcd30f6fbbfc88c40f613b9fb"
+        }
+      ],
+      "permitted_scope": "Current-run order is frozen; it cannot restore blindness or establish independent units.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "V11 all47 policy-budget-price rows have zero coverage and null selective error.",
+      "evidence_type": "executed_negative_result",
+      "evidence": [
+        {
+          "artifact_id": "A16",
+          "path": "runs/research_progress_v11_20261018_01/probeflow/results.json",
+          "selector": "threshold; results[*].coverage; results[*].selective_component_error",
+          "sha256": "600d2868abad1223318f2767b6a36ae3e63f6e5eeac34810e27891b75436fffd"
+        }
+      ],
+      "permitted_scope": "Locked main selective result, not replaced by separate forced-terminal posthoc diagnostic.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "391 of421 evaluation cycles have joint label conditions absent from training although each marginal head label is present.",
+      "evidence_type": "descriptive_support_audit",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "support",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        },
+        {
+          "artifact_id": "A03",
+          "path": "projects/research_manuscripts_v12_20261018/probeflow/VALIDATION.json",
+          "selector": "read_only_actual_trace_verification.support_diagnostic",
+          "sha256": "a456c3a50f5496c9838ca90bfd669b029bd6d325f58eed64acb814231ac59c13"
+        }
+      ],
+      "permitted_scope": "Joint tuples are observed labels; unsupported means absent joint tuple, not proof of out-of-distribution physical mechanisms.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "All76 cooler100 training cycles share tuple(100,100,0,90), which matches30 evaluation cycles.",
+      "evidence_type": "saved_label_reconciliation",
+      "evidence": [
+        {
+          "artifact_id": "A03",
+          "path": "projects/research_manuscripts_v12_20261018/probeflow/VALIDATION.json",
+          "selector": "read_only_actual_trace_verification.support_diagnostic",
+          "sha256": "a456c3a50f5496c9838ca90bfd669b029bd6d325f58eed64acb814231ac59c13"
+        }
+      ],
+      "permitted_scope": "No verified independent-asset or physical-session map.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "The selection rule chooses1NN among3 predictors on equal mean8-mask development error.",
+      "evidence_type": "executed_selection",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "selection; selection_results; selected_predictor",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        }
+      ],
+      "permitted_scope": "One predeclared selection using204 labels; no post-evaluation model replacement.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Removing the centroid prior offset reduces full-source component error by0.25 entirely through cooler; full vector error remains391/421.",
+      "evidence_type": "controlled_software_contrast",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "evaluation_results[predictor=prior_centroid,uniform_centroid,nearest_neighbor_1;source_mask=7]",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        },
+        {
+          "artifact_id": "A03",
+          "path": "projects/research_manuscripts_v12_20261018/probeflow/VALIDATION.json",
+          "selector": "read_only_actual_trace_verification.support_diagnostic",
+          "sha256": "a456c3a50f5496c9838ca90bfd669b029bd6d325f58eed64acb814231ac59c13"
+        }
+      ],
+      "permitted_scope": "Within these fixed bytes and exposed cycles; no isolated industrial mechanism.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ],
+      "next_discriminating_evidence": "New supported physical blocks with frozen predictor/scoring rights."
+    },
+    {
+      "id": "C08",
+      "claim": "At equal budget1, the selection-locked PS1 subset has0.520190 error while cheapest FS1 has0.477435 at the same quote1.",
+      "evidence_type": "executed_unfavorable_policy_contrast",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "policy_results[scenario=equal_source_quote,budget=1]",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        }
+      ],
+      "permitted_scope": "Fixed subset replay; the unfavorable tie transfer is retained.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ],
+      "next_discriminating_evidence": "A separate supported final block with frozen tie rules and tuning resources."
+    },
+    {
+      "id": "C09",
+      "claim": "At raw budget6660, TS1 quote60 ties the all-source quote6660 component error0.473872.",
+      "evidence_type": "executed_favorable_policy_contrast",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "policy_results[scenario=raw_sample_proxy,budget=6660]",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        }
+      ],
+      "permitted_scope": "Logical quote units only; no physicalI/O, money, energy or population sufficiency claim.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "Independent physical-unit count is unknown; repeated model/mask rows are not independent samples.",
+      "evidence_type": "explicit_missing_evidence",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "independent_physical_units; prediction_rows_are_independent_samples; unique_evaluation_cycles",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        }
+      ],
+      "permitted_scope": "421 cycle denominator; no independent-sample CI/p-value or N10104 claim.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "36 policy rows reuse frozen mask predictions and add no new prediction calls.",
+      "evidence_type": "executed_replay_contract",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "policy_rows_reuse_saved_mask_predictions; new_policy_prediction_calls; policy_results",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        }
+      ],
+      "permitted_scope": "Valid for implemented fixed subsets; not a general counterfactual guarantee for adaptive policies.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Native literature reproduction count is zero.",
+      "evidence_type": "scope_and_execution_receipt",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "native_reproductions",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        },
+        {
+          "artifact_id": "A16",
+          "path": "runs/research_progress_v11_20261018_01/probeflow/results.json",
+          "selector": "native_reproductions",
+          "sha256": "600d2868abad1223318f2767b6a36ae3e63f6e5eeac34810e27891b75436fffd"
+        }
+      ],
+      "permitted_scope": "Method table compares contracts, not native scores or state-of-the-art ranking.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Adding PS1 to FS1 increases this fixed1NN component error from0.477435 to0.574228.",
+      "evidence_type": "paired_descriptive_fixed_program_contrast",
+      "evidence": [
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "evaluation_results[predictor=nearest_neighbor_1,source_mask=2,3]",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        }
+      ],
+      "permitted_scope": "No all-source error bound is imposed; no universal value-of-information theorem is refuted.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Support and predictor diagnosis should precede escalation of policy search.",
+      "evidence_type": "author_design_proposal",
+      "evidence": [
+        {
+          "artifact_id": "A16",
+          "path": "runs/research_progress_v11_20261018_01/probeflow/results.json",
+          "selector": "results",
+          "sha256": "600d2868abad1223318f2767b6a36ae3e63f6e5eeac34810e27891b75436fffd"
+        },
+        {
+          "artifact_id": "A07",
+          "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+          "selector": "evaluation_results",
+          "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+        }
+      ],
+      "permitted_scope": "Illustrated decision discipline; no randomized proof of research productivity or universally optimal sequence.",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ],
+      "next_discriminating_evidence": "Measure research-compute and downstream-validity outcomes under a separately defined prospective workflow comparison."
+    },
+    {
+      "id": "L02",
+      "claim": "In-context predictor and both greedy and lookahead variants; no native execution here.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R02",
+          "review_record_sha256": "1482eb1afd05d6d73ad6c064ea546961c7030d6f71b4a76e383e501c081f6e6e"
+        }
+      ],
+      "permitted_scope": "selected_primary_html_sections; Sections 3-4.2; setup and predictor/acquisition description",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L03",
+      "claim": "Fixed-predictor remaining-budget risk-to-go; unit-cost exactly-B formulation is method-specific.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R03",
+          "review_record_sha256": "7344e3bd46e56f416ed5efe20d23c74b27e81d3341e44e9effb02592703cd873"
+        }
+      ],
+      "permitted_scope": "selected_primary_html_sections; Abstract and Sections 3-4.2",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L04",
+      "claim": "Grouped-source acquisition and offline planning; native teacher/scorer not implemented here.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R04",
+          "review_record_sha256": "0b8e619f0e5c0a8a1ba988e7b088e98913e4256d4c229a8c91288c10ddc0f372"
+        }
+      ],
+      "permitted_scope": "selected_primary_html_sections; Sections 2-3.4; grouped-source setup and method",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L05",
+      "claim": "Nonmyopic trajectory optimization via pathwise gradients; no native code or proof reproduction.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R05",
+          "review_record_sha256": "32cd8f1259dfa7e554275fbc64c772c135d9de37794a1528654b3f63e582767e"
+        }
+      ],
+      "permitted_scope": "selected_primary_html_sections; Abstract and Sections 2-3.2",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L06",
+      "claim": "Risk/coverage and an SGR construction with sampling/selection assumptions; not our threshold certificate.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R06",
+          "review_record_sha256": "a70d39fa3a6474c3ba0668c0c7a53dc19595ff0e8d4ed6dab60e0949db8f472c"
+        }
+      ],
+      "permitted_scope": "selected_primary_html_sections; Sections 2-3, Algorithm 1 and Theorem 3.2",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L07",
+      "claim": "Greedy guarantees require stated adaptive monotonicity/submodularity and distribution assumptions.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R07",
+          "review_record_sha256": "fd8ec113987648c9b359a5f3d89d0766820f27eb7414741d607037a808ac9de5"
+        }
+      ],
+      "permitted_scope": "selected_primary_html_sections; Section 3.2 definitions and Theorem 5 statement",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L08",
+      "claim": "Joint classification/acquisition with cost-sensitive RL and variable-size set representation.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R08",
+          "review_record_sha256": "13326d785aaea08322e281ecf6e10896443b3001925f9cb73ab4451d0b93a2ec"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official NeurIPS abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L09",
+      "claim": "Generative-surrogate model-based AFA and auxiliary acquisition information.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R09",
+          "review_record_sha256": "561c3716c83c1f58e282626ca312e541d5c0a22e41b97146382e899a452e5b42"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official PMLR abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L10",
+      "claim": "Amortized conditional-mutual-information selection as a learned greedy comparator.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R10",
+          "review_record_sha256": "75c77bb97fadaff26c9b824e17ebaa3dfd7a54fea0502b0f3a0e6e9cacaeb2cc"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official PMLR abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L11",
+      "claim": "Acquisition distributions and assumptions matter for offline/semi-offline AFA evaluation.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R11",
+          "review_record_sha256": "97b2db80c3691f83d0ca4b84375e65c1ea24e30c02efd9c95db5aa63be5966fd"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official JMLR abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L12",
+      "claim": "Partial VAE and expected information-gain acquisition.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R12",
+          "review_record_sha256": "2093b3de45234f62652323b3e90afc3d0e7f09c866421fceaebf7f29f3bcd06b"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official PMLR abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L13",
+      "claim": "POMDP framing and AFA taxonomy; not a local result.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R13",
+          "review_record_sha256": "d9b601af2763426125811fb81628f50dfcc42c719cdac42062f2830bff5f438c"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official IJCAI proceedings abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L14",
+      "claim": "Optimizing finite-sample model selection criteria can bias subsequent evaluation.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R14",
+          "review_record_sha256": "b431b6e367a7d804352874c2dc1417fb28de72598afd82352995ee1d4c276db9"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official JMLR abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L15",
+      "claim": "Model selection must be accounted for within evaluation; nested-validation argument, not a Hydraulic prescription.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R15",
+          "review_record_sha256": "265a3fe7309808fc712930ac83725d07c23c33c8a33c058eaf8421a7b6bd6ce9"
+        }
+      ],
+      "permitted_scope": "selected_primary_html_sections; Abstract and Background",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L16",
+      "claim": "Dependence-aware blocking and extrapolation target matter; no fixed-gap independence certificate.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R16",
+          "review_record_sha256": "dec73b2084c4d1061fab8f51c6643e5e35f625d31364c7b366db074ba939bfb1"
+        }
+      ],
+      "permitted_scope": "selected_primary_html_sections; Article metadata and structured-validation argument, HTML lines 311-347 of reviewed extraction",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L17",
+      "claim": "Integrated prediction/rejection training contrasts with our fixed-gate comparison.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R17",
+          "review_record_sha256": "6de48387a9beaffbbccc239f66ad8a996f5eaeffd971f6cf86dd94aca484e16e"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official PMLR abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    },
+    {
+      "id": "L18",
+      "claim": "Foundational reject-option/risk-coverage framing under noise-free theory; assumptions not transferred.",
+      "evidence_type": "bounded_primary_literature_review",
+      "evidence": [
+        {
+          "source_id": "R18",
+          "review_record_sha256": "72f43c3f6f9312f38b763730aa078604c533ba1db32358d9385482d55da517ac"
+        }
+      ],
+      "permitted_scope": "official_abstract_only; Official JMLR abstract",
+      "prohibited_upgrades": [
+        "independent blind-final evidence",
+        "population causal effect",
+        "industrial performance guarantee",
+        "native AFA superiority"
+      ]
+    }
+  ],
+  "global_not_established": [
+    "accepted conference publication",
+    "independent blind final test",
+    "causal identification of hydraulic failure mechanism",
+    "industrial generalization",
+    "SGR risk guarantee",
+    "adaptive-submodularity guarantee",
+    "native-method reproduction",
+    "physical cost savings",
+    "benefit beyond correctly priced history-aware baselines"
+  ]
+}

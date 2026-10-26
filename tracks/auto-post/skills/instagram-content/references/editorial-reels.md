@@ -24,16 +24,31 @@ Before animating a scene, write the question it answers and the source-grounded 
 
 Use quantitative charts only when the source supplies the data. Use process arrows only when the source establishes a process. Do not invent driving paths, performance measurements, live detection boxes or product interfaces to decorate an announcement. Separate development plans from released features and preserve essential qualifications beside the claim.
 
-## Let motion introduce information
+## Let motion explain the information
 
-For this treatment, use `motion_policy.mode: "information_linked"`. Reveal a new fact once in reading order, retain it, and allow time to read. Use short, soft scene handoffs. Do not add circulating connectors, repeated highlighting sweeps, decorative particles, shaking labels or unrelated object movement to fill a hold.
+For this treatment, use `motion_policy.mode: "information_linked"` and follow the selected `style`. Keep the photograph fixed. Motion belongs to the explanation: reveal a fact, show its relationship to another fact, and let the viewer read the result. Use soft handoffs and avoid moving every label at once.
 
-This preference replaces an earlier request for uninterrupted motion when the user approves the calmer information-led treatment. Record that resolution in the selected brief. Do not revive the old continuous-motion requirement or fail an intentionally fixed photograph during a motion audit. Apply continuous motion only if the latest request explicitly selects it again.
+When the user selects `style: "multi_stage_editorial"`, an entrance followed by a long frozen list is insufficient. Give each substantive scene a visible explanatory action after its entrance and vary the composition across the film. Large type can change size or position to move from an overview to details; diagrams are useful only when the source establishes the relationship they show. Choose actions from the story rather than applying every action to every scene:
+
+| Information to explain | Useful motion |
+| --- | --- |
+| One item causes a wider problem | Assemble the group, select the relevant item, then connect it to its effect |
+| Dependencies or a sequence | Build the connections in order, then trace the relevant relationship once |
+| Related reports become one incident | Bring the reports together and replace them with the grouped result |
+| One investigation has two possible actions | Reveal the question and evidence, then branch into the supported choices |
+| Overview followed by named details | Start with a large name, resize and reposition it, then reveal the details |
+| A closing explanation | Build a short sequence of large words that summarizes the work |
+
+Plan the scene's entrance, explanatory transformation and handoff before rendering. For a six-to-eight-second scene, spreading those actions across its duration is a useful starting point; adapt the pace to the reading load. Brief reading holds remain allowed after a meaningful transformation. Avoid using a short entrance to fill a long scene, repeating identical three-row layouts, or treating the progress bar as the main movement.
+
+Keep copy stable while it is being read. Preserve visible text when its role still matters, and remove or reorganize it only when the next state communicates something new. Do not add circulating connectors, repeated highlighting sweeps, decorative particles, shaking labels or unrelated motion to fill time. Do not invent live telemetry, quantitative curves or product screens; label source-grounded explanatory diagrams accurately.
+
+This mode does not require movement on every frame. Use continuous motion only when the latest request explicitly selects it. A fixed photograph is intentional and must not fail a motion review. For Chihuahua AI Lab, this records the staged treatment approved on 2026-10-23. The demo-led treatment approved on 2026-10-25 is the current default; use this guide when fixed-photo editorial treatment is selected as a fallback.
 
 Keep a separate progress segment for each scene when selected; derive the segment count and scene durations from the actual story. A segmented indicator is a navigation aid, not a substitute for an explanation.
 
 ## Review and save the treatment
 
-Watch the entire encoded video at normal speed and phone size. Check that the main information is readable, the photograph stays fixed, reveals add actual information, comparisons make sense, and important copy stays clear of Reels controls. Review resized and recompressed derivatives when the brief requires them. Pixel changes and export checks do not establish information quality.
+Watch the entire encoded video at normal speed and phone size. For staged motion, compare early, middle and late frames in every scene to locate explanatory changes, then watch the transformations and both sides of each transition. Check that the information remains readable, the photograph stays fixed, the action explains a source-grounded relationship, and important copy stays clear of Reels controls. Reject a return to repeated static lists or progress-only movement. Review resized and recompressed derivatives when the brief requires them. Pixel changes and export checks do not establish information quality.
 
 Keep original news facts and historical edition dates when revising. Deliver the MP4 and the existing Reel package items. Store selected account preferences in its brief, and preserve prior versions. Use a saved account profile only for that named account; never import its identity or acknowledgement into an unrelated task.

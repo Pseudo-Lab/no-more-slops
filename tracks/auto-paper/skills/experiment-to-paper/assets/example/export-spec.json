@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "measurements": [
+    {"id": "accuracy", "file": "results.json", "pointer": "/accuracy", "unit": "fraction", "denominator": 4},
+    {"id": "error_count", "file": "results.json", "pointer": "/error_count", "unit": "count"},
+    {"id": "external_validation", "file": "results.json", "pointer": "/external_validation", "unit": "fraction"}
+  ]
+}

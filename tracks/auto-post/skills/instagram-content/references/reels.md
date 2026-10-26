@@ -18,6 +18,10 @@ Build a sequence around what changed, how it works, a concrete example, its limi
 
 Use relevant official or authorized footage when it helps. Keep its geometry and natural colors, credit it, and record the selected time range and usage basis. An explanatory animation is not a measured benchmark or an actual product interface. Personal screenshots, editorial source videos and credentials do not belong in a reusable skill or public code contribution.
 
+## When actual demonstrations lead the Reel
+
+Read [demo-led-reels.md](demo-led-reels.md). Use relevant moving source footage in a large viewing area, with short, stable explanations matched to what the viewer can see. This selected treatment takes precedence over photo-motion examples and older fixed-photo defaults. Keep the account’s existing audio, UI margins, progress and caption choices.
+
 ## When the account prefers real photography
 
 Make the relevant real subject the dominant visual. Use the account's preferred background and accent roles; a selected brand color does not require a large color field or a tint over the photo. Respect a rejected video mascot even when that character remains the profile identity.
@@ -26,7 +30,7 @@ Build variety through meaningful crops, different source images, layered depth a
 
 ## When fixed-photo editorial explanations are selected
 
-Read [editorial-reels.md](editorial-reels.md). Keep photography fixed and place large information directly across the protected screen area. Use source-grounded comparisons, function labels and disclosure states; reveal each new fact once and allow reading time. This selected treatment takes precedence over the moving-photo examples above, continuous-motion rules below, and an earlier light-panel choice. A small explanation box or a decorative diagram is not required.
+Read [editorial-reels.md](editorial-reels.md). Keep photography fixed and place large information directly across the protected screen area. Follow the selected motion style: `multi_stage_editorial` uses varied large compositions and meaningful transformations after the entrance, with brief reading holds. Use source-grounded selection, connection, grouping or branching when it helps explain the story. This selected treatment takes precedence over the moving-photo examples above, continuous-motion rules below, and an earlier light-panel choice. A small explanation box or a decorative diagram is not required.
 
 ## Compose for the actual Reels view
 
@@ -40,7 +44,7 @@ Recompose the title, graphic, explanation and credit into that rectangle. Keep k
 
 Use movement with a purpose: inputs converge, a value is emphasized, an object is hidden and revealed, a token moves through a process, or data arrives from multiple sources. Vary the scene structure while retaining a coherent brand. An animated number must not pass through misleading values that could be mistaken for the result.
 
-Keep the main explanation fixed while the diagram moves. Use brief entrances and transitions, allow reading time after a reveal, and avoid flashing or constant movement of all the text. For a complex scene, compare early, middle and late frames and watch the actual segment. Mere frame differences do not prove the animation is useful.
+Keep explanatory text stable during its reading interval; a staged editorial treatment can resize or reposition it between meaningful states. Use soft transitions and avoid flashing or moving all the text at once. For a complex scene, compare early, middle and late frames and watch the actual segment. Mere frame differences do not prove the animation is useful.
 
 ## When uninterrupted motion is required
 

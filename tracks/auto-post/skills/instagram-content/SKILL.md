@@ -1,6 +1,6 @@
 ---
 name: instagram-content
-description: "Create or revise Instagram branding, photo-led carousels, silent Reels, and profile images or characters using the current account's brief. Use for card news, photo-led video edits, animated explainers, visual posts, or reference-photo avatars; not for general news Q&A or automatic publishing."
+description: "Create or revise Instagram branding, photo-led carousels, demo-led or photo-led silent Reels, and profile images or characters using the current account's brief. Use for card news, photo-led video edits, animated explainers, visual posts, or reference-photo avatars; not for general news Q&A or automatic publishing."
 ---
 
 # Instagram Content
@@ -17,11 +17,11 @@ Preserve accepted choices across revisions. A request to change the photo or cha
 
 After a style comparison, record the user's selected and rejected treatments in a next-production brief while retaining the experiment's original inputs. Distinguish a brand color from its role: an accent color need not fill the background. An approved profile mascot is not automatically approved for videos. Carry selected treatments forward for that account, but do not inherit temporary sample durations or make them defaults for unrelated accounts.
 
-For fixed-photo Reels with large, unboxed explanations, read [references/editorial-reels.md](references/editorial-reels.md). When a user approves this treatment for future use, apply information-linked reveals and reading holds rather than older continuous-motion or light-panel preferences.
+For Reels built around actual product demos or relevant moving footage, read [references/demo-led-reels.md](references/demo-led-reels.md). Give the demonstration a large viewing area and explain the visible action with short, stable copy. For fixed-photo Reels with large, unboxed explanations, read [references/editorial-reels.md](references/editorial-reels.md). Follow the selected motion style: a staged explanation can select, connect, merge or reorganize information while the photograph stays fixed. Preserve reading time without turning every scene into the same static list.
 
-For **Reels for 치와와 AI Lab / chihuahua_ai.lab**, load the explicitly saved [account brief](references/chihuahua-ai-lab.brief.json) when that account is identified. It records the approved editorial treatment and expanded lower-screen layout, vivid-orange accents, Korean copy, silent 4K format and caption policy. Use the saved expanded layout for future Reels rather than restoring the older y=1440 cutoff; adapt it when newer UI evidence requires a change. Do not load it for another account. Current user instructions override saved values.
+For **Reels for 치와와 AI Lab / chihuahua_ai.lab**, load the explicitly saved [account brief](references/chihuahua-ai-lab.brief.json) when that account is identified. It records the approved demo-led treatment with large actual footage and short Korean explanations, expanded lower-screen layout, vivid-orange accents, silent 4K format and caption policy. This is the current default for this account; fixed-photo editorial motion remains a selectable fallback when footage is unavailable or the user selects it. Use the saved expanded layout for future Reels rather than restoring the older y=1440 cutoff; adapt it when newer UI evidence requires a change. Do not load it for another account. Current user instructions override saved values.
 
-For **card news / carousels for 치와와 AI Lab / chihuahua_ai.lab**, load the saved [carousel brief](references/chihuahua-ai-lab.carousel.brief.json). The user approved warm off-white `#F5F3EE`, black type `#111111`, small vivid-orange `#FF4D00` marks and natural-color photography for future editions. Keep Reel and carousel palettes separate; current user instructions override either profile.
+For **card news / carousels for 치와와 AI Lab / chihuahua_ai.lab**, load the saved [carousel brief](references/chihuahua-ai-lab.carousel.brief.json). It records the approved cream/black palette, small orange marks, photo-led main slides and a final account-introduction slide with the existing character. Resolve its character asset relative to this skill, then copy it into the task's working assets. Keep Reel and carousel palettes separate; current user instructions override either profile.
 
 ## Choose the requested workflow
 
@@ -38,6 +38,8 @@ When a Reel looks degraded after upload or its brief requires a recompression re
 
 ## Write the copy before rendering
 
+For AI news intended to help ordinary readers try something themselves, read [references/practical-ai-news.md](references/practical-ai-news.md). Select a currently usable service or feature, explain one concrete use and supply a complete prompt or usable steps. Apply this preference to 치와와 AI Lab through its selected account brief, not as a requirement for unrelated research news or other accounts.
+
 For Korean news headlines, scene explanations and captions, use [direct-news-copy](../direct-news-copy/SKILL.md) when installed. State the reported event and actual work directly, remove imagined misunderstandings, and express essential limits as concrete facts. Review the whole copy before making images or video; keep research plans distinct from measured results.
 
 ## Finish with reviewable assets
@@ -49,6 +51,6 @@ Open the actual rendered images and check the whole set plus small-screen readab
 - Profile: square PNG, circular preview, and editable source when one was actually created.
 - Branding only: concise choices or the selected brief; do not make unrelated assets.
 
-Use the current task's output directory. Keep originals and working media separate from outputs and from this skill. Cite or credit sources according to their use and applicable project requirements. Organization acknowledgements are optional task inputs, never inherited from the repository that distributes the skill.
+Use the current task's output directory. Keep task-specific originals and working media separate from outputs and from this skill. A deliberately saved account profile may include its owned reusable character asset; never bundle personal reference photos or downloaded editorial media with it. Cite or credit sources according to their use and applicable project requirements. Organization acknowledgements are optional task inputs, never inherited from the repository that distributes the skill.
 
 Deliver files when asked to make assets; do not substitute instructions or prompts for completed images without explaining a real tool limitation. Creating assets does not by itself authorize account registration, posting, scheduling or paid service use. Continue any external action already specifically authorized by the user within the available tool's rules.

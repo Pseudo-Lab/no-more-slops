@@ -70,6 +70,13 @@ def read_manifest(path, brand_defaults=None):
         require(isinstance(slide, dict), f'Slide {number}: must be an object.')
         require(slide.get('layout') in ('cover', 'photo', 'facts', 'closing'), f'Slide {number}: unknown layout.')
         require(lines(slide.get('title', [])), f'Slide {number}: title is required.')
+        account_intro = slide.get('account_intro', False)
+        require(isinstance(account_intro, bool), f'Slide {number}: account_intro must be true or false.')
+        if account_intro:
+            require(slide['layout'] == 'closing' and number == len(post['slides']), f'Slide {number}: account_intro belongs on the final closing slide.')
+            require(len(lines(slide['title'])) <= 2, f'Slide {number}: account intro titles may use at most two lines.')
+            for key in ('intro_line', 'follow_line'):
+                require(isinstance(slide.get(key), str) and slide[key].strip() and '\n' not in slide[key], f'Slide {number}: {key} must be one nonempty line.')
         references = slide.get('source_ids', [])
         require(isinstance(references, list), f'Slide {number}: source_ids must be a list.')
         needs_sources = slide.get('requires_sources', post['content_type'] == 'news' and slide['layout'] != 'closing')
@@ -85,6 +92,8 @@ def read_manifest(path, brand_defaults=None):
             if image['kind'].startswith('official_') or image['kind'] == 'licensed':
                 require(valid_url(image.get('source_url', '')), f'Slide {number}: official or licensed media needs a source URL.')
             require(image.get('fit', 'contain') in ('contain', 'cover'), f'Slide {number}: invalid image fit.')
+            if account_intro:
+                require(image.get('fit', 'contain') == 'contain', f'Slide {number}: account intro image fit must be contain.')
             require(resolve_image(path, image).is_file(), f'Slide {number}: image file does not exist.')
         else:
             rows = slide.get('rows')
@@ -99,6 +108,9 @@ def read_manifest(path, brand_defaults=None):
         require(isinstance(brand.get(name), str) and re.fullmatch(r'#[0-9a-fA-F]{6}', brand[name]) is not None, f'Invalid or missing {name} color.')
     for name in ('display_name', 'handle', 'acknowledgement'):
         require(isinstance(brand.get(name, ''), str), f'brand.{name} must be a string.')
+    if any(slide.get('account_intro') for slide in post['slides']):
+        for name in ('display_name', 'handle'):
+            require(brand.get(name, '').strip().lstrip('@').strip(), f'brand.{name} is required for an account intro.')
     return post, brand
 
 
@@ -120,7 +132,7 @@ def find_fonts(args, post=None):
     if post:
         visible.extend(post.get('brand', {}).get(key, '') for key in ('display_name', 'handle'))
         for slide in post['slides']:
-            for key in ('title', 'kicker', 'body', 'stat', 'stat_label', 'note'):
+            for key in ('title', 'kicker', 'body', 'stat', 'stat_label', 'note', 'intro_line', 'follow_line'):
                 visible.extend(lines(slide.get(key, '')))
             visible.append(slide.get('image', {}).get('credit', ''))
             for row in slide.get('rows', []):
@@ -175,7 +187,7 @@ class Renderer:
                 self.glyph_cache.add((weight, char))
             length = self.draw.textlength(row, font=f) / SCALE
             require(length <= width, f'Slide {self.number}, text too wide: {row!r}. Shorten or break the line.')
-            xx = x - length if align == 'right' else x
+            xx = x - length if align == 'right' else x - length / 2 if align == 'center' else x
             yy = y + j * (leading or size * 1.28)
             box = self.draw.textbbox((xx * SCALE, yy * SCALE), row, font=f, anchor='lt')
             require(box[0] >= 0 and box[2] <= W * SCALE and box[1] >= 0 and box[3] <= bottom * SCALE, f'Slide {self.number}, text exceeds its region: {row!r}.')
@@ -218,7 +230,14 @@ class Renderer:
         self.text(1004, 1277, f'{number:02d} / {len(self.post["slides"]):02d}', 24, 'bold', width=160, bottom=1320, align='right')
         self.text(76, 166, slide.get('kicker', ''), 27, 'bold', bottom=216)
         layout = slide['layout']
-        if layout in ('cover', 'photo'):
+        if layout == 'closing' and slide.get('account_intro'):
+            self.text(76, 241, slide['title'], 78, 'heavy', leading=104, bottom=461)
+            self.picture(slide['image'], 515, 430)
+            self.text(540, 990, slide['intro_line'], 32, width=928, align='center')
+            self.text(540, 1054, slide['follow_line'], 34, 'bold', width=928, align='center')
+            self.text(540, 1130, '@' + handle, 44, 'heavy', width=928, align='center')
+            self.text(76, 1198, slide['image']['credit'], 22, bottom=1234)
+        elif layout in ('cover', 'photo'):
             require(len(lines(slide['title'])) <= 2, f'Slide {number}: use at most two title lines.')
             self.text(76, 241, slide['title'], 96 if layout == 'cover' else 100, 'heavy', leading=117, bottom=461)
             height = slide.get('image_height', 590 if layout == 'cover' else 520)

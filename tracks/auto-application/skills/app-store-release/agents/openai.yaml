@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Store 출시"
+  short_description: "언어별 스토어 문구·스크린샷·지원 페이지·빌드 업로드와 App Store Connect 입력 안내"
+  default_prompt: "$app-store-release로 이 iOS 앱의 출시 키트를 만들고 App Store Connect에 넣을 값을 언어별로 정리해줘."

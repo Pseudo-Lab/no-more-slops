@@ -1,0 +1,29 @@
+[
+  {
+    "file": "explainers/probeflow_EXPLAINER_KO.pdf",
+    "pages": 17,
+    "characters": 48693,
+    "fonts_embedded": true,
+    "outside_page": [],
+    "prose_items_verified": 257,
+    "prose_omitted": 0
+  },
+  {
+    "file": "explainers/second_chance_EXPLAINER_KO.pdf",
+    "pages": 13,
+    "characters": 33879,
+    "fonts_embedded": true,
+    "outside_page": [],
+    "prose_items_verified": 155,
+    "prose_omitted": 0
+  },
+  {
+    "file": "explainers/skillmerge_EXPLAINER_KO.pdf",
+    "pages": 16,
+    "characters": 41112,
+    "fonts_embedded": true,
+    "outside_page": [],
+    "prose_items_verified": 215,
+    "prose_omitted": 0
+  }
+]

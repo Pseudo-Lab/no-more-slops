@@ -12,7 +12,7 @@ The reusable skills in `tracks/auto-post/skills/` can be installed for use acros
 
 | Skill | Purpose |
 | --- | --- |
-| [instagram-content](../../skills/instagram-content/SKILL.md) | Create Instagram brand identities, photo-led carousels and reference-based profile images or characters. Supply the account, topic, language, colors and media for each task. Includes optional local renderers. |
+| [instagram-content](../../skills/instagram-content/SKILL.md) | Create photo-led carousels, silent demo-led Reels and reference-based profiles. Keep the selected account brief separate from reusable instructions; includes local production and validation helpers. |
 | [design-punctuation](../../skills/design-punctuation/SKILL.md) | Omit unnecessary terminal periods in headings, short captions and large display copy across content and web design, while preserving punctuation needed for meaning and data. |
 | [direct-news-copy](../../skills/direct-news-copy/SKILL.md) | Write Korean news copy directly; remove repetitive explanations of imagined misunderstandings while retaining factual limits. |
 
@@ -56,4 +56,4 @@ The `auto-post` branch collects production tools; it does not schedule or publis
 
 ## Current copy and editorial treatment
 
-Use `direct-news-copy` before rendering Korean news. The selected Chihuahua AI Lab profiles now keep warm off-white/black carousels separate from dark fixed-photo Reels, with large unboxed explanations, reading holds and expanded lower-screen space. The diagram harness remains an alternative renderer, and earlier demos keep their original inputs and verification records. See the [Week 02 update](outputs/week-02/README.md).
+Use `direct-news-copy` before rendering Korean news. The selected Chihuahua AI Lab profiles keep warm off-white/black carousels separate from dark Reels, now supporting large real demonstrations, stable explanations and expanded lower-screen space. A final mascot introduction belongs to carousels only. The diagram harness remains an alternative renderer, and earlier demos keep their original inputs and verification records. See the [Week 02 update](outputs/week-02/README.md).
