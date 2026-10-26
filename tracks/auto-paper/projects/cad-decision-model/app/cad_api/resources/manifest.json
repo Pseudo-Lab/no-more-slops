@@ -1,0 +1,12 @@
+{
+  "pid_legend": "Public benchmark legend and exemplars, PID2Graph CC BY-SA 4.0",
+  "cld_legend": "Text-only descriptions from existing project legend; no private image exemplar included",
+  "files": {
+    "DATA_ATTRIBUTION.md": "2396c11fd24ea927e87552fc93d0e6404f1b6da541a2b3aaa908730e9ea3236f",
+    "experiments/legend_pid.json": "cd450996614bf3216a3d8e7b445de04769c1bde6cbbd33f4a5c64253617f1822",
+    "experiments/legend_cld.json": "0fde87763f94fe6484cd6594dcc304fb4fbf87fcf551eba3580a23ec806c8900",
+    "image/synthetic-0.png": "1903345b5ece6ba56321fc3b09eacbf461d633494546f3518fcf3d39fee3340e",
+    "image/synthetic-2.png": "5834b5ccc86913f91594bb1c093076d0b0acc1a0a5479e67edbc7e0589557ca6",
+    "image/equipment-public-synthetic-crops.png": "c0623fad8d91db2341b032134a0197d45422e64fbebfd77734fa7094470e723e"
+  }
+}

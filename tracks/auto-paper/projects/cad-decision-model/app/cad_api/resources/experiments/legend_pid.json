@@ -1,0 +1,60 @@
+{
+  "classes": [
+    {
+      "key": "general",
+      "text": "General or miscellaneous process component that is not an instrumentation symbol, flow arrow, valve, tank, pump, or off-page inlet/outlet connector.",
+      "page": "synthetic-0.png",
+      "crop": [
+        4366,
+        3641,
+        4537,
+        3820
+      ]
+    },
+    {
+      "key": "instrument/circle",
+      "text": "Instrumentation symbol representing measurement or control, commonly drawn as a circular instrument bubble; use the complete original visible instrument body."
+    },
+    {
+      "key": "arrow_head",
+      "text": "Flow direction arrow or arrowhead along a pipe or process connection, distinct from an off-page connector.",
+      "page": "synthetic-0.png",
+      "crop": [
+        612,
+        3674,
+        678,
+        3788
+      ]
+    },
+    {
+      "key": "valve/outline",
+      "text": "Valve component controlling a pipe or process flow, including outline and filled valve appearances.",
+      "page": "synthetic-0.png",
+      "crop": [
+        2496,
+        2301,
+        2600,
+        2427
+      ]
+    },
+    {
+      "key": "equipment",
+      "text": "Process equipment: tank or vessel, or pump or compressor. The reference examples show a tank and a pump.",
+      "page": "equipment-public-synthetic-crops.png",
+      "crop": [
+        0,
+        0,
+        267,
+        219
+      ]
+    },
+    {
+      "key": "off_page_connector",
+      "text": "Inlet or outlet connector indicating continuation beyond the diagram or to another sheet, distinct from a flow-direction arrow."
+    },
+    {
+      "key": "other",
+      "text": "Another type, background, text, pipe segment, junction, crossing, or an uncertain region that cannot be assigned to the physical component categories above."
+    }
+  ]
+}
