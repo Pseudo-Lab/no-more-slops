@@ -189,6 +189,10 @@ SimpleQA[16]는 두 모델의 전체 단답형 사실성 정답률 차이를 3%p
 
 저자는 문헌 검색과 요약, 출처 확인, 초안 작성과 퇴고에 Anthropic Claude(Claude Code, claude-opus-5-5)를 사용하였다. 인용 문헌의 수치는 Claude 에이전트가 원문, 초록 또는 웹 아카이브 사본과 대조하였다. "본고 계산"으로 표시한 수치(4.3, 4.4절)는 Claude가 산식에 따라 계산하였고 별도의 에이전트가 산술을 재계산하였다. 심사 과정에서 지적되어 고친 전제는 보충 자료의 응답서에 기록하였다. 저자가 원문을 직접 대조한 범위는 [추후 기입]이며, 최종 내용의 책임은 저자에게 있다.
 
+## 감사의 글
+
+이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.
+
 ## 참고문헌
 
 1. OpenAI. Evals [Internet]. OpenAI API documentation; 2026 [cited 2026 Oct 25]. Available from: https://developers.openai.com/api/docs/guides/evals

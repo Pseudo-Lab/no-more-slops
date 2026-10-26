@@ -65,7 +65,7 @@ LLM·RAG 애플리케이션 평가용 골든 데이터셋을 어떻게 구축하
 ```sh
 cd app
 uv run build.py        # source.md + references.md -> manuscript/paper.md (인용 번호 부여, 본문 분량 출력)
-uv run pdf.py --out ../outputs/week-03/paper-extended.pdf   # 6쪽 확장판
+uv run pdf.py --float-wide --out ../outputs/week-03/paper-extended.pdf   # 6쪽 확장판
 uv run build.py --src source-4p.md --out paper-4p.md
 uv run pdf.py --keep-all --float-wide --src ../manuscript/paper-4p.md --out ../outputs/week-03/paper.pdf   # 4쪽 최종본(표는 쪽 상·하단)
 uv run check_pdf.py --png-dir ../reviews/png/final   # 쪽수 확인, 쪽별 PNG

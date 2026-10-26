@@ -123,7 +123,7 @@ SimpleQA[@wei2024simpleqa]는 전체 정답률 차이를 3%p 수준에서 판정
 
 ## 선언
 
-**저자 기여·연구비·이해상충**: [추후 기입]. **데이터 가용성**: 검색·원문 대조·심사 기록은 프로젝트 저장소(github.com/Pseudo-Lab/no-more-slops, tracks/auto-paper/projects/golden-dataset-review)에 두며 DOI는 [추후 기입]이다. **생성형 AI 사용**: 문헌 검색·요약, 출처 확인, 초안·퇴고에 Anthropic Claude(claude-opus-5-5)를 사용하였고, 원고 심사 의견의 일부는 OpenAI Codex와 Google Gemini에서 받았다. 인용 수치는 에이전트가 원문과 대조하였고, 본고 계산 수치는 별도 에이전트가 재계산하였다. 저자의 원문 직접 대조 범위와 인용 검증 책임자는 [추후 기입]이며 최종 책임은 저자에게 있다.
+**저자 기여·연구비·이해상충**: [추후 기입]. **데이터 가용성**: 검색·원문 대조·심사 기록은 프로젝트 저장소(github.com/Pseudo-Lab/no-more-slops, tracks/auto-paper/projects/golden-dataset-review)에 두며 DOI는 [추후 기입]이다. **생성형 AI 사용**: 문헌 검색·요약, 출처 확인, 초안·퇴고에 Anthropic Claude(claude-opus-5-5)를 사용하였고, 원고 심사 의견의 일부는 OpenAI Codex와 Google Gemini에서 받았다. 인용 수치는 에이전트가 원문과 대조하였고, 본고 계산 수치는 별도 에이전트가 재계산하였다. 저자의 원문 직접 대조 범위와 인용 검증 책임자는 [추후 기입]이며 최종 책임은 저자에게 있다. **감사의 글**: 이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.
 
 ## 참고문헌
 

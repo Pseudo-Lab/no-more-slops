@@ -86,6 +86,7 @@ PAGED_CSS = """
 .slot-top > .wide { margin: 0 0 6pt; }
 .slot-bottom > .wide { margin: 6pt 0 0; }
 .slot-top figure, .slot-bottom figure { margin: 0; }
+.page .refs { line-height: 1.17; }
 p.split-head { margin-bottom: 0; }
 p.split-head:not(.left) { text-align-last: justify; }
 """
