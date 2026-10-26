@@ -1,0 +1,73 @@
+{
+  "project": "scholar-monster",
+  "track": "auto-application",
+  "week": "03",
+  "author": "gogoymh",
+  "asOfDate": "2026-10-26",
+  "timezone": "Asia/Seoul",
+  "serviceUrl": "https://scholarmonster.com/",
+  "sourceAccess": "private; source code and raw operational records are not part of this contribution",
+  "provenance": "Public-safe summary checked against private development PRs and retained local verification records. Service tests were run during feature development, not rerun in this submission checkout.",
+  "latestWebRelease": {
+    "completedAt": "2026-10-26T11:26:06+09:00",
+    "feature": "proposal sharing dialog",
+    "publicHealth": "passed",
+    "servedFilesMatchedToRunningImage": 108,
+    "otherRunningServicesPreserved": 10,
+    "apiRecreated": false,
+    "databaseTouched": false
+  },
+  "featureDevelopmentChecks": {
+    "monetizationPreparation": {
+      "apiUnitTestsPassed": 276,
+      "isolatedDatabaseTestsPassed": 211,
+      "webTestsPassed": 38,
+      "totalTestsPassed": 525,
+      "scope": "configuration and disabled rollout states; no payment or advertising approval claim"
+    },
+    "proposalSharing": {
+      "webTestsPassed": 38,
+      "typeCheck": "passed",
+      "productionBuild": "passed",
+      "syntheticChromiumCheckGroupsPassed": 16,
+      "roles": ["owner", "editor", "viewer"],
+      "proposalStatuses": ["review_requested", "closed", "merged"],
+      "mobileWidthsPx": [320, 390],
+      "clipboardChecks": ["success", "fallback", "failure with manual text selection"],
+      "productionInteractionsInUiChecks": false,
+      "newPublicAccessGranted": false
+    },
+    "webDeploymentProcedureGuardGroupsPassed": 15,
+    "arxivPackage": {
+      "standaloneRecompileSamples": [
+        {"engine": "pdfLaTeX", "language": "English", "pages": 3},
+        {"engine": "XeLaTeX", "language": "Korean", "pages": 2}
+      ],
+      "pageCountsAndExtractedTextMatchOriginal": true,
+      "actualArxivSubmission": false
+    }
+  },
+  "screenshots": [
+    {"file": "proposal-auto-compile-local.png", "type": "local Chromium UI with synthetic manuscript and mocked API", "latestProductionScreenshot": false},
+    {"file": "proposal-pdf-scroll-local.png", "type": "local Chromium UI with synthetic manuscript and mocked API", "latestProductionScreenshot": false},
+    {"file": "proposal-share-local.png", "type": "local Chromium UI with synthetic manuscript and mocked API", "latestProductionScreenshot": false}
+  ],
+  "pending": {
+    "adsense": "review requested; advertisements disabled",
+    "lemonSqueezy": "application received; identity In Review; approval not confirmed",
+    "checkout": "disabled; prices undecided",
+    "mcpQuotaEnforcement": "disabled; tier limits undecided",
+    "serviceWebAcknowledgement": "not yet displayed; acknowledgement included in contribution introduction and weekly README"
+  },
+  "submissionChecks": {
+    "executedOn": "2026-10-26",
+    "repositoryStructure": {"filesChecked": 375, "skillsChecked": 36, "errors": 0},
+    "existingRepositoryRuleTestsPassed": 8,
+    "relativeLinksChecked": 8,
+    "jsonTestTotalConsistency": "passed",
+    "syntheticImagesMatchingReviewedOriginalBytes": 3,
+    "publicServiceHomeStatus": 200,
+    "serviceTestSuiteRerunInSubmissionCheckout": false
+  },
+  "unverified": ["mail inbox placement and spam filtering", "user retention", "payment conversion", "future search ranking and indexing"]
+}
