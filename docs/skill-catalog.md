@@ -54,8 +54,8 @@
 | 스킬 | 적용 범위 | 최초 정리 PR |
 | --- | --- | --- |
 | [design-punctuation](../tracks/auto-post/skills/design-punctuation/SKILL.md) | 제목·캡션 같은 짧은 시각 문구의 불필요한 끝마침표를 정리합니다. 다른 트랙에서도 링크로 재사용합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
-| [family-reel-meme-preflight](../tracks/auto-post/skills/family-reel-meme-preflight/SKILL.md) | 릴스 편집 전에 국가·플랫폼별 밈 근거와 아기 안전을 선별합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) |
+| [family-reel-meme-preflight](../tracks/auto-post/skills/family-reel-meme-preflight/SKILL.md) | 공개 웹의 밈 발견, 실제 장면 적용, 선택적 플랫폼·시장별 조회수 비교와 아기 안전을 구분해 기획합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) |
 | [instagram-content](../tracks/auto-post/skills/instagram-content/SKILL.md) | 계정 설정과 출처를 확인하며 사진 중심 캐러셀·프로필을 제작합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
-| [instagram-reel](../tracks/auto-post/skills/instagram-reel/SKILL.md) | 가족 촬영 영상을 세로 릴스로 편집하고 자막·음량·화질을 확인합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) · [#15](https://github.com/Pseudo-Lab/no-more-slops/pull/15) |
+| [instagram-reel](../tracks/auto-post/skills/instagram-reel/SKILL.md) | 가족 영상의 편집·작가회의·선택적 AI 생성·기술/편집 검수와 작업 복구를 안내합니다. 실제 게시와 유료 호출은 별도 승인 범위입니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) · [#15](https://github.com/Pseudo-Lab/no-more-slops/pull/15) |
 | [phantom-images](../tracks/auto-post/skills/phantom-images/SKILL.md) | Phantom Report의 프로젝트 규칙에 맞춘 사건 이미지와 캐러셀을 제작합니다. | [#3](https://github.com/Pseudo-Lab/no-more-slops/pull/3) |
 | [phantom-weekly](../tracks/auto-post/skills/phantom-weekly/SKILL.md) | Phantom Report의 주간 수집·사실 확인·집필·이미지 제작을 조합합니다. | [#3](https://github.com/Pseudo-Lab/no-more-slops/pull/3) |
