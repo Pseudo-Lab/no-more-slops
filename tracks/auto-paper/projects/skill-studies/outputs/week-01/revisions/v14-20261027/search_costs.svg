@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="690" viewBox="0 0 1100 690">
+<rect width="100%" height="100%" fill="white"/><g font-family="sans-serif" fill="#152a3a">
+<text x="30" y="30" font-size="21">Exact robust-width search: measured CPU and Python peak</text>
+<text x="30" y="55" font-size="13">Three cold cyclic orders; median CPU seconds / maximum traced bytes. Equal objective; constructed cases.</text>
+<text x="300" y="85" font-size="13">Original all ties</text>
+<text x="490" y="85" font-size="13">Memoized value DP</text>
+<text x="680" y="85" font-size="13">Certified exact B&amp;B</text>
+<text x="870" y="85" font-size="13">B&amp;B epsilon=1/32</text>
+<text x="30" y="118" font-size="14">equality_ties</text>
+<text x="300" y="118" font-size="12">0.015625 s / 18,902 B</text>
+<text x="300" y="138" font-size="11">R=0; L=0; mask=0</text>
+<text x="490" y="118" font-size="12">0.015625 s / 16,224 B</text>
+<text x="490" y="138" font-size="11">R=0; L=0; mask=0</text>
+<text x="680" y="118" font-size="12">0.015625 s / 16,842 B</text>
+<text x="680" y="138" font-size="11">R=0; L=0; mask=0</text>
+<text x="870" y="118" font-size="12">0.000000 s / 16,978 B</text>
+<text x="870" y="138" font-size="11">R=0; L=0; mask=0</text>
+<text x="30" y="198" font-size="14">impossible_bins</text>
+<text x="300" y="198" font-size="12">0.015625 s / 25,006 B</text>
+<text x="300" y="218" font-size="11">R=11/30; L=11/30; mask=2</text>
+<text x="490" y="198" font-size="12">0.015625 s / 25,126 B</text>
+<text x="490" y="218" font-size="11">R=11/30; L=11/30; mask=2</text>
+<text x="680" y="198" font-size="12">0.031250 s / 27,007 B</text>
+<text x="680" y="218" font-size="11">R=11/30; L=11/30; mask=2</text>
+<text x="870" y="198" font-size="12">0.015625 s / 21,834 B</text>
+<text x="870" y="218" font-size="11">R=11/30; L=11/30; mask=2</text>
+<text x="30" y="278" font-size="14">tight_zero_cap</text>
+<text x="300" y="278" font-size="12">0.062500 s / 54,629 B</text>
+<text x="300" y="298" font-size="11">R=41/120; L=41/120; mask=9</text>
+<text x="490" y="278" font-size="12">0.062500 s / 46,670 B</text>
+<text x="490" y="298" font-size="11">R=41/120; L=41/120; mask=9</text>
+<text x="680" y="278" font-size="12">0.078125 s / 72,149 B</text>
+<text x="680" y="298" font-size="11">R=41/120; L=41/120; mask=9</text>
+<text x="870" y="278" font-size="12">0.046875 s / 38,676 B</text>
+<text x="870" y="298" font-size="11">R=41/120; L=41/120; mask=9</text>
+<text x="30" y="358" font-size="14">complementarity</text>
+<text x="300" y="358" font-size="12">0.265625 s / 111,334 B</text>
+<text x="300" y="378" font-size="11">R=1/4; L=1/4; mask=3</text>
+<text x="490" y="358" font-size="12">0.250000 s / 73,531 B</text>
+<text x="490" y="378" font-size="11">R=1/4; L=1/4; mask=3</text>
+<text x="680" y="358" font-size="12">0.218750 s / 59,281 B</text>
+<text x="680" y="378" font-size="11">R=1/4; L=1/4; mask=3</text>
+<text x="870" y="358" font-size="12">0.171875 s / 49,589 B</text>
+<text x="870" y="378" font-size="11">R=1/4; L=1/4; mask=3</text>
+<text x="30" y="438" font-size="14">w41_shared_cap_ties</text>
+<text x="300" y="438" font-size="12">4.093750 s / 316,230 B</text>
+<text x="300" y="458" font-size="11">R=3/5; L=3/5; mask=0</text>
+<text x="490" y="438" font-size="12">0.203125 s / 85,789 B</text>
+<text x="490" y="458" font-size="11">R=3/5; L=3/5; mask=0</text>
+<text x="680" y="438" font-size="12">0.250000 s / 137,717 B</text>
+<text x="680" y="458" font-size="11">R=3/5; L=3/5; mask=0</text>
+<text x="870" y="438" font-size="12">0.203125 s / 137,933 B</text>
+<text x="870" y="458" font-size="11">R=3/5; L=3/5; mask=0</text>
+<text x="30" y="518" font-size="14">hard_pairs_Q2</text>
+<text x="300" y="518" font-size="12">0.343750 s / 88,869 B</text>
+<text x="300" y="538" font-size="11">R=51/128; L=51/128; mask=5</text>
+<text x="490" y="518" font-size="12">0.125000 s / 66,535 B</text>
+<text x="490" y="538" font-size="11">R=51/128; L=51/128; mask=5</text>
+<text x="680" y="518" font-size="12">0.125000 s / 80,798 B</text>
+<text x="680" y="538" font-size="11">R=51/128; L=51/128; mask=5</text>
+<text x="870" y="518" font-size="12">0.109375 s / 67,217 B</text>
+<text x="870" y="538" font-size="11">R=51/128; L=237/640; mask=5</text>
+<text x="30" y="598" font-size="14">hard_pairs_Q4</text>
+<text x="300" y="598" font-size="12">6.968750 s / 231,943 B</text>
+<text x="300" y="618" font-size="11">R=21/64; L=21/64; mask=85</text>
+<text x="490" y="598" font-size="12">0.718750 s / 334,535 B</text>
+<text x="490" y="618" font-size="11">R=21/64; L=21/64; mask=85</text>
+<text x="680" y="598" font-size="12">0.281250 s / 141,338 B</text>
+<text x="680" y="618" font-size="11">R=21/64; L=21/64; mask=85</text>
+<text x="870" y="598" font-size="12">0.156250 s / 89,232 B</text>
+<text x="870" y="618" font-size="11">R=21/64; L=97/320; mask=85</text>
+</g></svg>

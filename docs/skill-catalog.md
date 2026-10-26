@@ -6,6 +6,8 @@
 
 ## Auto-Paper
 
+[probeflow-evidence-acquisition](../tracks/auto-paper/skills/probeflow-evidence-acquisition/SKILL.md)은 고정된 typed 도구·지불한 공개 관측·예산으로 다음 허용 획득 행동 하나와 견적·근거를 반환하는 연구 참고 후보입니다. 전체 연구 관리와 구분하며 모델 이득·전역 활성화는 인증하지 않습니다. [현재 교정판과 별도 검토 범위](../tracks/auto-paper/projects/skill-studies/README.md#probeflow-현재-판본과-검토-범위)를 함께 읽습니다.
+
 | 스킬 | 적용 범위 | 최초 정리 PR |
 | --- | --- | --- |
 | [audit-paper-citations](../tracks/auto-paper/skills/audit-paper-citations/SKILL.md) | 인용 문장·참고문헌과 원문의 부합성을 검사합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |

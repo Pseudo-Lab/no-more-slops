@@ -1,0 +1,1885 @@
+{
+  "schema": "probeflow.corrected-flow.coverage.v1",
+  "legacy_exact_sections": [
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/0",
+      "target_pointer": "/supplement/14",
+      "structured_sha256": "fa89e909c07f8474cda45e0dae308094e3003914c7979dc23ee88dff4787cfea",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/11",
+      "previous_edition_target_pointer": "/supplement/12",
+      "narrative_edition_target_pointer": "/supplement/13"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/1",
+      "target_pointer": "/supplement/15",
+      "structured_sha256": "93bae5c777c8bb80d6632c8e661bc2a60f013da3ca44ca3c1495b30324e409a0",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/12",
+      "previous_edition_target_pointer": "/supplement/13",
+      "narrative_edition_target_pointer": "/supplement/14"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/2",
+      "target_pointer": "/supplement/16",
+      "structured_sha256": "3a13c964faf785ec4f1a68256dad285abb7bddd3173a8a8205b2b42a8651f8cc",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/13",
+      "previous_edition_target_pointer": "/supplement/14",
+      "narrative_edition_target_pointer": "/supplement/15"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/3",
+      "target_pointer": "/supplement/17",
+      "structured_sha256": "7ef867220a11448f6aabe93b101dbe423bde5ef4572b0c2fef494bea9f8aaddc",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/14",
+      "previous_edition_target_pointer": "/supplement/15",
+      "narrative_edition_target_pointer": "/supplement/16"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/4",
+      "target_pointer": "/supplement/18",
+      "structured_sha256": "18bb0becf19dc97a0298e195cef034312a9a497ee612f9679725ed408bd634b6",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/15",
+      "previous_edition_target_pointer": "/supplement/16",
+      "narrative_edition_target_pointer": "/supplement/17"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/5",
+      "target_pointer": "/supplement/19",
+      "structured_sha256": "6545509b05a4e62fd3da2c7df622783c8795da71dc86af1b26affd4b381517f2",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/16",
+      "previous_edition_target_pointer": "/supplement/17",
+      "narrative_edition_target_pointer": "/supplement/18"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/6",
+      "target_pointer": "/supplement/20",
+      "structured_sha256": "58ed92c0bfed0616c2c68d2de951eed44b79754e2b962f1d5901c8815098932d",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/17",
+      "previous_edition_target_pointer": "/supplement/18",
+      "narrative_edition_target_pointer": "/supplement/19"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/7",
+      "target_pointer": "/supplement/21",
+      "structured_sha256": "5cfb4908858cdaf10d082db11872e30d59a8af974cbf4afbeae6cfab0f3fe4f6",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/18",
+      "previous_edition_target_pointer": "/supplement/19",
+      "narrative_edition_target_pointer": "/supplement/20"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/8",
+      "target_pointer": "/supplement/22",
+      "structured_sha256": "8b102d114217a3ea18fa8b494ee2992ce1625d1cbae69dcd93e48277e440987f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/19",
+      "previous_edition_target_pointer": "/supplement/20",
+      "narrative_edition_target_pointer": "/supplement/21"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/9",
+      "target_pointer": "/supplement/23",
+      "structured_sha256": "bbcfacb3d62a2d46e65db40e94a89313bcb977f161e61e97f33b68390a0b5d4e",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/20",
+      "previous_edition_target_pointer": "/supplement/21",
+      "narrative_edition_target_pointer": "/supplement/22"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/10",
+      "target_pointer": "/supplement/24",
+      "structured_sha256": "ffc712d2d0eab04693402aceb414909aaa9e3b04726f554a88dce2cdfdf03edc",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/21",
+      "previous_edition_target_pointer": "/supplement/22",
+      "narrative_edition_target_pointer": "/supplement/23"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/11",
+      "target_pointer": "/supplement/25",
+      "structured_sha256": "1fec3c7b102e59f02c07985672deb2d31e67b3620d659cc32683e769d491a81a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/22",
+      "previous_edition_target_pointer": "/supplement/23",
+      "narrative_edition_target_pointer": "/supplement/24"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/12",
+      "target_pointer": "/supplement/26",
+      "structured_sha256": "7ec1fd913d07044feed69dfbfb03587e43d74624641fbd4473dd25bb4a5158ca",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/23",
+      "previous_edition_target_pointer": "/supplement/24",
+      "narrative_edition_target_pointer": "/supplement/25"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/13",
+      "target_pointer": "/supplement/27",
+      "structured_sha256": "a95eebb76221a444b6336f96a0034294da37d544a4390eb0f60d90dcaa9d8110",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/24",
+      "previous_edition_target_pointer": "/supplement/25",
+      "narrative_edition_target_pointer": "/supplement/26"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/14",
+      "target_pointer": "/supplement/28",
+      "structured_sha256": "e26a672b590654066d0220b938d1147fc82c5be0629599f2ad47db43a71b37e7",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/25",
+      "previous_edition_target_pointer": "/supplement/26",
+      "narrative_edition_target_pointer": "/supplement/27"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/15",
+      "target_pointer": "/supplement/29",
+      "structured_sha256": "bbdde3f15bd38e82f72f8488ebd56511e52c9aa2d548ba238301888355658327",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/26",
+      "previous_edition_target_pointer": "/supplement/27",
+      "narrative_edition_target_pointer": "/supplement/28"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/16",
+      "target_pointer": "/supplement/30",
+      "structured_sha256": "8a87b861d3ebb60b817833556b24147086e7372b20bd9c4d12a413ce74d14db8",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/27",
+      "previous_edition_target_pointer": "/supplement/28",
+      "narrative_edition_target_pointer": "/supplement/29"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/17",
+      "target_pointer": "/supplement/31",
+      "structured_sha256": "0863c82f11a84251f438c6c3d0399fb0e819eb58537e897105a618ed45b0be36",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/28",
+      "previous_edition_target_pointer": "/supplement/29",
+      "narrative_edition_target_pointer": "/supplement/30"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/18",
+      "target_pointer": "/supplement/32",
+      "structured_sha256": "06eac0ed4ccb689824de2bc5427e5a0bbb12d5fb070b38e98dd480c37cfcf17c",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/29",
+      "previous_edition_target_pointer": "/supplement/30",
+      "narrative_edition_target_pointer": "/supplement/31"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/19",
+      "target_pointer": "/supplement/33",
+      "structured_sha256": "f4419c19dd4e8c07a26a31f32bf7cce189b74c63ad3643db09daa37a47da54a2",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/30",
+      "previous_edition_target_pointer": "/supplement/31",
+      "narrative_edition_target_pointer": "/supplement/32"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/20",
+      "target_pointer": "/supplement/34",
+      "structured_sha256": "ca12514da940617aa347eba8f0f8ac01da8a38aee09eb8f0e108b03f3b33805e",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/31",
+      "previous_edition_target_pointer": "/supplement/32",
+      "narrative_edition_target_pointer": "/supplement/33"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/21",
+      "target_pointer": "/supplement/35",
+      "structured_sha256": "54cc1bde6cf3db2f359703fbb961efa9a4193c7d8b908f3ba22a3300b5f987bd",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/32",
+      "previous_edition_target_pointer": "/supplement/33",
+      "narrative_edition_target_pointer": "/supplement/34"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/22",
+      "target_pointer": "/supplement/36",
+      "structured_sha256": "4317488f85edcce9691256e9713dd3fe9896f561ce9954127d9563598c0ae8ce",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/33",
+      "previous_edition_target_pointer": "/supplement/34",
+      "narrative_edition_target_pointer": "/supplement/35"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/23",
+      "target_pointer": "/supplement/37",
+      "structured_sha256": "92c246a540a038e156877f967ccc9a24dd0b5be512275eb608f8c94cf6fcdd11",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/34",
+      "previous_edition_target_pointer": "/supplement/35",
+      "narrative_edition_target_pointer": "/supplement/36"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/24",
+      "target_pointer": "/supplement/38",
+      "structured_sha256": "de689947ffdb234340a80939c0e075e702c06ed82c75754e88dcc897d8141338",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/35",
+      "previous_edition_target_pointer": "/supplement/36",
+      "narrative_edition_target_pointer": "/supplement/37"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/25",
+      "target_pointer": "/supplement/39",
+      "structured_sha256": "996fb218823bf079a82af9178f3724701708d6989cc84693929be1549dbcf35e",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/36",
+      "previous_edition_target_pointer": "/supplement/37",
+      "narrative_edition_target_pointer": "/supplement/38"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/26",
+      "target_pointer": "/supplement/40",
+      "structured_sha256": "596587bcd1f06ad8c7213fdb83ae38b82152fac25dfe1810e15f9de8821e3d62",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/37",
+      "previous_edition_target_pointer": "/supplement/38",
+      "narrative_edition_target_pointer": "/supplement/39"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/27",
+      "target_pointer": "/supplement/41",
+      "structured_sha256": "6872b1604602290586b619a5b5adc156561a6926ae33dfd9ace4ea4206a73f84",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/38",
+      "previous_edition_target_pointer": "/supplement/39",
+      "narrative_edition_target_pointer": "/supplement/40"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/28",
+      "target_pointer": "/supplement/42",
+      "structured_sha256": "94e89d0cbe878f07374804dfb5908e6d900fdc295f2e7bd88a1849e42f24f049",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/39",
+      "previous_edition_target_pointer": "/supplement/40",
+      "narrative_edition_target_pointer": "/supplement/41"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/29",
+      "target_pointer": "/supplement/43",
+      "structured_sha256": "18fb7410a906f9f1fe98408a30a45c27196b0ff27d67a3212c57419f8d8c21bb",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/40",
+      "previous_edition_target_pointer": "/supplement/41",
+      "narrative_edition_target_pointer": "/supplement/42"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/30",
+      "target_pointer": "/supplement/44",
+      "structured_sha256": "9630835dbd2bf603fc76f7d1ea74186e88d97080a4327c699b98d2241b620622",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/41",
+      "previous_edition_target_pointer": "/supplement/42",
+      "narrative_edition_target_pointer": "/supplement/43"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/31",
+      "target_pointer": "/supplement/45",
+      "structured_sha256": "40a8a84aae5bf237c0dea199c8fe658bd5ae36624f1682b67208ce88ca04de70",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/42",
+      "previous_edition_target_pointer": "/supplement/43",
+      "narrative_edition_target_pointer": "/supplement/44"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/32",
+      "target_pointer": "/supplement/46",
+      "structured_sha256": "df3264d76fa24824f00afb27997a610feff5de0283546bfec476da4d38b5fa40",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/43",
+      "previous_edition_target_pointer": "/supplement/44",
+      "narrative_edition_target_pointer": "/supplement/45"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/33",
+      "target_pointer": "/supplement/47",
+      "structured_sha256": "d7b1f41c1d01f38f3e523e459f8ddf5510e3d139e88d6dd9af6816841ad66173",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/44",
+      "previous_edition_target_pointer": "/supplement/45",
+      "narrative_edition_target_pointer": "/supplement/46"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/34",
+      "target_pointer": "/supplement/48",
+      "structured_sha256": "326d42f162fcbc408e598049910336bd93d6b3d3dd679834768a29a12011909d",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/45",
+      "previous_edition_target_pointer": "/supplement/46",
+      "narrative_edition_target_pointer": "/supplement/47"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/35",
+      "target_pointer": "/supplement/49",
+      "structured_sha256": "8247f3710e9f72bf1de0efb2e3299355bb2127a8a55bbcb6bed6f000e2546e69",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/46",
+      "previous_edition_target_pointer": "/supplement/47",
+      "narrative_edition_target_pointer": "/supplement/48"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/36",
+      "target_pointer": "/supplement/50",
+      "structured_sha256": "b003a68f3b8419af0f1a1fddf6b5fb896f0e234c82100434f956408722f459f9",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/47",
+      "previous_edition_target_pointer": "/supplement/48",
+      "narrative_edition_target_pointer": "/supplement/49"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/37",
+      "target_pointer": "/supplement/51",
+      "structured_sha256": "820477a94bc5e32adb5479b93c86fddfcd2e3711afdbcd0f42447d6e3e02b17b",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/48",
+      "previous_edition_target_pointer": "/supplement/49",
+      "narrative_edition_target_pointer": "/supplement/50"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/38",
+      "target_pointer": "/supplement/52",
+      "structured_sha256": "f6c331e3e361bc9a4a7cdde9de9b193175861d96c8afef59c48b6dd43589fa6d",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/49",
+      "previous_edition_target_pointer": "/supplement/50",
+      "narrative_edition_target_pointer": "/supplement/51"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/39",
+      "target_pointer": "/supplement/53",
+      "structured_sha256": "30f23a37ad264b92c2c3a1bd52b316ba82271175d585b7cf8552694e12e43853",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/50",
+      "previous_edition_target_pointer": "/supplement/51",
+      "narrative_edition_target_pointer": "/supplement/52"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/40",
+      "target_pointer": "/supplement/54",
+      "structured_sha256": "241de7a42d6f20f728e9416061157c9436fda0d2c5169c031fb3724abd7545bf",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/51",
+      "previous_edition_target_pointer": "/supplement/52",
+      "narrative_edition_target_pointer": "/supplement/53"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/41",
+      "target_pointer": "/supplement/55",
+      "structured_sha256": "cdef0bc1142a8317adc3fb22f236d6c9a52bec61e4d7161af338017d30e8bdbe",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/52",
+      "previous_edition_target_pointer": "/supplement/53",
+      "narrative_edition_target_pointer": "/supplement/54"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/42",
+      "target_pointer": "/supplement/56",
+      "structured_sha256": "57371107e0ba61972615bd15907a02d07ba9048622b629bbaaa589dd6a041b72",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/53",
+      "previous_edition_target_pointer": "/supplement/54",
+      "narrative_edition_target_pointer": "/supplement/55"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/43",
+      "target_pointer": "/supplement/57",
+      "structured_sha256": "009c7327e500107f6b99f96c4f2191f275b182e01d2cce46024475494826c2ab",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/54",
+      "previous_edition_target_pointer": "/supplement/55",
+      "narrative_edition_target_pointer": "/supplement/56"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/44",
+      "target_pointer": "/supplement/58",
+      "structured_sha256": "badd2c33d8cac05796ff4ee8f69ecad27180b302812f67323f229ff5217eec58",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/55",
+      "previous_edition_target_pointer": "/supplement/56",
+      "narrative_edition_target_pointer": "/supplement/57"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/45",
+      "target_pointer": "/supplement/59",
+      "structured_sha256": "ae590914471aa5835dc3f1a8ec38b580fccf51560ebfd1e95eeca2ee2fd0008a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/56",
+      "previous_edition_target_pointer": "/supplement/57",
+      "narrative_edition_target_pointer": "/supplement/58"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/46",
+      "target_pointer": "/supplement/60",
+      "structured_sha256": "ae378b128ddb793b98f668cdcaf76aa300acf71afe3c2af33db28ce454d86ef3",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/57",
+      "previous_edition_target_pointer": "/supplement/58",
+      "narrative_edition_target_pointer": "/supplement/59"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/47",
+      "target_pointer": "/supplement/61",
+      "structured_sha256": "f804f6612702cc66c1cc0bb9bffc904e01b44c34ba486c2d1b3fd3a9f3c30ec2",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/58",
+      "previous_edition_target_pointer": "/supplement/59",
+      "narrative_edition_target_pointer": "/supplement/60"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/48",
+      "target_pointer": "/supplement/62",
+      "structured_sha256": "05fc82ea34d5b2200a506d6519955dccf24dee2d58057996340fee5d4b9c090b",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/59",
+      "previous_edition_target_pointer": "/supplement/60",
+      "narrative_edition_target_pointer": "/supplement/61"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/49",
+      "target_pointer": "/supplement/63",
+      "structured_sha256": "7915f5f0da1e40face34aae8be63112d29df9d78867b7b1a8d23f29a86c80c6a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/60",
+      "previous_edition_target_pointer": "/supplement/61",
+      "narrative_edition_target_pointer": "/supplement/62"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/50",
+      "target_pointer": "/supplement/64",
+      "structured_sha256": "7eb6a988d68fdb5093055410346252d340ea29de23d87b9d5f3ef5d6bf379573",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/61",
+      "previous_edition_target_pointer": "/supplement/62",
+      "narrative_edition_target_pointer": "/supplement/63"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/51",
+      "target_pointer": "/supplement/65",
+      "structured_sha256": "dcdb79d72a311056aa5216b88a2306eec8085e6a8351c61148110f4f2520dd75",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/62",
+      "previous_edition_target_pointer": "/supplement/63",
+      "narrative_edition_target_pointer": "/supplement/64"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/52",
+      "target_pointer": "/supplement/66",
+      "structured_sha256": "ff9bdab640ba432d82221ad8ae5b595fcfdc4c4fcccda812cf131e9acc35329a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/63",
+      "previous_edition_target_pointer": "/supplement/64",
+      "narrative_edition_target_pointer": "/supplement/65"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/53",
+      "target_pointer": "/supplement/67",
+      "structured_sha256": "4491ce61b98efa622b479bfd322481e1979385acff483d0893df02829dd48a5f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/64",
+      "previous_edition_target_pointer": "/supplement/65",
+      "narrative_edition_target_pointer": "/supplement/66"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/supplement/54",
+      "target_pointer": "/supplement/68",
+      "structured_sha256": "6281e20497c877e54e442d0546bfe9d3e5e65372ce2836fb86de35aa5fbdf675",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/65",
+      "previous_edition_target_pointer": "/supplement/66",
+      "narrative_edition_target_pointer": "/supplement/67"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/0",
+      "target_pointer": "/supplement/69",
+      "structured_sha256": "7ede8b2e5ef5ae110e7081986e02a539f54aab4505fc05c23570030b4e6ffc79",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/67",
+      "previous_edition_target_pointer": "/supplement/67",
+      "narrative_edition_target_pointer": "/supplement/68"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/1",
+      "target_pointer": "/supplement/70",
+      "structured_sha256": "e2d8ffd027bb27d8d8f43b0650e9449e18b4cc0139df0c298d8f61ad5369c3cd",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/68",
+      "previous_edition_target_pointer": "/supplement/68",
+      "narrative_edition_target_pointer": "/supplement/69"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/2",
+      "target_pointer": "/supplement/71",
+      "structured_sha256": "acc56c38e040f603266edb3afad3f26d1ef06306eab90a1efb50e200616fdc74",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/69",
+      "previous_edition_target_pointer": "/supplement/69",
+      "narrative_edition_target_pointer": "/supplement/70"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/3",
+      "target_pointer": "/supplement/72",
+      "structured_sha256": "1028ee5fa8f3672ed3600a8108072946f33ca7e83c2e9addaa125848369a7159",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/70",
+      "previous_edition_target_pointer": "/supplement/70",
+      "narrative_edition_target_pointer": "/supplement/71"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/4",
+      "target_pointer": "/supplement/73",
+      "structured_sha256": "1ffb696acffce3d6e565a8dd8919037be33a7af00772be1d3f871ff19da31734",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/71",
+      "previous_edition_target_pointer": "/supplement/71",
+      "narrative_edition_target_pointer": "/supplement/72"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/5",
+      "target_pointer": "/supplement/74",
+      "structured_sha256": "fac990300435e97e8e5e02f417835d5ecd7c5d30f20201eff03a4cba044f57bd",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/72",
+      "previous_edition_target_pointer": "/supplement/72",
+      "narrative_edition_target_pointer": "/supplement/73"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/6",
+      "target_pointer": "/supplement/75",
+      "structured_sha256": "755a399b3192be191feee119d7797df8fb8a824ce7a05398d58d092393b1f0e8",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/73",
+      "previous_edition_target_pointer": "/supplement/73",
+      "narrative_edition_target_pointer": "/supplement/74"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/7",
+      "target_pointer": "/supplement/76",
+      "structured_sha256": "6b031b42251ba755ea07532ff281e8765c6854c9a3c54b5b5f32e9876d973679",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/74",
+      "previous_edition_target_pointer": "/supplement/74",
+      "narrative_edition_target_pointer": "/supplement/75"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/8",
+      "target_pointer": "/supplement/77",
+      "structured_sha256": "360f3b215e56644596369becdd925eb530c5619729c87c7267993b2323ff6a2f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/75",
+      "previous_edition_target_pointer": "/supplement/75",
+      "narrative_edition_target_pointer": "/supplement/76"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/9",
+      "target_pointer": "/supplement/78",
+      "structured_sha256": "c0bf26f81996d951125f1d7c2fb3cf83419a4ae3adbd4875a7c9415dab06c3d2",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/76",
+      "previous_edition_target_pointer": "/supplement/76",
+      "narrative_edition_target_pointer": "/supplement/77"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/10",
+      "target_pointer": "/supplement/79",
+      "structured_sha256": "f4f526d826f1cbac6adb558253b80ffa115b65c0932b1a23f299d6c1942b3de4",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/77",
+      "previous_edition_target_pointer": "/supplement/77",
+      "narrative_edition_target_pointer": "/supplement/78"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/paper/11",
+      "target_pointer": "/supplement/80",
+      "structured_sha256": "617400002f7a630947e7feaf21c71d2b0cdeb5211581da6b5bedb1c92ce3634a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/78",
+      "previous_edition_target_pointer": "/supplement/78",
+      "narrative_edition_target_pointer": "/supplement/79"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/paper/0",
+      "target_pointer": "/supplement/81",
+      "structured_sha256": "587c1d2d5558ec14a32c40e193b4ddcc91e730905cbdc8e72e476c184830af89",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/80",
+      "previous_edition_target_pointer": "/supplement/79",
+      "narrative_edition_target_pointer": "/supplement/80"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/paper/1",
+      "target_pointer": "/supplement/82",
+      "structured_sha256": "7d0eda7f9e810780afac10ead10cd265e1aa69ba8afd746d6edbfdc846aeb04f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/81",
+      "previous_edition_target_pointer": "/supplement/80",
+      "narrative_edition_target_pointer": "/supplement/81"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/paper/2",
+      "target_pointer": "/supplement/83",
+      "structured_sha256": "a396100ecff58074d3773a160202f561ded491852dade83e7dc6ecfb4d898ecf",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/82",
+      "previous_edition_target_pointer": "/supplement/81",
+      "narrative_edition_target_pointer": "/supplement/82"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/paper/3",
+      "target_pointer": "/supplement/84",
+      "structured_sha256": "542dc65b0daabf672725e096a7a5841adbf8ecafb1ee1dd9d102ff0f22ae8c42",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/83",
+      "previous_edition_target_pointer": "/supplement/82",
+      "narrative_edition_target_pointer": "/supplement/83"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/paper/4",
+      "target_pointer": "/supplement/85",
+      "structured_sha256": "d45a2ee375b312eb0b9fe01d26709d0d52fe1417b3131edcc0f20ae64eb3c9fd",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/84",
+      "previous_edition_target_pointer": "/supplement/83",
+      "narrative_edition_target_pointer": "/supplement/84"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/paper/5",
+      "target_pointer": "/supplement/86",
+      "structured_sha256": "9c4386f6892c5ad7d267d9e4230c3236abb04c06dc01515d3d298a442487e1ee",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/85",
+      "previous_edition_target_pointer": "/supplement/84",
+      "narrative_edition_target_pointer": "/supplement/85"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/paper/6",
+      "target_pointer": "/supplement/87",
+      "structured_sha256": "6e26701ddafa77e00da0dc2bf6b398831ee01b6ee9f18f7f990282fa81423e78",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/86",
+      "previous_edition_target_pointer": "/supplement/85",
+      "narrative_edition_target_pointer": "/supplement/86"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/0",
+      "target_pointer": "/supplement/88",
+      "structured_sha256": "7217674b2fc078a1cf80363ad15c69593fede21d795a05e359444cf60162ec2a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/87",
+      "previous_edition_target_pointer": "/supplement/86",
+      "narrative_edition_target_pointer": "/supplement/87"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/1",
+      "target_pointer": "/supplement/89",
+      "structured_sha256": "ee7e7ff00f126ed454f12175cd79ee0f2c5a70df262b080236cf80d9d84c7c9b",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/88",
+      "previous_edition_target_pointer": "/supplement/87",
+      "narrative_edition_target_pointer": "/supplement/88"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/2",
+      "target_pointer": "/supplement/90",
+      "structured_sha256": "5cb80fe749c636901095274bd0a72f36c13bb512f324fa75830fcccbc3b2ba00",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/89",
+      "previous_edition_target_pointer": "/supplement/88",
+      "narrative_edition_target_pointer": "/supplement/89"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/3",
+      "target_pointer": "/supplement/91",
+      "structured_sha256": "56438e0f2b73632bcbb1ee46153bb39be9abc59c58556eb13c4fbda7481ea30b",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/90",
+      "previous_edition_target_pointer": "/supplement/89",
+      "narrative_edition_target_pointer": "/supplement/90"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/4",
+      "target_pointer": "/supplement/92",
+      "structured_sha256": "c20e75381acc08e2ac190401a0e24a0c4b4bcaf792a7375edee0d1a23d884b8a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/91",
+      "previous_edition_target_pointer": "/supplement/90",
+      "narrative_edition_target_pointer": "/supplement/91"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/5",
+      "target_pointer": "/supplement/93",
+      "structured_sha256": "3820634cf1d260f6a7c984b2ddb0571d82c00cf7278e8b87a815c361bcae1c8e",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/92",
+      "previous_edition_target_pointer": "/supplement/91",
+      "narrative_edition_target_pointer": "/supplement/92"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/6",
+      "target_pointer": "/supplement/94",
+      "structured_sha256": "784555a1bee3fd5f61b4e886ef0f4e552e47f8c3ebe953ddd82f0b010f358ed4",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/93",
+      "previous_edition_target_pointer": "/supplement/92",
+      "narrative_edition_target_pointer": "/supplement/93"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/7",
+      "target_pointer": "/supplement/95",
+      "structured_sha256": "1e6d832302a021eae2d06b7c8987c880a958ae33ce079474843b84aee3029edf",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/94",
+      "previous_edition_target_pointer": "/supplement/93",
+      "narrative_edition_target_pointer": "/supplement/94"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/8",
+      "target_pointer": "/supplement/96",
+      "structured_sha256": "739c89ce90bc7a05748db3feba161ecc0915f150d80017244f8b90f76ff36f08",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/95",
+      "previous_edition_target_pointer": "/supplement/94",
+      "narrative_edition_target_pointer": "/supplement/95"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/9",
+      "target_pointer": "/supplement/97",
+      "structured_sha256": "3bde7187c47bf7a1d07125bf388ad39f8aa8239f40c497bdf7b28ff7304513bc",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/96",
+      "previous_edition_target_pointer": "/supplement/95",
+      "narrative_edition_target_pointer": "/supplement/96"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/supplement/10",
+      "target_pointer": "/supplement/98",
+      "structured_sha256": "bfbee2e0cb210496ecae2bf1c3393f556e37992cf8df97f3e31850cd3dc6cffa",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/97",
+      "previous_edition_target_pointer": "/supplement/96",
+      "narrative_edition_target_pointer": "/supplement/97"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/paper/0",
+      "target_pointer": "/supplement/99",
+      "structured_sha256": "4ff739e6a68d0f430d01d6b78900e2b4fbb0f687d80fa8f65a6a79ad408eec4b",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/99",
+      "previous_edition_target_pointer": "/supplement/97",
+      "narrative_edition_target_pointer": "/supplement/98"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/paper/1",
+      "target_pointer": "/supplement/100",
+      "structured_sha256": "b7ad723f5dec82c34999ef1d5fda204b321dc3a347dd5b945337c8c4f9deaf98",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/100",
+      "previous_edition_target_pointer": "/supplement/98",
+      "narrative_edition_target_pointer": "/supplement/99"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/paper/2",
+      "target_pointer": "/supplement/101",
+      "structured_sha256": "632459fa27f418cd4d890f57e6a5b5e97613588c831fcfc0eb5888183eb4068a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/101",
+      "previous_edition_target_pointer": "/supplement/99",
+      "narrative_edition_target_pointer": "/supplement/100"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/paper/3",
+      "target_pointer": "/supplement/102",
+      "structured_sha256": "2d00c1dc5436d08a2d3e6aa1eaffefaeb3bb9fbeed630b82a85410c02710790b",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/102",
+      "previous_edition_target_pointer": "/supplement/100",
+      "narrative_edition_target_pointer": "/supplement/101"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/paper/4",
+      "target_pointer": "/supplement/103",
+      "structured_sha256": "db602a5cc7322c1701fe51d74bedc235fa6c97fc68090b4f6bc03362529a3654",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/103",
+      "previous_edition_target_pointer": "/supplement/101",
+      "narrative_edition_target_pointer": "/supplement/102"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/0",
+      "target_pointer": "/supplement/104",
+      "structured_sha256": "20b983ecd48c4c7169cc81311de0c4361b731f25bfd079b322220a7c84350e2a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/104",
+      "previous_edition_target_pointer": "/supplement/102",
+      "narrative_edition_target_pointer": "/supplement/103"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/1",
+      "target_pointer": "/supplement/105",
+      "structured_sha256": "90ee109be687a254cf9c78b82ca3cefc641b3fb9e9a8b018cedab6ce0d473e45",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/105",
+      "previous_edition_target_pointer": "/supplement/103",
+      "narrative_edition_target_pointer": "/supplement/104"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/2",
+      "target_pointer": "/supplement/106",
+      "structured_sha256": "a91a5c521be65ffb6e1ad7e2fab2f8e9a206ba56a92f997b03a11720a69145b7",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/106",
+      "previous_edition_target_pointer": "/supplement/104",
+      "narrative_edition_target_pointer": "/supplement/105"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/3",
+      "target_pointer": "/supplement/107",
+      "structured_sha256": "fc37d7729772b20550a5aeaf44ff677cb4fcd62e209a74bfc6d4d4c2747da699",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/107",
+      "previous_edition_target_pointer": "/supplement/105",
+      "narrative_edition_target_pointer": "/supplement/106"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/4",
+      "target_pointer": "/supplement/108",
+      "structured_sha256": "e444583a0fa488d1840ef78507a717e9a554b2cc4dd99a4a1e3b91e372026e26",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/108",
+      "previous_edition_target_pointer": "/supplement/106",
+      "narrative_edition_target_pointer": "/supplement/107"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/5",
+      "target_pointer": "/supplement/109",
+      "structured_sha256": "7a456532293c96e82ca49856b3c1be2b027bcba3f2cd9f1e551f2fa7a670fad2",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/109",
+      "previous_edition_target_pointer": "/supplement/107",
+      "narrative_edition_target_pointer": "/supplement/108"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/6",
+      "target_pointer": "/supplement/110",
+      "structured_sha256": "9989ded1a8f777f65037bae45f507be08a37f2463d5d8ae82eda344cc4244eb3",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/110",
+      "previous_edition_target_pointer": "/supplement/108",
+      "narrative_edition_target_pointer": "/supplement/109"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/7",
+      "target_pointer": "/supplement/111",
+      "structured_sha256": "145e58d4b5d888b81ddd66d2616d308b4c944e3404077f7d2abd14feaaad7612",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/111",
+      "previous_edition_target_pointer": "/supplement/109",
+      "narrative_edition_target_pointer": "/supplement/110"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/supplement/8",
+      "target_pointer": "/supplement/112",
+      "structured_sha256": "db860978500c54f0033ad67f9ea775a46bf45900e9c573bd8327eacca402e2f6",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/supplement/112",
+      "previous_edition_target_pointer": "/supplement/110",
+      "narrative_edition_target_pointer": "/supplement/111"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/0",
+      "target_pointer": "/explainer/18",
+      "structured_sha256": "dbf406114585a2a4f76f7cb23e89ef0bf102f6a40deb91d2191164c4c95f6fd1",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/7",
+      "previous_edition_target_pointer": "/explainer/9",
+      "narrative_edition_target_pointer": "/explainer/10"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/1",
+      "target_pointer": "/explainer/19",
+      "structured_sha256": "d1b914486b7c5b06c5829a9b7290e0d5ef7bdc402473fc9f4dfbd4f3368d4b29",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/8",
+      "previous_edition_target_pointer": "/explainer/10",
+      "narrative_edition_target_pointer": "/explainer/11"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/2",
+      "target_pointer": "/explainer/20",
+      "structured_sha256": "fca315c051f699d7815a1e921996d411ab6d1dda928a5091caa87e3aaead8c36",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/9",
+      "previous_edition_target_pointer": "/explainer/11",
+      "narrative_edition_target_pointer": "/explainer/12"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/3",
+      "target_pointer": "/explainer/21",
+      "structured_sha256": "91c4d1f2b5cbe3c1d5edd8dac73b28ed0d91cfc9a918f48d89cb54ccbc4ffb8f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/10",
+      "previous_edition_target_pointer": "/explainer/12",
+      "narrative_edition_target_pointer": "/explainer/13"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/4",
+      "target_pointer": "/explainer/22",
+      "structured_sha256": "93bb800f259cd2922f97186147e9f38289deedc420c68dcecb71fc9ac7f8604d",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/11",
+      "previous_edition_target_pointer": "/explainer/13",
+      "narrative_edition_target_pointer": "/explainer/14"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/5",
+      "target_pointer": "/explainer/23",
+      "structured_sha256": "701645d1239ea657cfb9d7d2dac6c6b42b05a91a07c2405772f4abd42cc2887f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/12",
+      "previous_edition_target_pointer": "/explainer/14",
+      "narrative_edition_target_pointer": "/explainer/15"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/6",
+      "target_pointer": "/explainer/24",
+      "structured_sha256": "332840db7fcd18c8aea9e9b471fd30a8b8f9f0145e2213a1266323767bc649de",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/13",
+      "previous_edition_target_pointer": "/explainer/15",
+      "narrative_edition_target_pointer": "/explainer/16"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/7",
+      "target_pointer": "/explainer/25",
+      "structured_sha256": "069e919e02c199e88ed591762281c9d09971097501d298f573c173b946384794",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/14",
+      "previous_edition_target_pointer": "/explainer/16",
+      "narrative_edition_target_pointer": "/explainer/17"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/8",
+      "target_pointer": "/explainer/26",
+      "structured_sha256": "3bd32ce35fe5fe475b33c314d18bbade788901c202b2e57b830bfb6d207556a1",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/15",
+      "previous_edition_target_pointer": "/explainer/17",
+      "narrative_edition_target_pointer": "/explainer/18"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/9",
+      "target_pointer": "/explainer/27",
+      "structured_sha256": "ffcf9c4d05f80ce4272e1db7782f3f65a62641378293da9d1d44bdfaf9e8636a",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/16",
+      "previous_edition_target_pointer": "/explainer/18",
+      "narrative_edition_target_pointer": "/explainer/19"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/10",
+      "target_pointer": "/explainer/28",
+      "structured_sha256": "ec678954a1b19a17aad9f9c9b34cdcd3d4e476043a40938e317e7e5363e1b6e1",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/17",
+      "previous_edition_target_pointer": "/explainer/19",
+      "narrative_edition_target_pointer": "/explainer/20"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/11",
+      "target_pointer": "/explainer/29",
+      "structured_sha256": "481b555e6fcab0d5a7c0b7a5a10e01da11799068f24d41cd8b6800f218008195",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/18",
+      "previous_edition_target_pointer": "/explainer/20",
+      "narrative_edition_target_pointer": "/explainer/21"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/12",
+      "target_pointer": "/explainer/30",
+      "structured_sha256": "a25c54a0cff3b1451b99868eb1d49a80b3cdb98a0f2eda38353fa70714f39eb4",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/19",
+      "previous_edition_target_pointer": "/explainer/21",
+      "narrative_edition_target_pointer": "/explainer/22"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/13",
+      "target_pointer": "/explainer/31",
+      "structured_sha256": "9f968b251bca0f65b5a89193d7c85e7d8fa662f0f6a4ea98d314a343f1188791",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/20",
+      "previous_edition_target_pointer": "/explainer/22",
+      "narrative_edition_target_pointer": "/explainer/23"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/14",
+      "target_pointer": "/explainer/32",
+      "structured_sha256": "a690db28be096b9f2a340e957b0391969153e873221aff12e75903007d560c8e",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/21",
+      "previous_edition_target_pointer": "/explainer/23",
+      "narrative_edition_target_pointer": "/explainer/24"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/15",
+      "target_pointer": "/explainer/33",
+      "structured_sha256": "b9b5ab94468c7bb73e058c59790f26e30346dae6c092e1e7ee185a3d29eec0a0",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/22",
+      "previous_edition_target_pointer": "/explainer/24",
+      "narrative_edition_target_pointer": "/explainer/25"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/16",
+      "target_pointer": "/explainer/34",
+      "structured_sha256": "ff838740fdff5722a1eb1de49a18a7f1403fc1a36b64fe4300b3d25264a40109",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/23",
+      "previous_edition_target_pointer": "/explainer/25",
+      "narrative_edition_target_pointer": "/explainer/26"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/17",
+      "target_pointer": "/explainer/35",
+      "structured_sha256": "943bc1781d9acb4f0e94bd6d2bd5676befffcd925fd9f915f8946ea3301ec2bc",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/24",
+      "previous_edition_target_pointer": "/explainer/26",
+      "narrative_edition_target_pointer": "/explainer/27"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/18",
+      "target_pointer": "/explainer/36",
+      "structured_sha256": "8de9c7d4c6953c58a811ce6fc350b7fd3f5b5d5eef204616abc01bcc86a19b02",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/25",
+      "previous_edition_target_pointer": "/explainer/27",
+      "narrative_edition_target_pointer": "/explainer/28"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/19",
+      "target_pointer": "/explainer/37",
+      "structured_sha256": "7344fa7431179bd876373f57e170d48631c026c01177093f57f775c8bc9db5e3",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/26",
+      "previous_edition_target_pointer": "/explainer/28",
+      "narrative_edition_target_pointer": "/explainer/29"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/20",
+      "target_pointer": "/explainer/38",
+      "structured_sha256": "49186c37622b11b8d004554e980c656a1d912fcdff0c59daa468ac0c82e7a630",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/27",
+      "previous_edition_target_pointer": "/explainer/29",
+      "narrative_edition_target_pointer": "/explainer/30"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/21",
+      "target_pointer": "/explainer/39",
+      "structured_sha256": "d9b472bddcd6e37c0bd0c27db2f9553a9c9035dc5e2724f96ab83046160a0f15",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/28",
+      "previous_edition_target_pointer": "/explainer/30",
+      "narrative_edition_target_pointer": "/explainer/31"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/22",
+      "target_pointer": "/explainer/40",
+      "structured_sha256": "42b0a63e544d479e2d91d666445d89716b1e69fb18e5c7e4439b34e60e51ec69",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/29",
+      "previous_edition_target_pointer": "/explainer/31",
+      "narrative_edition_target_pointer": "/explainer/32"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/23",
+      "target_pointer": "/explainer/41",
+      "structured_sha256": "cf4873fc49d4cfa1429a15a26f5665fd7af883eed8746dfdb1f1953ed65782a5",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/30",
+      "previous_edition_target_pointer": "/explainer/32",
+      "narrative_edition_target_pointer": "/explainer/33"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/24",
+      "target_pointer": "/explainer/42",
+      "structured_sha256": "33da28a51d0c806ec0e2f69d001da03d626df5e09e6d742d8dc077d836c6bb51",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/31",
+      "previous_edition_target_pointer": "/explainer/33",
+      "narrative_edition_target_pointer": "/explainer/34"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/25",
+      "target_pointer": "/explainer/43",
+      "structured_sha256": "cff5f216569ac6721a60c7c60d79974a9c7372643908d57110023f7777b55ef2",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/32",
+      "previous_edition_target_pointer": "/explainer/34",
+      "narrative_edition_target_pointer": "/explainer/35"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/26",
+      "target_pointer": "/explainer/44",
+      "structured_sha256": "780b091f0700165508cad550afecc9c6bdf29ad1c1a64a4683f3683fcdeb4848",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/33",
+      "previous_edition_target_pointer": "/explainer/35",
+      "narrative_edition_target_pointer": "/explainer/36"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/27",
+      "target_pointer": "/explainer/45",
+      "structured_sha256": "6602e956494fd62d95a6fb563c8f9958a3d86994e570eb37df690ff2376caf3f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/34",
+      "previous_edition_target_pointer": "/explainer/36",
+      "narrative_edition_target_pointer": "/explainer/37"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/28",
+      "target_pointer": "/explainer/46",
+      "structured_sha256": "1033d78c41867189fdfbaba650ac8635adffdc167b0da440b6d72ad8e7dbe553",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/35",
+      "previous_edition_target_pointer": "/explainer/37",
+      "narrative_edition_target_pointer": "/explainer/38"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/29",
+      "target_pointer": "/explainer/47",
+      "structured_sha256": "92661212d5c15ac5085e324e1c5c1079d7332a825ae49c7ce8a4ef16d93a8480",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/36",
+      "previous_edition_target_pointer": "/explainer/38",
+      "narrative_edition_target_pointer": "/explainer/39"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/30",
+      "target_pointer": "/explainer/48",
+      "structured_sha256": "acddd6f96548258b7ab6f7b4b731c69eb4aaa79479fa344b0bef8af841c4f0e4",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/37",
+      "previous_edition_target_pointer": "/explainer/39",
+      "narrative_edition_target_pointer": "/explainer/40"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/31",
+      "target_pointer": "/explainer/49",
+      "structured_sha256": "72235c8e1cfe0cfdfbb4730728fde4eb0821413bec496658a1c3dc75aceebc00",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/38",
+      "previous_edition_target_pointer": "/explainer/40",
+      "narrative_edition_target_pointer": "/explainer/41"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/32",
+      "target_pointer": "/explainer/50",
+      "structured_sha256": "161b0392e8e8e143a934327c7a4b55521023ded3cd015f0a8940875fef9d0ecd",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/39",
+      "previous_edition_target_pointer": "/explainer/41",
+      "narrative_edition_target_pointer": "/explainer/42"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/33",
+      "target_pointer": "/explainer/51",
+      "structured_sha256": "5752979b9447cd78a1e69cd70f75ca8708070b0f7885ed23ae35ba9145784fe5",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/40",
+      "previous_edition_target_pointer": "/explainer/42",
+      "narrative_edition_target_pointer": "/explainer/43"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/34",
+      "target_pointer": "/explainer/52",
+      "structured_sha256": "cc38a0cf7f0b0a3f37576998213c8c99afff853d12b845349c9cadcee21da6ff",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/41",
+      "previous_edition_target_pointer": "/explainer/43",
+      "narrative_edition_target_pointer": "/explainer/44"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/35",
+      "target_pointer": "/explainer/53",
+      "structured_sha256": "1410a83a2286d698cfd8c6496e46b57d766b7f66dffb56fb2008f5862e48cc98",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/42",
+      "previous_edition_target_pointer": "/explainer/44",
+      "narrative_edition_target_pointer": "/explainer/45"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/36",
+      "target_pointer": "/explainer/54",
+      "structured_sha256": "38c064ac25d684039006657a71ccfafb20e09facf5cd51b42a5359894edb8c46",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/43",
+      "previous_edition_target_pointer": "/explainer/45",
+      "narrative_edition_target_pointer": "/explainer/46"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/37",
+      "target_pointer": "/explainer/55",
+      "structured_sha256": "bcfff8e28286807e530d458277d371eefe61e1e7c56ea195210c46dd3648a446",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/44",
+      "previous_edition_target_pointer": "/explainer/46",
+      "narrative_edition_target_pointer": "/explainer/47"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/38",
+      "target_pointer": "/explainer/56",
+      "structured_sha256": "3e4edc7e96c85f9cbf5894b7fc2823036dee2f645e176b40c2edcfefd94ff654",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/45",
+      "previous_edition_target_pointer": "/explainer/47",
+      "narrative_edition_target_pointer": "/explainer/48"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/39",
+      "target_pointer": "/explainer/57",
+      "structured_sha256": "69896705ab256fcc43170fa6dee01cc0de45bf91d6d87923bf2e1dac6d47c9cb",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/46",
+      "previous_edition_target_pointer": "/explainer/48",
+      "narrative_edition_target_pointer": "/explainer/49"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/40",
+      "target_pointer": "/explainer/58",
+      "structured_sha256": "2a986b922409aa60eba449f66fce92bb67bd1b3d97932d7cbdb232ab977fc22c",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/47",
+      "previous_edition_target_pointer": "/explainer/49",
+      "narrative_edition_target_pointer": "/explainer/50"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/41",
+      "target_pointer": "/explainer/59",
+      "structured_sha256": "7191989fc4bfa352bf9bd50d4a5781e0967a63c845278dff53d1e510d5a853e6",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/48",
+      "previous_edition_target_pointer": "/explainer/50",
+      "narrative_edition_target_pointer": "/explainer/51"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/42",
+      "target_pointer": "/explainer/60",
+      "structured_sha256": "a22d7610a06d839901610cf3ef4f7f0dc4dd42171a0a362c98fd9a1c94a971e2",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/49",
+      "previous_edition_target_pointer": "/explainer/51",
+      "narrative_edition_target_pointer": "/explainer/52"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/43",
+      "target_pointer": "/explainer/61",
+      "structured_sha256": "f2e8122f6dbaf0ff9c9c59fe8dbd4d40262f50c2482a1c7e3aff6392221b61ca",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/50",
+      "previous_edition_target_pointer": "/explainer/52",
+      "narrative_edition_target_pointer": "/explainer/53"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/44",
+      "target_pointer": "/explainer/62",
+      "structured_sha256": "7ff9d3238b2e84147030cf8196a9d8bd83a195a8372f036cccc08be8f82a4f17",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/51",
+      "previous_edition_target_pointer": "/explainer/53",
+      "narrative_edition_target_pointer": "/explainer/54"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/45",
+      "target_pointer": "/explainer/63",
+      "structured_sha256": "f59baa027d50f267a1cc705b1df66ea98870556e89f3f6a47c94c3f40c0add37",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/52",
+      "previous_edition_target_pointer": "/explainer/54",
+      "narrative_edition_target_pointer": "/explainer/55"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/46",
+      "target_pointer": "/explainer/64",
+      "structured_sha256": "7ecad4344cdb1275f6583553bd762d099ba77e5fd0cb7ac15712c66cb58e8322",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/53",
+      "previous_edition_target_pointer": "/explainer/55",
+      "narrative_edition_target_pointer": "/explainer/56"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/47",
+      "target_pointer": "/explainer/65",
+      "structured_sha256": "2b463fa43e97e596b5edb0a9ff06a22027ce688fc903f721f7f8b9c6243a43f5",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/54",
+      "previous_edition_target_pointer": "/explainer/56",
+      "narrative_edition_target_pointer": "/explainer/57"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/48",
+      "target_pointer": "/explainer/66",
+      "structured_sha256": "fbb6e7f85694ca572d0ab5771134ecb72d4b27a8bbdad3e9dcf1bdab8451a588",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/55",
+      "previous_edition_target_pointer": "/explainer/57",
+      "narrative_edition_target_pointer": "/explainer/58"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/49",
+      "target_pointer": "/explainer/67",
+      "structured_sha256": "f48a5b4adfbe909dcbd3e5aa84ae47894ac3fe682da32bb0fdc9fa206bc850bd",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/56",
+      "previous_edition_target_pointer": "/explainer/58",
+      "narrative_edition_target_pointer": "/explainer/59"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/50",
+      "target_pointer": "/explainer/68",
+      "structured_sha256": "56154f9de79e0453675676c6dc7d7301a8456419fa71f273e7d5984575f5497c",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/57",
+      "previous_edition_target_pointer": "/explainer/59",
+      "narrative_edition_target_pointer": "/explainer/60"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/51",
+      "target_pointer": "/explainer/69",
+      "structured_sha256": "ec8d217bb5e8fa49a37b2286565d92bf3e44940b5d6c4ba2c6689af8740ed4e5",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/58",
+      "previous_edition_target_pointer": "/explainer/60",
+      "narrative_edition_target_pointer": "/explainer/61"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/52",
+      "target_pointer": "/explainer/70",
+      "structured_sha256": "1089ef1687d6a54b0beb04fe56e8fdfd175de85f8aebddff978f26a97265c289",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/59",
+      "previous_edition_target_pointer": "/explainer/61",
+      "narrative_edition_target_pointer": "/explainer/62"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/53",
+      "target_pointer": "/explainer/71",
+      "structured_sha256": "e357999ff2a9b0a27161be0ab62a4f12f4e82c194958338098bd313307a1968d",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/60",
+      "previous_edition_target_pointer": "/explainer/62",
+      "narrative_edition_target_pointer": "/explainer/63"
+    },
+    {
+      "source": "advanced-v4",
+      "source_pointer": "/explainer/54",
+      "target_pointer": "/explainer/72",
+      "structured_sha256": "b04871b0d2ad85caf5a7cb687e8afe9586bb5d197c334aa49256a2cbe58a4e0f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/61",
+      "previous_edition_target_pointer": "/explainer/63",
+      "narrative_edition_target_pointer": "/explainer/64"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/explainer/0",
+      "target_pointer": "/explainer/73",
+      "structured_sha256": "b0cfd4d5671f3c872c82ed946aa6149b85c3c30973217f50b3c0b9c909923117",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/63",
+      "previous_edition_target_pointer": "/explainer/64",
+      "narrative_edition_target_pointer": "/explainer/65"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/explainer/1",
+      "target_pointer": "/explainer/74",
+      "structured_sha256": "fdee2ad38006ea5ca6a082e410cf80ec67a862f73b10a831cf1025c0ff40d424",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/64",
+      "previous_edition_target_pointer": "/explainer/65",
+      "narrative_edition_target_pointer": "/explainer/66"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/explainer/2",
+      "target_pointer": "/explainer/75",
+      "structured_sha256": "a151f4afd712b41131bf961f48e944be5f234aec0dcc80a023ae8a807bac3e88",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/65",
+      "previous_edition_target_pointer": "/explainer/66",
+      "narrative_edition_target_pointer": "/explainer/67"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/explainer/3",
+      "target_pointer": "/explainer/76",
+      "structured_sha256": "dc67ab112190999229533c90a7534f18b17c9dd511992238fd07b1e9a5a0cb2d",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/66",
+      "previous_edition_target_pointer": "/explainer/67",
+      "narrative_edition_target_pointer": "/explainer/68"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/explainer/4",
+      "target_pointer": "/explainer/77",
+      "structured_sha256": "ceb488ac1637cfb46d1d3e930637335260d1df6149be863144d9d70ac19885c6",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/67",
+      "previous_edition_target_pointer": "/explainer/68",
+      "narrative_edition_target_pointer": "/explainer/69"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/explainer/5",
+      "target_pointer": "/explainer/78",
+      "structured_sha256": "f058ee04302f32dfb4e38f959c7a7d5a540c53370d0d16c3aa17800743ade841",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/68",
+      "previous_edition_target_pointer": "/explainer/69",
+      "narrative_edition_target_pointer": "/explainer/70"
+    },
+    {
+      "source": "actual-W49",
+      "source_pointer": "/explainer/6",
+      "target_pointer": "/explainer/79",
+      "structured_sha256": "c2fdef3d45003aeb1f0dec1b7cc52c43d5fe5497d1beb0384ff76a53cbcda3ce",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/69",
+      "previous_edition_target_pointer": "/explainer/70",
+      "narrative_edition_target_pointer": "/explainer/71"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/explainer/0",
+      "target_pointer": "/explainer/80",
+      "structured_sha256": "9015b139abb9256caaa651951f1d5f217ae551534239eb913252f2d077fbbe7f",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/71",
+      "previous_edition_target_pointer": "/explainer/71",
+      "narrative_edition_target_pointer": "/explainer/72"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/explainer/1",
+      "target_pointer": "/explainer/81",
+      "structured_sha256": "41512cd8526a1bd4489e82cead2d826ba92c0b68135ecef6f0a71f01ada17a76",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/72",
+      "previous_edition_target_pointer": "/explainer/72",
+      "narrative_edition_target_pointer": "/explainer/73"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/explainer/2",
+      "target_pointer": "/explainer/82",
+      "structured_sha256": "9ac7268eeb922bbe04dec86693ba7c4b7640636f09e416e0d1e454a1a82e7c9d",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/73",
+      "previous_edition_target_pointer": "/explainer/73",
+      "narrative_edition_target_pointer": "/explainer/74"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/explainer/3",
+      "target_pointer": "/explainer/83",
+      "structured_sha256": "e13bd8610f014c69e3c66b6d311c179f69f1d27d790f269613b1af57d71f4bff",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/74",
+      "previous_edition_target_pointer": "/explainer/74",
+      "narrative_edition_target_pointer": "/explainer/75"
+    },
+    {
+      "source": "failed-W50",
+      "source_pointer": "/explainer/4",
+      "target_pointer": "/explainer/84",
+      "structured_sha256": "9c9094ba9a4e48e163f621585aeac2d682f9ecfc6d8a6563c7dce2c618179014",
+      "preservation": "exact_structured_copy",
+      "via_layout_pointer": "/explainer/75",
+      "previous_edition_target_pointer": "/explainer/75",
+      "narrative_edition_target_pointer": "/explainer/76"
+    }
+  ],
+  "new_producer_sections": [
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/paper/0",
+      "target_pointer": "/supplement/114",
+      "structured_sha256": "6e7fbc64e460681184d99cb6f6dfcc9e3f8cbd2f542eee370c7e9e16db7e532f",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/112",
+      "narrative_edition_target_pointer": "/supplement/113"
+    },
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/paper/1",
+      "target_pointer": "/supplement/115",
+      "structured_sha256": "3f511eb340b874b2fdae0aaa06357a6a3f80fd78e279fc99002856c59b86c9cb",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/113",
+      "narrative_edition_target_pointer": "/supplement/114"
+    },
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/paper/2",
+      "target_pointer": "/supplement/116",
+      "structured_sha256": "04e46d3ab7f81eef777f714b9d22dcf5d540d22c00d96c996e52b9a318f801d0",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/114",
+      "narrative_edition_target_pointer": "/supplement/115"
+    },
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/paper/3",
+      "target_pointer": "/supplement/117",
+      "structured_sha256": "bad9d969fbb9d939950adc8835a85032810f9c241a6401339827158147246b95",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/115",
+      "narrative_edition_target_pointer": "/supplement/116"
+    },
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/paper/4",
+      "target_pointer": "/supplement/118",
+      "structured_sha256": "4454e75c30b2b6c97db5b96255a506c3b26f31a952a38f3ae1a38c5d9a9247fd",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/116",
+      "narrative_edition_target_pointer": "/supplement/117"
+    },
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/supplement/0",
+      "target_pointer": "/supplement/119",
+      "structured_sha256": "130de6b6ff511cb19c1064d78c9901a11d2f60f5535b18e7d4b572b7349e09b0",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/117",
+      "narrative_edition_target_pointer": "/supplement/118"
+    },
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/supplement/1",
+      "target_pointer": "/supplement/120",
+      "structured_sha256": "0598ca16afa9a55149fcb923c478c89c193ba0db59cc045a3ec9c7f7a5c533fb",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/118",
+      "narrative_edition_target_pointer": "/supplement/119"
+    },
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/explainer/0",
+      "target_pointer": "/explainer/85",
+      "structured_sha256": "2f77891f605ac9fd13e3072a6e524156073e86c6e1c0cd7d5d8062c9a01153eb",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/explainer/76",
+      "narrative_edition_target_pointer": "/explainer/77"
+    },
+    {
+      "source": "completed-coherent-study",
+      "source_pointer": "/explainer/1",
+      "target_pointer": "/explainer/86",
+      "structured_sha256": "a94684c27fdda2481e6c58a2d02d264e51baccb1ea202d962cd1fee31cbd1f88",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/explainer/77",
+      "narrative_edition_target_pointer": "/explainer/78"
+    },
+    {
+      "source": "completed-certified-search",
+      "source_pointer": "/paper/0",
+      "target_pointer": "/supplement/122",
+      "structured_sha256": "ecc6e90e7e42a3ab9457f97e4dc2a6a6e11c3993638f11af686f3d940d68dfd0",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/120",
+      "narrative_edition_target_pointer": "/supplement/121"
+    },
+    {
+      "source": "completed-certified-search",
+      "source_pointer": "/paper/1",
+      "target_pointer": "/supplement/123",
+      "structured_sha256": "56cbd5f924af5107ea8fc26af76fe64b04b161f8f93e17d6e5fa8a46c54ae798",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/121",
+      "narrative_edition_target_pointer": "/supplement/122"
+    },
+    {
+      "source": "completed-certified-search",
+      "source_pointer": "/paper/2",
+      "target_pointer": "/supplement/124",
+      "structured_sha256": "2225a4f3eca76670fd64ace6aac146b19ed271c79a274a2965dbdaedfee0f3ab",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/122",
+      "narrative_edition_target_pointer": "/supplement/123"
+    },
+    {
+      "source": "completed-certified-search",
+      "source_pointer": "/supplement/0",
+      "target_pointer": "/supplement/125",
+      "structured_sha256": "2f44798b7e458b47c38f77428bbd904387d237b020519e34b7c23781ae106c44",
+      "preservation": "exact_structured_copy",
+      "previous_edition_target_pointer": "/supplement/123",
+      "narrative_edition_target_pointer": "/supplement/124"
+    }
+  ],
+  "advanced_v4_supplement": 55,
+  "advanced_v4_Korean": 55,
+  "legacy_total": 166,
+  "current_sections": {
+    "paper": 18,
+    "supplement": 142,
+    "explainer": 88
+  },
+  "history_policy": "All old 216 atoms and the previous 79 Korean sections remain exact. The current Korean explanation/erratum precedes an explicit historical boundary. Historical decimal typo is retained with precise ERRATA pointers.",
+  "requirements": {
+    "main": {
+      "source_pointer": "/paper",
+      "structured_sha256": "57ef20bd16732ecb0e37f8d98647c853d1fe7a0c9530349f58665c5464e4f9a8",
+      "resolved_title": "ProbeFlow: Certified Search for Budgeted Information Design"
+    },
+    "search_algorithm": {
+      "source_pointer": "/paper/6/algorithm",
+      "structured_sha256": "355abda4409e1508da55445d3fad287d65360621eeb7872c88522ec71c302477",
+      "resolved_title": "Certified subset search with one winner"
+    },
+    "joint_law_algorithm": {
+      "source_pointer": "/paper/8/algorithm",
+      "structured_sha256": "18e0326d51ddc3f7a41bc19e6868ed924459f829261e0d296385ffdf2ac9ef25",
+      "resolved_title": "Construct the participant-balanced complete-row law"
+    },
+    "online_algorithm": {
+      "source_pointer": "/paper/9/algorithm",
+      "structured_sha256": "a44d108c9cf5dc065374bab3ac649ec7fbd7cba519ac9719c3f663f9949a24ac",
+      "resolved_title": "Freeze the common plan, then execute paid decisions"
+    },
+    "negative_application": {
+      "source_pointer": "/paper/13",
+      "structured_sha256": "74ff95445d9cb4e1b7d8c5d437fb8fc3107d6f9aec9daebfe0aeb05b1e706fab",
+      "resolved_title": "5.3. Separate acquisition results"
+    },
+    "search_engineering": {
+      "source_pointer": "/paper/12",
+      "structured_sha256": "a078c43937be58b08a611e89511b9ac47916e990d251e833f6125e6d1adc0878",
+      "resolved_title": "5.2. Primary search results"
+    },
+    "substantive_discussion": {
+      "source_pointer": "/paper/14",
+      "structured_sha256": "61a9a09f3b15ce6e6e4b43ef472b0b2d4a4b30d173f1eb5f3d193a2e81280b41",
+      "resolved_title": "6. Discussion"
+    },
+    "method_parent": {
+      "source_pointer": "/paper/5",
+      "structured_sha256": "f028582874db7d55ec7c149a840dc6b6a65b3460464540f92c9d5d04c2ab3d5c",
+      "resolved_title": "4. Method"
+    },
+    "experimental_setup": {
+      "source_pointer": "/paper/11",
+      "structured_sha256": "c3e4e1e7339f726ee5dea3eed784bbc1f4760d0b99ce2a1188e2679238c7749a",
+      "resolved_title": "5.1. Setup, comparators and measurement"
+    },
+    "current_Korean_summary": {
+      "source_pointer": "/explainer/0",
+      "structured_sha256": "fc68e5fdc70de5afc5e1027952d64224107fbab242267a0af49f3cf735c49fbd",
+      "resolved_title": "교정판 요약: 계산 개선과 응용 회귀를 함께 읽기"
+    },
+    "current_Korean_erratum": {
+      "source_pointer": "/explainer/6",
+      "structured_sha256": "52b0800c1c4adabd23ad3ae0e83e410442eb2da0a3ae5bcf58255df89711ee1c",
+      "resolved_title": "6. 정오표: 바뀐 표시와 보존한 원문"
+    },
+    "historical_Korean_boundary": {
+      "source_pointer": "/explainer/7",
+      "structured_sha256": "d682505db9809b8c9d61b1fb33123231912795406b167009ac477b5647c82194",
+      "resolved_title": "역사 보존부 시작: 다음 79절은 이전 판본 그대로다"
+    }
+  },
+  "silent_omissions": false,
+  "previous_map_reused": false,
+  "previous_source_sha256": "0f7810aed7738bcfe517fef97ce084ecc37efc3f12d7294e5bda2b2a7467dd5a",
+  "narrative_source_sha256": "d84c4b83ae98d918ed20aa32472ede84ab8840749b7ca919397c49eb272d50f0",
+  "inherited_main_requirement": {
+    "source_pointer": "/paper",
+    "structured_sha256": "d19e24f47a3a143b99ac84fadf2b051de4a26f948222202e5e1819c7b33e7c9f",
+    "resolved_title": "ProbeFlow: Certified Search for Budgeted Information Design"
+  },
+  "inherited_current_sections": {
+    "paper": 17,
+    "supplement": 141,
+    "explainer": 87
+  },
+  "public_source_sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+  "inherited_record_sha256": "2b8d0ca05acf11b3d7634425b503ef622e983d20b498ec80b2f13a5ad6c2aea7",
+  "editorial_acknowledgements": [
+    {
+      "source_pointer": "/paper/17",
+      "structured_sha256": "25ccea3c902236939d1aa282a8fef1f53a8c87bce28f7f68cfdd89ef0d005830"
+    },
+    {
+      "source_pointer": "/supplement/141",
+      "structured_sha256": "25ccea3c902236939d1aa282a8fef1f53a8c87bce28f7f68cfdd89ef0d005830"
+    },
+    {
+      "source_pointer": "/explainer/87",
+      "structured_sha256": "13d9f5ce55b74b21b37f2cd6a9e968af39b32a9dfa56cd2e801f0d3a28f4e243"
+    }
+  ]
+}

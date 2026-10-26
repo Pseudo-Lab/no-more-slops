@@ -1,0 +1,34 @@
+{
+  "search": {
+    "objective": "min fixed-subset worst sharp width R",
+    "exact_objective_gain": "0/no_gain",
+    "observed_CPU_and_peak_wins_vs_strong_DP": "2/7",
+    "Q4_exact_risk": "21/64",
+    "Q4_epsilon_gap": "1/40",
+    "universal_speedup": false,
+    "strict_node_cap_claim": false,
+    "possible_last_node_overshoot": 1
+  },
+  "application": {
+    "objective": "participant-macro prediction+abstention+attempted-quote J",
+    "coherent_b3_J": "157023/457520",
+    "versus_empirical": "regression",
+    "versus_statewise": "regression",
+    "same_estimator_fixed_myopic": "pathwise tie",
+    "independent_final_people": 0
+  },
+  "scientific_certification": false,
+  "external_superiority": false,
+  "external_followup": "Incomplete separate study; future work only. No external/final or intermediate training measurements are included.",
+  "decimal_correction": {
+    "exact": "157023/457520",
+    "current_display": "0.34320",
+    "historical_display_retained": "0.34321"
+  },
+  "schema": "probeflow.public-copy-claims.v1",
+  "source_sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+  "old_claim_record_sha256": "e73f652d253103584a6cd98bdba4ac2311e8e4556304bf224a4b496a4a0e8182",
+  "new_experiments": 0,
+  "public_copy_review": "Required fresh different review; not yet performed by this author",
+  "publication_performed": false
+}

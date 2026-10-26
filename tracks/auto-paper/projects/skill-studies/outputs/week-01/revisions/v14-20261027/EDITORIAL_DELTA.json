@@ -1,0 +1,216 @@
+{
+  "schema": "probeflow.public-layout-editorial-delta.v1",
+  "source": {
+    "path": "source.DOCUMENT.json",
+    "sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+    "bytes": 590132
+  },
+  "predecessor_source": {
+    "sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+    "bytes": 590132
+  },
+  "source_changed": false,
+  "canonical_alias_exact": true,
+  "rendering_changes": [
+    {
+      "path": "supplement.typ",
+      "source_anchor": "/supplement/102/tables/0",
+      "old": {
+        "sha256": "8700a467a443f4345179cc7dff4c8178f9af143e2be731c4d20df04cb197fd02",
+        "bytes": 377963
+      },
+      "new": {
+        "sha256": "4c61e8ed6ffef99c0edd7f919cdd9aff8567f67159b91ee594d1704399d75ad7",
+        "bytes": 377963
+      },
+      "old_columns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "new_columns": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "font_size_pt": 9,
+      "inset_pt": 4,
+      "all_cell_and_caption_strings_exact": true,
+      "inverse_patch_exact": true
+    },
+    {
+      "path": "figures/eda_feature_scale.svg",
+      "source_anchors": [
+        "/supplement/35/figure",
+        "/explainer/29/figure"
+      ],
+      "old": {
+        "sha256": "35e154a35545b8227598df430068424622452e73e8ace943b3375eaec385bd0e",
+        "bytes": 63360
+      },
+      "new": {
+        "sha256": "91d9ee12e971965747a2c3c050b688c3cf5b239a87df88a68aec6810aa2e8c7f",
+        "bytes": 63362
+      },
+      "old_canvas": [
+        0,
+        0,
+        720,
+        252
+      ],
+      "new_canvas": [
+        0,
+        -44,
+        720,
+        312
+      ],
+      "added_top_pt": 44,
+      "added_bottom_pt": 16,
+      "all_artist_coordinates_paths_clips_series_scales_labels_legends_and_data_bytes_exact": true,
+      "inverse_patch_exact": true,
+      "deliberate_presentation_transform": "Canvas extended; artists remain at their original SVG coordinates. Width remains 720pt."
+    },
+    {
+      "path": "figures/w47_support_harm.svg",
+      "source_anchors": [
+        "/supplement/36/figure",
+        "/explainer/62/figure"
+      ],
+      "old": {
+        "sha256": "5aefa441fb51c5fb2299a383cbff354fed359832747434a8b26d6a16c5e933f6",
+        "bytes": 49822
+      },
+      "new": {
+        "sha256": "62ed017bfa22386ffc490cc8dbb62e514245cf198aff3764d67176966bd7ef02",
+        "bytes": 49824
+      },
+      "old_canvas": [
+        0,
+        0,
+        720,
+        252
+      ],
+      "new_canvas": [
+        0,
+        -44,
+        720,
+        312
+      ],
+      "added_top_pt": 44,
+      "added_bottom_pt": 16,
+      "all_artist_coordinates_paths_clips_series_scales_labels_legends_and_data_bytes_exact": true,
+      "inverse_patch_exact": true,
+      "deliberate_presentation_transform": "Canvas extended; artists remain at their original SVG coordinates. Width remains 720pt."
+    },
+    {
+      "path": "supplement.typ",
+      "source_anchor": "/supplement/8/tables/0",
+      "verified_defect_row_anchor": "/supplement/8/tables/0/rows/4/0",
+      "source_label": "w 41_shared_cap_ties",
+      "old": {
+        "sha256": "4c61e8ed6ffef99c0edd7f919cdd9aff8567f67159b91ee594d1704399d75ad7",
+        "bytes": 377963
+      },
+      "new": {
+        "sha256": "523bbd6031686045185396f7f1b2993ee7592b0e38c8c51a1d88cd2b62b5648b",
+        "bytes": 377966
+      },
+      "old_columns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "new_columns": [
+        1.15,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "font_size_pt": 9,
+      "inset_pt": 4,
+      "all_cell_and_caption_strings_exact": true,
+      "inverse_patch_exact_to_first_candidate": true,
+      "reason": "Native crop shows the grid crossing the final ties glyph segment. Same-baseline numeral screening was insufficient. Only this verified table is adjusted.",
+      "prior_candidate_Typst_sha256": "4c61e8ed6ffef99c0edd7f919cdd9aff8567f67159b91ee594d1704399d75ad7",
+      "prior_candidate_public_manifest_sha256": "93e67b2ffe3b6e224bc1808ade5ede9a7dac006b8fea9da0333f2be7e6d84360",
+      "prior_attempt_scope": "Original candidate and all build/audit/crop/rebuild evidence are retained privately with an immutable index."
+    }
+  ],
+  "HTML_embedded_asset_replacements": [
+    {
+      "path": "figures/eda_feature_scale.svg",
+      "embedded_instances": 2,
+      "old": {
+        "sha256": "35e154a35545b8227598df430068424622452e73e8ace943b3375eaec385bd0e",
+        "bytes": 63360
+      },
+      "new": {
+        "sha256": "91d9ee12e971965747a2c3c050b688c3cf5b239a87df88a68aec6810aa2e8c7f",
+        "bytes": 63362
+      }
+    },
+    {
+      "path": "figures/w47_support_harm.svg",
+      "embedded_instances": 2,
+      "old": {
+        "sha256": "5aefa441fb51c5fb2299a383cbff354fed359832747434a8b26d6a16c5e933f6",
+        "bytes": 49822
+      },
+      "new": {
+        "sha256": "62ed017bfa22386ffc490cc8dbb62e514245cf198aff3764d67176966bd7ef02",
+        "bytes": 49824
+      }
+    }
+  ],
+  "HTML_other_bytes_exact": true,
+  "predecessor_editorial_delta": {
+    "sha256": "2aae1352452ea558d0b2857e9fd965b3d465f96a03adb9509aae2683f24523f1",
+    "bytes": 3688
+  },
+  "acknowledgement": "This work was created as part of the No-More-Slops group activities at Pseudo Lab.",
+  "new_benchmark_values": false,
+  "new_scientific_conclusions": false,
+  "original_table_values_and_labels_exact": true,
+  "original_figure_artists_and_main5figures_exact": true,
+  "algorithm_name_inputs_outputs_steps_exact": true,
+  "historical_failed_candidate_and_review_preserved": true,
+  "public_metadata_changes": [
+    "BUILD.json",
+    "DOCUMENT_IDENTITY.json",
+    "PRESERVATION.json",
+    "PUBLIC_SOURCE_PROVENANCE.json",
+    "README.md",
+    "PUBLIC_MANIFEST.json"
+  ],
+  "acceptance": "Author verification only; new different exact successor review required before Main Git delivery.",
+  "current_rendered_files": {
+    "supplement.typ": {
+      "sha256": "523bbd6031686045185396f7f1b2993ee7592b0e38c8c51a1d88cd2b62b5648b",
+      "bytes": 377966
+    },
+    "figures/eda_feature_scale.svg": {
+      "sha256": "91d9ee12e971965747a2c3c050b688c3cf5b239a87df88a68aec6810aa2e8c7f",
+      "bytes": 63362
+    },
+    "figures/w47_support_harm.svg": {
+      "sha256": "62ed017bfa22386ffc490cc8dbb62e514245cf198aff3764d67176966bd7ef02",
+      "bytes": 49824
+    }
+  },
+  "exact_presentation_patch_count": 4,
+  "predecessor_review_material_blockers": 3,
+  "additional_confirmed_same_table_readability_issue": 1,
+  "delta_composition": "Ordered operations: W50 column widening produces the first Typst candidate; the fourth operation widens the separate seven-condition table. Inverting both local Typst replacements exactly recovers the predecessor. Current final file hashes are separately listed.",
+  "source_to_render_equivalence": "Canonical JSON/raw tables stay byte exact. All102cells including headers in the two repaired tables match original strings after whitespace layout, and actual word/glyph rectangles lie within measured cell grids. SVG inverse patches and normalized artist trees preserve every scientific artist coordinate/path/transform/clip/label."
+}

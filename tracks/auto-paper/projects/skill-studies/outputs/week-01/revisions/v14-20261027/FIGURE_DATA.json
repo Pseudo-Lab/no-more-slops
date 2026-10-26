@@ -1,0 +1,189 @@
+{
+  "schema": "probeflow.final-figure-data.v1",
+  "figures": [
+    {
+      "path": "figures/architecture.svg",
+      "kind": "source-bound information architecture",
+      "data_scope": "No performance observation",
+      "sha256": "73051d533ffd4666bbaf2831e6ad5c72acf263dd2ccd54952bfdbda1d87cc6db"
+    },
+    {
+      "path": "figures/decision_contract.svg",
+      "kind": "source-bound state/terminal contract",
+      "data_scope": "Current DEV successful returns; failure branch prospective",
+      "sha256": "51d877133898ca9574c7b48c540302f6b089303782fc5f780b8e6d91953f5eed"
+    },
+    {
+      "path": "figures/search_bounds.svg",
+      "kind": "conditional proof/certificate diagram",
+      "source": "search_study/THEORY.md; SCIENCE.json/hard_pairs_Q4",
+      "certificate": {
+        "lower": "97/320",
+        "upper": "21/64",
+        "gap": "1/40",
+        "epsilon": "1/32",
+        "observed_regret": "0"
+      },
+      "sha256": "2890f043192ed5107309092e7b8028260b4d0b8eeb1b05b2229a5445cf3197cd"
+    },
+    {
+      "path": "figures/joint_results.svg",
+      "kind": "completed exposed application diagnosis",
+      "source": "study/main_001/SUMMARY.json",
+      "points": [
+        {
+          "estimator": "legacy_empirical",
+          "J": [
+            "7057/16340",
+            "1364/4515",
+            "1364/4515"
+          ]
+        },
+        {
+          "estimator": "legacy_statewise",
+          "J": [
+            "7057/16340",
+            "453329/1372560",
+            "10141/39216"
+          ]
+        },
+        {
+          "estimator": "coherent_joint",
+          "J": [
+            "7057/16340",
+            "157023/457520",
+            "157023/457520"
+          ]
+        }
+      ],
+      "people": 2,
+      "windows": 524,
+      "independent_final": 0,
+      "uncertainty": "Exact descriptive fractions; no CI",
+      "sha256": "505d6ecf0796c6dfe746036291dedb2a196be57f3439b95c1ad9db5717782954"
+    },
+    {
+      "path": "figures/search_costs_final.svg",
+      "kind": "constructed engineering",
+      "source": "search_study/SCIENCE.json/metrics/hard_pairs_Q4",
+      "metrics": {
+        "condition": "hard_pairs_Q4",
+        "all_tie_original": {
+          "completed_repeats": 3,
+          "median_cpu_seconds": 6.96875,
+          "median_wall_seconds": 7.175891900027636,
+          "max_python_peak_bytes": 231943,
+          "risk": "21/64",
+          "lower": "21/64",
+          "mask": 85,
+          "work_first": {
+            "inner_nodes": 1697,
+            "peak_stack_frames": 1,
+            "exact_linear_calls": 39656,
+            "endpoint_calls": 1411,
+            "local_cache_hits": 687,
+            "local_cache_misses": 4957,
+            "peak_endpoint_cache_entries": 4,
+            "bound_width_subtractions": 1411,
+            "peak_fraction_bits": 10,
+            "complete_feasible_leaves": 1411,
+            "peak_retained_tie_labels": 4,
+            "risk_calls": 163,
+            "infeasible_nodes": 286,
+            "infeasible_completions_covered": 286
+          },
+          "certified_all": true
+        },
+        "memo_value_dp": {
+          "completed_repeats": 3,
+          "median_cpu_seconds": 0.71875,
+          "median_wall_seconds": 0.7206319000106305,
+          "max_python_peak_bytes": 334535,
+          "risk": "21/64",
+          "lower": "21/64",
+          "mask": 85,
+          "work_first": {
+            "inner_nodes": 2995,
+            "endpoint_requests": 2446,
+            "endpoint_calls": 1476,
+            "peak_endpoint_cache_entries": 1476,
+            "feasible_inner_leaves": 1251,
+            "exact_risks": 163,
+            "outer_bound_requests": 1,
+            "warm_greedy_candidates": 26,
+            "impossible_inner_nodes": 232,
+            "endpoint_cache_hits": 970,
+            "inner_value_prunes": 96,
+            "inner_equality_prunes": 38,
+            "dp_states": 163,
+            "risk_cache_hits": 27,
+            "dp_transitions": 512,
+            "peak_dp_cache_entries": 163
+          },
+          "certified_all": true
+        },
+        "bnb_exact": {
+          "completed_repeats": 3,
+          "median_cpu_seconds": 0.28125,
+          "median_wall_seconds": 0.28617590002249926,
+          "max_python_peak_bytes": 141338,
+          "risk": "21/64",
+          "lower": "21/64",
+          "mask": 85,
+          "work_first": {
+            "inner_nodes": 311,
+            "endpoint_requests": 429,
+            "endpoint_calls": 330,
+            "peak_endpoint_cache_entries": 330,
+            "feasible_inner_leaves": 151,
+            "exact_risks": 27,
+            "outer_bound_requests": 96,
+            "warm_greedy_candidates": 26,
+            "impossible_inner_nodes": 15,
+            "endpoint_cache_hits": 99,
+            "inner_value_prunes": 3,
+            "inner_equality_prunes": 1,
+            "outer_bound_cache_hits": 33,
+            "peak_frontier_nodes": 10,
+            "outer_nodes": 47,
+            "outer_bound_prunes": 48
+          },
+          "certified_all": true
+        },
+        "bnb_epsilon": {
+          "completed_repeats": 3,
+          "median_cpu_seconds": 0.15625,
+          "median_wall_seconds": 0.15016700001433492,
+          "max_python_peak_bytes": 89232,
+          "risk": "21/64",
+          "lower": "97/320",
+          "mask": 85,
+          "work_first": {
+            "inner_nodes": 311,
+            "endpoint_requests": 305,
+            "endpoint_calls": 224,
+            "peak_endpoint_cache_entries": 224,
+            "feasible_inner_leaves": 151,
+            "exact_risks": 27,
+            "outer_bound_requests": 30,
+            "warm_greedy_candidates": 26,
+            "impossible_inner_nodes": 15,
+            "endpoint_cache_hits": 81,
+            "inner_value_prunes": 3,
+            "inner_equality_prunes": 1,
+            "outer_bound_cache_hits": 10,
+            "peak_frontier_nodes": 10,
+            "outer_nodes": 14,
+            "outer_bound_prunes": 9
+          },
+          "certified_all": true
+        }
+      },
+      "conditions_CPU_and_peak_wins": 2,
+      "conditions_total": 7,
+      "uncertainty": "Three cold cyclic repetitions; medians and maxima; no inferential bars",
+      "sha256": "5904c75e50fa8fd7ea888c98d9df71d5840c3a34af85e33126f640b0c44b8ff6"
+    }
+  ],
+  "edition_note": "Same frozen scientific SVGs and data. Current main order: architecture, contract, bounds, search costs, J diagnostic."
+}

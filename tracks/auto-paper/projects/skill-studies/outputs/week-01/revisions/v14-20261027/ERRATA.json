@@ -1,0 +1,55 @@
+{
+  "schema": "probeflow.corrected-display-errata.v1",
+  "status": "active_display_corrected_historical_atoms_preserved",
+  "original_source_sha256": "d84c4b83ae98d918ed20aa32472ede84ab8840749b7ca919397c49eb272d50f0",
+  "original_final_BUILD_sha256": "48fd829e7d228e2bbe4b77917b2a3db2d166fa2abf0c37f698999670e89c84ac",
+  "original_ERRATA": {
+    "path": "outputs/probeflow_conference_followup_20261026_01/narrative_review/ERRATA.json",
+    "sha256": "74f297b1bd14b8be6190859db74a71c84e46974cc1e359449bb296055cc8874a",
+    "bytes": 1812
+  },
+  "new_source_sha256": "1a27b386d11b5946ec7be65585dcbb3b995ec6058eb1f0eec2afa734a7a191c2",
+  "exact_fraction": "157023/457520",
+  "correct_nearest_five_decimal_display": "0.34320",
+  "retained_historical_display": "0.34321",
+  "anchors": [
+    {
+      "original_pointer": "/paper/13/paragraphs/0",
+      "original_text": "The coherent adaptive policy ties its selected fixed order and myopic control on every observed path at all budgets. At budgets 2 and 3 its macro J is 157023/457520, approximately 0.34321. At budget 3 the empirical adaptive J is 1364/4515 and statewise J is 10141/39216; coherent therefore regresses by 8059/196080 and 58067/686280 respectively. Figure 5 shows the full budget contrast, including budget 1 ties.",
+      "original_UTF8_text_sha256": "fb60dad45dca8f1a60e2289397486937e053a8780c9f0b3405c3e52a0329881c",
+      "original_structured_sha256": "d1c1c3964db814dff18bbb1c6b4e7e3dea4133433d5fcc48e48fd38994d4df74",
+      "new_pointer": "/paper/13/paragraphs/0",
+      "new_text_UTF8_sha256": "e4618542286671ee11523be687109b17b1a6277e6282bfc49bb63e087583abcf",
+      "new_structured_sha256": "43a952f30f462b595d6e8e1b831cf5e88573e373931eed800d4fa623eac0e9aa",
+      "status": "corrected_active_prose",
+      "correct_display": "0.34320"
+    },
+    {
+      "original_pointer": "/supplement/136/paragraphs/0",
+      "original_text": "The coherent adaptive policy ties its selected fixed order and myopic control on every observed path at all budgets. At budgets 2 and 3 its macro J is 157023/457520, approximately 0.34321. At budget 3 the empirical adaptive J is 1364/4515 and statewise J is 10141/39216; coherent therefore regresses by 8059/196080 and 58067/686280 respectively. Figure 4 shows the full budget contrast, including budget 1 ties. We do not headline the older exposed-DEV positive as the latest matched result.",
+      "original_UTF8_text_sha256": "a1d92af9ec62606363ef4d8670a36bc77ee1d26cb9e37197d374977b250a1d9c",
+      "original_structured_sha256": "4377b12a28e83c18a8eb63eb03d10caebb68c2ec6e23ab78dc57bab58a0eb83a",
+      "new_pointer": "/supplement/137/paragraphs/0",
+      "new_text_UTF8_sha256": "a1d92af9ec62606363ef4d8670a36bc77ee1d26cb9e37197d374977b250a1d9c",
+      "new_structured_sha256": "4377b12a28e83c18a8eb63eb03d10caebb68c2ec6e23ab78dc57bab58a0eb83a",
+      "status": "unchanged_historical_copy",
+      "correct_display": "0.34320"
+    },
+    {
+      "original_pointer": "/explainer/7/paragraphs/0",
+      "original_text": "예산3에서 coherent J는157023/457520≈0.34321, empirical은1364/4515≈0.30210, statewise는10141/39216≈0.25859다. 낮을수록 좋은 값이므로 새 coherent는 둘보다 나쁘다. 자신의 강한 fixed-order와 myopic과는 모든 예산에서 실제 경로까지 동률이다. 내부 일관성을 성능 개선으로 적을 수 없다.",
+      "original_UTF8_text_sha256": "ce534567740971caaf60e846541408f2e182ec0de141ed7891df06ab9bb02670",
+      "original_structured_sha256": "d841ef84c1fc8d2f32ae4569ddab3dddb8d22adb1f446e8c0ffb10ad015cd52c",
+      "new_pointer": "/explainer/15/paragraphs/0",
+      "new_text_UTF8_sha256": "ce534567740971caaf60e846541408f2e182ec0de141ed7891df06ab9bb02670",
+      "new_structured_sha256": "d841ef84c1fc8d2f32ae4569ddab3dddb8d22adb1f446e8c0ffb10ad015cd52c",
+      "status": "unchanged_historical_copy",
+      "correct_display": "0.34320"
+    }
+  ],
+  "current_Korean_erratum_pointer": "/explainer/6",
+  "historical_boundary_pointer": "/explainer/7",
+  "impact": "Display-only correction. Exact fractions, observations, all denominators, regressions, ties, 145 abstentions and conclusions are unchanged.",
+  "scientific_certification": false,
+  "frozen_input_modified": false
+}

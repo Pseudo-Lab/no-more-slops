@@ -1,0 +1,96 @@
+{
+  "schema": "probeflow.public-copy-six-area-scope.v1",
+  "source_sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+  "inherited_author_method_record_sha256": "5d2f065057330b600d08eb16118405c0599b08179b3655575661dd730eeafe86",
+  "scope": "Unchanged six-area scientific gaps and anchors from the preceding corrected edition; editorial copy, not a new method validation.",
+  "science_status": "needs_evidence",
+  "scientific_certification": false,
+  "areas": {
+    "algorithm": {
+      "status": "partial",
+      "anchors": [
+        "/paper/6/algorithm",
+        "/paper/7",
+        "/paper/8/algorithm",
+        "/paper/9/algorithm",
+        "/supplement/4",
+        "/supplement/6"
+      ],
+      "supported": "Retained explicit inputs/outputs/failure and numbered nested atomic pseudocode, outer lower/inner upper directions, conditional canonical exactness and scalar epsilon certificate.",
+      "gap": "Depends on correct sharp endpoints, positive prices, feasible seeds and static immediate closed bins. Cooperative final-node cap can overshoot by1; no fresh proof or producer run.",
+      "next_action": "Separate registered strict-cap correction and boundary regression, with identical-objective independent oracle.",
+      "acceptance_test": "Successful outputs obey the newly specified strict cap; interrupted responses remain uncertified and oracle agreement is retained."
+    },
+    "architecture": {
+      "status": "partial",
+      "anchors": [
+        "/paper/1/figure",
+        "/paper/3",
+        "/paper/9",
+        "/paper/15/paragraphs/2",
+        "/supplement/7"
+      ],
+      "supported": "Information/evaluator/paid actor separation, debit-before-disclosure, attempted/successful masks, equal static cache rights and fixed-set permanent-cache ancestor-union invariance remain explicit.",
+      "gap": "Only cached successful returns are observed. Physical provider failures, deadlines, TTL/eviction, energy and OS enforcement are unmeasured.",
+      "next_action": "Freeze one provider/failure/cache/time contract with identical static/adaptive rights in a separate study.",
+      "acceptance_test": "Every attempted outcome and full cost denominator are reported; order effects state additional assumptions."
+    },
+    "complexity": {
+      "status": "partial",
+      "anchors": [
+        "/paper/7/paragraphs/3",
+        "/paper/11/paragraphs/1",
+        "/paper/12",
+        "/paper/15"
+      ],
+      "supported": "Exponential 2^N/3^N scope, rational/endpoint/cache/frontier costs, all seven conditions and DP wins/ties remain. CPU and traced Python peak are distinguished from physical costs/RSS.",
+      "gap": "Small constructed cases and three repeated timings do not establish asymptotic or universal gains. No causal cost ablation or new timing was performed.",
+      "next_action": "Preregister a bounded scaling/repetition design with full common preprocessing/output/cache scope.",
+      "acceptance_test": "Preserve all arms/failures and matched output rights; do not treat repeats as independent people or CPU as sensor savings."
+    },
+    "evaluation": {
+      "status": "partial",
+      "anchors": [
+        "/paper/11",
+        "/paper/12",
+        "/paper/13",
+        "/paper/14",
+        "/supplement/10",
+        "/explainer/4",
+        "/explainer/6"
+      ],
+      "supported": "The active display now rounds157023/457520 to0.34320, matching its figure. Completed exposed-DEV regression, fixed/myopic path ties,145abstentions,524windows/2people,failedW50 and final0 remain unchanged.",
+      "gap": "No new raw arithmetic reaggregation or experiment in this document Task; untouched final, external matched evaluation and causal coherence-only evidence remain absent.",
+      "next_action": "Fresh different reviewer checks this exact frozen source/BUILD/PDF; separate scientific studies address external and untouched-final gaps.",
+      "acceptance_test": "Exact display/denominators/history remain linked; scientific improvement requires preregistered direct matched measurements, with ties/regression kept as no_gain."
+    },
+    "baselines": {
+      "status": "partial",
+      "anchors": [
+        "/paper/2/tables/0",
+        "/paper/7",
+        "/paper/8",
+        "/paper/11",
+        "/paper/12",
+        "/paper/15"
+      ],
+      "supported": "Strong value-only DP shares inner kernel/cache/warm-start/floor rights. Fixed orders, myopic and adaptive share predictor/support/STOP/ABSTAIN/cost/cache rights; original all-tie differs in output.",
+      "gap": "Fixed orders retain history-dependent STOP/ABSTAIN and differ from fully committed subsets. No completed reproduced external numerical baseline is present.",
+      "next_action": "Complete a separately frozen closest external baseline under equal fitting/selection/information/terminal/cost rights.",
+      "acceptance_test": "Version/code and every selection/failure/cost denominator are fixed; superiority requires actual matched measured results."
+    },
+    "related_work": {
+      "status": "partial",
+      "anchors": [
+        "/paper/2",
+        "/supplement/11",
+        "/references"
+      ],
+      "supported": "Existing Bellman/B&B/DP ideas and selected-source information/availability/terminal rights and reading limits are stated without importing external performance.",
+      "gap": "Only inherited selected text/metadata were used. Complete external proof/code correspondence, AO* relation, novelty and numerical reproduction are not established.",
+      "next_action": "In a separately authorized study, inspect complete versioned admissible primary text/code and exact objective/state/output/cache/cost correspondence.",
+      "acceptance_test": "Every claimed difference has a versioned passage/code anchor and actual read scope; missing content stays unknown."
+    }
+  },
+  "fresh_independent_public_copy_review_performed_by_author": false
+}

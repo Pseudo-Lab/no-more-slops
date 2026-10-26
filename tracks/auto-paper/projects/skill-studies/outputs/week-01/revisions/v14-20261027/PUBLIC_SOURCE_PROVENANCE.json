@@ -1,0 +1,147 @@
+{
+  "schema": "probeflow.public-copy-provenance.v1",
+  "reviewed_corrected_source": {
+    "sha256": "1a27b386d11b5946ec7be65585dcbb3b995ec6058eb1f0eec2afa734a7a191c2",
+    "bytes": 589623
+  },
+  "reviewed_corrected_BUILD": {
+    "sha256": "c6b9ea4216cb62e00779bf41324bd79513a1970b174b3a6dd541c8897ed6b074",
+    "bytes": 117822
+  },
+  "reviewed_corrected_PDFs": {
+    "paper": {
+      "sha256": "a36f441c7eb58d1030ed2a957d5dbf7211f8da3654f029207483d40a7242e04a",
+      "bytes": 298686
+    },
+    "supplement": {
+      "sha256": "cbc1515b6e000ed5be212b81f22ab41f1f01527b8831f98012b938031abd93ef",
+      "bytes": 1644507
+    },
+    "explainer": {
+      "sha256": "325ded25d22646a3558abc9a2ac9228830a5560132055c94e23c4ca028897bb5",
+      "bytes": 1529952
+    }
+  },
+  "public_source": {
+    "sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+    "bytes": 590132
+  },
+  "canonical_alias": {
+    "sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+    "bytes": 590132
+  },
+  "original216_source": {
+    "sha256": "0f7810aed7738bcfe517fef97ce084ecc37efc3f12d7294e5bda2b2a7467dd5a",
+    "bytes": 535711
+  },
+  "used_generated_Typst": {
+    "paper": {
+      "sha256": "95d1e88f616a273b23a2c805806e8efe87668ddb71945e84a0d08f85014a11a1",
+      "bytes": 47973
+    },
+    "supplement": {
+      "sha256": "048222cd3e20be41db3f4b669378f7b3e82ae4f87fe1f538ce7be49b8643dfbe",
+      "bytes": 377842
+    },
+    "explainer": {
+      "sha256": "59d4a18ee99fbd71a937b5221065ebf7e402fcab854c69fdc0752bce92daadad",
+      "bytes": 178392
+    }
+  },
+  "builder_source": {
+    "path": "source_tools/base_builder.py",
+    "sha256": "b89b3ee7abdb802d4f14a161a139513d41b80c2cd56e24541025a8b8839c7fad",
+    "bytes": 27066
+  },
+  "public_repository_rules": {
+    "repository": "Pseudo-Lab/no-more-slops",
+    "capture_sha256": "b6c5918c68bf1f5ef4d9009fe20aa010b342d06ec9f5aab61856c50eec53d7e2",
+    "records": [
+      {
+        "path": "README.md",
+        "git_blob_sha": "fc509ca0a8c5c62826455f4de6388cb700a934df",
+        "url": "https://github.com/Pseudo-Lab/no-more-slops/blob/main/README.md"
+      },
+      {
+        "path": "AGENTS.md",
+        "git_blob_sha": "62ac323f20be9b88051804eb3dfb57dfcd74f0e0",
+        "url": "https://github.com/Pseudo-Lab/no-more-slops/blob/main/AGENTS.md"
+      },
+      {
+        "path": "CONTRIBUTING.md",
+        "git_blob_sha": "8f8519c3db9706c21890d86208ef05d0ffd06c6a",
+        "url": "https://github.com/Pseudo-Lab/no-more-slops/blob/main/CONTRIBUTING.md"
+      },
+      {
+        "path": "docs/skill-catalog.md",
+        "git_blob_sha": "da641a697847d2cb3d5af5b6289015541814f348",
+        "url": "https://github.com/Pseudo-Lab/no-more-slops/blob/main/docs/skill-catalog.md"
+      },
+      {
+        "path": "tracks/auto-paper/README.md",
+        "git_blob_sha": "a8f993a058c1deca15d39ef867735564a456e58c",
+        "url": "https://github.com/Pseudo-Lab/no-more-slops/blob/main/tracks/auto-paper/README.md"
+      }
+    ]
+  },
+  "acknowledgement": "This work was created as part of the No-More-Slops group activities at Pseudo Lab.",
+  "license_scope": "See LICENSE_SCOPE.md and destination repository root MIT license; no external paper license inferred.",
+  "source_identity_limit": "Exact current corrected input and used assets are checked. No all-transitive-source unchanged claim; no new experiment, external retrieval or independent scientific certification.",
+  "presentation_successor": {
+    "predecessor_public_manifest": {
+      "sha256": "cca3c2dcf0ecfafb7c29ceef16b8e6e75a94c9e47c0e3365ba17946c6ac22d73",
+      "bytes": 14013
+    },
+    "predecessor_source": {
+      "sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+      "bytes": 590132
+    },
+    "predecessor_BUILD": {
+      "sha256": "c9ec0b58c1692758a756a3bf26fcdd330e595c26956dd3829895da7563d5ef22",
+      "bytes": 35297
+    },
+    "predecessor_PDFs": {
+      "paper": {
+        "sha256": "a43fb462448daa4c4426712694073c834afa4ff3cb66ad6fb814f182bb8b03e3",
+        "bytes": 299299
+      },
+      "supplement": {
+        "sha256": "7045795265da7b279ce089028272e9e2972c92b77abaeecd77caa6e65726770a",
+        "bytes": 1646560
+      },
+      "explainer": {
+        "sha256": "7bd845750cbb4cc49d9bb47f7d3a46576b647e85a96288a001a51ed617e96f2c",
+        "bytes": 1531859
+      }
+    },
+    "current_Typst": {
+      "paper": {
+        "sha256": "065ac4e301ec28e8241fa083a81c9f2987866b2e6e3836e748ce539ffaaeb123",
+        "bytes": 48094
+      },
+      "supplement": {
+        "sha256": "523bbd6031686045185396f7f1b2993ee7592b0e38c8c51a1d88cd2b62b5648b",
+        "bytes": 377966
+      },
+      "explainer": {
+        "sha256": "5945e54cdab6c40d0401c64d3b5fb2880c25692d161ceded39324d3b578415e5",
+        "bytes": 178503
+      }
+    },
+    "current_SVGs": {
+      "figures/eda_feature_scale.svg": {
+        "sha256": "91d9ee12e971965747a2c3c050b688c3cf5b239a87df88a68aec6810aa2e8c7f",
+        "bytes": 63362
+      },
+      "figures/w47_support_harm.svg": {
+        "sha256": "62ed017bfa22386ffc490cc8dbb62e514245cf198aff3764d67176966bd7ef02",
+        "bytes": 49824
+      }
+    },
+    "rendering_delta": "EDITORIAL_DELTA.json",
+    "no_new_external_license_verification": true,
+    "destination": "Pseudo-Lab/no-more-slops existing tracks/auto-paper/projects/skill-studies Week01 revision",
+    "fresh_independent_exact_successor_review": "Required; pending. Main owns later Git/catalog delivery.",
+    "verified_presentation_issue_count": 4
+  }
+}

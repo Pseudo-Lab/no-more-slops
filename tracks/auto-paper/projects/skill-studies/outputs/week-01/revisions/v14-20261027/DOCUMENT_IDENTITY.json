@@ -1,0 +1,192 @@
+{
+  "schema": "probeflow.public-document-identity.v1",
+  "source": {
+    "path": "source.DOCUMENT.json",
+    "sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+    "bytes": 590132
+  },
+  "canonical_alias": {
+    "path": "DOCUMENT.json",
+    "sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+    "bytes": 590132
+  },
+  "PDFs": {
+    "paper": {
+      "path": "paper.pdf",
+      "sha256": "3301128813b4946bcf45989dd9954227a4b4fd60331d37677e6c31fde001ae7f",
+      "bytes": 299299,
+      "pages": 10
+    },
+    "supplement": {
+      "path": "supplement.pdf",
+      "sha256": "8519dfadeb4f1083b657665a6ac14341c625e09f3da8122ab0bca964e1d3835c",
+      "bytes": 1646517,
+      "pages": 69
+    },
+    "explainer": {
+      "path": "explainer.pdf",
+      "sha256": "e9e0aed45a53b69c9ba5038b9cb85320049ea3229fb6ba357835de8797f364fc",
+      "bytes": 1531888,
+      "pages": 34
+    }
+  },
+  "context_sha256": "9635a42641098667486c412978d9291392c68c62040539f44aac077e7df9388f",
+  "context_encoding": "UTF8 json.dumps({sections:paper}, ensure_ascii=False, sort_keys=True), no trailing newline",
+  "context_matches_canonical_paper_and_Korean": true,
+  "annotation_context": {
+    "path": "ANNOTATION_CONTEXT.json",
+    "sha256": "e06af3c3973b1d607fc0a964528b92d1d7404c30b2f98e6f88db5cf8d944d328",
+    "bytes": 201282
+  },
+  "annotation_ingestion_performed": false,
+  "main_algorithms": [
+    {
+      "pointer": "/paper/6/algorithm",
+      "name": "Certified subset search with one winner",
+      "pages": [
+        4
+      ],
+      "structured_sha256": "355abda4409e1508da55445d3fad287d65360621eeb7872c88522ec71c302477",
+      "exact_inputs_outputs_steps": true
+    },
+    {
+      "pointer": "/paper/8/algorithm",
+      "name": "Construct the participant-balanced complete-row law",
+      "pages": [
+        6
+      ],
+      "structured_sha256": "18e0326d51ddc3f7a41bc19e6868ed924459f829261e0d296385ffdf2ac9ef25",
+      "exact_inputs_outputs_steps": true
+    },
+    {
+      "pointer": "/paper/9/algorithm",
+      "name": "Freeze the common plan, then execute paid decisions",
+      "pages": [
+        6
+      ],
+      "structured_sha256": "a44d108c9cf5dc065374bab3ac649ec7fbd7cba519ac9719c3f663f9949a24ac",
+      "exact_inputs_outputs_steps": true
+    }
+  ],
+  "main_figures": [
+    {
+      "pointer": "/paper/1/figure",
+      "path": "figures/architecture.svg",
+      "sha256": "73051d533ffd4666bbaf2831e6ad5c72acf263dd2ccd54952bfdbda1d87cc6db",
+      "caption_pages": [
+        2
+      ],
+      "structured_sha256": "4ba0c53c8cbdcb0f6229d6cc9b8417cadaf9cfbe0f3d7b6d136ed4bdccfe97c3",
+      "exact_to_predecessor": true
+    },
+    {
+      "pointer": "/paper/3/figure",
+      "path": "figures/decision_contract.svg",
+      "sha256": "51d877133898ca9574c7b48c540302f6b089303782fc5f780b8e6d91953f5eed",
+      "caption_pages": [
+        3
+      ],
+      "structured_sha256": "45c2c0a8cb87f0669e1e23c9aaa254551f998916ac5e76d5981520c93a7f0e71",
+      "exact_to_predecessor": true
+    },
+    {
+      "pointer": "/paper/6/figure",
+      "path": "figures/search_bounds.svg",
+      "sha256": "2890f043192ed5107309092e7b8028260b4d0b8eeb1b05b2229a5445cf3197cd",
+      "caption_pages": [
+        5
+      ],
+      "structured_sha256": "538e47300ce2e8b0e966579725dcd340f2f45532c2099337cb4a79381758b85b",
+      "exact_to_predecessor": true
+    },
+    {
+      "pointer": "/paper/12/figure",
+      "path": "figures/search_costs_final.svg",
+      "sha256": "5904c75e50fa8fd7ea888c98d9df71d5840c3a34af85e33126f640b0c44b8ff6",
+      "caption_pages": [
+        7
+      ],
+      "structured_sha256": "3804e44f8134a4183f9a341df7f83b4c68d36b95a74af623d1062d4b13328778",
+      "exact_to_predecessor": true
+    },
+    {
+      "pointer": "/paper/13/figure",
+      "path": "figures/joint_results.svg",
+      "sha256": "505d6ecf0796c6dfe746036291dedb2a196be57f3439b95c1ad9db5717782954",
+      "caption_pages": [
+        8
+      ],
+      "structured_sha256": "03ec880d60fbb9692a0edd3f80a42d4abca75f77202362455c0789b15e8472b3",
+      "exact_to_predecessor": true
+    }
+  ],
+  "affected_historical_figures": [
+    {
+      "path": "figures/eda_feature_scale.svg",
+      "full_original_comment_label": "Within-person standard deviation (native mixed units)",
+      "drawn_glyph_path_count": 48,
+      "canvas": [
+        0.0,
+        0.0,
+        720.0,
+        312.0
+      ],
+      "actual_label_glyph_bounds": [
+        11.593929290771484,
+        27.978858947753906,
+        21.272052764892578,
+        297.4654541015625
+      ],
+      "top_clearance_pt": 27.978858947753906,
+      "bottom_clearance_pt": 14.5345458984375,
+      "placements": [
+        [
+          "supplement",
+          18
+        ],
+        [
+          "explainer",
+          13
+        ]
+      ],
+      "all_original_artist_coordinates_exact": true
+    },
+    {
+      "path": "figures/w47_support_harm.svg",
+      "full_original_comment_label": "Window count (different comparison sets)",
+      "drawn_glyph_path_count": 36,
+      "canvas": [
+        0.0,
+        0.0,
+        720.0,
+        312.0
+      ],
+      "actual_label_glyph_bounds": [
+        365.0387268066406,
+        42.514625549316406,
+        374.71685791015625,
+        250.9749298095703
+      ],
+      "top_clearance_pt": 42.514625549316406,
+      "bottom_clearance_pt": 61.02507019042969,
+      "placements": [
+        [
+          "supplement",
+          18
+        ],
+        [
+          "explainer",
+          23
+        ]
+      ],
+      "all_original_artist_coordinates_exact": true
+    }
+  ],
+  "predecessor_source_sha256": "c06138d1746b0c982e0550f869e221fa13941390c199f7d957f02cec8e8948e6",
+  "preserved_historical_atoms": 216,
+  "all_corrected_input_sections_preserved": 245,
+  "new_acknowledgement_sections": 0,
+  "existing_acknowledgement_sections_exact": 3,
+  "no_scientific_change": true,
+  "scientific_certification": false
+}
