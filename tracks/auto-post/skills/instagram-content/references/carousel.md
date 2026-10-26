@@ -25,6 +25,14 @@ Use asset URLs observed on source pages. Record source page, credit, asset URL a
 
 Use a strong cover, a clear reading order and varied images. Do not repeat one image across the real carousel unless repetition serves the story. Tables or text-only slides can be appropriate for comparisons or conditions. Shorten copy, add a slide or change the layout when text does not fit; avoid shrinking type until it is illegible.
 
+## Account-introduction closing
+
+When the user or selected account brief asks for it, reserve the final page for the account: a short statement of what it publishes, the actual display name/handle, a relevant follow invitation and its existing approved character. Reuse the saved brand asset instead of inventing a mascot or redrawing it. Keep the account's main background and typography; a small orange character circle can carry the brand accent without filling the page. Do not invent a posting schedule, audience size or credentials.
+
+For 치와와 AI Lab, the saved carousel brief selects this closing treatment while the news pages remain photo-led. The character belongs on the closing page only; this does not change the Reel's saved treatment. For other accounts, use their own explicit brief.
+
+The optional renderer supports `layout: "closing"` with `account_intro: true`, a two-line `title`, `intro_line`, `follow_line` and a contained character image. Identity comes from the supplied brand/brief. Read [renderer.md](renderer.md) for the fields and limits. Use `requires_sources: false` for original account copy and a follow invitation; externally verifiable claims still require evidence. Keep any required image attribution visible.
+
 ## Produce and review
 
 Write the finished slide copy and caption before rendering. Keep all slides the same requested size. Use the bundled renderer only when its four layouts suit the brief; a new brand does not have to inherit its typography, image positions or dimensions. Read [renderer.md](renderer.md) for its exact limits.

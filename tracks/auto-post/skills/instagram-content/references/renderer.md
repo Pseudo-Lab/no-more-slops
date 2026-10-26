@@ -42,6 +42,8 @@ All layouts support `kicker`, `title` (string or list of lines) and `source_ids`
 - `facts`: `rows` containing one to three `{label, heading, detail}` objects. `detail` has at most two lines. Optional `stat`, `stat_label`, `note` support a numeric callout.
 - `closing`: image and a title of at most three short lines. Put longer follow-up copy in the caption.
 
+An account-introduction variant uses `layout: "closing"` and `account_intro: true` on the final page. Supply at most two title lines, one-line nonempty `intro_line` and `follow_line`, and `brand.display_name`/`brand.handle` (or their selected brief values). The renderer places the title above a contained character image, then the account description, follow invitation and handle. It displays the image credit below. `image.fit` must be `contain` to preserve the character. All text still fails on overflow rather than shrinking. Existing closing slides without this flag keep their original layout; no account or mascot is built into the renderer.
+
 Images require `path`, `kind` and nonempty `credit`. Kinds: `official_photo`, `official_screenshot`, `provided`, `owned`, `licensed`, `illustration`. Official/ licensed media also requires `source_url`; optionally record `asset_url`, video `timestamp`, pixel `crop: [left, top, right, bottom]` and `fit`.
 
 Optional image `license`, `license_url`, `modifications` and `usage_note` are preserved in the source ledger. Optional slide `evidence_note` records the supporting passage or context. These records do not grant rights or replace any credit required in the image or public caption.

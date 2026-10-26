@@ -179,6 +179,72 @@ class HarnessTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     harness.preflight(self.manifest, self.brief_path)
 
+    def test_account_intro_uses_selected_identity_and_preserves_character(self):
+        avatar = self.root / 'owned-character.png'
+        image = Image.new('RGBA', (80, 120), (0, 0, 0, 0))
+        image.paste((225, 90, 40, 255), (20, 20, 60, 100))
+        image.save(avatar)
+        before = avatar.read_bytes()
+        self.brief['brand'] = {'background': '#132A24', 'text': '#FFFFFF'}
+        self.brief['account'] = {'display_name': 'Harbor Lab', 'handle': 'harbor_lab'}
+        self.post['slides'] = [{
+            'layout': 'closing', 'account_intro': True,
+            'title': ['Useful routes', 'Nearby places'],
+            'intro_line': 'Local guides for your next trip',
+            'follow_line': 'Follow for the next guide',
+            'image': {'path': str(avatar), 'kind': 'owned', 'credit': 'Harbor Lab character', 'fit': 'contain'},
+            'requires_sources': False,
+        }]
+        self.save()
+        report = harness.run(self.args)
+        self.assertTrue(report['exports_verified'])
+        self.assertEqual(avatar.read_bytes(), before)
+        with Image.open(self.args.out / '01.png') as output:
+            self.assertEqual(output.getpixel((0, 0)), (19, 42, 36))
+            self.assertEqual(output.getpixel((540, 730)), (225, 90, 40))
+            self.assertEqual(output.getpixel((350, 730)), (19, 42, 36))
+        saved = json.loads((self.args.out / 'brand-brief.json').read_text())
+        self.assertEqual(saved['account']['handle'], 'harbor_lab')
+        with ZipFile(self.args.out / 'carousel.zip') as archive:
+            self.assertEqual(archive.namelist(), ['01.png', 'caption.txt', 'sources.md'])
+            self.assertIn(b'Harbor Lab character', archive.read('sources.md'))
+
+    def test_account_intro_requires_identity_and_fails_safely_on_overflow(self):
+        self.brief['account'] = {'display_name': 'Harbor Lab'}
+        closing = deepcopy(self.post['slides'][-1])
+        closing.update(account_intro=True, title=['Local guides'],
+                       intro_line='Places for your next trip', follow_line='Follow for more')
+        self.post['slides'] = [closing]
+        self.save()
+        with self.assertRaisesRegex(ValueError, 'brand.handle'):
+            harness.preflight(self.manifest, self.brief_path)
+        self.brief['account']['handle'] = 'harbor_lab'
+        self.post['slides'][0]['follow_line'] = 'Overflow ' * 30
+        self.save()
+        self.args.out.mkdir()
+        previous = self.args.out / '01.png'
+        previous.write_bytes(b'previous approved delivery')
+        self.args.overwrite = True
+        with self.assertRaisesRegex(ValueError, 'too wide'):
+            harness.run(self.args)
+        self.assertEqual(previous.read_bytes(), b'previous approved delivery')
+        self.assertEqual(list(self.root.glob('.carousel-*')), [])
+
+    def test_account_intro_is_a_contained_final_closing(self):
+        self.brief['account'] = {'display_name': 'Harbor Lab', 'handle': 'harbor_lab'}
+        closing = deepcopy(self.post['slides'][-1])
+        closing.update(account_intro=True, title=['Local guides'],
+                       intro_line='Places for your next trip', follow_line='Follow for more')
+        self.post['slides'] = [closing, deepcopy(self.post['slides'][0])]
+        self.save()
+        with self.assertRaisesRegex(ValueError, 'final closing'):
+            harness.preflight(self.manifest, self.brief_path)
+        self.post['slides'] = [closing]
+        self.post['slides'][0]['image']['fit'] = 'cover'
+        self.save()
+        with self.assertRaisesRegex(ValueError, 'fit must be contain'):
+            harness.preflight(self.manifest, self.brief_path)
+
 
 if __name__ == '__main__':
     unittest.main()

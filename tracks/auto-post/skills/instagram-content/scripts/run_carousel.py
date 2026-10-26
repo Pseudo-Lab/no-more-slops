@@ -82,7 +82,7 @@ def punctuation_findings(post, policy):
             for j, row in enumerate(slide.get('rows', []), 1):
                 inspect(f'{prefix}.row {j}.heading', row['heading'])
         if policy.get('large_display_copy') == 'omit_terminal_period':
-            for key in ('body', 'stat', 'stat_label', 'note'):
+            for key in ('body', 'stat', 'stat_label', 'note', 'intro_line', 'follow_line'):
                 inspect(f'{prefix}.{key}', slide.get(key, ''))
     if policy.get('short_captions') == 'omit_terminal_period':
         # A short standalone opening is a candidate, not the whole prose caption.
