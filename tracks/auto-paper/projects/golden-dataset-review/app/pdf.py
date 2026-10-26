@@ -7,10 +7,11 @@ references flow in two columns.
 
 Front matter (between the first two `---` lines): `key: value` lines for title, title_en,
 authors, affiliation, type, date. A line `<!-- wide -->` before a table or figure makes it
-span both columns.
+span both columns. With --float-wide, a script paginates the body in the browser and places
+each wide block at the top or bottom of a page (page 1: bottom only) instead of mid-page.
 
 Usage:
-    uv run pdf.py [--src ../manuscript/paper.md] [--out ../outputs/week-03/paper-extended.pdf]
+    uv run pdf.py [--src ../manuscript/paper.md] [--out ../outputs/week-03/paper-extended.pdf] [--float-wide]
 """
 import argparse
 import html
@@ -74,6 +75,134 @@ figure img { width: 100%; }
 
 
 COLS = {4: (11, 15, 32, 42), 5: (10, 20, 27, 28, 15)}  # column widths (%) of the two manuscript tables
+
+
+PAGED_CSS = """
+.page { width: 182mm; height: 271.8mm; overflow: hidden; break-after: page; }
+.page:last-child { break-after: auto; }
+.page .body { column-fill: auto; }
+.page.last .body { column-fill: balance; }
+.slot-top, .slot-bottom { display: flow-root; }
+.slot-top > .wide { margin: 0 0 6pt; }
+.slot-bottom > .wide { margin: 6pt 0 0; }
+.slot-top figure, .slot-bottom figure { margin: 0; }
+p.split-head { margin-bottom: 0; }
+p.split-head:not(.left) { text-align-last: justify; }
+"""
+
+# Page floats for wide blocks: Chromium has no `float: top/bottom`, so lay the body out page by
+# page. Blocks fill a fixed-height two-column box; a wide block goes to the bottom of the page
+# where it is anchored if the text placed so far still fits, otherwise to the top of the next
+# page. Paragraphs split at spaces and lists split between items to fill each page.
+PAGINATE = r"""
+(async () => {
+  await document.fonts.ready;
+  const src = document.getElementById("src"), out = document.getElementById("pages");
+  const front = src.querySelector(".front"), flow = [...src.querySelector(".body").children];
+  const pages = [];
+  const newPage = () => {
+    const page = document.createElement("div");
+    page.className = "page";
+    if (!pages.length) page.append(front);
+    page.top = page.appendChild(Object.assign(document.createElement("div"), {className: "slot-top"}));
+    page.body = page.appendChild(Object.assign(document.createElement("div"), {className: "body"}));
+    page.bottom = page.appendChild(Object.assign(document.createElement("div"), {className: "slot-bottom"}));
+    out.append(page);
+    pages.push(page);
+    return page;
+  };
+  const fits = (page) => {
+    const head = page.firstChild === front ? front.offsetHeight + parseFloat(getComputedStyle(front).marginBottom) : 0;
+    const rest = page.clientHeight - head
+      - page.top.offsetHeight - page.bottom.offsetHeight;
+    page.body.style.height = rest + "px";
+    return rest > 0 && page.body.scrollWidth <= page.body.clientWidth + 1;
+  };
+  const isWide = (el) => el.classList.contains("wide");
+  const isHeading = (el) => /^H[23]$/.test(el.tagName);
+
+  // Put the longest head of `el` that fits on `page`; return the remainder (or el if nothing fits).
+  const split = (page, el) => {
+    if (el.tagName === "P" && !el.classList.contains("eq")) {
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [], cuts = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach((n, i) => { for (const m of n.data.matchAll(/ +/g)) cuts.push([i, m.index + m[0].length]); });
+      const cut = (k, keepHead) => {
+        const copy = el.cloneNode(true), w = document.createTreeWalker(copy, NodeFilter.SHOW_TEXT), cn = [];
+        while (w.nextNode()) cn.push(w.currentNode);
+        const r = document.createRange();
+        const [i, off] = cuts[k];
+        if (keepHead) { r.setStart(cn[i], off); r.setEndAfter(copy.lastChild); }
+        else { r.setStartBefore(copy.firstChild); r.setEnd(cn[i], off); }
+        r.deleteContents();
+        copy.classList.add(keepHead ? "split-head" : "split-tail");
+        return copy;
+      };
+      let lo = -1, hi = cuts.length - 1;
+      while (lo < hi) {
+        const mid = Math.ceil((lo + hi + 1) / 2), head = cut(mid, true);
+        page.body.append(head);
+        const ok = fits(page);
+        head.remove();
+        if (ok) lo = mid; else hi = mid - 1;
+      }
+      if (lo < 0) return el;
+      page.body.append(cut(lo, true));
+      return cut(lo, false);
+    }
+    if (el.tagName === "OL" || el.tagName === "UL") {
+      const head = el.cloneNode(false), items = [...el.children];
+      page.body.append(head);
+      let n = 0;
+      for (const li of items) {
+        head.append(li);
+        if (!fits(page)) { li.remove(); break; }
+        n++;
+      }
+      if (!n) { head.remove(); return el; }
+      const tail = el.cloneNode(false);
+      tail.append(...items.slice(n));
+      if (el.tagName === "OL") tail.start = (el.start || 1) + n;
+      return tail.children.length ? tail : null;
+    }
+    return el;
+  };
+
+  let page = newPage(), pending = [];
+  const turn = () => {
+    const carry = [];  // keep headings with the text that follows them
+    while (page.body.lastElementChild && isHeading(page.body.lastElementChild)) carry.unshift(page.body.lastElementChild);
+    page = newPage();
+    page.top.append(...pending);
+    pending = [];
+    page.body.append(...carry);
+  };
+  const queue = flow.slice();
+  while (queue.length) {
+    const el = queue.shift();
+    if (isWide(el)) {
+      if (pages.length > 1 && !page.body.children.length && !page.top.children.length) { page.top.append(el); continue; }
+      if (!page.bottom.children.length) {
+        page.bottom.append(el);
+        if (fits(page)) continue;
+        el.remove();
+      }
+      pending.push(el);
+      continue;
+    }
+    page.body.append(el);
+    if (fits(page)) continue;
+    el.remove();
+    const rest = split(page, el);
+    turn();
+    if (rest) queue.unshift(rest);
+  }
+  if (pending.length) { turn(); }
+  page.classList.add("last");
+  fits(page);
+  src.remove();
+})();
+"""
 
 
 KEEP_ALL = "body { word-break: keep-all; overflow-wrap: anywhere; } .refs { word-break: normal; }"
@@ -232,12 +361,17 @@ def main():
     parser.add_argument("--src", type=Path, default=ROOT / "manuscript" / "paper.md")
     parser.add_argument("--out", type=Path, default=ROOT / "outputs" / "week-03" / "paper-extended.pdf")
     parser.add_argument("--keep-all", action="store_true", help="break Korean text only between words (eojeol)")
+    parser.add_argument("--float-wide", action="store_true", help="place wide tables and figures at page top or bottom")
     args = parser.parse_args()
 
     meta, abstract_lines, body_lines = split(args.src.read_text(encoding="utf-8"))
+    content = f'{front(meta, abstract_lines)}<div class="body">{convert(body_lines)}</div>'
+    if args.float_wide:
+        content = f'<div id="src">{content}</div><div id="pages"></div><script>{PAGINATE}</script>'
     page = (f'<!doctype html><html lang="ko"><head><meta charset="utf-8">'
-            f'<title>{html.escape(meta.get("title", "paper"))}</title><style>{font_faces(args.src.parent)}{CSS}{KEEP_ALL if args.keep_all else ""}</style></head>'
-            f'<body>{front(meta, abstract_lines)}<div class="body">{convert(body_lines)}</div></body></html>')
+            f'<title>{html.escape(meta.get("title", "paper"))}</title><style>{font_faces(args.src.parent)}{CSS}'
+            f'{KEEP_ALL if args.keep_all else ""}{PAGED_CSS if args.float_wide else ""}</style></head>'
+            f'<body>{content}</body></html>')
     page_path = args.src.with_suffix(".html")
     page_path.write_text(page, encoding="utf-8")
 
@@ -245,7 +379,7 @@ def main():
     if not browser:
         raise SystemExit(f"no Chromium found; open {page_path} and print to PDF")
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run([browser, "--headless", "--disable-gpu", "--no-pdf-header-footer",
+    subprocess.run([browser, "--headless", "--disable-gpu", "--no-pdf-header-footer", "--virtual-time-budget=20000",
                     f"--print-to-pdf={args.out.resolve()}", page_path.resolve().as_uri()],
                    check=True, capture_output=True)
     print(f"wrote {args.out}")
