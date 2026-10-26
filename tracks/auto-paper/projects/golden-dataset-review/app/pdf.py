@@ -76,7 +76,7 @@ figure img { width: 100%; }
 COLS = {4: (11, 15, 32, 42), 5: (10, 20, 27, 28, 15)}  # column widths (%) of the two manuscript tables
 
 
-KEEP_ALL = "body { word-break: keep-all; text-justify: inter-character; } .refs { word-break: normal; }"
+KEEP_ALL = "body { word-break: keep-all; overflow-wrap: anywhere; } .refs { word-break: normal; }"
 
 
 def inline(text):
