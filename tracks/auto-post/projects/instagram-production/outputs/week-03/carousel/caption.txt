@@ -1,0 +1,16 @@
+내 파일을 읽는 AI, 맥 안에서 돌린다
+
+Perplexity가 10월 20일 Computer의 완전 로컬 실행을 출시했습니다
+AI 모델과 작업을 맥 안에서 처리합니다
+
+회의록과 지출표로 보고서 초안을 요청해보세요
+6~7장에 복사할 전체 프롬프트를 넣었습니다
+
+Apple Silicon Mac, macOS 15 이상
+메모리 36GB 이상 권장 / Pro, Max, Enterprise 구독 필요
+시작 perplexity.ai/personal-computer
+
+출처 Perplexity 공식 발표 / 프롬프트 직접 작성
+#Perplexity #AI활용 #치와와AILab
+
+이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.
