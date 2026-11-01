@@ -18,15 +18,19 @@
 | [experiment-runner](../tracks/auto-paper/skills/experiment-runner/SKILL.md) | 확정한 계획에 따라 대조군을 갖춘 실험 실행을 지원합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [experiment-to-paper](../tracks/auto-paper/skills/experiment-to-paper/SKILL.md) | 저장된 JSON 실험 결과를 근거 표로 내보내고 원고를 작성합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
 | [paper-results-reviser](../tracks/auto-paper/skills/paper-results-reviser/SKILL.md) | 완료된 실험 결과와 원고의 주장·수치를 대조하고 수정합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
+| [human-judge-check](../tracks/auto-paper/skills/human-judge-check/SKILL.md) | LLM 판정 라벨 일부를 사람이 가린 화면에서 다시 판정하게 하고, 일치율과 κ를 라벨별·층별로 냅니다. | [#33](https://github.com/Pseudo-Lab/no-more-slops/pull/33) |
+| [mock-review-panel](../tracks/auto-paper/skills/mock-review-panel/SKILL.md) | 관점이 다른 새 리뷰어 3명에게 원고를 따로 심사받아 구체적 지적을 모읍니다. 점수로 채택을 예측하지 않고, 리뷰어 정확도를 채택·미채택 논문으로 보정하는 절차를 포함합니다. | [#33](https://github.com/Pseudo-Lab/no-more-slops/pull/33) |
 | [paper-review-local](../tracks/auto-paper/skills/paper-review-local/SKILL.md) | 로컬 원고·인용 키·그림·PDF 및 텍스트 중복을 검사합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
 | [paper-to-latex](../tracks/auto-paper/skills/paper-to-latex/SKILL.md) | 원고를 LaTeX 프로젝트로 변환하고 내용·빌드 결과를 검사합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [paper-visuals](../tracks/auto-paper/skills/paper-visuals/SKILL.md) | 논문에 필요한 도표와 시각 자료를 구성합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [paper-writer](../tracks/auto-paper/skills/paper-writer/SKILL.md) | 하나의 연구 프로젝트를 실험 전·후 원고로 구성합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
+| [prescreen-calibration](../tracks/auto-paper/skills/prescreen-calibration/SKILL.md) | 주제 사전 점검표가 실제 채택 논문까지 떨어뜨리는지, 본회의와 Findings를 가르는지 채택 논문 표본으로 확인하고 수정안을 냅니다. | [#33](https://github.com/Pseudo-Lab/no-more-slops/pull/33) |
 | [prior-work-checker](../tracks/auto-paper/skills/prior-work-checker/SKILL.md) | 기존 연구와의 중복·참신성·SOTA 비교 조건을 확인합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-pipeline](../tracks/auto-paper/skills/research-pipeline/SKILL.md) | 연구 질문·벤치마크·선행연구·계산 예산을 연결하는 연구 흐름 조합. #12에서 실험·집필 단계로 확장합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-planner](../tracks/auto-paper/skills/research-planner/SKILL.md) | 질문을 비교 기준과 실행 가능한 연구 계획으로 구체화합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-question-parser](../tracks/auto-paper/skills/research-question-parser/SKILL.md) | 문서에서 연구 질문과 검증 가능한 가설을 추출합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-readiness-advisor](../tracks/auto-paper/skills/research-readiness-advisor/SKILL.md) | 연구 계획의 준비 상태와 진행 조건을 검토합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
+| [topic-selection](../tracks/auto-paper/skills/topic-selection/SKILL.md) | 여러 연구 결과를 겹쳐 본 인사이트로 논문 주제 후보를 내고, 9개 항목 사전 점검표·모의 심사·소액 스모크로 거릅니다. 선행 연구 중복 판정은 prior-work-checker를 씁니다. | [#33](https://github.com/Pseudo-Lab/no-more-slops/pull/33) |
 | [research-related-work](../tracks/auto-paper/skills/research-related-work/SKILL.md) | 선행연구의 출처와 BibTeX를 정리합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
 | [translate-paper-to-english](../tracks/auto-paper/skills/translate-paper-to-english/SKILL.md) | 한국어 Word 논문을 구조를 보존한 영문 Word로 번역합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
 
