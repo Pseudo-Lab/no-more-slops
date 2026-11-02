@@ -48,6 +48,7 @@
 | [model-bakeoff](../tracks/auto-application/skills/model-bakeoff/SKILL.md) | 같은 입력으로 후보 모델을 비교해 품질·비용을 확인합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [ship-loop](../tracks/auto-application/skills/ship-loop/SKILL.md) | 단계마다 변경·검증·배포 기록을 반복합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [skeleton-on-prod](../tracks/auto-application/skills/skeleton-on-prod/SKILL.md) | 운영 환경에서 동작하는 서비스 골격을 먼저 만듭니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
+| [decision-log](../tracks/auto-application/skills/decision-log/SKILL.md) | 소유자가 아직 정하지 않은 값·분기·확인 항목을 문서 한 장에 모으고 결정이 나면 닫습니다. | [#TBD](https://github.com/Pseudo-Lab/no-more-slops/pulls) |
 
 ## Auto-Post
 
