@@ -1,0 +1,26 @@
+{
+  "schema": "probeflow.week03.archive.v1",
+  "edition": "2026-11-02 a04 working manuscript",
+  "scientific_status": "needs_evidence",
+  "scientific_outcome": "no_gain",
+  "arxiv_submission": false,
+  "final_document_review": false,
+  "files": [
+    {
+      "path": "paper.pdf",
+      "sha256": "76c323c2988d7260755072e9a351069b77707cbd0c72cc73572a836285f24274",
+      "bytes": 425715,
+      "pages": 22,
+      "status": "working-draft; final document review pending"
+    },
+    {
+      "path": "supplement.pdf",
+      "sha256": "c725d945970c4b9bade5332f3cc901fbab1da69aaaad3046430dfdce113b4486",
+      "bytes": 5950937,
+      "pages": 253,
+      "status": "working-draft; final document review pending"
+    }
+  ],
+  "preservation": "Byte-identical snapshot of the author working PDFs; no scientific edits or retypesetting for this PR.",
+  "scope": "Full paper and supplement. Historic internal task and agent identifiers and relative source paths in the supplement are provenance text; no runtime records, raw caches or credentials are included."
+}

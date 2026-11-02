@@ -1,0 +1,13 @@
+{
+  "scope": "Week03 public submission checks, not scientific efficacy validation",
+  "repository_structure": {"command": "python scripts/check_repository.py", "passed": true},
+  "repository_regressions": {"command": "python -m unittest discover -s scripts -p test_check_repository.py", "passed": true, "tests": 8},
+  "skill_metadata": {"command": "quick_validate.py tracks/auto-paper/skills/probeflow-evidence-acquisition", "passed": true},
+  "PDFs": {"pages": [22, 253], "original_hashes_match": true, "text_metadata_and_links_checked": true, "links_examined": 877, "embedded_files": 0, "local_links": 0},
+  "privacy_check": "No home path, email, private-file name or credential-value pattern found in the scoped scan. Historic source task/run/agent identifiers and project-relative paths remain in the supplement; source runtime files are not included.",
+  "visual_check": "Main paper contact sheet inspected for layout overview only; not every formula or supplement page visually reviewed.",
+  "independent_review": "Read-only source/PDF and submission prose review; observation-right wording clarified. This is not external scientific peer review.",
+  "model_calls": 0,
+  "new_scientific_runs": 0,
+  "limitations": ["Final document review remains pending.", "No raw-data/model/complete-build source supplied; full experiment or typesetting reproduction is unavailable.", "No arXiv submission or skill efficacy claim."]
+}
