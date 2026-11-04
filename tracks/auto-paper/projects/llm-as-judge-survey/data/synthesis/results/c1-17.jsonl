@@ -1,0 +1,110 @@
+{"key": "arxiv:2605.29711", "biases": ["leniency"], "mitigation": ["calibration"], "claims": [{"question": "Q-DEBIAS", "direction": "support", "claim": "개인 메모리와 사후 점수 보정이 서수 일치도와 불만족 턴 탐지를 개선했다.", "condition": "개인화 턴 단위 만족도 평가, 지도학습·검색 기반·일반 LLM 판정 기준선과 비교", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2602.05392", "biases": ["criteria"], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2608.26180", "biases": ["competence"], "mitigation": ["rubric", "decomposition"], "claims": []}
+{"key": "arxiv:2609.00498", "biases": ["criteria"], "mitigation": ["decomposition", "tool_grounding"], "claims": []}
+{"key": "arxiv:2609.03953", "biases": ["competence"], "mitigation": ["human_in_loop", "ensemble"], "claims": [{"question": "Q-EXPERT", "direction": "refute", "claim": "LLM 판정은 후보 발굴에는 도움이 되지만 단독으로는 불충분하며 주석자가 잡는 사실 오류를 놓치고, 전문가 판정자끼리도 불일치했다.", "condition": "의료 챗봇 응답의 사실 오류 탐지, 의료 전문가·근거 기반 검증 판정과 비교", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2606.31608", "biases": ["verbosity", "self_preference", "competence"], "mitigation": ["human_in_loop"], "claims": [{"question": "Q-EXPERT", "direction": "refute", "claim": "LLM 판정이 임상적으로 틀린 출력을 상당수 승인해 전문가 검증 없이는 임상 신뢰도를 과대평가했다.", "condition": "희귀 질환 임상 추론 평가, 의사 주석 검증 실패 집합(n=142), GPT-4o-mini와 HuatuoGPT-o1 판정", "evidence": "GPT-4o-mini가 임상적으로 틀린 출력의 47.9%를 승인; HuatuoGPT-o1은 유효 채점된 실패를 모두 승인", "basis": "evaluation"}, {"question": "Q-SELF", "direction": "support", "claim": "HuatuoGPT-o1 판정 모델이 자기선호 편향을 보였다.", "condition": "임상 추론 판정, HuatuoGPT-o1", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2603.28295", "biases": [], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2608.26131", "biases": ["inconsistency"], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "여러 평가 신호를 결합한 Mixture-of-Judges가 사람 평가와의 상관을 높였다.", "condition": "UPHELD 장문 대화 평가, 고전 지표와 참조 없는 LLM 판정 기준선과 비교", "evidence": "상관 약 30% 향상", "basis": "own_method"}]}
+{"key": "arxiv:2602.07673", "biases": ["self_preference", "verbosity", "position"], "mitigation": [], "claims": []}
+{"key": "arxiv:2606.27666", "biases": ["competence"], "mitigation": ["rubric"], "claims": [{"question": "Q-EXPERT", "direction": "refute", "claim": "LLM 기반 평가자가 사람 평가자와 거의 일치하지 않아 구조적 정밀성이 필요한 분야에서 LLM 판정이 신뢰할 수 없었다.", "condition": "하드웨어 회로도 생성 평가, 멀티모달 LLM 평가자와 사람 비교", "evidence": "사람과의 일치도 거의 0", "basis": "evaluation"}]}
+{"key": "arxiv:2601.15706", "biases": ["social", "inconsistency"], "mitigation": ["human_in_loop"], "claims": []}
+{"key": "arxiv:2607.18665", "biases": ["criteria"], "mitigation": ["decomposition", "tool_grounding"], "claims": []}
+{"key": "arxiv:2608.22938", "biases": ["inconsistency", "anchoring"], "mitigation": ["tool_grounding", "ensemble", "fine_tuning"], "claims": []}
+{"key": "arxiv:2608.04240", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"], "claims": [{"question": "Q-EXPERT", "direction": "support", "claim": "도구를 결합한 ACT-Eval의 사실성 판정은 사람 판정자 간 일치 범위 안에 들었다.", "condition": "체스 해설 평가, 엔진 도구와 전문가 정답 원자 사용", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2604.17260", "biases": [], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2605.09661", "biases": ["competence"], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2509.15690", "biases": [], "mitigation": ["fine_tuning"], "claims": []}
+{"key": "arxiv:2601.00641", "biases": ["inconsistency"], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "독립 판정 호출의 다수결을 쓰면 앙상블 수준 오류율이 투표 수에 따라 지수적으로 감소했다.", "condition": "고정 입력 추출 과제, 합성 잡음 판정 모델, 이론 예측과 일치", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2603.04992", "biases": [], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "DeBERTa 기반으로 파인튜닝한 작은 분류기가 GPT-4.1 판정과 맞먹었다.", "condition": "태국어 유해 응답 분류, GPT-4.1 판정과 비교", "evidence": "가중 F1 84.4%", "basis": "own_method"}]}
+{"key": "arxiv:2607.06641", "biases": [], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2604.11655", "biases": ["sycophancy"], "mitigation": ["decomposition", "cot", "rubric"], "claims": []}
+{"key": "arxiv:2607.06196", "biases": ["social"], "mitigation": ["ensemble", "abstention"], "claims": []}
+{"key": "arxiv:2609.00494", "biases": ["criteria", "leniency"], "mitigation": ["human_in_loop"], "claims": []}
+{"key": "arxiv:2609.39607", "biases": ["adversarial"], "mitigation": [], "claims": [{"question": "Q-ATTACK", "direction": "support", "claim": "공격자가 탐지기를 알 때 페이로드를 자연어로 옮기고 정상 목적으로 포장하는 것만으로 LLM 의미 판정 단계를 회피했다.", "condition": "악성 스킬 탐지(정적 검사+LLM 판정), 오픈소스 모델 3종, 고정 탐지기와 공동 적응 탐지기", "evidence": "고정 탐지기 상대 최대 97%, 공동 적응 탐지기 상대 77%", "basis": "own_method"}]}
+{"key": "arxiv:2606.05001", "biases": [], "mitigation": ["decomposition"], "claims": []}
+{"key": "arxiv:2609.00434", "biases": ["competence"], "mitigation": ["decomposition", "abstention", "tool_grounding"], "claims": []}
+{"key": "arxiv:2605.16650", "biases": ["inconsistency"], "mitigation": ["tool_grounding"], "claims": []}
+{"key": "arxiv:2604.00477", "biases": ["inconsistency"], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "페르소나 기반 에이전트 판정 패널이 커질수록 품질 점수가 로그적으로 개선되고 이슈 발견도 늘었으며, 구조화된 페르소나 조건화가 필요했다.", "condition": "15개 과제 960세션, 두 모델 쌍, 패널 크기 변화", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2608.07762", "biases": ["social", "authority"], "mitigation": ["other"], "claims": []}
+{"key": "arxiv:2504.12732", "biases": ["criteria"], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2609.32533", "biases": ["position", "criteria"], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "사람 선호로 파인튜닝한 Qwen3-8B가 기본 모델을 크게 앞서고 보류 예측 과제에서 모든 제로샷 최전선 판정 모델을 능가했다.", "condition": "광고 위치 선호 판정, 8개 최전선 LLM 판정 모델과 비교, 분포 내 보류 세트", "evidence": "가장 안정적인 모델도 순서를 바꾸면 결정의 약 4분의 1을 뒤집음", "basis": "evaluation"}]}
+{"key": "arxiv:2607.02049", "biases": ["criteria"], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2608.29948", "biases": ["prompt_sensitivity"], "mitigation": ["fine_tuning", "decomposition"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "파인튜닝한 모델이 LLM-as-Judge 방법보다 오류 예측에서 앞섰다.", "condition": "데이터-텍스트 정렬 평가, 여러 벤치마크", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2609.22603", "biases": ["leniency"], "mitigation": ["decomposition", "reference"], "claims": []}
+{"key": "arxiv:2606.08893", "biases": ["adversarial"], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "작은 인코더와 선형 탐침이 보상 해킹 탐지에서 LLM 판정과 AUC가 비슷하고 TPR은 더 높았으며 비용은 약 4자릿수 낮았다.", "condition": "보상 해킹 탐지(Terminal-Wrench), LLM-as-judge와 비교", "evidence": "AUC 0.9467 대 0.9510, TPR@5%FPR 0.8296 대 0.7130", "basis": "own_method"}]}
+{"key": "arxiv:2606.06754", "biases": ["leniency", "inconsistency"], "mitigation": ["ensemble", "critique_refine", "reference", "calibration"], "claims": [{"question": "Q-MULTI", "direction": "conditional", "claim": "옹호자·비판자·판정자 토론은 상위 수준 특성의 추론을 개선했으나 보정 이득은 주로 검색에서 나왔다.", "condition": "분석적 에세이 채점, 프롬프트 기반 기준선과 비교, 절제 실험", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2510.27052", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"], "claims": []}
+{"key": "arxiv:2607.27066", "biases": ["leniency"], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "파인튜닝한 멀티모달 점수 모델이 최고 LLM-as-judge 기준선보다 오차를 크게 줄였다.", "condition": "과학 그림 품질 평가, 논문 단위 분할", "evidence": "MAE 0.3524 대 0.864, 59% 상대 오차 감소", "basis": "own_method"}]}
+{"key": "arxiv:2607.19678", "biases": ["competence", "leniency"], "mitigation": ["decomposition", "tool_grounding"], "claims": [{"question": "Q-EXPERT", "direction": "refute", "claim": "임상 추론에서 최신 LLM 판정이 문제 있는 추론 구간을 자주 놓치고 유창하지만 근거가 약한 응답을 과잉 수용했다.", "condition": "의료 추론(UroReason, 의사 주석), 직접 LLM-as-judge 기준선", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2608.14457", "biases": ["criteria"], "mitigation": [], "claims": []}
+{"key": "arxiv:2602.21941", "biases": ["leniency"], "mitigation": ["decomposition", "fine_tuning"], "claims": []}
+{"key": "arxiv:2609.30467", "biases": ["competence"], "mitigation": ["tool_grounding"], "claims": [{"question": "Q-SCALE", "direction": "refute", "claim": "모델 크기 확대, 추론 노력 추가, 의료 파인튜닝이 검증 모델의 실패 유형을 해소하지 못했다.", "condition": "장문 의료 답변 사실성 검증, 검색 방법 4종과 검증 모델 6종", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2603.10570", "biases": [], "mitigation": ["abstention", "reference"], "claims": []}
+{"key": "arxiv:2607.19219", "biases": ["leniency"], "mitigation": ["fine_tuning", "rubric", "calibration"], "claims": []}
+{"key": "arxiv:2510.05710", "biases": ["position", "leniency", "verbosity"], "mitigation": ["rubric", "other"], "claims": []}
+{"key": "arxiv:2506.23527", "biases": [], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2610.00073", "biases": [], "mitigation": ["rubric", "calibration"], "claims": []}
+{"key": "arxiv:2609.20712", "biases": ["style"], "mitigation": [], "claims": []}
+{"key": "arxiv:2412.07429", "biases": ["criteria"], "mitigation": ["fine_tuning"], "claims": []}
+{"key": "arxiv:2609.33467", "biases": [], "mitigation": [], "claims": []}
+{"key": "arxiv:2609.32622", "biases": ["competence", "anchoring"], "mitigation": [], "claims": []}
+{"key": "arxiv:2607.01152", "biases": ["leniency"], "mitigation": ["calibration", "fine_tuning"], "claims": []}
+{"key": "arxiv:2509.12750", "biases": ["criteria", "competence"], "mitigation": [], "claims": []}
+{"key": "arxiv:2606.17506", "biases": ["social"], "mitigation": [], "claims": []}
+{"key": "arxiv:2602.07840", "biases": ["criteria"], "mitigation": ["calibration", "rubric", "fine_tuning"], "claims": []}
+{"key": "arxiv:2604.22770", "biases": ["inconsistency"], "mitigation": ["ensemble", "rubric"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "이종 멀티에이전트 토론(HeteroMAD)이 비교한 네 가지 채점·추천 방식 중 점수 일치도가 가장 높았다.", "condition": "CEFR A2 대화 채점, ESL 전문가 주석, 4개 방법 비교", "evidence": "변동도 0.23, 추천 수용도 90.91%", "basis": "own_method"}]}
+{"key": "arxiv:2409.06883", "biases": ["criteria"], "mitigation": [], "claims": []}
+{"key": "arxiv:2603.22935", "biases": ["competence"], "mitigation": ["prompt_optimization", "human_in_loop"], "claims": []}
+{"key": "arxiv:2607.12467", "biases": ["criteria"], "mitigation": [], "claims": []}
+{"key": "arxiv:2507.20774", "biases": ["prompt_sensitivity"], "mitigation": ["prompt_optimization"], "claims": []}
+{"key": "arxiv:2512.23837", "biases": ["adversarial"], "mitigation": [], "claims": [{"question": "Q-ATTACK", "direction": "conditional", "claim": "중간층 어텐션 토큰으로 만든 적대 예시는 평가 성능을 측정 가능하게 떨어뜨렸으나, 일부 층·위치의 치환은 문법 훼손을 일으켜 실효성이 제한됐다.", "condition": "논증 품질 평가(ArgQuality), LLaMA-3.1-Instruct-8B가 생성자이자 평가자", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2510.08671", "biases": ["competence"], "mitigation": [], "claims": [{"question": "Q-SCALE", "direction": "support", "claim": "공개 LLM보다 독점 추론 모델이 경로 문제를 더 정확히 식별했다.", "condition": "VRP 경로 비평 평가, 400건", "evidence": "공개 LLM 79%, 독점 추론 모델 최대 86%", "basis": "evaluation"}]}
+{"key": "arxiv:2608.21850", "biases": ["self_preference"], "mitigation": ["rubric", "human_in_loop"], "claims": [{"question": "Q-SELF", "direction": "support", "claim": "LLM이 자신의 피드백을 인간 전문가보다 체계적으로 높게 평가했다.", "condition": "프로그래밍 단답형 피드백 품질, o1 대 조교 9명, 학생 응답 90건", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2510.07061", "biases": ["prompt_sensitivity"], "mitigation": [], "claims": []}
+{"key": "arxiv:2603.10477", "biases": ["adversarial", "prompt_sensitivity"], "mitigation": ["rubric", "prompt_optimization"], "claims": []}
+{"key": "arxiv:2609.02745", "biases": [], "mitigation": ["tool_grounding"], "claims": []}
+{"key": "arxiv:2509.20097", "biases": ["criteria"], "mitigation": ["ensemble", "decomposition", "critique_refine"], "claims": []}
+{"key": "arxiv:2606.17634", "biases": ["inconsistency", "prompt_sensitivity"], "mitigation": ["other"], "claims": []}
+{"key": "arxiv:2606.02282", "biases": ["competence"], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "시스템 내부 에이전트를 진단자로 쓰는 POIROT가 단일 LLM 평가자보다 나았고 문제 복잡도가 높을수록 이득이 커졌다.", "condition": "멀티에이전트 시스템 결함 탐지, 단일 LLM 평가자 기준선", "evidence": "OR = 1.60, p = 0.008", "basis": "own_method"}]}
+{"key": "arxiv:2608.08143", "biases": ["criteria"], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "refute", "claim": "여러 LLM 평가자가 모델 계열 안에서는 강하게 일치했지만 그 합의가 공식 평가 결과를 안정적으로 따라가지 못했고 Quality 격률에서 격차가 가장 컸다.", "condition": "Touché 2025 토론 응답 평가, 3개 제공사 6개 LLM", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2609.37322", "biases": ["criteria"], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2601.18253", "biases": ["criteria"], "mitigation": ["internal", "rubric"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "잠재 공간 회귀 탐침(BoRP, Qwen3-8B/14B)이 생성형 기준선(Qwen3-Max 포함)보다 사람 판단과 더 일치하면서 추론 비용이 크게 낮았다.", "condition": "대화 만족도 평가, 산업 데이터셋", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2602.23603", "biases": ["position", "verbosity", "inconsistency", "adversarial"], "mitigation": ["rubric"], "claims": [{"question": "Q-ATTACK", "direction": "support", "claim": "LLM 평가자가 적대적 교란에 취약함을 보였다.", "condition": "장문 QA 쌍비교 평가자", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2610.19915", "biases": ["criteria"], "mitigation": ["rubric", "decomposition"], "claims": []}
+{"key": "arxiv:2603.02097", "biases": ["criteria"], "mitigation": ["rubric", "human_in_loop", "ensemble"], "claims": []}
+{"key": "arxiv:2602.09624", "biases": ["criteria"], "mitigation": ["ensemble"], "claims": [{"question": "Q-MULTI", "direction": "support", "claim": "독립 프롬프트된 평가자 앙상블이 사람 판단과 가깝게 일치하고 이전 방법을 능가했다.", "condition": "참조 없는 평가, 후보 선택·요약·캡션·대화 과제", "evidence": null, "basis": "own_method"}]}
+{"key": "arxiv:2608.21376", "biases": ["style", "other"], "mitigation": [], "claims": []}
+{"key": "arxiv:2608.01629", "biases": ["social"], "mitigation": [], "claims": []}
+{"key": "arxiv:2507.22359", "biases": ["self_preference"], "mitigation": ["ensemble"], "claims": [{"question": "Q-SELF", "direction": "support", "claim": "상호 평가에서 OpenAI 계열 모델이 같은 계열 응답에 더 높은 점수를 줬다.", "condition": "수학·프로그래밍, 8개 LLM 상호 평가", "evidence": "계열 내 점수 차 Δ = 9, p < 0.05", "basis": "evaluation"}]}
+{"key": "arxiv:2606.11931", "biases": ["leakage"], "mitigation": ["fine_tuning", "reference"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "QLoRA로 튜닝한 Qwen3-8B가 평가한 독점·공개 LLM 중 사람 점수와 가장 높게 일치했다.", "condition": "방글라어 서답형 채점, 통합 프로토콜 비교", "evidence": "rho = 0.936, MAE = 0.725", "basis": "own_method"}]}
+{"key": "arxiv:2608.30754", "biases": ["prompt_sensitivity", "criteria"], "mitigation": [], "claims": [{"question": "Q-MULTI", "direction": "null", "claim": "퓨샷, 앙상블, 멀티에이전트 토론은 판정을 일관되게 개선하지 못했다.", "condition": "페르시아어 짧은 문학 텍스트 창의성 평가", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2606.18797", "biases": ["leniency", "competence"], "mitigation": ["fine_tuning"], "claims": [{"question": "Q-FT", "direction": "support", "claim": "합성 쌍으로 학습한 경량 지표(Qwen3-8B, MedGemma-4B)가 32B급 의료 LLM을 앞서고 독점 모델과 경쟁했다.", "condition": "방사선 보고서 임상적 유의성 평가, ReEvalMed", "evidence": "합성 보고서 쌍 4k개로 학습", "basis": "own_method"}]}
+{"key": "arxiv:2607.20425", "biases": ["style", "anchoring"], "mitigation": [], "claims": []}
+{"key": "arxiv:2602.14433", "biases": ["social"], "mitigation": ["ensemble"], "claims": []}
+{"key": "arxiv:2606.06546", "biases": ["self_preference"], "mitigation": ["rubric", "reference"], "claims": [{"question": "Q-SELF", "direction": "support", "claim": "LLM 판정이 사람과 비슷한 순위를 보존하면서도 자기선호 같은 판정자별 편향을 보였다.", "condition": "교육 시나리오 평가(Edu-330)", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2610.01218", "biases": ["competence"], "mitigation": ["abstention", "tool_grounding"], "claims": [{"question": "Q-SCALE", "direction": "support", "claim": "저비용 판정 모델은 비준수 답변 탐지가 우연 수준에 가까웠고 더 강한 모델이 훨씬 높았다.", "condition": "RAGBench 비준수 답변 탐지, 동일 표본 N=1200", "evidence": "gpt-4.1-nano AUROC 0.603, gpt-4o 0.783", "basis": "evaluation"}]}
+{"key": "arxiv:2605.07102", "biases": ["criteria"], "mitigation": ["decomposition", "critique_refine"], "claims": []}
+{"key": "arxiv:2606.29672", "biases": ["criteria"], "mitigation": ["cot"], "claims": [{"question": "Q-COT", "direction": "null", "claim": "추론 출력은 해석 가능성을 높였지만 사람 평점과의 일치를 개선하지 못했다.", "condition": "시각 창의성 제로샷 점수화, 멀티모달 LLM 3종 추론 분석", "evidence": null, "basis": "evaluation"}]}
+{"key": "arxiv:2512.21066", "biases": ["leniency"], "mitigation": ["human_in_loop"], "claims": [{"question": "Q-EXPERT", "direction": "conditional", "claim": "LLM 판정은 모든 기준을 과대 채점했지만 전문가의 라운드 순위는 대체로 보존해, 절대 점수는 믿기 어려워도 품질 정점은 포착할 수 있었다.", "condition": "농업 XAI 설명 평가, 작물학자 12명 대 LLM 판정 14개", "evidence": "LLM이 1.4-2.3점 과대 채점, 순위 Spearman rho = 0.58-0.90", "basis": "evaluation"}]}
+{"key": "arxiv:2609.15180", "biases": ["leniency", "competence"], "mitigation": [], "claims": [{"question": "Q-EXPERT", "direction": "conditional", "claim": "LLM 판정은 사람과 높은 일치를 보였지만 부적절하거나 불확실한 출력을 선택적으로 수용했고 정확 일치 기준이 오히려 사람 일치가 가장 높았다.", "condition": "임상 예측 정답성 판정, 2명 검토자 주석 450건", "evidence": "사람이 찾은 오류 30건 중 16건을 수용", "basis": "evaluation"}]}
+{"key": "arxiv:2608.29206", "biases": ["social", "leniency"], "mitigation": ["rubric"], "claims": []}
+{"key": "arxiv:2610.11281", "biases": ["adversarial", "sycophancy"], "mitigation": ["calibration"], "claims": []}
+{"key": "arxiv:2608.22559", "biases": ["criteria"], "mitigation": ["rubric", "tool_grounding"], "claims": []}
+{"key": "arxiv:2610.11464", "biases": ["adversarial", "criteria"], "mitigation": ["rubric", "tool_grounding", "human_in_loop"], "claims": []}
+{"key": "arxiv:2508.00889", "biases": ["criteria"], "mitigation": ["decomposition", "rubric"], "claims": []}
+{"key": "arxiv:2609.00805", "biases": ["inconsistency"], "mitigation": ["rubric", "calibration"], "claims": []}
+{"key": "arxiv:2607.08700", "biases": ["leniency", "criteria"], "mitigation": ["rubric", "calibration"], "claims": [{"question": "Q-SCALE", "direction": "null", "claim": "더 싼 판정 모델이 경쟁력을 유지했고 사실 근거 차원에서는 모델 간 차이가 통계적으로 구별되지 않았다.", "condition": "딥리서치 인용 품질 루브릭 판정, 3개 계열 8개 LLM 판정", "evidence": "GPT-5-mini 출처 관련성 pass-class F1 0.908 (kappa=0.636)", "basis": "evaluation"}]}
+{"key": "arxiv:2607.01223", "biases": ["competence"], "mitigation": ["decomposition", "tool_grounding"], "claims": []}
+{"key": "arxiv:2605.26878", "biases": ["inconsistency", "criteria"], "mitigation": ["decomposition", "calibration"], "claims": []}
+{"key": "arxiv:2609.13475", "biases": ["criteria"], "mitigation": ["tool_grounding", "human_in_loop"], "claims": []}
+{"key": "arxiv:2609.35812", "biases": ["competence"], "mitigation": ["decomposition"], "claims": []}
+{"key": "arxiv:2609.32082", "biases": ["criteria"], "mitigation": ["calibration"], "claims": []}
+{"key": "arxiv:2608.00243", "biases": ["inconsistency"], "mitigation": ["ensemble", "critique_refine"], "claims": [{"question": "Q-MULTI", "direction": "conditional", "claim": "동질적 3-에이전트 패널은 데이터셋에 따라 단일 에이전트 대비 정확도 차이가 갈렸다: 두 곳은 이득, 한 곳은 손실, 세 곳은 불명확했다.", "condition": "근거성 검증, 공개 사실 검증·환각 탐지 벤치마크 6개, 기준과 패널의 모델 변형이 달라 인과 효과는 분리되지 않음", "evidence": "정확도 차이 +8.5 ~ -4.4 퍼센트포인트", "basis": "evaluation"}]}
+{"key": "arxiv:2609.27787", "biases": ["position", "inconsistency"], "mitigation": ["swap", "ensemble"], "claims": [{"question": "Q-FORMAT", "direction": "conditional", "claim": "양쪽 제시 순서로 실행한 쌍비교는 점수형보다 판정자 상호작용 분산이 크게 줄어 일반화 상한이 높았지만, 먼저 제시된 시스템이 더 자주 이기는 순서 편향이 있었다.", "condition": "LLM 판정 벤치마크의 일반화 가능도 분석, 판정 373,019건, 시스템 11개 (사람 일치가 아니라 신뢰도 기준)", "evidence": "쌍비교 상한 0.986 (부트스트랩 [0.934, 1.000]); 먼저 제시된 시스템 승률 8.6퍼센트포인트 높음", "basis": "evaluation"}]}
+{"key": "arxiv:2610.03315", "biases": ["competence"], "mitigation": ["rubric", "decomposition"], "claims": []}
+{"key": "arxiv:2609.20827", "biases": ["social", "competence"], "mitigation": ["human_in_loop"], "claims": []}
+{"key": "arxiv:2609.16023", "biases": ["criteria", "leniency"], "mitigation": ["rubric", "decomposition"], "claims": []}
+{"key": "arxiv:2609.13062", "biases": ["criteria"], "mitigation": ["tool_grounding", "human_in_loop"], "claims": []}
+{"key": "arxiv:2606.22706", "biases": ["criteria"], "mitigation": ["rubric", "ensemble"], "claims": []}
+{"key": "arxiv:2606.28815", "biases": ["competence", "anchoring"], "mitigation": ["ensemble"], "claims": []}

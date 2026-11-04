@@ -1,0 +1,140 @@
+{"key": "doi:10.17605/osf.io/ytwj7", "decision": "exclude", "code": "E1", "reason": "LLM 판정자를 인간 코더로 검증하지만 추모 챗봇 8종의 애도 강화 여부를 감사하는 연구라 판정은 측정 도구일 뿐이다."}
+{"key": "doi:10.5281/zenodo.23339156", "decision": "exclude", "code": "E1", "reason": "LLM 판정자를 인간 코더와 대조해 검증했으나 API와 인터페이스 답변 비교가 주제이고 판정 자체는 분석하지 않는다."}
+{"key": "doi:10.5281/zenodo.20564283", "decision": "exclude", "code": "E1", "reason": "세 LLM의 관련성 판정으로 시 조례 검색 벤치마크를 만든 데이터 논문이며 판정 모델을 분석하지 않는다."}
+{"key": "doi:10.18653/v1/2025.arabicnlp-sharedtasks.53", "decision": "exclude", "code": "E1", "reason": "아랍어 이미지 캡션 공유과제 시스템 논문이며 LLM 판정 점수는 성능 보고에만 쓰인다."}
+{"key": "title:comparison of rag and agentic ai methods", "decision": "exclude", "code": "E1", "reason": "RAG와 에이전트 검색 방식 비교 학위논문이며 LLM 판정은 평가 지표 중 하나일 뿐이다."}
+{"key": "doi:10.5281/zenodo.20522873", "decision": "exclude", "code": "E1", "reason": "성경 RAG 인용 충실도 벤치마크이고 LLM 판정은 citation_support 지표로만 쓰인다."}
+{"key": "doi:10.5281/zenodo.23388560", "decision": "exclude", "code": "E1", "reason": "도구호출 검색과 벡터 RAG 비교 평가 도구이며 LLM 판정은 채점기로만 쓰인다."}
+{"key": "title:retrieval augmented generation for ukrainian government services a comparative evaluation of the approaches", "decision": "exclude", "code": "E1", "reason": "우크라이나 행정 서비스 RAG 방식 비교이며 LLM Judge Score는 성능 지표로만 보고된다."}
+{"key": "title:procedural compliance of llm based administrative decision support reproducibility package", "decision": "maybe", "code": "M", "reason": "경찰 행정 의사결정 방법 비교의 재현 패키지로 LLM 판정자 3종의 Cohen's κ 신뢰도 분석이 포함되나 판정 자체가 주제인지 초록만으로 알 수 없다."}
+{"key": "doi:10.5281/zenodo.22920566", "decision": "exclude", "code": "E1", "reason": "다중 에이전트 진단 추론 코드 보관소이며 LLM 판정 구현은 채점용이고 판정 검증이 초록에 드러나지 않는다."}
+{"key": "doi:10.17605/osf.io/dfp6x", "decision": "exclude", "code": "E1", "reason": "계약 대 명령 프레이밍이 에이전트 책임 귀속에 미치는 영향 사전등록이며 LLM 판정은 추론 코딩 도구로 쓰인다."}
+{"key": "doi:10.5281/zenodo.22978224", "decision": "exclude", "code": "E1", "reason": "어휘 정렬 디코딩 대화 시스템 데이터이며 LLM 판정 순위는 자동 평가의 일부로만 쓰인다."}
+{"key": "doi:10.1557/s43579-026-01036-4", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로 판정 연구 여부를 알 수 없는 과학 추론 QA 논문(SAGE-QA)이다."}
+{"key": "doi:10.5281/zenodo.19251217", "decision": "maybe", "code": "M", "reason": "SE 명세 생성 복제 패키지에 LLM 판정 5계열과 전문가 5인 평가, 전문가 양식 LLM 시뮬레이션이 있어 판정 검증 여부를 초록만으로 알 수 없다."}
+{"key": "doi:10.17605/osf.io/vsw9g", "decision": "exclude", "code": "E1", "reason": "검수되지 않는 결함에 대한 에이전트 돌봄 실험이며 LLM 판정은 추론 코딩에만 쓰인다."}
+{"key": "doi:10.2139/ssrn.7360668", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로 평가 함정을 다루는 멀티모달 RAG 논문의 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.2139/ssrn.7061418", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로 의사 타기팅 벤치마크 논문의 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.5281/zenodo.22147770", "decision": "exclude", "code": "E1", "reason": "GlobalQA 오염 분석이며 LLM 판정은 보정해 쓰는 도구이고 판정 성능 자체가 주제가 아니다."}
+{"key": "doi:10.64898/2026.03.14.26348412", "decision": "maybe", "code": "M", "reason": "LLM 쌍비교와 Bradley-Terry로 응급실 환자 우선순위를 매기는 연구로 LLM 판정이 핵심 방법이나 품질 평가가 아니라 임상 순위화라 경계가 모호하다."}
+{"key": "doi:10.5281/zenodo.19417426", "decision": "exclude", "code": "E2", "reason": "LLM 앙상블로 추출한 철학 지식그래프 데이터셋이며 판정과 무관하다."}
+{"key": "doi:10.5281/zenodo.21853966", "decision": "include", "code": "I1", "reason": "SQL 편집의 동치 여부를 증명 기반 도구로 판정하고 최신 LLM 판정자(gpt-5)와 정확도와 오판을 직접 비교한다."}
+{"key": "doi:10.5281/zenodo.21754903", "decision": "exclude", "code": "E1", "reason": "윤리 지식그래프 주입 효과를 키워드 매칭으로 평가했고 LLM 판정 재평가는 향후 과제로만 언급한다."}
+{"key": "doi:10.1007/978-3-031-75593-4_22", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로 베트남 교통법 QA 시스템의 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.14711/thesis-hdl174846", "decision": "maybe", "code": "M", "reason": "LLM 판정자가 사람 검토 앞에서 걸러내는 AI-인간 워크플로의 큐잉 모델을 분석하나 추론 스케줄링 연구와 함께 묶여 있어 판정 연구 비중이 불분명하다."}
+{"key": "doi:10.2196/preprints.113204", "decision": "exclude", "code": "E1", "reason": "동기강화면담 지식그래프 효과를 맹검 LLM 판정으로 채점했고 전문가 재채점은 보조 확인이며 판정 분석이 주제는 아니다."}
+{"key": "doi:10.5281/zenodo.19283569", "decision": "exclude", "code": "E1", "reason": "토큰 확률 분포 기하로 지식 품질을 재는 연구이며 LLM 판정자 2종은 정답 라벨 검증에만 쓰인다."}
+{"key": "doi:10.18653/v1/2025.arabicnlp-sharedtasks.55", "decision": "exclude", "code": "E1", "reason": "팔레스타인 맥락 아랍어 캡션 모델 논문이며 LLM 의미 평가는 성능 보고에만 쓰인다."}
+{"key": "doi:10.1145/3773078.3841265", "decision": "exclude", "code": "E1", "reason": "추천 시스템의 공정성 감사 웹 플랫폼이며 LLM 판정 점수를 쓰되 한계로만 언급하고 판정을 분석하지 않는다."}
+{"key": "doi:10.17605/osf.io/9haut", "decision": "exclude", "code": "E2", "reason": "규칙 기반 검증만 쓰는 LLM 에이전트 워크플로 프레임워크 사전등록이며 LLM 판정이 없다."}
+{"key": "doi:10.5281/zenodo.22117122", "decision": "maybe", "code": "M", "reason": "종양학 RAG와 파인튜닝 평가에서 맹검 LLM 판정과 종양내과 의사 104건 평가를 대조하나 판정 검증이 주제인지 초록만으로 알 수 없다."}
+{"key": "doi:10.1177/10711813261484498", "decision": "exclude", "code": "E1", "reason": "가상 환자용 소형 모델 안정성 개선이며 LLM 판정은 이진 루브릭 채점에만 쓰인다."}
+{"key": "doi:10.5281/zenodo.22646354", "decision": "exclude", "code": "E1", "reason": "항공 안전 문서 RAG 검색 방식 비교 복제 패키지이며 LLM 판정 루브릭은 점수 산출에만 쓰인다."}
+{"key": "doi:10.5281/zenodo.22115880", "decision": "maybe", "code": "M", "reason": "종양학 RAG와 파인튜닝 논문의 코드 저장소로 LLM 판정과 전문의 평가를 대조하는 자료가 있어 판정 검증 여부를 초록만으로 알 수 없다."}
+{"key": "doi:10.1109/icassp55912.2026.11464223", "decision": "maybe", "code": "M", "reason": "자동 레드티밍 프레임워크 안에 파인튜닝 LLM 판정자와 κ>0.7 판정 신뢰도가 포함되나 주된 기여가 판정인지 불분명하다."}
+{"key": "doi:10.2139/ssrn.6252558", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로 신경기호 법률 추론 프레임워크의 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.5281/zenodo.22935059", "decision": "exclude", "code": "E1", "reason": "LLM 팀 진단 추론 보관소의 동반 논문이며 LLM 판정 캐시는 채점용이고 판정 분석이 초록에 없다."}
+{"key": "doi:10.21227/jn7k-ck90", "decision": "exclude", "code": "E1", "reason": "계층적 RAG의 형제 혼동 벤치마크이며 LLM 판정 수락 결정은 데이터 정제용으로만 쓰인다."}
+{"key": "doi:10.17605/osf.io/uv7q6", "decision": "exclude", "code": "E2", "reason": "LLM 판정 없이 결정론적으로 채점하는 GxP 에이전트 아키텍처 사전등록이다."}
+{"key": "doi:10.48448/2may-qg61", "decision": "exclude", "code": "E1", "reason": "문헌 리뷰 표 스키마 생성 강화학습 연구이며 LLM 판정은 평가 지표 중 하나로만 쓰인다."}
+{"key": "doi:10.1007/978-3-032-31319-5_17", "decision": "exclude", "code": "E1", "reason": "정신건강 LLM의 어텐션 인과 분석이며 LLM 판정 3종은 결과 확인에만 쓰인다."}
+{"key": "doi:10.48448/w80c-an65", "decision": "exclude", "code": "E1", "reason": "최적화 문제 풀이용 MCTS 프레임워크로 LLM 판정은 보상 신호 제공 구성요소이며 판정 자체를 분석하지 않는다."}
+{"key": "doi:10.18653/v1/2026.americasnlp-6.2", "decision": "exclude", "code": "E1", "reason": "라코타어 번역 평가이며 LLM 판정자 2종의 일치도를 보고하나 번역 능력 평가가 주제다."}
+{"key": "doi:10.5281/zenodo.21279784", "decision": "exclude", "code": "E5", "reason": "중복된 정오표 기록이며 논문이 아니다."}
+{"key": "doi:10.63317/5euewaq3i8b5", "decision": "exclude", "code": "E1", "reason": "중세 히브리어 인용 NER 교정 파이프라인이며 LLM 판정자는 오류 탐지 구성요소로만 쓰인다."}
+{"key": "doi:10.5281/zenodo.21974841", "decision": "exclude", "code": "E1", "reason": "혐오 표현 데이터 공개용 증거 최소화 기법이며 LLM 판정은 복원 측정에만 쓰인다."}
+{"key": "doi:10.5391/jkiis.2025.35.6.512", "decision": "exclude", "code": "E1", "reason": "특허 문서 질의응답 시스템 제안이며 LLM-Judge 점수는 성능 향상 보고에만 쓰인다."}
+{"key": "doi:10.62161/sauc.v12.6399", "decision": "exclude", "code": "E1", "reason": "지자체 문서 처리 코파일럿의 프롬프트 주입 공격 평가이며 인간 검증된 LLM 판정은 측정 도구다."}
+{"key": "doi:10.1007/978-3-031-99568-2_4", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 감시 영상 이해의 자연어 기반 평가여서 LLM 판정 사용 여부를 알 수 없다."}
+{"key": "doi:10.5281/zenodo.21808102", "decision": "exclude", "code": "E2", "reason": "LLM 판정 대신 결정론적 채점을 택한 AI 거버넌스 벤치마크 심리측정 논문이며 판정 모델을 연구하지 않는다."}
+{"key": "doi:10.1038/s44484-026-00025-3", "decision": "include", "code": "I5", "reason": "수술 동의 대화 에이전트 평가에서 LLM 판정 4가지 구조를 임상의 평가와 대조해 배심원 방식만 민감도가 개선됨을 보인다."}
+{"key": "doi:10.5281/zenodo.21852716", "decision": "exclude", "code": "E1", "reason": "AI 출력 위험 거버넌스 라이브러리이며 LLM 판정은 판정을 엄격하게만 만드는 보조 요소다."}
+{"key": "doi:10.5281/zenodo.23343111", "decision": "exclude", "code": "E2", "reason": "코딩 에이전트 실행 로그 압축 코덱이며 LLM 판정은 배경 언급일 뿐이다."}
+{"key": "doi:10.3390/app16199938", "decision": "exclude", "code": "E1", "reason": "합성 학습자 튜터링 시뮬레이션 평가이며 LLM 판정과 시뮬레이터의 불일치를 보고하나 튜터 아키텍처 비교가 중심이다."}
+{"key": "doi:10.5281/zenodo.22079195", "decision": "maybe", "code": "M", "reason": "로컬 LLM 추론 처리량 데이터에 TruthfulQA 채점을 위한 LLM 판정 결과와 인간 맹검 판정이 포함되나 판정 검증이 주제인지 불분명하다."}
+{"key": "doi:10.21203/rs.3.rs-11112101/v1", "decision": "maybe", "code": "M", "reason": "초록이 없고 대장 간전이 LLM 권고 연구라 판정 사용 여부를 제목만으로 알 수 없다."}
+{"key": "doi:10.5281/zenodo.19422010", "decision": "exclude", "code": "E1", "reason": "8B 모델 파이썬 코딩 벤치마크이며 Gemma 3 LLM 판정은 간결성 점수 산출용이다."}
+{"key": "doi:10.18653/v1/2025.arabicnlp-sharedtasks.57", "decision": "exclude", "code": "E1", "reason": "아랍어 이미지 캡션 공유과제 파이프라인이며 LLM Judge Score는 성능 지표로만 쓰인다."}
+{"key": "doi:10.1109/dsis67228.2025.11390158", "decision": "maybe", "code": "M", "reason": "문장 단위 주장 검증 LLM 판정의 한계를 지적하고 삼중그래프 환각 탐지기를 제안하나 LLM 판정과 직접 비교했는지 초록만으로 알 수 없다."}
+{"key": "doi:10.5281/zenodo.20978265", "decision": "exclude", "code": "E2", "reason": "규제 문서 계층 검색 벤치마크이며 LLM 판정 파이프라인은 지원 대상 평가 방식으로 나열될 뿐이다."}
+{"key": "doi:10.5281/zenodo.21801642", "decision": "exclude", "code": "E1", "reason": "대화 기억 QA의 인물 프로필 요약 기법이며 LLM 판정 점수는 LongMemEval 보고에만 쓰인다."}
+{"key": "doi:10.5281/zenodo.22885408", "decision": "include", "code": "I1", "reason": "조정된 비생성 결정 모델을 조정·환각·NLI·프롬프트 주입 과제에서 LLM 판정자와 직접 비교하는 벤치마크다."}
+{"key": "doi:10.5281/zenodo.20285526", "decision": "exclude", "code": "E1", "reason": "추론 모델 안전 정렬 학습 아티팩트이며 LLM 판정은 안전 평가 구성요소일 뿐이다."}
+{"key": "doi:10.4218/etrij.2026-0180", "decision": "exclude", "code": "E1", "reason": "오픈웨이트 LLM의 교차언어 안전 비대칭 연구이며 LLM 판정은 정규식 분류기 교차 검증에만 쓰인다."}
+{"key": "doi:10.18653/v1/2025.findings-naacl.24", "decision": "exclude", "code": "E2", "reason": "동역학 모델링의 LLM 라우팅 프레임워크 LEGO이며 LLM이 출력을 평가하는 판정자가 아니다."}
+{"key": "doi:10.5281/zenodo.21433589", "decision": "exclude", "code": "E1", "reason": "자연어 DB 인터페이스 사용자 연구 복제 패키지이며 LLM 판정 채점은 정확성 평가에만 쓰인다."}
+{"key": "doi:10.18653/v1/2026.acl-long.1612", "decision": "include", "code": "I1", "reason": "표 QA 추론을 기호 실행으로 감사하는 프레임워크를 제안하고 LLM 판정자 다수결과 과정 감독보다 오류를 더 잘 찾는다고 비교한다."}
+{"key": "doi:10.5281/zenodo.20669117", "decision": "exclude", "code": "E2", "reason": "에이전트 실행 전 상태 게이트를 제안하며 LLM 판정이 아니라 규칙 기반 게이트가 대상이다."}
+{"key": "doi:10.1145/3805696.3846467", "decision": "exclude", "code": "E1", "reason": "도서 소개 생성의 검색 관련성 효과를 LLM(GPT-4o)으로 채점한 실험이며 판정을 분석하지 않는다."}
+{"key": "doi:10.5281/zenodo.20100653", "decision": "maybe", "code": "M", "reason": "다국어 소비자 챗봇 건강 조언 의사 평가 데이터에 LLM 판정 교차검증 파일럿이 포함되나 판정 검증이 핵심인지 불분명하다."}
+{"key": "doi:10.1007/978-3-032-40374-2_14", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 다중 에이전트 정적 취약점 탐지라 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.5281/zenodo.21367846", "decision": "exclude", "code": "E2", "reason": "LLM 판정이나 인간 주석 없이 만든 구조화 검색 QA 릴리스 정책 벤치마크이다."}
+{"key": "doi:10.5281/zenodo.21250031", "decision": "exclude", "code": "E1", "reason": "음성 번역 시스템 벤치마크이며 세 LLM 판정자는 점수 산출에만 쓰인다."}
+{"key": "doi:10.6084/m9.figshare.31046290", "decision": "exclude", "code": "E1", "reason": "계층적 맥락 코드 요약 개선이며 LLM 판정은 두 인간 평가자로 보정했으나 순위 산출 도구로 쓰인다."}
+{"key": "arxiv:2606.17821", "decision": "exclude", "code": "E2", "reason": "Text-to-SQL의 LLM Judger는 질문 분해 필요 여부를 정하는 라우터이며 출력 평가 판정이 아니다."}
+{"key": "doi:10.1145/3805696.3847132", "decision": "exclude", "code": "E1", "reason": "학위논문 실험 지식 추출 연구로 로컬 LLM 판정은 구절 선별에 쓰이고 전문가 검토는 결과 확인이다."}
+{"key": "doi:10.1007/978-3-032-29532-3_19", "decision": "maybe", "code": "M", "reason": "초록이 없고 금융 감성 추론의 섭동 설명 분석이라 판정 연구 여부를 제목만으로 알 수 없다."}
+{"key": "doi:10.5281/zenodo.23134388", "decision": "exclude", "code": "E1", "reason": "Go 검증 명세 합성 연구이며 LLM 판정 도구는 요구사항 충실도 점검에만 쓰인다."}
+{"key": "doi:10.5281/zenodo.22121677", "decision": "exclude", "code": "E1", "reason": "사고연쇄 불충실성 분석 코드이며 LLM 판정 실험은 주장 범위를 좁히는 보조 실험이다."}
+{"key": "doi:10.5281/zenodo.22305901", "decision": "exclude", "code": "E2", "reason": "LLM 판정을 쓰지 않는 에이전트 기억 큐레이션 공격 연구이다."}
+{"key": "doi:10.1145/3774748.3787607", "decision": "exclude", "code": "E1", "reason": "정부 입찰 RAG 챗봇이며 전문화한 LLM 판정 4개는 성능 평가에만 쓰인다."}
+{"key": "doi:10.2196/100772", "decision": "exclude", "code": "E1", "reason": "건강 AI 환자 시뮬레이터 프레임워크이며 LLM 판정과 인간 주석 일치(κ=0.78)는 시뮬레이터 충실도 확인이다."}
+{"key": "doi:10.18653/v1/2026.argmining-1.4", "decision": "exclude", "code": "E1", "reason": "UN 결의안 논증 입장 분류 공유과제 시스템이며 LLM-Judge 리더보드는 순위 보고에만 쓰인다."}
+{"key": "doi:10.1007/978-3-032-16092-8_38", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 언러닝 역공격이라 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.1016/j.neucom.2026.134604", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 다목적 정렬용 DPO이며 판정 모델과의 관련성을 알 수 없다."}
+{"key": "doi:10.5281/zenodo.21410543", "decision": "exclude", "code": "E1", "reason": "이커머스 검색엔진 5종 비교이며 LLM 판정 재판정으로 순위 재현성을 확인하나 검색 평가가 주제다."}
+{"key": "doi:10.5281/zenodo.22777791", "decision": "exclude", "code": "E1", "reason": "권위 신호가 GPT-4o 추천에 미치는 영향 실험이며 LLM 판정은 승자 결정에만 쓰인다."}
+{"key": "doi:10.5281/zenodo.21617997", "decision": "exclude", "code": "E2", "reason": "LLM 판정 없이 기호 검사로 채점하는 기하 작도 탐침이다."}
+{"key": "arxiv:2606.29467", "decision": "maybe", "code": "M", "reason": "모성보건 RAG 벤치마크로 HealthBench 의사 라벨 메타평가를 도메인에 맞춰 LLM 판정 보정을 돕지만 주된 기여가 판정인지 불분명하다."}
+{"key": "doi:10.1145/3805712.3809882", "decision": "include", "code": "I1", "reason": "RAG 수치 환각 탐지에서 GPT-4o-mini LLM 판정의 재현율 25.7%를 보이고 수치 인식 휴리스틱과 직접 비교한다."}
+{"key": "doi:10.5281/zenodo.23066230", "decision": "maybe", "code": "M", "reason": "LLM 판정을 포함한 폐쇄 평가 루프의 독립성 문제를 논하는 포지션 페이퍼이나 판정자 자체가 중심인지 초록만으로 불분명하다."}
+{"key": "doi:10.64898/2026.09.24.26363897", "decision": "exclude", "code": "E1", "reason": "LLM 팀 진단 이득 연구이며 임상의로 검증한 LLM 판정은 채점 도구로만 쓰인다."}
+{"key": "doi:10.21227/ttw9-te18", "decision": "exclude", "code": "E1", "reason": "정치 편향 벤치마크 신뢰도 계층화로 LLM 판정 3종 점수를 주석으로 쓰며 판정 자체를 분석하지 않는다."}
+{"key": "doi:10.57166/riqchary.v7.n2.2025.2", "decision": "exclude", "code": "E1", "reason": "스페인어 소형 생성 모델 RAG 비교이며 LLM-Judge는 의미 지표로만 쓰인다."}
+{"key": "doi:10.17605/osf.io/qc2b7", "decision": "exclude", "code": "E1", "reason": "다중 에이전트 인지 반취약성 측정 사전등록이며 보정된 LLM 판정은 품질 점수 도구다."}
+{"key": "doi:10.1145/3805696.3846037", "decision": "exclude", "code": "E1", "reason": "방송 아카이브 분할 후 요약 파이프라인 비교이며 LLM 판정 3종 중앙값은 인간 평가자로 검증하나 보조 지표다."}
+{"key": "doi:10.5281/zenodo.21850460", "decision": "exclude", "code": "E1", "reason": "대수적 그래프 구성 신경기호 발견 보충자료이며 LLM 판정 채점은 결과 평가용이다."}
+{"key": "title:auditing the reliability of multimodal generative search citation faithfulness user trust and governance", "decision": "maybe", "code": "M", "reason": "멀티모달 생성 검색 인용 충실도 감사로 LLM 판정 3종 간 엄격도 차이와 인간 검증을 다루나 판정 분석이 주된 기여인지 불분명하다."}
+{"key": "doi:10.3390/info17101026", "decision": "exclude", "code": "E1", "reason": "모바일 앱 현지화 LLM 에이전트 사례 연구이며 LLM 판정은 결함 탐지 계층으로 기술될 뿐이다."}
+{"key": "doi:10.5281/zenodo.21907145", "decision": "maybe", "code": "M", "reason": "소형 언어모델 안전 가드 파인튜닝 연구로 가드는 판정 모델과 유사하나 라벨이 LLM 판정 기반이고 연구 초점이 불분명하다."}
+{"key": "doi:10.20944/preprints202608.1437.v1", "decision": "exclude", "code": "E1", "reason": "운동 계획 시스템 구성 비교이며 LLM 판정 4종의 κ≈0.18을 보고하나 시스템 비교가 주제다."}
+{"key": "doi:10.5281/zenodo.22941163", "decision": "exclude", "code": "E1", "reason": "브라우저 에이전트 결정 모델 증류이며 LLM 판정은 에피소드 선별에만 쓰인다."}
+{"key": "doi:10.3390/fi18080397", "decision": "exclude", "code": "E1", "reason": "SRL 프롬프트가 GenAI 튜터에 미치는 효과 평가이며 LLM 판정은 14차원 채점 도구다."}
+{"key": "doi:10.5281/zenodo.21177972", "decision": "exclude", "code": "E1", "reason": "CMC 분야 언어모델 검증 벤치마크이며 LLM 판정 검증 자료는 평가 기록의 일부다."}
+{"key": "doi:10.5281/zenodo.21671469", "decision": "exclude", "code": "E1", "reason": "에이전트 프롬프트 주입 방어 하이브리드 커널이며 LLM Judge는 탐지 계층 하나로만 쓰인다."}
+{"key": "doi:10.5281/zenodo.23150164", "decision": "exclude", "code": "E1", "reason": "LLM 생성 퀴즈 은행 감사이며 LLM 판정은 오답 보기 제거 가능성을 라벨링하는 도구다."}
+{"key": "doi:10.1007/978-3-032-33384-1_13", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 AI와 인간의 시각 예술 해석 비교라 LLM 판정 사용 여부를 알 수 없다."}
+{"key": "doi:10.26434/chemrxiv.15008453/v1", "decision": "maybe", "code": "M", "reason": "유기합성 캠페인 에이전트에서 자유 형식 LLM 판정 대신 루브릭 판정 보상(Chem-RaJ)을 쓰나 직접 비교 여부가 불분명하다."}
+{"key": "doi:10.17102/zmv9.i1.013", "decision": "exclude", "code": "E1", "reason": "부탄 정신건강 챗봇 DrukSerenity이며 LLM 판정 프로토콜은 평가 수단일 뿐이다."}
+{"key": "doi:10.17605/osf.io/qfb5a", "decision": "exclude", "code": "E1", "reason": "출판사 지시 아래 허위 주장 기록 여부를 보는 실험이며 인간 검증된 LLM 판정은 추론 코딩 도구다."}
+{"key": "doi:10.3390/make8100322", "decision": "exclude", "code": "E1", "reason": "LLM 에이전트 이중 계층 지식 구조이며 위치 편향을 줄인 LLM 판정 비교는 평가 수단이다."}
+{"key": "doi:10.21275/sr25906035244", "decision": "include", "code": "I5", "reason": "이커머스 상품 제목 품질을 few-shot LLM 판정으로 분류하고 1,000건 수기 주석 대비 정확도 91%로 검증한다."}
+{"key": "doi:10.1109/gast67799.2026.11523296", "decision": "exclude", "code": "E1", "reason": "하이브리드 RAG 파이프라인이며 자동 LLM 판정은 환각률 측정에만 쓰인다."}
+{"key": "doi:10.18130/67zc-ht65", "decision": "exclude", "code": "E1", "reason": "KQL 생성용 소형 모델 학위논문이며 저비용 LLM 판정은 2단계 구조의 선택 구성요소다."}
+{"key": "doi:10.5281/zenodo.21820314", "decision": "exclude", "code": "E1", "reason": "도메인 모델 대화형 도출 도구 아티팩트이며 LLM 판정은 의미 매칭 채점에만 쓰인다."}
+{"key": "doi:10.64898/2026.07.07.736901", "decision": "exclude", "code": "E1", "reason": "문헌 기반 상호작용 발굴 도구이며 독립 LLM 판정은 후보 점수화에만 쓰인다."}
+{"key": "doi:10.5281/zenodo.21497763", "decision": "exclude", "code": "E1", "reason": "RAG 시스템 정확도·속도·비용 최적화 보고서이며 의미 기반 LLM 판정은 평가 방법 언급에 그친다."}
+{"key": "doi:10.21227/amgf-6566", "decision": "exclude", "code": "E2", "reason": "LLM 판정 없이 기호적으로 채점하는 퀘스트 인과 타당도 시뮬레이션 데이터셋이다."}
+{"key": "doi:10.21203/rs.3.rs-10600432/v1", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 수신자 프레이밍과 LLM 구조적 병리라 판정 연구 여부를 알 수 없다."}
+{"key": "arxiv:2606.17789", "decision": "exclude", "code": "E1", "reason": "체현 대화 에이전트 심리치료 시스템이며 LLM 판정과 치료사 평가는 응답 품질 비교에 쓰인다."}
+{"key": "doi:10.1145/3848515", "decision": "exclude", "code": "E1", "reason": "결함 중심 코드 리뷰 코멘트 생성이며 LLM 판정과 전문가 검증은 결과 확인에만 쓰인다."}
+{"key": "title:domain calibrated knowledge graph architecture for retrieval augmented question answering in industrial maintenance", "decision": "exclude", "code": "E1", "reason": "산업 정비 지식그래프 RAG 아키텍처이며 LLM 판정 패널은 충실도 지표 산출용이다."}
+{"key": "title:redtwiz guard adversarial jailbreak detection in multi turn conversations", "decision": "include", "code": "I3", "reason": "다중 턴 탈옥을 안전·위험으로 분류하는 Jailbreak Judge를 LLM 판정, 인코더, 디코더 방식으로 비교하고 평가 데이터셋을 만든다."}
+{"key": "doi:10.26434/chemrxiv.15008241/v1", "decision": "maybe", "code": "M", "reason": "LLM 쌍비교의 위치 편향과 선호 일관성을 분석하나 출력 품질 평가가 아니라 재료 조건 순위화용이라 판정 연구 여부가 모호하다."}
+{"key": "doi:10.1016/j.ress.2025.111917", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 무인 시스템 적대 의도 귀속 프레임워크라 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.5281/zenodo.21184300", "decision": "exclude", "code": "E1", "reason": "소형 루프 LLM 게임 NPC 페르소나 이탈 데이터이며 LLM 판정 3종은 이탈 점수 산출에만 쓰인다."}
+{"key": "doi:10.5281/zenodo.23154464", "decision": "include", "code": "I2", "reason": "어린이 각색 충실도 자동 측정 4종에 LLM 판정을 포함해 서로 일치하는지 비교하고 200쌍 수기 코딩과 반복 실행을 검증한다."}
+{"key": "doi:10.3390/informatics13100174", "decision": "maybe", "code": "M", "reason": "연구 가설 생성 비교 논문으로 일부에서 LLM 판정이 불안정하고 순서 편향이 있음을 보이나 판정이 주된 대상인지 불분명하다."}
+{"key": "doi:10.5281/zenodo.18043611", "decision": "exclude", "code": "E1", "reason": "시스템 프레이밍이 LLM 행동에 미치는 영향 사전등록이며 이중 LLM 판정은 채점 도구다."}
+{"key": "doi:10.5281/zenodo.20277740", "decision": "exclude", "code": "E1", "reason": "LLM 9종의 자기 기술 어휘 분석이며 LLM 판정은 단어 범주 코딩에만 쓰인다."}
+{"key": "doi:10.5281/zenodo.23278444", "decision": "exclude", "code": "E1", "reason": "모델 관리 진단 아키텍처의 이론 논문이며 LLM 판정 평가는 부수적 비교다."}
+{"key": "title:unifying large language models with knowledge graphs for reliable chatbot interactions", "decision": "exclude", "code": "E1", "reason": "보험 챗봇 지식그래프 통합이며 Gemini LLM 판정은 정성 평가에만 쓰인다."}
+{"key": "doi:10.1007/978-3-032-39882-6_19", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 브라질인 프로파일링 편향이라 LLM 판정 사용 여부를 알 수 없다."}
+{"key": "doi:10.1007/978-3-032-26717-7_7", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 정치 챗봇 신뢰성 프레임워크라 LLM 판정 사용 여부를 알 수 없다."}
+{"key": "title:a multi turn llm agent for bureaucratic form filling a cross model benchmark and failure mode diagnosis on the german baf g application", "decision": "exclude", "code": "E1", "reason": "독일 BAföG 양식 작성 에이전트 벤치마크이며 인간 코딩으로 검증한 LLM 판정은 실패 유형 라벨링 도구다."}
+{"key": "doi:10.2139/ssrn.6932458", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 이탈리아 고전 문학 튜링 테스트라 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.2139/ssrn.6910008", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목에 LLM 신뢰성 평가가 있는 공격 그래프 강화 논문이라 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.5281/zenodo.19405251", "decision": "exclude", "code": "E2", "reason": "LLM 판정 없이 결정론적 디코딩으로 평가한 토로이달 로짓 편향 의미 앵커 연구이다."}
+{"key": "doi:10.64898/2026.04.02.26350091", "decision": "maybe", "code": "M", "reason": "의학 연구 AI 시스템 비교에서 다중 모델 LLM 판정이 단일 판정과 순위를 뒤집음을 보이나 판정이 주된 대상인지 불분명하다."}
+{"key": "doi:10.1007/978-981-92-1468-6_31", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목이 분류체계 최적화 그래프 학습이라 판정 연구 여부를 알 수 없다."}
+{"key": "doi:10.5281/zenodo.20821783", "decision": "exclude", "code": "E1", "reason": "FOMC 페르소나 시뮬레이터 평가이며 앙상블 LLM 판정은 텍스트 충실도 점수 산출에만 쓰인다."}
