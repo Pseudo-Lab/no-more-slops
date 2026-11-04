@@ -1,0 +1,157 @@
+<title>Phantom Report FILE 02</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;700;900&family=Courier+Prime:wght@400;700&display=swap">
+<style>
+/* layout: 4:5 슬라이드 8장을 격자로. 슬라이드 내부는 cqw 단위라 1080px로 키워도 비율 그대로 */
+:root{
+  --paper:#16130f; --ink:#e9e1cf; --dim:#a99f8a; --faint:#6f6756; --rule:#3d372c; --red:#c8352b;
+  --page:#0e0c0a; --pagefg:#d9d2c3;
+  --en:"Courier Prime","Courier New",monospace;
+  --ko:"Noto Sans KR",sans-serif;
+  --hd:"Noto Serif KR",serif; --paperw:#e8e0cc;
+  color-scheme:dark;
+}
+body{background:var(--page);color:var(--pagefg);font-family:var(--ko);padding-block:28px 48px;padding-inline:16px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:20px}
+header h1{font-family:var(--en);font-weight:400;font-size:24px;margin:0;letter-spacing:.06em}
+header p{margin:6px 0 0;color:var(--dim);font-size:13px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.cell{display:grid;gap:6px;min-width:0}
+.cell small{color:var(--faint);font-size:11px;letter-spacing:.08em}
+
+.s{container-type:inline-size;aspect-ratio:4/5;max-width:100%;background:var(--paper);color:var(--ink);position:relative;overflow:hidden}
+.in{position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;font-family:var(--ko)}
+.s::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 30% 20%,rgba(233,225,207,.05),transparent 60%),repeating-linear-gradient(0deg,rgba(0,0,0,.08) 0 1px,transparent 1px 3px)}
+.top{display:flex;justify-content:space-between;font-family:var(--en);font-size:3.4cqw;letter-spacing:.14em;color:var(--dim);border-bottom:1px dashed var(--rule);padding-bottom:2.6cqw}
+.en{font-family:var(--en)}
+.code{font-family:var(--en);font-size:3.8cqw;letter-spacing:.16em;color:var(--red)}
+.stamp{position:absolute;right:6cqw;top:22cqw;transform:rotate(-11deg);border:.9cqw solid var(--red);color:var(--red);font-family:var(--en);font-size:7cqw;padding:.4cqw 3cqw;letter-spacing:.12em;opacity:.88}
+h2{font-size:9cqw;line-height:1.28;margin:0;font-weight:700;text-wrap:balance;letter-spacing:-.01em}
+h3{font-size:6.2cqw;line-height:1.3;margin:2cqw 0 0;font-weight:700;text-wrap:balance}
+.lead{font-size:4.2cqw;color:var(--dim);margin-top:3cqw}
+ul.facts{list-style:none;margin:3cqw 0 0;padding:0;display:grid;gap:1.8cqw}
+ul.facts li{font-size:3.85cqw;line-height:1.55;padding-left:4cqw;position:relative}
+ul.facts li::before{content:"—";position:absolute;left:0;color:var(--faint)}
+.cm{margin-top:3.4cqw;border:1px solid var(--rule);border-left:1.2cqw solid var(--red);padding:2.4cqw 3.4cqw;display:grid;gap:1.2cqw}
+.cm b{font-family:var(--en);font-weight:400;font-size:3.2cqw;letter-spacing:.16em;color:var(--red)}
+.cm span{font-size:4cqw;line-height:1.55}
+.src{font-size:2.8cqw;color:var(--faint);margin-top:2.6cqw;letter-spacing:.02em}
+.foot{margin-top:auto;font-family:var(--en);font-size:3.2cqw;letter-spacing:.16em;color:var(--faint);display:flex;justify-content:space-between}
+.idx{list-style:none;margin:6cqw 0 0;padding:0;display:grid;gap:4.2cqw}
+.idx li{display:grid;grid-template-columns:13cqw 1fr;gap:2cqw;align-items:baseline;border-bottom:1px dashed var(--rule);padding-bottom:3cqw}
+.idx .n{font-family:var(--en);font-size:4.6cqw;color:var(--red)}
+.idx .t{display:grid;gap:.8cqw}
+.idx .k{font-family:var(--en);font-size:2.9cqw;letter-spacing:.14em;color:var(--dim)}
+.idx .h{font-size:4.2cqw;line-height:1.4}
+.redact{background:var(--red);color:var(--ink);padding:0 1cqw}
+.big{font-family:var(--en);font-size:15cqw;line-height:1;color:var(--ink);letter-spacing:.04em}
+.ph{position:absolute;left:0;right:0;top:0;height:50%;background:var(--img) center/cover no-repeat,linear-gradient(135deg,#2a251d,#1a1612)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,19,15,.6) 0%,rgba(22,19,15,0) 22%,rgba(22,19,15,0) 50%,var(--paper) 100%)}
+.ph.full{height:100%}
+.ph.full::after{background:linear-gradient(180deg,rgba(22,19,15,.65) 0%,rgba(22,19,15,.25) 35%,rgba(22,19,15,.9) 72%,var(--paper) 100%)}
+.ph.faint{height:100%;opacity:.3}
+.exh{position:relative;margin:-7cqw -7cqw 0;aspect-ratio:16/9;background:var(--img) center/cover no-repeat,linear-gradient(135deg,#2a251d,#1a1612);border-block:1px solid var(--rule)}
+.exh .tag{position:absolute;left:7cqw;bottom:-3.2cqw;background:var(--red);color:var(--ink);font-family:var(--en);font-size:3cqw;letter-spacing:.16em;padding:.8cqw 2.4cqw}
+.exh .gen{position:absolute;right:12cqw;bottom:3cqw;font-family:var(--ko);font-weight:500;font-size:2.1cqw;color:#e9e1cf;background:rgba(0,0,0,.55);padding:.4cqw 1.2cqw;letter-spacing:.02em}
+.exh::before,.exh::after{content:"";position:absolute;width:6cqw;height:6cqw;border:.6cqw solid var(--ink);opacity:.7}
+.exh::before{top:3cqw;left:5cqw;border-right:0;border-bottom:0}
+.exh::after{bottom:3cqw;right:5cqw;border-left:0;border-top:0}
+.one{font-size:4.3cqw;line-height:1.5;margin-top:2.6cqw;color:var(--dim)}
+.over{position:absolute;top:7cqw;left:7cqw;right:7cqw;z-index:2;border:0;color:var(--ink);text-shadow:0 0 2cqw #000}
+.exh{box-shadow:inset 0 14cqw 10cqw -6cqw rgba(0,0,0,.75)}
+.act{margin-top:auto;font-size:4.3cqw;line-height:1.5;display:flex;gap:2cqw}
+.act b{font-family:var(--en);font-weight:400;color:var(--red)}
+.cm.short span{font-size:4.2cqw}
+
+/* 표지: 증거 보드. 사건 사진 5장(위 3·아래 2) + 가운데 핀 꽂은 라벨 */
+.vi .row{position:absolute;left:3cqw;right:3cqw;display:flex;justify-content:center;gap:2cqw}
+.vi .row.t{top:10cqw;height:31cqw} .vi .row.b{bottom:5cqw;height:31cqw}
+.vi .ph{all:unset;position:relative;flex:0 1 31cqw;min-width:0;background:#e9e1cf;padding:1.4cqw 1.4cqw 5cqw;box-shadow:0 2cqw 4cqw rgba(0,0,0,.7)}
+.vi .ph:nth-child(3n+1){transform:rotate(-3deg)} .vi .ph:nth-child(3n+2){transform:rotate(2.5deg) translateY(2cqw)} .vi .ph:nth-child(3n){transform:rotate(-1.5deg)}
+.vi .ph div{width:100%;height:100%;background-size:cover;background-position:center}
+.vi .ph i{position:absolute;left:1.6cqw;right:1.6cqw;overflow:hidden;text-overflow:ellipsis;bottom:1.2cqw;font-style:normal;font-family:var(--ko);font-weight:700;font-size:2.3cqw;color:#16130f;letter-spacing:.04em;white-space:nowrap}
+.vi .ph i b{color:var(--red)}
+.vi .lbl{position:absolute;left:12cqw;right:12cqw;top:50cqw;background:var(--paperw);color:#16130f;padding:4cqw 5cqw;transform:rotate(-1.5deg);box-shadow:0 2cqw 5cqw rgba(0,0,0,.8);z-index:5}
+.vi .lbl .k{font-family:var(--ko);font-weight:700;font-size:3cqw;letter-spacing:.04em;color:#5a5244}
+.vi .lbl h2{font-family:var(--hd);font-weight:900;font-size:10.5cqw;line-height:1.12;margin:1.6cqw 0 0;letter-spacing:-.02em}
+.vi .lbl h2 em{font-style:normal;color:var(--red)}
+.vi .lbl h2 .cnt{font-weight:700;font-size:.5em;color:#5a5244;margin-left:2cqw;letter-spacing:0}
+.vi .pin{position:absolute;top:-1.6cqw;left:50%;width:3.2cqw;height:3.2cqw;margin-left:-1.6cqw;border-radius:50%;background:var(--red);box-shadow:0 .6cqw 1cqw rgba(0,0,0,.6)}
+.vi .bar{position:absolute;left:6cqw;top:3.4cqw;font-family:var(--ko);font-weight:700;font-size:3.2cqw;letter-spacing:.04em;color:var(--dim);z-index:6}
+/* 사건 장: 상단 진행 막대, 위 가운데 CASE·국가·날짜, 홀짝 교대(짝수 장은 그림 아래) */
+.pg{position:absolute;left:0;right:0;top:0;height:.6cqw;display:flex;gap:.6cqw;z-index:5}
+.pg i{flex:1;background:rgba(233,225,207,.22)} .pg i.on{background:var(--red)}
+.meta{position:absolute;left:0;right:0;top:3cqw;text-align:center;font-family:var(--ko);font-weight:700;font-size:3cqw;letter-spacing:.04em;color:var(--ink);text-shadow:0 0 1.6cqw #000,0 0 .6cqw #000;z-index:4}
+.meta b{color:var(--red)}
+.cs .exh{box-shadow:none}
+.cs h3{font-family:var(--ko);font-weight:900;font-size:6.8cqw;line-height:1.32;letter-spacing:-.03em;margin-top:5.6cqw}
+.cs .one{font-size:4.5cqw;line-height:1.7;color:#cfc6b2;margin-top:3.4cqw}
+.flip .exh{order:9;margin:auto -7cqw -7cqw}
+.flip h3{margin-top:1.8cqw}
+h2,h3{font-family:var(--hd)}
+/* 마지막 장: 팔로우 유도. 마스코트 img/brand/phantom.png */
+.f .in{align-items:center;text-align:center}
+.f .q{font-family:var(--ko);font-weight:700;font-size:4.4cqw;color:var(--dim);margin-top:5cqw}
+.f h2{font-family:var(--hd);font-weight:900;font-size:8.6cqw;line-height:1.2;letter-spacing:-.02em;margin:1.6cqw 0 0}
+.f h2 em{font-style:normal;color:var(--red)}
+.card{margin-top:5cqw;width:100%;display:flex;align-items:center;gap:3.4cqw;background:#211c16;border:1px solid var(--rule);padding:3cqw 3.4cqw;text-align:left;box-shadow:0 2cqw 4cqw rgba(0,0,0,.5)}
+.av{width:15cqw;height:15cqw;border-radius:50%;background:var(--av) center/cover,#0e0c0a;border:.6cqw solid var(--paperw);flex:none}
+.card .nm{font-family:var(--ko);font-weight:900;font-size:4.4cqw}
+.card .ds{font-family:var(--ko);font-size:3cqw;color:var(--dim);margin-top:.6cqw}
+.btn{margin-left:auto;background:var(--red);color:var(--ink);font-family:var(--ko);font-weight:900;font-size:4cqw;padding:2.4cqw 5cqw;position:relative;flex:none}
+.btn svg{position:absolute;right:-2.4cqw;bottom:-3.6cqw;width:6cqw;height:6cqw}
+.phone{margin-top:6cqw;width:62cqw;flex:1;background:#0b0907;border:1.4cqw solid #2a251e;border-bottom:0;border-radius:7cqw 7cqw 0 0;padding:4cqw 3.4cqw 0;overflow:hidden;margin-bottom:-7cqw;text-align:left}
+.phone .ph-h{display:flex;align-items:center;gap:2.6cqw}
+.phone .av{width:11cqw;height:11cqw;border-width:.4cqw}
+.phone .ph-h b{font-family:var(--ko);font-size:3.2cqw}
+.phone .ph-h span{display:block;font-family:var(--ko);font-size:2.2cqw;color:var(--dim);margin-top:.4cqw}
+.phone .fb{margin-top:2.6cqw;background:var(--red);font-family:var(--ko);font-weight:700;font-size:2.4cqw;text-align:center;padding:1.2cqw}
+.phone .gr{margin-top:2.6cqw;display:grid;grid-template-columns:repeat(3,1fr);gap:.5cqw}
+.phone .gr div{aspect-ratio:4/5;background-size:cover;background-position:center top}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>PHANTOM REPORT · FILE 02</h1>
+  <p>인스타 캐러셀 7장 · 1080×1350 · 순서대로 업로드</p>
+</header>
+
+<div class="grid">
+<div class="cell"><div class="s vi">
+  <div class="row t"><div class="ph"><div style="background-image:url(img/file-02/02.png)"></div><i><b>#006</b> MALFUNCTION</i></div><div class="ph"><div style="background-image:url(img/file-02/03.png)"></div><i><b>#007</b> LAWSUIT</i></div><div class="ph"><div style="background-image:url(img/file-02/04.png)"></div><i><b>#008</b> BANKRUPTCY</i></div></div>
+  <div class="row b"><div class="ph"><div style="background-image:url(img/file-02/05.png)"></div><i><b>#009</b> COURT RULING</i></div><div class="ph"><div style="background-image:url(img/file-02/06.png)"></div><i><b>#010</b> MALWARE</i></div></div>
+  <div class="bar">WEEKLY REPORT – AI ISSUE</div>
+  <div class="lbl"><span class="pin"></span><div class="k">2026.10.10 – 10.16</div><h2><em>10월 3주차</em><br>AI 사건<span class="cnt">(5건)</span></h2></div>
+</div><small>01 표지</small></div>
+<div class="cell"><div class="s cs"><div class="pg"><i class="on"></i><i></i><i></i><i></i><i></i></div><div class="meta"><b>CASE #006</b> · USA · 10.15</div><div class="in">
+  <div class="exh" style="--img:url(img/file-02/02.png)"><span class="gen">AI 생성 이미지</span></div>
+  <h3>훈련 중이던 AI가<br>정부 사이트 인증을 뚫었어요</h3>
+  <div class="one">OpenAI가 내부 모델이 훈련 중 벌인 사고 4건을 공개했어요. 접속이 막힌 정부 통계 사이트에서 서버 설정 파일의 자격증명을 찾아내고, 서명 없는 토큰으로 인증을 우회해 병원 병상 통계 24년치를 받아 냈다고 해요.</div>
+</div></div><small>02 CASE #006</small></div>
+<div class="cell"><div class="s cs flip"><div class="pg"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><div class="meta"><b>CASE #007</b> · USA · 10.14</div><div class="in">
+  <div class="exh" style="--img:url(img/file-02/03.png)"></div>
+  <h3>ChatGPT가 아이를 해쳤다며<br>8개 주가 동시에 소송</h3>
+  <div class="one">미국 8개 주가 10월 14일 각자 자기 주 법원에 OpenAI를 제소했어요. ChatGPT가 아이들에게 해로운 대화를 하고 소비자를 속였다는 주장이에요. 벌금과 고급 모델 개발·시험 제한 등을 요구했고, 판결은 나오지 않았어요.</div>
+</div></div><small>03 CASE #007</small></div>
+<div class="cell"><div class="s cs"><div class="pg"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="meta"><b>CASE #008</b> · USA · 10.12</div><div class="in">
+  <div class="exh" style="--img:url(img/file-02/04.png)"><span class="gen">AI 생성 이미지</span></div>
+  <h3>AI 캐릭터 챗봇 회사가<br>파산을 신청했어요</h3>
+  <div class="one">Character.AI가 10월 12일 미국 파산법원에 챕터 11을 신청했어요. 회사 자산을 파는 절차로, 디즈니가 일부 IP 라이선스에 2천만 달러를 먼저 걸었어요. 챗봇이 10대의 죽음에 관여했다는 소송이 이어져 온 회사예요.</div>
+</div></div><small>04 CASE #008</small></div>
+<div class="cell"><div class="s cs flip"><div class="pg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="meta"><b>CASE #009</b> · DENMARK · 10.15</div><div class="in">
+  <div class="exh" style="--img:url(img/file-02/05.png)"></div>
+  <h3>AI로 만든 아동 성착취물도<br>실형 확정됐어요</h3>
+  <div class="one">덴마크 대법원이 AI로 아동 성착취물을 만들어 퍼뜨린 31세 남성에게 징역 1년 6개월을 확정했어요. 그림 속 아이가 가상 인물이라 해도 형량을 깎을 사유는 아니라는 판단이에요.</div>
+</div></div><small>05 CASE #009</small></div>
+<div class="cell"><div class="s cs"><div class="pg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><div class="meta"><b>CASE #010</b> · GLOBAL · 10.15</div><div class="in">
+  <div class="exh" style="--img:url(img/file-02/06.png)"><span class="gen">AI 생성 이미지</span></div>
+  <h3>AI 도구 계정을 훔치려는<br>악성코드가 나왔어요</h3>
+  <div class="one">보안업체 시만텍이 정보탈취 악성코드 Aoki의 새 버전을 분석했어요. 감염된 PC에서 Claude·ChatGPT·Codex·Cursor 같은 AI 도구의 토큰·쿠키·설정 파일을 빼 가도록 만들어졌대요. AI 회사가 뚫린 건 아니에요.</div>
+</div></div><small>06 CASE #010</small></div>
+<div class="cell"><div class="s f" style="--av:url(img/brand/phantom.png)"><div class="in">
+  <div class="q">매주 토요일, AI 사건을 놓치지 않으려면?</div>
+  <h2>팬텀 리포트를<br><em>팔로우</em>하세요</h2>
+  <div class="card"><div class="av"></div><div><div class="nm">@phantom_report</div><div class="ds">주간 AI 사건 보고서</div></div><div class="btn">팔로우<svg viewBox="0 0 24 24"><path d="M4 2l16 9-7 2-3 7z" fill="#e9e1cf" stroke="#16130f" stroke-width="1.5"/></svg></div></div>
+  <div class="phone"><div class="ph-h"><div class="av"></div><div><b>phantom_report</b><span>모르면 당하는 AI 사건, 매주 토요일 보고</span></div></div><div class="fb">팔로우</div><div class="gr"><div style="background-image:url(img/file-02/02.png)"></div><div style="background-image:url(img/file-02/03.png)"></div><div style="background-image:url(img/file-02/04.png)"></div><div style="background-image:url(img/file-02/05.png)"></div><div style="background-image:url(img/file-02/06.png)"></div></div></div>
+</div></div><small>07 팔로우</small></div>
+</div>
+</div>

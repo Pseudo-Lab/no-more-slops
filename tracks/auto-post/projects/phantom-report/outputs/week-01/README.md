@@ -6,6 +6,7 @@
 - 게시용 캡션: [file-01/caption.txt](file-01/caption.txt)
 - 편집 가능한 원본: [디자인 HTML](../../design/file-01.html), [장별 이미지](../../design/img/file-01/), [원고·출처·최종 대조](../../issues/file-01.md)
 - 제작 과정: [1주차 개선 기록](../../devlog/week-01.md)
+- 발표 자료: [phantom_report_week_1.pptx](phantom_report_week_1.pptx) (2주차 PR에서 추가)
 
 프로젝트 폴더에서 아래 명령으로 게시용 PNG를 다시 만듭니다. Python과 Playwright Chromium이 필요합니다. 재생성할 수 있는 PNG는 기존 방침대로 커밋하지 않으며, 기존 캡션과 디자인·이미지 원본은 보존했습니다.
 
