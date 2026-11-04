@@ -1,0 +1,15 @@
+This is pdfTeX, Version 3.141592653 (fixture log, invented content)
+Overfull \hbox (3.47562pt too wide) in paragraph at lines 7--7
+[]\T1/ptm/m/n/10 some text
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--1
+
+Overfull \hbox (0.8pt too wide) detected at line 120
+LaTeX Warning: Reference `sec:missing' on page 3 undefined on input line 12.
+LaTeX Warning: Citation `nobody2023' on page 1 undefined on input line 30.
+Package natbib Warning: Citation `ghost2024' on page 2 undefined on input line 88.
+LaTeX Warning: Reference `fig:a-very-long-label-name-used-to-test-wrapping-x' o
+n page 4 undefined on input line 55.
+LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+Output written on main.pdf (5 pages, 12345 bytes).

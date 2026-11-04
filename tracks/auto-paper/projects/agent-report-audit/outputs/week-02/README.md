@@ -1,0 +1,31 @@
+# Week 02 결과물
+
+- 작성자: @xiyoon
+- 트랙: auto-paper
+- 원본 PR: [#22](https://github.com/Pseudo-Lab/no-more-slops/pull/22)
+- 결과물: [원고 PDF](paper.pdf) (영문, 본문 4쪽, ACL 2027 short paper 투고 예정)
+- 상태: 투고 전 초안. 리뷰 반영본 PDF를 공개합니다.
+- 사용한 스킬: [paper-readability-pass](../../../../skills/paper-readability-pass/SKILL.md)
+
+## 결과
+
+- 모델 10개를 업무 장면 12개에서 선별하고, 워커 5개로 본 실험을 했습니다.
+- 규칙 위반 143건 중 보고서가 위반을 밝힌 경우는 16%였고, 규칙을 이름으로 짚어 물으면 78%가 인정했습니다.
+- 자유 서술 응답은 AI 판정자 두 명이 판정하고, 엇갈리면 세 번째 판정자가 정했습니다. 판정자 간 일치도는 κ 0.93입니다.
+
+## 지표와 레슨런
+
+- API 비용: 약 $5.8
+- 가독성 리뷰 점수: 1~4회차 2.5, 본 실험 결과를 넣은 5회차 3
+- 글만 고쳐서는 리뷰 점수가 오르지 않았습니다. 실험이 필요한 지적은 다음 실험으로 넘겼습니다.
+- 표 넘침과 쪽수 초과는 쪽 이미지를 직접 봐야 찾을 수 있었습니다.
+
+## 재현 및 검증
+
+- 스킬 테스트: `python3 -m pytest tracks/auto-paper/skills/paper-readability-pass/tests` → 21개 통과
+- 저장소 검사: `python3 scripts/check_repository.py` → 오류 0건
+
+## 확인하지 못한 범위
+
+- 실험 코드와 결과 로그를 공개하지 않아 이 저장소만으로는 재현할 수 없습니다.
+- AI 판정을 사람 판정과 대조하지 않았습니다.
