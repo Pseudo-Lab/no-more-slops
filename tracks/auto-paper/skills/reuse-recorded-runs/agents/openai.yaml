@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reuse Recorded Runs"
+  short_description: "Change limits, thresholds or final rules by reusing recorded LLM trajectories"
+  default_prompt: "Use $reuse-recorded-runs to change this experiment's repair limit and final-answer rule from the recorded runs, rerunning only what the change requires."
