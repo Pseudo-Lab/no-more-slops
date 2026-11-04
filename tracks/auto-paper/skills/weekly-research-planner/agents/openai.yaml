@@ -1,0 +1,4 @@
+interface:
+  display_name: "주간 연구 실행 계획"
+  short_description: "연구 주제 MD를 7일 실험·4페이지 논문 실행 계획 7개로 변환"
+  default_prompt: "$weekly-research-planner를 사용해 첨부한 연구 주제 MD를 순차 실행할 7개의 일차별 MD 파일로 만들어 줘."
