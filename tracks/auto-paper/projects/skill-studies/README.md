@@ -1,5 +1,7 @@
 # skill-studies
 
+**Week 03 최신 작업본:** [ProbeFlow 전체 논문 22쪽·보충자료 253쪽과 연구 스킬](outputs/week-03/README.md). 2026-11-02 작업 초안이며 최종 문서 검토 대기, no_gain/needs_evidence 상태입니다. 아래 Week 01 기록은 그대로 보존합니다.
+
 SkillMerge, Second-Chance, ProbeFlow 연구 설계 논문 3편과 한국어 해설서 3권, 원문·조판 도구·검증 기록을 보관합니다.
 
 **최신 수정본:** [v13 제출용 논문 3편·편집 원문·검증](outputs/week-01/revisions/v13-20261018/README.md). 기존 Week 01 원고의 수정이며 새 주차를 추정하지 않습니다. 원본 v13에 저장소가 요구하는 영문 Acknowledgements만 추가한 별도 제출본입니다. 이전 4페이지 논문과 해설·검증 기록은 보존했습니다.
