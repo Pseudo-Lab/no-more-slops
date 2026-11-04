@@ -1,0 +1,574 @@
+{
+  "app_id": "6824167683",
+  "base_territory": "KOR",
+  "exclude_territories": [
+    "CHN"
+  ],
+  "group": {
+    "reference_name": "Fewshot Pro"
+  },
+  "subscriptions": [
+    {
+      "key": "yearly",
+      "product_id": "com.minhyeong.albumate.pro.yearly",
+      "reference_name": "Pro Yearly",
+      "period": "ONE_YEAR",
+      "level": 1,
+      "price": 19000,
+      "intro_offer": {
+        "mode": "FREE_TRIAL",
+        "duration": "ONE_WEEK",
+        "periods": 1
+      },
+      "review_note": "Pro unlocks unlimited classes, sorting the whole library at once, background sorting while charging, and removes ads. Purchase from Settings > Upgrade to Pro or the Review tab. Restore Purchases is in Settings and on the Pro screen.",
+      "screenshot": "screenshots/paywall-en-yearly.png"
+    },
+    {
+      "key": "monthly",
+      "product_id": "com.minhyeong.albumate.pro.monthly",
+      "reference_name": "Pro Monthly",
+      "period": "ONE_MONTH",
+      "level": 2,
+      "price": 2900,
+      "review_note": "Pro unlocks unlimited classes, sorting the whole library at once, background sorting while charging, and removes ads. Purchase from Settings > Upgrade to Pro or the Review tab. Restore Purchases is in Settings and on the Pro screen.",
+      "screenshot": "screenshots/paywall-en-monthly.png"
+    }
+  ],
+  "non_consumables": [
+    {
+      "key": "lifetime",
+      "product_id": "com.minhyeong.albumate.pro.lifetime",
+      "reference_name": "Pro Lifetime",
+      "price": 39000,
+      "review_note": "Pro unlocks unlimited classes, sorting the whole library at once, background sorting while charging, and removes ads. Purchase from Settings > Upgrade to Pro or the Review tab. Restore Purchases is in Settings and on the Pro screen.",
+      "screenshot": "screenshots/paywall-en-lifetime.png"
+    }
+  ],
+  "localizations": {
+    "ar-SA": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro الشهري",
+        "description": "بلا إعلانات، فئات وتصنيف تلقائي بلا حدود"
+      },
+      "yearly": {
+        "name": "Fewshot Pro السنوي",
+        "description": "Pro لمدة عام، يبدأ بتجربة مجانية لمدة 7 أيام"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro مدى الحياة",
+        "description": "ادفع مرة واحدة واحتفظ بـ Pro إلى الأبد"
+      }
+    },
+    "ca": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Mensual",
+        "description": "Classifica fotos sense anuncis ni límits"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Anual",
+        "description": "Un any de Pro, amb 7 dies de prova gratuïta"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Vitalici",
+        "description": "Paga un cop i conserva Pro per sempre"
+      }
+    },
+    "cs": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro měsíčně",
+        "description": "Bez reklam, neomezené kategorie i třídění"
+      },
+      "yearly": {
+        "name": "Fewshot Pro ročně",
+        "description": "Pro na rok, prvních 7 dní zdarma"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro navždy",
+        "description": "Zaplaťte jednou a Pro máte navždy"
+      }
+    },
+    "da": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Månedlig",
+        "description": "Sortér uden reklamer og uden begrænsninger"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Årlig",
+        "description": "Et år med Pro, først 7 dage gratis"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Livstid",
+        "description": "Betal én gang og behold Pro for altid"
+      }
+    },
+    "de-DE": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Monatlich",
+        "description": "Werbefrei, Kategorien & Sortieren ohne Limit"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Jährlich",
+        "description": "Ein Jahr Pro, zuerst 7 Tage gratis testen"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Lebenslang",
+        "description": "Einmal zahlen, Pro für immer behalten"
+      }
+    },
+    "el": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Μηνιαία",
+        "description": "Ταξινόμηση χωρίς διαφημίσεις και χωρίς όρια"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Ετήσια",
+        "description": "Ένας χρόνος Pro, με δωρεάν δοκιμή 7 ημερών"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Εφ’ όρου ζωής",
+        "description": "Μία πληρωμή, το Pro δικό σας για πάντα"
+      }
+    },
+    "en-US": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Monthly",
+        "description": "No ads, unlimited classes and sorting."
+      },
+      "yearly": {
+        "name": "Fewshot Pro Yearly",
+        "description": "Pro for a year, starting with a 7-day trial."
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Lifetime",
+        "description": "Pay once and keep Pro forever."
+      }
+    },
+    "es-ES": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Mensual",
+        "description": "Clasifica tus fotos sin anuncios ni límites"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Anual",
+        "description": "Pro por un año, con prueba gratis de 7 días"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro de por vida",
+        "description": "Paga una vez y conserva Pro para siempre"
+      }
+    },
+    "es-MX": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Mensual",
+        "description": "Clasifica tus fotos sin anuncios ni límites"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Anual",
+        "description": "Pro por un año, con prueba gratis de 7 días"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro de por vida",
+        "description": "Paga una vez y quédate con Pro para siempre"
+      }
+    },
+    "fi": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Kuukausittainen",
+        "description": "Lajittele ilman mainoksia ja rajoituksia"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Vuosittainen",
+        "description": "Pro vuodeksi, ensin 7 päivää ilmaiseksi"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Elinikäinen",
+        "description": "Maksa kerran, Pro on sinun ikuisesti"
+      }
+    },
+    "fr-FR": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Mensuel",
+        "description": "Sans publicité, catégories et tri illimités"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Annuel",
+        "description": "Un an de Pro, avec 7 jours d’essai gratuit"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro à vie",
+        "description": "Payez une fois, gardez Pro pour toujours"
+      }
+    },
+    "he": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro חודשי",
+        "description": "בלי פרסומות, קטגוריות ומיון ללא הגבלה"
+      },
+      "yearly": {
+        "name": "Fewshot Pro שנתי",
+        "description": "שנה של Pro, מתחילה ב-7 ימי ניסיון בחינם"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro לכל החיים",
+        "description": "תשלום חד-פעמי, ו-Pro שלך לתמיד"
+      }
+    },
+    "hi": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro मासिक",
+        "description": "कोई विज्ञापन नहीं, असीमित श्रेणियाँ और छँटाई"
+      },
+      "yearly": {
+        "name": "Fewshot Pro वार्षिक",
+        "description": "1 साल Pro, 7 दिन के मुफ़्त ट्रायल से शुरू"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro आजीवन",
+        "description": "एक बार भुगतान करें, Pro हमेशा के लिए"
+      }
+    },
+    "hr": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro mjesečno",
+        "description": "Razvrstavajte bez oglasa i ograničenja"
+      },
+      "yearly": {
+        "name": "Fewshot Pro godišnje",
+        "description": "Pro na godinu, uz prvih 7 dana besplatno"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro doživotno",
+        "description": "Platite jednom i zadržite Pro zauvijek"
+      }
+    },
+    "hu": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro havi",
+        "description": "Besorolás hirdetések és korlátok nélkül"
+      },
+      "yearly": {
+        "name": "Fewshot Pro éves",
+        "description": "Egy év Pro, 7 napos ingyenes próbaidővel"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro örökös",
+        "description": "Egyszeri fizetés, és a Pro örökre az Öné"
+      }
+    },
+    "id": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Bulanan",
+        "description": "Tanpa iklan, kategori & pemilahan tanpa batas"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Tahunan",
+        "description": "Setahun Pro, diawali uji coba gratis 7 hari"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Seumur Hidup",
+        "description": "Bayar sekali, Pro jadi milik Anda selamanya"
+      }
+    },
+    "it": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Mensile",
+        "description": "Smista le foto senza pubblicità né limiti"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Annuale",
+        "description": "Un anno di Pro, i primi 7 giorni gratis"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro a vita",
+        "description": "Paghi una volta e tieni Pro per sempre"
+      }
+    },
+    "ja": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro 月額",
+        "description": "広告なし、カテゴリと自動仕分けが無制限"
+      },
+      "yearly": {
+        "name": "Fewshot Pro 年額",
+        "description": "7日間の無料トライアルから始まる1年間のPro"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro 買い切り",
+        "description": "1回の購入でProをずっと使えます"
+      }
+    },
+    "ko": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro 월간",
+        "description": "광고 없이 클래스와 자동 분류 무제한"
+      },
+      "yearly": {
+        "name": "Fewshot Pro 연간",
+        "description": "7일 무료 체험 후 1년 이용"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro 평생",
+        "description": "한 번 결제로 Pro를 계속 사용"
+      }
+    },
+    "ms": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Bulanan",
+        "description": "Tiada iklan, kategori & pengisihan tanpa had"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Tahunan",
+        "description": "Percubaan percuma 7 hari, lalu Pro setahun"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Seumur Hidup",
+        "description": "Bayar sekali, Pro milik anda selama-lamanya"
+      }
+    },
+    "nl-NL": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Maandelijks",
+        "description": "Reclamevrij, onbeperkt categorieën & sorteren"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Jaarlijks",
+        "description": "Een jaar Pro, eerst 7 dagen gratis proberen"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Levenslang",
+        "description": "Eén keer betalen en Pro voor altijd houden"
+      }
+    },
+    "no": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Månedlig",
+        "description": "Sorter uten reklame og uten begrensninger"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Årlig",
+        "description": "Ett år med Pro, først 7 dager gratis"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Livstid",
+        "description": "Betal én gang og behold Pro for alltid"
+      }
+    },
+    "pl": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro miesięcznie",
+        "description": "Bez reklam, kategorie i sortowanie bez limitu"
+      },
+      "yearly": {
+        "name": "Fewshot Pro rocznie",
+        "description": "Pro na rok, pierwsze 7 dni za darmo"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro dożywotnio",
+        "description": "Zapłać raz i korzystaj z Pro na zawsze"
+      }
+    },
+    "pt-BR": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Mensal",
+        "description": "Classifique fotos sem anúncios e sem limites"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Anual",
+        "description": "Pro por um ano, com teste grátis de 7 dias"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Vitalício",
+        "description": "Pague uma vez e tenha o Pro para sempre"
+      }
+    },
+    "pt-PT": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Mensal",
+        "description": "Classifica fotos sem anúncios e sem limites"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Anual",
+        "description": "Um ano de Pro, com teste gratuito de 7 dias"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Vitalício",
+        "description": "Paga uma vez e fica com o Pro para sempre"
+      }
+    },
+    "ro": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Lunar",
+        "description": "Fără reclame, categorii și sortare nelimitate"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Anual",
+        "description": "Un an de Pro, cu 7 zile de probă gratuită"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro pe viață",
+        "description": "Plătești o dată și ai Pro pe viață"
+      }
+    },
+    "ru": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro на месяц",
+        "description": "Сортировка без рекламы и ограничений"
+      },
+      "yearly": {
+        "name": "Fewshot Pro на год",
+        "description": "Pro на год, первые 7 дней бесплатно"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro навсегда",
+        "description": "Одна оплата — и Pro навсегда"
+      }
+    },
+    "sk": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro mesačne",
+        "description": "Bez reklám, neobmedzené kategórie a triedenie"
+      },
+      "yearly": {
+        "name": "Fewshot Pro ročne",
+        "description": "Pro na rok, prvých 7 dní zadarmo"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro navždy",
+        "description": "Zaplaťte raz a Pro máte navždy"
+      }
+    },
+    "sv": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Månadsvis",
+        "description": "Sortera utan annonser och utan begränsningar"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Årsvis",
+        "description": "Ett år med Pro, först 7 dagar gratis"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Livstid",
+        "description": "Betala en gång och behåll Pro för alltid"
+      }
+    },
+    "th": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro รายเดือน",
+        "description": "ไม่มีโฆษณา หมวดหมู่และคัดแยกไม่จำกัด"
+      },
+      "yearly": {
+        "name": "Fewshot Pro รายปี",
+        "description": "Pro 1 ปี เริ่มด้วยทดลองใช้ฟรี 7 วัน"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro ตลอดชีพ",
+        "description": "จ่ายครั้งเดียว ใช้ Pro ได้ตลอดไป"
+      }
+    },
+    "tr": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Aylık",
+        "description": "Reklamsız, sınırsız kategori ve sınıflandırma"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Yıllık",
+        "description": "7 günlük ücretsiz deneme, ardından 1 yıl Pro"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Ömür Boyu",
+        "description": "Bir kez ödeyin, Pro sonsuza dek sizin"
+      }
+    },
+    "uk": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro на місяць",
+        "description": "Без реклами, категорії й сортування без меж"
+      },
+      "yearly": {
+        "name": "Fewshot Pro на рік",
+        "description": "Pro на рік, перші 7 днів безкоштовно"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro назавжди",
+        "description": "Одна оплата — і Pro назавжди"
+      }
+    },
+    "vi": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro Hằng tháng",
+        "description": "Không quảng cáo, danh mục và phân loại vô hạn"
+      },
+      "yearly": {
+        "name": "Fewshot Pro Hằng năm",
+        "description": "Dùng Pro 1 năm, bắt đầu bằng 7 ngày miễn phí"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro Trọn đời",
+        "description": "Trả một lần, dùng Pro mãi mãi"
+      }
+    },
+    "zh-Hans": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro 月度",
+        "description": "无广告，无限类别和自动分类"
+      },
+      "yearly": {
+        "name": "Fewshot Pro 年度",
+        "description": "先 7 天免费试用，再享一年 Pro"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro 终身",
+        "description": "一次付费，永久拥有 Pro"
+      }
+    },
+    "zh-Hant": {
+      "group": "Fewshot Pro",
+      "monthly": {
+        "name": "Fewshot Pro 月度",
+        "description": "無廣告，無限類別和自動分類"
+      },
+      "yearly": {
+        "name": "Fewshot Pro 年度",
+        "description": "先 7 天免費試用，再享一年 Pro"
+      },
+      "lifetime": {
+        "name": "Fewshot Pro 終身",
+        "description": "一次付費，永久擁有 Pro"
+      }
+    }
+  }
+}

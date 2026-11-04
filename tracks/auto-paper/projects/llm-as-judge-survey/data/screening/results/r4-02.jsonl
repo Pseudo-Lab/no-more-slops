@@ -1,0 +1,83 @@
+{"key":"arxiv:2505.04847","decision":"include","code":"I1","reason":"다양한 인간 주석 환각 사례를 활용해 RAG 응답의 충실도를 판정하는 LLM-as-a-judge 프레임워크 FaithJudge를 제안하고 기존 HHEM 기반 탐지보다 개선됨을 보임"}
+{"key":"arxiv:2505.00681","decision":"exclude","code":"E2","reason":"주 기여는 멀티모달 모델의 영상 추론 능력을 평가하는 MINERVA 데이터셋이며 LLM 판정으로 추론 과정을 채점하는 부분은 부수적 분석에 그침"}
+{"key":"arxiv:2508.08285","decision":"include","code":"I2","reason":"인간 연구로 ROUGE가 환각 탐지 성능을 왜곡함을 보이고 인간과 정렬된 LLM-as-Judge 기준으로 재평가해 평가 지표의 신뢰성을 분석함"}
+{"key":"arxiv:2407.10241","decision":"include","code":"I1","reason":"LLM 출력의 사회적 편향을 탐지하는 평가 도구 BiasAlert를 제안하고 GPT-4-as-Judge와 직접 비교해 우수함을 보임"}
+{"key":"arxiv:2406.07070","decision":"include","code":"I4","reason":"대화 수준 환각 평가용 벤치마크 HalluDial로 LLM의 환각 평가 능력을 메타평가하고 전용 판정 모델 HalluJudge를 학습함"}
+{"key":"arxiv:2502.11736","decision":"exclude","code":"E1","reason":"AI 생성 동료심사 리뷰의 평가 지표 체계와 리뷰 생성 에이전트를 제안하지만 LLM 평가자 자체의 신뢰성 검증은 초록에 드러나지 않음"}
+{"key":"doi:10.7759/cureus.43023","decision":"exclude","code":"E5","reason":"체계적 문헌고찰의 질 평가에 LLM을 활용하는 가능성을 논한 Cureus 사설로 실증 연구 논문이 아님"}
+{"key":"arxiv:2506.21621","decision":"include","code":"I3","reason":"인간이 평가한 LLM 수학 증명 5천여 개 데이터셋을 구축하고 이를 이용해 증명 정답 여부를 판정하는 8B 모델을 Gemini-2.5-Pro 수준으로 미세조정함"}
+{"key":"doi:10.1145/3626772.3661346","decision":"include","code":"I8","reason":"LLM 생성 요약의 자동 평가 방법을 정리한 SIGIR 튜토리얼성 가이드로 LLM이 LLM 출력을 평가하는 방식의 신뢰성 한계를 다룸"}
+{"key":"arxiv:2510.04040","decision":"include","code":"I4","reason":"전문가 주석 CoT 궤적으로 LLM-as-judge를 포함한 11개 불충실성 탐지 방법을 비교 평가하는 FaithCoT-Bench 벤치마크를 제시함"}
+{"key":"doi:10.18653/v1/2025.acl-long.179","decision":"include","code":"I3","reason":"계층적 RAG 오류 체계를 바탕으로 세분화된 오류 피드백을 주는 비평(critic) 모델을 학습하고 이를 RAG 교정 워크플로에 활용함"}
+{"key":"arxiv:2504.10337","decision":"include","code":"I3","reason":"강화학습으로 수학 풀이의 정답 여부를 판정하는 장문 CoT 검증 LLM Heimdall을 학습해 검증 정확도를 62.5%에서 94.5%로 높임"}
+{"key":"arxiv:2511.21654","decision":"include","code":"I5","reason":"코딩 에이전트의 보상 해킹을 LLM 판정·보류 테스트·파일 수정 탐지로 측정하고 이를 인간 검토와 대조해 LLM 판정의 효과를 검증함"}
+{"key":"arxiv:2504.01995","decision":"include","code":"I5","reason":"올림피아드 수학 증명을 인간이 평가하고 LLM이 올바른 추론과 결함 있는 풀이를 구별하지 못함을 보여 증명 평가자로서의 LLM 한계를 분석함"}
+{"key":"arxiv:2601.03555","decision":"include","code":"I1","reason":"도구 사용 에이전트의 과정 보상에서 LLM 판정의 잡음을 줄이기 위해 스킬 프로토타입 기반의 구조화된 루브릭으로 판정을 제약하는 SCRIBE를 제안함"}
+{"key":"arxiv:2502.13311","decision":"exclude","code":"E3","reason":"코딩 튜터 에이전트의 턴별 검증기를 학습하는 TRAVER와 학생 시뮬레이션 평가 프로토콜을 제안하나 LLM 판정 모델과 비교하는 연구가 아님"}
+{"key":"arxiv:2312.10321","decision":"include","code":"I5","reason":"LLM이 두 SQL 쿼리의 동등성을 판정하도록 하는 프롬프트 기법을 제안하고 text-to-SQL 평가에서 실행 정확도보다 인간 선호와 더 잘 일치함을 보임"}
+{"key":"arxiv:2501.00269","decision":"include","code":"I8","reason":"요약·QA·번역의 충실도 평가 방법을 검토한 리뷰로 LLM을 충실도 평가자로 쓰는 방식이 인간 판단과 가장 높은 상관을 보인다고 정리함"}
+{"key":"arxiv:2510.24592","decision":"include","code":"I4","reason":"자동 형식화 방법 ReForm과 함께 LLM 판정자를 검증하는 전문가 주석 벤치마크 ConsistencyCheck 859문항을 제시함"}
+{"key":"doi:10.1109/tvcg.2024.3456354","decision":"include","code":"I1","reason":"LLM-as-a-judge 기반 쌍비교 평가 결과를 해석하기 위한 시각 분석 도구 LLM Comparator를 Google 실무자와 함께 설계함"}
+{"key":"arxiv:2502.16182","decision":"include","code":"I7","reason":"생성형 LLM을 선호 분류기로 쓰는 IPO를 제안하고 RewardBench에서 LLM의 선호 분류 능력을 보상모델과 비교 평가함"}
+{"key":"arxiv:2408.03837","decision":"include","code":"I4","reason":"35개 이상의 안전 벤치마크로 LLM과 판정 모델을 함께 벤치마킹하는 도구 WalledEval과 판정자의 과잉 안전성 평가 데이터셋을 제시함"}
+{"key":"arxiv:2309.12030","decision":"include","code":"I5","reason":"광고 문구 생성 벤치마크 CAMERA를 구축하고 기존 지표와 LLM 기반 평가자가 인간 평가와 얼마나 일치하는지 검토함"}
+{"key":"arxiv:2507.09075","decision":"include","code":"I3","reason":"250만 개의 문제-풀이-비평 데이터로 코드 생성과 비평을 함께 학습한 모델을 만들고 비평 모델로 풀이를 선별해 성능을 높임"}
+{"key":"arxiv:2504.01282","decision":"include","code":"I2","reason":"정답과 오답을 묻는 질문에 LLM이 모순되게 답하는 Prompt-Reverse Inconsistency를 발견하고 이것이 LLM-as-a-judge의 신뢰성을 훼손함을 분석함"}
+{"key":"doi:10.1145/3613905.3650774","decision":"include","code":"I5","reason":"에너지 교육 게임에서 ChatGPT-3.5의 플레이어 답변 평가를 전문가 평가와 비교해 81% 정확도를 보고함"}
+{"key":"arxiv:2510.11512","decision":"exclude","code":"E4","reason":"비디오 확산 모델의 직관적 물리 이해를 확산 모델 자체의 우도로 평가하는 방법으로 언어모델 판정이 아님"}
+{"key":"arxiv:2404.10595","decision":"include","code":"I5","reason":"자율주행 코너 케이스 벤치마크 CODA-LM에서 텍스트 전용 LLM 판정이 LVLM 판정보다 인간 선호와 더 잘 정렬됨을 보임"}
+{"key":"arxiv:2502.20640","decision":"exclude","code":"E1","reason":"법률 상담 RAG 벤치마크 LexRAG에서 LLM-as-a-judge 평가 파이프라인을 도입하지만 판정의 신뢰성 검증 없이 평가 도구로 사용함"}
+{"key":"arxiv:2503.02574","decision":"include","code":"I2","reason":"LLM 안전성 평가 파이프라인 전반의 잡음을 분석하며 LLM 판정자를 이용한 응답 평가 단계의 문제와 편향 감소 지침을 제시함"}
+{"key":"doi:10.1016/j.eswa.2024.125920","decision":"maybe","code":"M","reason":"[초록 추가 확인] Semantic Scholar에도 초록이 없고 침술·뜸 분야 LLM 진단과 의미 유사도 기반 생성 평가라는 제목만으로는 LLM 판정 연구인지 알 수 없음"}
+{"key":"arxiv:2509.11353","decision":"exclude","code":"E2","reason":"LLM 재순위화기가 최신 날짜의 문서를 선호하는 최신성 편향을 분석한 연구로 LLM이 생성 출력의 평가자로 쓰이는 것은 아님"}
+{"key":"arxiv:2411.13281","decision":"include","code":"I5","reason":"사용자 시뮬레이션 기반 영상 분석 아레나 VideoAutoArena의 자동 판정 체계를 인간 주석 골드 표준과 대조해 정렬을 검증함"}
+{"key":"arxiv:2504.01001","decision":"include","code":"I1","reason":"LLM으로 테스트 데이터 생성과 평가를 모두 수행하는 Zero-shot Benchmarking 프레임워크를 제안하고 순위가 인간 순위와 강하게 상관됨을 보임"}
+{"key":"arxiv:2410.15287","decision":"include","code":"I3","reason":"다중 에이전트 피드백으로 고품질 비평 데이터를 만들어 SFT와 RL로 LLM의 비평 능력을 학습시키는 MultiCritique를 제안함"}
+{"key":"arxiv:2501.10421","decision":"include","code":"I5","reason":"프로그래밍 과제 채점에 CoT와 LLM 앙상블을 적용한 CodEv를 제안하고 인간 채점자와 비교해 일관성과 신뢰성을 검증함"}
+{"key":"arxiv:2310.18122","decision":"include","code":"I4","reason":"14개 의견 요약 모델 출력과 인간 평가로 OpinSummEval을 구축하고 GPT-3/3.5 기반을 포함한 24개 자동 지표의 인간 상관을 메타평가함"}
+{"key":"arxiv:2412.11912","decision":"include","code":"I3","reason":"역할극 캐릭터 맞춤 벤치마크 CharacterBench와 함께 GPT-4보다 우수한 전용 판정 모델 CharacterJudge를 학습함"}
+{"key":"arxiv:2505.15433","decision":"include","code":"I1","reason":"LLM 자동 평가자에서도 나타나는 선택지 순서 편향을 없애기 위해 순열 불변성을 보장하는 Set-LLM 구조를 제안함"}
+{"key":"arxiv:2408.08688","decision":"include","code":"I1","reason":"선호 데이터셋 생성에서 응답 평가 모듈로 LLM-as-a-Judge, LLMs-as-a-Jury, LLM 토론을 비교해 GPT-4o 단독 판정이 가장 일관됨을 보임"}
+{"key":"arxiv:2502.16903","decision":"include","code":"I1","reason":"탈옥 평가 시스템의 불일치를 측정하고 사례별 지침을 갖춘 평가 시스템 GuidedEval로 평가자 간 분산을 76% 이상 줄임"}
+{"key":"arxiv:2507.15157","decision":"include","code":"I5","reason":"LLM의 사용자 스토리 생성 능력과 함께 LLM이 사용자 스토리의 의미적 품질을 신뢰성 있게 평가할 수 있는지를 인간 평가와 비교함"}
+{"key":"arxiv:2602.10367","decision":"include","code":"I5","reason":"의료 벤치마크 LiveMedBench에서 사례별 루브릭 기반 자동 평가가 LLM-as-a-Judge보다 전문의 판단과 더 잘 일치함을 보임"}
+{"key":"arxiv:2410.02205","decision":"include","code":"I2","reason":"LLM 판단의 이행성·교환성·부정 불변성으로 논리적 선호 일관성을 측정하는 틀을 제안하고 이를 개선하는 REPAIR 기법을 제시함"}
+{"key":"arxiv:2410.04838","decision":"include","code":"I3","reason":"같은 LLM의 쌍비교 자기평가로 타당한 근거를 가진 풀이를 골라 정답 검증기를 학습하는 REPS를 제안해 근거 수준 판별력을 높임"}
+{"key":"arxiv:2504.20090","decision":"include","code":"I3","reason":"OpenReview 리뷰 60만 건으로 학습한 아이디어 평가 모델 Judge를 과학 아이디어 생성 시스템 Spark와 결합하고 학습 데이터를 공개함"}
+{"key":"arxiv:2410.14165","decision":"include","code":"I5","reason":"BERT와 ChatGPT를 결합해 장르별 글의 세부 특성 점수와 피드백을 주는 자동 채점 시스템을 제안하고 공개 채점 데이터셋에서 기존 방법보다 우수함을 보임"}
+{"key":"arxiv:2406.09295","decision":"include","code":"I3","reason":"중국어 시각 정렬 벤치마크 AlignMMBench와 함께 GPT-4보다 평가 능력이 높은 규칙 보정 평가 모델 CritiqueVLM을 개발함"}
+{"key":"arxiv:2502.09387","decision":"include","code":"I2","reason":"다국어 TruthfulQA 확장에서 LLM-as-a-Judge 점수가 객관식 지표보다 인간 판단과 더 높은 상관을 보임을 검증함"}
+{"key":"arxiv:2502.07352","decision":"include","code":"I5","reason":"디지털 도서관의 주제 모델 품질(일관성·다양성·문서 정렬)을 맞춤 프롬프트로 LLM이 평가하는 프레임워크를 제안함"}
+{"key":"arxiv:2503.11229","decision":"include","code":"I5","reason":"GPT-4o의 발음 평가 점수를 Speechocean762의 인간 수동 점수와 비교해 멀티모달 모델의 평가자 가능성을 검토함"}
+{"key":"arxiv:2406.14598","decision":"include","code":"I4","reason":"7천여 건의 인간 주석으로 다양한 LLM-as-a-judge 설계를 메타평가해 미세조정 7B 안전 평가자가 GPT-4급 정확도를 낼 수 있음을 보임"}
+{"key":"arxiv:2307.11088","decision":"include","code":"I1","reason":"장문맥 모델 평가 지표를 조사해 n-gram 지표가 인간 판단과 맞지 않음을 보이고 길이 지시 강화 LLM 판정 방식을 제안함"}
+{"key":"arxiv:2503.03303","decision":"include","code":"I5","reason":"개방 도메인 사건 탐지에서 LLM을 평가 에이전트로 써 의미 수준 F1을 계산하는 SEOE를 제안하고 그 신뢰성을 실험으로 검증함"}
+{"key":"arxiv:2503.20648","decision":"include","code":"I5","reason":"치료 노트 품질 루브릭을 치료사와 설계하고 LLM이 완결성·간결성에서는 인간 평가자를 모방하나 충실도 평가에는 어려움을 보임을 밝힘"}
+{"key":"arxiv:2502.07399","decision":"include","code":"I5","reason":"코드 품질을 10개 차원에서 평가하는 LLM 평가기와 최적화기를 갖춘 CodeQUEST를 제안하고 평가를 Pylint 등 정적 지표와 대조해 검증함"}
+{"key":"arxiv:2504.10418","decision":"maybe","code":"M","reason":"임상 면담 대화 재구성과 함께 LLM이 전문가처럼 면담을 평가하는 Clini-Eval을 제안하지만 이 평가 모듈을 인간과 대조해 검증했는지 초록만으로 판단하기 어려움"}
+{"key":"arxiv:2410.03254","decision":"exclude","code":"E2","reason":"전문 분야 데이터 주석자로서 LLM의 성능을 체계적으로 평가한 연구로 생성 출력의 판정자가 아니라 데이터 라벨링 대체를 다룸"}
+{"key":"arxiv:2601.04195","decision":"maybe","code":"M","reason":"환자 대면 의료 대화 벤치마크 MedPI가 보정된 위원회형 LLM 판정자를 구성 요소로 두지만 판정자 검증이 주요 기여인지 초록만으로 불분명함"}
+{"key":"doi:10.1136/archdischild-2025-329846","decision":"include","code":"I5","reason":"소아과 OSCE 시나리오에서 ChatGPT 시험관 에이전트의 채점이 인간 임상의와 좋은 상관을 보임을 확인함"}
+{"key":"arxiv:2505.06698","decision":"include","code":"I1","reason":"LLM 능력 세분 평가 프레임워크 SCAN에서 사전 비교 기반 기준(PC²)을 쓰는 LLM-as-a-Judge 방식을 제안해 기존 방식보다 정확도를 높임"}
+{"key":"arxiv:2412.03597","decision":"include","code":"I8","reason":"LLM 벤치마크의 취약성을 검토하며 정적 벤치마크·인간 평가와 함께 LLM-as-judge 프레임워크의 신뢰성 한계를 논함"}
+{"key":"arxiv:2506.08584","decision":"include","code":"I5","reason":"정신건강 QA 답변에 대한 전문가 2천 건 평가를 구축하고 LLM 판정자가 모델 응답을 과대평가하고 안전 문제를 놓침을 보임"}
+{"key":"arxiv:2410.04601","decision":"include","code":"I1","reason":"과학 프로토콜 생성 평가를 위해 Llama-3를 평가자로 쓰는 프롬프트 기반 평가 방법 LLAM-EVAL을 제안함"}
+{"key":"arxiv:2412.04305","decision":"include","code":"I3","reason":"최소 주석 정렬 방법 ALMA에서 점수 집계와 자기증류로 판정(보상) 모델을 강화하는 기법을 핵심 구성 요소로 제안함"}
+{"key":"arxiv:2505.13862","decision":"include","code":"I4","reason":"탈옥 공격·방어·판정자를 다중 에이전트로 모델링한 PandaBench에서 여러 판정 방식을 비교하고 판정자 일관성을 분석함"}
+{"key":"arxiv:2511.00924","decision":"include","code":"I5","reason":"의료 진단 설명의 공감을 LLM-as-a-Judge로 평가하고 이를 인간 평가와 비교해 판정의 타당성을 확인함"}
+{"key":"arxiv:2502.19559","decision":"include","code":"I1","reason":"다중 에이전트 토론의 문제 이탈 현상을 정량화하고 이를 탐지하는 LLM-as-a-judge 방법 DRIFTJudge를 제안함"}
+{"key":"arxiv:2501.00097","decision":"include","code":"I2","reason":"대법원 판결 요약 데이터셋 CaseSumm에서 LLM 기반 평가가 기존 자동 지표보다 인간 전문가 평가와 더 높은 상관을 보이지 않음을 밝힘"}
+{"key":"arxiv:2408.09688","decision":"include","code":"I5","reason":"ASR 전사의 구어-문어 변환 벤치마크 SWAB에서 LLM 평가자가 인간 평가 순위와 강한 상관을 보임을 검증함"}
+{"key":"arxiv:2601.17003","decision":"include","code":"I5","reason":"실제 정신건강 대화 2만 건 감사에서 LLM 판정자를 맹검 임상의 판정과 대조해 민감도 100%와 특이도 99.2%를 보고함"}
+{"key":"arxiv:2508.12922","decision":"include","code":"I5","reason":"소프트웨어 테스트 경진대회에서 규칙과 LLM을 결합한 실력 평가 방법 RUM을 제안하고 수동 평가 대비 정확도와 일관성을 확인함"}
+{"key":"arxiv:2504.14804","decision":"include","code":"I8","reason":"문서 수준 번역 자동 평가 지표를 개관하며 LLM 기반 지표와 LLM-as-a-judge의 편향·부정확성·해석성 문제를 다룸"}
+{"key":"arxiv:2503.05328","decision":"include","code":"I1","reason":"반론 생성 평가를 위해 참조 기반 지표보다 인간 판단과 더 높은 상관을 보이는 새 LLM-as-a-Judge 평가 방법론을 제안함"}
+{"key":"arxiv:2504.12931","decision":"include","code":"I8","reason":"개인정보 처리방침 평가 도구 PRISMe 사례를 바탕으로 LLM 판정의 투명성·일관성·충실성 문제와 설명 전략을 논한 포지션 논문임"}
+{"key":"arxiv:2503.00771","decision":"include","code":"I1","reason":"개인화 도구 호출 벤치마크 ETAPP에서 수동 주석 핵심 요소를 참조로 주어 LLM 판정 편향을 줄이는 평가 방법을 제안하고 효과를 검증함"}
+{"key":"arxiv:2502.01436","decision":"include","code":"I5","reason":"Custom GPT 정책 준수 평가에 LLM-as-a-judge를 쓰고 인간 주석 정답 데이터와 대조해 F1 0.975를 검증함"}
+{"key":"arxiv:2505.20538","decision":"include","code":"I5","reason":"천문학 코드·시각화 벤치마크 AstroVisBench의 시각화 평가용 LLM 판정 워크플로를 전문 천문학자 5명의 주석과 대조해 검증함"}
+{"key":"arxiv:2311.18743","decision":"include","code":"I1","reason":"중국어 정렬 벤치마크 AlignBench에서 규칙 보정된 다차원 CoT 기반 LLM-as-Judge 평가 방식을 설계함"}
+{"key":"arxiv:2410.02902","decision":"include","code":"I1","reason":"참조 기반 LLM 판정을 활용한 MBR 디코딩이 참조 없는 판정의 best-of-N이나 어휘·임베딩 지표보다 우수함을 보여 판정 방식별 효과를 비교함"}
+{"key":"arxiv:2503.18076","decision":"exclude","code":"E2","reason":"분류 작업용 투기적 디코딩에서 '판정' 모델은 작업자 모델 간 불일치 시 레이블을 결정하는 분류기일 뿐 생성 출력의 평가자가 아님"}
+{"key":"arxiv:2412.11536","decision":"include","code":"I3","reason":"LLM-as-a-judge를 교사로 증류해 답을 이미 아는지 판단하는 IK 점수 분류기를 학습하고 문자열 기반 교사와 비교함"}
+{"key":"arxiv:2405.14103","decision":"exclude","code":"E3","reason":"자기 생성 응답 쌍과 자기 판정 선호 강도로 정렬하는 OSP 선호학습 방법으로 LLM 판정 모델 자체를 분석하거나 비교하지 않음"}

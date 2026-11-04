@@ -1,0 +1,92 @@
+{
+  "account": {
+    "display_name": "치와와 AI Lab",
+    "handle": "chihuahua_ai.lab",
+    "language": "ko"
+  },
+  "brand": {
+    "background": "#F5F3EE",
+    "text": "#111111",
+    "accent": "#FF4D00",
+    "accent_role": "small brand dot and short accent line; preserve the warm off-white main background"
+  },
+  "deliverable": {
+    "type": "carousel",
+    "width": 1080,
+    "height": 1350,
+    "preview_columns": 2
+  },
+  "caption_policy": {
+    "max_characters": 499,
+    "hashtag_count": 3
+  },
+  "punctuation_policy": {
+    "headlines": "omit_terminal_period",
+    "large_display_copy": "omit_terminal_period",
+    "short_captions": "omit_terminal_period"
+  },
+  "acknowledgement": "이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.",
+  "visual_policy": {
+    "photo_led": true,
+    "natural_colors": true,
+    "type": "large black headings, open editorial layout, natural-color photos",
+    "avoid": [
+      "large orange backgrounds",
+      "orange tint over photographs",
+      "inheriting the dark Reel background"
+    ],
+    "mascot_scope": "closing_page_only"
+  },
+  "profile_name": "Chihuahua AI Lab — approved photo-led carousel colors",
+  "selection": "Use only for carousels for 치와와 AI Lab / chihuahua_ai.lab, or when the user explicitly selects this account profile",
+  "language": "ko",
+  "timezone": "Asia/Seoul",
+  "preference_status": "user_approved_for_future_carousels",
+  "approved_at": "2026-10-17",
+  "reference_edition": "2026-10-17 RTX Spark carousel; source images and news content remain edition assets, not profile defaults",
+  "content_policy": {
+    "mode": "practical_ai_news",
+    "audience": "새 AI 도구를 직접 써보고 싶은 일반 독자",
+    "selection": "주제를 새로 고를 때는 현재 이용할 수 있는 서비스나 기능에 실제 활용 예시를 붙일 수 있는 소식을 우선 선택",
+    "example": "익숙한 작업 하나, 공식 서비스 주소, 실제 시작 위치와 입력 방법, 복사해서 쓸 전체 프롬프트 또는 단계별 사용 방법",
+    "conditions": "요금제, 연령과 순차 제공 등 사용에 필요한 조건을 해당 예시와 함께 표시",
+    "evidence": "직접 작성한 프롬프트, 공식 시연 화면, 실제 테스트 결과를 구분하며 요청값을 측정값으로 쓰지 않음",
+    "companion_files": [
+      "prompt.txt",
+      "followup-prompts.txt when useful"
+    ],
+    "reference": "references/practical-ai-news.md",
+    "approved_at": "2026-10-24",
+    "scope": "Future news for this named account; an explicit requested topic or different audience overrides this preference",
+    "freshness": {
+      "default_window_days": 7,
+      "date_basis": "original feature or service announcement, separately from edition date",
+      "rule": "새 소식을 요청받으면 실제 신규 출시나 기능 변경을 확인하고, 기존 기능의 활용 팁을 신규 출시로 선정하지 않음",
+      "override": "사용자가 지정한 기간이나 소재를 우선 적용",
+      "recorded_at": "2026-10-26"
+    }
+  },
+  "audience": "새 AI 도구를 직접 써보고 싶은 일반 독자",
+  "closing_page": {
+    "layout": "closing",
+    "account_intro": true,
+    "title": [
+      "바로 써먹는",
+      "AI 소식을 전합니다"
+    ],
+    "intro_line": "새 서비스부터 복사할 프롬프트까지",
+    "follow_line": "팔로우하고 다음 소식도 받아보세요",
+    "identity": "Use display_name and handle from this selected account",
+    "character": {
+      "path": "assets/chihuahua-ai-lab/character-circle.png",
+      "editable_source": "assets/chihuahua-ai-lab/character.svg",
+      "path_base": "skill_root",
+      "kind": "owned",
+      "credit": "치와와 AI Lab 기존 캐릭터",
+      "fit": "contain",
+      "selection": "Existing account character selected by the user; copy into the task assets before rendering"
+    },
+    "approved_at": "2026-10-24",
+    "scope": "Final carousel page only; main news slides remain photo-led and Reels retain their saved mascot exclusion"
+  }
+}

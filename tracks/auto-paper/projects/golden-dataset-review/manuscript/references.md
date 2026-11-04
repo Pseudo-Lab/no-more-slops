@@ -1,0 +1,110 @@
+# References (keyed)
+
+One line per source: `- key: formatted reference`. `app/build.py` keeps only the keys cited in
+`manuscript/source.md`, numbers them by first citation, and writes `manuscript/paper.md`.
+Grey literature carries an access date. Venues not confirmed on the source page are omitted.
+
+- openai-evals: OpenAI. Evals [Internet]. OpenAI API documentation; 2026 [cited 2026 Oct 25]. Available from: https://developers.openai.com/api/docs/guides/evals
+- anthropic-evals: Anthropic. Create strong empirical evaluations [Internet]. Claude documentation; 2026 [cited 2026 Oct 25]. Available from: https://platform.claude.com/docs/en/docs/test-and-evaluate/develop-tests
+- husain-evals: Husain H. Your AI product needs evals [Internet]. 2024 Mar 29 [cited 2026 Oct 25]. Available from: https://hamel.dev/blog/posts/evals/
+- northcutt2021: Northcutt CG, Athalye A, Mueller J. Pervasive label errors in test sets destabilize machine learning benchmarks. In: Proc NeurIPS Datasets and Benchmarks Track; 2021. arXiv:2103.14749.
+- gema2024: Gema AP, Leang JOJ, Hong G, Devoto A, Mancino ACM, Saxena R, et al. Are we done with MMLU? In: Proc NAACL; 2025. p. 5069–5096. doi:10.18653/v1/2025.naacl-long.262.
+- vendrow2025: Vendrow J, Vendrow E, Beery S, Madry A. Do large language model benchmarks test reliability? arXiv:2502.03461. 2025.
+- gsm8kplatinum: Vendrow E, Vendrow J, Madry A, Beery S. GSM8K-Platinum: revealing performance gaps in frontier LLMs [Internet]. Gradient Science; 2025 Mar 6 [cited 2026 Oct 25]. Available from: https://gradientscience.org/gsm8k-platinum/
+- chang2024: Chang Y, Wang X, Wang J, Wu Y, Yang L, Zhu K, et al. A survey on evaluation of large language models. ACM Trans Intell Syst Technol. 2024;15(3):1–45. doi:10.1145/3641289.
+- yu2024: Yu H, Gan A, Zhang K, Tong S, Liu Q, Liu Z. Evaluation of retrieval-augmented generation: a survey. arXiv:2405.07437. 2024.
+- gan2025: Gan A, Yu H, Zhang K, Liu Q, Yan W, Huang Z, et al. Retrieval augmented generation evaluation in the era of large language models: a comprehensive survey. arXiv:2504.14891. 2025.
+- xu2024: Xu C, Guan S, Greene D, Kechadi MT. Benchmark data contamination of large language models: a survey. arXiv:2406.04244. 2024.
+- chen2025: Chen S, Chen Y, Li Z, Jiang Y, Wan Z, He Y, et al. Benchmarking large language models under data contamination: a survey from static to dynamic evaluation. In: Proc EMNLP; 2025. p. 10091–10109. doi:10.18653/v1/2025.emnlp-main.511.
+- reuel2024: Reuel A, Hardy A, Smith C, Lamparth M, Hardy M, Kochenderfer MJ. BetterBench: assessing AI benchmarks, uncovering issues, and establishing best practices. In: Proc NeurIPS Datasets and Benchmarks Track; 2024. arXiv:2411.12990.
+- bean2025: Bean AM, Kearns RO, Romanou A, Hafner FS, Mayne H, Batzner J, et al. Measuring what matters: construct validity in large language model benchmarks. In: Proc NeurIPS Datasets and Benchmarks Track; 2025. arXiv:2511.04703.
+- bowman2021: Bowman SR, Dahl G. What will it take to fix benchmarking in natural language understanding? In: Proc NAACL; 2021. p. 4843–4855. doi:10.18653/v1/2021.naacl-main.385.
+- rein2023: Rein D, Hou BL, Stickland AC, Petty J, Pang RY, Dirani J, et al. GPQA: a graduate-level Google-proof Q&A benchmark. In: Proc COLM; 2024. arXiv:2311.12022.
+- arora2025: Arora RK, Wei J, Hicks RS, Bowman P, Quiñonero-Candela J, Tsimpourlas F, et al. HealthBench: evaluating large language models towards improved human health. arXiv:2505.08775. 2025.
+- swebenchverified: OpenAI. Introducing SWE-bench Verified [Internet]. OpenAI; 2024 Aug 13 [cited 2026 Oct 25]. Available from: https://openai.com/index/introducing-swe-bench-verified/
+- bajaj2016: Bajaj P, Campos D, Craswell N, Deng L, Gao J, Liu X, et al. MS MARCO: a human generated machine reading comprehension dataset. arXiv:1611.09268. 2016.
+- kwiatkowski2019: Kwiatkowski T, Palomaki J, Redfield O, Collins M, Parikh A, Alberti C, et al. Natural Questions: a benchmark for question answering research. Trans Assoc Comput Linguist. 2019;7:453–466. doi:10.1162/tacl_a_00276.
+- zhao2024: Zhao W, Ren X, Hessel J, Cardie C, Choi Y, Deng Y. WildChat: 1M ChatGPT interaction logs in the wild. In: Proc ICLR; 2024. arXiv:2405.01470.
+- li2024: Li T, Chiang WL, Frick E, Dunlap L, Wu T, Zhu B, et al. From crowdsourced data to high-quality benchmarks: Arena-Hard and BenchBuilder pipeline. In: Proc ICML; 2025. arXiv:2406.11939.
+- wang2023: Wang Y, Kordi Y, Mishra S, Liu A, Smith NA, Khashabi D, et al. Self-Instruct: aligning language models with self-generated instructions. In: Proc ACL; 2023. p. 13484–13508. doi:10.18653/v1/2023.acl-long.754.
+- es2023: Es S, James J, Espinosa Anke L, Schockaert S. RAGAs: automated evaluation of retrieval augmented generation. In: Proc EACL System Demonstrations; 2024. p. 150–158. doi:10.18653/v1/2024.eacl-demo.16.
+- saadfalcon2024: Saad-Falcon J, Khattab O, Potts C, Zaharia M. ARES: an automated evaluation framework for retrieval-augmented generation systems. In: Proc NAACL; 2024. p. 338–354. doi:10.18653/v1/2024.naacl-long.20.
+- rahmani2024: Rahmani HA, Craswell N, Yilmaz E, Mitra B, Campos D. Synthetic test collections for retrieval evaluation. In: Proc SIGIR; 2024. p. 2647–2651. doi:10.1145/3626772.3657942.
+- panickssery2024: Panickssery A, Bowman SR, Feng S. LLM evaluators recognize and favor their own generations. In: Proc NeurIPS; 2024. arXiv:2404.13076.
+- nie2020: Nie Y, Williams A, Dinan E, Bansal M, Weston J, Kiela D. Adversarial NLI: a new benchmark for natural language understanding. In: Proc ACL; 2020. p. 4885–4901. doi:10.18653/v1/2020.acl-main.441.
+- kiela2021: Kiela D, Bartolo M, Nie Y, Kaushik D, Geiger A, Wu Z, et al. Dynabench: rethinking benchmarking in NLP. In: Proc NAACL; 2021. p. 4110–4124. doi:10.18653/v1/2021.naacl-main.324.
+- gururangan2018: Gururangan S, Swayamdipta S, Levy O, Schwartz R, Bowman S, Smith NA. Annotation artifacts in natural language inference data. In: Proc NAACL; 2018. p. 107–112. doi:10.18653/v1/N18-2017.
+- white2025: White C, Dooley S, Roberts M, Pal A, Feuer B, Jain S, et al. LiveBench: a challenging, contamination-limited LLM benchmark. In: Proc ICLR; 2025. arXiv:2406.19314.
+- jain2024: Jain N, Han K, Gu A, Li WD, Yan F, Zhang T, et al. LiveCodeBench: holistic and contamination free evaluation of large language models for code. In: Proc ICLR; 2025. arXiv:2403.07974.
+- zhang2024: Zhang H, Da J, Lee D, Robinson V, Wu C, Song W, et al. A careful examination of large language model performance on grade school arithmetic. In: Proc NeurIPS Datasets and Benchmarks Track; 2024. arXiv:2405.00332.
+- buckley2007: Buckley C, Dimmick D, Soboroff I, Voorhees E. Bias and the limits of pooling for large collections. Inf Retr. 2007;10(6):491–508. doi:10.1007/s10791-007-9032-x.
+- thakur2021: Thakur N, Reimers N, Rücklé A, Srivastava A, Gurevych I. BEIR: a heterogenous benchmark for zero-shot evaluation of information retrieval models. In: Proc NeurIPS Datasets and Benchmarks Track; 2021. arXiv:2104.08663.
+- thomas2024: Thomas P, Spielman S, Craswell N, Mitra B. Large language models can accurately predict searcher preferences. In: Proc SIGIR; 2024. p. 1930–1940. doi:10.1145/3626772.3657707.
+- upadhyay2024: Upadhyay S, Pradeep R, Thakur N, Craswell N, Lin J. UMBRELA: UMbrela is the (open-source reproduction of the) Bing RELevance Assessor. arXiv:2406.06519. 2024.
+- gao2023: Gao T, Yen H, Yu J, Chen D. Enabling large language models to generate text with citations. In: Proc EMNLP; 2023. p. 6465–6488. doi:10.18653/v1/2023.emnlp-main.398.
+- chen2024rgb: Chen J, Lin H, Han X, Sun L. Benchmarking large language models in retrieval-augmented generation. Proc AAAI Conf Artif Intell. 2024;38(16):17754–17762. doi:10.1609/aaai.v38i16.29728.
+- yang2024: Yang X, Sun K, Xin H, Sun Y, Bhalla N, Chen X, et al. CRAG – comprehensive RAG benchmark. In: Proc NeurIPS Datasets and Benchmarks Track; 2024. arXiv:2406.04744.
+- tang2024: Tang Y, Yang Y. MultiHop-RAG: benchmarking retrieval-augmented generation for multi-hop queries. In: Proc COLM; 2024. arXiv:2401.15391.
+- ribeiro2020: Ribeiro MT, Wu T, Guestrin C, Singh S. Beyond accuracy: behavioral testing of NLP models with CheckList. In: Proc ACL; 2020. p. 4902–4912. doi:10.18653/v1/2020.acl-main.442.
+- artstein2008: Artstein R, Poesio M. Inter-coder agreement for computational linguistics. Comput Linguist. 2008;34(4):555–596. doi:10.1162/coli.07-034-R2.
+- krippendorff2004: Krippendorff K. Content analysis: an introduction to its methodology. 2nd ed. Thousand Oaks (CA): Sage; 2004.
+- pavlick2019: Pavlick E, Kwiatkowski T. Inherent disagreements in human textual inferences. Trans Assoc Comput Linguist. 2019;7:677–694. doi:10.1162/tacl_a_00293.
+- plank2022: Plank B. The "problem" of human label variation: on ground truth in data, modeling and evaluation. In: Proc EMNLP; 2022. p. 10671–10682. doi:10.18653/v1/2022.emnlp-main.731.
+- aroyo2015: Aroyo L, Welty C. Truth is a lie: crowd truth and the seven myths of human annotation. AI Mag. 2015;36(1):15–24. doi:10.1609/aimag.v36i1.2564.
+- cabitza2023: Cabitza F, Campagner A, Basile V. Toward a perspectivist turn in ground truthing for predictive computing. Proc AAAI Conf Artif Intell. 2023;37(6):6860–6868. doi:10.1609/aaai.v37i6.25840.
+- truong2025: Truong S, Tu Y, Hardy M, Reuel A, Tang Z, Burapacheep J, et al. Fantastic bugs and where to find them in AI benchmarks. In: Proc NeurIPS Datasets and Benchmarks Track; 2025. arXiv:2511.16842.
+- liu2023: Liu J, Xia CS, Wang Y, Zhang L. Is your code generated by ChatGPT really correct? Rigorous evaluation of large language models for code generation. In: Proc NeurIPS; 2023. arXiv:2305.01210.
+- card2020: Card D, Henderson P, Khandelwal U, Jia R, Mahowald K, Jurafsky D. With little power comes great responsibility. In: Proc EMNLP; 2020. p. 9263–9274. doi:10.18653/v1/2020.emnlp-main.745.
+- miller2024: Miller E. Adding error bars to evals: a statistical approach to language model evaluations. arXiv:2411.00640. 2024.
+- polo2024: Maia Polo F, Weber L, Choshen L, Sun Y, Xu G, Yurochkin M. tinyBenchmarks: evaluating LLMs with fewer examples. In: Proc ICML (PMLR 235); 2024. p. 34303–34326. arXiv:2402.14992.
+- sainz2023: Sainz O, Campos JA, García-Ferrero I, Etxaniz J, Lopez de Lacalle O, Agirre E. NLP evaluation in trouble: on the need to measure LLM data contamination for each benchmark. In: Findings of EMNLP; 2023. p. 10776–10787. doi:10.18653/v1/2023.findings-emnlp.722.
+- oren2023: Oren Y, Meister N, Chatterji N, Ladhak F, Hashimoto TB. Proving test set contamination in black-box language models. In: Proc ICLR; 2024. arXiv:2310.17623.
+- srivastava2022: Srivastava A, Rastogi A, Rao A, Shoeb AAM, Abid A, Fisch A, et al. Beyond the imitation game: quantifying and extrapolating the capabilities of language models. Trans Mach Learn Res. 2023. arXiv:2206.04615.
+- recht2019: Recht B, Roelofs R, Schmidt L, Shankar V. Do ImageNet classifiers generalize to ImageNet? In: Proc ICML (PMLR 97); 2019. arXiv:1902.10811.
+- raji2021: Raji ID, Bender EM, Paullada A, Denton E, Hanna A. AI and the everything in the whole wide world benchmark. In: Proc NeurIPS Datasets and Benchmarks Track; 2021. arXiv:2111.15366.
+- zheng2023: Zheng L, Chiang WL, Sheng Y, Zhuang S, Wu Z, Zhuang Y, et al. Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. In: Proc NeurIPS Datasets and Benchmarks Track; 2023. arXiv:2306.05685.
+- thakur2025: Thakur AS, Choudhary K, Ramayapally VS, Vaidyanathan S, Hupkes D. Judging the judges: evaluating alignment and vulnerabilities in LLMs-as-judges. In: Proc GEM² Workshop; 2025. p. 404–430. arXiv:2406.12624.
+- bavaresco2025: Bavaresco A, Bernardi R, Bertolazzi L, Elliott D, Fernández R, Gatt A, et al. LLMs instead of human judges? A large scale empirical study across 20 NLP evaluation tasks. In: Proc ACL (Short Papers); 2025. p. 238–255. doi:10.18653/v1/2025.acl-short.20.
+- shankar2024: Shankar S, Zamfirescu-Pereira JD, Hartmann B, Parameswaran A, Arawjo I. Who validates the validators? Aligning LLM-assisted evaluation of LLM outputs with human preferences. In: Proc ACM UIST; 2024. doi:10.1145/3654777.3676450.
+- voorhees2000: Voorhees EM. Variations in relevance judgments and the measurement of retrieval effectiveness. Inf Process Manag. 2000;36(5):697–716. doi:10.1016/S0306-4573(00)00010-8.
+- rebholz2010: Rebholz-Schuhmann D, Jimeno Yepes AJ, van Mulligen EM, Kang N, Kors J, Milward D, et al. CALBC silver standard corpus. J Bioinform Comput Biol. 2010;8(1):163–179. doi:10.1142/S0219720010004562.
+- gebru2021: Gebru T, Morgenstern J, Vecchione B, Vaughan JW, Wallach H, Daumé III H, et al. Datasheets for datasets. Commun ACM. 2021;64(12):86–92. doi:10.1145/3458723.
+- bender2018: Bender EM, Friedman B. Data statements for natural language processing: toward mitigating system bias and enabling better science. Trans Assoc Comput Linguist. 2018;6:587–604. doi:10.1162/tacl_a_00041.
+- pushkarna2022: Pushkarna M, Zaldivar A, Kjartansson O. Data cards: purposeful and transparent dataset documentation for responsible AI. In: Proc ACM FAccT; 2022. p. 1776–1826. doi:10.1145/3531146.3533231.
+- akhtar2024: Akhtar M, Benjelloun O, Conforti C, Foschini L, Giner-Miguelez J, Gijsbers P, et al. Croissant: a metadata format for ML-ready datasets. In: Proc NeurIPS Datasets and Benchmarks Track; 2024. arXiv:2403.19546.
+- jain2024rai: Jain N, Akhtar M, Giner-Miguelez J, Shinde R, Vanschoren J, Vogler S, et al. A standardized machine-readable dataset documentation format for responsible AI. arXiv:2407.16883. 2024.
+- neurips2026rai: NeurIPS. Responsible AI metadata requirements for the Evaluations and Datasets Track, NeurIPS 2026 [Internet]. NeurIPS blog; 2026 May 4 [cited 2026 Oct 25]. Available from: https://blog.neurips.cc/2026/05/04/responsible-ai-metadata-requirements-for-the-evaluations-and-datasets-track-neurips-2026/
+- luccioni2022: Luccioni AS, Corry F, Sridharan H, Ananny M, Schultz J, Crawford K. A framework for deprecating datasets: standardizing documentation, identification, and communication. In: Proc ACM FAccT; 2022. p. 199–212. doi:10.1145/3531146.3533086.
+- liang2023: Liang P, Bommasani R, Lee T, Tsipras D, Soylu D, Yasunaga M, et al. Holistic evaluation of language models. Trans Mach Learn Res. 2023. arXiv:2211.09110.
+- epochswebench: Epoch AI. SWE-bench Verified [Internet]. Epoch AI Benchmarking Hub; n.d. [cited 2026 Oct 25]. Available from: https://epoch.ai/benchmarks/swe-bench-verified
+- krippendorff2004hcr: Krippendorff K. Reliability in content analysis: some common misconceptions and recommendations. Hum Commun Res. 2004;30(3):411–433. doi:10.1111/j.1468-2958.2004.tb00738.x.
+- ragas-docs: Ragas. Testset generation for RAG [Internet]. Ragas documentation; 2026 [cited 2026 Oct 25]. Available from: https://docs.ragas.io/en/stable/concepts/test_data_generation/rag/
+- ppi2023: Angelopoulos AN, Bates S, Fannjiang C, Jordan MI, Zrnic T. Prediction-powered inference. Science. 2023;382(6671):669–674. doi:10.1126/science.adi6000.
+- boyeau2024: Boyeau P, Angelopoulos AN, Li T, Yosef N, Malik J, Jordan MI. AutoEval done right: using synthetic data for model evaluation. In: Proc ICML (PMLR 267); 2025. p. 5276–5290. arXiv:2403.07008.
+- dorner2025: Dorner FE, Nastl VY, Hardt M. Limits to scalable evaluation at the frontier: LLM as judge won't beat twice the data. In: Proc ICLR; 2025. arXiv:2410.13341.
+- yao2024tau: Yao S, Shinn N, Razavi P, Narasimhan K. τ-bench: a benchmark for tool-agent-user interaction in real-world domains. In: Proc ICLR; 2025. arXiv:2406.12045.
+- bai2024: Bai G, Liu J, Bu X, He Y, Liu J, Zhou Z, et al. MT-Bench-101: a fine-grained benchmark for evaluating large language models in multi-turn dialogues. In: Proc ACL; 2024. p. 7421–7454. doi:10.18653/v1/2024.acl-long.401.
+- liu2024agentbench: Liu X, Yu H, Zhang H, Xu Y, Lei X, Lai H, et al. AgentBench: evaluating LLMs as agents. In: Proc ICLR; 2024. arXiv:2308.03688.
+- mazeika2024: Mazeika M, Phan L, Yin X, Zou A, Wang Z, Mu N, et al. HarmBench: a standardized evaluation framework for automated red teaming and robust refusal. In: Proc ICML (PMLR 235); 2024. p. 35181–35224. arXiv:2402.04249.
+- rottger2024: Röttger P, Kirk H, Vidgen B, Attanasio G, Bianchi F, Hovy D. XSTest: a test suite for identifying exaggerated safety behaviours in large language models. In: Proc NAACL; 2024. p. 5377–5400. doi:10.18653/v1/2024.naacl-long.301.
+- cui2025: Cui J, Chiang WL, Stoica I, Hsieh CJ. OR-Bench: an over-refusal benchmark for large language models. In: Proc ICML (PMLR 267); 2025. p. 11515–11542. arXiv:2405.20947.
+- son2025kmmlu: Son G, Lee H, Kim S, Kim S, Muennighoff N, Choi T, et al. KMMLU: measuring massive multitask language understanding in Korean. In: Proc NAACL; 2025. p. 4076–4104. doi:10.18653/v1/2025.naacl-long.206.
+- son2024haerae: Son G, Lee H, Kim S, Kim H, Lee J, Yeom JW, et al. HAE-RAE Bench: evaluation of Korean knowledge in language models. In: Proc LREC-COLING; 2024. p. 7993–8007. arXiv:2309.02706.
+- singh2025: Singh S, Romanou A, Fourrier C, Adelani DI, Ngui JG, Vila-Suero D, et al. Global MMLU: understanding and addressing cultural and linguistic biases in multilingual evaluation. In: Proc ACL; 2025. p. 18761–18799. doi:10.18653/v1/2025.acl-long.919.
+- wei2024simpleqa: Wei J, Karina N, Chung HW, Jiao YJ, Papay S, Glaese A, et al. Measuring short-form factuality in large language models. arXiv:2411.04368. 2024.
+- hle: Center for AI Safety, Scale AI, HLE Contributors Consortium. A benchmark of expert-level academic questions to assess AI capabilities. Nature. 2026;649(8099):1139–1146. doi:10.1038/s41586-025-09962-4.
+- futurehouse2025: Skarlinski M, Laurent J, Bou A, White A. About 30% of Humanity's Last Exam chemistry/biology answers are likely wrong [Internet]. FutureHouse; 2025 Jul 23 [updated 2025 Sep 16; cited 2026 Oct 25]. Available from: https://www.futurehouse.org/research-announcements/hle-exam
+- openai2026swe: OpenAI. Why SWE-bench Verified no longer measures frontier coding capabilities [Internet]. OpenAI; 2026 Feb 23 [cited 2026 Oct 25]. Available from: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/
+- vania2021: Vania C, Htut PM, Huang W, Mungra D, Pang RY, Phang J, et al. Comparing test sets with item response theory. In: Proc ACL; 2021. p. 1141–1158. doi:10.18653/v1/2021.acl-long.92.
+- rodriguez2021: Rodriguez P, Barrow J, Hoyle AM, Lalor JP, Jia R, Boyd-Graber J. Evaluation examples are not equally informative: how should that change NLP leaderboards? In: Proc ACL; 2021. p. 4486–4503. doi:10.18653/v1/2021.acl-long.346.
+- klie2023: Klie JC, Webber B, Gurevych I. Annotation error detection: analyzing the past and present for a more coherent future. Comput Linguist. 2023;49(1):157–198. doi:10.1162/coli_a_00464.
+- gilardi2023: Gilardi F, Alizadeh M, Kubli M. ChatGPT outperforms crowd workers for text-annotation tasks. Proc Natl Acad Sci U S A. 2023;120(30):e2305016120. doi:10.1073/pnas.2305016120.
+- chiang2023: Chiang CH, Lee HY. Can large language models be an alternative to human evaluations? In: Proc ACL; 2023. p. 15607–15631. doi:10.18653/v1/2023.acl-long.870.
+- heineman2025: Heineman D, Hofmann V, Magnusson I, Gu Y, Smith NA, Hajishirzi H, et al. Signal and noise: a framework for reducing uncertainty in language model evaluation. In: Proc NeurIPS; 2025. arXiv:2508.13144.
+- biderman2024: Biderman S, Schoelkopf H, Sutawika L, Gao L, Tow J, Abbasi B, et al. Lessons from the trenches on reproducible evaluation of language models. arXiv:2405.14782. 2024.
+- lhoest2021: Lhoest Q, Villanova del Moral A, Jernite Y, Thakur A, von Platen P, Patil S, et al. Datasets: a community library for natural language processing. In: Proc EMNLP System Demonstrations; 2021. p. 175–184. doi:10.18653/v1/2021.emnlp-demo.21.
+- zellers2018swag: Zellers R, Bisk Y, Schwartz R, Choi Y. SWAG: a large-scale adversarial dataset for grounded commonsense inference. In: Proc EMNLP; 2018. p. 93–104. doi:10.18653/v1/D18-1009.
+- haas2025: Haas L, Yona G, D'Antonio G, Goldshtein S, Das D. SimpleQA Verified: a reliable factuality benchmark to measure parametric knowledge. arXiv:2509.07968. 2025.
+- fisch2024: Fisch A, Maynez J, Hofer RA, Dhingra B, Globerson A, Cohen WW. Stratified prediction-powered inference for effective hybrid evaluation of language models. In: Proc NeurIPS; 2024. arXiv:2406.04291.
+- pangakis2023: Pangakis N, Wolken S, Fasching N. Automated annotation with generative AI requires validation. arXiv:2306.00176. 2023.
+- connor1987: Connor RJ. Sample size for testing differences in proportions for the paired-sample design. Biometrics. 1987;43(1):207–211. doi:10.2307/2531961.

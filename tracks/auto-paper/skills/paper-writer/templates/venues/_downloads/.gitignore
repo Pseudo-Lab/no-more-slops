@@ -1,0 +1,5 @@
+# Official venue author kits are third-party files: download them from the
+# URLs in SOURCES.json instead of committing them.
+*
+!.gitignore
+!SOURCES.json

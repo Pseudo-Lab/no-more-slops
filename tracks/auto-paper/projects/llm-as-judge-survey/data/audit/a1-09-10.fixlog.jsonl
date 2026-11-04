@@ -1,0 +1,6 @@
+{"line": 46, "decision": "applied", "reason": "Min 앙상블(전원 통과) 결과이지 다수결이 아님", "new": "3계열 판정자 모두의 통과를 요구하는 엄격한 앙상블도 오답의 55%를 받아들이는 사각지대"}
+{"line": 54, "decision": "applied", "reason": "반복 표본 배심, Qwen3 상한 ρ 0.97, 독립 가정 예측 대비 결과", "new": "같은 판정 모델의 반복 표본으로 만든 배심은 오류 상관이 높아 독립 가정이 예측하는 집계 이득을 얻지 못하고"}
+{"line": 39, "decision": "applied", "reason": "Q-DEFENSE moderators에 적대성 조건 없음", "new": "| 데이터의 적대성 | Q-FORMAT, Q-REF |"}
+{"line": 50, "decision": "applied", "reason": "평가 설정 차이로 구분", "new": "데이터가 아니라 평가 설정에 따라서도 우열이 갈린다."}
+{"line": 26, "decision": "applied", "reason": "Q-FORMAT 본문 확인 6·2·6·1", "new": "독립 평가 안에서도 지지, 반박, 조건부가 갈린다"}
+{"line": 73, "decision": "applied", "reason": "partly 판정 다수가 과장 지적", "new": "초록은 방향을 뒤집어 쓰지는 않지만, 조건을 지우고 일반화하거나 일부 표현을 과장하는 경향이 있다."}

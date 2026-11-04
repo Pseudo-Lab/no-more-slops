@@ -1,0 +1,67 @@
+{
+  "edition_date": "2026-10-17",
+  "video": {
+    "width": 2160,
+    "height": 3840,
+    "duration_seconds": 60.0,
+    "frames": 1800,
+    "fps": "30/1",
+    "audio_streams": 0,
+    "pixel_format": "yuv420p",
+    "color_space": "bt709",
+    "size_bytes": 10614511,
+    "sha256": "b986561d3909afd8f9587074cbd316d585ba439f98ab37c054662657cd2fdbec",
+    "full_decode_ok": true
+  },
+  "motion": {
+    "sample": "360x640 grayscale, crop x45 y210 w246 h303; large informational text and its fixed photographic background",
+    "consecutive_pairs": 1799,
+    "exact_duplicate_pairs": 48,
+    "longest_duplicate_run": 14,
+    "mean_absolute_luma_change": {
+      "minimum": 0.0,
+      "median": 0.0010732780595132684,
+      "maximum": 1.234041696852612
+    },
+    "policy": "Information-linked reveals; each factual row enters once and remains readable. Intentional reading holds are allowed by the latest brief. Motion metrics are diagnostic only."
+  },
+  "captions": {
+    "mercedes-ai-reel-space": {
+      "characters": 400,
+      "hashtags": 3
+    }
+  },
+  "photography": {
+    "source": "car-front.jpg",
+    "position_at_1080": [
+      -32,
+      515
+    ],
+    "size_at_1080": [
+      1144,
+      1030
+    ],
+    "object_fit": "cover at fixed center",
+    "transform": "constant for all frames",
+    "changing_opacity": false,
+    "source_swaps": false
+  },
+  "manual_visual_review": "Reviewed full master and both stress derivatives at 290px and 1x; all reached 60s without media errors; detailed findings in visual-review.json",
+  "instagram_uploaded_result": "Previous editorial version reviewed through user-provided Instagram capture; new revision is locally reviewed only",
+  "ui_layout": {
+    "reference": "layout-calibration.json",
+    "important_content_at_1080": [
+      120,
+      280,
+      890,
+      1660
+    ],
+    "information_at_1080": [
+      136,
+      636,
+      874,
+      1546
+    ],
+    "progress_y_at_1080": 1640
+  }
+}

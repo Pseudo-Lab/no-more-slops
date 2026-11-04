@@ -1,0 +1,140 @@
+{"key": "doi:10.17605/osf.io/qhzmd", "decision": "include", "code": "I5", "reason": "영양 전문가 대화에 대한 인간 평정을 기준으로 LLM 기반 평가자의 타당도·신뢰도·편향을 검증하는 연구 계획이다"}
+{"key": "doi:10.1007/979-8-8688-1154-8_6", "decision": "exclude", "code": "E2", "reason": "LLM 평가와 환각을 설명하는 서적 장으로 판정 모델 자체는 연구 대상이 아니다"}
+{"key": "doi:10.6084/m9.figshare.33029315", "decision": "exclude", "code": "E2", "reason": "보안 운영 센터에서 LLM을 평가한 재현 패키지로 LLM은 평가 대상일 뿐이다"}
+{"key": "doi:10.1007/979-8-8688-2758-7_16", "decision": "exclude", "code": "E5", "reason": "프롬프트 평가와 관측 도구를 소개하는 서적 장으로 판정 모델 연구가 아니다"}
+{"key": "doi:10.1109/icarai70085.2026.11635662", "decision": "maybe", "code": "M", "reason": "RAGAS LLM 지표와 교차 모델 평가로 동일 모델 평가 편향을 다루지만 판정 분석이 부수적인지 초록만으로 불분명하다"}
+{"key": "title:llm evaluation dataset 2024", "decision": "maybe", "code": "M", "reason": "초록이 없고 제목만으로는 판정 연구인지 알 수 없다"}
+{"key": "doi:10.5281/zenodo.20352382", "decision": "maybe", "code": "M", "reason": "초록이 없고 평가 프롬프트 최적화 도구가 판정 모델과 관련되는지 알 수 없다"}
+{"key": "doi:10.5281/zenodo.21743655", "decision": "exclude", "code": "E2", "reason": "LLM 평가 프로젝트의 문서화 표준으로 LLM 판정자는 다루지 않는다"}
+{"key": "doi:10.3389/fdgth.2026.1918724", "decision": "exclude", "code": "E2", "reason": "의료 LLM 출력의 임상적 근거 판단 틀을 제안하며 LLM 판정 모델은 다루지 않는다"}
+{"key": "doi:10.5281/zenodo.21201815", "decision": "maybe", "code": "M", "reason": "초록이 없고 통계적 엄밀성 도구가 판정 신뢰성을 다루는지 알 수 없다"}
+{"key": "doi:10.5281/zenodo.20528141", "decision": "exclude", "code": "E2", "reason": "CGT 예측에 대한 LLM 행동의 블라인드 평가로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.18707332", "decision": "maybe", "code": "M", "reason": "초록이 없고 Bedrock 기반 평가 데이터셋의 성격을 알 수 없다"}
+{"key": "doi:10.2139/ssrn.6338478", "decision": "maybe", "code": "M", "reason": "초록이 없는 LLM 평가 방법 문헌 검토로 판정 방식을 다루는지 알 수 없다"}
+{"key": "doi:10.5281/zenodo.19456207", "decision": "exclude", "code": "E2", "reason": "LLM이 작성한 데이터 관리 계획서의 품질 평가 데이터로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.17925148", "decision": "maybe", "code": "M", "reason": "초록 없이 평가 데이터셋과 파이프라인만 제시돼 판정 연구 여부를 알 수 없다"}
+{"key": "doi:10.5281/zenodo.22846956", "decision": "exclude", "code": "E2", "reason": "하드웨어와 평가 인프라가 행동 효과를 왜곡하는지 다루는 재현 패키지로 판정 모델은 대상이 아니다"}
+{"key": "doi:10.17605/osf.io/vz8xj", "decision": "exclude", "code": "E2", "reason": "노르웨이 공공부문 LLM 안전성 평가 모음으로 LLM이 평가 대상이다"}
+{"key": "doi:10.58012/ks2t-3g75", "decision": "exclude", "code": "E5", "reason": "LLM 평가 라이브러리를 소개하는 팟캐스트 대담으로 논문이 아니다"}
+{"key": "doi:10.14529/jsfi250301", "decision": "exclude", "code": "E2", "reason": "러시아어 문법 최소쌍 데이터셋으로 LLM을 평가 대상으로만 삼는다"}
+{"key": "doi:10.5281/zenodo.18549676", "decision": "maybe", "code": "M", "reason": "루브릭으로 모델 특성을 재고 인간 평가 기준선을 두지만 평가 주체가 LLM 판정인지 초록만으로 불분명하다"}
+{"key": "title:flexible framework for llm evaluation in business workflows", "decision": "exclude", "code": "E2", "reason": "금융 업무에서 모델과 프롬프트 전략을 비교하는 평가로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.20145724", "decision": "exclude", "code": "E2", "reason": "NIH 데이터 관리 계획 초안 작성 능력의 평가 코드로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.19124850", "decision": "maybe", "code": "M", "reason": "로그확률 기반 평가의 편향을 다루는 듯하나 초록이 거의 없어 판정 모델 연구인지 불분명하다"}
+{"key": "doi:10.5281/zenodo.23436738", "decision": "exclude", "code": "E1", "reason": "스프레드시트 데이터로 LLM을 평가하는 도구로 판정 자체를 분석하지 않는다"}
+{"key": "title:multicutural llm evaluation the case of spanish as a pluricentric language", "decision": "exclude", "code": "E2", "reason": "스페인어 변종에 대한 LLM 평가 리더보드와 데이터셋으로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.20738895", "decision": "exclude", "code": "E2", "reason": "보안 객관식 벤치마크의 정답 분포 편향을 다루며 LLM 판정자는 없다"}
+{"key": "doi:10.2172/3030897", "decision": "maybe", "code": "M", "reason": "초록이 잘려 있어 내용을 알 수 없다"}
+{"key": "doi:10.1145/3842436.3843811", "decision": "exclude", "code": "E4", "reason": "임상 안전성과 선호를 인간 전문가와 사용자가 평정한 연구로 LLM 판정이 아니다"}
+{"key": "doi:10.82419/63", "decision": "exclude", "code": "E2", "reason": "객관식을 개방형 질문으로 바꾼 LLM 벤치마크로 LLM이 평가 대상이다"}
+{"key": "doi:10.1109/fit67061.2025.11333638", "decision": "exclude", "code": "E2", "reason": "의료 챗봇 LLM들을 비교 평가한 연구로 판정 모델은 연구 대상이 아니다"}
+{"key": "doi:10.5281/zenodo.23042034", "decision": "exclude", "code": "E2", "reason": "하드웨어 간 평가 결과 재현성을 다루는 데이터셋으로 LLM 판정은 대상이 아니다"}
+{"key": "title:sustainable italian llm evaluation community perspectives and methodological guidelines", "decision": "exclude", "code": "E2", "reason": "이탈리아어 LLM 벤치마킹 방법론 포지션 페이퍼로 판정 모델은 다루지 않는다"}
+{"key": "doi:10.64771/ijesat.2026.v26.i4(1).2556", "decision": "maybe", "code": "M", "reason": "RAG 챗봇에 LLM 기반 다차원 답변 평가 모듈을 두지만 판정 검증 여부가 초록만으로 불분명하다"}
+{"key": "doi:10.5281/zenodo.20717307", "decision": "include", "code": "I2", "reason": "36개 LLM이 서로의 응답을 교차 평정하며 평정자 간 상관을 측정해 LLM 평가자 판단의 구조적 차이를 분석한다"}
+{"key": "doi:10.48448/nx8j-5n70", "decision": "exclude", "code": "E2", "reason": "오염된 평가 데이터를 걸러내는 탐지 방법으로 LLM 판정자는 다루지 않는다"}
+{"key": "doi:10.2139/ssrn.7127259", "decision": "maybe", "code": "M", "reason": "초록 없이 보험 청구를 LLM이 평가할 때의 성별 편향을 다루는 제목이어서 판정 편향 연구일 가능성이 있다"}
+{"key": "title:codeassert multi provider llm evaluation for automated unit test generation", "decision": "exclude", "code": "E2", "reason": "단위 테스트 생성 능력을 비교하는 LLM 평가 틀로 LLM이 평가 대상이다"}
+{"key": "doi:10.17605/osf.io/83dcp", "decision": "maybe", "code": "M", "reason": "LLM 평가자가 독립 증거 계통 수를 과대 집계하는지 보는 사전등록 연구로 평가자 편향을 다루나 판정 과제와 거리가 있다"}
+{"key": "doi:10.26615/978-954-452-098-4-098", "decision": "exclude", "code": "E2", "reason": "노동법 용어 추출 정답셋으로 LLM을 평가 대상으로만 쓴다"}
+{"key": "doi:10.1109/ibdap69915.2026.11677987", "decision": "maybe", "code": "M", "reason": "G-Eval 등 모델 기반 판정자의 취약성을 지표와 함께 분석하고 인간 검토를 결합한 평가 틀을 제안하나 판정 중심 정도가 불분명하다"}
+{"key": "doi:10.3233/faia250911", "decision": "exclude", "code": "E2", "reason": "인구 집단 간 LLM 공정성 격차를 측정하는 틀로 LLM이 평가 대상이다"}
+{"key": "title:misalignments in common ground as a bridge between pragmatic theory and llm evaluation", "decision": "maybe", "code": "M", "reason": "초록이 서지 정보뿐이라 내용을 알 수 없다"}
+{"key": "title:beyond agreement structural alignment in hybrid human llm evaluation systems", "decision": "include", "code": "I2", "reason": "인간 전문가와 LLM 평가자의 정당화 텍스트 수렴도와 진단성을 비교해 평가자 정렬을 분석한다"}
+{"key": "doi:10.48448/4b98-xr41", "decision": "maybe", "code": "M", "reason": "LLM을 주석자로 쓰는 위원회 방식을 인간과 비교하지만 주석 과제라 판정 연구인지 불분명하다"}
+{"key": "doi:10.63317/3exz7ndz9d6j", "decision": "exclude", "code": "E2", "reason": "LLM 평가 지표와 과제를 정리한 실무 리뷰로 LLM 판정자가 중심은 아니다"}
+{"key": "doi:10.5281/zenodo.17826619", "decision": "exclude", "code": "E2", "reason": "벤치마크 노후화 이론으로 LLM 판정 모델은 다루지 않는다"}
+{"key": "doi:10.5281/zenodo.22901540", "decision": "exclude", "code": "E2", "reason": "다단계 평가에서 답변 추출 오류를 다루는 재현 자료로 LLM 판정은 대상이 아니다"}
+{"key": "doi:10.5281/zenodo.19912416", "decision": "exclude", "code": "E2", "reason": "틈새 벤치마크의 필요성을 주장하는 글로 LLM 판정 모델은 다루지 않는다"}
+{"key": "doi:10.65286/icic.v21i4.11558", "decision": "include", "code": "I3", "reason": "교차 평가와 유사도 행렬로 다중 모델 평가 패널을 선정하고 인간 평가와의 점수 일치 향상을 보인다"}
+{"key": "doi:10.13140/rg.2.2.29887.06565", "decision": "maybe", "code": "M", "reason": "초록이 없어 제목만으로 판정 연구인지 알 수 없다"}
+{"key": "doi:10.5281/zenodo.17767840", "decision": "exclude", "code": "E1", "reason": "LLM 판정자 검증을 자료 선별 단계에 쓰기만 하고 판정 자체를 분석하지 않는다"}
+{"key": "doi:10.1145/3784833.3784879", "decision": "exclude", "code": "E2", "reason": "광산 안전 LLM과 전문가 채점 틀을 만들지만 판정 모델 검증이 아니다"}
+{"key": "doi:10.13140/rg.2.2.19820.73600", "decision": "maybe", "code": "M", "reason": "초록이 없어 제목만으로 판정 연구인지 알 수 없다"}
+{"key": "doi:10.5753/stil.2026.26539", "decision": "exclude", "code": "E2", "reason": "포르투갈어 벤치마크 점수의 분해 분석으로 LLM 판정은 대상이 아니다"}
+{"key": "doi:10.13140/rg.2.2.25676.37767", "decision": "maybe", "code": "M", "reason": "초록이 없어 제목만으로 판정 연구인지 알 수 없다"}
+{"key": "doi:10.1109/prml66062.2025.11159734", "decision": "include", "code": "I2", "reason": "세 GPT 모델이 서열 척도로 낸 평가의 모델 간 변동을 비모수 검정으로 분석해 판정 변동성을 다룬다"}
+{"key": "doi:10.5194/agile-giss-7-46-2026", "decision": "exclude", "code": "E2", "reason": "지명 중의성 해소를 LLM 예측 정확도로 평가하며 LLM은 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.23238500", "decision": "exclude", "code": "E2", "reason": "지오포털 도우미의 평가 자료로 LLM이 평가 대상이다"}
+{"key": "doi:10.1109/icce67443.2026.11449748", "decision": "exclude", "code": "E1", "reason": "임베딩 스펙트럼 지표를 제안하되 LLM 판정과 직접 비교하지 않는다"}
+{"key": "doi:10.1002/iis2.70245", "decision": "include", "code": "I5", "reason": "요구사항 품질을 LLM이 평가하는 능력을 전문가 정답과 비교해 성능과 실행 간 변동을 분석한다"}
+{"key": "doi:10.5281/zenodo.20687384", "decision": "exclude", "code": "E2", "reason": "베트남 졸업시험 벤치마크로 LLM이 평가 대상이다"}
+{"key": "doi:10.1145/3832928.3833041", "decision": "include", "code": "I1", "reason": "판정 검토 중재의 3단계 LLM 평가 틀을 제안하고 단일 판정자보다 인간 전문가에 가깝고 안정적임을 보인다"}
+{"key": "doi:10.5281/zenodo.23197651", "decision": "maybe", "code": "M", "reason": "모델 자기 확신과 독립 모델 패널의 정확도 예측력을 비교하며 판정 신뢰도 가중치를 다루나 판정 연구로 보기 불분명하다"}
+{"key": "doi:10.13140/rg.2.2.12254.60484", "decision": "maybe", "code": "M", "reason": "초록이 없어 제목만으로 판정 연구인지 알 수 없다"}
+{"key": "doi:10.17605/osf.io/5c9nk", "decision": "include", "code": "I5", "reason": "다중 에이전트 LLM 에세이 채점을 교수자 점수와 QWK 등으로 대조해 검증하는 연구 계획이다"}
+{"key": "doi:10.5281/zenodo.23093754", "decision": "exclude", "code": "E2", "reason": "IRT로 LLM 벤치마크 평가 비용을 줄이는 코드로 LLM 판정은 대상이 아니다"}
+{"key": "doi:10.5281/zenodo.19351822", "decision": "maybe", "code": "M", "reason": "초록 없이 저장소 개정 릴리스만 설명돼 내용을 알 수 없다"}
+{"key": "doi:10.7249/rra4618-1", "decision": "include", "code": "I1", "reason": "초록이 없으나 제목이 개방형 과제의 LLM 자동 채점기 설계의 비용 효율을 직접 다룬다"}
+{"key": "doi:10.1109/icce67443.2026.11449916", "decision": "maybe", "code": "M", "reason": "DeepEval 등 LLM 평가 프레임워크의 지표를 비교하지만 판정 모델 분석 정도가 초록만으로 불분명하다"}
+{"key": "doi:10.2139/ssrn.6473540", "decision": "maybe", "code": "M", "reason": "초록 없이 평가 데이터베이스 구축 과제만 제시돼 판정 연구 여부를 알 수 없다"}
+{"key": "doi:10.5281/zenodo.23367587", "decision": "maybe", "code": "M", "reason": "벤치마크에 AI 판정 결과와 인간 평정 파일을 함께 공개하나 판정 분석 정도가 불분명하다"}
+{"key": "doi:10.1109/wf-pst65083.2025.00017", "decision": "maybe", "code": "M", "reason": "LLM과 인간 코더의 감성 판단 일관성과 일치도를 비교하나 평가자가 아닌 주석 과제라 불분명하다"}
+{"key": "doi:10.5281/zenodo.19699176", "decision": "exclude", "code": "E2", "reason": "마이크로그리드 에이전트를 여러 LLM 제공자로 비교하는 연구로 LLM이 평가 대상이다"}
+{"key": "doi:10.17632/m5wfrnhdsp", "decision": "exclude", "code": "E2", "reason": "재무 작업 정합성 벤치마크 데이터로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.20440381", "decision": "exclude", "code": "E5", "reason": "LLM 기법 서베이를 자동 합성한 보고서로 판정 서베이가 아니다"}
+{"key": "doi:10.1109/icce-taiwan71481.2026.11652581", "decision": "exclude", "code": "E1", "reason": "멀티모달 LLM 평가를 노이즈 삼중항 걸러내기 도구로만 쓴다"}
+{"key": "doi:10.5281/zenodo.22934887", "decision": "maybe", "code": "M", "reason": "초록이 없어 임상 LLM의 의미 안정성이 판정과 관련되는지 알 수 없다"}
+{"key": "doi:10.5281/zenodo.21130401", "decision": "exclude", "code": "E2", "reason": "LLM이 인간 중재자를 대체할 수 있는지 보는 콘텐츠 분류 연구로 판정 모델 연구가 아니다"}
+{"key": "doi:10.1109/iscas66217.2026.11563038", "decision": "exclude", "code": "E2", "reason": "VHDL 코드 생성 벤치마크로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.21811718", "decision": "include", "code": "I5", "reason": "제목이 마이크로서비스 구조도에 대한 LLM 평가의 신뢰성을 직접 묻는 판정 신뢰성 연구이다"}
+{"key": "doi:10.31235/osf.io/t7jup_v1", "decision": "include", "code": "I5", "reason": "여러 AI 평가자의 영어 작문 채점 안정성과 인간 평가와의 일치를 교육 맥락에서 분석한다"}
+{"key": "doi:10.48448/b111-jr81", "decision": "exclude", "code": "E2", "reason": "언어 숙련도를 내부 신호로 추정하는 연구로 LLM 판정은 대상이 아니다"}
+{"key": "doi:10.5281/zenodo.20810356", "decision": "exclude", "code": "E2", "reason": "라틴어 번역 품질을 LLM 번역 출력에 대해 평가하며 LLM은 평가 대상이다"}
+{"key": "doi:10.1007/s10072-026-09125-x", "decision": "maybe", "code": "M", "reason": "초록이 없어 제목만으로 판정 연구인지 알 수 없다"}
+{"key": "doi:10.17605/osf.io/dk2pm", "decision": "exclude", "code": "E2", "reason": "정형외과 LLM 환각 분류 체계 사전등록으로 LLM이 평가 대상이다"}
+{"key": "doi:10.21275/sr26924024938", "decision": "include", "code": "I5", "reason": "로컬 오픈 모델 5종 판정자를 전문가 평정자 3명과 대조하고 판정자 간 불일치와 앙상블을 분석한다"}
+{"key": "doi:10.1109/cai64502.2025.00217", "decision": "maybe", "code": "M", "reason": "정렬 지표를 평가하는 연구이나 LLM 기반 판정 지표인지 초록만으로 불분명하다"}
+{"key": "doi:10.13140/rg.2.2.32419.41769", "decision": "maybe", "code": "M", "reason": "초록이 없어 제목만으로 판정 연구인지 알 수 없다"}
+{"key": "doi:10.13140/rg.2.2.24408.87049", "decision": "maybe", "code": "M", "reason": "초록이 없어 시스템 프롬프트 날짜가 평가 결과를 바꾸는 과정에 판정이 포함되는지 알 수 없다"}
+{"key": "doi:10.5281/zenodo.22924376", "decision": "exclude", "code": "E2", "reason": "역사 분석 재사용 판단 비용 절감 연구로 LLM 판정은 대상이 아니다"}
+{"key": "doi:10.17632/y2pgcb4t5r", "decision": "include", "code": "I5", "reason": "위치 보존 계획서에서 ChatGPT 점수를 인간 기준 점수와 대조해 검증하고 프롬프트 최적화 효과를 비교한다"}
+{"key": "doi:10.63317/27q8itkapb24", "decision": "exclude", "code": "E2", "reason": "문학 텍스트 주석 체계와 LLM 소수샷 성능 평가로 LLM이 평가 대상이다"}
+{"key": "doi:10.1109/iraset68627.2026.11538781", "decision": "exclude", "code": "E2", "reason": "ECG 보고서 생성 파이프라인 연구로 LLM이 평가 대상이다"}
+{"key": "doi:10.1007/978-3-032-31850-3_17", "decision": "include", "code": "I5", "reason": "초록이 없으나 제목이 교사 정렬 개방형 문항 채점을 샷 기반과 루브릭 기반 LLM으로 다루는 판정 연구이다"}
+{"key": "doi:10.1200/jco.2026.44.16_suppl.e17116", "decision": "exclude", "code": "E4", "reason": "종양학 전문의가 LLM 답변을 평정한 연구로 LLM 판정자는 없다"}
+{"key": "doi:10.5281/zenodo.20745836", "decision": "exclude", "code": "E2", "reason": "하드웨어와 LLM 벤치마크 측정 신뢰성의 개념적 비교로 판정 모델은 다루지 않는다"}
+{"key": "doi:10.5281/zenodo.20773242", "decision": "maybe", "code": "M", "reason": "LLM 판정 벤치마킹 C2-Faith를 포함한 교차 영역 종합이나 판정 비중이 작아 불분명하다"}
+{"key": "doi:10.5281/zenodo.22945740", "decision": "maybe", "code": "M", "reason": "LLM 평가에서 모델 제외 규칙의 작동 특성을 다루나 판정 연구 여부가 초록만으로 불분명하다"}
+{"key": "doi:10.5281/zenodo.22985466", "decision": "exclude", "code": "E2", "reason": "하드웨어 간 평가 결과의 항목 수준 재현성을 다루며 판정 모델은 대상이 아니다"}
+{"key": "doi:10.25236/fer.2026.090613", "decision": "exclude", "code": "E2", "reason": "유아 발달 평가 멀티모달 모델 제안으로 LLM이 평가자가 아니라 예측 모델이다"}
+{"key": "doi:10.5281/zenodo.21322387", "decision": "exclude", "code": "E2", "reason": "XTREME 전이 학습 지연 비용을 다루는 자동 합성 보고서로 LLM 판정은 대상이 아니다"}
+{"key": "title:human centric ground truth evaluation and acceptance hu gtva an oversight by design process for rag llm evaluation", "decision": "exclude", "code": "E2", "reason": "RAG 평가용 인간 기반 정답 생성 틀로 LLM 판정자는 다루지 않는다"}
+{"key": "doi:10.1007/s00146-026-02996-w", "decision": "exclude", "code": "E2", "reason": "일본 문화 맥락 레드팀 사례 연구로 LLM 판정 모델은 다루지 않는다"}
+{"key": "doi:10.5909/jbe.2026.31.5.1101", "decision": "maybe", "code": "M", "reason": "초록이 없어 다중 LLM 평가가 판정과 관련되는지 알 수 없다"}
+{"key": "doi:10.1109/gaclm67198.2025.11232232", "decision": "exclude", "code": "E2", "reason": "논리 수열 문제로 LLM 추론 능력을 평가하며 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.20731952", "decision": "maybe", "code": "M", "reason": "자기 갱신 평가 파이프라인에서 루브릭 오염을 예측하는 사전등록이나 판정 모델 연구인지 불분명하다"}
+{"key": "doi:10.5281/zenodo.22108323", "decision": "exclude", "code": "E2", "reason": "PlantUML 데이터셋으로 LLM이 평가 대상이다"}
+{"key": "doi:10.6084/m9.figshare.33201684", "decision": "maybe", "code": "M", "reason": "README 생성 결과를 사람과 LLM 판정자로 이중 평가하나 판정 비교 분석 정도가 초록만으로 불분명하다"}
+{"key": "doi:10.5281/zenodo.23113726", "decision": "maybe", "code": "M", "reason": "초록이 없어 경제 추론 오류 분석에 판정이 포함되는지 알 수 없다"}
+{"key": "doi:10.5281/zenodo.20736880", "decision": "maybe", "code": "M", "reason": "평가 하네스의 악용 가능성을 다루며 취약한 판정자 사례를 포함하나 판정 중심 정도가 불분명하다"}
+{"key": "doi:10.1109/iciet69664.2026.11561576", "decision": "exclude", "code": "E1", "reason": "BLEU 등 지표와 전문가 평정으로 GPT-2 피드백을 평가하며 판정 자체는 분석하지 않는다"}
+{"key": "doi:10.5281/zenodo.23124337", "decision": "maybe", "code": "M", "reason": "초록이 없어 제목만으로 판정 연구인지 알 수 없다"}
+{"key": "doi:10.31325/kjr.2025.09.53.37", "decision": "maybe", "code": "M", "reason": "스피치 루브릭 기반 LLM 성능 안정성 평가 틀을 다루나 LLM이 평가자인지 평가 대상인지 초록만으로 불분명하다"}
+{"key": "doi:10.5281/zenodo.20731485", "decision": "maybe", "code": "M", "reason": "자기 갱신 평가 파이프라인의 루브릭 오염 예측 등록이나 판정 모델 연구인지 불분명하다"}
+{"key": "doi:10.5281/zenodo.18642843", "decision": "maybe", "code": "M", "reason": "LLM이 자신의 행위성을 평가할 때 점수 격차가 생기는 평가 비대칭을 다루나 판정 과제와의 관련성이 불분명하다"}
+{"key": "doi:10.5281/zenodo.23046748", "decision": "exclude", "code": "E5", "reason": "LLM 평가 엔지니어링 아키텍처 백서로 판정 모델 연구가 아니다"}
+{"key": "doi:10.5281/zenodo.19627353", "decision": "exclude", "code": "E1", "reason": "Claude가 자유 응답을 채점해 프로필을 만들지만 채점 자체는 분석하지 않는다"}
+{"key": "doi:10.17605/osf.io/wc9ax", "decision": "exclude", "code": "E2", "reason": "환자용 AI의 다중 턴 평가 프레임워크 범위 검토로 판정 모델은 대상이 아니다"}
+{"key": "doi:10.17605/osf.io/59gsp", "decision": "exclude", "code": "E2", "reason": "LLM과 의료 전문가의 정보 추출 일치도를 비교하며 LLM은 평가자가 아니라 주석자이다"}
+{"key": "doi:10.1016/j.jmsy.2026.08.005", "decision": "maybe", "code": "M", "reason": "초록이 없어 위험 인식 LLM 평가의 성격을 알 수 없다"}
+{"key": "doi:10.5281/zenodo.20245520", "decision": "include", "code": "I4", "reason": "공격 성공 채점 방식을 인간 주석 정답과 비교해 채점기 실패 유형과 보고 기준을 제안한다"}
+{"key": "doi:10.1109/ichi69079.2026.00249", "decision": "include", "code": "I5", "reason": "OSCE 평가 항목을 여러 LLM으로 채점해 교수진 합의 정답과 일치도를 검증한다"}
+{"key": "doi:10.18653/v1/2026.semeval-1.331", "decision": "exclude", "code": "E1", "reason": "LLM을 제약된 선택지 점수기로 쓰는 추론 파이프라인으로 판정 자체는 분석하지 않는다"}
+{"key": "doi:10.2139/ssrn.7426699", "decision": "maybe", "code": "M", "reason": "초록 없이 이력서 스타일이 LLM 평가 결정에 미치는 영향을 다뤄 판정 편향일 가능성이 있다"}
+{"key": "doi:10.17605/osf.io/aghdv", "decision": "exclude", "code": "E2", "reason": "LLM 벤치마킹 도구의 항목 파라미터 타당도 연구로 LLM 판정자는 대상이 아니다"}
+{"key": "doi:10.5281/zenodo.18002864", "decision": "exclude", "code": "E2", "reason": "LLM 평가용 새 데이터라는 설명뿐으로 판정 연구가 아니다"}
+{"key": "doi:10.5281/zenodo.21348372", "decision": "maybe", "code": "M", "reason": "초록 정보가 거의 없어 LLM 평가 논문의 성격을 알 수 없다"}
+{"key": "doi:10.5281/zenodo.18366788", "decision": "include", "code": "I5", "reason": "세르비아어 학술 글쓰기에서 프롬프트와 맥락 수준이 LLM 평가에 미치는 영향을 인간 평가와 비교한다"}
+{"key": "doi:10.5281/zenodo.18682874", "decision": "exclude", "code": "E2", "reason": "토큰 재분할 민감도를 감사하는 틀로 LLM 판정은 대상이 아니다"}
+{"key": "doi:10.1145/3803437.3805590", "decision": "exclude", "code": "E2", "reason": "코딩 스타일이 벤치마크 성능에 미치는 편향으로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.20501891", "decision": "exclude", "code": "E2", "reason": "문서 스트림에서 LLM을 평가하는 코드로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.18744747", "decision": "exclude", "code": "E2", "reason": "백신 객관식 벤치마크 코드로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.20368395", "decision": "exclude", "code": "E4", "reason": "전문가가 AI 답변 정확도를 평정한 질문 은행으로 LLM 판정자는 없다"}
+{"key": "doi:10.17605/osf.io/rdxkv", "decision": "include", "code": "I5", "reason": "텍스트 이미지 변환의 도덕 기반 평정에서 인간 코더와 멀티모달 LLM 평가자의 일치도를 고정 루브릭으로 비교한다"}
+{"key": "doi:10.18653/v1/2026.findings-acl.472", "decision": "include", "code": "I1", "reason": "시인 관점을 가정하는 LLM 평가자 Poller를 제안해 인간 대비 평가 오차 감소를 보인다"}
+{"key": "doi:10.5281/zenodo.21770531", "decision": "exclude", "code": "E2", "reason": "일관성과 정확성 차원으로 환각을 분석하는 틀로 LLM 판정은 대상이 아니다"}
+{"key": "doi:10.5281/zenodo.21830531", "decision": "exclude", "code": "E2", "reason": "정수열 벤치마크 난이도 분석으로 LLM이 평가 대상이다"}
+{"key": "doi:10.5281/zenodo.18024955", "decision": "exclude", "code": "E2", "reason": "TEI 다차원 LLM 평가 프레임워크 소프트웨어로 LLM 판정은 다루지 않는다"}
+{"key": "doi:10.5281/zenodo.20567025", "decision": "exclude", "code": "E5", "reason": "사고연쇄 연구를 자동 합성한 보고서로 판정 연구가 아니다"}
+{"key": "doi:10.31234/osf.io/35utw_v1", "decision": "include", "code": "I2", "reason": "LLM 평가자가 LLM 생성 글을 사람보다 강하게 선호하는 편향을 인간 평정자와 비교해 분석한다"}

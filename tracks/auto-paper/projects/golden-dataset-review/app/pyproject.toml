@@ -1,0 +1,9 @@
+[project]
+name = "golden-dataset-review"
+version = "0.1.0"
+description = "Build and check the golden-dataset mini review PDF"
+requires-python = ">=3.11"
+dependencies = [
+    "pillow>=13.0.0",
+    "pypdfium2>=4.30",
+]

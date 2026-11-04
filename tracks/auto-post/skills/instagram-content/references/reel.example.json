@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "content_type": "evergreen",
+  "edition_date": "2026-10-15",
+  "topic": "Silent infographic layout exercise",
+  "caption": "Motion should explain the idea\n\nAn editable production exercise with original diagrams.\n\n#Infographic #Design #Reels",
+  "sources": [],
+  "scenes": [
+    {
+      "id": "intro",
+      "layout": "metric",
+      "duration": 8,
+      "kicker": "ANIMATED EXPLAINER",
+      "title": [
+        "Make ideas",
+        "move"
+      ],
+      "body": [
+        "This is a reusable layout exercise",
+        "Replace the copy for your own account"
+      ],
+      "credit": "Original explanatory diagram",
+      "requires_sources": false,
+      "visual": {
+        "value": "3",
+        "label": "Shapes, paths and timing",
+        "note": "Editable example, not a benchmark"
+      }
+    },
+    {
+      "id": "flow",
+      "layout": "flow",
+      "duration": 9,
+      "kicker": "ANIMATED EXPLAINER",
+      "title": [
+        "Inputs become",
+        "one explanation"
+      ],
+      "body": [
+        "Signals move toward the center",
+        "The explanatory copy stays in place"
+      ],
+      "credit": "Original explanatory diagram",
+      "requires_sources": false,
+      "visual": {
+        "nodes": [
+          {
+            "symbol": "A",
+            "label": "First"
+          },
+          {
+            "symbol": "B",
+            "label": "Second"
+          },
+          {
+            "symbol": "C",
+            "label": "Third"
+          }
+        ],
+        "center": [
+          "Combine",
+          "and explain"
+        ]
+      }
+    },
+    {
+      "id": "memory",
+      "layout": "occlusion",
+      "duration": 9,
+      "kicker": "ANIMATED EXPLAINER",
+      "title": [
+        "Out of sight",
+        "Still there"
+      ],
+      "body": [
+        "An object is hidden and revealed",
+        "This diagram is not a model test"
+      ],
+      "credit": "Original explanatory diagram",
+      "requires_sources": false,
+      "visual": {
+        "cover_label": "Cover",
+        "memory_label": "Keep its location",
+        "note": "The dot does not move"
+      }
+    },
+    {
+      "id": "cards",
+      "layout": "cards",
+      "duration": 9,
+      "kicker": "ANIMATED EXPLAINER",
+      "title": [
+        "Build the story",
+        "in three parts"
+      ],
+      "body": [
+        "Different sources enter in sequence",
+        "Keep the main explanation readable"
+      ],
+      "credit": "Original explanatory diagram",
+      "requires_sources": false,
+      "visual": {
+        "items": [
+          {
+            "symbol": "1",
+            "label": "Context",
+            "detail": "What changed"
+          },
+          {
+            "symbol": "2",
+            "label": "Evidence",
+            "detail": "What supports the claim"
+          },
+          {
+            "symbol": "3",
+            "label": "Meaning",
+            "detail": "Why the change matters"
+          }
+        ]
+      }
+    },
+    {
+      "id": "steps",
+      "layout": "steps",
+      "duration": 9,
+      "kicker": "ANIMATED EXPLAINER",
+      "title": [
+        "Show the order",
+        "with movement"
+      ],
+      "body": [
+        "A token travels between the steps",
+        "The path explains a sequence"
+      ],
+      "credit": "Original explanatory diagram",
+      "requires_sources": false,
+      "visual": {
+        "items": [
+          {
+            "symbol": "1",
+            "label": "Start"
+          },
+          {
+            "symbol": "2",
+            "label": "Process"
+          },
+          {
+            "symbol": "3",
+            "label": "Finish"
+          }
+        ],
+        "token": "+",
+        "note": "Explanatory sequence"
+      }
+    },
+    {
+      "id": "media",
+      "layout": "media",
+      "duration": 8,
+      "kicker": "ANIMATED EXPLAINER",
+      "title": [
+        "Add relevant",
+        "source material"
+      ],
+      "body": [
+        "Local images or video keep their shape",
+        "Use media with appropriate permission"
+      ],
+      "credit": "Original layout fixture · MIT",
+      "requires_sources": false,
+      "visual": {
+        "label": "Original layout illustration"
+      },
+      "media": {
+        "kind": "image",
+        "path": "../assets/layout-sample.png",
+        "credit": "Original fixture illustration",
+        "usage_note": "Repository-owned MIT layout fixture"
+      }
+    },
+    {
+      "id": "closing",
+      "layout": "metric",
+      "duration": 8,
+      "kicker": "ANIMATED EXPLAINER",
+      "title": [
+        "Keep the copy",
+        "easy to read"
+      ],
+      "body": [
+        "Review the actual video at phone size",
+        "Check the interface overlay areas"
+      ],
+      "credit": "Original explanatory diagram",
+      "requires_sources": false,
+      "visual": {
+        "value": "9:16",
+        "label": "A vertical canvas",
+        "note": "Safe-area masks are preview only"
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{"key":"arxiv:2609.30483","decision":"exclude","code":"E2","reason":"오디오 언어모델의 수치 주장을 계측기 기준값으로 채점하는 벤치마크로 LLM 판정 모델은 연구 대상이 아니다"}
+{"key":"arxiv:2609.36178","decision":"exclude","code":"E1","reason":"에이전트 RL의 신용 할당에 판정 모델을 구간 후보 제안 도구로 쓸 뿐 판정 자체를 분석하지 않는다"}
+{"key":"arxiv:2608.26121","decision":"exclude","code":"E1","reason":"기권 학습 실험에서 정답 여부를 독립 판정 모델로 가려낼 뿐 판정 모델을 분석하지 않는다"}
+{"key":"arxiv:2609.15387","decision":"maybe","code":"M","reason":"웹 앱 생성 벤치마크이며 인간 선호와 85.3% 일치와 판정 모델 교체 시 순위 안정성을 보여 판정 검증 여부 전문 검토가 필요하다"}
+{"key":"arxiv:2603.27476","decision":"maybe","code":"M","reason":"LLM 판정 대신 기준별 검증 방식을 제안하고 인간과 kappa 0.84를 보고해 대안 비교 연구인지 전문 검토가 필요하다"}
+{"key":"arxiv:2610.15179","decision":"include","code":"I5","reason":"인권 정렬 평가용 LLM-as-a-Judge를 전문가 주석 대비 F1로 검증하고 판정 관대성 점수를 제안한다"}
+{"key":"arxiv:2609.37054","decision":"exclude","code":"E1","reason":"다국어 안전성 정렬 학습에서 고정 판정 모델을 보상 신호로만 쓴다"}
+{"key":"arxiv:2606.15037","decision":"maybe","code":"M","reason":"LLM을 판정자로 쓰는 QA 기반 영상의학 보고서 지표이며 방사선과 의사 판단과의 정합을 보이나 주 기여가 지표 설계라 검토가 필요하다"}
+{"key":"arxiv:2608.27465","decision":"exclude","code":"E1","reason":"감정 맥락이 조언에 미치는 영향 연구이며 판정 모델은 점수 측정 도구일 뿐이다"}
+{"key":"arxiv:2510.15514","decision":"include","code":"I3","reason":"RLAIF 판정의 선호 순환 노이즈를 위상적 다수결로 제거하는 판정 개선 방법과 순환 발생률 지표를 제안한다"}
+{"key":"arxiv:2603.20231","decision":"maybe","code":"M","reason":"HR 이메일 평가에서 10개 판정 모델의 선호 차이와 규모별 일치도를 분석하나 주제는 인간 대 LLM 이메일 비교다"}
+{"key":"arxiv:2606.19640","decision":"maybe","code":"M","reason":"다국어 우울증 대화에서 LLM 판정이 비영어 텍스트에서 부정확함을 보이나 주 초점은 데이터 생성이다"}
+{"key":"arxiv:2610.04829","decision":"include","code":"I2","reason":"다중 에이전트 증명 탐색의 LLM 검증자 앙상블이 만장일치 실패와 오승인을 내는 신뢰성 문제를 분석한다"}
+{"key":"arxiv:2609.09875","decision":"exclude","code":"E1","reason":"에이전트 신뢰 평가 프레임워크이며 단일 고정 판정 모델로 채점할 뿐 판정 자체를 연구하지 않는다"}
+{"key":"arxiv:2610.20809","decision":"exclude","code":"E2","reason":"판정 모델 없이 DSL 연산자를 스스로 확장하는 에이전트 연구로 평가자 LLM이 대상이 아니다"}
+{"key":"arxiv:2603.23520","decision":"maybe","code":"M","reason":"중의학 임상 에이전트 연구 중 LLM 판정과 의사 평가의 신뢰도 비교가 일부 있으나 주 기여는 아니다"}
+{"key":"arxiv:2609.26090","decision":"maybe","code":"M","reason":"특수교육 벤치마크이며 전문가 기준 점수에 맞춰 판정 지시문을 수정하나 판정 검증의 비중이 불분명하다"}
+{"key":"arxiv:2606.18668","decision":"exclude","code":"E1","reason":"보정된 LLM 판정 앙상블로 기권 라벨 데이터를 만드는 데 쓸 뿐 판정 자체가 연구 대상이 아니다"}
+{"key":"arxiv:2610.05124","decision":"exclude","code":"E2","reason":"영속 메모리의 모델 간 해석 드리프트 연구이며 판정 모델이 연구 대상이 아니다"}
+{"key":"arxiv:2609.10060","decision":"exclude","code":"E2","reason":"은닉 상태로 편향을 감사하는 방법으로 LLM 판정과 무관하다"}
+{"key":"arxiv:2609.27353","decision":"exclude","code":"E2","reason":"오프라인 웹 에이전트 벤치마크와 가이드-행동 상호강화 연구로 판정 모델이 대상이 아니다"}
+{"key":"arxiv:2604.26233","decision":"include","code":"I5","reason":"법률 판단자로서 LLM의 위치 편향과 인간 전문가의 논증 품질 판단 추종 여부를 분석한다"}
+{"key":"arxiv:2610.08364","decision":"exclude","code":"E1","reason":"에이전트 전사 분석 도구이며 판정 모델은 설정으로 주어질 뿐 신뢰성 분석은 없다"}
+{"key":"arxiv:2604.06277","decision":"exclude","code":"E1","reason":"환각 탐지 프로브 학습의 약한 라벨 신호 중 하나로 판정 결과를 쓸 뿐이다"}
+{"key":"arxiv:2608.13112","decision":"exclude","code":"E1","reason":"물리 도해 생성 모델 연구이며 판정 모델은 벤치마크 채점에 쓰일 뿐이다"}
+{"key":"arxiv:2609.30471","decision":"include","code":"I1","reason":"참조 기반 LLM 판정의 참조 인스턴스 괴리 문제를 정의하고 맥락 근거 판정 프레임워크 CARGO를 제안한다"}
+{"key":"arxiv:2604.23993","decision":"exclude","code":"E1","reason":"상품 매핑 RL의 보상으로 판정 모델 점수를 쓸 뿐 판정을 분석하지 않는다"}
+{"key":"arxiv:2507.17761","decision":"exclude","code":"E1","reason":"출처 기반 설명 에이전트의 평가에 LLM 판정을 쓸 뿐이다"}
+{"key":"arxiv:2511.18303","decision":"exclude","code":"E1","reason":"딥리서치 에이전트 평가에 LLM 배심원 루브릭을 쓰나 판정 검증이 아니라 결과 평가 수단이다"}
+{"key":"arxiv:2606.20632","decision":"exclude","code":"E2","reason":"다중 LLM 대화 행동의 후속 학습 영향 연구이며 판정 모델 분석이 아니다"}
+{"key":"arxiv:2605.21728","decision":"maybe","code":"M","reason":"LLM 판정 기반 캡션 평가의 대안인 학습 지표를 제안하나 LLM 판정과의 직접 비교 여부가 초록에서 불명확하다"}
+{"key":"arxiv:2608.22802","decision":"exclude","code":"E2","reason":"의료 LLM의 서사 앵커링 편향을 평가하는 연구로 판정 모델이 없다"}
+{"key":"arxiv:2608.22138","decision":"exclude","code":"E2","reason":"섭동 아래 추론 모델의 안정성 평가이며 LLM 판정이 연구 대상이 아니다"}
+{"key":"arxiv:2609.32203","decision":"exclude","code":"E1","reason":"VLM 판정을 CLIP에 증류하는 방법이며 판정의 신뢰성 분석이 아니라 교사 신호로 쓴다"}
+{"key":"arxiv:2610.13823","decision":"maybe","code":"M","reason":"LLM이 행을 판정하는 시맨틱 쿼리 엔진의 실행 간 변동을 측정해 판정 일관성과 관련되나 판정 연구인지 불분명하다"}
+{"key":"arxiv:2610.18635","decision":"exclude","code":"E1","reason":"디지털 트윈 모델 생성에서 판정 루프를 쓰는 응용으로 판정 자체를 분석하지 않는다"}
+{"key":"arxiv:2605.07488","decision":"include","code":"I1","reason":"멀티모달 데이터 선택에서 LLM-as-a-Judge 대안을 제안하고 해당 기준선과 직접 비교한다"}
+{"key":"arxiv:2608.15673","decision":"include","code":"I1","reason":"가드레일에서 LLM-as-a-judge의 대안인 신경기호 구조를 제안하고 LLM 판정 기준선과 비교한다"}
+{"key":"arxiv:2608.07038","decision":"include","code":"I5","reason":"이진 역공학 평가용 BinJudgeBench로 LLM 판정과 전문가 상관을 측정하고 판정 설정 라우팅 BinJudge를 제안한다"}
+{"key":"arxiv:2510.01224","decision":"maybe","code":"M","reason":"수의학 요약 도구를 LLM 판정으로 평가하며 채점 재현성을 점검하나 판정 분석은 부수적이다"}
+{"key":"arxiv:2605.19141","decision":"include","code":"I1","reason":"토론 논증 평가에서 총체적 LLM 판정의 불안정성을 보이고 지역 판정 집계 프레임워크 GRASP를 제안한다"}
+{"key":"arxiv:2605.05902","decision":"include","code":"I5","reason":"비영어 코드 주석 평가에서 LLM 판정과 지표를 인간 주석과 대조해 신뢰성 한계를 검증한다"}
+{"key":"arxiv:2509.02855","decision":"include","code":"I5","reason":"교육 데이터에서 LLM 판정을 임베딩과 함께 전문가 유사도 판단에 대비해 벤치마크한다"}
+{"key":"arxiv:2608.13608","decision":"include","code":"I1","reason":"라벨 없는 하니스 평가 방식을 제안하고 유사 성능 모델 간 LLM 판정이 무신호임을 비교해 보인다"}
+{"key":"arxiv:2510.17844","decision":"exclude","code":"E1","reason":"심리역동 다중 에이전트 모델의 선호도 측정에 LLM 판정을 쓸 뿐이다"}
+{"key":"arxiv:2609.36856","decision":"maybe","code":"M","reason":"LLM 판정이 인용 밀도를 근거로 과대평가하는 맹점을 지적하나 주 기여는 규제 QA 데이터셋이다"}
+{"key":"arxiv:2511.10787","decision":"exclude","code":"E1","reason":"대학 챗봇 모델 비교에서 LLM 판정을 지표로 쓸 뿐이다"}
+{"key":"arxiv:2508.17675","decision":"exclude","code":"E1","reason":"인지 평가용 합성 규준 데이터 생성 연구이며 LLM 판정은 여러 지표 중 하나로만 쓰인다"}
+{"key":"arxiv:2608.11787","decision":"maybe","code":"M","reason":"재무 조언 RL에서 판정 보상과 판정 독립 인과 감사의 순위 불일치를 보여 판정 한계와 관련되나 주 기여는 학습이다"}
+{"key":"arxiv:2608.21057","decision":"include","code":"I5","reason":"신약 개발 에이전트용 LLM 판정을 전문가 5인과의 정렬 연구로 검증하고 few-shot으로 개선한다"}
+{"key":"arxiv:2605.13481","decision":"exclude","code":"E1","reason":"지식 그래프 RAG 프레임워크이며 LLM 판정은 성능 측정에만 쓰인다"}
+{"key":"arxiv:2605.16215","decision":"maybe","code":"M","reason":"임상 LLM 파이프라인 연구로 판정을 인간 평가자 204명에 맞춰 보정했다고 하나 주 기여는 파이프라인이다"}
+{"key":"arxiv:2509.23715","decision":"maybe","code":"M","reason":"운전법 QA 평가 중 판정 모델의 자기선호 편향을 발견하나 판정 분석은 일부에 그친다"}
+{"key":"arxiv:2601.02586","decision":"include","code":"I5","reason":"음악 표절 판단용 LLM-as-a-judge 프레임워크를 단계별 속성 추출 모듈로 설계한다"}
+{"key":"arxiv:2604.02207","decision":"include","code":"I5","reason":"흉부 CT 번역 평가에서 LLM 판정 3종과 영상의학과 의사의 일치도와 자기선호 편향을 분석한다"}
+{"key":"arxiv:2609.16487","decision":"include","code":"I5","reason":"실시간 데이터 과학 에이전트용 사실 단위 판정을 전문가와의 일치로 검증하고 MCC 향상을 보인다"}
+{"key":"arxiv:2605.06963","decision":"exclude","code":"E1","reason":"Moodle 튜터링 시스템을 Ragas 판정으로 평가할 뿐이다"}
+{"key":"arxiv:2609.07120","decision":"exclude","code":"E1","reason":"반론 생성 방법이며 LLM 판정은 평가 수단으로만 쓰인다"}
+{"key":"arxiv:2610.09820","decision":"include","code":"I2","reason":"관련성 판정 LLM의 백본 버전 변화에 따른 인간 일치도와 판정 안정성 회귀를 분석한다"}
+{"key":"arxiv:2605.27701","decision":"maybe","code":"M","reason":"LLM 판정 과제군에서 정책 최적화를 개선하는 방법이라 판정 모델 학습인지 불분명하다"}
+{"key":"arxiv:2609.36201","decision":"include","code":"I5","reason":"컴퓨터 사용 에이전트의 안전 검증용 에이전트형 판정기를 설계하고 LLM 판정과 비교한다"}
+{"key":"arxiv:2608.27127","decision":"exclude","code":"E1","reason":"밈 문화 변환 다중 에이전트 프레임워크이며 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2609.30849","decision":"maybe","code":"M","reason":"섭동 강도를 재는 LLM 판정 방식을 제안하나 주제는 설명 자기일관성이라 판단이 어렵다"}
+{"key":"arxiv:2606.11199","decision":"exclude","code":"E1","reason":"RAG 대회 제출 시스템 보고이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2510.02337","decision":"include","code":"I1","reason":"문서 평가에서 LLM 판정보다 안정적인 해석 가능한 특성 기반 평가 CRACQ를 제안해 직접 비교한다"}
+{"key":"arxiv:2608.14622","decision":"exclude","code":"E1","reason":"양육 조언 LLM 15개를 루브릭 LLM 판정으로 평가하며 판정 자체는 분석하지 않는다"}
+{"key":"arxiv:2608.26154","decision":"maybe","code":"M","reason":"전문가 평가와 LLM 판정을 병행하나 초록에 일치도 분석이 없어 판단이 어렵다"}
+{"key":"arxiv:2609.01139","decision":"include","code":"I1","reason":"NLG 평가에서 과제 분해 LLM 판정이 이점이 없음을 체계적으로 비교하고 인간 라벨의 효과를 밝힌다"}
+{"key":"arxiv:2510.13839","decision":"exclude","code":"E1","reason":"제품 온톨로지 추출 결과를 LLM 판정으로 비교할 뿐이다"}
+{"key":"arxiv:2603.21696","decision":"exclude","code":"E1","reason":"협상 대화 프레임워크이며 LLM 판정은 정성 평가에만 쓰인다"}
+{"key":"arxiv:2601.07186","decision":"include","code":"I6","reason":"로봇 작업 계획의 보안 평가용 LLM-as-a-Judge 방어 메커니즘 PROTEA를 제안한다"}
+{"key":"arxiv:2509.21662","decision":"exclude","code":"E1","reason":"멀티모달 절차 계획 방법이며 판정 프로토콜은 평가 수단으로 설계됐을 뿐이다"}
+{"key":"arxiv:2603.03508","decision":"exclude","code":"E1","reason":"힌디어 소형 모델 학습에서 LLM 판정을 코퍼스 필터로 쓸 뿐이다"}
+{"key":"arxiv:2510.01469","decision":"include","code":"I1","reason":"LLM 판정 대신 임베딩 순위 기반 응답 분류를 제안하고 인간 주석과 비교해 대안을 검증한다"}
+{"key":"arxiv:2607.17230","decision":"exclude","code":"E1","reason":"SOAP 노트 생성 시스템 제출이며 LLM 판정은 환각률 측정에만 쓰인다"}
+{"key":"arxiv:2606.16794","decision":"include","code":"I5","reason":"안면 피부질환 시각 설명 평가용 LLM-as-a-Judge 프레임워크를 판정 모델 3종으로 설계한다"}
+{"key":"arxiv:2607.18068","decision":"include","code":"I5","reason":"광 네트워크 설명 평가에 LLM 판정과 소수 전문가 평점을 결합한 HuGLEN 파이프라인을 제안한다"}
+{"key":"arxiv:2606.27446","decision":"exclude","code":"E1","reason":"금융 인과 추출 공유 과제 제출이며 LLM 판정은 대회 지표일 뿐이다"}
+{"key":"arxiv:2606.21930","decision":"exclude","code":"E1","reason":"정서 지원 응답 생성 프레임워크이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2609.17306","decision":"exclude","code":"E1","reason":"다중 에이전트 모델 풀 선택 연구이며 판정 방식은 비교 구성 요소로만 등장한다"}
+{"key":"arxiv:2512.20169","decision":"maybe","code":"M","reason":"추론 학습 EM 방법 연구로 실험 과제에 LLM 판정 보정이 포함되나 초록만으로 비중을 알 수 없다"}
+{"key":"arxiv:2605.25658","decision":"exclude","code":"E1","reason":"최적화 솔버 생성에서 Elo 기반 LLM 판정을 쓰는 응용으로 판정 분석은 없다"}
+{"key":"arxiv:2511.03056","decision":"exclude","code":"E1","reason":"한쪽 대화 복원 문제이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2608.25854","decision":"exclude","code":"E1","reason":"핵심 요점 분석 벤치마크이며 LLM 판정은 지원 자원으로 언급될 뿐이다"}
+{"key":"arxiv:2609.01113","decision":"exclude","code":"E1","reason":"아랍 방언 독해 벤치마크 구축에서 LLM 판정을 필터로 쓸 뿐이다"}
+{"key":"arxiv:2609.04598","decision":"exclude","code":"E1","reason":"수의학 QA 벤치마크이며 LLM 판정은 지표 중 하나로만 쓰인다"}
+{"key":"arxiv:2606.00462","decision":"exclude","code":"E1","reason":"짧은 텍스트 재작성 SLM 적응 연구이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2604.08595","decision":"include","code":"I1","reason":"판정 엄격도를 온도 파라미터로 조절하는 판정 점수 집계 방식 TCVA를 제안하고 인간 상관으로 검증한다"}
+{"key":"arxiv:2603.18173","decision":"exclude","code":"E1","reason":"지속적 LLM 평가 플랫폼이며 LLM 판정은 QA 테스트의 채점 수단일 뿐이다"}
+{"key":"arxiv:2608.23632","decision":"maybe","code":"M","reason":"코드 선호 최적화에서 LLM 판정 주석이 함수 실패를 과대 예측함을 보이나 주 기여는 학습 프레임워크다"}
+{"key":"arxiv:2606.28526","decision":"exclude","code":"E1","reason":"프랑스어 OSCE 가상 환자 데이터셋이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2606.14817","decision":"exclude","code":"E1","reason":"읽기 자료 생성 RAG 시스템의 판정 모듈은 품질 점검용 구성 요소일 뿐이다"}
+{"key":"arxiv:2503.16674","decision":"include","code":"I2","reason":"LLM 판정 피드백을 소크라테스식으로 탐침해 이념 프레이밍 선호 편향과 인간 주석 일치를 분석한다"}
+{"key":"arxiv:2506.21360","decision":"maybe","code":"M","reason":"문학비평 프레임워크이며 LLM 판정 지표를 전문가 비평과 비교하나 판정 검증 비중이 불분명하다"}
+{"key":"arxiv:2607.26060","decision":"exclude","code":"E1","reason":"챗봇 검증 프레임워크에서 LLM 판정은 구성 요소로만 쓰인다"}
+{"key":"arxiv:2610.15685","decision":"maybe","code":"M","reason":"판정 점수만으로 증류 출처를 추적하는 워터마크로 판정 보상 채널을 다루나 판정 보안 연구인지 불분명하다"}
+{"key":"arxiv:2512.16795","decision":"exclude","code":"E1","reason":"충돌 인식 RAG 프레임워크이며 LLM 판정은 신뢰 점수 계산 수단일 뿐이다"}
+{"key":"arxiv:2508.13526","decision":"maybe","code":"M","reason":"텔루구어 벤치마크이며 개방형 문항에서 LLM 판정과 인간 평가를 비교하나 부수적 분석이다"}
+{"key":"arxiv:2507.04942","decision":"exclude","code":"E1","reason":"RAG 챌린지 보고서이며 LLM 판정은 1차 채점 수단일 뿐이다"}
+{"key":"arxiv:2601.11769","decision":"include","code":"I5","reason":"가구 시각 검색 평가용 LLM-as-a-Judge 프레임워크를 제안하고 실제 지표와의 상관으로 검증한다"}
+{"key":"arxiv:2605.30521","decision":"include","code":"I6","reason":"신뢰할 수 없는 입력을 모의 도구 호출로 격리하는 방어가 LLM 판정 과제에서 공격 성공률을 낮추는지 시험한다"}
+{"key":"arxiv:2606.19266","decision":"exclude","code":"E1","reason":"의료 도메인 적응 비교 연구이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2602.20800","decision":"include","code":"I2","reason":"감독과 평가를 분리한 두 판정자 프레임워크로 선호 누수와 순환 평가 문제를 다룬다"}
+{"key":"arxiv:2606.27316","decision":"exclude","code":"E1","reason":"증권 설명서 자격 심사 정보 추출 사례이며 LLM 판정은 평가 방법일 뿐이다"}
+{"key":"arxiv:2605.28183","decision":"include","code":"I5","reason":"독일 법률 추론 벤치마크에서 루브릭 LLM 판정을 인간 3인 채점과 대조해 Pearson 0.76으로 검증한다"}
+{"key":"arxiv:2609.22971","decision":"exclude","code":"E1","reason":"UX 개선 추천 시뮬레이션 프레임워크이며 LLM 판정은 평가 프로토콜 일부일 뿐이다"}
+{"key":"arxiv:2512.03237","decision":"exclude","code":"E1","reason":"3D 점군 재질 추론 방법이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2601.13075","decision":"exclude","code":"E1","reason":"대학원생 멘토링 에이전트를 LLM 판정 선호로 비교할 뿐 판정은 분석하지 않는다"}
+{"key":"arxiv:2607.21961","decision":"include","code":"I5","reason":"팟캐스트 충실성 평가용 턴 단위 LLM 판정을 인간 연구로 신뢰도 검증한다"}
+{"key":"arxiv:2604.02766","decision":"exclude","code":"E3","reason":"능동 선택 온라인 DPO 연구이며 LLM 판정은 프록시 승률 측정에만 쓰인다"}
+{"key":"arxiv:2609.09428","decision":"include","code":"I5","reason":"XAI 설명 품질을 비교 평가하는 LLM-as-a-judge XAI-Arena를 제안하고 인간 평점과 상관을 검증한다"}
+{"key":"arxiv:2609.14168","decision":"exclude","code":"E1","reason":"진화하는 맥락 파라미터화 방법이며 LLM 판정은 성능 지표일 뿐이다"}
+{"key":"arxiv:2609.16501","decision":"include","code":"I2","reason":"이력서 선별 편향 감사에서 쌍비교 LLM 판정이 동점 허용 여부와 위치 효과에 민감함을 분석한다"}
+{"key":"arxiv:2608.05391","decision":"exclude","code":"E1","reason":"돌봄 계획 조율 프레임워크이며 LLM 판정은 평가 지표일 뿐이다"}
+{"key":"arxiv:2610.23304","decision":"exclude","code":"E1","reason":"기업 데이터 어시스턴트 설계 연구이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2603.01952","decision":"include","code":"I5","reason":"문화 규범 에이전트 벤치마크에서 LLM 검증자의 불확실성과 판정이 신뢰할 수 있는 조건을 연구한다"}
+{"key":"arxiv:2604.13417","decision":"exclude","code":"E1","reason":"은닉 상태 기반 환각 모니터링 방법으로 LLM 판정과의 직접 비교가 없다"}
+{"key":"arxiv:2603.09157","decision":"exclude","code":"E1","reason":"에이전트 행동 검증 툴킷이며 LLM 판정은 벤치마크 지표 일부일 뿐이다"}
+{"key":"arxiv:2603.04804","decision":"exclude","code":"E1","reason":"판결 통계 증거 서술 생성 플랫폼이며 LLM 판정은 성능 비교 수단일 뿐이다"}
+{"key":"arxiv:2609.18204","decision":"include","code":"I2","reason":"LLM 감독자가 절차 추적 상세도에 따라 기각 기준이 이동하는 판정 편향을 신호 탐지로 분석한다"}
+{"key":"arxiv:2608.05161","decision":"exclude","code":"E1","reason":"도메인 어댑터 기반 지시 튜닝 연구이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2609.14819","decision":"maybe","code":"M","reason":"의료 LLM 평가 방법 입문서로 LLM-as-a-judge를 일부 다루나 판정 전용 서베이는 아니다"}
+{"key":"arxiv:2604.20853","decision":"exclude","code":"E1","reason":"생의학 검색 파이프라인 비교이며 LLM 판정은 승률 평가 수단일 뿐이다"}
+{"key":"arxiv:2508.03990","decision":"include","code":"I5","reason":"웰빙 개념 설명 평가용 원칙 기반 이중 LLM 판정을 설계하고 인간 평가와의 일치를 확인한다"}
+{"key":"arxiv:2510.15842","decision":"maybe","code":"M","reason":"학술 웹페이지 벤치마크의 일부로 인간 검증된 LLM 판정을 쓰나 검증 비중이 불분명하다"}
+{"key":"arxiv:2607.00601","decision":"exclude","code":"E1","reason":"Taboo 게임 제약 순응 연구이며 LLM 판정은 설명 효과 측정 수단일 뿐이다"}
+{"key":"arxiv:2607.20510","decision":"exclude","code":"E2","reason":"LLM 판정 없이 정확 일치로 채점하는 통신 에이전트 벤치마크다"}
+{"key":"arxiv:2608.18740","decision":"exclude","code":"E1","reason":"다중 에이전트 분석 플랫폼이며 LLM 판정은 품질 점수 측정 수단일 뿐이다"}
+{"key":"arxiv:2610.01548","decision":"include","code":"I3","reason":"LLM 판정 의사 보상에 컨포멀 보정된 구간을 도입해 GRPO에 쓰는 판정 보상 불확실성 처리 방법이다"}
+{"key":"arxiv:2606.20400","decision":"exclude","code":"E1","reason":"합성 대화 생성 프레임워크이며 LLM 판정은 데이터 필터로만 쓰인다"}
+{"key":"arxiv:2608.00054","decision":"exclude","code":"E1","reason":"RAG 자동 테스트 접근이며 LLM 판정은 응답 채점 수단일 뿐이다"}
+{"key":"arxiv:2609.13893","decision":"exclude","code":"E1","reason":"수익 발표 회피성 탐지 모델이며 LLM 판정은 텍스트 특징 추출기로만 쓰인다"}
+{"key":"arxiv:2605.16288","decision":"exclude","code":"E1","reason":"치매 돌봄 아첨 행동 연구이며 LLM 판정은 응답 품질 측정 수단일 뿐이다"}
+{"key":"arxiv:2508.18093","decision":"exclude","code":"E1","reason":"RAG 대 장문맥 비교이며 LLM 판정은 평가 수단일 뿐이다"}
+{"key":"arxiv:2412.09993","decision":"exclude","code":"E1","reason":"페르시아어 관용구 번역 비교 연구로 판정은 평가 수단으로 쓰인다"}
+{"key":"arxiv:2608.23783","decision":"include","code":"I2","reason":"LLM 판정이 목표 차원 평가에서 다른 차원에 의존하는 현상을 CorrGap으로 측정하고 DimCheck으로 완화한다"}
+{"key":"arxiv:2607.11267","decision":"exclude","code":"E1","reason":"사용자 피드백 기반 RAG 개선 방법이며 LLM 판정은 평가 전략일 뿐이다"}
+{"key":"arxiv:2507.08037","decision":"exclude","code":"E1","reason":"계획 데이터셋 구축에서 LLM 판정은 검증 수단 중 하나일 뿐이다"}
+{"key":"arxiv:2608.15535","decision":"exclude","code":"E1","reason":"인도어 사실 지식 벤치마크이며 LLM 판정은 여러 채점 방식 중 하나로만 쓰인다"}
+{"key":"arxiv:2607.28006","decision":"exclude","code":"E1","reason":"멀티모달 장문 요약 모델이며 LLM 판정은 평가 지표 중 하나일 뿐이다"}

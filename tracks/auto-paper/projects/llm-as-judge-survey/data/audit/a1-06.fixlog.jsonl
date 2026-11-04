@@ -1,0 +1,5 @@
+{"line": 95, "decision": "applied", "reason": "충분조건 아님만 근거 있음", "new": "검증 가능성은 효과의 충분조건이 아니고 효과가 나타나는 데 유리한 조건에 가깝다"}
+{"line": 97, "decision": "applied", "reason": "'가장 크다' 비교는 본문 확인에 없음", "new": "참조는 판정 모델이 스스로 풀지 못하는 문항에서 정답 정보를 보태 주고"}
+{"line": 107, "decision": "applied", "reason": "집계 근거 없음; 범위 한정", "new": "이 장이 검토한 연구 중 조건별로 나눠 보고한 것은 소수였다"}
+{"line": 76, "decision": "applied", "reason": "claims.csv Q-FT 평가 4/2/6 재계산 확인", "new": "독립 평가 12개 중 8개(반박 2개, 조건부 6개)가 한계를 보고한다"}
+{"line": 43, "decision": "applied", "reason": "verify.csv: Table 2 json 설정 조건 누락", "new": "JSON 출력 설정에서 이유 먼저 순서와 점수 먼저 순서만 바꿔도 ..."}

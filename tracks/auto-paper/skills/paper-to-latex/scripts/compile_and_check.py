@@ -46,7 +46,8 @@ def arg(name, default):
 def run(cmd, cwd, timeout):
     """Run cmd; on timeout kill the WHOLE process tree (latexmk -> perl -> pdflatex -> makepk ...)."""
     kw = {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if os.name == "nt" else {"start_new_session": True}
-    p = subprocess.Popen(cmd, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
+    # stdin=DEVNULL: an interactive prompt (e.g. bibtex asking for a file name) gets EOF instead of hanging forever
+    p = subprocess.Popen(cmd, cwd=cwd, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
                          encoding="utf-8", errors="replace", **kw)
     try:
         out, _ = p.communicate(timeout=timeout)
@@ -164,6 +165,8 @@ def main():
     # BibTeX/biber run inside the build dir; without this they can resolve
     # "references.bib" to a same-named file shipped with the TeX distribution.
     os.environ["BIBINPUTS"] = str(root) + os.pathsep + os.environ.get("BIBINPUTS", "")
+    # Same for a venue kit's own .bst (e.g. colm2026_conference.bst) kept next to main.tex.
+    os.environ["BSTINPUTS"] = str(root) + os.pathsep + os.environ.get("BSTINPUTS", "")
 
     if shutil.which("latexmk") and shutil.which(engine):
         flag = {"pdflatex": "-pdf", "xelatex": "-xelatex", "lualatex": "-lualatex"}[engine]

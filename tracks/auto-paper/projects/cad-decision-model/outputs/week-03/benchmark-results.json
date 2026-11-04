@@ -1,0 +1,1563 @@
+{
+  "schema": "cad-decision-model-public-results-v1",
+  "publication_record_date": "2026-10-26",
+  "measurement_date": "2026-10-24",
+  "benchmark": {
+    "name": "PID2Graph OPEN100",
+    "source": "https://zenodo.org/records/14803338",
+    "doi": "10.5281/zenodo.14803338",
+    "license": "CC BY-SA 4.0",
+    "scope": "all 12 complete public real OPEN100 plans",
+    "physical_reference_symbols": 1439,
+    "derived_reference_terminal_pairs": 1882,
+    "native_graph_nodes": 4629,
+    "native_graph_edges": 4567
+  },
+  "protocol": {
+    "localization": "class-agnostic one-to-one IoU >= 0.50; maximize eligible matches then total IoU; micro P/R/F1",
+    "predicted_coordinate_convention": "inclusive maxima converted by +1 for interval-area IoU; native GraphML unchanged",
+    "connectivity": "collapse connector/crossing-only reference components to adjacent physical-symbol pairs; compare accepted-edge components separately within every predicted net; no closure through physical symbols",
+    "not_measured": [
+      "native PID2Graph node AP",
+      "native PID2Graph edge mAP",
+      "flow direction",
+      "text transcription",
+      "v15 public benchmark accuracy"
+    ],
+    "classes": "tank and pump map to equipment only for a separate coarse-class diagnostic"
+  },
+  "metrics": {
+    "v11": {
+      "algorithm_revision": "geometry-local-route-v11",
+      "model": "jev-1.14.0",
+      "plan_count": 12,
+      "evaluation_sha256": "d6c5b63a777976b4ea433c8b16c08ff3d04001ab766b4f7178ce7eaf39cd1ae2",
+      "evaluator_sha256": "52d63a3f192628f624e6ad866ccd656105b4ba074637efabf44fd8fb3f7efccb",
+      "protocol_sha256": "9eeac4ea238caac2fb7515965e3ac2596f45532e59c86468f5f77708829937ab",
+      "aggregate": {
+        "localization": {
+          "tp": 302,
+          "fp": 282,
+          "fn": 1137,
+          "precision": 0.5171232876712328,
+          "recall": 0.2098679638637943,
+          "f1": 0.2985664854176965
+        },
+        "coarse_class_localization_diagnostic": {
+          "tp": 290,
+          "fp": 294,
+          "fn": 1149,
+          "precision": 0.4965753424657534,
+          "recall": 0.20152883947185546,
+          "f1": 0.28670291646070195
+        },
+        "within_net_connectivity": {
+          "tp": 137,
+          "fp": 484,
+          "fn": 1745,
+          "precision": 0.22061191626409019,
+          "recall": 0.07279489904357067,
+          "f1": 0.10946863763483819
+        }
+      },
+      "plans": [
+        {
+          "name": "0",
+          "hashes": {
+            "image": "2451fbe9b8d0494a822901493cfbf1d2656f0bd7678f0f25bb2266b5e78a7dc9",
+            "graph": "e76bf9c6ddda990f114cf685924ce8482177723585410e8a338052c31373e6ed",
+            "prediction": "fb80e90699df11927f20bd5cab1fd8461a9761582a11308fea2af83cb17ef755"
+          },
+          "native_counts": {
+            "nodes": 437,
+            "edges": 433,
+            "physical_symbols": 137,
+            "structural_nodes": 296,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 433
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 249,
+            "reference_direct_symbol_pairs": 8,
+            "prediction_direct_pairs": 3,
+            "prediction_within_net_pairs": 3
+          },
+          "localization": {
+            "tp": 16,
+            "fp": 1,
+            "fn": 121,
+            "precision": 0.9411764705882353,
+            "recall": 0.11678832116788321,
+            "f1": 0.2077922077922078
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 16,
+            "fp": 1,
+            "fn": 121,
+            "precision": 0.9411764705882353,
+            "recall": 0.11678832116788321,
+            "f1": 0.2077922077922078
+          },
+          "within_net_connectivity": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 247,
+            "precision": 0.6666666666666666,
+            "recall": 0.008032128514056224,
+            "f1": 0.015873015873015872
+          }
+        },
+        {
+          "name": "1",
+          "hashes": {
+            "image": "c8c696042bf7a16eb30e492a312af274c312a2049a7eb765ca82f84d3770eba8",
+            "graph": "00d8be4b21a1bed6ad2ced86504d945995d942c35dc356986e904d42c535933e",
+            "prediction": "b2c7cd5bff745f2385354d0aa63c83c750e6f29bf74e41f03e8202b7ba2649f3"
+          },
+          "native_counts": {
+            "nodes": 320,
+            "edges": 308,
+            "physical_symbols": 100,
+            "structural_nodes": 216,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 308
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 119,
+            "reference_direct_symbol_pairs": 11,
+            "prediction_direct_pairs": 56,
+            "prediction_within_net_pairs": 109
+          },
+          "localization": {
+            "tp": 13,
+            "fp": 62,
+            "fn": 87,
+            "precision": 0.17333333333333334,
+            "recall": 0.13,
+            "f1": 0.14857142857142858
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 13,
+            "fp": 62,
+            "fn": 87,
+            "precision": 0.17333333333333334,
+            "recall": 0.13,
+            "f1": 0.14857142857142858
+          },
+          "within_net_connectivity": {
+            "tp": 1,
+            "fp": 108,
+            "fn": 118,
+            "precision": 0.009174311926605505,
+            "recall": 0.008403361344537815,
+            "f1": 0.008771929824561403
+          }
+        },
+        {
+          "name": "2",
+          "hashes": {
+            "image": "8a36e9ae5064283ced701e17fab3a6ae74caee2ac07b8135cf65a8415077a46e",
+            "graph": "5bbf6495acabfb8331e95c91a8b1f8b04aa3d7ed8b9b667bda7db32625736cca",
+            "prediction": "d4479fda25f50903228c5475ac170f36e99b9b8bb00db744a18de4cd8516a261"
+          },
+          "native_counts": {
+            "nodes": 485,
+            "edges": 490,
+            "physical_symbols": 144,
+            "structural_nodes": 337,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 490
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 174,
+            "reference_direct_symbol_pairs": 6,
+            "prediction_direct_pairs": 39,
+            "prediction_within_net_pairs": 64
+          },
+          "localization": {
+            "tp": 43,
+            "fp": 12,
+            "fn": 101,
+            "precision": 0.7818181818181819,
+            "recall": 0.2986111111111111,
+            "f1": 0.4321608040201005
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 43,
+            "fp": 12,
+            "fn": 101,
+            "precision": 0.7818181818181819,
+            "recall": 0.2986111111111111,
+            "f1": 0.4321608040201005
+          },
+          "within_net_connectivity": {
+            "tp": 15,
+            "fp": 49,
+            "fn": 159,
+            "precision": 0.234375,
+            "recall": 0.08620689655172414,
+            "f1": 0.12605042016806722
+          }
+        },
+        {
+          "name": "3",
+          "hashes": {
+            "image": "293d416db064be7c78def7f3f9856a6060e65b7d9e7b15d2b42d273a98fc49e1",
+            "graph": "2da92f64aaf3dbd611e14585ba23c948307ba1770c4ed945be4adb33f11f67ae",
+            "prediction": "5bfa534ad38925f8d44d213010c6ab4ded6b5ea9feb874c6f42ed7945384712e"
+          },
+          "native_counts": {
+            "nodes": 280,
+            "edges": 279,
+            "physical_symbols": 88,
+            "structural_nodes": 188,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 279
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 106,
+            "reference_direct_symbol_pairs": 7,
+            "prediction_direct_pairs": 18,
+            "prediction_within_net_pairs": 20
+          },
+          "localization": {
+            "tp": 10,
+            "fp": 9,
+            "fn": 78,
+            "precision": 0.5263157894736842,
+            "recall": 0.11363636363636363,
+            "f1": 0.18691588785046728
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 8,
+            "fp": 11,
+            "fn": 80,
+            "precision": 0.42105263157894735,
+            "recall": 0.09090909090909091,
+            "f1": 0.14953271028037382
+          },
+          "within_net_connectivity": {
+            "tp": 3,
+            "fp": 17,
+            "fn": 103,
+            "precision": 0.15,
+            "recall": 0.02830188679245283,
+            "f1": 0.047619047619047616
+          }
+        },
+        {
+          "name": "4",
+          "hashes": {
+            "image": "fe9ee70bc1c839b64637fb33c010d4901e500e1a46c7a5fb7a0a661cc5ba0be1",
+            "graph": "5ace19699bb731935716643618801bf274fc7999d2629d9455ed4c037af84fb5",
+            "prediction": "e48057004b1ae8228adeb7c7758e21d54fc239fd01639d9af36aa0c4603b2cd2"
+          },
+          "native_counts": {
+            "nodes": 385,
+            "edges": 381,
+            "physical_symbols": 121,
+            "structural_nodes": 260,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 381
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 145,
+            "reference_direct_symbol_pairs": 9,
+            "prediction_direct_pairs": 8,
+            "prediction_within_net_pairs": 8
+          },
+          "localization": {
+            "tp": 13,
+            "fp": 13,
+            "fn": 108,
+            "precision": 0.5,
+            "recall": 0.10743801652892562,
+            "f1": 0.17687074829931973
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 13,
+            "fp": 13,
+            "fn": 108,
+            "precision": 0.5,
+            "recall": 0.10743801652892562,
+            "f1": 0.17687074829931973
+          },
+          "within_net_connectivity": {
+            "tp": 2,
+            "fp": 6,
+            "fn": 143,
+            "precision": 0.25,
+            "recall": 0.013793103448275862,
+            "f1": 0.026143790849673203
+          }
+        },
+        {
+          "name": "5",
+          "hashes": {
+            "image": "d0d2b3a971b84fc0c36bdef5f29e33f95a2f773f22e2ce4b34dc8c3b4ee24a83",
+            "graph": "3d08119b055053eb786eaa6ec911323a06a518a22de2d1545993f7332015c572",
+            "prediction": "c423b26f7bcfbd0b87020bd5c1f5470910c8828fdf2a5cb96219916c53485560"
+          },
+          "native_counts": {
+            "nodes": 405,
+            "edges": 401,
+            "physical_symbols": 124,
+            "structural_nodes": 277,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 401
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 232,
+            "reference_direct_symbol_pairs": 11,
+            "prediction_direct_pairs": 78,
+            "prediction_within_net_pairs": 117
+          },
+          "localization": {
+            "tp": 43,
+            "fp": 38,
+            "fn": 81,
+            "precision": 0.5308641975308642,
+            "recall": 0.3467741935483871,
+            "f1": 0.4195121951219512
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 39,
+            "fp": 42,
+            "fn": 85,
+            "precision": 0.48148148148148145,
+            "recall": 0.31451612903225806,
+            "f1": 0.3804878048780488
+          },
+          "within_net_connectivity": {
+            "tp": 38,
+            "fp": 79,
+            "fn": 194,
+            "precision": 0.3247863247863248,
+            "recall": 0.16379310344827586,
+            "f1": 0.2177650429799427
+          }
+        },
+        {
+          "name": "6",
+          "hashes": {
+            "image": "44a67176c8265ca5b7a2ae9833932a1797564bb35ce030d3d29e920ddf1fc9c1",
+            "graph": "54811b4b1de37764041527e4796e2f4353caf090b2b3e6c40790284e66e3d3e1",
+            "prediction": "f4369d2b581fa8ec583186c1167773cd48e5b85a29b6dd00c323cafe38957e04"
+          },
+          "native_counts": {
+            "nodes": 470,
+            "edges": 468,
+            "physical_symbols": 136,
+            "structural_nodes": 330,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 468
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 144,
+            "reference_direct_symbol_pairs": 11,
+            "prediction_direct_pairs": 77,
+            "prediction_within_net_pairs": 77
+          },
+          "localization": {
+            "tp": 42,
+            "fp": 54,
+            "fn": 94,
+            "precision": 0.4375,
+            "recall": 0.3088235294117647,
+            "f1": 0.3620689655172414
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 40,
+            "fp": 56,
+            "fn": 96,
+            "precision": 0.4166666666666667,
+            "recall": 0.29411764705882354,
+            "f1": 0.3448275862068966
+          },
+          "within_net_connectivity": {
+            "tp": 18,
+            "fp": 59,
+            "fn": 126,
+            "precision": 0.23376623376623376,
+            "recall": 0.125,
+            "f1": 0.16289592760180996
+          }
+        },
+        {
+          "name": "7",
+          "hashes": {
+            "image": "071e7dc66c07b7b9fb752de7c91ed2fb7c65cce1135bac43291723980e32fdd0",
+            "graph": "6d4fd53dc56ea0180b8ad268e4889e1e6b85cee316e68496e80e78836eda92e3",
+            "prediction": "30a4207e27fe86604e9036758532cdbba73196f46eb3351ae11a134e5e8ca93f"
+          },
+          "native_counts": {
+            "nodes": 351,
+            "edges": 340,
+            "physical_symbols": 110,
+            "structural_nodes": 237,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 340
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 141,
+            "reference_direct_symbol_pairs": 5,
+            "prediction_direct_pairs": 82,
+            "prediction_within_net_pairs": 99
+          },
+          "localization": {
+            "tp": 35,
+            "fp": 40,
+            "fn": 75,
+            "precision": 0.4666666666666667,
+            "recall": 0.3181818181818182,
+            "f1": 0.3783783783783784
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 34,
+            "fp": 41,
+            "fn": 76,
+            "precision": 0.4533333333333333,
+            "recall": 0.3090909090909091,
+            "f1": 0.3675675675675676
+          },
+          "within_net_connectivity": {
+            "tp": 20,
+            "fp": 79,
+            "fn": 121,
+            "precision": 0.20202020202020202,
+            "recall": 0.14184397163120568,
+            "f1": 0.16666666666666666
+          }
+        },
+        {
+          "name": "8",
+          "hashes": {
+            "image": "d0e38b31ec1d30189bb9ee32cbf07387a3e033439ec69d62b7cd8578975e729e",
+            "graph": "491274bfebe16e38ea8e6ba83ae57f2246e7bf6cc6d2e0ac23df4dfcde841c99",
+            "prediction": "7289dd8473a95a389a86bb787031df43e54e34a29ad2764b8cd09eb71bb0eed4"
+          },
+          "native_counts": {
+            "nodes": 181,
+            "edges": 179,
+            "physical_symbols": 57,
+            "structural_nodes": 120,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 179
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 66,
+            "reference_direct_symbol_pairs": 6,
+            "prediction_direct_pairs": 39,
+            "prediction_within_net_pairs": 39
+          },
+          "localization": {
+            "tp": 18,
+            "fp": 21,
+            "fn": 39,
+            "precision": 0.46153846153846156,
+            "recall": 0.3157894736842105,
+            "f1": 0.375
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 16,
+            "fp": 23,
+            "fn": 41,
+            "precision": 0.41025641025641024,
+            "recall": 0.2807017543859649,
+            "f1": 0.3333333333333333
+          },
+          "within_net_connectivity": {
+            "tp": 9,
+            "fp": 30,
+            "fn": 57,
+            "precision": 0.23076923076923078,
+            "recall": 0.13636363636363635,
+            "f1": 0.17142857142857143
+          }
+        },
+        {
+          "name": "9",
+          "hashes": {
+            "image": "c620ed2ad097e10c3249050266595d303750453154fc51449c1e1e4196d43321",
+            "graph": "b187afadfa6382cb0c08046c78fbea8a010999ca4c6e02118f275251588dc309",
+            "prediction": "4e36c9828689d6ac40165fd57fcbc6707c17c690eab4716138f7a7f8b2b83c38"
+          },
+          "native_counts": {
+            "nodes": 226,
+            "edges": 215,
+            "physical_symbols": 81,
+            "structural_nodes": 141,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 215
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 98,
+            "reference_direct_symbol_pairs": 8,
+            "prediction_direct_pairs": 57,
+            "prediction_within_net_pairs": 57
+          },
+          "localization": {
+            "tp": 30,
+            "fp": 16,
+            "fn": 51,
+            "precision": 0.6521739130434783,
+            "recall": 0.37037037037037035,
+            "f1": 0.47244094488188976
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 30,
+            "fp": 16,
+            "fn": 51,
+            "precision": 0.6521739130434783,
+            "recall": 0.37037037037037035,
+            "f1": 0.47244094488188976
+          },
+          "within_net_connectivity": {
+            "tp": 19,
+            "fp": 38,
+            "fn": 79,
+            "precision": 0.3333333333333333,
+            "recall": 0.19387755102040816,
+            "f1": 0.24516129032258063
+          }
+        },
+        {
+          "name": "10",
+          "hashes": {
+            "image": "246841b69ea44b8b881429b801ff66ca16637832b95a1ce09632c5538842ee1b",
+            "graph": "f83740a28588aee9e8dba9b46e076d936b83794b50ee512df93977742c333c0e",
+            "prediction": "d1eff3deab9460e4528899ee5b70257f0589f0f289b7739937cfb26cd88d7bc9"
+          },
+          "native_counts": {
+            "nodes": 675,
+            "edges": 664,
+            "physical_symbols": 210,
+            "structural_nodes": 461,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 664
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 238,
+            "reference_direct_symbol_pairs": 13,
+            "prediction_direct_pairs": 13,
+            "prediction_within_net_pairs": 14
+          },
+          "localization": {
+            "tp": 21,
+            "fp": 10,
+            "fn": 189,
+            "precision": 0.6774193548387096,
+            "recall": 0.1,
+            "f1": 0.17427385892116182
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 20,
+            "fp": 11,
+            "fn": 190,
+            "precision": 0.6451612903225806,
+            "recall": 0.09523809523809523,
+            "f1": 0.16597510373443983
+          },
+          "within_net_connectivity": {
+            "tp": 5,
+            "fp": 9,
+            "fn": 233,
+            "precision": 0.35714285714285715,
+            "recall": 0.02100840336134454,
+            "f1": 0.03968253968253968
+          }
+        },
+        {
+          "name": "11",
+          "hashes": {
+            "image": "363bf989089abe8e235862729392633a99b4e879b1adbd407fcce7f90eb26d94",
+            "graph": "5c1a77c9a90f2c832929fdfa77f1f0dca55ee03136db73d0377900793a3c951c",
+            "prediction": "c28084214de544676d97c9060a3ea31e2a839254ea062951fc46735504878077"
+          },
+          "native_counts": {
+            "nodes": 414,
+            "edges": 409,
+            "physical_symbols": 131,
+            "structural_nodes": 279,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 409
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 170,
+            "reference_direct_symbol_pairs": 10,
+            "prediction_direct_pairs": 14,
+            "prediction_within_net_pairs": 14
+          },
+          "localization": {
+            "tp": 18,
+            "fp": 6,
+            "fn": 113,
+            "precision": 0.75,
+            "recall": 0.13740458015267176,
+            "f1": 0.23225806451612904
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 18,
+            "fp": 6,
+            "fn": 113,
+            "precision": 0.75,
+            "recall": 0.13740458015267176,
+            "f1": 0.23225806451612904
+          },
+          "within_net_connectivity": {
+            "tp": 5,
+            "fp": 9,
+            "fn": 165,
+            "precision": 0.35714285714285715,
+            "recall": 0.029411764705882353,
+            "f1": 0.05434782608695652
+          }
+        }
+      ]
+    },
+    "v12": {
+      "algorithm_revision": "geometry-local-route-v12",
+      "model": "jev-1.14.0",
+      "plan_count": 12,
+      "evaluation_sha256": "b007b6cd885c6a8b291f00eca7941d0ef2af1bcd8a95bec5906d5cf268ec947e",
+      "evaluator_sha256": "52d63a3f192628f624e6ad866ccd656105b4ba074637efabf44fd8fb3f7efccb",
+      "protocol_sha256": "9eeac4ea238caac2fb7515965e3ac2596f45532e59c86468f5f77708829937ab",
+      "aggregate": {
+        "localization": {
+          "tp": 303,
+          "fp": 283,
+          "fn": 1136,
+          "precision": 0.5170648464163823,
+          "recall": 0.21056289089645588,
+          "f1": 0.2992592592592593
+        },
+        "coarse_class_localization_diagnostic": {
+          "tp": 295,
+          "fp": 291,
+          "fn": 1144,
+          "precision": 0.5034129692832765,
+          "recall": 0.2050034746351633,
+          "f1": 0.291358024691358
+        },
+        "within_net_connectivity": {
+          "tp": 132,
+          "fp": 455,
+          "fn": 1750,
+          "precision": 0.22487223168654175,
+          "recall": 0.07013815090329437,
+          "f1": 0.10692588092345079
+        }
+      },
+      "plans": [
+        {
+          "name": "0",
+          "hashes": {
+            "image": "2451fbe9b8d0494a822901493cfbf1d2656f0bd7678f0f25bb2266b5e78a7dc9",
+            "graph": "e76bf9c6ddda990f114cf685924ce8482177723585410e8a338052c31373e6ed",
+            "prediction": "c437efaaeaae54f2a29c2c369cb59ba246e4a83287ef2c32048a4c151696114d"
+          },
+          "native_counts": {
+            "nodes": 437,
+            "edges": 433,
+            "physical_symbols": 137,
+            "structural_nodes": 296,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 433
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 249,
+            "reference_direct_symbol_pairs": 8,
+            "prediction_direct_pairs": 3,
+            "prediction_within_net_pairs": 3
+          },
+          "localization": {
+            "tp": 16,
+            "fp": 1,
+            "fn": 121,
+            "precision": 0.9411764705882353,
+            "recall": 0.11678832116788321,
+            "f1": 0.2077922077922078
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 16,
+            "fp": 1,
+            "fn": 121,
+            "precision": 0.9411764705882353,
+            "recall": 0.11678832116788321,
+            "f1": 0.2077922077922078
+          },
+          "within_net_connectivity": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 247,
+            "precision": 0.6666666666666666,
+            "recall": 0.008032128514056224,
+            "f1": 0.015873015873015872
+          }
+        },
+        {
+          "name": "1",
+          "hashes": {
+            "image": "c8c696042bf7a16eb30e492a312af274c312a2049a7eb765ca82f84d3770eba8",
+            "graph": "00d8be4b21a1bed6ad2ced86504d945995d942c35dc356986e904d42c535933e",
+            "prediction": "f8ff2cd62644a8a6cc12cebad0dd431be199e0c03413b8ece55b66ec5bd1f052"
+          },
+          "native_counts": {
+            "nodes": 320,
+            "edges": 308,
+            "physical_symbols": 100,
+            "structural_nodes": 216,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 308
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 119,
+            "reference_direct_symbol_pairs": 11,
+            "prediction_direct_pairs": 50,
+            "prediction_within_net_pairs": 73
+          },
+          "localization": {
+            "tp": 13,
+            "fp": 62,
+            "fn": 87,
+            "precision": 0.17333333333333334,
+            "recall": 0.13,
+            "f1": 0.14857142857142858
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 13,
+            "fp": 62,
+            "fn": 87,
+            "precision": 0.17333333333333334,
+            "recall": 0.13,
+            "f1": 0.14857142857142858
+          },
+          "within_net_connectivity": {
+            "tp": 1,
+            "fp": 72,
+            "fn": 118,
+            "precision": 0.0136986301369863,
+            "recall": 0.008403361344537815,
+            "f1": 0.010416666666666666
+          }
+        },
+        {
+          "name": "2",
+          "hashes": {
+            "image": "8a36e9ae5064283ced701e17fab3a6ae74caee2ac07b8135cf65a8415077a46e",
+            "graph": "5bbf6495acabfb8331e95c91a8b1f8b04aa3d7ed8b9b667bda7db32625736cca",
+            "prediction": "bca9219cfed0217ed96c443c69a7981589d1ecef27cf01f16c12a98c7136e29b"
+          },
+          "native_counts": {
+            "nodes": 485,
+            "edges": 490,
+            "physical_symbols": 144,
+            "structural_nodes": 337,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 490
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 174,
+            "reference_direct_symbol_pairs": 6,
+            "prediction_direct_pairs": 40,
+            "prediction_within_net_pairs": 70
+          },
+          "localization": {
+            "tp": 43,
+            "fp": 12,
+            "fn": 101,
+            "precision": 0.7818181818181819,
+            "recall": 0.2986111111111111,
+            "f1": 0.4321608040201005
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 43,
+            "fp": 12,
+            "fn": 101,
+            "precision": 0.7818181818181819,
+            "recall": 0.2986111111111111,
+            "f1": 0.4321608040201005
+          },
+          "within_net_connectivity": {
+            "tp": 15,
+            "fp": 55,
+            "fn": 159,
+            "precision": 0.21428571428571427,
+            "recall": 0.08620689655172414,
+            "f1": 0.12295081967213115
+          }
+        },
+        {
+          "name": "3",
+          "hashes": {
+            "image": "293d416db064be7c78def7f3f9856a6060e65b7d9e7b15d2b42d273a98fc49e1",
+            "graph": "2da92f64aaf3dbd611e14585ba23c948307ba1770c4ed945be4adb33f11f67ae",
+            "prediction": "196589748e1f23b6cd5dbc2944eff966617d34e36677372057f1d07cd1e478e8"
+          },
+          "native_counts": {
+            "nodes": 280,
+            "edges": 279,
+            "physical_symbols": 88,
+            "structural_nodes": 188,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 279
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 106,
+            "reference_direct_symbol_pairs": 7,
+            "prediction_direct_pairs": 18,
+            "prediction_within_net_pairs": 20
+          },
+          "localization": {
+            "tp": 10,
+            "fp": 9,
+            "fn": 78,
+            "precision": 0.5263157894736842,
+            "recall": 0.11363636363636363,
+            "f1": 0.18691588785046728
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 8,
+            "fp": 11,
+            "fn": 80,
+            "precision": 0.42105263157894735,
+            "recall": 0.09090909090909091,
+            "f1": 0.14953271028037382
+          },
+          "within_net_connectivity": {
+            "tp": 3,
+            "fp": 17,
+            "fn": 103,
+            "precision": 0.15,
+            "recall": 0.02830188679245283,
+            "f1": 0.047619047619047616
+          }
+        },
+        {
+          "name": "4",
+          "hashes": {
+            "image": "fe9ee70bc1c839b64637fb33c010d4901e500e1a46c7a5fb7a0a661cc5ba0be1",
+            "graph": "5ace19699bb731935716643618801bf274fc7999d2629d9455ed4c037af84fb5",
+            "prediction": "cf9be9bbf0b6665e974d325ffda92bf292c18e3bfe10a4eaae45c8e20567615f"
+          },
+          "native_counts": {
+            "nodes": 385,
+            "edges": 381,
+            "physical_symbols": 121,
+            "structural_nodes": 260,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 381
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 145,
+            "reference_direct_symbol_pairs": 9,
+            "prediction_direct_pairs": 8,
+            "prediction_within_net_pairs": 8
+          },
+          "localization": {
+            "tp": 13,
+            "fp": 13,
+            "fn": 108,
+            "precision": 0.5,
+            "recall": 0.10743801652892562,
+            "f1": 0.17687074829931973
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 13,
+            "fp": 13,
+            "fn": 108,
+            "precision": 0.5,
+            "recall": 0.10743801652892562,
+            "f1": 0.17687074829931973
+          },
+          "within_net_connectivity": {
+            "tp": 2,
+            "fp": 6,
+            "fn": 143,
+            "precision": 0.25,
+            "recall": 0.013793103448275862,
+            "f1": 0.026143790849673203
+          }
+        },
+        {
+          "name": "5",
+          "hashes": {
+            "image": "d0d2b3a971b84fc0c36bdef5f29e33f95a2f773f22e2ce4b34dc8c3b4ee24a83",
+            "graph": "3d08119b055053eb786eaa6ec911323a06a518a22de2d1545993f7332015c572",
+            "prediction": "7ba0448d646515eb5683e73412053ecaaf88f0772153e763e427510c522e7471"
+          },
+          "native_counts": {
+            "nodes": 405,
+            "edges": 401,
+            "physical_symbols": 124,
+            "structural_nodes": 277,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 401
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 232,
+            "reference_direct_symbol_pairs": 11,
+            "prediction_direct_pairs": 88,
+            "prediction_within_net_pairs": 109
+          },
+          "localization": {
+            "tp": 43,
+            "fp": 42,
+            "fn": 81,
+            "precision": 0.5058823529411764,
+            "recall": 0.3467741935483871,
+            "f1": 0.41148325358851673
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 41,
+            "fp": 44,
+            "fn": 83,
+            "precision": 0.4823529411764706,
+            "recall": 0.33064516129032256,
+            "f1": 0.3923444976076555
+          },
+          "within_net_connectivity": {
+            "tp": 31,
+            "fp": 78,
+            "fn": 201,
+            "precision": 0.28440366972477066,
+            "recall": 0.1336206896551724,
+            "f1": 0.18181818181818182
+          }
+        },
+        {
+          "name": "6",
+          "hashes": {
+            "image": "44a67176c8265ca5b7a2ae9833932a1797564bb35ce030d3d29e920ddf1fc9c1",
+            "graph": "54811b4b1de37764041527e4796e2f4353caf090b2b3e6c40790284e66e3d3e1",
+            "prediction": "a10580c165e932d40014cd3a619d847601f9e82da7843901dd6b492c133e926f"
+          },
+          "native_counts": {
+            "nodes": 470,
+            "edges": 468,
+            "physical_symbols": 136,
+            "structural_nodes": 330,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 468
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 144,
+            "reference_direct_symbol_pairs": 11,
+            "prediction_direct_pairs": 79,
+            "prediction_within_net_pairs": 80
+          },
+          "localization": {
+            "tp": 42,
+            "fp": 55,
+            "fn": 94,
+            "precision": 0.4329896907216495,
+            "recall": 0.3088235294117647,
+            "f1": 0.3605150214592275
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 40,
+            "fp": 57,
+            "fn": 96,
+            "precision": 0.41237113402061853,
+            "recall": 0.29411764705882354,
+            "f1": 0.34334763948497854
+          },
+          "within_net_connectivity": {
+            "tp": 18,
+            "fp": 62,
+            "fn": 126,
+            "precision": 0.225,
+            "recall": 0.125,
+            "f1": 0.16071428571428573
+          }
+        },
+        {
+          "name": "7",
+          "hashes": {
+            "image": "071e7dc66c07b7b9fb752de7c91ed2fb7c65cce1135bac43291723980e32fdd0",
+            "graph": "6d4fd53dc56ea0180b8ad268e4889e1e6b85cee316e68496e80e78836eda92e3",
+            "prediction": "e74757bea3a8508689e6d9c7e764a9e9d61ebf7c52408dd0d4de7cd5dac2d22a"
+          },
+          "native_counts": {
+            "nodes": 351,
+            "edges": 340,
+            "physical_symbols": 110,
+            "structural_nodes": 237,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 340
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 141,
+            "reference_direct_symbol_pairs": 5,
+            "prediction_direct_pairs": 79,
+            "prediction_within_net_pairs": 99
+          },
+          "localization": {
+            "tp": 35,
+            "fp": 38,
+            "fn": 75,
+            "precision": 0.4794520547945205,
+            "recall": 0.3181818181818182,
+            "f1": 0.3825136612021858
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 34,
+            "fp": 39,
+            "fn": 76,
+            "precision": 0.4657534246575342,
+            "recall": 0.3090909090909091,
+            "f1": 0.37158469945355194
+          },
+          "within_net_connectivity": {
+            "tp": 20,
+            "fp": 79,
+            "fn": 121,
+            "precision": 0.20202020202020202,
+            "recall": 0.14184397163120568,
+            "f1": 0.16666666666666666
+          }
+        },
+        {
+          "name": "8",
+          "hashes": {
+            "image": "d0e38b31ec1d30189bb9ee32cbf07387a3e033439ec69d62b7cd8578975e729e",
+            "graph": "491274bfebe16e38ea8e6ba83ae57f2246e7bf6cc6d2e0ac23df4dfcde841c99",
+            "prediction": "264caf3d011e15498c5f7aa482abf25c240437ac159bc7eeca7e00a35092cb1c"
+          },
+          "native_counts": {
+            "nodes": 181,
+            "edges": 179,
+            "physical_symbols": 57,
+            "structural_nodes": 120,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 179
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 66,
+            "reference_direct_symbol_pairs": 6,
+            "prediction_direct_pairs": 40,
+            "prediction_within_net_pairs": 40
+          },
+          "localization": {
+            "tp": 19,
+            "fp": 21,
+            "fn": 38,
+            "precision": 0.475,
+            "recall": 0.3333333333333333,
+            "f1": 0.3917525773195876
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 18,
+            "fp": 22,
+            "fn": 39,
+            "precision": 0.45,
+            "recall": 0.3157894736842105,
+            "f1": 0.3711340206185567
+          },
+          "within_net_connectivity": {
+            "tp": 11,
+            "fp": 29,
+            "fn": 55,
+            "precision": 0.275,
+            "recall": 0.16666666666666666,
+            "f1": 0.20754716981132076
+          }
+        },
+        {
+          "name": "9",
+          "hashes": {
+            "image": "c620ed2ad097e10c3249050266595d303750453154fc51449c1e1e4196d43321",
+            "graph": "b187afadfa6382cb0c08046c78fbea8a010999ca4c6e02118f275251588dc309",
+            "prediction": "d8fe30f75f83754cc6a5d33de93e78058d812dbe46419723870054bd9bd64440"
+          },
+          "native_counts": {
+            "nodes": 226,
+            "edges": 215,
+            "physical_symbols": 81,
+            "structural_nodes": 141,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 215
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 98,
+            "reference_direct_symbol_pairs": 8,
+            "prediction_direct_pairs": 56,
+            "prediction_within_net_pairs": 56
+          },
+          "localization": {
+            "tp": 30,
+            "fp": 14,
+            "fn": 51,
+            "precision": 0.6818181818181818,
+            "recall": 0.37037037037037035,
+            "f1": 0.48
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 30,
+            "fp": 14,
+            "fn": 51,
+            "precision": 0.6818181818181818,
+            "recall": 0.37037037037037035,
+            "f1": 0.48
+          },
+          "within_net_connectivity": {
+            "tp": 20,
+            "fp": 36,
+            "fn": 78,
+            "precision": 0.35714285714285715,
+            "recall": 0.20408163265306123,
+            "f1": 0.2597402597402597
+          }
+        },
+        {
+          "name": "10",
+          "hashes": {
+            "image": "246841b69ea44b8b881429b801ff66ca16637832b95a1ce09632c5538842ee1b",
+            "graph": "f83740a28588aee9e8dba9b46e076d936b83794b50ee512df93977742c333c0e",
+            "prediction": "c8c0f5fc9ce7b9056f6d8b6cef8bef1d3602f1f94db59c56893fab64b6460350"
+          },
+          "native_counts": {
+            "nodes": 675,
+            "edges": 664,
+            "physical_symbols": 210,
+            "structural_nodes": 461,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 664
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 238,
+            "reference_direct_symbol_pairs": 13,
+            "prediction_direct_pairs": 15,
+            "prediction_within_net_pairs": 15
+          },
+          "localization": {
+            "tp": 21,
+            "fp": 10,
+            "fn": 189,
+            "precision": 0.6774193548387096,
+            "recall": 0.1,
+            "f1": 0.17427385892116182
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 21,
+            "fp": 10,
+            "fn": 189,
+            "precision": 0.6774193548387096,
+            "recall": 0.1,
+            "f1": 0.17427385892116182
+          },
+          "within_net_connectivity": {
+            "tp": 4,
+            "fp": 11,
+            "fn": 234,
+            "precision": 0.26666666666666666,
+            "recall": 0.01680672268907563,
+            "f1": 0.03162055335968379
+          }
+        },
+        {
+          "name": "11",
+          "hashes": {
+            "image": "363bf989089abe8e235862729392633a99b4e879b1adbd407fcce7f90eb26d94",
+            "graph": "5c1a77c9a90f2c832929fdfa77f1f0dca55ee03136db73d0377900793a3c951c",
+            "prediction": "1b91024c93dda62347079312c30faf792dcd5a058bd937e432fafaf53cb5d2a9"
+          },
+          "native_counts": {
+            "nodes": 414,
+            "edges": 409,
+            "physical_symbols": 131,
+            "structural_nodes": 279,
+            "background_nodes": 4,
+            "edge_classes": {
+              "solid": 409
+            },
+            "background_incident_edges": 0
+          },
+          "adapted_counts": {
+            "reference_pairs": 170,
+            "reference_direct_symbol_pairs": 10,
+            "prediction_direct_pairs": 14,
+            "prediction_within_net_pairs": 14
+          },
+          "localization": {
+            "tp": 18,
+            "fp": 6,
+            "fn": 113,
+            "precision": 0.75,
+            "recall": 0.13740458015267176,
+            "f1": 0.23225806451612904
+          },
+          "coarse_class_localization_diagnostic": {
+            "tp": 18,
+            "fp": 6,
+            "fn": 113,
+            "precision": 0.75,
+            "recall": 0.13740458015267176,
+            "f1": 0.23225806451612904
+          },
+          "within_net_connectivity": {
+            "tp": 5,
+            "fp": 9,
+            "fn": 165,
+            "precision": 0.35714285714285715,
+            "recall": 0.029411764705882353,
+            "f1": 0.05434782608695652
+          }
+        }
+      ]
+    }
+  },
+  "preservation": {
+    "audit": "strict unique class/raw-box and export/trace exact mapping; no identifier/proximity/geometry fallback",
+    "comparison": {
+      "old": "v11",
+      "new": "v12"
+    },
+    "scope": "all 12 complete OPEN100 plans",
+    "limits": "Preserves prior outputs and E/I/R relationships; does not certify correctness against OPEN100 annotation. Added relations are new pairs relative to exactly mapped old pairs; unmapped-object and unmapped-relation counts are separate from mapped losses.",
+    "evaluator_sha256": "dd8bbf68be7dd39b650b865b831eb558f0d7cf70aa0d5da81cadcbbe281aa8f5",
+    "aggregate": {
+      "all_plans_passed": false,
+      "plans_passed": 2,
+      "plans": 12,
+      "old_objects": 2908,
+      "new_objects": 2910,
+      "mapped_old_objects": 2856,
+      "unmapped_old_objects": 52,
+      "new_objects_not_assigned": 54,
+      "objects_and_relations_exact_equal_all_plans": false,
+      "relations": {
+        "E": {
+          "old_total": 484,
+          "new_total": 490,
+          "mapped_old_total": 440,
+          "retained": 426,
+          "lost_under_exact_mapping": 14,
+          "unmapped_old_relations": 44,
+          "new_relations_not_in_mapped_old": 64,
+          "all_plans_preserved": false
+        },
+        "I": {
+          "old_total": 143,
+          "new_total": 143,
+          "mapped_old_total": 142,
+          "retained": 142,
+          "lost_under_exact_mapping": 0,
+          "unmapped_old_relations": 1,
+          "new_relations_not_in_mapped_old": 1,
+          "all_plans_preserved": false
+        },
+        "R": {
+          "old_total": 621,
+          "new_total": 587,
+          "mapped_old_total": 568,
+          "retained": 511,
+          "lost_under_exact_mapping": 57,
+          "unmapped_old_relations": 53,
+          "new_relations_not_in_mapped_old": 76,
+          "all_plans_preserved": false
+        }
+      }
+    }
+  },
+  "execution": {
+    "executions": 24,
+    "public_images": 12,
+    "model": "jev-1.14.0",
+    "totals": {
+      "requests": 1516,
+      "cached": 1902,
+      "errors": 0,
+      "questions": 27934,
+      "tokens": 32793696
+    },
+    "all_frozen_source_resource_checks_passed": true,
+    "ground_truth_inference_input": false,
+    "interpretation": "Shared cached answers are not independent replicates. Request counts are trace measurements, not billing or independent latency."
+  },
+  "paper_snapshot": {
+    "title": "Preserving Visual Evidence While Repairing Industrial Diagram Graphs",
+    "authors": [
+      "Minhyeong Yu",
+      "Seunghyun Lee"
+    ],
+    "status": "four-page short-paper draft; no conference acceptance or final conference submission claimed",
+    "method_revision": "geometry-local-route-v12",
+    "source_files": {
+      "paper-source/main.tex": "f6d9a69b16805bad16b0a9411e384007148bd9bc812e22df53f132a7afd2e4a3",
+      "paper-source/references.bib": "556bcd5dad71096b5211517fc08903c106bb5a0cc03ec9efaff2f5a3066260d2",
+      "paper-source/figures/framework.tex": "697dd355a5ee3adf9d4c4313bf76500e5cf224bee2240b16f4340ed6a5031d2d",
+      "paper-source/figures/open100_examples.png": "c54c264d2239489aa5480d522c503fa9a3f35a37f8bbb90322bc904b72500ad5",
+      "paper-source/acmart.cls": "784c4f2fb07a70d8a797ee9d1c63f441c10fbd2f915c9c615d28cda35c0b742a",
+      "paper-source/ACM-Reference-Format.bst": "4342d27456645567ef1a027f6474e894715bc31d468f040142fa54540440ad04",
+      "paper-source/template-source/LICENSE": "ca3227f672053cb608959d7e1d476c7a13efea11be3f6e53758a68b650c918e8",
+      "paper-source/template-source/acmart.dtx": "e29efd327f5c759f3d1f2e99dc8588c6a05b734c142f89c3e348161b893e44ff",
+      "paper-source/template-source/acmart.ins": "fa7daaa9375775ce699f33f909667bdb83c0408fd8d67606926df86c346c4044"
+    },
+    "pdf": {
+      "path": "paper.pdf",
+      "sha256": "e66866e6ee65ee9c46a3692e7579f7a1b4baa9ce34b4526c9805b9f7df3af280",
+      "bytes": 570380,
+      "pages": 4
+    },
+    "validation": "Source and PDF match the existing aligned draft hashes. Existing four rendered pages visually inspected at publication; layout, authors, equations, two figures and two tables visible without clipping. This is artifact inspection, not a new model run."
+  },
+  "public_figure_provenance": {
+    "path": "paper-source/figures/open100_examples.png",
+    "sha256": "c54c264d2239489aa5480d522c503fa9a3f35a37f8bbb90322bc904b72500ad5",
+    "source": "PID2Graph/OPEN100, DOI 10.5281/zenodo.14803338",
+    "license": "CC BY-SA 4.0",
+    "modifications": "original raster crops resized for presentation with distinct reference annotation boxes, annotation-node center polylines, saved predicted boxes/routes and captions",
+    "selection_rule": "For recovered and missed pairs separately: fixed plan order then lexicographic reference pair order, first full-reference-route bounding span <=700px; otherwise first available pair. Same legibility rule for both categories.",
+    "source_evaluation_sha256": "b007b6cd885c6a8b291f00eca7941d0ef2af1bcd8a95bec5906d5cf268ec947e",
+    "cases": [
+      {
+        "category": "recovered",
+        "category_meaning": "recovered denotes an evaluated true positive, not a local-recovery decision or a v11-to-v12 gain",
+        "plan": "0",
+        "hashes": {
+          "image": "2451fbe9b8d0494a822901493cfbf1d2656f0bd7678f0f25bb2266b5e78a7dc9",
+          "graph": "e76bf9c6ddda990f114cf685924ce8482177723585410e8a338052c31373e6ed",
+          "prediction": "c437efaaeaae54f2a29c2c369cb59ba246e4a83287ef2c32048a4c151696114d"
+        },
+        "crop_xyxy_native_pixels": [
+          965,
+          588,
+          1119,
+          1076
+        ],
+        "reference_endpoints": [
+          {
+            "id": "arrow106",
+            "class": "arrow",
+            "bbox": [
+              1073.19,
+              1026.74,
+              1083.86,
+              1040.3
+            ]
+          },
+          {
+            "id": "arrow63",
+            "class": "arrow",
+            "bbox": [
+              1000.12,
+              623.24,
+              1013.36,
+              633.03
+            ]
+          }
+        ],
+        "prediction_endpoints": [
+          {
+            "id": "s16",
+            "class": "arrow_head",
+            "bbox": [
+              1075.0,
+              1026.0,
+              1082.0,
+              1040.0
+            ],
+            "confidence": 0.69,
+            "class_confidence": 1.0,
+            "evidence": {
+              "trace": "objects.s16"
+            },
+            "bbox_native_inclusive": [
+              1075,
+              1026,
+              1081,
+              1039
+            ]
+          },
+          {
+            "id": "s9",
+            "class": "arrow_head",
+            "bbox": [
+              1000.0,
+              624.0,
+              1012.0,
+              632.0
+            ],
+            "confidence": 0.895,
+            "class_confidence": 1.0,
+            "evidence": {
+              "trace": "objects.s9"
+            },
+            "bbox_native_inclusive": [
+              1000,
+              624,
+              1011,
+              631
+            ]
+          }
+        ],
+        "endpoint_matches": {
+          "s16": {
+            "gt": "arrow106",
+            "iou": 0.619356595126831
+          },
+          "s9": {
+            "gt": "arrow63",
+            "iou": 0.7278319124886294
+          }
+        },
+        "overlay_note": "Reference polyline joins native annotation node centers; prediction polylines are saved accepted extraction routes. Neither overlay entered verification.",
+        "source_credit": "PID2Graph/OPEN100, Zenodo DOI 10.5281/zenodo.14803338, CC BY-SA 4.0"
+      },
+      {
+        "category": "missed",
+        "category_meaning": "missed reference pair under the adapted evaluator",
+        "plan": "0",
+        "hashes": {
+          "image": "2451fbe9b8d0494a822901493cfbf1d2656f0bd7678f0f25bb2266b5e78a7dc9",
+          "graph": "e76bf9c6ddda990f114cf685924ce8482177723585410e8a338052c31373e6ed",
+          "prediction": "c437efaaeaae54f2a29c2c369cb59ba246e4a83287ef2c32048a4c151696114d"
+        },
+        "crop_xyxy_native_pixels": [
+          1347,
+          342,
+          1438,
+          516
+        ],
+        "reference_endpoints": [
+          {
+            "id": "arrow100",
+            "class": "arrow",
+            "bbox": [
+              1383.42,
+              377.33,
+              1396.21,
+              385.45
+            ]
+          },
+          {
+            "id": "arrow121",
+            "class": "arrow",
+            "bbox": [
+              1393.27,
+              467.36,
+              1402.78,
+              480.67
+            ]
+          }
+        ],
+        "prediction_endpoints": [
+          {
+            "id": "s7",
+            "class": "arrow_head",
+            "bbox": [
+              1382.0,
+              378.0,
+              1399.0,
+              385.0
+            ],
+            "confidence": 0.76,
+            "class_confidence": 0.9358,
+            "evidence": {
+              "trace": "objects.s7"
+            },
+            "bbox_native_inclusive": [
+              1382,
+              378,
+              1398,
+              384
+            ]
+          }
+        ],
+        "endpoint_matches": {
+          "s7": {
+            "gt": "arrow100",
+            "iou": 0.6715179771505356
+          }
+        },
+        "overlay_note": "Reference polyline joins native annotation node centers; prediction polylines are saved accepted extraction routes. Neither overlay entered verification.",
+        "source_credit": "PID2Graph/OPEN100, Zenodo DOI 10.5281/zenodo.14803338, CC BY-SA 4.0"
+      }
+    ]
+  },
+  "source_records": {
+    "saved_public_summary_sha256": "0441161c8415230cc687a06204b5b3372ea8d218449a5b915ad875955436a71c",
+    "preservation_evaluation_sha256": "bb0f750e24688183f86653ae4e792f09bc984e701db8158ae998383b1e2c92c7",
+    "public_protocol_sha256": "9eeac4ea238caac2fb7515965e3ac2596f45532e59c86468f5f77708829937ab"
+  },
+  "limitations": [
+    "Adapted symbol-net P/R/F1, not native PID2Graph AP/mAP.",
+    "No prior private drawing or private legend crop used as inference input.",
+    "Two versions use shared question cache; stochastic variation and intended repair effects are not isolated.",
+    "Ten raw candidate plans fail strict preservation; do not call the revision preservation-certified.",
+    "Incorrect preliminary two-plan coordinate pilot superseded.",
+    "OPEN100 is one related collection of 12 diagrams with solid reference edges. Hosted-model pretraining membership is undisclosed.",
+    "Later v15 API and private-case diagnostics are separate development evidence; this file reports no full v15 public evaluation.",
+    "The manuscript retains a WWW 2027 format header from the existing draft; it is not a publication or acceptance claim."
+  ]
+}

@@ -17,3 +17,4 @@
 | [projects/evidence-tracked-research](projects/evidence-tracked-research/README.md) | @darkwingduck-code | [#11](https://github.com/Pseudo-Lab/no-more-slops/pull/11) |
 | [projects/rag-judge-order-bias](projects/rag-judge-order-bias/README.md) | @sooyoung-wind | [#13](https://github.com/Pseudo-Lab/no-more-slops/pull/13) |
 | [projects/skill-studies](projects/skill-studies/README.md) | @darkwingduck-code | [#14](https://github.com/Pseudo-Lab/no-more-slops/pull/14) |
+| [projects/jev-backed-function-calling](projects/jev-backed-function-calling/README.md) | @gogoymh | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |

@@ -1,0 +1,42 @@
+{"id": "abs-P1", "decision": "merged", "why": "s-01(충분히 정리되지 않았다, 99개를 골라)와 p-global abstract.after(문장 병합, '나열하는 데서 그치지 않고' 삭제) 합침; LLM 수행 범위에 본문 확인도 LLM이 했음을 추가(decisions, 2.5), 표본 200편(2.2)"}
+{"id": "abs-P2", "decision": "merged", "why": "p-global after 구조(초록 기준 단서, REF 대체로 지지, EXPERT 22/132·DEFENSE 1/11, 격차 두 유형) + s-01 '상당 부분 설명' 낮춤; 오류 상관은 집계 질문에 한정; 수치 claims.csv·verify.csv 재계산 일치"}
+{"id": "abs-P2-agenda", "decision": "partly", "why": "의제 문단 분리는 반영, s-01의 '측정 표준' 통일은 기각하고 10장 제목(측정의 표준화, 이종 집계와 오류 상관, 검증 범위의 확대)으로 통일(decisions)"}
+{"id": "1.1-P2", "decision": "applied", "why": "s-01 그대로"}
+{"id": "1.2-P1", "decision": "merged", "why": "s-01 문장 분할과 p-1-5 '공백 문장을 문단 끝으로' 같은 방향; '확인한 범위에서는'으로 한정, [확인] 남기지 않음"}
+{"id": "1.2-P2", "decision": "merged", "why": "s-01 '망라'→'대상으로 삼는다' + p-1-5 방법 세부를 한 문장으로 축약하고 2.4–2.5절로 넘김(본문 확인 문장은 1.4-3과 중복이라 삭제)"}
+{"id": "1.3-P1", "decision": "applied", "why": "p-1-5: RQ별 비교 질문 1–4개(표 2-1) 연결 문장 추가, 표 2-1의 장 열로 셈(RQ1 2, RQ2 3, RQ3 4, RQ4 1, RQ5 2)"}
+{"id": "1.4-P2", "decision": "applied", "why": "s-01 '대규모 문헌 지도'"}
+{"id": "1.4-P4", "decision": "applied", "why": "s-01 그대로"}
+{"id": "1.4-P5", "decision": "applied", "why": "p-1-5 의제 명칭을 10장 제목으로 통일"}
+{"id": "1.5-P1", "decision": "applied", "why": "9장 재구성에 맞춰 9장 설명 갱신"}
+{"id": "9-P1", "decision": "applied", "why": "p-global: 새 4절 구성 안내"}
+{"id": "9.1-P1", "decision": "applied", "why": "p-global: '–'가 본문 확인 대상 아님(초록 기준만)임을 밝힘; 표 번호 표 9-1"}
+{"id": "9.1-table", "decision": "partly", "why": "표 유지; RQ 열 추가·RQ 순 정렬, HARD·ATTACK 결론 '공통 패턴'→'한 방향 (초록 기준)', SELF에 초록 기준 표시. 수치는 claims.csv·verify.csv 재계산으로 모두 일치"}
+{"id": "9.1-P2", "decision": "merged", "why": "s-09(나머지 4개 처리)보다 decisions의 네 무리 구조를 택함: 한 방향(HARD·ATTACK·SELF, 초록 기준)/상충·조건부(SCALE·MULTI·COT·FORMAT + REF)/대체로 부정·조건부(EXPERT·DEFENSE)/독립 검증 공백(FT·DEBIAS)"}
+{"id": "9.1-RQ", "decision": "applied", "why": "RQ1–RQ5 답 문단 신설(p-global). 옛 9.3 1–3항(HARD·ATTACK·SELF) 흡수, 5.2.3·5.2.2·8.3.2·8.3.3 단서 반영, s-09 9.3-P3('겹치는 문제로 볼 수 있다') 반영. RQ1 조건부 답은 현재 4.3 문구에 맞춤"}
+{"id": "9.2-P1", "decision": "merged", "why": "s-09(대상 바로잡기)+p-global('무작위가 아니다' 제거, 미검정 단정 제거); 변수별 빈도 열은 추가하지 않고 '계산하지 않았다'로 명시"}
+{"id": "9.2-table", "decision": "partly", "why": "표 9-2 유지, 행 서술만 수정: 검증 가능성 '충분조건 아님'(6.3), 스스로 풀 수 있는가에 방어 사례, 계열 행 5.2.1 '판단 불가' 단서, 오류 상관 행 이종 혼합 필요·불충분(4.3과 맞춤). '평가 설정' 행 추가는 기각(표 유지 결정), 본문에서 4.3 참조로 언급"}
+{"id": "9.2-P2..P8", "decision": "applied", "why": "근거 인용 20개를 4–8장 절 참조로 대체(인용 키 전부 다른 장에 남아 있음 확인). 2304.00723(형식 우열)·2403.17710(효과 부족) 문장 삭제, 2608.26623은 계열 변수로 이동, best-of-2/4는 '평가 설정'으로 분리, 5.2.1 원인 귀속 단서 복원"}
+{"id": "9.2-P9", "decision": "applied", "why": "'…에 가깝다'로 완화, 11장 마지막 문단은 9.2절 참조로 줄여 중복 해소"}
+{"id": "9.3-P1..P4", "decision": "rejected", "why": "옛 9.3 1–3항과 빈 주제문은 9.1로 흡수하며 삭제(구조 결정)"}
+{"id": "9.3-P5", "decision": "applied", "why": "격차 전용 절로: MULTI 73/82 대 14/58(본문 3/15), EXPERT 33/36 대 22/132(2/15), DEFENSE 10/13 대 1/11(1/10); FT 130 중 독립 12(지지 4), 제안 114/118; DEBIAS 120 중 20(7), 96/100. claims.csv 재계산"}
+{"id": "9.3-P6", "decision": "partly", "why": "s-09 수정안 반영(51.5%, 원인 미확인, 과대평가 가능성). 73/82·114/118 문장은 앞 문단과 중복이라 생략"}
+{"id": "9.4-P1", "decision": "merged", "why": "s-09(그러나→삭제, 과장 표현 삭제, 99개 안으로 한정) + decisions '이 중 11개(partly 7, confirmed 4)' verify.csv 확인; 결론 문장을 앞으로(두괄)"}
+{"id": "9.4-P2", "decision": "applied", "why": "p-global: 본문 미확인 5개 질문의 과소평가 가능성 추가"}
+{"id": "9.5-P1", "decision": "merged", "why": "9.4로 합침: 인용 순 표본 선정, arXiv 95·ACL 4(verify.csv), LLM 수행·무검수(2.5)만 새로 쓰고 2.6과 겹치는 항목은 참조; 54.6%(3.1)는 유지"}
+{"id": "10-P1", "decision": "applied", "why": "p-global: 출처를 9.1–9.3과 3장 분포로 넓힘"}
+{"id": "10.A1-P1", "decision": "applied", "why": "p-global/decisions: EXPERT·DEFENSE 격차 추가, 수치 claims.csv"}
+{"id": "10.A1-P2", "decision": "applied", "why": "s-10 그대로(3.5절 서술과 일치)"}
+{"id": "10.A2-P1", "decision": "applied", "why": "s-10 + 표 9-2에 맞춰 '스스로 풀 수 있는지'에 방어 추가"}
+{"id": "10.A3-P1", "decision": "partly", "why": "s-10 '상관(Spearman 등)'은 표 3-4가 '상관(종류 미상)'과 Spearman을 따로 세므로 '종류를 밝히지 않은 상관, Spearman·Pearson 같은 상관 계수'로 고침"}
+{"id": "10.A4-P1", "decision": "applied", "why": "4.3 현재 서술('필요하지만 충분하지 않았다')과 맞춤"}
+{"id": "10.A5-P1", "decision": "applied", "why": "'대부분 부정적' → 독립 11개 중 지지 1개로 구체화, 9.3절 참조"}
+{"id": "10.A5-P2", "decision": "applied", "why": "9.3절 참조가 옛 공통 패턴을 가리켜 8.3.2절·9.1절로 고침"}
+{"id": "10.A6-P1", "decision": "applied", "why": "p-global: 132개 중 22개 수치 추가"}
+{"id": "10.A7-P1", "decision": "applied", "why": "250편 비율을 3.7절과 같은 11.4%로"}
+{"id": "10.R-P1", "decision": "applied", "why": "s-10 그대로, A3 명칭은 '측정의 표준화'"}
+{"id": "11-P1", "decision": "applied", "why": "범위를 한 문장으로"}
+{"id": "11-P2", "decision": "merged", "why": "p-global: RQ1–RQ5 답 문단 신설(RQ4 대체로 부정 22/132, RQ5 공격 53/58·방어 1/11, Q-SELF 포함); s-10 11-P2의 '상당 부분 설명' 낮춤은 교차 결론 문단(11-P3)에 반영"}
+{"id": "11-P3", "decision": "merged", "why": "옛 11-P2를 교차 결론으로: 한 방향 결론 초록 기준 단서, 격차 목록에 EXPERT·DEFENSE 추가, 설명 비율 미계산 명시"}
+{"id": "11-P4", "decision": "merged", "why": "s-10 + p-global: 11개 방향 변화·24개 partly 함께 적고, 본문 확인도 LLM이 했음(decisions)을 밝혀 LLM 기록 정확도의 검증이 아님을 명시; '시범 배치 검토와 형식 검사'로 2.6과 용어 맞춤"}
+{"id": "11-P5", "decision": "applied", "why": "옛 11-P3을 마지막으로 옮겨 답과 의제로 닫음, 9.2절 참조로 중복 줄임, 의제 명칭 10장 제목으로 통일"}

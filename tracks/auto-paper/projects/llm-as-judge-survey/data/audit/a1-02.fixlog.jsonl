@@ -1,0 +1,4 @@
+{"line":3,"decision":"applied","reason":"사람 검수는 선별 단계뿐","new":"…LLM 서브에이전트에 맡기고, 선별 단계에서만 사람이 표본으로 검수했다"}
+{"line":19,"decision":"applied","reason":"나열 집단은 r1,r2,r2s,r3 네 가지","new":"네 라운드를 돌렸다. r4·r5 재판정은 뒤에 따로 했다"}
+{"line":31,"decision":"applied","reason":"2,185편 기준 재계산: extraction 592/328, codes 226/169","new":"편향 592편, 개선책 328편 … 편향 226편, 개선책 169편 (2,185편 기준 명시)"}
+{"line":62,"decision":"applied","reason":"verify.csv 재집계: refute->cond 7, support->cond 1, null->refute 2, null->cond 1, 어긋남 0","new":"11개 중 8개는 지지(1)·반박(7)에서 조건부, 2개는 효과 없음에서 반박, 1개는 효과 없음에서 조건부"}

@@ -1,0 +1,148 @@
+{
+  "downloaded": "2026-10-17",
+  "approved_by_user": "2026-10-17",
+  "compiled": "2026-10-17 (user-approved; copies in session scratchpad; latexmk -pdf -no-shell-escape)",
+  "note": "Official kits, unmodified. Never edit these style files (venues desk-reject modified styles). Copy a kit into a paper project; do not compile inside this folder.",
+  "kits": {
+    "neurips2026": {
+      "url": "https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip",
+      "found_on": "https://neurips.cc/Conferences/2026/CallForPapers",
+      "sha256": "82473931e3ef710fcd3f4a8cd4119b9de32e56825f90f9e5a6d55f2d01b817d9",
+      "bytes": 20259,
+      "template_dir": "neurips2026/kit",
+      "example_main": "neurips_2026.tex",
+      "style_version": "neurips_2026 2026-01-29",
+      "compile_check": "BUILDS (12-page example PDF)"
+    },
+    "icml2026": {
+      "url": "https://media.icml.cc/Conferences/ICML2026/Styles/icml2026.zip",
+      "found_on": "https://icml.cc/Conferences/2026/AuthorInstructions",
+      "sha256": "8b29290f5828e176debb57ea9cc00252502973d55ea561a2f18a7f0a326bfc6c",
+      "bytes": 228368,
+      "template_dir": "icml2026/kit",
+      "example_main": "example_paper.tex",
+      "style_version": "icml2026 v2.0 2025/10/29",
+      "compile_check": "BUILDS (7 pages)"
+    },
+    "iclr2026": {
+      "url": "https://github.com/ICLR/Master-Template/raw/master/iclr2026.zip",
+      "found_on": "https://iclr.cc/Conferences/2026/AuthorGuide",
+      "sha256": "b6d63b29992e153f804bb6d170c57db156c011b5bedf96a9f31d58813b909acf",
+      "bytes": 241296,
+      "template_dir": "iclr2026/kit/iclr2026",
+      "example_main": "iclr2026_conference.tex",
+      "style_version": "iclr2026_conference",
+      "compile_check": "BUILDS (7 pages)"
+    },
+    "cvpr2026": {
+      "url": "https://github.com/cvpr-org/author-kit/archive/refs/tags/CVPR2026-v1(latex).zip",
+      "found_on": "https://cvpr.thecvf.com/Conferences/2026/AuthorGuidelines",
+      "sha256": "ef672bf4ad1c6801237b957d57b0087d4412e7dee01ad3b512abe82960c6466c",
+      "bytes": 29800,
+      "template_dir": "cvpr2026/kit/author-kit-CVPR2026-v1-latex-",
+      "example_main": "main.tex",
+      "style_version": "cvpr 2026",
+      "compile_check": "BUILDS (5 pages)"
+    },
+    "iccv2025": {
+      "url": "https://media.eventhosts.cc/Conferences/ICCV2025/ICCV2025-Author-Kit-Feb.zip",
+      "found_on": "https://iccv.thecvf.com/Conferences/2025/AuthorGuidelines",
+      "sha256": "22c1bee4cf64c2106b9afaecf18807be9f8350a60576bc4bf4ba14a50ca36d83",
+      "bytes": 33439,
+      "template_dir": "iccv2025/kit/ICCV2025-Author-Kit-Feb",
+      "example_main": "main.tex",
+      "style_version": "iccv 2025",
+      "compile_check": "BUILDS (5 pages)"
+    },
+    "eccv2026": {
+      "url": "https://github.com/paolo-favaro/paper-template/archive/refs/tags/Latest.zip",
+      "found_on": "https://eccv2024.ecva.net/Conferences/2026/SubmissionPolicies",
+      "sha256": "8ed161c418f690cc4f48f7c9f57f78b630c2d615d74ebfb3bff37699bd6e4fa1",
+      "bytes": 656170,
+      "template_dir": "eccv2026/kit/paper-template-Latest",
+      "example_main": "main.tex",
+      "style_version": "eccv (2026 kit, tag Latest)",
+      "compile_check": "BUILDS (15 pages) after installing MiKTeX packages cite, axessibility, orcidlink, accsupp"
+    },
+    "aaai2026": {
+      "url": "https://aaai.org/authorkit26-1/",
+      "found_on": "https://aaai.org/conference/aaai/aaai-26/submission-instructions/",
+      "sha256": "d2844ec68a4a9396d749fcca5b5784809617b670863e8d4fecbfb00e444fc3af",
+      "bytes": 7024737,
+      "template_dir": "aaai2026/kit/AuthorKit26/AnonymousSubmission/LaTeX",
+      "example_main": "anonymous-submission-latex-2026.tex",
+      "style_version": "aaai2026 2026/06/17",
+      "compile_check": "BUILDS (10 pages)"
+    },
+    "aaai2027": {
+      "url": "https://aaai.org/authorkit27/",
+      "found_on": "https://aaai.org/conference/aaai/aaai-27/",
+      "sha256": "e28c6ac9bc6eb3b4e2d849547d2cefb5162610ee39d0a12e0dc62d1126b44a7d",
+      "bytes": 5495535,
+      "template_dir": "aaai2027/kit/AuthorKit27",
+      "example_main": "AnonymousSubmission2027.tex",
+      "style_version": "aaai2027 2027/05/04",
+      "compile_check": "BUILDS (10 pages)"
+    },
+    "aistats2026": {
+      "url": "https://aistats.org/aistats2026/AISTATS2026PaperPack.zip",
+      "found_on": "https://virtual.aistats.org/Conferences/2026/CallForPapers",
+      "sha256": "7eb3c52735e16446e4b9f59de579599d7ca5714ca0412e0def1c32003882565c",
+      "bytes": 266185,
+      "template_dir": "aistats2026/kit/AISTATS2026PaperPack",
+      "example_main": "sample_paper.tex",
+      "style_version": "aistats2026 2026/08/29",
+      "compile_check": "BUILDS (5 pages)"
+    },
+    "uai2026": {
+      "url": "https://www.auai.org/uai2026/public/formatting/uai2026-template.zip",
+      "found_on": "https://www.auai.org/uai2026/submission_instructions",
+      "sha256": "8a35c4a03672f202d207fcea14c6988ba65e4780fccfc428ab45b0441634ae5a",
+      "bytes": 1333539,
+      "template_dir": "uai2026/kit/uai2026-template",
+      "example_main": "uai2026-template.tex",
+      "style_version": "uai2026.cls",
+      "compile_check": "BUILDS (4 pages)"
+    },
+    "ijcai2026": {
+      "url": "https://www.ijcai.org/sites/default/files/Guidelines/FormattingGuidelines-IJCAI-ECAI-26.zip",
+      "found_on": "https://www.ijcai.org/authors_kit",
+      "sha256": "68c0f282c3b2340795642586998dff19597686c4b34d0bd9057de43d4e2a6ed3",
+      "bytes": 69002,
+      "template_dir": "ijcai2026/kit/FormattingGuidelines-IJCAI-ECAI-26",
+      "example_main": "ijcai26.tex",
+      "style_version": "ijcai26",
+      "compile_check": "BUILDS (6 pages)"
+    },
+    "acl": {
+      "url": "https://github.com/acl-org/acl-style-files/archive/refs/heads/master.zip",
+      "found_on": "https://acl-org.github.io/ACLPUB/formatting.html",
+      "sha256": "bead1eec1aa2c4de8596ddcdd5ac22917f38b2c8441b853ff13015c0b0b8b92e",
+      "bytes": 36949,
+      "template_dir": "acl/kit/acl-style-files-master",
+      "example_main": "acl_latex.tex",
+      "style_version": "acl.sty (master, pushed 2026-06-29)",
+      "compile_check": "BUILDS (4 pages)"
+    },
+    "tmlr": {
+      "url": "https://github.com/JmlrOrg/tmlr-style-file/archive/refs/heads/main.zip",
+      "found_on": "https://jmlr.org/tmlr/author-guide.html",
+      "sha256": "48f9f972cc812d2cfc8032a78578c2f5d8939b92fbd4f61095e8cbeb3394f92d",
+      "bytes": 694659,
+      "template_dir": "tmlr/kit/tmlr-style-file-main",
+      "example_main": "main.tex",
+      "style_version": "tmlr.sty (main, pushed 2023-06-30)",
+      "compile_check": "BUILDS (7 pages)"
+    },
+    "colm2026": {
+      "url": "https://github.com/COLM-org/Template/archive/refs/heads/master.zip",
+      "found_on": "https://github.com/COLM-org/Template (official COLM org)",
+      "sha256": "1c02f49c5657ced97cd340345a5faab2ea3aa44b96cbb4f4db81835be4e32de5",
+      "bytes": 156143,
+      "template_dir": "colm2026/kit/Template-master",
+      "example_main": "colm2026_conference.tex",
+      "style_version": "colm2026_conference",
+      "compile_check": "BUILDS (5 pages) after installing MiKTeX font packages mathpazo and fpl; page check PASS with pl:bodyend marker"
+    }
+  }
+}

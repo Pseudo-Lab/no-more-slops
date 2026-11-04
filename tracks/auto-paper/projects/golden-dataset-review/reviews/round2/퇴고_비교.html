@@ -1,0 +1,798 @@
+<!doctype html><html lang=ko><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>Round 2 퇴고 — 골든 데이터셋 미니 리뷰 (toego:revise)</title><style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#6b6b70;--card:#fff;--line:#e4e2dc;--accent:#2f5d8a;
+--del-bg:#fde5e3;--del-fg:#9b1c12;--ins-bg:#e1f3e6;--ins-fg:#115c2a;--warn:#a15c00;--warn-bg:#fff3de;--chip:#eef2f7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17181b;--fg:#e8e6e1;--muted:#9a9aa0;--card:#202226;
+--line:#33363c;--accent:#8fb6e0;--del-bg:#4a2320;--del-fg:#ffb4ab;--ins-bg:#1f3b28;--ins-fg:#a6e3b6;--warn:#f0b35a;--warn-bg:#3a2e17;--chip:#2a2f37}}
+:root[data-theme="dark"]{--bg:#17181b;--fg:#e8e6e1;--muted:#9a9aa0;--card:#202226;--line:#33363c;--accent:#8fb6e0;
+--del-bg:#4a2320;--del-fg:#ffb4ab;--ins-bg:#1f3b28;--ins-fg:#a6e3b6;--warn:#f0b35a;--warn-bg:#3a2e17;--chip:#2a2f37}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 "Pretendard","Noto Sans KR",system-ui,sans-serif}
+.wrap{display:grid;grid-template-columns:250px 1fr;max-width:1500px;margin:0 auto}
+nav{position:sticky;top:0;height:100vh;overflow:auto;padding:20px 14px;border-right:1px solid var(--line);font-size:13.5px}
+nav a{display:block;color:var(--fg);text-decoration:none;padding:3px 6px;border-radius:5px}nav a:hover{background:var(--chip)}
+nav .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.04em}
+main{padding:24px 28px 80px;min-width:0}h1{font-size:23px;margin:0 0 4px}h2{font-size:19px;margin:40px 0 12px;border-bottom:2px solid var(--fg);padding-bottom:4px}
+h3{font-size:17px;margin:34px 0 10px;color:var(--accent)}h5{margin:0 0 6px;font-size:12px;color:var(--muted);letter-spacing:.05em}
+.muted{color:var(--muted)}code{font:12.5px ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:4px}
+blockquote{margin:10px 0;padding:10px 14px;border-left:3px solid var(--accent);background:var(--card)}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.stat{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.stat b{display:block;font-size:20px}
+.toolbar{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:2px 10px;font-size:12.5px;cursor:pointer}
+.chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.flow{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px}.flow p{margin:4px 0}
+.verdict{background:var(--warn-bg);padding:6px 8px;border-radius:6px}
+.para{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:14px 0}
+.para.isdone{opacity:.45}.para header{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.summary{margin:8px 0;font-size:14px}.summary b{color:var(--accent);margin-right:4px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cmp>div{border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0}
+.cmp p{margin:0 0 8px}del{background:var(--del-bg);color:var(--del-fg);text-decoration:line-through}ins{background:var(--ins-bg);color:var(--ins-fg);text-decoration:none}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:10px 0}th,td{border:1px solid var(--line);padding:5px 7px;vertical-align:top;text-align:left}
+th{background:var(--chip);font-weight:600}.edits td.b{color:var(--del-fg)}.edits td.a{color:var(--ins-fg)}
+.edits td:first-child{white-space:nowrap}
+.badge{font-size:11.5px;padding:1px 7px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+.badge.edit{background:var(--chip)}.badge.keep{opacity:.7}.badge.del{background:var(--del-bg);color:var(--del-fg)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}.badge.move{background:var(--ins-bg);color:var(--ins-fg)}.badge.pat{background:transparent}
+.badge.type{background:var(--chip)}
+.check{background:var(--warn-bg);border-radius:6px;padding:6px 10px;font-size:13.5px;margin-top:8px}.check ul{margin:4px 0 0 18px;padding:0}
+button.copy{margin-left:auto;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:6px;padding:2px 10px;cursor:pointer;font-size:12.5px}
+button.copy.ok{background:var(--accent);color:var(--bg)}.done{font-size:12.5px;cursor:pointer}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.box pre{white-space:pre-wrap;font:13px/1.6 ui-monospace,Menlo,monospace;margin:0}
+details summary{cursor:pointer;color:var(--accent);font-size:13.5px}
+#theme{position:fixed;right:14px;bottom:14px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:4px 12px;cursor:pointer}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+main{padding:16px}.cmp,.two{grid-template-columns:1fr}table{display:block;overflow-x:auto}}
+</style></head><body><div class=wrap><nav><div class=grp>개요</div><a href="#top">심사 의견과 판정 기준</a><a href="#structure">7. 장·절 구조</a>
+<a href="#global">5. 전체 흐름과 결론</a><a href="#abstract">6. 영문 초록</a><div class=grp>1-4. 본문 퇴고</div><a href="#s-abs">초록</a><a href="#s-1">1. 서론</a><a href="#s-2.1">2.1</a><a href="#s-2.2">2.2</a><a href="#s-2.3">2.3</a><a href="#s-2.4">2.4</a><a href="#s-2.5">2.5</a><a href="#s-2.6">2.6</a><a href="#s-3">3</a><a href="#s-3.3">3.3</a><a href="#s-3.4">3.4</a><a href="#s-3.5">3.5</a><a href="#s-4.1">4</a><a href="#s-5.1">5.1</a><a href="#s-6">6</a><a href="#s-2">2</a><a href="#s-표1">표1</a><a href="#s-3.1">3.1</a><a href="#s-3.2">3.2</a><a href="#s-표 2">표 2</a><a href="#s-4.2">4.2</a><a href="#s-5.2">5.2</a><a href="#s-5.3">5.3</a><a href="#s-데이터 가용성">데이터 가용성</a><a href="#s-생성형 AI 사용 고지">생성형 AI 사용 고지</a>
+<div class=grp>부록</div><a href="#captions">캡션·표</a><a href="#refs">참고문헌</a><a href="#checks">저자 확인 사항</a><a href="#facts">사실 대조 기록</a></nav><main>
+<h1 id=top>Round 2 퇴고 — 골든 데이터셋 미니 리뷰 (toego:revise)</h1><p class=muted>원고: <code>manuscript/source.md</code> · 검토일 2026-10-25</p>
+<blockquote><b>심사 의견</b><br>Round 1 심사 반영본(v3)의 문장·문단·사실 재점검. 이전 반영을 되돌리지 않고 근거 범위, 시제, 괄식, 용어 통일, 다주제 문단, 결론 대응을 점검.</blockquote>
+<div class=stats><div class=stat><b>39</b>검토 문단</div><div class=stat><b>56</b>수정 건수</div><div class=stat><b>0</b>사실관계·확인</div><div class=stat><b>0</b>삭제·병합</div><div class=stat><b>0</b>신설·이동·분할</div><div class=stat><b>6</b>저자 확인 항목</div></div>
+<details><summary>검토에 사용한 근거 자료</summary><ul><li><code>research/r1-*.md</code></li><li><code>research/r2-verification.md</code></li><li><code>research/r3-referee-additions.md</code></li><li><code>research/r4-round2-checks.md</code></li><li><code>reviews/round2/lint.json</code></li></ul></details>
+<details><summary>판정 기준 — 시제·문단 구성·수정 유형</summary><h3>시제 규칙</h3><table class=grid><thead><tr><th>위치</th><th>시제</th><th>예</th></tr></thead><tbody><tr><td>서론·본론의 선행연구 보고</td><td>과거</td><td>보고하였다, 보였다</td></tr><tr><td>정의·일반 사실·표 설명</td><td>현재</td><td>표 1은 … 비교한다</td></tr><tr><td>이 리뷰의 주장·제안</td><td>현재</td><td>제안한다, 본다</td></tr></tbody></table><h3>문단 구성(두괄·미괄·양괄) 규칙</h3><table class=grid><thead><tr><th>위치</th><th>형식</th><th>이유</th></tr></thead><tbody><tr><td>서론</td><td>깔때기형, 문단 두괄식</td><td>맥락 → 문제 → 공백 → 질문</td></tr><tr><td>본론 소절</td><td>두괄식</td><td>주장 → 문헌 근거 → 함의</td></tr><tr><td>논의·결론</td><td>양괄식</td><td>요약 → 근거 → 범위와 한계</td></tr></tbody></table><h3>수정 유형</h3><table class=grid><thead><tr><th>유형</th><th>뜻</th></tr></thead><tbody><tr><td>사실오류</td><td>근거 기록·원문과 다른 서술</td></tr><tr><td>근거부족</td><td>인용이 뒷받침하지 않는 주장</td></tr><tr><td>과잉일반화</td><td>한 연구·한 데이터셋 결과를 일반 성질로 서술</td></tr><tr><td>논리연결</td><td>문장 간 인과·대조 오류</td></tr><tr><td>AI상투</td><td>내용 없는 주제문·수사</td></tr><tr><td>시제</td><td>시제 규칙 위반</td></tr><tr><td>용어통일</td><td>같은 개념의 다른 표기</td></tr><tr><td>문법</td><td>주술 호응·조사</td></tr><tr><td>구조</td><td>문단·절 배치</td></tr></tbody></table></details>
+<h2 id=structure>7. 장·절 구조</h2><div class=two>
+<div class=box><h5>현재</h5><pre>4. 무엇을 골든이라 부를 수 있는가: 4.1 개념의 변천과 정의, 4.2 2단 구성과 핵심셋의 규모</pre></div>
+<div class=box><h5>제안</h5><pre>4. 골든의 정의와 적용: 4.1 개념의 변천, 4.2 정의와 일곱 조건, 4.3 적용 예: SimpleQA, 4.4 2단 구성과 핵심셋 설계
+2.7 종합 신설</pre></div></div>
+<table class=grid><thead><tr><th>변경</th><th>왜</th></tr></thead><tbody><tr><td>4장 재편</td><td>제목이 4.2를 덮지 못함, SimpleQA 판정이 최소 기준을 적용하지 않음</td></tr><tr><td>2.7 종합</td><td>장 종합이 2.6 안에 있었음</td></tr></tbody></table><h2 id=global>5. 전체 흐름이 결론에 드러나는가</h2>
+<table class=grid><thead><tr><th>서론이 제기한 질문</th><th>본문 근거</th><th>결론 반영</th></tr></thead><tbody><tr><td>Q1</td><td>2장, 2.7</td><td>결론 첫째</td></tr><tr><td>Q2</td><td>3장</td><td>결론 둘째(두 사례, 하한)</td></tr><tr><td>Q3</td><td>4.2–4.3</td><td>결론 셋째(SimpleQA 적용 결과)</td></tr><tr><td>쟁점 1–4</td><td>5.1</td><td>결론 쟁점 문장</td></tr></tbody></table>
+<p class=verdict><b>판정</b> 결론이 Q1–Q3과 네 쟁점 입장, 불리한 결과를 모두 반영.</p>
+<details open><summary>수정 후 문단 요약의 전체 사슬</summary><p>reviews/round2/para.md</p></details><h2 id=abstract>6. 영문 초록</h2>
+<article class=para id="p-ABSTRACT" data-types="과잉일반화 용어통일" data-status="수정">
+<header><label class=done><input type=checkbox data-key="ABSTRACT"> 반영</label><code>ABSTRACT</code><span class="badge edit">수정</span>
+<button class=copy data-copy="Teams building large language model (LLM) and retrieval-augmented generation (RAG) applications use evaluation sets, often called golden datasets, for regression testing, model selection, and judge calibration, yet there is no agreed definition of what makes a set &quot;golden.&quot; Audits of widely used public benchmarks have reported errors in a few percent of all items and, in one subject area, in more than half of the analyzed items. This mini review synthesizes literature, mainly from 2015 to 2026, on how evaluation sets are built, how they are validated, and when they can be called golden. We find that none of the four construction methods (expert authoring, curation of user logs, LLM-based synthesis, and adversarial collection) achieves correctness, realism, and low cost simultaneously, and RAG, agent, safety, and multilingual sets add their own requirements. Validation can be organized into five dimensions (construct validity, label reliability, error auditing, statistical adequacy, and control of contamination and reproducibility), and sets that had passed review on one dimension have been found deficient on another. We propose that &quot;golden&quot; denote a state in which, for a stated purpose and version, documented evidence shows that seven conditions are met, give minimum criteria for each condition, and apply them to one public set. We examine a two-tier design, in which an audited core set calibrates automatic judgments on a larger auxiliary set, in light of prediction-powered inference and its limits, and we discuss four controversies: scale versus quality, a single answer versus perspectivism, replacing human labels with LLM labels, and static versus dynamic sets.">수정 후 복사</button></header>
+<div class=cmp><div><h5>수정 전</h5><p>Teams building large language model (LLM) and retrieval-augmented generation (RAG) applications use evaluation sets, often called golden datasets, for regression testing, model selection, and judge calibration, yet there is no agreed definition of what makes a set &quot;golden.&quot; <del>Widely</del> used public benchmarks <del>contain</del> errors in a few percent of items <del>overall</del> <del>and</del> in more than half of the analyzed <del>items in some subsets.</del> This mini review synthesizes literature, mainly from 2015 to 2026, on how evaluation sets are built, how they are validated, and when they can be called golden. <del>None</del> of the four construction methods (expert authoring, curation of user logs, LLM-based synthesis, and adversarial collection) achieves correctness, realism, and low cost simultaneously, and RAG, agent, safety, and multilingual sets add their own requirements. Validation can be organized into five dimensions (construct validity, label reliability, error auditing, statistical adequacy, and control of contamination and reproducibility), and <del>several </del>sets that had passed review on one dimension <del>were</del> <del>later</del> found deficient on another. We propose that &quot;golden&quot; denote a state in which, for a stated purpose and version, documented evidence shows that seven conditions are met, <del>and we </del>give minimum criteria for each <del>condition.</del> We examine a two-tier design, in which an audited core calibrates automatic judgments on a larger auxiliary set, in light of prediction-powered inference and its limits, and we discuss four controversies: scale versus quality, a single answer versus perspectivism, human <del>versus</del> LLM labels, and static versus dynamic sets.</p></div><div><h5>수정 후</h5><p>Teams building large language model (LLM) and retrieval-augmented generation (RAG) applications use evaluation sets, often called golden datasets, for regression testing, model selection, and judge calibration, yet there is no agreed definition of what makes a set &quot;golden.&quot; <ins>Audits of widely</ins> used public benchmarks <ins>have reported</ins> errors in a few percent of <ins>all </ins>items <ins>and,</ins> <ins>in one subject area,</ins> in more than half of the analyzed <ins>items.</ins> This mini review synthesizes literature, mainly from 2015 to 2026, on how evaluation sets are built, how they are validated, and when they can be called golden. <ins>We find that none</ins> of the four construction methods (expert authoring, curation of user logs, LLM-based synthesis, and adversarial collection) achieves correctness, realism, and low cost simultaneously, and RAG, agent, safety, and multilingual sets add their own requirements. Validation can be organized into five dimensions (construct validity, label reliability, error auditing, statistical adequacy, and control of contamination and reproducibility), and sets that had passed review on one dimension <ins>have</ins> <ins>been</ins> found deficient on another. We propose that &quot;golden&quot; denote a state in which, for a stated purpose and version, documented evidence shows that seven conditions are met, give minimum criteria for each <ins>condition, and apply them to one public set.</ins> We examine a two-tier design, in which an audited core<ins> set</ins> calibrates automatic judgments on a larger auxiliary set, in light of prediction-powered inference and its limits, and we discuss four controversies: scale versus quality, a single answer versus perspectivism, <ins>replacing </ins>human <ins>labels with</ins> LLM labels, and static versus dynamic sets.</p></div></div>
+<table class=edits><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">과잉일반화</span></td><td class=b>Widely used public benchmarks contain errors in a few percent of items overall and in more than half of the analyzed items in some subsets.</td><td class=a>Audits of widely used public benchmarks have reported errors in a few percent of all items and, in one subject area, in more than half of the analyzed items.</td><td>국문 초록(abs-P1)은 &#x27;보고되었다&#x27;로 감사 결과를 전하는데 영문은 현재형 &#x27;contain&#x27;으로 공개 벤치마크 일반의 속성처럼 단정한다. 절반 초과 수치의 근거는 MMLU Virology 57% 한 하위 영역뿐이다(1-P2, gema2024; r3 §25). 따라서 &#x27;some subsets&#x27;는 근거보다 넓다.</td></tr><tr><td><span class="badge type">용어통일</span></td><td class=b>in which an audited core calibrates</td><td class=a>in which an audited core set calibrates</td><td>국문 &#x27;핵심셋&#x27;(abs-P1, 4.2)에 대응하는 명사가 &#x27;core&#x27; 하나뿐이어서 무엇의 핵심인지 드러나지 않는다. 짝을 이루는 &#x27;auxiliary set&#x27;과 형식을 맞춘다.</td></tr></tbody></table>
+<p class=muted></p></article>
+<h2>1-4. 본문 퇴고 (문장 → 문단 → 절)</h2>
+<p class=muted>각 문단: 수정 전(빨강 = 삭제) / 수정 후(초록 = 추가), ‘수정 후 복사’로 한/글에 바로 붙여넣기. 수식 개체([원문 수식])와 인용 번호는 원문 개체를 유지할 것. ‘반영’ 체크는 이 브라우저에 저장된다.</p>
+<div class=toolbar><span class=muted>유형 필터</span><button class=chip data-t="사실오류">사실오류 14</button><button class=chip data-t="근거부족">근거부족 14</button><button class=chip data-t="논리연결">논리연결 12</button><button class=chip data-t="과잉일반화">과잉일반화 6</button><button class=chip data-t="문법">문법 3</button><button class=chip data-t="용어통일">용어통일 2</button><button class=chip data-t="AI상투">AI상투 2</button><button class=chip data-t="중복">중복 2</button><button class=chip data-t="시제">시제 1</button><button class=chip id=hidedone>반영 완료 숨기기</button><span id=prog class=muted></span></div>
+
+<section class="sec" id="s-abs">
+ <h3>초록</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> &#x27;여럿&#x27;·쟁점 이름·한 하위 영역 반영</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-abs-P1"><code>abs-P1</code></a> 합의된 정의가 없는 골든셋을 구축·검증·조건의 세 질문으로 정리하고 일곱 조건과 2단 구성을 제안하는 초록.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-abs-P1" data-types="용어통일" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="abs-P1"> 반영</label>
+  <code>abs-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="대형 언어모델(LLM)과 검색 증강 생성(RAG) 애플리케이션 개발팀은 회귀 검사, 모델 선택, 판정 모델 보정에 평가셋을 쓰고 이를 흔히 골든 데이터셋이라 부르지만, 무엇이 평가셋을 &quot;골든&quot;으로 만드는지에 대한 합의된 정의는 없다. 널리 쓰이는 공개 벤치마크에서도 전체 문항의 수 퍼센트, 일부 하위 영역에서는 분석 문항의 절반이 넘는 오류가 보고되었다. 본고는 주로 2015–2026년의 문헌을 종합하여 평가셋을 어떻게 구축하고, 어떤 측면에서 검증하며, 어떤 조건에서 골든이라 부를 수 있는지를 정리한다. 전문가 작성, 실사용 로그, LLM 합성, 적대적 수집의 네 구축 방식은 어느 것도 정확성, 현실성, 비용을 함께 만족하지 못하며, RAG, 에이전트, 안전성, 다국어 평가셋에는 고유한 요건이 더해진다. 검증은 구성 타당도, 라벨 신뢰도, 오류 감사, 통계적 충분성, 오염·재현성 통제의 다섯 측면으로 정리되며, 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있었다. 본고는 골든을 명시된 목적과 버전에 대해 일곱 조건의 충족 증거가 문서로 남은 상태로 정의하고 조건별 최소 판정 기준을 제시한다. 또한 감사된 핵심셋으로 대규모 보조셋의 자동 판정을 보정하는 2단 구성을 예측 기반 추론과 그 한계에 비추어 검토하고, 규모와 품질, 단일 정답과 관점주의, 사람 라벨의 LLM 대체, 정적·동적 평가셋의 네 쟁점을 논의한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 합의된 정의가 없는 골든셋을 구축·검증·조건의 세 질문으로 정리하고 일곱 조건과 2단 구성을 제안하는 초록.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>대형 언어모델(LLM)과 검색 증강 생성(RAG) 애플리케이션 개발팀은 회귀 검사, 모델 선택, 판정 모델 보정에 평가셋을 쓰고 이를 흔히 골든 데이터셋이라 부르지만, 무엇이 평가셋을 &quot;골든&quot;으로 만드는지에 대한 합의된 정의는 없다. 널리 쓰이는 공개 벤치마크에서도 전체 문항의 수 퍼센트, 일부 하위 영역에서는 분석 문항의 절반이 넘는 오류가 보고되었다. 본고는 주로 2015–2026년의 문헌을 종합하여 평가셋을 어떻게 구축하고, 어떤 측면에서 검증하며, 어떤 조건에서 골든이라 부를 수 있는지를 정리한다. 전문가 작성, 실사용 로그, LLM 합성, 적대적 수집의 네 구축 방식은 어느 것도 정확성, 현실성, 비용을 함께 만족하지 못하며, RAG, 에이전트, 안전성, 다국어 평가셋에는 고유한 요건이 더해진다. 검증은 구성 타당도, 라벨 신뢰도, 오류 감사, 통계적 충분성, 오염·재현성 통제의 다섯 측면으로 정리되며, 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있었다. 본고는 골든을 명시된 목적과 버전에 대해 일곱 조건의 충족 증거가 문서로 남은 상태로 정의하고 조건별 최소 판정 기준을 제시한다. 또한 감사된 핵심셋으로 대규모 보조셋의 자동 판정을 보정하는 2단 구성을 예측 기반 추론과 그 한계에 비추어 검토하고, 네<del> 가지</del> 쟁점을 논의한다.</p></div><div><h5>수정 후</h5><p>대형 언어모델(LLM)과 검색 증강 생성(RAG) 애플리케이션 개발팀은 회귀 검사, 모델 선택, 판정 모델 보정에 평가셋을 쓰고 이를 흔히 골든 데이터셋이라 부르지만, 무엇이 평가셋을 &quot;골든&quot;으로 만드는지에 대한 합의된 정의는 없다. 널리 쓰이는 공개 벤치마크에서도 전체 문항의 수 퍼센트, 일부 하위 영역에서는 분석 문항의 절반이 넘는 오류가 보고되었다. 본고는 주로 2015–2026년의 문헌을 종합하여 평가셋을 어떻게 구축하고, 어떤 측면에서 검증하며, 어떤 조건에서 골든이라 부를 수 있는지를 정리한다. 전문가 작성, 실사용 로그, LLM 합성, 적대적 수집의 네 구축 방식은 어느 것도 정확성, 현실성, 비용을 함께 만족하지 못하며, RAG, 에이전트, 안전성, 다국어 평가셋에는 고유한 요건이 더해진다. 검증은 구성 타당도, 라벨 신뢰도, 오류 감사, 통계적 충분성, 오염·재현성 통제의 다섯 측면으로 정리되며, 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있었다. 본고는 골든을 명시된 목적과 버전에 대해 일곱 조건의 충족 증거가 문서로 남은 상태로 정의하고 조건별 최소 판정 기준을 제시한다. 또한 감사된 핵심셋으로 대규모 보조셋의 자동 판정을 보정하는 2단 구성을 예측 기반 추론과 그 한계에 비추어 검토하고, <ins>규모와 품질, 단일 정답과 관점주의, 사람 라벨의 LLM 대체, 정적·동적 평가셋의 </ins>네 쟁점을 논의한다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">용어통일</span></td><td class=b>네 가지 쟁점을 논의한다</td><td class=a>규모와 품질, 단일 정답과 관점주의, 사람 라벨의 LLM 대체, 정적·동적 평가셋의 네 쟁점을 논의한다</td><td>영문 초록(abs-en-P1)은 네 쟁점을 열거하는데 국문 초록은 개수만 밝혀 두 초록의 정보량이 다르다. 쟁점 이름은 5.1-P1~P4의 첫 문장을 따랐다.</td></tr></tbody></table>
+ 
+</article>
+<article class="para" id="p-abs-P2" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="abs-P2"> 반영</label>
+  <code>abs-P2</code> <span class="badge keep">유지</span> <span class="badge pat">목록</span>
+  
+ </header>
+ <p class="summary"><b>요약</b> 주제어 목록.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>**주제어**: 골든 데이터셋, 평가 데이터셋, 대형 언어모델, 검색 증강 생성, 라벨 품질, 벤치마크 타당도</p></div><div><h5>수정 후</h5><p class="muted">(삭제 또는 다른 문단에 병합 — 아래 근거 참고)</p></div></div>
+ 
+ 
+</article>
+</section>
+<section class="sec" id="s-1">
+ <h3>1. 서론</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 유지, 1-P3 범위 한정</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-1-P3"><code>1-P3</code></a> 기존 서베이와 벤치마크 품질 연구는 애플리케이션 평가셋의 구축·검증·골든 조건을 함께 다루지 않았다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-1-P1" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="1-P1"> 반영</label>
+  <code>1-P1</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  
+ </header>
+ <p class="summary"><b>요약</b> 평가셋은 변경 비교의 기준이고 실무는 이를 골든셋이라 부르지만 그 품질 보장 내용은 합의되지 않았다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>LLM 애플리케이션 개발에서 평가셋은 프롬프트, 모델, 검색기를 바꿀 때마다 결과를 비교하는 기준이다. OpenAI 문서는 사람이 제공한 정답 라벨로 기대 동작을 먼저 명세하고 변경을 검사하는, 행동 주도 개발과 비슷한 절차를 제시하며[@openai-evals], Anthropic 문서는 실제 과제 분포를 반영한 과제 특화 평가를 권고한다[@anthropic-evals]. 실무에서는 이런 기준 집합을 골든 데이터셋(golden dataset, 이하 골든셋)이라 부르지만, 그 이름이 어떤 품질을 보장하는지는 합의되어 있지 않다.</p></div><div><h5>수정 후</h5><p class="muted">(삭제 또는 다른 문단에 병합 — 아래 근거 참고)</p></div></div>
+ 
+ 
+</article>
+<article class="para" id="p-1-P2" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="1-P2"> 반영</label>
+  <code>1-P2</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  
+ </header>
+ <p class="summary"><b>요약</b> 공개 벤치마크에서 정답 오류가 거듭 확인되었고 사내 평가셋에도 같은 오류가 남을 수 있다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>정답 자체가 틀릴 수 있다는 점은 공개 벤치마크에서 거듭 확인되었다. 널리 쓰이는 평가셋 10종의 라벨 오류율은 평균 3.3% 이상으로 추정되었고, 수정된 ImageNet 라벨에서 원래 오표기 문항의 비율이 약 6%p 늘면 ResNet-18이 ResNet-50을 앞섰다[@northcutt2021]. MMLU에서는 문항·선지 불명확, 정답 없음, 복수 정답, 정답 오표기를 포함한 오류가 전체 문항의 6.49%, Virology 하위 영역에서는 분석 문항의 57%로 추정되었다[@gema2024]. GSM8K를 재검수하자 원래 평가셋에서 똑같이 45개를 틀린 두 모델이 각각 2개와 17개를 틀려, 라벨 잡음이 모델 간 차이를 가리고 있었음이 드러났다[@gsm8kplatinum]. 공개 검수를 거치지 않는 사내 평가셋에는 같은 종류의 오류가 발견되지 않은 채 남을 수 있다.</p></div><div><h5>수정 후</h5><p class="muted">(삭제 또는 다른 문단에 병합 — 아래 근거 참고)</p></div></div>
+ 
+ 
+</article>
+<article class="para" id="p-1-P3" data-types="과잉일반화" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="1-P3"> 반영</label>
+  <code>1-P3</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="기존 서베이와 벤치마크 품질 연구는 이 문제를 주로 평가 방법 일반이나 공개 벤치마크의 관점에서 다루었다. LLM 평가 서베이는 평가 대상과 방법을 정리하였고[@chang2024], RAG 평가 서베이는 지표와 벤치마크를 분류하였으며[@yu2024], 오염 서베이는 학습 데이터 유출을 다루었다[@xu2024]. 벤치마크 품질 연구는 갖출 기준을 제시하거나[@bowman2021] 공개 벤치마크의 모범 사례와 구성 타당도를 평가하였다[@reuel2024; @bean2025]. 특정 애플리케이션의 평가셋을 만들고 검증하며 골든이라 부를 조건까지 묶은 리뷰는 본고의 검색 범위에서 확인되지 않았다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 기존 서베이와 벤치마크 품질 연구는 애플리케이션 평가셋의 구축·검증·골든 조건을 함께 다루지 않았다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>기존 <del>문헌은</del> 이 문제를 <del>애플리케이션</del> <del>평가셋의</del> 관점에서 <del>다루지 않는다.</del> LLM 평가 서베이는 평가 대상과 방법을 정리하였고[@chang2024], RAG 평가 서베이는 지표와 벤치마크를 분류하였으며[@yu2024], 오염 서베이는 학습 데이터 유출을 다루었다[@xu2024]. 벤치마크 품질 연구는 갖출 기준을 제시하거나[@bowman2021] 공개 벤치마크의 모범 사례와 구성 타당도를 평가하였다[@reuel2024; @bean2025]. 특정 애플리케이션의 평가셋을 만들고 검증하며 골든이라 부를 조건까지 묶은 리뷰는 본고의 검색 범위에서 확인되지 않았다.</p></div><div><h5>수정 후</h5><p>기존 <ins>서베이와 벤치마크 품질 연구는</ins> 이 문제를 <ins>주로</ins> <ins>평가 방법 일반이나 공개 벤치마크의</ins> 관점에서 <ins>다루었다.</ins> LLM 평가 서베이는 평가 대상과 방법을 정리하였고[@chang2024], RAG 평가 서베이는 지표와 벤치마크를 분류하였으며[@yu2024], 오염 서베이는 학습 데이터 유출을 다루었다[@xu2024]. 벤치마크 품질 연구는 갖출 기준을 제시하거나[@bowman2021] 공개 벤치마크의 모범 사례와 구성 타당도를 평가하였다[@reuel2024; @bean2025]. 특정 애플리케이션의 평가셋을 만들고 검증하며 골든이라 부를 조건까지 묶은 리뷰는 본고의 검색 범위에서 확인되지 않았다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">과잉일반화</span></td><td class=b>기존 문헌은 이 문제를 애플리케이션 평가셋의 관점에서 다루지 않는다.</td><td class=a>기존 서베이와 벤치마크 품질 연구는 이 문제를 주로 평가 방법 일반이나 공개 벤치마크의 관점에서 다루었다.</td><td>주제문은 &#x27;기존 문헌&#x27; 전체를 단정하지만 같은 문단의 끝 문장은 &#x27;본고의 검색 범위에서 확인되지 않았다&#x27;로 한정하여 두 문장의 강도가 다르다. 근거로 든 문헌도 서베이 3편과 벤치마크 품질 연구 3편뿐이다(r1-definition-format.md 144행). 시제는 선행연구 보고에 맞춰 과거로 바꾸었다.</td></tr></tbody></table>
+ 
+</article>
+<article class="para" id="p-1-P4" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="1-P4"> 반영</label>
+  <code>1-P4</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  
+ </header>
+ <p class="summary"><b>요약</b> 세 연구 질문과 장 구성, 평가셋·벤치마크·시험 모음의 정의.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>본고는 (Q1) LLM·RAG 평가셋은 어떤 방식으로 구축되며 각 방식의 위험은 무엇인가, (Q2) 어떤 측면에서 검증되는가, (Q3) 어떤 조건을 갖추면 골든이라 부를 수 있는가를 다룬다. 2–4장이 각 질문에 답하고 5장은 쟁점과 과제를 논의한다. 평가셋(evaluation set)은 출력을 채점하는 문항과 정답의 집합, 벤치마크는 공개되어 여러 연구가 공유하는 평가셋, 시험 모음(test collection)은 정보검색에서 질의, 문서, 관련성 판정으로 이루어진 평가셋을 가리킨다.</p></div><div><h5>수정 후</h5><p class="muted">(삭제 또는 다른 문단에 병합 — 아래 근거 참고)</p></div></div>
+ 
+ 
+</article>
+<article class="para" id="p-1-P5" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="1-P5"> 반영</label>
+  <code>1-P5</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  
+ </header>
+ <p class="summary"><b>요약</b> 검색 시점, 출처, 포함 기준, 검토 규모와 리뷰 유형.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>문헌은 2026년 10월에 arXiv, ACL Anthology, 주요 학회 논문집, 개발사 문서에서 평가셋 구축, 라벨 품질, 오염, 통계적 검정력, 데이터셋 문서화를 주제어로 검색하고 인용을 앞뒤로 추적하여 모았다. 대상은 주로 2015–2026년 문헌이며, 골드 표준, 관련성 판정, 주석 일치도 개념의 기원은 2000–2010년 문헌으로 보충하였다. 구축 또는 검증 절차를 구체적으로 기술하거나 정량 보고한 문헌을 우선하였고, 개발사 문서와 블로그는 회색 문헌으로 구분하여 실무 관행과 사건 기록의 근거로만 썼다. 중복 포함 약 120건의 출처 기록을 검토하였으며, 검색 주제와 원문 대조 기록은 보충 자료로 공개한다. 본고는 체계적 문헌고찰이 아닌 서술형 미니 리뷰이다.</p></div><div><h5>수정 후</h5><p class="muted">(삭제 또는 다른 문단에 병합 — 아래 근거 참고)</p></div></div>
+ 
+ <div class="check"><b>저자 확인</b><ul><li>&#x27;중복 포함 약 120건의 출처 기록&#x27;은 research/r1-*.md, r3-referee-additions.md의 출처 수를 합산한 값인지 저자가 확인 필요(참고문헌은 79편).</li></ul></div>
+</article>
+</section>
+<section class="sec" id="s-2.1">
+ <h3>2.1</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> HealthBench 합의 기준·주제별, HLE 보상 구조 귀속</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-2.1-P1"><code>2.1-P1</code></a> 전문가 작성은 정확성을 우선하지만 비용이 크고, 전문가 라벨에도 변이와 보상 구조에서 오는 오류가 남는다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-2.1-P1" data-types="근거부족 논리연결 사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="2.1-P1"> 반영</label>
+  <code>2.1-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="전문가가 문항과 정답을 작성하는 방식은 정확성을 우선하지만 비용이 크고 전문가 라벨에도 잡음이 남는다. GPQA는 박사급 전문가가 쓴 문항을 다른 전문가 두 명이 차례로 검토하고, 웹 검색을 허용한 비전문가 세 명이 풀게 하였다[@rein2023]. 두 전문가 검증자가 모두 정답에 동의하고 비전문가 정답률이 1/3 이하인 198문항이 최고 품질 부분집합이 되었으며, 참여 전문가에게는 시간당 평균 약 95달러가 지급되었다[@rein2023]. HealthBench에서는 의사 262명이 채점 기준 48,562개를 작성하였고, 합의 기준의 채점에서 측정한 의사 간 일치도(macro F1)는 [확인: 주제별 범위인지] 0.569–0.730이었다. 저자들은 이를 GPT-4.1 채점기(0.709)가 의사 수준에 이른다는 근거로 제시하였으나, 같은 수치는 전문가 라벨의 변이가 크다는 뜻이기도 하다[@arora2025]. 보상 구조가 오류를 낳는다는 지적도 있다. 최신 LLM이 틀린 문항만 받고 상금을 건 Humanity&#x27;s Last Exam(HLE)은 약 13,000개 후보를 두 차례 전문가 검토에 넘겼지만, 출시 후 감사에서 공개셋의 전문가 불일치율이 15.4%로 추정되었고[@hle], 외부 감사자는 화학·생물 문항의 오류가 이 보상 구조에서 비롯되었다고 보았다[@futurehouse2025]. SimpleQA도 GPT-4가 틀리는 문항을 모았지만, 두 작성자의 독립 답이 일치하는 문항만 남기고 제3의 작성자가 1,000문항을 다시 풀게 하여 오류율을 약 3%로 추정하였다[@wei2024simpleqa].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 전문가 작성은 정확성을 우선하지만 비용이 크고, 전문가 라벨에도 변이와 보상 구조에서 오는 오류가 남는다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>전문가가 문항과 정답을 작성하는 방식은 정확성을 우선하지만 비용이 크고 전문가 라벨에도 잡음이 남는다. GPQA는 박사급 전문가가 쓴 문항을 다른 전문가 두 명이 차례로 검토하고, 웹 검색을 허용한 비전문가 세 명이 풀게 하였다[@rein2023]. 전문가 <del>검토를</del> <del>통과하고</del> 비전문가 정답률이 1/3 이하인 198문항이 최고 품질 부분집합이 되었으며, 참여 전문가에게는 시간당 평균 약 95달러가 지급되었다[@rein2023]. <del>HealthBench에서</del> 의사 262명이 <del>작성한 </del>채점 기준 <del>48,562개에</del> <del>대해</del> 의사 간 일치도(macro F1)는 주제별 0.569–0.730이었다. 저자들은 이를 GPT-4.1 채점기(0.709)가 의사 수준에 이른다는 근거로 제시하였으나, 같은 수치는 전문가 라벨의 변이가 크다는 뜻이기도 하다[@arora2025]. 보상 <del>구조도</del> 오류를 <del>낳는다.</del> 최신 LLM이 틀린 문항만 받고 상금을 건 Humanity&#x27;s Last Exam(HLE)은 약 13,000개 후보를 두 차례 전문가 검토에 넘겼지만, 출시 후 감사에서 공개셋의 전문가 불일치율이 15.4%로 <del>추정되었다[@hle].</del> <del>반대로</del> <del>SimpleQA는</del> 두 작성자의 독립 답이 일치하는 문항만 <del>남기고,</del> 제3의 작성자가 1,000문항을 다시 풀게 하여 오류율을 약 3%로 추정하였다[@wei2024simpleqa].</p></div><div><h5>수정 후</h5><p>전문가가 문항과 정답을 작성하는 방식은 정확성을 우선하지만 비용이 크고 전문가 라벨에도 잡음이 남는다. GPQA는 박사급 전문가가 쓴 문항을 다른 전문가 두 명이 차례로 검토하고, 웹 검색을 허용한 비전문가 세 명이 풀게 하였다[@rein2023]. <ins>두 </ins>전문가 <ins>검증자가</ins> <ins>모두 정답에 동의하고</ins> 비전문가 정답률이 1/3 이하인 198문항이 최고 품질 부분집합이 되었으며, 참여 전문가에게는 시간당 평균 약 95달러가 지급되었다[@rein2023]. <ins>HealthBench에서는</ins> 의사 262명이 채점 기준 <ins>48,562개를</ins> <ins>작성하였고, 합의 기준의 채점에서 측정한</ins> 의사 간 일치도(macro F1)는 <ins>[확인: </ins>주제별<ins> 범위인지]</ins> 0.569–0.730이었다. 저자들은 이를 GPT-4.1 채점기(0.709)가 의사 수준에 이른다는 근거로 제시하였으나, 같은 수치는 전문가 라벨의 변이가 크다는 뜻이기도 하다[@arora2025]. 보상 <ins>구조가</ins> 오류를 <ins>낳는다는 지적도 있다.</ins> 최신 LLM이 틀린 문항만 받고 상금을 건 Humanity&#x27;s Last Exam(HLE)은 약 13,000개 후보를 두 차례 전문가 검토에 넘겼지만, 출시 후 감사에서 공개셋의 전문가 불일치율이 15.4%로 <ins>추정되었고[@hle],</ins> <ins>외부</ins> <ins>감사자는 화학·생물 문항의 오류가 이 보상 구조에서 비롯되었다고 보았다[@futurehouse2025]. SimpleQA도 GPT-4가 틀리는 문항을 모았지만,</ins> 두 작성자의 독립 답이 일치하는 문항만 <ins>남기고</ins> 제3의 작성자가 1,000문항을 다시 풀게 하여 오류율을 약 3%로 추정하였다[@wei2024simpleqa].</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">사실오류</span></td><td class=b>HealthBench에서 의사 262명이 작성한 채점 기준 48,562개에 대해 의사 간 일치도(macro F1)는 주제별 0.569–0.730이었다.</td><td class=a>HealthBench에서는 의사 262명이 채점 기준 48,562개를 작성하였고, 합의 기준의 채점에서 측정한 의사 간 일치도(macro F1)는 [확인: 주제별 범위인지] 0.569–0.730이었다.</td><td>r2-verification.md 2.c: 의사 간·모델–의사 일치도는 48,562개 전체가 아니라 34개 합의 기준(consensus criteria)의 채점에서 측정되었다. &#x27;주제별&#x27;은 r1-construction.md S2와 r2에 근거가 없다.</td></tr><tr><td><span class="badge type">근거부족</span></td><td class=b>보상 구조도 오류를 낳는다.</td><td class=a>보상 구조가 오류를 낳는다는 지적도 있다.</td><td>HLE 자체 감사(15.4%)는 불일치율만 보고하며 원인을 분석하지 않았다. 보상 구조를 원인으로 본 것은 FutureHouse의 추정(&#x27;We believe this arose from the incentive&#x27;, r3-referee-additions.md 14b)이므로 단정할 수 없고, 그 추정의 출처를 밝혀야 한다.</td></tr><tr><td><span class="badge type">근거부족</span></td><td class=b>공개셋의 전문가 불일치율이 15.4%로 추정되었다[@hle].</td><td class=a>공개셋의 전문가 불일치율이 15.4%로 추정되었고[@hle], 외부 감사자는 화학·생물 문항의 오류가 이 보상 구조에서 비롯되었다고 보았다[@futurehouse2025].</td><td>수정 전 문장은 15.4%만 제시하여 &#x27;보상 구조→오류&#x27;의 근거가 문단 안에 없다. 인과 해석의 출처는 futurehouse2025다(r3 14b, [V-web]).</td></tr><tr><td><span class="badge type">논리연결</span></td><td class=b>반대로 SimpleQA는 두 작성자의 독립 답이 일치하는 문항만 남기고,</td><td class=a>SimpleQA도 GPT-4가 틀리는 문항을 모았지만, 두 작성자의 독립 답이 일치하는 문항만 남기고</td><td>&#x27;반대로&#x27;는 SimpleQA가 HLE와 다른 수집 조건이라는 뜻이 되지만, SimpleQA도 GPT-4 응답에 대해 적대적으로 수집되었다(&#x27;adversarially collected against GPT-4 responses&#x27;, r3 13). 수집 조건은 같고 검증 절차가 다르다는 대조로 고쳐야 한다.</td></tr><tr><td><span class="badge type">사실오류</span></td><td class=b>전문가 검토를 통과하고 비전문가 정답률이 1/3 이하인 198문항</td><td class=a>두 전문가 검증자가 모두 정답에 동의하고 비전문가 정답률이 1/3 이하인 198문항</td><td>r1-construction.md S1: Diamond(198)의 조건은 두 전문가가 모두 동의하는 것이다. 448문항 주 집합도 전문가 과반 동의라는 &#x27;검토 통과&#x27; 조건을 거쳤으므로, &#x27;검토를 통과&#x27;로는 198문항의 선정 조건이 특정되지 않는다.</td></tr></tbody></table>
+ <div class="check"><b>저자 확인</b><ul><li>HealthBench의 의사 macro F1 0.569–0.730이 주제(theme)별 범위인지 원문(Fig. 12 또는 Table 6)에서 확인 필요.</li></ul></div>
+</article>
+</section>
+<section class="sec" id="s-2.2">
+ <h3>2.2</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 필터 단계 추가</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-2.2-P1"><code>2.2-P1</code></a> 실사용 로그는 배포 분포를 반영하지만 저가치 문항이 많아 선별이 필요하고, 선별 기준과 동의 절차를 기록해야 한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-2.2-P1" data-types="사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="2.2-P1"> 반영</label>
+  <code>2.2-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="실제 사용자 질의는 해당 서비스의 배포 분포를 반영하지만 평가 가치가 낮은 문항이 많다. Arena-Hard의 BenchBuilder는 Chatbot Arena 질의 20만 개에서 중복과 다중 턴·비영어 질의를 걸러 내고 4,000개 주제로 군집화한 뒤, LLM으로 구체성, 복잡성 등 일곱 가지 품질 기준을 채점하여 500개를 선별하였다[@li2024]. 선별은 변별력을 높이지만 원래 트래픽의 분포를 바꾸므로, 로그 기반 평가셋은 선별 기준을 함께 기록해야 해석할 수 있다. 로그 사용은 수집 동의와 비식별화를 전제로 하며, WildChat은 수집에 동의(opt-in)한 사용자의 대화를 공개하였다[@zhao2024].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 실사용 로그는 배포 분포를 반영하지만 저가치 문항이 많아 선별이 필요하고, 선별 기준과 동의 절차를 기록해야 한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>실제 사용자 질의는 해당 서비스의 배포 분포를 반영하지만 평가 가치가 낮은 문항이 많다. Arena-Hard의 BenchBuilder는 Chatbot Arena 질의 20만 <del>개를</del> 4,000개 주제로 <del>군집화하고,</del> LLM으로 구체성, 복잡성 등 일곱 가지 품질 기준을 채점하여 500개를 선별하였다[@li2024]. 선별은 변별력을 높이지만 원래 트래픽의 분포를 바꾸므로, 로그 기반 평가셋은 선별 기준을 함께 기록해야 해석할 수 있다. 로그 사용은 수집 동의와 비식별화를 전제로 하며, WildChat은 수집에 동의(opt-in)한 사용자의 대화를 공개하였다[@zhao2024].</p></div><div><h5>수정 후</h5><p>실제 사용자 질의는 해당 서비스의 배포 분포를 반영하지만 평가 가치가 낮은 문항이 많다. Arena-Hard의 BenchBuilder는 Chatbot Arena 질의 20만 <ins>개에서 중복과 다중 턴·비영어 질의를 걸러 내고</ins> 4,000개 주제로 <ins>군집화한 뒤,</ins> LLM으로 구체성, 복잡성 등 일곱 가지 품질 기준을 채점하여 500개를 선별하였다[@li2024]. 선별은 변별력을 높이지만 원래 트래픽의 분포를 바꾸므로, 로그 기반 평가셋은 선별 기준을 함께 기록해야 해석할 수 있다. 로그 사용은 수집 동의와 비식별화를 전제로 하며, WildChat은 수집에 동의(opt-in)한 사용자의 대화를 공개하였다[@zhao2024].</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">사실오류</span></td><td class=b>Chatbot Arena 질의 20만 개를 4,000개 주제로 군집화하고</td><td class=a>Chatbot Arena 질의 20만 개에서 중복과 다중 턴·비영어 질의를 걸러 내고 4,000개 주제로 군집화한 뒤</td><td>r1-construction.md S9: 20만 개를 그대로 군집화한 것이 아니라 중복 제거와 다중 턴·비영어 제거 후 남은 질의를 군집화하였다. 이 필터링도 분포를 바꾸는 선별 기준이므로 다음 문장의 논지와 연결된다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-2.3">
+ <h3>2.3</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 위험→보완 순</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-2.3-P1"><code>2.3-P1</code></a> LLM 합성은 저비용으로 규모를 얻지만 정답 정확성과 생성·판정 모델의 편향을 따로 검증해야 한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-2.3-P1" data-types="과잉일반화 논리연결" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="2.3-P1"> 반영</label>
+  <code>2.3-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="LLM 합성은 적은 비용으로 규모와 범위를 확보하지만 정답의 정확성과 생성 모델의 편향을 따로 검증해야 한다. 학습용 지시문을 합성한 Self-Instruct에서 표본 200개 중 입력과 출력까지 모두 올바른 항목은 54%였고[@wang2023], 이는 평가셋 합성에도 같은 위험이 있음을 시사한다. RAG 평가 도구 Ragas는 문서로 지식 그래프를 만든 뒤 단일·다중 홉 질의를 생성한다[@ragas-docs]. ARES는 생성 질의가 자신의 원문 단락을 1위로 검색하는 경우만 남기고, 사람 라벨 150–300개로 판정 모델을 보정하였다[@saadfalcon2024]. MT-Bench-101은 GPT-4가 생성한 대화 중 주석자 다섯 명 모두가 고품질로 판정한 것만 남겼다[@bai2024]. 생성 모델이 판정 모델을 겸하면 편향이 더해질 수 있다. 판정 모델로 쓰인 GPT-4와 Llama 2는 자신의 출력을 구별하였고, 미세조정으로 자기 인식 능력을 바꾸자 자기 선호의 강도가 선형으로 함께 변하였다[@panickssery2024]. LLM으로 만든 검색 시험 모음이 LLM 기반 검색기에 유리할 위험도 분석되었다[@rahmani2024].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> LLM 합성은 저비용으로 규모를 얻지만 정답 정확성과 생성·판정 모델의 편향을 따로 검증해야 한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>LLM 합성은 적은 비용으로 규모와 범위를 확보하지만 정답의 정확성과 생성 모델의 편향을 따로 검증해야 한다. 학습용 지시문을 합성한 Self-Instruct에서 표본 200개 중 입력과 출력까지 모두 올바른 항목은 54%였고[@wang2023], 이는 평가셋 합성에도 같은 위험이 있음을 시사한다. RAG 평가 <del>도구는</del> 문서로 지식 그래프를 만든 뒤 단일·다중 홉 질의를 생성한다[@ragas-docs]. ARES는 생성 질의가 자신의 원문 단락을 1위로 검색하는 경우만 남기고, 사람 라벨 150–300개로 판정 모델을 보정하였다[@saadfalcon2024]. MT-Bench-101은 GPT-4가 생성한 대화 중 주석자 다섯 명 모두가 고품질로 판정한 것만 남겼다[@bai2024]. GPT-4와 Llama 2는 자신의 출력을 구별하였고, 미세조정으로 자기 인식 능력을 바꾸자 자기 선호의 강도가 선형으로 함께 변하였다[@panickssery2024]. LLM으로 만든 검색 시험 모음이 LLM 기반 검색기에 유리할 위험도 분석되었다[@rahmani2024].</p></div><div><h5>수정 후</h5><p>LLM 합성은 적은 비용으로 규모와 범위를 확보하지만 정답의 정확성과 생성 모델의 편향을 따로 검증해야 한다. 학습용 지시문을 합성한 Self-Instruct에서 표본 200개 중 입력과 출력까지 모두 올바른 항목은 54%였고[@wang2023], 이는 평가셋 합성에도 같은 위험이 있음을 시사한다. RAG 평가 <ins>도구 Ragas는</ins> 문서로 지식 그래프를 만든 뒤 단일·다중 홉 질의를 생성한다[@ragas-docs]. ARES는 생성 질의가 자신의 원문 단락을 1위로 검색하는 경우만 남기고, 사람 라벨 150–300개로 판정 모델을 보정하였다[@saadfalcon2024]. MT-Bench-101은 GPT-4가 생성한 대화 중 주석자 다섯 명 모두가 고품질로 판정한 것만 남겼다[@bai2024]. <ins>생성 모델이 판정 모델을 겸하면 편향이 더해질 수 있다. 판정 모델로 쓰인 </ins>GPT-4와 Llama 2는 자신의 출력을 구별하였고, 미세조정으로 자기 인식 능력을 바꾸자 자기 선호의 강도가 선형으로 함께 변하였다[@panickssery2024]. LLM으로 만든 검색 시험 모음이 LLM 기반 검색기에 유리할 위험도 분석되었다[@rahmani2024].</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">과잉일반화</span></td><td class=b>RAG 평가 도구는 문서로 지식 그래프를 만든 뒤</td><td class=a>RAG 평가 도구 Ragas는 문서로 지식 그래프를 만든 뒤</td><td>근거는 Ragas 문서 하나(ragas-docs, r1-construction.md S11)뿐인데 &#x27;RAG 평가 도구&#x27;로 일반화하였다. 같은 문단의 ARES는 지식 그래프를 쓰지 않고 단락에서 질의를 생성한다(S12).</td></tr><tr><td><span class="badge type">논리연결</span></td><td class=b>GPT-4와 Llama 2는 자신의 출력을 구별하였고,</td><td class=a>생성 모델이 판정 모델을 겸하면 편향이 더해질 수 있다. 판정 모델로 쓰인 GPT-4와 Llama 2는 자신의 출력을 구별하였고,</td><td>주제문의 검증 대상은 &#x27;생성 모델의 편향&#x27;인데 panickssery2024는 판정 모델(evaluator)의 자기 선호를 보고한다(r1-construction.md S14). 앞 문장(MT-Bench-101 선별)에서 이 문장으로 넘어가는 연결이 없어, 합성과 판정 모델의 관계를 밝혀야 표 1의 &#x27;생성·판정 모델의 자기 선호&#x27;와도 맞는다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-2.4">
+ <h3>2.4</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 표현 수정</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-2.4-P1"><code>2.4-P1</code></a> 적대적 수집은 난이도를 높이지만 모델을 속인 것으로 보인 문항의 약 절반이 사람 검증을 통과하지 못하였다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-2.4-P1" data-types="근거부족 문법" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="2.4-P1"> 반영</label>
+  <code>2.4-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="모델을 틀리게 하는 문항을 사람이 작성하는 적대적 수집은 난이도를 높이지만, 모델을 속인 것으로 보이는 문항에 정답이 모호하거나 틀린 문항이 많이 섞인다. 이 방식은 가설 문장만 보는 분류기가 SNLI에서 약 67%를 맞히게 하는 군중 작성 데이터의 주석 흔적[@gururangan2018]에 대응하는 방법의 하나로 쓰였다. 그러나 ANLI에서 모델을 속인 것으로 보인 사례의 비율은 세 라운드 합계 기준 18.54%에서 사람 검증 후 9.52%로 줄어(1라운드 29.68%→18.33%), 그런 문항의 약 절반이 독립 검증자의 동의를 얻지 못하였다[@nie2020].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 적대적 수집은 난이도를 높이지만 모델을 속인 것으로 보인 문항의 약 절반이 사람 검증을 통과하지 못하였다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>모델을 틀리게 하는 문항을 사람이 작성하는 적대적 수집은 난이도를 <del>높이지만</del> <del>정답의</del> <del>모호성과</del> <del>오류도</del> <del>늘린다.</del> 이 방식은 <del>군중 작성 데이터가 </del>가설 <del>문장만으로</del> <del>SNLI의</del> 약 67%를 맞히게 하는 주석 흔적[@gururangan2018]에 대응하는 방법의 하나로 쓰였다. 그러나 ANLI에서 모델을 속인 것으로 보인 사례의 비율은 세 라운드 합계 기준 18.54%에서 사람 검증 후 9.52%로 줄어(1라운드 29.68%→18.33%), 그런 문항의 약 절반이 독립 검증자의 동의를 얻지 못하였다[@nie2020].</p></div><div><h5>수정 후</h5><p>모델을 틀리게 하는 문항을 사람이 작성하는 적대적 수집은 난이도를 <ins>높이지만,</ins> <ins>모델을</ins> <ins>속인</ins> <ins>것으로</ins> <ins>보이는 문항에 정답이 모호하거나 틀린 문항이 많이 섞인다.</ins> 이 방식은 가설 <ins>문장만</ins> <ins>보는 분류기가 SNLI에서</ins> 약 67%를 맞히게 하는<ins> 군중 작성 데이터의</ins> 주석 흔적[@gururangan2018]에 대응하는 방법의 하나로 쓰였다. 그러나 ANLI에서 모델을 속인 것으로 보인 사례의 비율은 세 라운드 합계 기준 18.54%에서 사람 검증 후 9.52%로 줄어(1라운드 29.68%→18.33%), 그런 문항의 약 절반이 독립 검증자의 동의를 얻지 못하였다[@nie2020].</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">근거부족</span></td><td class=b>정답의 모호성과 오류도 늘린다.</td><td class=a>모델을 속인 것으로 보이는 문항에 정답이 모호하거나 틀린 문항이 많이 섞인다.</td><td>&#x27;늘린다&#x27;는 비적대적 수집과의 비교를 전제하지만, 근거인 ANLI 수치(r1-construction.md S15)는 적대적 후보 안에서 검증 전후를 비교할 뿐 다른 수집 방식과 비교하지 않는다.</td></tr><tr><td><span class="badge type">문법</span></td><td class=b>군중 작성 데이터가 가설 문장만으로 SNLI의 약 67%를 맞히게 하는 주석 흔적</td><td class=a>가설 문장만 보는 분류기가 SNLI에서 약 67%를 맞히게 하는 군중 작성 데이터의 주석 흔적</td><td>&#x27;데이터가 …맞히게 하는&#x27;에서 맞히는 주체가 빠져 있다. r1-construction.md S20: 67%는 가설만 보는 분류기의 정확도다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-2.5">
+ <h3>2.5</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 두 문단 분할</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-2.5-P1"><code>2.5-P1</code></a> RAG 평가셋은 질의·근거·정답의 삼중 구조이며 관련성 라벨의 불완전성, 자동 귀속 판정의 일치도, 층화가 결과를 좌우한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-2.5-P1" data-types="AI상투" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="2.5-P1"> 반영</label>
+  <code>2.5-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="RAG 평가셋은 질의, 근거 문서, 정답의 삼중 구조를 가지며, 관련성 라벨의 불완전성이 결과를 바꿀 수 있다. BEIR의 여러 데이터셋은 어휘 기반 검색 후보만 판정하여, TREC-COVID에서 밀집 검색기 상위 10개 결과의 최대 31.8%가 판정되지 않은 문서였다. 980건을 추가 판정하자 DPR의 nDCG@10이 0.332에서 0.445로 오르고 ANCE가 BM25를 앞섰다[@thakur2021]. LLM 관련성 판정은 비용을 낮추지만 프롬프트를 바꾸어 표현하는 것만으로 정확도가 달라졌다[@thomas2024]. 근거 귀속을 NLI 모델로 자동 판정한 ALCE의 사람 일치도는 인용 재현율 κ 0.698, 인용 정밀도 0.525였다[@gao2023]. 질의 범위는 층화와 답할 수 없는 질의로 설계할 수 있다. CRAG는 4,409개 질의를 영역, 유형, 개체 인기도, 시간 변동성으로 층화하여 인기도가 낮고 변동이 큰 층의 낮은 정확도를 드러냈고[@yang2024], MultiHop-RAG는 답할 수 없는 질의 301개로 응답 거부를 평가하였다[@tang2024]. 능력×검사 유형 행렬로 문항을 계획하는 CheckList[@ribeiro2020]도 같은 원리를 행동 검사에 적용한 예이다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> RAG 평가셋은 질의·근거·정답의 삼중 구조이며 관련성 라벨의 불완전성, 자동 귀속 판정의 일치도, 층화가 결과를 좌우한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>RAG 평가셋은 질의, 근거 문서, 정답의 삼중 구조를 가지며, 관련성 라벨의 불완전성이 결과를 바꿀 수 있다. BEIR의 여러 데이터셋은 어휘 기반 검색 후보만 판정하여, TREC-COVID에서 밀집 검색기 상위 10개 결과의 최대 31.8%가 판정되지 않은 문서였다. 980건을 추가 판정하자 DPR의 nDCG@10이 0.332에서 0.445로 오르고 ANCE가 BM25를 <del>앞서게 되었다[@thakur2021].</del> LLM 관련성 판정은 비용을 낮추지만 프롬프트를 바꾸어 표현하는 것만으로 정확도가 달라졌다[@thomas2024]. 근거 귀속을 NLI 모델로 자동 판정한 ALCE의 사람 일치도는 인용 재현율 κ 0.698, 인용 정밀도 0.525였다[@gao2023]. 질의 범위는 층화와 답할 수 없는 질의로 설계할 수 있다. CRAG는 4,409개 질의를 영역, 유형, 개체 인기도, 시간 변동성으로 층화하여 인기도가 낮고 변동이 큰 층의 낮은 정확도를 드러냈고[@yang2024], MultiHop-RAG는 답할 수 없는 질의 301개로 응답 거부를 평가하였다[@tang2024]. 능력×검사 유형 행렬로 문항을 계획하는 CheckList[@ribeiro2020]도 같은 원리를 행동 검사에 적용한 예이다.</p></div><div><h5>수정 후</h5><p>RAG 평가셋은 질의, 근거 문서, 정답의 삼중 구조를 가지며, 관련성 라벨의 불완전성이 결과를 바꿀 수 있다. BEIR의 여러 데이터셋은 어휘 기반 검색 후보만 판정하여, TREC-COVID에서 밀집 검색기 상위 10개 결과의 최대 31.8%가 판정되지 않은 문서였다. 980건을 추가 판정하자 DPR의 nDCG@10이 0.332에서 0.445로 오르고 ANCE가 BM25를 <ins>앞섰다[@thakur2021].</ins> LLM 관련성 판정은 비용을 낮추지만 프롬프트를 바꾸어 표현하는 것만으로 정확도가 달라졌다[@thomas2024]. 근거 귀속을 NLI 모델로 자동 판정한 ALCE의 사람 일치도는 인용 재현율 κ 0.698, 인용 정밀도 0.525였다[@gao2023]. 질의 범위는 층화와 답할 수 없는 질의로 설계할 수 있다. CRAG는 4,409개 질의를 영역, 유형, 개체 인기도, 시간 변동성으로 층화하여 인기도가 낮고 변동이 큰 층의 낮은 정확도를 드러냈고[@yang2024], MultiHop-RAG는 답할 수 없는 질의 301개로 응답 거부를 평가하였다[@tang2024]. 능력×검사 유형 행렬로 문항을 계획하는 CheckList[@ribeiro2020]도 같은 원리를 행동 검사에 적용한 예이다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">AI상투</span></td><td class=b>ANCE가 BM25를 앞서게 되었다</td><td class=a>ANCE가 BM25를 앞섰다</td><td>&#x27;-게 되었다&#x27; 번역투. 관찰 결과이므로 과거형 &#x27;앞섰다&#x27;로 충분하다(r1-construction.md S22: ANCE 0.735, BM25 0.668).</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-2.6">
+ <h3>2.6</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 세 문단 분할, OR-Bench 위양성률</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-2.6-P1"><code>2.6-P1</code></a> 에이전트·안전성·다국어 평가셋은 정답의 정의와 검증 대상이 각각 다르다.</li><li><a href="#p-2.6-P2"><code>2.6-P2</code></a> 네 구축 방식의 위험은 성격이 달라 구축 출처만으로 품질을 판단할 수 없으므로 모든 평가셋은 3장의 검증을 거쳐야 한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-2.6-P1" data-types="과잉일반화 근거부족" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="2.6-P1"> 반영</label>
+  <code>2.6-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="애플리케이션 유형에 따라 정답의 정의와 검증 대상이 달라진다. τ-bench는 대화 후 데이터베이스 상태를 기대 상태와 비교하여 채점하고, k번의 독립 시행이 모두 성공할 확률인 pass&lt;sup&gt;k&lt;/sup&gt;를 정의하였다. GPT-4o의 소매 영역 성공률은 pass&lt;sup&gt;1&lt;/sup&gt; 약 61%에서 pass&lt;sup&gt;8&lt;/sup&gt; 약 25%로 떨어졌다[@yao2024tau]. 이 설계에서 에이전트 평가셋의 정답은 최종 상태이고 반복 실행의 일관성도 측정 대상이다. 안전성 평가셋에서는 거부해야 할 문항과 거부하면 안 되는 문항의 비용이 다르다. HarmBench는 유해 행동 510개를 검증·평가 분할로 나누고 공격 성공 판정기를 사람 라벨과 대조하였으며(평균 일치율 93.19%)[@mazeika2024], XSTest는 응해야 할 안전한 프롬프트 250개와 대조용 위험 프롬프트 200개를 손으로 작성하였다[@rottger2024]. OR-Bench는 LLM 세 개의 다수결로 과잉 거부 문항 8만 개를 라벨링하였는데, 사람 검증용 100문항에서 이 앙상블의 정확도(93.0%)는 사람 전문가(94.0%)에 근접하였으나 위양성률은 16.0%로 사람 전문가(8.0%)의 두 배였다[@cui2025]. 다국어 평가셋에서는 번역 품질과 문화적 편향이 별도의 검증 대상이다. KMMLU는 번역 대신 한국 원어 시험에서 35,030문항을 구축하고 공개 후 커뮤니티 보고로 741개 문항을 수정하였다[@son2025kmmlu]. Global-MMLU는 MMLU 문항의 28%가 문화적 지식을 요구함을 보였고, 41개 비영어 언어 중 14개만 전문 번역 후 교정을 거쳤다[@singh2025].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 에이전트·안전성·다국어 평가셋은 정답의 정의와 검증 대상이 각각 다르다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>애플리케이션 유형에 따라 정답의 정의와 검증 대상이 달라진다. τ-bench는 대화 후 데이터베이스 상태를 기대 상태와 비교하여 채점하고, k번의 독립 시행이 모두 성공할 확률인 pass&lt;sup&gt;k&lt;/sup&gt;를 정의하였다. GPT-4o의 소매 영역 성공률은 pass&lt;sup&gt;1&lt;/sup&gt; 약 61%에서 pass&lt;sup&gt;8&lt;/sup&gt; 약 25%로 떨어졌다[@yao2024tau]. 에이전트 <del>골든셋의</del> 정답은 최종 상태이고 반복 실행의 일관성도 측정 대상이다. 안전성 평가셋에서는 거부해야 할 문항과 거부하면 안 되는 문항의 비용이 다르다. HarmBench는 유해 행동 510개를 검증·평가 분할로 나누고 공격 성공 판정기를 사람 라벨과 대조하였으며(평균 일치율 93.19%)[@mazeika2024], XSTest는 응해야 할 안전한 프롬프트 250개와 대조용 위험 프롬프트 200개를 손으로 작성하였다[@rottger2024]. OR-Bench는 LLM 세 개의 다수결로 과잉 거부 문항 8만 개를 라벨링하였는데, 이 앙상블의 정확도(93.0%)는 사람 전문가(94.0%)에 <del>근접하였다[@cui2025].</del> 다국어 평가셋에서는 <del>번역이</del> <del>오류의</del> <del>원천이</del> <del>된다.</del> KMMLU는 번역 대신 한국 원어 시험에서 35,030문항을 구축하고 공개 후 커뮤니티 보고로 741개 문항을 수정하였다[@son2025kmmlu]. Global-MMLU는 MMLU 문항의 28%가 문화적 지식을 요구함을 보였고, 41개 비영어 언어 중 14개만 전문 번역 후 교정을 거쳤다[@singh2025].</p></div><div><h5>수정 후</h5><p>애플리케이션 유형에 따라 정답의 정의와 검증 대상이 달라진다. τ-bench는 대화 후 데이터베이스 상태를 기대 상태와 비교하여 채점하고, k번의 독립 시행이 모두 성공할 확률인 pass&lt;sup&gt;k&lt;/sup&gt;를 정의하였다. GPT-4o의 소매 영역 성공률은 pass&lt;sup&gt;1&lt;/sup&gt; 약 61%에서 pass&lt;sup&gt;8&lt;/sup&gt; 약 25%로 떨어졌다[@yao2024tau]. <ins>이 설계에서 </ins>에이전트 <ins>평가셋의</ins> 정답은 최종 상태이고 반복 실행의 일관성도 측정 대상이다. 안전성 평가셋에서는 거부해야 할 문항과 거부하면 안 되는 문항의 비용이 다르다. HarmBench는 유해 행동 510개를 검증·평가 분할로 나누고 공격 성공 판정기를 사람 라벨과 대조하였으며(평균 일치율 93.19%)[@mazeika2024], XSTest는 응해야 할 안전한 프롬프트 250개와 대조용 위험 프롬프트 200개를 손으로 작성하였다[@rottger2024]. OR-Bench는 LLM 세 개의 다수결로 과잉 거부 문항 8만 개를 라벨링하였는데, <ins>사람 검증용 100문항에서 </ins>이 앙상블의 정확도(93.0%)는 사람 전문가(94.0%)에 <ins>근접하였으나 위양성률은 16.0%로 사람 전문가(8.0%)의 두 배였다[@cui2025].</ins> 다국어 평가셋에서는 <ins>번역</ins> <ins>품질과</ins> <ins>문화적</ins> <ins>편향이 별도의 검증 대상이다.</ins> KMMLU는 번역 대신 한국 원어 시험에서 35,030문항을 구축하고 공개 후 커뮤니티 보고로 741개 문항을 수정하였다[@son2025kmmlu]. Global-MMLU는 MMLU 문항의 28%가 문화적 지식을 요구함을 보였고, 41개 비영어 언어 중 14개만 전문 번역 후 교정을 거쳤다[@singh2025].</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">과잉일반화</span></td><td class=b>에이전트 골든셋의 정답은 최종 상태이고</td><td class=a>이 설계에서 에이전트 평가셋의 정답은 최종 상태이고</td><td>근거는 τ-bench 한 벤치마크(r3-referee-additions.md 4)뿐이다. 에이전트 평가 전반의 정답 정의로 일반화할 근거가 원고에 없다. 또 이 시점에서는 아직 골든 조건(4장)을 충족하지 않았으므로 용어 규칙에 따라 &#x27;평가셋&#x27;으로 쓴다.</td></tr><tr><td><span class="badge type">근거부족</span></td><td class=b>이 앙상블의 정확도(93.0%)는 사람 전문가(94.0%)에 근접하였다[@cui2025].</td><td class=a>사람 검증용 100문항에서 이 앙상블의 정확도(93.0%)는 사람 전문가(94.0%)에 근접하였으나 위양성률은 16.0%로 사람 전문가(8.0%)의 두 배였다[@cui2025].</td><td>r3-referee-additions.md 9(Table 1, [V-full]): 비교는 100문항에서 이루어졌고, 같은 표의 위양성률은 16.0% 대 8.0%다. 정확도만 인용하면 LLM 라벨이 사람과 대등하다는 인상을 주어, 5.1-P3의 LLM 라벨 보정 논의와도 맞지 않는다.</td></tr><tr><td><span class="badge type">근거부족</span></td><td class=b>다국어 평가셋에서는 번역이 오류의 원천이 된다.</td><td class=a>다국어 평가셋에서는 번역 품질과 문화적 편향이 별도의 검증 대상이다.</td><td>뒤따르는 근거는 번역 오류율을 보고하지 않는다. KMMLU는 번역을 피했고, Global-MMLU 수치는 문화 의존 문항 비율(28%)과 전문 교정 언어 수(14/41)다(r3 10, 12). &#x27;-이 된다&#x27; 번역투도 함께 고쳤다.</td></tr></tbody></table>
+ 
+</article>
+<article class="para" id="p-2.6-P2" data-types="논리연결 문법" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="2.6-P2"> 반영</label>
+  <code>2.6-P2</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="네 구축 방식의 위험은 성격이 다르다. 전문가 작성과 적대적 수집은 정확성이나 변별력을 얻는 대신 비용과 모호성을 지고, 로그는 현실성을 얻는 대신 선별에 따른 분포 변화와 개인정보 관리를, 합성은 규모를 얻는 대신 정답 검증을 떠안는다. 애플리케이션별 요건은 여기에 더해 정답의 형식과 채점 단위를 바꾼다. 따라서 구축 출처만으로는 품질을 판단할 수 없으며, 어떤 평가셋이든 3장의 검증을 거쳐야 한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 네 구축 방식의 위험은 성격이 달라 구축 출처만으로 품질을 판단할 수 없으므로 모든 평가셋은 3장의 검증을 거쳐야 한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>네 구축 방식의 위험은 성격이 다르다. 전문가 작성과 적대적 수집은 정확성이나 변별력을 얻는 대신 비용과 모호성을 지고, <del>로그와</del> 합성은<del> 현실성이나</del> 규모를 얻는 대신 정답 검증을 <del>뒤로 미룬다.</del> 애플리케이션별 요건은 여기에 정답의 형식과 채점 단위를 바꾼다. 따라서 구축 출처만으로는 품질을 판단할 수 없으며, 어떤 평가셋이든 3장의 검증을 거쳐야 한다.</p></div><div><h5>수정 후</h5><p>네 구축 방식의 위험은 성격이 다르다. 전문가 작성과 적대적 수집은 정확성이나 변별력을 얻는 대신 비용과 모호성을 지고, <ins>로그는 현실성을 얻는 대신 선별에 따른 분포 변화와 개인정보 관리를,</ins> 합성은 규모를 얻는 대신 정답 검증을 <ins>떠안는다.</ins> 애플리케이션별 요건은 여기에<ins> 더해</ins> 정답의 형식과 채점 단위를 바꾼다. 따라서 구축 출처만으로는 품질을 판단할 수 없으며, 어떤 평가셋이든 3장의 검증을 거쳐야 한다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">논리연결</span></td><td class=b>로그와 합성은 현실성이나 규모를 얻는 대신 정답 검증을 뒤로 미룬다.</td><td class=a>로그는 현실성을 얻는 대신 선별에 따른 분포 변화와 개인정보 관리를, 합성은 규모를 얻는 대신 정답 검증을 떠안는다.</td><td>2.2-P1과 표 1의 실사용 로그 위험은 &#x27;저가치 문항 다수, 선별에 따른 분포 변화, 개인정보&#x27;이며 정답 검증은 언급하지 않는다. 종합 문단이 2.2의 내용과 다른 위험을 요약하고 있다.</td></tr><tr><td><span class="badge type">문법</span></td><td class=b>애플리케이션별 요건은 여기에 정답의 형식과 채점 단위를 바꾼다.</td><td class=a>애플리케이션별 요건은 여기에 더해 정답의 형식과 채점 단위를 바꾼다.</td><td>&#x27;여기에&#x27;가 받을 서술어(&#x27;더해&#x27;)가 없어 &#x27;여기에 … 바꾼다&#x27;로 호응이 맞지 않는다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-3">
+ <h3>3</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 사례별 통과·실패 측면 명명</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-3-P1"><code>3-P1</code></a> 검증을 다섯 병렬 측면으로 나누는 이유를, 한 측면의 검토를 거친 HLE와 SWE-bench Verified에서 다른 측면의 결함이 발견된 사례로 제시한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-3-P1" data-types="사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="3-P1"> 반영</label>
+  <code>3-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="본고는 평가셋 검증을 구성 타당도, 라벨 신뢰도, 오류 감사, 통계적 충분성, 오염·재현성 통제의 다섯 측면으로 정리한다. 이들은 위계가 아니라 병렬적인 점검 대상이며, 측정 대상을 정하는 구성 타당도만 논리적으로 먼저 온다. 측면을 나누어 점검해야 하는 이유는 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있기 때문이다. 두 차례 전문가 검토를 거친 HLE의 텍스트 전용 화학·생물 문항은 외부 감사에서 29±3.7%(95% 신뢰구간)가 동료 심사 문헌과 직접 충돌하는 답을 가진 것으로 추정되었고[@futurehouse2025], HLE 팀의 후속 검토도 생물·화학·보건 부분집합의 약 18%를 문제 문항으로 판정하였다[@hle]. 전문 개발자가 선별한 SWE-bench Verified는 2026년 감사에서 64회 독립 실행에서 o3가 매번 풀지는 못한 138문항(27.6%) 중 최소 59.4%가 올바른 해법을 거부하는 결함 시험을 가진 것으로 드러났다. 같은 발표는 시험한 최신 모델이 모두 정답 패치나 문제 서술의 세부를 그대로 재현하는 오염도 보고하였고, OpenAI는 이 벤치마크를 평가에서 제외하였다[@openai2026swe].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 검증을 다섯 병렬 측면으로 나누는 이유를, 한 측면의 검토를 거친 HLE와 SWE-bench Verified에서 다른 측면의 결함이 발견된 사례로 제시한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>본고는 평가셋 검증을 구성 타당도, 라벨 신뢰도, 오류 감사, 통계적 충분성, 오염·재현성 통제의 다섯 측면으로 정리한다. 이들은 위계가 아니라 병렬적인 점검 대상이며, 측정 대상을 정하는 구성 타당도만 논리적으로 먼저 온다. 측면을 나누어 점검해야 하는 이유는 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있기 때문이다. 두 차례 전문가 검토를 거친 HLE의 화학·생물 문항은 외부 감사에서 <del>29±3.7%가</del> 동료 심사 문헌과 직접 충돌하는 답을 가진 것으로 추정되었고[@futurehouse2025], HLE 팀의 후속 검토도 <del>해당</del> 부분집합의 약 18%를 문제 문항으로 판정하였다[@hle]. 전문 개발자가 선별한 SWE-bench Verified는 2026년 감사에서 o3가 <del>일관되게</del> <del>풀지</del> 못한 138문항(27.6%) 중 최소 59.4%가 올바른 해법을 거부하는 결함 시험을 가진 것으로 드러났다. 같은 <del>감사는</del> 최신 모델이 정답 <del>패치를</del> 그대로 재현하는 오염도 보고하였고, OpenAI는 이 벤치마크를 평가에서 제외하였다[@openai2026swe].</p></div><div><h5>수정 후</h5><p>본고는 평가셋 검증을 구성 타당도, 라벨 신뢰도, 오류 감사, 통계적 충분성, 오염·재현성 통제의 다섯 측면으로 정리한다. 이들은 위계가 아니라 병렬적인 점검 대상이며, 측정 대상을 정하는 구성 타당도만 논리적으로 먼저 온다. 측면을 나누어 점검해야 하는 이유는 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있기 때문이다. 두 차례 전문가 검토를 거친 HLE의 <ins>텍스트 전용 </ins>화학·생물 문항은 외부 감사에서 <ins>29±3.7%(95% 신뢰구간)가</ins> 동료 심사 문헌과 직접 충돌하는 답을 가진 것으로 추정되었고[@futurehouse2025], HLE 팀의 후속 검토도 <ins>생물·화학·보건</ins> 부분집합의 약 18%를 문제 문항으로 판정하였다[@hle]. 전문 개발자가 선별한 SWE-bench Verified는 2026년 감사에서 <ins>64회 독립 실행에서 </ins>o3가 <ins>매번</ins> <ins>풀지는</ins> 못한 138문항(27.6%) 중 최소 59.4%가 올바른 해법을 거부하는 결함 시험을 가진 것으로 드러났다. 같은 <ins>발표는 시험한</ins> 최신 모델이 <ins>모두 </ins>정답 <ins>패치나 문제 서술의 세부를</ins> 그대로 재현하는 오염도 보고하였고, OpenAI는 이 벤치마크를 평가에서 제외하였다[@openai2026swe].</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">사실오류</span></td><td class=b>HLE의 화학·생물 문항은 외부 감사에서 29±3.7%가</td><td class=a>HLE의 텍스트 전용 화학·생물 문항은 외부 감사에서 29±3.7%(95% 신뢰구간)가</td><td>r3-referee-additions.md #14b: FutureHouse 원문은 &#x27;text-only chemistry and biology questions&#x27;(321문항)이고 ±3.7%는 &#x27;95% CI&#x27;이다. 범위와 오차 성격이 빠져 있다.</td></tr><tr><td><span class="badge type">사실오류</span></td><td class=b>HLE 팀의 후속 검토도 해당 부분집합의 약 18%를</td><td class=a>HLE 팀의 후속 검토도 생물·화학·보건 부분집합의 약 18%를</td><td>r3 #14: Nature판 HLE는 &#x27;a biology, chemistry and health subset&#x27;에서 약 18%라 하였고 FutureHouse 갱신문은 &#x27;a subset of questions in Bio/Chem&#x27;이라 하였다. FutureHouse의 321문항과 같은 집합이라는 근거는 없어 &#x27;해당 부분집합&#x27;은 확인되지 않은 동일성을 단정한다.</td></tr><tr><td><span class="badge type">사실오류</span></td><td class=b>o3가 일관되게 풀지 못한 138문항(27.6%)</td><td class=a>64회 독립 실행에서 o3가 매번 풀지는 못한 138문항(27.6%)</td><td>r3 #15: 원문은 &#x27;problems that OpenAI o3 did not consistently solve over 64 independent runs&#x27;(매번 풀지는 못함)이다. &#x27;일관되게 풀지 못한&#x27;은 &#x27;항상 실패한&#x27;으로 읽혀 선정 기준이 원문과 다르다(lint.json의 &#x27;일관되게&#x27; 지적도 이 구절).</td></tr><tr><td><span class="badge type">사실오류</span></td><td class=b>같은 감사는 최신 모델이 정답 패치를 그대로 재현하는 오염도 보고하였고</td><td class=a>같은 발표는 시험한 최신 모델이 모두 정답 패치나 문제 서술의 세부를 그대로 재현하는 오염도 보고하였고</td><td>r3 #15: 오염은 o3 기반 138문항 감사가 아니라 같은 발표의 별도 분석(GPT-5.2, Claude Opus 4.5, Gemini 3 Flash)이며, 원문은 &#x27;gold patch, or verbatim problem statement specifics&#x27;를 재현했다고 하였다.</td></tr></tbody></table>
+ <div class="check"><b>저자 확인</b><ul><li>[확인: HLE Nature판 ref. 63이 FutureHouse 글인지 — r3 #14 UNVERIFIED]</li></ul></div>
+</article>
+</section>
+<section class="sec" id="s-3.3">
+ <h3>3.3</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 두 문단 분할, 하한 범위 한정</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-3.3-P1"><code>3.3-P1</code></a> 정답 자체를 감사해야 하며 모델 불일치 기반 감사의 오류 수는 하한이므로 무작위 표본 감사와 함께 쓴다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-3.3-P1" data-types="논리연결 문법 사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="3.3-P1"> 반영</label>
+  <code>3.3-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="일치도가 높아도 모두가 같은 오류를 범할 수 있으므로 정답 자체를 감사해야 하며, 모델 불일치로 찾은 오류 수는 오류율의 하한으로 해석해야 한다. 플래티넘 벤치마크 연구는 15개 벤치마크의 부분집합에서 최신 LLM 중 하나라도 틀린 문항을 사람이 재검토하였고[@vendrow2025], GSM8K 시험셋 전체에서는 모델 오답으로 표시된 219문항을 검토하여 110문항을 제거하고 10문항의 정답을 고쳤다[@gsm8kplatinum]. 저자들은 모든 모델이 틀린 정답에 동의하는 문항은 이 절차로 찾을 수 없으므로 찾은 오류 수가 하한이라고 밝혔다[@vendrow2025]. 문항 반응 이론(IRT)에서 변별도가 음수인 문항은 주석 오류를 시사하였고[@rodriguez2021], 문항 통계와 LLM 1차 선별을 결합한 연구는 벤치마크 9종에서 최대 84%의 정밀도로 문제 문항을 찾았다[@truong2025]. 다만 주석 오류 탐지 방법 18종을 비교한 연구는 어려운 데이터셋일수록 탐지 성능이 상한에 아직 크게 못 미친다고 보고하였다[@klie2023]. 코드 평가에서는 판정 기준인 시험 코드도 감사 대상이다. HumanEval의 시험을 80배로 늘리자 pass@k가 최대 19.3–28.9% 떨어졌다[@liu2023]. SWE-bench Verified는 전문 개발자 93명이 표본 1,699개 중 부적격 항목(68.3%)을 걸러 낸 뒤 500개를 선정하였으나[@swebenchverified], 앞의 2026년 감사는 이 선별이 결함을 다 거르지 못했음을 보였다. 모델 불일치 기반 감사는 모든 모델이 공유하는 오류를 놓치므로 무작위 표본 감사와 함께 써야 한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 정답 자체를 감사해야 하며 모델 불일치 기반 감사의 오류 수는 하한이므로 무작위 표본 감사와 함께 쓴다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>일치도가 높아도 모두가 같은 오류를 범할 수 있으므로 정답 자체를 <del>감사하고</del> <del>그</del> <del>결과를</del> 오류율의 하한으로 해석해야 한다. 플래티넘 벤치마크 연구는 15개 벤치마크의 부분집합에서 최신 LLM 중 하나라도 틀린 문항을 사람이 재검토하였고[@vendrow2025], GSM8K 전체에서는 219문항을 검토하여 110문항을 제거하고 10문항의 정답을 고쳤다[@gsm8kplatinum]. 저자들은 모든 모델이 틀린 정답에 동의하는 문항은 이 절차로 찾을 수 없으므로 찾은 오류 수가 하한이라고 밝혔다[@vendrow2025]. 문항 반응 이론(IRT)에서 변별도가 음수인 문항은 주석 오류를 시사하였고[@rodriguez2021], 문항 통계와 LLM 1차 선별을 결합한 연구는 벤치마크 9종에서 최대 84%의 정밀도로 문제 문항을 찾았다[@truong2025]. 다만 주석 오류 탐지 방법 18종을 비교한 연구는 어려운 <del>데이터셋에서</del> <del>성능</del> <del>한계가</del> 아직 <del>멀다고</del> 보고하였다[@klie2023]. 코드 평가에서는 판정 기준인 시험 코드도 감사 대상이다. HumanEval의 시험을 80배로 늘리자 pass@k가 최대 19.3–28.9% 떨어졌다[@liu2023]. SWE-bench Verified는 전문 개발자 93명이 표본 1,699개 중 부적격 항목(68.3%)을 걸러 낸 뒤 500개를 선정하였으나[@swebenchverified], 앞의 2026년 감사는 이 선별이 결함을 다 거르지 못했음을 보였다. 모델 불일치 기반 감사는 모든 모델이 공유하는 오류를 놓치므로 무작위 표본 감사와 함께 써야 한다.</p></div><div><h5>수정 후</h5><p>일치도가 높아도 모두가 같은 오류를 범할 수 있으므로 정답 자체를 <ins>감사해야</ins> <ins>하며,</ins> <ins>모델 불일치로 찾은 오류 수는</ins> 오류율의 하한으로 해석해야 한다. 플래티넘 벤치마크 연구는 15개 벤치마크의 부분집합에서 최신 LLM 중 하나라도 틀린 문항을 사람이 재검토하였고[@vendrow2025], GSM8K <ins>시험셋 </ins>전체에서는<ins> 모델 오답으로 표시된</ins> 219문항을 검토하여 110문항을 제거하고 10문항의 정답을 고쳤다[@gsm8kplatinum]. 저자들은 모든 모델이 틀린 정답에 동의하는 문항은 이 절차로 찾을 수 없으므로 찾은 오류 수가 하한이라고 밝혔다[@vendrow2025]. 문항 반응 이론(IRT)에서 변별도가 음수인 문항은 주석 오류를 시사하였고[@rodriguez2021], 문항 통계와 LLM 1차 선별을 결합한 연구는 벤치마크 9종에서 최대 84%의 정밀도로 문제 문항을 찾았다[@truong2025]. 다만 주석 오류 탐지 방법 18종을 비교한 연구는 어려운 <ins>데이터셋일수록</ins> <ins>탐지</ins> <ins>성능이 상한에</ins> 아직 <ins>크게 못 미친다고</ins> 보고하였다[@klie2023]. 코드 평가에서는 판정 기준인 시험 코드도 감사 대상이다. HumanEval의 시험을 80배로 늘리자 pass@k가 최대 19.3–28.9% 떨어졌다[@liu2023]. SWE-bench Verified는 전문 개발자 93명이 표본 1,699개 중 부적격 항목(68.3%)을 걸러 낸 뒤 500개를 선정하였으나[@swebenchverified], 앞의 2026년 감사는 이 선별이 결함을 다 거르지 못했음을 보였다. 모델 불일치 기반 감사는 모든 모델이 공유하는 오류를 놓치므로 무작위 표본 감사와 함께 써야 한다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">논리연결</span></td><td class=b>일치도가 높아도 모두가 같은 오류를 범할 수 있으므로 정답 자체를 감사하고 그 결과를 오류율의 하한으로 해석해야 한다.</td><td class=a>일치도가 높아도 모두가 같은 오류를 범할 수 있으므로 정답 자체를 감사해야 하며, 모델 불일치로 찾은 오류 수는 오류율의 하한으로 해석해야 한다.</td><td>&#x27;하한&#x27; 해석은 vendrow2025가 모델 오답으로 표시한 문항만 재검토하는 절차에 붙인 단서이다(r2-verification.md f). 같은 문단 끝 문장은 무작위 표본 감사를 함께 쓰라고 하는데, 무작위 표본 감사는 하한이 아니라 오류율 추정치를 준다. 따라서 감사 결과 전체를 하한으로 해석하라는 첫 문장은 문단 끝 문장과 맞지 않는다.</td></tr><tr><td><span class="badge type">사실오류</span></td><td class=b>GSM8K 전체에서는 219문항을 검토하여</td><td class=a>GSM8K 시험셋 전체에서는 모델 오답으로 표시된 219문항을 검토하여</td><td>r2-verification.md f: &#x27;We then manually inspected the 219 flagged questions&#x27;. 219는 시험셋 크기가 아니라 표시된 문항 수인데, 원문 구절은 GSM8K 전체가 219문항인 것처럼 읽힌다.</td></tr><tr><td><span class="badge type">문법</span></td><td class=b>어려운 데이터셋에서 성능 한계가 아직 멀다고</td><td class=a>어려운 데이터셋일수록 탐지 성능이 상한에 아직 크게 못 미친다고</td><td>r3 #18: 원문은 &#x27;especially for more difficult datasets, the performance ceiling is far from reached yet&#x27;이다. &#x27;성능 한계가 아직 멀다&#x27;는 &#x27;한계에 도달할 날이 멀다&#x27;와 &#x27;한계가 크다&#x27;로 모두 읽혀 원문 뜻이 정해지지 않는다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-3.4">
+ <h3>3.4</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 신호 정의 수정</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-3.4-P1"><code>3.4-P1</code></a> 평가셋 크기는 구분할 차이와 검정력으로 정해야 하나 공개 벤치마크에서도 이 점검이 자주 생략된다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-3.4-P1" data-types="사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="3.4-P1"> 반영</label>
+  <code>3.4-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="평가셋의 크기는 구분하려는 성능 차이에 맞추어 정해야 한다. NLP 비교 실험의 상당수는 검정력이 부족하였고, 문장 2,000개의 기계번역 평가셋도 BLEU 1점 차이를 약 75%의 검정력으로만 탐지하였다[@card2020]. Miller는 쌍체 비교와 함께, 같은 문서에서 나온 문항처럼 묶인 문항에는 군집 표준오차를 쓰도록 권고하였다. DROP에서 군집 표준오차는 단순 표준오차의 약 3.05배였다. 쌍체 차이의 문항 간 분산을 1/9, 반복 표집 분산을 0으로 둔 예시에서 3%p 차이를 유의수준 0.05, 검정력 80%로 탐지하려면 약 969문항이 필요하였고, 저자는 새 평가셋에 최소 1,000문항을 권고하였다[@miller2024]. IRT로 고른 과제별 100문항은 전체 점수를 평균 약 2% 오차로 추정하였는데, 정답 패턴 기반 앵커는 전문화된 모델에서 추정이 나빠진 반면 IRT 기반 앵커는 약간만 영향을 받았다[@polo2024]. 이런 소규모 부분집합은 상시 모니터링에는 쓸 수 있으나 작은 차이의 판정 근거로는 부족하다. 체크포인트 간 점수 변동(잡음) 대비 모델 간 점수 퍼짐(신호, 최대 점수 차/평균)의 비가 높은 벤치마크일수록 소규모 실험의 의사결정이 정확하였다[@heineman2025]. 그러나 벤치마크 445개 중 불확실성 추정이나 통계 검정을 쓴 것은 16.0%에 그쳐[@bean2025], 이 측면은 공개 벤치마크에서도 자주 생략된다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 평가셋 크기는 구분할 차이와 검정력으로 정해야 하나 공개 벤치마크에서도 이 점검이 자주 생략된다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>평가셋의 크기는 구분하려는 성능 차이에 맞추어 정해야 한다. NLP 비교 실험의 상당수는 검정력이 부족하였고, 문장 2,000개의 기계번역 평가셋도 BLEU 1점 차이를 약 75%의 검정력으로만 탐지하였다[@card2020]. Miller는 쌍체 비교와 함께, 같은 문서에서 나온 문항처럼 묶인 문항에는 군집 표준오차를 쓰도록 권고하였다. DROP에서 군집 표준오차는 단순 표준오차의 약 3.05배였다. 쌍체 차이의 문항 간 분산을 1/9, 반복 표집 분산을 0으로 둔 예시에서 3%p 차이를 유의수준 0.05, 검정력 80%로 탐지하려면 약 969문항이 필요하였고, 저자는 새 평가셋에 최소 1,000문항을 권고하였다[@miller2024]. IRT로 고른 과제별 100문항은 전체 점수를 평균 약 2% 오차로 추정하였는데, 정답 패턴 기반 앵커는 전문화된 모델에서 추정이 나빠진 반면 IRT 기반 앵커는 약간만 영향을 받았다[@polo2024]. 이런 소규모 부분집합은 상시 모니터링에는 쓸 수 있으나 작은 차이의 판정 근거로는 부족하다. 체크포인트 간 <del>잡음</del> 대비 모델 간 점수 <del>분산(신호)의</del> 비가 높은 벤치마크일수록 소규모 실험의 의사결정이 정확하였다[@heineman2025]. 그러나 벤치마크 445개 중 불확실성 추정이나 통계 검정을 쓴 것은 16.0%에 그쳐[@bean2025], 이 측면은 공개 벤치마크에서도 자주 생략된다.</p></div><div><h5>수정 후</h5><p>평가셋의 크기는 구분하려는 성능 차이에 맞추어 정해야 한다. NLP 비교 실험의 상당수는 검정력이 부족하였고, 문장 2,000개의 기계번역 평가셋도 BLEU 1점 차이를 약 75%의 검정력으로만 탐지하였다[@card2020]. Miller는 쌍체 비교와 함께, 같은 문서에서 나온 문항처럼 묶인 문항에는 군집 표준오차를 쓰도록 권고하였다. DROP에서 군집 표준오차는 단순 표준오차의 약 3.05배였다. 쌍체 차이의 문항 간 분산을 1/9, 반복 표집 분산을 0으로 둔 예시에서 3%p 차이를 유의수준 0.05, 검정력 80%로 탐지하려면 약 969문항이 필요하였고, 저자는 새 평가셋에 최소 1,000문항을 권고하였다[@miller2024]. IRT로 고른 과제별 100문항은 전체 점수를 평균 약 2% 오차로 추정하였는데, 정답 패턴 기반 앵커는 전문화된 모델에서 추정이 나빠진 반면 IRT 기반 앵커는 약간만 영향을 받았다[@polo2024]. 이런 소규모 부분집합은 상시 모니터링에는 쓸 수 있으나 작은 차이의 판정 근거로는 부족하다. 체크포인트 간 <ins>점수 변동(잡음)</ins> 대비 모델 간 점수 <ins>퍼짐(신호, 최대 점수 차/평균)의</ins> 비가 높은 벤치마크일수록 소규모 실험의 의사결정이 정확하였다[@heineman2025]. 그러나 벤치마크 445개 중 불확실성 추정이나 통계 검정을 쓴 것은 16.0%에 그쳐[@bean2025], 이 측면은 공개 벤치마크에서도 자주 생략된다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">사실오류</span></td><td class=b>체크포인트 간 잡음 대비 모델 간 점수 분산(신호)의 비</td><td class=a>체크포인트 간 점수 변동(잡음) 대비 모델 간 점수 퍼짐(신호, 최대 점수 차/평균)의 비</td><td>r3 #21: Heineman 등은 신호를 &#x27;maximum difference between the scores of any two models, divided by the mean&#x27;(dispersion)으로, 잡음을 마지막 n개 체크포인트의 상대 표준편차로 정의하였다. 신호는 통계적 분산이 아니다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-3.5">
+ <h3>3.5</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 두 문단 분할, 인용 정정</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-3.5-P1"><code>3.5-P1</code></a> 오염 탐지·회피 방법과 재현성 문제를 정리하고, 실행 환경과 평가 코드 고정을 점검 항목으로 제안한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-3.5-P1" data-types="근거부족 사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="3.5-P1"> 반영</label>
+  <code>3.5-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="평가 문항이 학습 데이터에 들어가면 점수가 부풀고 잘못된 결론이 출판될 수 있다[@xu2024; @sainz2023]. Oren 등은 문항 순서가 교환 가능한 벤치마크에서 원래 순서의 우도가 섞은 순서보다 유의하게 높은지를 검정하여, 학습 데이터 없이 오염을 탐지할 수 있음을 보였다[@oren2023]. BIG-bench는 학습 데이터에서 걸러 낼 수 있도록 과제 파일에 카나리아 문자열을 넣었다[@srivastava2022]. GSM8K와 같은 분포로 새로 만든 GSM1k에서는 정확도가 최대 8% 떨어진 모델이 있었고, GSM8K 문항의 생성 확률과 하락 폭 사이에 중간 정도의 양의 관계(Spearman r²=0.36)가 있었다[@zhang2024]. LiveBench는 문항을 매월 갱신하고 LiveCodeBench는 공개 시점을 기록하여 학습 시점 이후 문항만 평가할 수 있게 하였다[@white2025; @jain2024]. 오염이 없어도 점수가 재현되지 않을 수 있다. SWE-bench Verified 500문항 중 16문항은 다른 기관의 실행 환경에서 안정적으로 실행되지 않아 제외되었고[@epochswebench], 프롬프트와 채점 구현의 차이도 점수를 바꾸므로 정확한 프롬프트와 평가 코드의 공개가 권고되었다[@biderman2024]. 본고는 문헌이 권고하거나 적용한 비공개 보존 분할과 공개 시점 기록[@bean2025; @jain2024]에 더해 실행 환경과 평가 코드의 고정을 이 측면의 점검 항목으로 제안한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 오염 탐지·회피 방법과 재현성 문제를 정리하고, 실행 환경과 평가 코드 고정을 점검 항목으로 제안한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>평가 문항이 학습 데이터에 들어가면 점수가 부풀고 잘못된 결론이 출판될 수 <del>있다[@xu2024].</del> Oren 등은 문항 순서가 교환 가능한 벤치마크에서 원래 순서의 우도가 섞은 순서보다 유의하게 높은지를 검정하여, 학습 데이터 없이 오염을 탐지할 수 있음을 보였다[@oren2023]. BIG-bench는 학습 데이터에서 걸러 낼 수 있도록 과제 파일에 카나리아 문자열을 넣었다[@srivastava2022]. GSM8K와 같은 분포로 새로 만든 GSM1k에서는 정확도가 최대 8% 떨어진 모델이 있었고, GSM8K 문항의 생성 확률과 하락 폭 사이에 중간 정도의 양의 관계(Spearman r²=0.36)가 있었다[@zhang2024]. LiveBench는 문항을 매월 갱신하고 LiveCodeBench는 공개 시점을 기록하여 학습 시점 이후 문항만 평가할 수 있게 하였다[@white2025; @jain2024]. 오염이 없어도 점수가 재현되지 않을 수 있다. SWE-bench Verified 500문항 중 16문항은 다른 기관의 실행 환경에서 안정적으로 실행되지 않아 제외되었고[@epochswebench], 프롬프트와 채점 구현의 차이도 점수를 바꾸므로 정확한 프롬프트와 평가 코드의 공개가 권고되었다[@biderman2024]. 본고는 문헌이 <del>권고한</del> 비공개 보존 분할과 공개 시점 기록[@bean2025; <del>@white2025]에</del> 더해 실행 환경과 평가 코드의 고정을 이 측면의 점검 항목으로 제안한다.</p></div><div><h5>수정 후</h5><p>평가 문항이 학습 데이터에 들어가면 점수가 부풀고 잘못된 결론이 출판될 수 <ins>있다[@xu2024; @sainz2023].</ins> Oren 등은 문항 순서가 교환 가능한 벤치마크에서 원래 순서의 우도가 섞은 순서보다 유의하게 높은지를 검정하여, 학습 데이터 없이 오염을 탐지할 수 있음을 보였다[@oren2023]. BIG-bench는 학습 데이터에서 걸러 낼 수 있도록 과제 파일에 카나리아 문자열을 넣었다[@srivastava2022]. GSM8K와 같은 분포로 새로 만든 GSM1k에서는 정확도가 최대 8% 떨어진 모델이 있었고, GSM8K 문항의 생성 확률과 하락 폭 사이에 중간 정도의 양의 관계(Spearman r²=0.36)가 있었다[@zhang2024]. LiveBench는 문항을 매월 갱신하고 LiveCodeBench는 공개 시점을 기록하여 학습 시점 이후 문항만 평가할 수 있게 하였다[@white2025; @jain2024]. 오염이 없어도 점수가 재현되지 않을 수 있다. SWE-bench Verified 500문항 중 16문항은 다른 기관의 실행 환경에서 안정적으로 실행되지 않아 제외되었고[@epochswebench], 프롬프트와 채점 구현의 차이도 점수를 바꾸므로 정확한 프롬프트와 평가 코드의 공개가 권고되었다[@biderman2024]. 본고는 문헌이 <ins>권고하거나 적용한</ins> 비공개 보존 분할과 공개 시점 기록[@bean2025; <ins>@jain2024]에</ins> 더해 실행 환경과 평가 코드의 고정을 이 측면의 점검 항목으로 제안한다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">근거부족</span></td><td class=b>점수가 부풀고 잘못된 결론이 출판될 수 있다[@xu2024]</td><td class=a>점수가 부풀고 잘못된 결론이 출판될 수 있다[@xu2024; @sainz2023]</td><td>r1-validation.md S12: Xu 등 서베이에서 확인된 것은 오염이 &#x27;평가를 신뢰할 수 없게 한다&#x27;는 수준이다. &#x27;잘못된 결론의 출판&#x27;은 S11 Sainz 등의 진술(&#x27;leads to wrong published conclusions&#x27;)이다. sainz2023은 manuscript/references.md에 있으나 source.md 본문 어디에도 인용되지 않았다.</td></tr><tr><td><span class="badge type">사실오류</span></td><td class=b>문헌이 권고한 비공개 보존 분할과 공개 시점 기록[@bean2025; @white2025]</td><td class=a>문헌이 권고하거나 적용한 비공개 보존 분할과 공개 시점 기록[@bean2025; @jain2024]</td><td>같은 문단에서 공개 시점 기록은 LiveCodeBench[@jain2024]의 방식으로 서술되었고, LiveBench[@white2025]는 매월 갱신의 근거로 쓰였다(r1-validation.md S16, S17). 또 LiveCodeBench는 공개 시점 기록을 권고한 것이 아니라 적용하였다. 비공개 보존 분할 권고는 Bean 등 권고 (5)와 맞다.</td></tr></tbody></table>
+ <div class="check"><b>저자 확인</b><ul><li>sainz2023이 references.md에만 있고 본문 미인용인지 확인: 추가 인용하거나 참고문헌에서 삭제</li></ul></div>
+</article>
+</section>
+<section class="sec" id="s-4.1">
+ <h3>4</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 제목 변경, 4.1–4.4 재편, SimpleQA 조건별 판정</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-4.1-P1"><code>4.1-P1</code></a> 골드 표준이 상대적 개념이었다는 전통을 근거로 골든을 상태로 본다.</li><li><a href="#p-4.1-P2"><code>4.1-P2</code></a> 골든셋을 일곱 조건의 문서화된 충족 증거로 정의하고, 본고가 더한 세 가지를 표 2와 맞게 한정한다.</li><li><a href="#p-4.1-P3"><code>4.1-P3</code></a> 표 2의 약어를 설명한다.</li><li><a href="#p-4.1-P4"><code>4.1-P4</code></a> C6·C7의 문서화·버전·채점 기준 유지 근거를 제시한다.</li><li><a href="#p-4.1-P5"><code>4.1-P5</code></a> SimpleQA는 C1 정의 요건과 C4를 충족하나 C2·C3은 표 2 기준상 조건부이고 C5–C7은 확인할 수 없다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-4.1-P1" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="4.1-P1"> 반영</label>
+  <code>4.1-P1</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="정보검색의 시험 모음 전통에서 &quot;골드 표준&quot;은 절대적 정답을 뜻하지 않았다. TREC 계열 시험 모음에서는 평가자마다 관련성 판정이 크게 달랐지만 시스템 순위는 판정 집합을 바꾸어도 높은 상관을 유지하였고, 이 순위 안정성이 시험 모음을 실험 도구로 쓰는 근거가 되었다[@voorhees2000]. 이후 CALBC는 여러 자동 태거의 출력을 합의로 통합한 코퍼스를 은 표준(silver standard)이라 불렀고[@rebholz2010], Vendrow 등은 라벨 오류와 모호성을 최소화하도록 재검수한 벤치마크를 플래티넘이라 부를 것을 제안하였다[@vendrow2025]. Aroyo와 Welty는 &quot;단일 정답&quot;, &quot;한 번 만들면 영원히 유효하다&quot; 등 사람 주석의 일곱 가지 신화를 비판하였다[@aroyo2015]. 본고는 이 흐름에 따라 골든을 평가셋의 고정된 속성이 아니라 목적과 시점에 따라 달라지는 상태로 본다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 골드 표준이 상대적 개념이었다는 전통을 근거로 골든을 상태로 본다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>정보검색의 시험 모음 전통에서 &quot;골드 표준&quot;은 절대적 정답을 뜻하지 않았다. TREC 계열 시험 모음에서는 평가자마다 관련성 판정이 크게 달랐지만 시스템 순위는 판정 집합을 바꾸어도 높은 상관을 유지하였고, 이 순위 안정성이 시험 모음을 실험 도구로 쓰는 근거가 되었다[@voorhees2000]. 이후 CALBC는 여러 자동 태거의 출력을 합의로 통합한 코퍼스를 은 표준(silver standard)이라 불렀고[@rebholz2010], Vendrow 등은 라벨 오류와 모호성을 최소화하도록 재검수한 벤치마크를 플래티넘이라 부를 것을 제안하였다[@vendrow2025]. Aroyo와 Welty는 &quot;단일 정답&quot;, &quot;한 번 만들면 영원히 유효하다&quot; 등 사람 주석의 일곱 가지 신화를 비판하였다[@aroyo2015]. 본고는 이 흐름에 따라 골든을 평가셋의 고정된 속성이 아니라 목적과 시점에 따라 달라지는 상태로 본다.</p></div><div><h5>수정 후</h5><p>정보검색의 시험 모음 전통에서 &quot;골드 표준&quot;은 절대적 정답을 뜻하지 않았다. TREC 계열 시험 모음에서는 평가자마다 관련성 판정이 크게 달랐지만 시스템 순위는 판정 집합을 바꾸어도 높은 상관을 유지하였고, 이 순위 안정성이 시험 모음을 실험 도구로 쓰는 근거가 되었다[@voorhees2000]. 이후 CALBC는 여러 자동 태거의 출력을 합의로 통합한 코퍼스를 은 표준(silver standard)이라 불렀고[@rebholz2010], Vendrow 등은 라벨 오류와 모호성을 최소화하도록 재검수한 벤치마크를 플래티넘이라 부를 것을 제안하였다[@vendrow2025]. Aroyo와 Welty는 &quot;단일 정답&quot;, &quot;한 번 만들면 영원히 유효하다&quot; 등 사람 주석의 일곱 가지 신화를 비판하였다[@aroyo2015]. 본고는 이 흐름에 따라 골든을 평가셋의 고정된 속성이 아니라 목적과 시점에 따라 달라지는 상태로 본다.</p></div></div>
+ 
+ 
+</article>
+<article class="para" id="p-4.1-P2" data-types="논리연결" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="4.1-P2"> 반영</label>
+  <code>4.1-P2</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="본고는 골든셋을 **명시된 평가 목적과 버전에 대해 표 2의 일곱 조건을 충족한다는 증거가 문서로 남은 평가셋**으로 정의할 것을 제안한다. 조건 C1–C5는 3장의 다섯 측면에 차례로 대응하고, C6과 C7은 그 증거를 남기고 갱신하는 절차이다. 2장의 구축 방식은 정의의 조건이 아니라 주로 C1–C3에서 점검할 위험의 출처이다. 표 2의 마지막 열이 보이듯 조건 대부분은 Bowman과 Dahl의 네 기준(타당성, 일관된 라벨, 충분한 검정력, 사회적 편향을 드러내고 편향된 시스템의 유인을 주지 않을 것)[@bowman2021], BetterBench[@reuel2024], Bean 등의 권고[@bean2025]와 겹친다. 본고의 정의가 더한 것은 세 가지이다. 판정 단위를 목적과 버전으로 한정하였고, 오염 통제에 실행 환경·평가 코드 고정을 묶은 C5와 채점 기준의 동시 버전 관리(C7)를 명시하였으며, 조건마다 충족 여부를 가를 최소 판정 기준을 두었다. 최소 판정 기준은 문헌의 기준값이 있으면 그것을 쓰고, 없으면 무엇을 보고해야 하는지를 정한 본고의 제안이다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 골든셋을 일곱 조건의 문서화된 충족 증거로 정의하고, 본고가 더한 세 가지를 표 2와 맞게 한정한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>본고는 골든셋을 **명시된 평가 목적과 버전에 대해 표 2의 일곱 조건을 충족한다는 증거가 문서로 남은 평가셋**으로 정의할 것을 제안한다. 조건 C1–C5는 3장의 다섯 측면에 차례로 대응하고, C6과 C7은 그 증거를 남기고 갱신하는 절차이다. 2장의 구축 방식은 정의의 조건이 아니라 <del>C1과</del> <del>C3에서</del> 점검할 위험의 출처이다. 표 2의 마지막 열이 보이듯 조건 대부분은 Bowman과 Dahl의 네 기준(타당성, 일관된 라벨, 충분한 검정력, 사회적 편향을 드러내고 편향된 시스템의 유인을 주지 않을 것)[@bowman2021], BetterBench[@reuel2024], Bean 등의 권고[@bean2025]와 겹친다. 본고의 정의가 더한 것은 세 가지이다. 판정 단위를 목적과 버전으로 한정하였고, <del>오염·재현성(C5)과</del> 채점 기준의 동시 버전 관리(C7)를 명시하였으며, 조건마다 충족 여부를 가를 최소 판정 기준을 두었다. 최소 판정 기준은 문헌의 기준값이 있으면 그것을 쓰고, 없으면 무엇을 보고해야 하는지를 정한 본고의 제안이다.</p></div><div><h5>수정 후</h5><p>본고는 골든셋을 **명시된 평가 목적과 버전에 대해 표 2의 일곱 조건을 충족한다는 증거가 문서로 남은 평가셋**으로 정의할 것을 제안한다. 조건 C1–C5는 3장의 다섯 측면에 차례로 대응하고, C6과 C7은 그 증거를 남기고 갱신하는 절차이다. 2장의 구축 방식은 정의의 조건이 아니라 <ins>주로</ins> <ins>C1–C3에서</ins> 점검할 위험의 출처이다. 표 2의 마지막 열이 보이듯 조건 대부분은 Bowman과 Dahl의 네 기준(타당성, 일관된 라벨, 충분한 검정력, 사회적 편향을 드러내고 편향된 시스템의 유인을 주지 않을 것)[@bowman2021], BetterBench[@reuel2024], Bean 등의 권고[@bean2025]와 겹친다. 본고의 정의가 더한 것은 세 가지이다. 판정 단위를 목적과 버전으로 한정하였고, <ins>오염 통제에 실행 환경·평가 코드 고정을 묶은 C5와</ins> 채점 기준의 동시 버전 관리(C7)를 명시하였으며, 조건마다 충족 여부를 가를 최소 판정 기준을 두었다. 최소 판정 기준은 문헌의 기준값이 있으면 그것을 쓰고, 없으면 무엇을 보고해야 하는지를 정한 본고의 제안이다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">논리연결</span></td><td class=b>C1과 C3에서 점검할 위험의 출처이다</td><td class=a>주로 C1–C3에서 점검할 위험의 출처이다</td><td>표 1의 &#x27;주요 위험&#x27;에는 전문가 간 불일치와 근거 귀속 자동 판정의 일치도(κ 0.53–0.70)가 있다. 이 둘은 C2(라벨 신뢰도)의 점검 대상인데 문장은 이를 빠뜨린다.</td></tr><tr><td><span class="badge type">논리연결</span></td><td class=b>오염·재현성(C5)과 채점 기준의 동시 버전 관리(C7)를 명시하였으며</td><td class=a>오염 통제에 실행 환경·평가 코드 고정을 묶은 C5와 채점 기준의 동시 버전 관리(C7)를 명시하였으며</td><td>같은 문단이 근거로 드는 표 2 마지막 열에서 C5는 Bean 5에, C7은 BB 유지·폐기에 대응한다. 즉 오염 통제와 유지 자체는 기존 기준에 이미 있다. 3.5-P1도 본고가 더한 것을 &#x27;실행 환경과 평가 코드의 고정&#x27;으로 한정한다. 라운드 1 M1-1이 제시한 세 가지 추가점은 그대로 두고 범위만 표와 맞춘다.</td></tr></tbody></table>
+ 
+</article>
+<article class="para" id="p-4.1-P3" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="4.1-P3"> 반영</label>
+  <code>4.1-P3</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="주: BD는 Bowman과 Dahl의 기준 번호[@bowman2021], BB는 BetterBench의 수명 주기 단계[@reuel2024], Bean은 Bean 등의 권고 번호[@bean2025]이다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 표 2의 약어를 설명한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>주: BD는 Bowman과 Dahl의 기준 번호[@bowman2021], BB는 BetterBench의 수명 주기 단계[@reuel2024], Bean은 Bean 등의 권고 번호[@bean2025]이다.</p></div><div><h5>수정 후</h5><p>주: BD는 Bowman과 Dahl의 기준 번호[@bowman2021], BB는 BetterBench의 수명 주기 단계[@reuel2024], Bean은 Bean 등의 권고 번호[@bean2025]이다.</p></div></div>
+ 
+ 
+</article>
+<article class="para" id="p-4.1-P4" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="4.1-P4"> 반영</label>
+  <code>4.1-P4</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="문서화 항목은 Datasheets와 Data Cards가 제시하였고[@gebru2021; @pushkarna2022], Croissant의 책임 있는 AI 확장은 기계 판독 형식을 제공하며[@jain2024rai], NeurIPS 2026 데이터셋 투고는 한계, 편향, 의도된 용도를 이 형식에 담도록 요구한다[@neurips2026rai]. 버전 관리는 데이터셋 저장소의 버전과 데이터 카드 기능으로 구현할 수 있고[@lhoest2021], 폐기 절차는 데이터셋 폐기 틀을 참고할 수 있다[@luccioni2022]. 채점 기준도 유지 대상이다. 참여자 9명의 사용자 연구에서 출력을 채점하며 채점 기준을 바꾸는 기준 표류(criteria drift)가 관찰되었다[@shankar2024].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> C6·C7의 문서화·버전·채점 기준 유지 근거를 제시한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>문서화 항목은 Datasheets와 Data Cards가 제시하였고[@gebru2021; @pushkarna2022], Croissant의 책임 있는 AI 확장은 기계 판독 형식을 제공하며[@jain2024rai], NeurIPS 2026 데이터셋 투고는 한계, 편향, 의도된 용도를 이 형식에 담도록 요구한다[@neurips2026rai]. 버전 관리는 데이터셋 저장소의 버전과 데이터 카드 기능으로 구현할 수 있고[@lhoest2021], 폐기 절차는 데이터셋 폐기 틀을 참고할 수 있다[@luccioni2022]. 채점 기준도 유지 대상이다. 참여자 9명의 사용자 연구에서 출력을 채점하며 채점 기준을 바꾸는 기준 표류(criteria drift)가 관찰되었다[@shankar2024].</p></div><div><h5>수정 후</h5><p>문서화 항목은 Datasheets와 Data Cards가 제시하였고[@gebru2021; @pushkarna2022], Croissant의 책임 있는 AI 확장은 기계 판독 형식을 제공하며[@jain2024rai], NeurIPS 2026 데이터셋 투고는 한계, 편향, 의도된 용도를 이 형식에 담도록 요구한다[@neurips2026rai]. 버전 관리는 데이터셋 저장소의 버전과 데이터 카드 기능으로 구현할 수 있고[@lhoest2021], 폐기 절차는 데이터셋 폐기 틀을 참고할 수 있다[@luccioni2022]. 채점 기준도 유지 대상이다. 참여자 9명의 사용자 연구에서 출력을 채점하며 채점 기준을 바꾸는 기준 표류(criteria drift)가 관찰되었다[@shankar2024].</p></div></div>
+ 
+ <div class="check"><b>저자 확인</b><ul><li>Shankar 등의 &#x27;참여자 9명&#x27;은 r1-validation S26에서 UNVERIFIED이고, 라운드 1 심사(referee.md #36)에서 arXiv HTML로 확인되었다. research 파일의 상태 표기를 갱신해야 한다.</li></ul></div>
+</article>
+<article class="para" id="p-4.1-P5" data-types="근거부족 논리연결 사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="4.1-P5"> 반영</label>
+  <code>4.1-P5</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="정의를 SimpleQA에 적용하면 점검표의 쓰임이 드러난다[@wei2024simpleqa]. 단답형 사실 질의라는 측정 대상이 명시되어 C1의 정의 요건을 충족하고, 독립 작성자 2인의 일치(C2)와 제3자 재풀이에 의한 약 3%의 오류율 추정(C3)이 증거로 남아 있다. 4,326문항은 정답률 50% 근처에서 표준오차가 약 0.76%p이고, 두 모델을 독립 표본으로 보수적으로 비교해도 약 3.0%p 차이를 유의수준 0.05, 검정력 80%로 탐지할 수 있어 C4를 충족한다(본고 계산). 그러나 표 2의 기준을 그대로 적용하면 C2와 C3의 판정은 유보된다. 2인 일치는 일치한 문항만 남긴 선별 절차이고 우연 보정 일치도는 [확인: SimpleQA 원문의 α·κ 보고 여부] 보고되지 않았으며, 표본 1,000문항에서 추정한 오류율 2.8%의 95% 신뢰구간 상한은 약 3.8%여서(본고 계산) 그보다 작은 차이를 비교할 때는 C3을 충족하지 못한다. 비공개 분할(C5), 문서화 항목(C6, [확인: SimpleQA 공개본의 데이터시트·데이터 카드 여부]), 버전별 정오표와 재감사 주기(C7)는 논문에서 확인되지 않는다. 따라서 SimpleQA는 단답형 사실성 비교라는 목적에 대해 C1의 정의 요건과 C4는 충족하지만, C2는 표 2의 기준으로 판정할 수 없고 C3은 약 4%p 이상의 차이를 비교할 때에만 충족하며, C5–C7은 확인할 수 없는 평가셋이다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> SimpleQA는 C1 정의 요건과 C4를 충족하나 C2·C3은 표 2 기준상 조건부이고 C5–C7은 확인할 수 없다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>정의를 SimpleQA에 적용하면 점검표의 쓰임이 드러난다[@wei2024simpleqa]. 단답형 사실 질의라는 측정 대상이 명시되어 C1의 정의 요건을 충족하고, 독립 작성자 2인의 일치(C2)와 제3자 재풀이에 의한 약 3%의 오류율 추정(C3)이 증거로 남아 있다. 4,326문항은 정답률 50% 근처에서 표준오차가 약 <del>0.76%p로</del> 수 <del>퍼센트포인트</del> <del>차이의</del> <del>비교에 충분하다(C4, 본고</del> 계산). <del>반면</del> 비공개 <del>분할,</del> 버전별 <del>정오표,</del> 재감사 <del>주기(C5, C7)는</del> 논문에서 확인되지 않는다. 따라서 SimpleQA는 단답형 사실성 비교라는 목적에 대해 <del>C1–C4는</del> <del>충족하고</del> C5–C7은 확인할 수 없는 <del>평가셋으로 판정된다.</del></p></div><div><h5>수정 후</h5><p>정의를 SimpleQA에 적용하면 점검표의 쓰임이 드러난다[@wei2024simpleqa]. 단답형 사실 질의라는 측정 대상이 명시되어 C1의 정의 요건을 충족하고, 독립 작성자 2인의 일치(C2)와 제3자 재풀이에 의한 약 3%의 오류율 추정(C3)이 증거로 남아 있다. 4,326문항은 정답률 50% 근처에서 표준오차가 약 <ins>0.76%p이고, 두 모델을 독립 표본으로 보수적으로 비교해도 약 3.0%p 차이를 유의수준 0.05, 검정력 80%로 탐지할</ins> 수 <ins>있어</ins> <ins>C4를</ins> <ins>충족한다(본고</ins> 계산). <ins>그러나 표 2의 기준을 그대로 적용하면 C2와 C3의 판정은 유보된다. 2인 일치는 일치한 문항만 남긴 선별 절차이고 우연 보정 일치도는 [확인: SimpleQA 원문의 α·κ 보고 여부] 보고되지 않았으며, 표본 1,000문항에서 추정한 오류율 2.8%의 95% 신뢰구간 상한은 약 3.8%여서(본고 계산) 그보다 작은 차이를 비교할 때는 C3을 충족하지 못한다.</ins> 비공개 <ins>분할(C5), 문서화 항목(C6, [확인: SimpleQA 공개본의 데이터시트·데이터 카드 여부]),</ins> 버전별 <ins>정오표와</ins> 재감사 <ins>주기(C7)는</ins> 논문에서 확인되지 않는다. 따라서 SimpleQA는 단답형 사실성 비교라는 목적에 대해 <ins>C1의</ins> <ins>정의 요건과 C4는 충족하지만, C2는 표 2의 기준으로 판정할 수 없고 C3은 약 4%p 이상의 차이를 비교할 때에만 충족하며,</ins> C5–C7은 확인할 수 없는 <ins>평가셋이다.</ins></p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">근거부족</span></td><td class=b>4,326문항은 정답률 50% 근처에서 표준오차가 약 0.76%p로 수 퍼센트포인트 차이의 비교에 충분하다(C4, 본고 계산).</td><td class=a>4,326문항은 정답률 50% 근처에서 표준오차가 약 0.76%p이고, 두 모델을 독립 표본으로 보수적으로 비교해도 약 3.0%p 차이를 유의수준 0.05, 검정력 80%로 탐지할 수 있어 C4를 충족한다(본고 계산).</td><td>재계산 결과 √(0.25/4326)=0.0076, 즉 0.76%p로 원고 수치는 맞다. 다만 표 2의 C4 기준은 &#x27;목표 차이를 검정력 80%로 탐지하는 문항 수&#x27;인데, 원문은 단일 모델의 표준오차만 들고 &#x27;수 퍼센트포인트&#x27;에 충분하다고 한다. 기준에 맞춰 (1.960+0.842)×√(0.5/4326)=3.01%p로 고친다.</td></tr><tr><td><span class="badge type">논리연결</span></td><td class=b>반면 비공개 분할, 버전별 정오표, 재감사 주기(C5, C7)는 논문에서 확인되지 않는다.</td><td class=a>그러나 표 2의 기준을 그대로 적용하면 C2와 C3의 판정은 유보된다. 2인 일치는 일치한 문항만 남긴 선별 절차이고 우연 보정 일치도는 [확인: SimpleQA 원문의 α·κ 보고 여부] 보고되지 않았으며, 표본 1,000문항에서 추정한 오류율 2.8%의 95% 신뢰구간 상한은 약 3.8%여서(본고 계산) 그보다 작은 차이를 비교할 때는 C3을 충족하지 못한다. 비공개 분할(C5), 문서화 항목(C6, [확인: SimpleQA 공개본의 데이터시트·데이터 카드 여부]), 버전별 정오표와 재감사 주기(C7)는 논문에서 확인되지 않는다.</td><td>원문의 이 문장은 C5와 C7만 다루는데 다음 문장은 &#x27;C5–C7은 확인할 수 없는&#x27;으로 판정해 C6의 근거가 빠져 있다. 또 C2와 C3을 표 2의 최소 판정 기준(α≥0.800, 오류율 95% 신뢰구간 상한 &lt; 탐지 차이)에 대어 본 판정이 없다. 오류율 2.8%는 r3 §13의 &#x27;2.8% … real issues&#x27;이며, 상한은 0.028+1.96×√(0.028×0.972/1000)=3.82%로 계산하였다.</td></tr><tr><td><span class="badge type">사실오류</span></td><td class=b>C1–C4는 충족하고 C5–C7은 확인할 수 없는 평가셋으로 판정된다.</td><td class=a>C1의 정의 요건과 C4는 충족하지만, C2는 표 2의 기준으로 판정할 수 없고 C3은 약 4%p 이상의 차이를 비교할 때에만 충족하며, C5–C7은 확인할 수 없는 평가셋이다.</td><td>&#x27;C1–C4 충족&#x27;은 표 2와 어긋난다. C1의 최소 판정 기준에는 층별 문항 수가 포함되는데 문단은 정의서 요건만 확인하였다. C2는 α 보고가 확인되지 않는다. C3은 상한 약 3.8%가 C4에서 탐지 가능한 3.0%p보다 커서 3%p 수준 비교에서는 기준에 못 미친다. 수동형 &#x27;판정된다&#x27;도 본고의 판정이므로 현재형 서술로 바꾼다.</td></tr></tbody></table>
+ <div class="check"><b>저자 확인</b><ul><li>[확인] SimpleQA 원문이 α·κ 등 우연 보정 일치도를 보고하는지 확인해야 한다(r3 §13에는 없음).</li><li>[확인] SimpleQA 공개본에 데이터시트·데이터 카드가 있는지 확인해야 한다.</li><li>C1의 층별 요건을 판정하려면 SimpleQA의 주제별 문항 수를 확인해야 한다.</li><li>본고 계산: SE √(0.25/4326)=0.760%p, MDE 2.802×√(0.5/4326)=3.01%p, 오류율 상한 0.028+1.96×√(0.028·0.972/1000)=3.82%.</li></ul></div>
+</article>
+</section>
+<section class="sec" id="s-5.1">
+ <h3>5.1</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 입장 선제시, 4.4 참조, 셋째 쟁점 범위 한정</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-5.1-P1"><code>5.1-P1</code></a> 2단 구성은 규모·품질 입장을 결합하지만 판정 모델이 정확하지 않으면 절감에 상한이 있다.</li><li><a href="#p-5.1-P2"><code>5.1-P2</code></a> 정답형·분포형 구분으로 관점주의와 회귀 결정성을 절충한다.</li><li><a href="#p-5.1-P3"><code>5.1-P3</code></a> LLM 라벨은 사람 라벨로 보정된 은 표준으로만 쓰고 핵심셋 정답은 사람이 확정한다.</li><li><a href="#p-5.1-P4"><code>5.1-P4</code></a> 고정 스냅숏과 갱신 분할을 함께 두어 비교 가능성과 오염 대응을 절충한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-5.1-P1" data-types="과잉일반화 근거부족 논리연결" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="5.1-P1"> 반영</label>
+  <code>5.1-P1</code> <span class="badge edit">수정</span> <span class="badge pat">양괄식</span>
+  <button class="copy" data-copy="첫째 쟁점은 규모와 품질이며, 본고는 2단 구성으로 두 입장을 결합하되 그 이득에 상한이 있다고 본다. Anthropic 문서는 사람이 정밀 채점한 소수 문항보다 신호가 다소 약한 자동 채점 문항을 많이 두라고 권고하였고[@anthropic-evals], PPI와 AutoEval은 자동 판정으로 사람 라벨의 효용을 높일 수 있음을 보였다[@ppi2023; @boyeau2024]. 반면 벤치마크 연구는 철저히 검증되고 모호하지 않은 문항을 요구하였고[@bowman2021; @vendrow2025], 판정 모델이 평가 대상보다 정확하지 않으면 자동 판정이 정답 라벨을 절반 넘게 줄일 수 없다는 상한도 제시되었다[@dorner2025]. 2단 구성은 두 입장을 결합하지만, 판정 모델이 평가 대상보다 정확하지 않으면 보조셋에 의한 정답 라벨 절감이 절반 이하로 제한되므로, 비교할 차이가 작을 때는 핵심셋을 키워야 한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 2단 구성은 규모·품질 입장을 결합하지만 판정 모델이 정확하지 않으면 절감에 상한이 있다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>첫째 쟁점은 규모와 <del>품질이다.</del> Anthropic 문서는 사람이 정밀 채점한 소수 문항보다 신호가 다소 약한 자동 채점 문항을 많이 두라고 권고하였고[@anthropic-evals], PPI와 AutoEval은 자동 판정으로 사람 라벨의 효용을 높일 수 있음을 보였다[@ppi2023; @boyeau2024]. 반면 벤치마크 연구는 철저히 검증되고 모호하지 않은 문항을 요구하였고[@bowman2021; @vendrow2025], <del>최신</del> <del>모델</del> <del>평가에서</del> 자동 판정이 정답 라벨을 절반 넘게 <del>대신할</del> 수 없다는 상한도 제시되었다[@dorner2025]. 2단 구성은 두 입장을 결합하지만, 판정 모델이 평가 대상보다 <del>약하고</del> 비교할 차이가 <del>작으면</del> <del>성립하지 않으며 이때는</del> 핵심셋을 키워야 한다.</p></div><div><h5>수정 후</h5><p>첫째 쟁점은 규모와 <ins>품질이며, 본고는 2단 구성으로 두 입장을 결합하되 그 이득에 상한이 있다고 본다.</ins> Anthropic 문서는 사람이 정밀 채점한 소수 문항보다 신호가 다소 약한 자동 채점 문항을 많이 두라고 권고하였고[@anthropic-evals], PPI와 AutoEval은 자동 판정으로 사람 라벨의 효용을 높일 수 있음을 보였다[@ppi2023; @boyeau2024]. 반면 벤치마크 연구는 철저히 검증되고 모호하지 않은 문항을 요구하였고[@bowman2021; @vendrow2025], <ins>판정</ins> <ins>모델이</ins> <ins>평가 대상보다 정확하지 않으면</ins> 자동 판정이 정답 라벨을 절반 넘게 <ins>줄일</ins> 수 없다는 상한도 제시되었다[@dorner2025]. 2단 구성은 두 입장을 결합하지만, 판정 모델이 평가 대상보다 <ins>정확하지 않으면 보조셋에 의한 정답 라벨 절감이 절반 이하로 제한되므로,</ins> 비교할 차이가 <ins>작을</ins> <ins>때는</ins> 핵심셋을 키워야 한다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">논리연결</span></td><td class=b>첫째 쟁점은 규모와 품질이다.</td><td class=a>첫째 쟁점은 규모와 품질이며, 본고는 2단 구성으로 두 입장을 결합하되 그 이득에 상한이 있다고 본다.</td><td>논의는 양괄식으로 쓰도록 되어 있다(라운드 2 지시). 원래 첫 문장은 쟁점 이름만 밝히고 본고의 입장은 마지막 문장에만 있다.</td></tr><tr><td><span class="badge type">과잉일반화</span></td><td class=b>최신 모델 평가에서 자동 판정이 정답 라벨을 절반 넘게 대신할 수 없다는 상한도</td><td class=a>판정 모델이 평가 대상보다 정확하지 않으면 자동 판정이 정답 라벨을 절반 넘게 줄일 수 없다는 상한도</td><td>Dorner 등의 상한은 &#x27;when the judge is no more accurate than the evaluated model&#x27;이라는 조건에서만 성립한다(r3 §3, 4.2-P1). &#x27;최신 모델 평가&#x27;는 이 조건을 대신하지 못한다.</td></tr><tr><td><span class="badge type">근거부족</span></td><td class=b>판정 모델이 평가 대상보다 약하고 비교할 차이가 작으면 성립하지 않으며 이때는 핵심셋을 키워야 한다.</td><td class=a>판정 모델이 평가 대상보다 정확하지 않으면 보조셋에 의한 정답 라벨 절감이 절반 이하로 제한되므로, 비교할 차이가 작을 때는 핵심셋을 키워야 한다.</td><td>Dorner 등이 보인 것은 절감의 상한이지 2단 구성의 무효가 아니다. PPI 신뢰구간은 예측 모델에 대한 가정 없이 유효하다(r3 §1 &#x27;without making any assumptions about the machine-learning algorithm&#x27;). 또 &#x27;약하고&#x27;는 4.2-P1의 &#x27;정확하지 않으면&#x27;과 조건이 다르다(동등한 경우가 빠짐).</td></tr></tbody></table>
+ 
+</article>
+<article class="para" id="p-5.1-P2" data-types="근거부족 논리연결 중복" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="5.1-P2"> 반영</label>
+  <code>5.1-P2</code> <span class="badge edit">수정</span> <span class="badge pat">양괄식</span>
+  <button class="copy" data-copy="둘째 쟁점은 단일 정답과 관점주의이며, 본고는 문항을 정답형과 분포형으로 나누는 절충을 제안한다. 주관적 판단이 들어가는 평가에서는 다수결 라벨보다 라벨 분포를 보존하는 편이 타당하다는 주장이 있으나[@plank2022; @cabitza2023; @pavlick2019], 회귀 검사에는 실행마다 같은 판정을 내는 고정된 기준이 필요하다. 정답형 문항은 단일 정답으로 채점하고, 분포형 문항은 비집계 라벨을 보존하여 모델 응답에 동의한 주석자 비율로 채점한다. 분포형 문항이 많아 회귀의 합격 여부를 문항 단위로 정해야 하는 경우에는 이 절충이 판정을 모호하게 만들 수 있다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 정답형·분포형 구분으로 관점주의와 회귀 결정성을 절충한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>둘째 쟁점은 단일 정답과 <del>관점주의이다.</del> 주관적 판단이 들어가는 평가에서는 다수결 라벨보다 라벨 분포를 보존하는 편이 타당하다는 주장이 있으나[@plank2022; @cabitza2023; @pavlick2019], 회귀 검사에는 실행마다 같은 판정을 내는 고정된 기준이 필요하다. <del>본고는</del> <del>문항을</del> <del>정답형과</del> <del>분포형으로</del> <del>나누어,</del> 분포형 문항은 비집계 라벨을 <del>보존하고</del> 모델 응답에 동의한 주석자 비율로 <del>채점하는 절충안을 제안한다.</del> 분포형 문항이 많아 회귀의 합격 여부를 문항 단위로 정해야 하는 경우에는 이 절충이 판정을 모호하게 <del>만든다.</del></p></div><div><h5>수정 후</h5><p>둘째 쟁점은 단일 정답과 <ins>관점주의이며, 본고는 문항을 정답형과 분포형으로 나누는 절충을 제안한다.</ins> 주관적 판단이 들어가는 평가에서는 다수결 라벨보다 라벨 분포를 보존하는 편이 타당하다는 주장이 있으나[@plank2022; @cabitza2023; @pavlick2019], 회귀 검사에는 실행마다 같은 판정을 내는 고정된 기준이 필요하다. <ins>정답형</ins> <ins>문항은</ins> <ins>단일</ins> <ins>정답으로</ins> <ins>채점하고,</ins> 분포형 문항은 비집계 라벨을 <ins>보존하여</ins> 모델 응답에 동의한 주석자 비율로 <ins>채점한다.</ins> 분포형 문항이 많아 회귀의 합격 여부를 문항 단위로 정해야 하는 경우에는 이 절충이 판정을 모호하게 <ins>만들 수 있다.</ins></p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">논리연결</span></td><td class=b>둘째 쟁점은 단일 정답과 관점주의이다.</td><td class=a>둘째 쟁점은 단일 정답과 관점주의이며, 본고는 문항을 정답형과 분포형으로 나누는 절충을 제안한다.</td><td>양괄식 지시에 따라 본고의 입장을 앞에 둔다. 원래 첫 문장은 쟁점 이름만 밝힌다.</td></tr><tr><td><span class="badge type">중복</span></td><td class=b>본고는 문항을 정답형과 분포형으로 나누어, 분포형 문항은 비집계 라벨을 보존하고 모델 응답에 동의한 주석자 비율로 채점하는 절충안을 제안한다.</td><td class=a>정답형 문항은 단일 정답으로 채점하고, 분포형 문항은 비집계 라벨을 보존하여 모델 응답에 동의한 주석자 비율로 채점한다.</td><td>첫 문장으로 옮긴 제안(&#x27;정답형과 분포형으로 나누는 절충&#x27;)이 되풀이되므로 채점 방식만 남긴다.</td></tr><tr><td><span class="badge type">근거부족</span></td><td class=b>이 절충이 판정을 모호하게 만든다.</td><td class=a>이 절충이 판정을 모호하게 만들 수 있다.</td><td>본고는 이 절충을 적용하거나 시험하지 않았다. 예상되는 한계를 확인된 결과처럼 단정하고 있다.</td></tr></tbody></table>
+ 
+</article>
+<article class="para" id="p-5.1-P3" data-types="과잉일반화 근거부족 논리연결" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="5.1-P3"> 반영</label>
+  <code>5.1-P3</code> <span class="badge edit">수정</span> <span class="badge pat">양괄식</span>
+  <button class="copy" data-copy="셋째 쟁점은 사람 라벨의 LLM 대체이며, 본고는 LLM 라벨을 은 표준으로 한정할 것을 제안한다. ChatGPT의 영점 주석 정확도는 군중 작업자보다 평균 약 25%p 높았고 비용은 약 30분의 1이었으며[@gilardi2023], Bing 검색 관련성 판정에서도 LLM이 제3자 작업자보다 정확하였다[@thomas2024]. 그러나 GPT-4와 Llama 2 등 일부 LLM 판정 모델은 자기 선호를 보였고[@panickssery2024], LLM으로 만든 시험 모음의 검색기 편향 위험과[@rahmani2024] 정답 라벨 절감의 상한도 제시되었다[@dorner2025]. 본고는 LLM 라벨을 사람 라벨로 보정된 은 표준으로 취급하고 핵심셋의 정답은 사람이 확정할 것을 제안한다. 다만 라벨 생성 모델이 평가 대상과 같은 계열일 때 이 보정이 자기 선호를 제거하는지는 본고의 검색 범위에서 확인되지 않았다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> LLM 라벨은 사람 라벨로 보정된 은 표준으로만 쓰고 핵심셋 정답은 사람이 확정한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>셋째 쟁점은 사람 라벨의 LLM <del>대체이다.</del> ChatGPT의 영점 주석 정확도는 군중 작업자보다 평균 약 25%p 높았고 비용은 약 30분의 1이었으며[@gilardi2023], Bing 검색 관련성 판정에서도 LLM이 제3자 작업자보다 정확하였다[@thomas2024]. 그러나 LLM 판정 모델은 자기 선호를 보였고[@panickssery2024], LLM으로 만든 시험 모음의 검색기 편향 위험과[@rahmani2024] 정답 라벨 절감의 상한도 제시되었다[@dorner2025]. 본고는 LLM 라벨을 사람 라벨로 보정된 은 표준으로 취급하고 핵심셋의 정답은 사람이 확정할 것을 제안한다. 다만 라벨 생성 모델이 평가 대상과 같은 계열일 때 이 보정이 자기 선호를 제거하는지는 확인되지 않았다.</p></div><div><h5>수정 후</h5><p>셋째 쟁점은 사람 라벨의 LLM <ins>대체이며, 본고는 LLM 라벨을 은 표준으로 한정할 것을 제안한다.</ins> ChatGPT의 영점 주석 정확도는 군중 작업자보다 평균 약 25%p 높았고 비용은 약 30분의 1이었으며[@gilardi2023], Bing 검색 관련성 판정에서도 LLM이 제3자 작업자보다 정확하였다[@thomas2024]. 그러나<ins> GPT-4와 Llama 2 등 일부</ins> LLM 판정 모델은 자기 선호를 보였고[@panickssery2024], LLM으로 만든 시험 모음의 검색기 편향 위험과[@rahmani2024] 정답 라벨 절감의 상한도 제시되었다[@dorner2025]. 본고는 LLM 라벨을 사람 라벨로 보정된 은 표준으로 취급하고 핵심셋의 정답은 사람이 확정할 것을 제안한다. 다만 라벨 생성 모델이 평가 대상과 같은 계열일 때 이 보정이 자기 선호를 제거하는지는 <ins>본고의 검색 범위에서 </ins>확인되지 않았다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">논리연결</span></td><td class=b>셋째 쟁점은 사람 라벨의 LLM 대체이다.</td><td class=a>셋째 쟁점은 사람 라벨의 LLM 대체이며, 본고는 LLM 라벨을 은 표준으로 한정할 것을 제안한다.</td><td>양괄식 지시에 따라 본고의 입장을 앞에 둔다. 셋째 문장의 제안이 결론 역할을 하므로 앞뒤가 호응한다.</td></tr><tr><td><span class="badge type">과잉일반화</span></td><td class=b>그러나 LLM 판정 모델은 자기 선호를 보였고</td><td class=a>그러나 GPT-4와 Llama 2 등 일부 LLM 판정 모델은 자기 선호를 보였고</td><td>panickssery2024가 자기 인식·자기 선호를 보고한 대상은 GPT-4와 Llama 2이다(r1-construction S14). 원문은 LLM 판정 모델 일반으로 확대한다.</td></tr><tr><td><span class="badge type">근거부족</span></td><td class=b>이 보정이 자기 선호를 제거하는지는 확인되지 않았다.</td><td class=a>이 보정이 자기 선호를 제거하는지는 본고의 검색 범위에서 확인되지 않았다.</td><td>5.2-P1 첫째 공백과 같이, 서술형 종합(5.3-P1)의 범위로 한정해야 하는 부재 주장이다.</td></tr></tbody></table>
+ 
+</article>
+<article class="para" id="p-5.1-P4" data-types="근거부족 논리연결 중복" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="5.1-P4"> 반영</label>
+  <code>5.1-P4</code> <span class="badge edit">수정</span> <span class="badge pat">양괄식</span>
+  <button class="copy" data-copy="넷째 쟁점은 정적 평가셋과 동적 평가셋이며, 본고는 고정 스냅숏과 갱신 분할을 함께 두는 절충을 제안한다. LiveBench와 LiveCodeBench의 주기적 문항 갱신과 HLE의 지속 개정 계획은 오염과 포화를 늦추려는 설계이다[@white2025; @jain2024; @hle]. 반면 정적 평가셋은 시점이 다른 모델의 점수를 같은 척도로 비교하게 하며, 애플리케이션 회귀 검사는 이 비교 가능성에 의존한다. 구체적으로는 고정된 스냅숏을 회귀 기준으로 두고 갱신 분할을 별도 버전으로 추가하여 두 점수를 함께 보고한다. 갱신 주기가 짧아 스냅숏이 곧 오염되면 기준을 자주 바꾸어야 하는 부담이 남는다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 고정 스냅숏과 갱신 분할을 함께 두어 비교 가능성과 오염 대응을 절충한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>넷째 쟁점은 정적 평가셋과 동적 <del>평가셋이다.</del> <del>LiveBench,</del> <del>LiveCodeBench,</del> HLE의 지속 개정 계획은 <del>문항 갱신으로 </del>오염과 포화를 <del>늦춘다[@white2025;</del> @jain2024; @hle]. 반면 정적 평가셋은 시점이 다른 모델의 점수를 같은 척도로 비교하게 하며, 애플리케이션 회귀 검사는 이 비교 가능성에 의존한다. <del>본고는</del> 고정된 스냅숏을 회귀 기준으로 두고 갱신 분할을 별도 버전으로 추가하여 두 점수를 함께 <del>보고하는 방식을 제안한다.</del> 갱신 주기가 짧아 스냅숏이 곧 오염되면 기준을 자주 바꾸어야 하는 부담이 남는다.</p></div><div><h5>수정 후</h5><p>넷째 쟁점은 정적 평가셋과 동적 <ins>평가셋이며,</ins> <ins>본고는</ins> <ins>고정 스냅숏과 갱신 분할을 함께 두는 절충을 제안한다. LiveBench와 LiveCodeBench의 주기적 문항 갱신과</ins> HLE의 지속 개정 계획은 오염과 포화를 <ins>늦추려는 설계이다[@white2025;</ins> @jain2024; @hle]. 반면 정적 평가셋은 시점이 다른 모델의 점수를 같은 척도로 비교하게 하며, 애플리케이션 회귀 검사는 이 비교 가능성에 의존한다. <ins>구체적으로는</ins> 고정된 스냅숏을 회귀 기준으로 두고 갱신 분할을 별도 버전으로 추가하여 두 점수를 함께 <ins>보고한다.</ins> 갱신 주기가 짧아 스냅숏이 곧 오염되면 기준을 자주 바꾸어야 하는 부담이 남는다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">논리연결</span></td><td class=b>넷째 쟁점은 정적 평가셋과 동적 평가셋이다.</td><td class=a>넷째 쟁점은 정적 평가셋과 동적 평가셋이며, 본고는 고정 스냅숏과 갱신 분할을 함께 두는 절충을 제안한다.</td><td>양괄식 지시에 따라 본고의 입장을 앞에 둔다.</td></tr><tr><td><span class="badge type">근거부족</span></td><td class=b>LiveBench, LiveCodeBench, HLE의 지속 개정 계획은 문항 갱신으로 오염과 포화를 늦춘다</td><td class=a>LiveBench와 LiveCodeBench의 주기적 문항 갱신과 HLE의 지속 개정 계획은 오염과 포화를 늦추려는 설계이다</td><td>HLE는 &#x27;plan to announce a rolling revision process&#x27; 단계이다(r3 §14b). 원고 어디에도 갱신이 오염·포화를 실제로 늦추었다는 측정 결과가 없는데, &#x27;늦춘다&#x27;는 그 효과를 단정한다.</td></tr><tr><td><span class="badge type">중복</span></td><td class=b>본고는 고정된 스냅숏을 회귀 기준으로 두고 갱신 분할을 별도 버전으로 추가하여 두 점수를 함께 보고하는 방식을 제안한다.</td><td class=a>구체적으로는 고정된 스냅숏을 회귀 기준으로 두고 갱신 분할을 별도 버전으로 추가하여 두 점수를 함께 보고한다.</td><td>첫 문장으로 옮긴 &#x27;본고는 … 제안한다&#x27;가 되풀이되므로 구체 방안만 남긴다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-6">
+ <h3>6</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> reviews/round2/para.md 참조</p>
+  <p><b>흐름(수정 후)</b> reviews/round2/para.md 제안 구조대로 반영</p>
+  <p class="verdict"><b>판정</b> 쟁점 입장·불리한 결과 추가</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-6-P1"><code>6-P1</code></a> 골든은 구축 방식이 아닌 목적·버전별 검증 증거에 붙으며, 판정 모델이 정확하지 않으면 핵심셋을 키워야 한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-6-P1" data-types="AI상투 시제 용어통일" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="6-P1"> 반영</label>
+  <code>6-P1</code> <span class="badge edit">수정</span> <span class="badge pat">양괄식</span>
+  <button class="copy" data-copy="골든이라는 이름은 구축 방식이 아니라 명시된 목적과 버전에 대한 검증 증거에 붙어야 한다는 것이 본고의 결론이며, 세 질문에 대한 답은 다음과 같다. 첫째, 전문가 작성, 실사용 로그, LLM 합성, 적대적 수집은 성격이 다른 위험을 지며 어느 방식도 정확성, 현실성, 비용을 함께 만족하지 못하였고, RAG, 에이전트, 안전성, 다국어 평가셋은 정답의 형식과 채점 단위에 요건을 더한다. 둘째, 다섯 검증 측면은 따로 점검해야 한다. 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있었고, 통계적 충분성은 공개 벤치마크에서도 드물게 점검되었다. 셋째, 골든이라는 이름은 평가셋을 만든 방식이 아니라 명시된 목적과 버전에 대한 검증 증거에 붙어야 한다. 본고의 일곱 조건과 최소 판정 기준은 평가셋 감사의 점검표로, 2단 구성은 설계 지침으로 쓸 수 있다. 다만 판정 모델이 평가 대상보다 정확하지 않으면 보조셋의 이득은 정답 라벨 절반 이하의 절감에 그치고, 작은 차이를 판정하려면 검정력에 맞는 핵심셋이 필요하다. 제안의 유효성은 한국어 등 영어 이외의 평가셋과 실제 배포 결정에서 검증되어야 한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 골든은 구축 방식이 아닌 목적·버전별 검증 증거에 붙으며, 판정 모델이 정확하지 않으면 핵심셋을 키워야 한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p><del>본고는</del> 세 질문에 다음과 <del>같이 답하였다.</del> 첫째, 전문가 작성, 실사용 로그, LLM 합성, 적대적 수집은 성격이 다른 위험을 지며 어느 방식도 정확성, 현실성, 비용을 함께 만족하지 못하였고, RAG, 에이전트, 안전성, 다국어 평가셋은 정답의 형식과 채점 단위에 요건을 더한다. 둘째, 다섯 검증 측면은 따로 점검해야 <del>하였다.</del> 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있었고, 통계적 충분성은 공개 벤치마크에서도 드물게 점검되었다. 셋째, 골든이라는 이름은 평가셋을 만든 방식이 아니라 명시된 목적과 버전에 대한 검증 증거에 붙어야 한다. 본고의 일곱 조건과 최소 판정 기준은 평가셋 감사의 점검표로, 2단 구성은 설계 지침으로 쓸 수 있다. 다만 판정 모델이 평가 대상보다 <del>약하면</del> 보조셋의 이득은 정답 라벨 절반 이하의 절감에 그치고, 작은 차이를 판정하려면 검정력에 맞는 핵심셋이 필요하다. 제안의 유효성은 한국어 등 영어 이외의 평가셋과 실제 배포 결정에서 검증되어야 한다.</p></div><div><h5>수정 후</h5><p><ins>골든이라는 이름은 구축 방식이 아니라 명시된 목적과 버전에 대한 검증 증거에 붙어야 한다는 것이 본고의 결론이며,</ins> 세 질문에 <ins>대한 답은 </ins>다음과 <ins>같다.</ins> 첫째, 전문가 작성, 실사용 로그, LLM 합성, 적대적 수집은 성격이 다른 위험을 지며 어느 방식도 정확성, 현실성, 비용을 함께 만족하지 못하였고, RAG, 에이전트, 안전성, 다국어 평가셋은 정답의 형식과 채점 단위에 요건을 더한다. 둘째, 다섯 검증 측면은 따로 점검해야 <ins>한다.</ins> 한 측면의 검토를 거친 평가셋에서 다른 측면의 결함이 발견된 사례가 여럿 있었고, 통계적 충분성은 공개 벤치마크에서도 드물게 점검되었다. 셋째, 골든이라는 이름은 평가셋을 만든 방식이 아니라 명시된 목적과 버전에 대한 검증 증거에 붙어야 한다. 본고의 일곱 조건과 최소 판정 기준은 평가셋 감사의 점검표로, 2단 구성은 설계 지침으로 쓸 수 있다. 다만 판정 모델이 평가 대상보다 <ins>정확하지 않으면</ins> 보조셋의 이득은 정답 라벨 절반 이하의 절감에 그치고, 작은 차이를 판정하려면 검정력에 맞는 핵심셋이 필요하다. 제안의 유효성은 한국어 등 영어 이외의 평가셋과 실제 배포 결정에서 검증되어야 한다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">AI상투</span></td><td class=b>본고는 세 질문에 다음과 같이 답하였다.</td><td class=a>골든이라는 이름은 구축 방식이 아니라 명시된 목적과 버전에 대한 검증 증거에 붙어야 한다는 것이 본고의 결론이며, 세 질문에 대한 답은 다음과 같다.</td><td>첫 문장에 내용이 없고, 결론 양괄식 지시와 달리 본고의 핵심 주장은 문단 중간(셋째)에만 나온다.</td></tr><tr><td><span class="badge type">시제</span></td><td class=b>다섯 검증 측면은 따로 점검해야 하였다.</td><td class=a>다섯 검증 측면은 따로 점검해야 한다.</td><td>이 문장은 문헌 결과가 아니라 본고의 주장이므로 시제 규칙상 현재형이다. 근거 사례는 다음 문장이 과거형으로 전한다. 라운드 1 M3-5의 완화 표현(&#x27;따로 점검해야&#x27;)은 유지한다.</td></tr><tr><td><span class="badge type">용어통일</span></td><td class=b>판정 모델이 평가 대상보다 약하면</td><td class=a>판정 모델이 평가 대상보다 정확하지 않으면</td><td>4.2-P1과 dorner2025의 조건은 &#x27;no more accurate&#x27;로 동등한 경우를 포함한다. &#x27;약하면&#x27;은 조건을 좁히고 4.2와 용어가 다르다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-2">
+ <h3>2</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol></ol></details>
+ </div>
+ 
+<article class="para" id="p-2-P1" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="2-P1"> 반영</label>
+  <code>2-P1</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  
+ </header>
+ <p class="summary"><b>요약</b> 평가셋 문항은 네 구축 방식 또는 그 조합에서 나오며 표 1이 이를 비교한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>평가셋의 문항과 정답은 전문가 작성, 실사용 로그, LLM 합성, 적대적 수집 중 하나 또는 그 조합에서 나온다. 표 1은 각 방식과 애플리케이션별 요건의 장점, 위험, 보완책을 비교하며, 이 장은 그 근거를 검토한다.</p></div><div><h5>수정 후</h5><p class="muted">(삭제 또는 다른 문단에 병합 — 아래 근거 참고)</p></div></div>
+ 
+ 
+</article>
+</section>
+<section class="sec" id="s-표1">
+ <h3>표1</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-표1"><code>표1</code></a> 구축 방식과 애플리케이션별 요건의 장점, 위험, 보완책 비교.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-표1" data-types="근거부족" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="표1"> 반영</label>
+  <code>표1</code> <span class="badge edit">수정</span> <span class="badge pat">표</span>
+  <button class="copy" data-copy="적대적 수집 행 &#x27;주요 위험&#x27; 칸: 정답 모호성·오류">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 구축 방식과 애플리케이션별 요건의 장점, 위험, 보완책 비교.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p class=muted>—</p></div><div><h5>수정 후</h5><p><ins>적대적 수집 행 &#x27;주요 위험&#x27; 칸: 정답 모호성·오류</ins></p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">근거부족</span></td><td class=b>정답 모호성·오류 증가</td><td class=a>정답 모호성·오류</td><td>2.4-P1과 같은 문제다. ANLI 수치(r1-construction.md S15)는 다른 방식 대비 &#x27;증가&#x27;를 보여 주지 않는다. 다른 행의 위험 칸도 비교 없이 위험 항목만 나열한다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-3.1">
+ <h3>3.1</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-3.1-P1"><code>3.1-P1</code></a> 측정 대상이 의도한 능력과 일치해야 골든이며, 애플리케이션에서는 과제 정의서와 층별 문항 구성이 그 증거이다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-3.1-P1" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="3.1-P1"> 반영</label>
+  <code>3.1-P1</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="라벨이 정확하고 표본이 충분해도 평가셋이 의도한 능력을 측정하지 않으면 골든이 아니다. LLM 벤치마크 445개를 검토한 연구에서 측정 대상을 정의한 벤치마크는 78.2%였으나 그 정의의 47.8%는 합의되지 않은 개념이었다[@bean2025]. BetterBench는 설계부터 폐기까지 46개 모범 사례를 제시하였다[@reuel2024]. 애플리케이션 평가셋에서 측정 대상은 배포될 과제 자체이므로 과제 정의서와 층별 문항 구성이 이 측면의 증거가 된다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 측정 대상이 의도한 능력과 일치해야 골든이며, 애플리케이션에서는 과제 정의서와 층별 문항 구성이 그 증거이다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>라벨이 정확하고 표본이 충분해도 평가셋이 의도한 능력을 측정하지 않으면 골든이 아니다. LLM 벤치마크 445개를 검토한 연구에서 측정 대상을 정의한 벤치마크는 78.2%였으나 그 정의의 47.8%는 합의되지 않은 개념이었다[@bean2025]. BetterBench는 설계부터 폐기까지 46개 모범 사례를 제시하였다[@reuel2024]. 애플리케이션 평가셋에서 측정 대상은 배포될 과제 자체이므로 과제 정의서와 층별 문항 구성이 이 측면의 증거가 된다.</p></div><div><h5>수정 후</h5><p>라벨이 정확하고 표본이 충분해도 평가셋이 의도한 능력을 측정하지 않으면 골든이 아니다. LLM 벤치마크 445개를 검토한 연구에서 측정 대상을 정의한 벤치마크는 78.2%였으나 그 정의의 47.8%는 합의되지 않은 개념이었다[@bean2025]. BetterBench는 설계부터 폐기까지 46개 모범 사례를 제시하였다[@reuel2024]. 애플리케이션 평가셋에서 측정 대상은 배포될 과제 자체이므로 과제 정의서와 층별 문항 구성이 이 측면의 증거가 된다.</p></div></div>
+ 
+ 
+</article>
+</section>
+<section class="sec" id="s-3.2">
+ <h3>3.2</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-3.2-P1"><code>3.2-P1</code></a> 주석자 간 일치도는 기준값과 불일치 문항의 성격을 함께 보고해야 해석할 수 있고, 불일치를 신호로 보는 입장도 있다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-3.2-P1" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="3.2-P1"> 반영</label>
+  <code>3.2-P1</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="주석자 간 일치도는 라벨이 개인의 판단을 넘어 재현되는지를 측정하며, 기준값과 함께 불일치 문항의 성격을 보고해야 해석할 수 있다. Krippendorff는 α 0.800 이상을 요구하고, 잠정적 결론에는 0.667 이상을 하한으로 제시하였다[@krippendorff2004hcr]. Artstein과 Poesio는 단일 기준값이 모든 목적에 맞는지 의문을 제기하고, 범주 분포가 치우치면 관측 일치율이 0.96이어도 우연 보정 계수 K가 0.65에 그치는 예를 보였다[@artstein2008]. 자연어 추론의 불일치는 주석자를 늘리거나 맥락을 바꾸어도 남았고[@pavlick2019], 이런 변이를 제거할 잡음이 아니라 평가가 반영할 신호로 보아야 한다는 주장도 있다[@plank2022; @aroyo2015; @cabitza2023].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 주석자 간 일치도는 기준값과 불일치 문항의 성격을 함께 보고해야 해석할 수 있고, 불일치를 신호로 보는 입장도 있다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>주석자 간 일치도는 라벨이 개인의 판단을 넘어 재현되는지를 측정하며, 기준값과 함께 불일치 문항의 성격을 보고해야 해석할 수 있다. Krippendorff는 α 0.800 이상을 요구하고, 잠정적 결론에는 0.667 이상을 하한으로 제시하였다[@krippendorff2004hcr]. Artstein과 Poesio는 단일 기준값이 모든 목적에 맞는지 의문을 제기하고, 범주 분포가 치우치면 관측 일치율이 0.96이어도 우연 보정 계수 K가 0.65에 그치는 예를 보였다[@artstein2008]. 자연어 추론의 불일치는 주석자를 늘리거나 맥락을 바꾸어도 남았고[@pavlick2019], 이런 변이를 제거할 잡음이 아니라 평가가 반영할 신호로 보아야 한다는 주장도 있다[@plank2022; @aroyo2015; @cabitza2023].</p></div><div><h5>수정 후</h5><p>주석자 간 일치도는 라벨이 개인의 판단을 넘어 재현되는지를 측정하며, 기준값과 함께 불일치 문항의 성격을 보고해야 해석할 수 있다. Krippendorff는 α 0.800 이상을 요구하고, 잠정적 결론에는 0.667 이상을 하한으로 제시하였다[@krippendorff2004hcr]. Artstein과 Poesio는 단일 기준값이 모든 목적에 맞는지 의문을 제기하고, 범주 분포가 치우치면 관측 일치율이 0.96이어도 우연 보정 계수 K가 0.65에 그치는 예를 보였다[@artstein2008]. 자연어 추론의 불일치는 주석자를 늘리거나 맥락을 바꾸어도 남았고[@pavlick2019], 이런 변이를 제거할 잡음이 아니라 평가가 반영할 신호로 보아야 한다는 주장도 있다[@plank2022; @aroyo2015; @cabitza2023].</p></div></div>
+ 
+ 
+</article>
+</section>
+<section class="sec" id="s-표 2">
+ <h3>표 2</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-표 2"><code>표 2</code></a> 일곱 조건의 운영 점검·최소 판정 기준·근거·기존 기준 대응을 정리한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-표 2" data-types="논리연결" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="표 2"> 반영</label>
+  <code>표 2</code> <span class="badge edit">수정</span> <span class="badge pat">표</span>
+  <button class="copy" data-copy="조건 / 운영 점검과 남길 증거 / 최소 판정 기준(본고 제안) / 문헌 근거 / 기존 기준 대응 | C1 구성 타당도 / 과제 정의서, 배포 과제·위험 영역별 층과 층별 문항 수 / 정의서가 있고, 결론을 내릴 층마다 신뢰구간을 보고할 수 있는 문항 수 / 정의한 벤치마크의 47.8%가 합의되지 않은 개념[@bean2025]; 층별 성능 차이[@yang2024] / BD 1·4; BB 설계; Bean 1–4·8 | C2 라벨 신뢰도 / 다중 주석 표본, 우연 보정 일치도, 중재 기록, 비집계 라벨 / α≥0.800, 잠정 결론은 α≥0.667. α 미달 시 불일치가 큰 문항은 분포형으로 분류하거나 제외 / 기준값[@krippendorff2004hcr]; 단일 기준값의 한계[@artstein2008] / BD 2 | C3 오류 감사 / 모델 불일치 재검토와 무작위 표본 감사, 수정·제거 목록 / 무작위 표본으로 추정한 오류율의 95% 신뢰구간 상한이 탐지할 차이보다 작음 / 평가셋 10종 평균 오류율 ≥3.3%[@northcutt2021]; 감사 결과는 하한[@vendrow2025] / BD 2; Bean 7 | C4 통계적 충분성 / 최소 탐지 차이, 검정력 계산, 군집·쌍체 신뢰구간 / 목표 차이를 검정력 80%로 탐지하는 문항 수 / 예시 가정에서 3%p 탐지에 약 1,000문항[@miller2024] / BD 3; BB 구현; Bean 6 | C5 오염·재현성 통제 / 비공개 분할, 공개 시점, 카나리아, 오염 검정, 실행 환경·코드 고정 / 비공개 분할 또는 학습 시점 이후 문항이 있고, 재실행 점수가 신뢰구간 안에 듦 / GSM1k에서 최대 8% 하락[@zhang2024]; 순서 검정[@oren2023] / Bean 5 | C6 문서화 / 구축 출처, 선별 기준, 주석자, 라이선스, 한계 / 데이터시트의 필수 항목과 기계 판독 메타데이터 / 데이터시트·데이터 카드[@gebru2021; @pushkarna2022]; Croissant-RAI[@jain2024rai] / BB 문서화 | C7 유지·버전 / 버전 식별자, 정오표, 재감사 주기, 채점 기준 동시 버전, 폐기 기준 / 버전마다 C1–C6 증거를 다시 기록 / 한 번 만들면 영원히 유효하다는 신화[@aroyo2015]; 기준 표류[@shankar2024] / BB 유지·폐기">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 일곱 조건의 운영 점검·최소 판정 기준·근거·기존 기준 대응을 정리한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p class=muted>—</p></div><div><h5>수정 후</h5><p><ins>조건 / 운영 점검과 남길 증거 / 최소 판정 기준(본고 제안) / 문헌 근거 / 기존 기준 대응 | C1 구성 타당도 / 과제 정의서, 배포 과제·위험 영역별 층과 층별 문항 수 / 정의서가 있고, 결론을 내릴 층마다 신뢰구간을 보고할 수 있는 문항 수 / 정의한 벤치마크의 47.8%가 합의되지 않은 개념[@bean2025]; 층별 성능 차이[@yang2024] / BD 1·4; BB 설계; Bean 1–4·8 | C2 라벨 신뢰도 / 다중 주석 표본, 우연 보정 일치도, 중재 기록, 비집계 라벨 / α≥0.800, 잠정 결론은 α≥0.667. α 미달 시 불일치가 큰 문항은 분포형으로 분류하거나 제외 / 기준값[@krippendorff2004hcr]; 단일 기준값의 한계[@artstein2008] / BD 2 | C3 오류 감사 / 모델 불일치 재검토와 무작위 표본 감사, 수정·제거 목록 / 무작위 표본으로 추정한 오류율의 95% 신뢰구간 상한이 탐지할 차이보다 작음 / 평가셋 10종 평균 오류율 ≥3.3%[@northcutt2021]; 감사 결과는 하한[@vendrow2025] / BD 2; Bean 7 | C4 통계적 충분성 / 최소 탐지 차이, 검정력 계산, 군집·쌍체 신뢰구간 / 목표 차이를 검정력 80%로 탐지하는 문항 수 / 예시 가정에서 3%p 탐지에 약 1,000문항[@miller2024] / BD 3; BB 구현; Bean 6 | C5 오염·재현성 통제 / 비공개 분할, 공개 시점, 카나리아, 오염 검정, 실행 환경·코드 고정 / 비공개 분할 또는 학습 시점 이후 문항이 있고, 재실행 점수가 신뢰구간 안에 듦 / GSM1k에서 최대 8% 하락[@zhang2024]; 순서 검정[@oren2023] / Bean 5 | C6 문서화 / 구축 출처, 선별 기준, 주석자, 라이선스, 한계 / 데이터시트의 필수 항목과 기계 판독 메타데이터 / 데이터시트·데이터 카드[@gebru2021; @pushkarna2022]; Croissant-RAI[@jain2024rai] / BB 문서화 | C7 유지·버전 / 버전 식별자, 정오표, 재감사 주기, 채점 기준 동시 버전, 폐기 기준 / 버전마다 C1–C6 증거를 다시 기록 / 한 번 만들면 영원히 유효하다는 신화[@aroyo2015]; 기준 표류[@shankar2024] / BB 유지·폐기</ins></p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">논리연결</span></td><td class=b>미달 문항은 분포형으로 분류하거나 제외</td><td class=a>α 미달 시 불일치가 큰 문항은 분포형으로 분류하거나 제외</td><td>Krippendorff α는 주석 집합 전체에서 계산하는 값이다(krippendorff2004, r2 §2b). 개별 문항의 &#x27;α 미달&#x27;은 정의되지 않으므로 판정 대상을 문항 수준의 불일치로 바꾼다.</td></tr></tbody></table>
+ <div class="check"><b>저자 확인</b><ul><li>Bean 권고 번호(1–4·8, 5, 6, 7)의 번호별 내용은 research/ 어디에도 없다. 원문 대조가 필요하다.</li><li>C5의 &#x27;GSM1k에서 최대 8% 하락&#x27;이 절대 %p인지 상대 %인지 research(r1-construction S19 &#x27;up to 8%&#x27;)로 판정할 수 없다. 원문에서 확인해야 한다.</li></ul></div>
+</article>
+</section>
+<section class="sec" id="s-4.2">
+ <h3>4.2</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-4.2-P1"><code>4.2-P1</code></a> 2단 구성의 근거는 PPI이며 판정 모델이 정확하지 않으면 절감이 두 배를 넘기 어렵다.</li><li><a href="#p-4.2-P2"><code>4.2-P2</code></a> 핵심셋 규모는 용도별로 다르며 쌍체 분산을 예비 실행으로 추정해 정한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-4.2-P1" data-types="과잉일반화" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="4.2-P1"> 반영</label>
+  <code>4.2-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="본고는 정의의 적용 방안으로, 감사를 거친 골든 핵심셋이 합성·로그 기반 은 표준 보조셋의 자동 판정을 보정하고 보조셋이 회귀 탐지와 범위 확대를 맡는 2단 구성을 검토한다. 그 통계적 근거는 예측 기반 추론(prediction-powered inference, PPI)이다. PPI는 소규모 정답 라벨로 대규모 예측의 편향을 보정하여 유효한 신뢰구간을 얻는다[@ppi2023]. 이를 모델 평가에 적용한 AutoEval은 GPT-4 실험에서 사람 라벨의 유효 표본 크기를 최대 50% 늘렸고[@boyeau2024], ARES도 같은 방식으로 판정 모델을 보정하였다[@saadfalcon2024]. 그러나 Dorner 등은 판정 모델이 평가 대상 모델보다 정확하지 않으면 어떤 편향 보정도 필요한 정답 라벨을 절반 넘게 줄이지 못함을 보였다[@dorner2025]. 최신 모델 실험에서도 층화 PPI가 표준 층화 표집보다 표본 효율을 두 배 넘게 높인 경우는 드물었다[@dorner2025].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 2단 구성의 근거는 PPI이며 판정 모델이 정확하지 않으면 절감이 두 배를 넘기 어렵다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>본고는 정의의 적용 방안으로, 감사를 거친 골든 핵심셋이 합성·로그 기반 은 표준 보조셋의 자동 판정을 보정하고 보조셋이 회귀 탐지와 범위 확대를 맡는 2단 구성을 검토한다. 그 통계적 근거는 예측 기반 추론(prediction-powered inference, PPI)이다. PPI는 소규모 정답 라벨로 대규모 예측의 편향을 보정하여 유효한 신뢰구간을 얻는다[@ppi2023]. 이를 모델 평가에 적용한 AutoEval은 GPT-4 실험에서 사람 라벨의 유효 표본 크기를 최대 50% 늘렸고[@boyeau2024], ARES도 같은 방식으로 판정 모델을 보정하였다[@saadfalcon2024]. 그러나 Dorner 등은 판정 모델이 평가 대상 모델보다 정확하지 않으면 어떤 편향 보정도 필요한 정답 라벨을 절반 넘게 줄이지 못함을 보였다[@dorner2025]. 최신 <del>모델을</del> <del>비교할</del> <del>때</del> <del>보조셋은</del> <del>핵심셋을</del> <del>최대</del> 두 배 <del>정도</del> <del>대신할</del> <del>뿐이다.</del></p></div><div><h5>수정 후</h5><p>본고는 정의의 적용 방안으로, 감사를 거친 골든 핵심셋이 합성·로그 기반 은 표준 보조셋의 자동 판정을 보정하고 보조셋이 회귀 탐지와 범위 확대를 맡는 2단 구성을 검토한다. 그 통계적 근거는 예측 기반 추론(prediction-powered inference, PPI)이다. PPI는 소규모 정답 라벨로 대규모 예측의 편향을 보정하여 유효한 신뢰구간을 얻는다[@ppi2023]. 이를 모델 평가에 적용한 AutoEval은 GPT-4 실험에서 사람 라벨의 유효 표본 크기를 최대 50% 늘렸고[@boyeau2024], ARES도 같은 방식으로 판정 모델을 보정하였다[@saadfalcon2024]. 그러나 Dorner 등은 판정 모델이 평가 대상 모델보다 정확하지 않으면 어떤 편향 보정도 필요한 정답 라벨을 절반 넘게 줄이지 못함을 보였다[@dorner2025]. 최신 <ins>모델</ins> <ins>실험에서도</ins> <ins>층화</ins> <ins>PPI가</ins> <ins>표준</ins> <ins>층화 표집보다 표본 효율을</ins> 두 배 <ins>넘게</ins> <ins>높인</ins> <ins>경우는 드물었다[@dorner2025].</ins></p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">과잉일반화</span></td><td class=b>최신 모델을 비교할 때 보조셋은 핵심셋을 최대 두 배 정도 대신할 뿐이다.</td><td class=a>최신 모델 실험에서도 층화 PPI가 표준 층화 표집보다 표본 효율을 두 배 넘게 높인 경우는 드물었다[@dorner2025].</td><td>원문은 인용 없이 현재형으로 단정한다. Dorner 등의 정리는 &#x27;판정 모델이 평가 대상보다 정확하지 않을 때&#x27;라는 조건이 붙은 결과이고, 실험 결과는 &#x27;rarely improves sample efficiency by more than a factor of two&#x27;이다(r3 §3). &#x27;핵심셋을 두 배 대신&#x27;도 무엇이 두 배인지 불분명해 표본 효율로 명시한다.</td></tr></tbody></table>
+ 
+</article>
+<article class="para" id="p-4.2-P2" data-types="" data-status="유지">
+ <header>
+  <label class="done"><input type="checkbox" data-key="4.2-P2"> 반영</label>
+  <code>4.2-P2</code> <span class="badge keep">유지</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="핵심셋의 규모는 용도에 따라 다르다. 판정 모델 보정에는 ARES 수준의 150–300문항에서 출발할 수 있으나, 판정 모델을 승인하려면 일치율과 함께 점수 수준의 차이를 측정해야 한다. MT-Bench와 Chatbot Arena에서 GPT-4 판정의 사람 일치율은 80%를 넘었지만[@zheng2023], TriviaQA 400문항 설정에서 정렬도가 가장 높은 판정 모델(GPT-4 Turbo, Llama-3 70B)도 사람 점수와 최대 5점, 일치율이 높은 다른 판정 모델은 10–20점까지 달랐다[@thakur2025]. 판정 모델의 사람 일치도는 평가 속성과 주석자 전문성에 따라 크게 달랐고[@bavaresco2025], 불균형한 라벨에서는 정밀도와 재현율을 따로 보아야 한다[@husain-evals]. 모델 선택에 쓰려면 C4로 규모를 정한다. 같은 n문항에서 두 모델을 쌍체 비교할 때 문항별 점수 차의 분산은 σ&lt;sub&gt;A&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;+σ&lt;sub&gt;B&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;−2ρσ&lt;sub&gt;A&lt;/sub&gt;σ&lt;sub&gt;B&lt;/sub&gt;이고 필요한 문항 수는 대략 (z&lt;sub&gt;α/2&lt;/sub&gt;+z&lt;sub&gt;β&lt;/sub&gt;)&lt;sup&gt;2&lt;/sup&gt;×(이 분산)/δ&lt;sup&gt;2&lt;/sup&gt;이므로, 두 모델의 문항별 정오가 강하게 상관할수록 n은 줄어든다. Miller의 예시에서 쌍체 차이의 분산을 1/9 대신 1/36으로 두면 3%p 탐지에 필요한 문항은 약 969개에서 약 242개로 줄어든다(본고 계산). 따라서 1,000문항은 고정된 기준이 아니며, 핵심셋을 설계할 때는 예비 실행으로 이 분산을 추정해야 한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 핵심셋 규모는 용도별로 다르며 쌍체 분산을 예비 실행으로 추정해 정한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>핵심셋의 규모는 용도에 따라 다르다. 판정 모델 보정에는 ARES 수준의 150–300문항에서 출발할 수 있으나, 판정 모델을 승인하려면 일치율과 함께 점수 수준의 차이를 측정해야 한다. MT-Bench와 Chatbot Arena에서 GPT-4 판정의 사람 일치율은 80%를 넘었지만[@zheng2023], TriviaQA 400문항 설정에서 정렬도가 가장 높은 판정 모델(GPT-4 Turbo, Llama-3 70B)도 사람 점수와 최대 5점, 일치율이 높은 다른 판정 모델은 10–20점까지 달랐다[@thakur2025]. 판정 모델의 사람 일치도는 평가 속성과 주석자 전문성에 따라 크게 달랐고[@bavaresco2025], 불균형한 라벨에서는 정밀도와 재현율을 따로 보아야 한다[@husain-evals]. 모델 선택에 쓰려면 C4로 규모를 정한다. 같은 n문항에서 두 모델을 쌍체 비교할 때 문항별 점수 차의 분산은 σ&lt;sub&gt;A&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;+σ&lt;sub&gt;B&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;−2ρσ&lt;sub&gt;A&lt;/sub&gt;σ&lt;sub&gt;B&lt;/sub&gt;이고 필요한 문항 수는 대략 (z&lt;sub&gt;α/2&lt;/sub&gt;+z&lt;sub&gt;β&lt;/sub&gt;)&lt;sup&gt;2&lt;/sup&gt;×(이 분산)/δ&lt;sup&gt;2&lt;/sup&gt;이므로, 두 모델의 문항별 정오가 강하게 상관할수록 n은 줄어든다. Miller의 예시에서 쌍체 차이의 분산을 1/9 대신 1/36으로 두면 3%p 탐지에 필요한 문항은 약 969개에서 약 242개로 줄어든다(본고 계산). 따라서 1,000문항은 고정된 기준이 아니며, 핵심셋을 설계할 때는 예비 실행으로 이 분산을 추정해야 한다.</p></div><div><h5>수정 후</h5><p>핵심셋의 규모는 용도에 따라 다르다. 판정 모델 보정에는 ARES 수준의 150–300문항에서 출발할 수 있으나, 판정 모델을 승인하려면 일치율과 함께 점수 수준의 차이를 측정해야 한다. MT-Bench와 Chatbot Arena에서 GPT-4 판정의 사람 일치율은 80%를 넘었지만[@zheng2023], TriviaQA 400문항 설정에서 정렬도가 가장 높은 판정 모델(GPT-4 Turbo, Llama-3 70B)도 사람 점수와 최대 5점, 일치율이 높은 다른 판정 모델은 10–20점까지 달랐다[@thakur2025]. 판정 모델의 사람 일치도는 평가 속성과 주석자 전문성에 따라 크게 달랐고[@bavaresco2025], 불균형한 라벨에서는 정밀도와 재현율을 따로 보아야 한다[@husain-evals]. 모델 선택에 쓰려면 C4로 규모를 정한다. 같은 n문항에서 두 모델을 쌍체 비교할 때 문항별 점수 차의 분산은 σ&lt;sub&gt;A&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;+σ&lt;sub&gt;B&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;−2ρσ&lt;sub&gt;A&lt;/sub&gt;σ&lt;sub&gt;B&lt;/sub&gt;이고 필요한 문항 수는 대략 (z&lt;sub&gt;α/2&lt;/sub&gt;+z&lt;sub&gt;β&lt;/sub&gt;)&lt;sup&gt;2&lt;/sup&gt;×(이 분산)/δ&lt;sup&gt;2&lt;/sup&gt;이므로, 두 모델의 문항별 정오가 강하게 상관할수록 n은 줄어든다. Miller의 예시에서 쌍체 차이의 분산을 1/9 대신 1/36으로 두면 3%p 탐지에 필요한 문항은 약 969개에서 약 242개로 줄어든다(본고 계산). 따라서 1,000문항은 고정된 기준이 아니며, 핵심셋을 설계할 때는 예비 실행으로 이 분산을 추정해야 한다.</p></div></div>
+ 
+ <div class="check"><b>저자 확인</b><ul><li>재계산 결과 수치가 맞다. (1.960+0.842)²=7.849이고, ×(1/9)/0.03²=969.0, ×(1/36)/0.03²=242.2이다. 정답률 50%에서 ω² 1/9와 1/36은 각각 ρ≈0.78과 ρ≈0.94에 해당한다(σ_A=σ_B=0.5). 이 값을 함께 적으면 가정의 의미가 드러난다(선택).</li></ul></div>
+</article>
+</section>
+<section class="sec" id="s-5.2">
+ <h3>5.2</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-5.2-P1"><code>5.2-P1</code></a> 배포 영향, RAG 문서 갱신, 한국어, 조건의 실증이라는 네 공백이 남아 있다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-5.2-P1" data-types="근거부족" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="5.2-P1"> 반영</label>
+  <code>5.2-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식 열거</span>
+  <button class="copy" data-copy="네 가지 공백이 남아 있다. 첫째, 평가셋 오류가 실제 배포 결정을 얼마나 바꾸는지 정량화한 연구는 본고의 검색 범위에서 공개 벤치마크의 순위 역전과 차이 은폐 사례[@northcutt2021; @gsm8kplatinum]를 넘지 못하였다. 사내 평가셋에 오류를 주입하여 모델 선택이 바뀌는 오류율을 측정하는 연구가 필요하다. 둘째, RAG 지식 베이스 문서가 갱신될 때 정답과 근거 라벨을 함께 갱신하는 절차는 확인하지 못하였다. 질의 수준의 시간 변동 층화[@yang2024]를 넘어 문서 버전과 정답 버전을 연결하는 방법이 설계되어야 한다. 셋째, 한국어에서는 원어 시험 기반 구축과 공개 후 오류 수정 사례가 있으나[@son2025kmmlu], 한국어 RAG·에이전트 평가셋에서 일치도 기준값과 필요 문항 수를 실증한 연구는 본고의 검색 범위에서 드물었다. 넷째, 본고의 일곱 조건과 최소 판정 기준은 문헌 종합에서 도출한 제안이므로, 여러 평가셋에 적용하여 조건 충족과 평가 결론의 안정성 사이의 관계를 실증해야 한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 배포 영향, RAG 문서 갱신, 한국어, 조건의 실증이라는 네 공백이 남아 있다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>네 가지 공백이 남아 있다. 첫째, 평가셋 오류가 실제 배포 결정을 얼마나 바꾸는지 정량화한 연구는 본고의 검색 범위에서 공개 벤치마크의 순위 역전과 차이 은폐 사례[@northcutt2021; @gsm8kplatinum]를 넘지 못하였다. 사내 평가셋에 오류를 주입하여 모델 선택이 바뀌는 오류율을 측정하는 연구가 필요하다. 둘째, RAG 지식 베이스 문서가 갱신될 때 정답과 근거 라벨을 함께 갱신하는 절차는 확인하지 못하였다. 질의 수준의 시간 변동 층화[@yang2024]를 넘어 문서 버전과 정답 버전을 연결하는 방법이 설계되어야 한다. 셋째, 한국어에서는 원어 시험 기반 구축과 공개 후 오류 수정 사례가 있으나[@son2025kmmlu], 한국어 RAG·에이전트 평가셋에서 일치도 기준값과 필요 문항 수를 실증한 연구는 <del>드물다.</del> 넷째, 본고의 일곱 조건과 최소 판정 기준은 문헌 종합에서 도출한 제안이므로, 여러 평가셋에 적용하여 조건 충족과 평가 결론의 안정성 사이의 관계를 실증해야 한다.</p></div><div><h5>수정 후</h5><p>네 가지 공백이 남아 있다. 첫째, 평가셋 오류가 실제 배포 결정을 얼마나 바꾸는지 정량화한 연구는 본고의 검색 범위에서 공개 벤치마크의 순위 역전과 차이 은폐 사례[@northcutt2021; @gsm8kplatinum]를 넘지 못하였다. 사내 평가셋에 오류를 주입하여 모델 선택이 바뀌는 오류율을 측정하는 연구가 필요하다. 둘째, RAG 지식 베이스 문서가 갱신될 때 정답과 근거 라벨을 함께 갱신하는 절차는 확인하지 못하였다. 질의 수준의 시간 변동 층화[@yang2024]를 넘어 문서 버전과 정답 버전을 연결하는 방법이 설계되어야 한다. 셋째, 한국어에서는 원어 시험 기반 구축과 공개 후 오류 수정 사례가 있으나[@son2025kmmlu], 한국어 RAG·에이전트 평가셋에서 일치도 기준값과 필요 문항 수를 실증한 연구는 <ins>본고의 검색 범위에서 드물었다.</ins> 넷째, 본고의 일곱 조건과 최소 판정 기준은 문헌 종합에서 도출한 제안이므로, 여러 평가셋에 적용하여 조건 충족과 평가 결론의 안정성 사이의 관계를 실증해야 한다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">근거부족</span></td><td class=b>필요 문항 수를 실증한 연구는 드물다.</td><td class=a>필요 문항 수를 실증한 연구는 본고의 검색 범위에서 드물었다.</td><td>첫째 공백은 &#x27;본고의 검색 범위에서&#x27;로 한정했는데 셋째 공백은 문헌 전체에 대한 현재형 단정으로 되어 있다. 체계적 검색이 아닌 서술형 종합이다(5.3-P1).</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-5.3">
+ <h3>5.3</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-5.3-P1"><code>5.3-P1</code></a> 서술형 종합의 누락 가능성과 회색 문헌 사용 범위·변동성을 밝힌다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-5.3-P1" data-types="사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="5.3-P1"> 반영</label>
+  <code>5.3-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="본고는 서술형 종합이므로 누락된 문헌이 있을 수 있다. 문헌 검색과 요약에는 LLM 에이전트를 활용하였고, 원문 접근이 막힌 일부 출처는 웹 아카이브 사본으로 확인하였다. 회색 문헌은 실무 관행, 사건 기록, 공개 감사 결과의 근거로 썼으나 개정·폐기될 수 있으며, 실제로 본고가 인용한 OpenAI Evals 문서는 2026년 11월 30일 플랫폼 종료를 공지하고 있다[@openai-evals].">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 서술형 종합의 누락 가능성과 회색 문헌 사용 범위·변동성을 밝힌다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>본고는 서술형 종합이므로 누락된 문헌이 있을 수 있다. 문헌 검색과 요약에는 LLM 에이전트를 활용하였고, 원문 접근이 막힌 일부 출처는 웹 아카이브 사본으로 확인하였다. 회색 문헌은 실무 <del>관행과</del> 사건 <del>기록의</del> <del>근거로만</del> 썼으나 개정·폐기될 수 있으며, 실제로 본고가 인용한 OpenAI Evals 문서는 2026년 11월 30일 플랫폼 종료를 공지하고 있다[@openai-evals].</p></div><div><h5>수정 후</h5><p>본고는 서술형 종합이므로 누락된 문헌이 있을 수 있다. 문헌 검색과 요약에는 LLM 에이전트를 활용하였고, 원문 접근이 막힌 일부 출처는 웹 아카이브 사본으로 확인하였다. 회색 문헌은 실무 <ins>관행,</ins> 사건 <ins>기록,</ins> <ins>공개 감사 결과의 근거로</ins> 썼으나 개정·폐기될 수 있으며, 실제로 본고가 인용한 OpenAI Evals 문서는 2026년 11월 30일 플랫폼 종료를 공지하고 있다[@openai-evals].</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">사실오류</span></td><td class=b>회색 문헌은 실무 관행과 사건 기록의 근거로만 썼으나</td><td class=a>회색 문헌은 실무 관행, 사건 기록, 공개 감사 결과의 근거로 썼으나</td><td>본문은 회색 문헌을 정량 감사 결과의 근거로도 쓴다. 3-P1의 FutureHouse 29±3.7%와 OpenAI 2026 59.4%, 3.3-P1의 GSM8K-Platinum 블로그 219·110·10문항, 3.5-P1의 Epoch AI 16문항 제외가 그 예이다. 따라서 &#x27;사건 기록의 근거로만&#x27;은 실제 사용 범위보다 좁다.</td></tr></tbody></table>
+ 
+</article>
+</section>
+<section class="sec" id="s-데이터 가용성">
+ <h3>데이터 가용성</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-데이터 가용성-P1"><code>데이터 가용성-P1</code></a> 새 데이터는 없고 검토 기록을 보충 자료로 제공한다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-데이터 가용성-P1" data-types="근거부족" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="데이터 가용성-P1"> 반영</label>
+  <code>데이터 가용성-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="본고는 새로운 데이터를 생성하지 않았다. 검색 주제, 출처별 확인 기록, 원문 대조 결과, 퇴고와 심사 기록은 보충 자료([확인: 저장소 이름과 URL 또는 DOI])로 제공한다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> 새 데이터는 없고 검토 기록을 보충 자료로 제공한다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>본고는 새로운 데이터를 생성하지 않았다. 검색 주제, 출처별 확인 기록, 원문 대조 결과, 퇴고와 심사 기록은 보충 <del>자료로</del> 제공한다.</p></div><div><h5>수정 후</h5><p>본고는 새로운 데이터를 생성하지 않았다. 검색 주제, 출처별 확인 기록, 원문 대조 결과, 퇴고와 심사 기록은 보충 <ins>자료([확인: 저장소 이름과 URL 또는 DOI])로</ins> 제공한다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">근거부족</span></td><td class=b>보충 자료로 제공한다.</td><td class=a>보충 자료([확인: 저장소 이름과 URL 또는 DOI])로 제공한다.</td><td>자료의 위치가 없어 독자가 가용성을 확인할 수 없다. 이 기록은 원고 안에서 research/r1–r3와 reviews/에 해당하는데, 공개 위치는 원고에 명시되지 않았다.</td></tr></tbody></table>
+ <div class="check"><b>저자 확인</b><ul><li>보충 자료의 공개 위치(저장소, DOI)를 확인해야 한다.</li></ul></div>
+</article>
+</section>
+<section class="sec" id="s-생성형 AI 사용 고지">
+ <h3>생성형 AI 사용 고지</h3>
+ <div class="flow">
+  <p><b>문단 구성 원칙</b> -</p>
+  <p><b>흐름(수정 전)</b> -</p>
+  <p><b>흐름(수정 후)</b> -</p>
+  <p class="verdict"><b>판정</b> -</p>
+  <details><summary>문단별 한 문장 요약 → 절 안의 논증 사슬</summary><ol><li><a href="#p-생성형 AI 사용 고지-P1"><code>생성형 AI 사용 고지-P1</code></a> Claude 사용 범위와 수치 확인 방식을 밝힌다.</li></ol></details>
+ </div>
+ 
+<article class="para" id="p-생성형 AI 사용 고지-P1" data-types="사실오류" data-status="수정">
+ <header>
+  <label class="done"><input type="checkbox" data-key="생성형 AI 사용 고지-P1"> 반영</label>
+  <code>생성형 AI 사용 고지-P1</code> <span class="badge edit">수정</span> <span class="badge pat">두괄식</span>
+  <button class="copy" data-copy="저자는 문헌 검색과 요약, 출처 확인, 초안 작성과 퇴고에 Anthropic Claude(Claude Code, claude-opus-5-5)를 사용하였다. 인용 문헌의 수치는 Claude 에이전트가 원문, 초록 또는 웹 아카이브 사본과 대조하였고, &#x27;본고 계산&#x27;으로 표시한 수치(4.1, 4.2)는 산식에 따라 재계산하였으며[확인: 재계산 수행자], 저자가 그 기록을 검토하였다. 최종 내용의 책임은 저자에게 있다.">수정 후 복사</button>
+ </header>
+ <p class="summary"><b>요약</b> Claude 사용 범위와 수치 확인 방식을 밝힌다.</p>
+ <div class="cmp"><div><h5>수정 전</h5><p>저자는 문헌 <del>검색,</del> 출처 확인, 초안 작성과 퇴고에 Anthropic Claude(Claude Code, claude-opus-5-5)를 사용하였다. <del>본문의</del> 수치는 Claude 에이전트가<del> 인용 문헌의</del> 원문, 초록 또는 웹 아카이브 사본과 <del>대조하였고</del> 저자가 그 기록을 검토하였다. 최종 내용의 책임은 저자에게 있다.</p></div><div><h5>수정 후</h5><p>저자는 문헌 <ins>검색과 요약,</ins> 출처 확인, 초안 작성과 퇴고에 Anthropic Claude(Claude Code, claude-opus-5-5)를 사용하였다. <ins>인용 문헌의</ins> 수치는 Claude 에이전트가 원문, 초록 또는 웹 아카이브 사본과 <ins>대조하였고, &#x27;본고 계산&#x27;으로 표시한 수치(4.1, 4.2)는 산식에 따라 재계산하였으며[확인: 재계산 수행자],</ins> 저자가 그 기록을 검토하였다. 최종 내용의 책임은 저자에게 있다.</p></div></div>
+ <table class="edits"><thead><tr><th>유형</th><th>수정 전</th><th>수정 후</th><th>왜 바꾸는가</th></tr></thead><tbody><tr><td><span class="badge type">사실오류</span></td><td class=b>저자는 문헌 검색, 출처 확인, 초안 작성과 퇴고에</td><td class=a>저자는 문헌 검색과 요약, 출처 확인, 초안 작성과 퇴고에</td><td>5.3-P1은 &#x27;문헌 검색과 요약에는 LLM 에이전트를 활용하였고&#x27;라고 쓰는데, 고지에는 요약이 빠져 있다.</td></tr><tr><td><span class="badge type">사실오류</span></td><td class=b>본문의 수치는 Claude 에이전트가 인용 문헌의 원문, 초록 또는 웹 아카이브 사본과 대조하였고 저자가 그 기록을 검토하였다.</td><td class=a>인용 문헌의 수치는 Claude 에이전트가 원문, 초록 또는 웹 아카이브 사본과 대조하였고, &#x27;본고 계산&#x27;으로 표시한 수치(4.1, 4.2)는 산식에 따라 재계산하였으며[확인: 재계산 수행자], 저자가 그 기록을 검토하였다.</td><td>4.1-P5의 0.76%p와 4.2-P2의 969→242문항은 본고 계산이라 문헌 대조의 대상이 아니다. 따라서 &#x27;본문의 수치&#x27;를 모두 문헌과 대조했다는 서술은 실제와 다르다.</td></tr></tbody></table>
+ <div class="check"><b>저자 확인</b><ul><li>본고 계산 수치를 누가 재계산했는지(저자, 에이전트) 확인해야 한다.</li></ul></div>
+</article>
+</section>
+<h2 id=captions>캡션·표</h2><table class=grid><thead><tr><th>대상</th><th>수정 전</th><th>수정 후</th><th>왜</th></tr></thead><tbody></tbody></table><h2 id=refs>참고문헌</h2><table class=grid><thead><tr><th>번호</th><th>문제</th><th>수정</th></tr></thead><tbody></tbody></table>
+<h2 id=checks>저자 확인 사항</h2><ol><li>HealthBench 주제별 범위 → r4 확인(7개 주제)</li><li>GSM1k 8%는 %p → r4 확인</li><li>HLE 15.4%는 출시 전 감사 → r4 확인</li><li>SimpleQA 일치도·데이터 카드 없음 → r4 확인</li><li>Bean 권고 번호 → r4 확인</li><li>재계산 수행자 → 고지에 명시</li></ol><h2 id=facts>사실 대조 기록</h2><table class=grid><thead><tr><th>대조 항목</th><th>결과</th><th>출처</th></tr></thead><tbody><tr><td>SimpleQA 최소 층 135, CI 반폭 ±8.4%p</td><td>본고 계산</td><td>1.96×√(0.25/135)</td></tr><tr><td>오류율 상한 3.8%</td><td>본고 계산</td><td>0.028+1.96×√(0.028×0.972/1000)</td></tr><tr><td>MDE 3.0%p</td><td>본고 계산</td><td>2.802×√(0.5/4326)</td></tr></tbody></table>
+</main></div><button id=theme>테마</button><script>
+const K='toego:'+document.title;let st={};try{st=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}};
+document.querySelectorAll('.done input').forEach(cb=>{const id=cb.dataset.key;cb.checked=!!st[id];
+ const art=cb.closest('.para');art.classList.toggle('isdone',cb.checked);
+ cb.onchange=()=>{st[id]=cb.checked;save();art.classList.toggle('isdone',cb.checked);count()}});
+function count(){const n=document.querySelectorAll('.done input:checked').length,t=document.querySelectorAll('.done input').length;
+ document.getElementById('prog').textContent=`반영 ${n}/${t}`}
+document.querySelectorAll('button.copy').forEach(b=>b.onclick=async()=>{const t=b.dataset.copy;
+ try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}
+ b.classList.add('ok');b.textContent='복사됨';setTimeout(()=>{b.classList.remove('ok');b.textContent=b.dataset.label||'수정 후 복사'},1200)});
+let on=new Set(),hideDone=false,onlyChanged=false;
+function apply(){document.querySelectorAll('.para').forEach(p=>{const ts=p.dataset.types.split(' ');
+ let v=on.size===0||ts.some(t=>on.has(t));if(hideDone&&p.classList.contains('isdone'))v=false;
+ if(onlyChanged&&p.dataset.status.startsWith('유지'))v=false;p.style.display=v?'':'none'})}
+document.querySelectorAll('.chip[data-t]').forEach(c=>c.onclick=()=>{const t=c.dataset.t;on.has(t)?on.delete(t):on.add(t);c.classList.toggle('on');apply()});
+document.getElementById('hidedone').onclick=e=>{hideDone=!hideDone;e.target.classList.toggle('on');apply()};
+document.getElementById('theme').onclick=()=>{const r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);
+ r.dataset.theme=d?'light':'dark'};
+count();
+</script></body></html>

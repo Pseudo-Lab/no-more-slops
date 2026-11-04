@@ -1,0 +1,6 @@
+[project]
+name = "llm-as-judge-survey"
+version = "0.1.0"
+description = "Literature search and screening tools for the LLM-as-a-Judge survey"
+requires-python = ">=3.11"
+dependencies = []

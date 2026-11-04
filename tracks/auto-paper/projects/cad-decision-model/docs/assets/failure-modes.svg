@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="590" viewBox="0 0 1200 590" role="img" aria-labelledby="title desc">
+  <title id="title">연결 누락의 세 지점을 설명하는 합성 그림</title>
+  <desc id="desc">점선과 실제 접점, 접속하지 않는 교차와 실제 T 분기, 작은 꺾임을 보존한 후보와 대각선으로 단순화된 검사 구간을 비교합니다. 원본 도면의 좌표를 사용하지 않은 설명도이며 새 구현의 실험 결과가 아닙니다.</desc>
+  <defs>
+    <style>
+      text { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; fill: #172033; }
+      .title { font-size: 29px; font-weight: 700; }
+      .panel-title { font-size: 22px; font-weight: 700; }
+      .label { font-size: 18px; }
+      .small { font-size: 16px; fill: #526078; }
+      .number { font-size: 16px; font-weight: 700; fill: #4b6381; }
+      .note { font-size: 18px; fill: #35445c; }
+      .ink { fill: none; stroke: #334155; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#738196"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="590" fill="#f8fafc"/>
+  <text x="38" y="55" class="title">객체 다음에 남는 연결 검사</text>
+  <text x="38" y="87" class="small">합성 설명도, 원본 도면의 좌표를 사용하지 않았습니다</text>
+  <rect x="24" y="118" width="374" height="393" rx="15" fill="#fff" stroke="#dce3ec"/>
+  <rect x="412" y="118" width="374" height="393" rx="15" fill="#fff" stroke="#dce3ec"/>
+  <rect x="800" y="118" width="376" height="393" rx="15" fill="#fff" stroke="#dce3ec"/>
+  <text x="46" y="151" class="number">01</text>
+  <text x="46" y="184" class="panel-title">점선과 실제 접점</text>
+  <path d="M76 235 h67 v67 h-67 z" class="ink"/>
+  <path d="M143 280 H313 V330" fill="none" stroke="#8d99a9" stroke-width="3" stroke-dasharray="9 8"/>
+  <circle cx="143" cy="280" r="6" fill="#157b74"/>
+  <path d="M104 350 L140 290" stroke="#738196" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="49" y="375" class="label">몸체 중심과 실제 출구는</text>
+  <text x="49" y="401" class="label">다를 수 있습니다</text>
+  <path d="M271 211 L268 273" stroke="#738196" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="219" y="209" class="small">짧은 반복</text>
+  <text x="46" y="458" class="note">선이 통과해도 접점 판정이</text>
+  <text x="46" y="484" class="note">보류되면 연결은 남지 않습니다</text>
+  <text x="434" y="151" class="number">02</text>
+  <text x="434" y="184" class="panel-title">교차와 실제 분기</text>
+  <path d="M451 247 H515 M532 247 H592 M524 211 V286" class="ink"/>
+  <path d="M622 247 H752 M687 247 V286" class="ink"/>
+  <circle cx="687" cy="247" r="6" fill="#334155"/>
+  <path d="M451 309 H591" fill="none" stroke="#157b74" stroke-width="2"/>
+  <text x="447" y="337" class="small">같은 축의 연속성</text>
+  <text x="639" y="337" class="small">실제 T 접속</text>
+  <text x="434" y="384" class="label">간격을 잇는 판단과</text>
+  <text x="434" y="410" class="label">다른 축을 묶는 판단을 구분합니다</text>
+  <text x="434" y="458" class="note">플랜지와 경계 표기도</text>
+  <text x="434" y="484" class="note">실제 장치 접점과 구분해야 합니다</text>
+  <text x="822" y="151" class="number">03</text>
+  <text x="822" y="184" class="panel-title">후보와 검사 구간의 차이</text>
+  <path d="M829 267 H913 L925 280 V347" fill="none" stroke="#d8dee8" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M829 267 H913 L925 280 V347" fill="none" stroke="#157b74" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="824" y="376" class="small">작은 꺾임을 보존한 후보</text>
+  <path d="M996 267 H1080 L1092 280 V347" fill="none" stroke="#d8dee8" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M996 267 H1080 L1092 347" fill="none" stroke="#bf4b52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="993" y="407" class="small">단순화된 검사 구간</text>
+  <text x="822" y="458" class="note">후보는 맞아도 검사 입력이</text>
+  <text x="822" y="484" class="note">배경을 지나가면 판단이 달라집니다</text>
+  <text x="38" y="550" class="small">관찰: 13개 누락 연결쌍, 7개 시각적 구간, 같은 비공개 부분 검수에 대한 분석</text>
+  <text x="38" y="577" class="small">이 그림은 원리 설명이며, 새 구현의 검증 결과나 전체 데이터셋의 정확도를 나타내지 않습니다</text>
+</svg>

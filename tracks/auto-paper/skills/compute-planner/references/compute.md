@@ -118,7 +118,7 @@ For each successfully tested configuration, record:
 ### Source of Truth
 
 This file (global path
-`C:\Users\elika\.claude\skills\compute-planner\references\compute.md`,
+`C:\Users\<user>\.claude\skills\compute-planner\references\compute.md`,
 i.e. `~/.claude/skills/compute-planner/references/compute.md`) is the
 single authoritative source of research compute resources for every
 pipeline stage.
