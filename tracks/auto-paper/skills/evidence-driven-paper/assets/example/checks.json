@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "comparisons": [
+    {
+      "id": "invented-score-example",
+      "candidate": {
+        "name": "Candidate",
+        "path": "candidate.jsonl"
+      },
+      "baseline": {
+        "name": "Baseline",
+        "path": "baseline.jsonl"
+      },
+      "keys": [
+        "dataset",
+        "seed"
+      ],
+      "metric": "score",
+      "direction": "lower",
+      "roster": "exact",
+      "expected_pairs": 3,
+      "expect": {
+        "candidate_wins": 1,
+        "baseline_wins": 1,
+        "ties": 1
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "candidate.jsonl",
+      "sha256": "d6206a9aabc5d0d78a4b421a5a8de706c0a20e36bed22c5f6763fcce6fb8ad03"
+    },
+    {
+      "path": "baseline.jsonl",
+      "sha256": "deddb8d3f8455f8f5b161fd13b0ac1624322636ab502efb79d038d78f46b6c33"
+    }
+  ]
+}

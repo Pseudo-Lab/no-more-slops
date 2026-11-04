@@ -1,0 +1,200 @@
+{
+  "id": "ProbeFlow",
+  "title": "ProbeFlow",
+  "subtitle": "Shared Evidence, Hidden Caches, and Complementary Information in Selective Condition Prediction",
+  "abstract": "ProbeFlow studies acquisition and stopping with a frozen predictor when typed analyses share recorded inputs. The policy observes disclosed values, while an executor separately tracks acquired sources and computed outputs. We give conditional examples showing why values and masks can omit cost-relevant state, and why one-step information value can miss complementary evidence. These establish modeling limits, not a new guarantee or industrial advantage. The design compares matched policies under one marginal-cost ledger and separates erroneous charging and disclosure as diagnostic interventions. A trusted finite reference exists. Hydraulic preparation audited 2,205 cycles from three of fourteen physical channels; independent blocks, learned predictors, calibration, and diagnostic outcomes remain unresolved or NR.",
+  "status": "First-week research design; protocol unlocked; industrial outcomes NR. Authored reference mechanics and separate local-data readiness only.",
+  "contributions": [
+    "A typed ledger separating source acquisition, internal computation, and policy disclosure, with explicitly conditional state-sufficiency claims.",
+    "Worked XOR and failure-cache counterexamples, plus a finite-model Bellman certificate with stated assumptions.",
+    "A policy-only evaluation and separate accounting/disclosure diagnostics with fixed predictor, matched rights, selective endpoints, and actual resource records."
+  ],
+  "pages": [
+    {
+      "heading": "1. Question and evidence boundary",
+      "sections": [
+        {
+          "heading": "Problem and estimand",
+          "paragraphs": [
+            "Industrial records can support several analyses from one pressure trace. Reusing that trace changes the next query's cost without necessarily returning another value. Conversely, an internally computed prerequisite can remain undisclosed. ProbeFlow asks when an acquisition policy needs this resource state and a continuation plan to improve selective prediction. A larger analysis catalogue or higher confidence alone does not answer that question.",
+            "The primary output is a four-component condition vector, not verified physical root cause. Prediction parameters, preprocessing, confidence mapping, action contracts, and observation rights are frozen across policies. Their probabilities can change with newly disclosed evidence; their weights cannot change during an episode. The identifiable contrast is acquisition and terminal decision under the same evidence budget. Independent full-system training is a different experiment.",
+            "Let z denote disclosed values, m their observation mask, O acquired source identities, C computed modules, v availability, and b remaining budget. We retain (z,m,O,C,v,b), plus required public failure history. This representation is sufficient only if the outcome model and resource transitions are history-consistent. In an empty-cache deterministic successful DAG, O and C may be reconstructed from m; we do not claim that explicit cache state is always necessary."
+          ]
+        },
+        {
+          "heading": "Existing foundations and narrow contribution",
+          "paragraphs": [
+            "L2M already uses uncertainty-guided acquisition [1]; NM-PPG optimizes non-myopic trajectories [2]; BRiG-AFA freezes a partial-input predictor and learns Bellman risk-to-go [3]. Bayesian costly-test identification [5] and adaptive submodularity [4] also predate this design. We claim neither first non-myopia nor first diagnosis planning. Resource-aware screening/confirmation also exists in industrial monitoring [9]; its complete cache/disclosure implementation has not been audited here.",
+            "The checked BRiG-AFA formulation uses unit-cost features and exactly B acquisitions; NM-PPG Section 2 defines additive feature costs. Our proposed adapter instead tracks source identities and internal versus disclosed outputs, with explicit stopping and abstention. This is a constrained comparison design, not proof that previous methods cannot be extended. Shared-cost and complementary-information effects must survive strong adapted baselines."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Ledger state and greedy failure conditions",
+      "sections": [
+        {
+          "heading": "Typed execution and nonseparable charges",
+          "paragraphs": [
+            "A frozen dependency DAG declares windows, units, sampling, versions, prerequisites, and numerical outputs. The trusted server validates availability and incremental budget before disclosure. Source and module caches are private; computed prerequisites are not automatically observations. Failed execution retains resources already spent. This interface is implemented for authored fixtures, without secure isolation against arbitrary in-process code.",
+            "For action a, new-read charges sum uncached transitive source requirements; new-compute charges sum uncached dependency executions. Every comparator receives the same real discounts. Fixture pressure read, mean, and delta cost 6, 1, and 2: mean then delta costs 9, versus 15 with duplicate reads. That accounting calculation is not a policy-performance result."
+          ],
+          "equations": [
+            "c(a | s) = c_\"read,new\"(a,s) + c_\"compute,new\"(a,s)"
+          ]
+        },
+        {
+          "heading": "Conditional cache-state counterexample",
+          "paragraphs": [
+            "Worked construction: two independent-of-value failures each spend five units but disclose no numbers. One retains a pressure source, the other a flow source. Both states have identical z, m, availability, and remaining budget three. A pressure analysis requiring read four and compute one now costs one versus five, and is feasible only in the first state. The frozen predictor has identical confidence, but the optimal next action can differ. Thus values/masks/budget alone are insufficient in this failure regime. Full provenance or an equivalent quote/history representation can restore sufficiency; successful deterministic executions need not exhibit the problem."
+          ]
+        },
+        {
+          "heading": "Complementarity without a generic greedy guarantee",
+          "paragraphs": [
+            "Worked binary example, separate from Hydraulic: independent fair bits X1 and X2 determine Y by XOR. Either bit alone gives zero label information; together they determine Y. With unit query costs, budget two, and abstention penalty 0.3, immediate terminal-loss gain is zero for each first query, while the pair reduces terminal loss from 0.3 to zero. Positive-gain-only greedy stops. The second query's conditional gain rises after the first, violating diminishing returns for this objective; adaptive-submodular guarantees [4] cannot simply be imported.",
+            "This does not imply every greedy algorithm fails. Pair lookahead or exploration can solve the construction. A stronger diagnostic adds a unit-cost 80%-accurate noisy label proxy: immediate-loss greedy chooses it, leaves insufficient budget for both bits, and ends at expected error 0.2 versus zero for the pair. These are analytic counterexamples with a specified prior, not industrial observations."
+          ],
+          "equations": [
+            "I(Y;X_1) = I(Y;X_2) = 0, quad I(Y;X_2 | X_1) = 1"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Pipeline and quantitative evaluation",
+      "sections": [
+        {
+          "heading": "Preparation, frozen prediction, and calibration",
+          "paragraphs": [
+            "The actual Hydraulic readiness audit checked 2,205 cycles for PS1, FS1, TS1, and profile. Their per-cycle sample counts are 6,000, 600, and 60; eleven physical channels remain unprepared. The four categorical heads have 3/4/3/4 levels [8]. CE, CP, SE, profile labels, stability flags, and condition-bearing identifiers stay outside policy inputs. Stability summaries and 194 adjacent condition runs are audits, not independent blocks.",
+            "The primary setting queries completed recorded cycles. An online-prefix variant must prohibit samples beyond its decision time and needs separate scoring. Unknown block identities currently prevent an independent-block train/dev/calibration/final split. A within-rig chronological sensitivity study would be explicitly descriptive, with gap and history assumptions declared. No normalizer, industrial predictor, acquisition policy, or calibration model has been fitted.",
+            "The proposed pipeline creates pinned raw inventories, protected labels, opaque episodes, audited groups, frozen numerical modules, a masked predictor, dev-selected policy, then separate calibration and final artifacts. Random and feasible-trajectory masks must be declared before final access. Calibration under adaptive masks is not automatically transferable [6,7]. An optional LLM proposes legal actions from disclosed evidence; it is not the numerical predictor or calibration authority."
+          ]
+        },
+        {
+          "heading": "Contrasts, costs, and denominators",
+          "paragraphs": [
+            "Compare initial-only, expert order, random feasible, actual-cost greedy, pair lookahead, and documented strong AFA adapters. All use one predictor, action bank, availability, initial packet, and ledger. Native-method systems are separate. An offline all-bank teacher is a reference line with disclosed resource privilege, not a mathematical accuracy upper bound.",
+            "Report four-head mean 0/1 loss plus a fixed abstention penalty, coverage, selective vector risk, diagnosed component error, and actual read/module/predictor/planning costs. Empty diagnosed denominators are NA. Repeated masks, budgets, and seeds remain nested within unique cycles or verified blocks. Cold versus warm execution, naturally missing versus deliberately hidden channels, and failures are separate strata."
+          ],
+          "table": {
+            "headers": [
+              "Contrast",
+              "Fixed elements",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "Policy-only",
+                "Predictor, rights, real ledger",
+                "Acquisition/stopping value"
+              ],
+              [
+                "Charge x disclosure",
+                "Naive/dedup x correct/leaky",
+                "Harness diagnostics only"
+              ],
+              [
+                "State/horizon ablation",
+                "Actual charges unchanged",
+                "Conditional mechanism"
+              ],
+              [
+                "Independent-source control",
+                "Matched values, costs declared",
+                "Shared-source specificity"
+              ]
+            ],
+            "caption": "All scientific endpoints are NR. Leaky disclosure is an invalid diagnostic treatment, never a successful policy."
+          }
+        }
+      ]
+    },
+    {
+      "heading": "4. Limited guarantees and refutation",
+      "sections": [
+        {
+          "heading": "Finite Bellman reference and certificate",
+          "paragraphs": [
+            "For a known finite joint model, finite outcomes, deterministic nonnegative charges, bounded fresh actions, and a Markov-complete state, Bellman recursion minimizes expected terminal loss under budget. Optional alpha trades acquisition units against loss. The existing reference uses alpha zero and expected cost only to break equal-loss ties; it caps actions and worlds. Industrial outcome forecasts are unknown. Frozen classifier probabilities alone do not supply a transition kernel. Here s' is the returned-outcome successor and b' subtracts its declared marginal charge. Here rho is the smaller of fixed-classifier expected diagnostic loss and abstention penalty; A contains budget-feasible fresh actions. Alpha is nonnegative; E uses the declared conditional outcome model."
+          ],
+          "equations": [
+            "V(s,b) = min(rho(s), min_(a in A(s,b)) Q(s,b,a))",
+            "Q(s,b,a) = alpha c(a | s) + E[V(s',b')]"
+          ]
+        },
+        {
+          "heading": "What a certificate does and does not establish",
+          "paragraphs": [
+            "In that correctly specified finite model, let Lfree be expected Bayes terminal loss after free access to all available evidence and unconstrained decision rules. Relaxing budget and charging gives Lfree <= V <= rho. If rho minus Lfree is at most epsilon, stopping is epsilon-optimal for that model. A fixed learned all-input teacher is not this relaxation and may perform worse than partial prediction. Estimated outcome distributions, adaptive masks, correlated cycles, and domain shift do not inherit the certificate."
+          ]
+        },
+        {
+          "heading": "Predeclared falsification and current outcome",
+          "paragraphs": [
+            "Reject the proposed policy-value interpretation if it fails the practical margin against the strongest matched comparator, loses its benefit after planning cost is counted, or improves only through double-charging competitors, leaked prerequisites, or a changed predictor. The margin, primary budget, abstention penalty, resource caps, retry rules, and multiplicity plan remain unlocked.",
+            "The mechanism interpretation weakens if state/horizon ablations do not matter in their declared failure/complementarity strata, or the benefit is unchanged in an independent-source control. The 2 x 2 charging/disclosure diagnostic is evaluated as a harness manipulation, never pooled with valid industrial policy scores.",
+            "Any illegal source, future sample, hidden label, unsupported confidence guarantee, or fabricated completion invalidates the corresponding run. Hashes and replay check local consistency, not scientific independence. Authored fixture mechanics and the separate partial Hydraulic intake are established; industrial training, learned-policy evaluation, calibration, and all diagnostic performance remain NR. The first-week contribution is a falsifiable, constrained design with worked limits."
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "number": 1,
+      "text": "Kobayashi et al. Learning-To-Measure. ICML, PMLR 306, 2026.",
+      "url": "https://proceedings.mlr.press/v306/kobayashi26a.html",
+      "claim_scope": "Existing uncertainty-guided sequential feature acquisition; no reproduced outcomes."
+    },
+    {
+      "number": 2,
+      "text": "Aronsson and Chehreghani. Non-Myopic Active Feature Acquisition via Pathwise Policy Gradients. arXiv:2605.05511v2, 2026.",
+      "url": "https://arxiv.org/abs/2605.05511v2",
+      "claim_scope": "Existing non-myopic AFA; checked Section 2 uses additive feature costs; adaptation unimplemented."
+    },
+    {
+      "number": 3,
+      "text": "Feng, Li, and Li. BRiG-AFA. arXiv:2608.02305v1, 2026.",
+      "url": "https://arxiv.org/abs/2608.02305v1",
+      "claim_scope": "Existing frozen-predictor Bellman risk regression; checked formulation has unit costs and exactly B acquisitions."
+    },
+    {
+      "number": 4,
+      "text": "Golovin and Krause. Adaptive Submodularity. JAIR 42, 2011. DOI:10.1613/jair.3278.",
+      "url": "https://jair.org/index.php/jair/article/view/10731",
+      "claim_scope": "Greedy guarantees require adaptive-submodular assumptions, not assumed for this model."
+    },
+    {
+      "number": 5,
+      "text": "Golovin, Krause, and Ray. Near-Optimal Bayesian Active Learning with Noisy Observations. NeurIPS, 2010.",
+      "url": "https://proceedings.neurips.cc/paper/2010/hash/1e6e0a04d20f50967c64dac2d639a577-Abstract.html",
+      "claim_scope": "Known-prior costly-test identification and EC2; no industrial guarantee inherited."
+    },
+    {
+      "number": 6,
+      "text": "Geifman and El-Yaniv. Selective Classification for Deep Neural Networks. NeurIPS, 2017.",
+      "url": "https://proceedings.neurips.cc/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html",
+      "claim_scope": "Risk-coverage and rejection context; this study has no calibrated risk guarantee."
+    },
+    {
+      "number": 7,
+      "text": "Barber et al. Conformal Prediction Beyond Exchangeability. arXiv:2202.13415v5, 2023.",
+      "url": "https://arxiv.org/abs/2202.13415v5",
+      "claim_scope": "Exchangeability/shift assumptions need explicit treatment; arbitrary adaptive-mask coverage not certified."
+    },
+    {
+      "number": 8,
+      "text": "Helwig et al. Condition Monitoring of Hydraulic Systems. UCI 447. DOI:10.24432/C5CW21.",
+      "url": "https://archive.ics.uci.edu/dataset/447/condition+monitoring+of+hydraulic+systems",
+      "claim_scope": "Official target/channel metadata and raw-data license; local schema counts have separate receipts."
+    },
+    {
+      "number": 9,
+      "text": "Bian et al. Resource-Aware Safety-First Active Sensor Acquisition. Sensors 26(16):5065, 2026.",
+      "url": "https://www.mdpi.com/1424-8220/26/16/5065",
+      "claim_scope": "Existing industrial screening/confirmation acquisition; official abstract verified, full cache/disclosure implementation not audited."
+    }
+  ]
+}

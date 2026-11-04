@@ -19,6 +19,7 @@
 | [experiment-to-paper](../tracks/auto-paper/skills/experiment-to-paper/SKILL.md) | 저장된 JSON 실험 결과를 근거 표로 내보내고 원고를 작성합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
 | [llm-api-experiment-runs](../tracks/auto-paper/skills/llm-api-experiment-runs/SKILL.md) | 유료 LLM·검증기 API 실험의 사전 점검·비용 추정·재개 가능한 기록·실패 처리·완료 검사를 다룹니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [paper-code-audit](../tracks/auto-paper/skills/paper-code-audit/SKILL.md) | 논문의 방법·설정·수치를 코드·데이터·실행 기록과 대조하고 다시 계산합니다. 결과로 원고를 고치는 `paper-results-reviser`와 달리 구현과의 불일치를 찾습니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
+| [paper-readability-pass](../tracks/auto-paper/skills/paper-readability-pass/SKILL.md) | 빌드된 짧은 논문 PDF의 가독성을 회차마다 점검합니다. 채택 논문 구조 비교, 원고만 읽는 새 리뷰어, 글·캡션만 고치는 수정, 쪽 이미지 확인을 반복합니다. 숫자·결과 대조와 형식 검사는 하지 않습니다. | [#22](https://github.com/Pseudo-Lab/no-more-slops/pull/22) |
 | [paper-results-reviser](../tracks/auto-paper/skills/paper-results-reviser/SKILL.md) | 완료된 실험 결과와 원고의 주장·수치를 대조하고 수정합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [paper-review-local](../tracks/auto-paper/skills/paper-review-local/SKILL.md) | 로컬 원고·인용 키·그림·PDF 및 텍스트 중복을 검사합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
 | [paper-to-latex](../tracks/auto-paper/skills/paper-to-latex/SKILL.md) | 원고를 LaTeX 프로젝트로 변환하고 내용·빌드 결과를 검사합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
@@ -33,15 +34,18 @@
 | [reuse-recorded-runs](../tracks/auto-paper/skills/reuse-recorded-runs/SKILL.md) | 결과가 나온 뒤 한도·임계값·최종 규칙·반복 횟수를 바꿀 때 기록을 재계산·이어서 실행·부분 재실행으로 재사용하고 짝짓기와 공개를 확인합니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [sync-paper-results](../tracks/auto-paper/skills/sync-paper-results/SKILL.md) | 실행 기록에서 논문 표·그림 블록을 생성하고, 본문·README에 남은 옛 수치와 PDF 쪽수·참고문헌 시작 쪽을 검사합니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [translate-paper-to-english](../tracks/auto-paper/skills/translate-paper-to-english/SKILL.md) | 한국어 Word 논문을 구조를 보존한 영문 Word로 번역합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
+| [weekly-research-planner](../tracks/auto-paper/skills/weekly-research-planner/SKILL.md) | 연구 주제 MD를 일주일 실험과 4페이지 논문 작성으로 이어지는 일차별 실행 MD 7개로 변환합니다. 벤치마크 기반으로 연구 방향을 설계·선택하는 research-planner와 달리 세션별 순차 실행 파일을 만듭니다. | [#19](https://github.com/Pseudo-Lab/no-more-slops/pull/19) |
 
 ## Auto-Application
 
 | 스킬 | 적용 범위 | 최초 정리 PR |
 | --- | --- | --- |
 | [app-design-review](../tracks/auto-application/skills/app-design-review/SKILL.md) | 네이티브 앱의 디자인 토큰·시각 요소·실제 상호작용을 검토합니다. | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
+| [app-store-connect-api](../tracks/auto-application/skills/app-store-connect-api/SKILL.md) | App Store Connect 설정·결제 상품·빌드 업로드·TestFlight를 API 키로 처리합니다. 스토어 자료를 만드는 `app-store-release`와 달리 만들어진 자료를 계정에 반영합니다. | [#20](https://github.com/Pseudo-Lab/no-more-slops/pull/20) |
 | [app-store-release](../tracks/auto-application/skills/app-store-release/SKILL.md) | iOS 앱의 스토어 메타데이터·스크린샷·심사 제출 묶음을 준비합니다. | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
 | [constitution-first](../tracks/auto-application/skills/constitution-first/SKILL.md) | 서비스의 개발 원칙과 사람의 의사결정 경계를 먼저 정합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [core-feature-with-review](../tracks/auto-application/skills/core-feature-with-review/SKILL.md) | 핵심 기능에 사람이 결과를 확인하는 단계를 포함합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
+| [design-conductor](../tracks/auto-application/skills/design-conductor/SKILL.md) | 웹 UI를 만들거나 다듬을 때 impeccable·taste-skill·Emil skills·Playwright MCP를 정해진 순서로 돌리고 충돌을 중재합니다. 네이티브 앱 화면을 검토하는 `app-design-review`와 달리 웹 화면의 제작·검증·수정 반복을 지휘합니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [env-split](../tracks/auto-application/skills/env-split/SKILL.md) | 개발·운영 환경과 비밀 설정을 분리합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [glance-and-guardrails](../tracks/auto-application/skills/glance-and-guardrails/SKILL.md) | 웹 서비스의 정보 위계와 파괴적 동작·사용량 보호 장치를 정리합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [global-localization](../tracks/auto-application/skills/global-localization/SKILL.md) | 앱의 언어별 문자열·레이아웃·지역 기본값을 점검합니다. | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
@@ -57,9 +61,12 @@
 
 | 스킬 | 적용 범위 | 최초 정리 PR |
 | --- | --- | --- |
+| [ad-planning](../tracks/auto-post/skills/ad-planning/SKILL.md) | 사람 없이 제품만 나오는 숏폼 광고의 제품 분석·스토리라인·컷별 그림 콘티와 새 컨텍스트 검토 기준을 제공합니다. | [#23](https://github.com/Pseudo-Lab/no-more-slops/pull/23) |
 | [design-punctuation](../tracks/auto-post/skills/design-punctuation/SKILL.md) | 제목·캡션 같은 짧은 시각 문구의 불필요한 끝마침표를 정리합니다. 다른 트랙에서도 링크로 재사용합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
+| [direct-news-copy](../tracks/auto-post/skills/direct-news-copy/SKILL.md) | 뉴스·카드뉴스·릴스 카피의 반복 해명을 줄이고 사실·계획·검증 범위를 직접 씁니다. 문장부호를 다루는 `design-punctuation`, 제작을 담당하는 `instagram-content`와 구분합니다. | [#18](https://github.com/Pseudo-Lab/no-more-slops/pull/18) |
 | [family-reel-meme-preflight](../tracks/auto-post/skills/family-reel-meme-preflight/SKILL.md) | 릴스 편집 전에 국가·플랫폼별 밈 근거와 아기 안전을 선별합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) |
-| [instagram-content](../tracks/auto-post/skills/instagram-content/SKILL.md) | 계정 설정과 출처를 확인하며 사진 중심 캐러셀·프로필을 제작합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
+| [instagram-content](../tracks/auto-post/skills/instagram-content/SKILL.md) | 계정 설정과 출처를 바탕으로 캐러셀·프로필·무음 인포그래픽 릴스를 제작합니다. JSON 장면과 도식에서 시작하며, 촬영 영상 중심의 `instagram-reel` 편집과 구분합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
 | [instagram-reel](../tracks/auto-post/skills/instagram-reel/SKILL.md) | 가족 촬영 영상을 세로 릴스로 편집하고 자막·음량·화질을 확인합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) · [#15](https://github.com/Pseudo-Lab/no-more-slops/pull/15) |
 | [phantom-images](../tracks/auto-post/skills/phantom-images/SKILL.md) | Phantom Report의 프로젝트 규칙에 맞춘 사건 이미지와 캐러셀을 제작합니다. | [#3](https://github.com/Pseudo-Lab/no-more-slops/pull/3) |
 | [phantom-weekly](../tracks/auto-post/skills/phantom-weekly/SKILL.md) | Phantom Report의 주간 수집·사실 확인·집필·이미지 제작을 조합합니다. | [#3](https://github.com/Pseudo-Lab/no-more-slops/pull/3) |
+| [product-cgi-render](../tracks/auto-post/skills/product-cgi-render/SKILL.md) | 확정 콘티에서 회전체 용기 제품을 Blender로 렌더하고 마감·효과음·조립·수치 QC까지 합니다. 촬영 소스 없이 제품 프로필 JSON으로 동작합니다. | [#23](https://github.com/Pseudo-Lab/no-more-slops/pull/23) |

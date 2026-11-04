@@ -1,0 +1,4 @@
+interface:
+  display_name: "Direct News Copy"
+  short_description: "뉴스·카드뉴스·릴스의 반복 해명을 줄이고 사실과 검증 범위를 직접 쓰기"
+  default_prompt: "$direct-news-copy로 이 뉴스의 반복적인 부정 해명을 줄이고 사실·계획·검증 범위를 명확하게 써줘."

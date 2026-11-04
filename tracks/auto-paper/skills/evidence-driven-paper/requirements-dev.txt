@@ -1,0 +1,2 @@
+# Optional PDF checks and their tests; core JSONL/hash checks use only stdlib.
+pypdf==6.19.0

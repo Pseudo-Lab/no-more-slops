@@ -1,0 +1,184 @@
+{
+  "schema": "nms_v13_original_bindings_v1",
+  "version": "v13-20261018",
+  "scope": "Hash identities of preserved Research Forge v13 originals; original PDFs are not bundled. No new scientific experiment.",
+  "projects": {
+    "skillmerge": {
+      "name": "SkillMerge",
+      "files": {
+        "paper.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/skillmerge/paper.json",
+          "sha256": "486786b74c0540f28bce1fc4dc762b9c067b47cb2d9a40d8b3c31fc69b9e1caf",
+          "bytes": 54708
+        },
+        "SOURCES.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/skillmerge/SOURCES.json",
+          "sha256": "7fd08c981b896adffdfed1d37ecb8bce0309df797177010f93886af95600d791",
+          "bytes": 36801
+        },
+        "CLAIMS.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/skillmerge/CLAIMS.json",
+          "sha256": "06a92981db4d47e31b34d8e837a9bd39c18be430610a8cb7e1f44c0942a7d240",
+          "bytes": 8072
+        },
+        "EXPLAINER_KO.md": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/skillmerge/EXPLAINER_KO.md",
+          "sha256": "b4fa17b78e1e9464ed7a9331fa6420594179e15eb72966931dd0f9465a85f4ac",
+          "bytes": 34364
+        }
+      },
+      "figures": [
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/skillmerge/overview.svg",
+          "sha256": "a7e6ef4e6e70bb59c2e54bbe999903d0ae629a0f235646930e8fd4da6686afce",
+          "bytes": 9337
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/skillmerge/budget-sensitivity.svg",
+          "sha256": "f058786f4ed151b5b3911e39ca2de37852872a35a7de1d9506c83c3d11957f60",
+          "bytes": 22221
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/skillmerge/endpoint-controls.svg",
+          "sha256": "e904a39980bb0d14b2ae8176b879773f07a0cc2fc54d37c664436ab9f7a00e70",
+          "bytes": 14921
+        }
+      ],
+      "original_source_sha256": "486786b74c0540f28bce1fc4dc762b9c067b47cb2d9a40d8b3c31fc69b9e1caf",
+      "original_pdf_sha256": "84f3d8d1052f65d156189ecf1154ad26b863bd746e2abf7d90623d675eda6e64",
+      "original_typst_sha256": "041e5546671891d44f5c5bea00ee82e2d7f87b02fc5513a253d13a4b13443836",
+      "original_pdf_pages": 12,
+      "references": 19,
+      "original_typst_normalized_sha256": "3a9478276e0f100c2af5b53a137e68c79cb93ea2270fd5ced8080ceae52e38e5"
+    },
+    "second_chance": {
+      "name": "SecondChance",
+      "files": {
+        "paper.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/second_chance/paper.json",
+          "sha256": "b3c4fb79a999232444ba384801114f0ef033b47a78a8ca07dea0592f94565c33",
+          "bytes": 67663
+        },
+        "SOURCES.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/second_chance/SOURCES.json",
+          "sha256": "01e110cc46ade8cb8c2c0aec586471a08a2ac2524075b0dfc97628105e276db7",
+          "bytes": 19891
+        },
+        "CLAIMS.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/second_chance/CLAIMS.json",
+          "sha256": "f9dd1733b99c099c85ac2b9887ff92c01d5af8a7cdd219dc83d99544f0c63167",
+          "bytes": 25507
+        },
+        "EXPLAINER_KO.md": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/second_chance/EXPLAINER_KO.md",
+          "sha256": "8381562209cafbd13935c245e868acd3389f2deb67dcc1daa37e40797f92e490",
+          "bytes": 31136
+        }
+      },
+      "figures": [
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/second_chance/overview.svg",
+          "sha256": "60b7e8f84ac1a10c7d186ddc63c2897dfd52cb5f141557fe8eb1aee0f2ff82aa",
+          "bytes": 5681
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/second_chance/commit-timeline.svg",
+          "sha256": "64b78600ac0f06bf5f1d75f05db047d20f1c95875eca123f71d51d24630c188f",
+          "bytes": 10477
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/second_chance/area-sampling-effects.svg",
+          "sha256": "24d7c00c62d76809f8bcc9272cd9cc2c4461afa0b164a44c4d5fcbf48be69082",
+          "bytes": 13546
+        }
+      ],
+      "original_source_sha256": "b3c4fb79a999232444ba384801114f0ef033b47a78a8ca07dea0592f94565c33",
+      "original_pdf_sha256": "79b613694195c19d9b7f7e7ed054c158a1e1bcfe41504e39f49450a7f3d19452",
+      "original_typst_sha256": "5b18be99cf5e7427af2af4d55d220a0ffe6eb590a3cff38fdb6b7fa61f55099d",
+      "original_pdf_pages": 14,
+      "references": 19,
+      "original_typst_normalized_sha256": "3ae6064d64f8e5ad62800548c8b07f736ef21b398e5692fbbe6704f5b346d646"
+    },
+    "probeflow": {
+      "name": "ProbeFlow",
+      "files": {
+        "paper.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/probeflow/paper.json",
+          "sha256": "a92bbcfe88bb2897867020b6e4764227fed1e761e53eb1a6d1a0a33850a7008d",
+          "bytes": 57113
+        },
+        "SOURCES.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/probeflow/SOURCES.json",
+          "sha256": "799432120f48a0170a8d25e59981c6cf2b269df6568693fd38ea9a2dcb268d36",
+          "bytes": 34067
+        },
+        "CLAIMS.json": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/probeflow/CLAIMS.json",
+          "sha256": "8896d84ca731b6a45ee9a38b4f85e2ec69c0c6dbb521eaf10ed0bba20b91d92a",
+          "bytes": 26228
+        },
+        "EXPLAINER_KO.md": {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/sources/probeflow/EXPLAINER_KO.md",
+          "sha256": "1bff8ce069c956e6c7ddd6729095cf6a0f8dcaaab379362d568cb0881bf08bcd",
+          "bytes": 38832
+        }
+      },
+      "figures": [
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/probeflow/overview.svg",
+          "sha256": "66f8a066b8ec837a56b99f8d882dc35d299ce40d7729c68c088fb6dab13368e0",
+          "bytes": 8294
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/probeflow/predictor-mask-errors.svg",
+          "sha256": "d9cb478e575e7273b14f1ba94d3c29376be9501f9af60610605d643c07137b1d",
+          "bytes": 17445
+        },
+        {
+          "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/figures/probeflow/support-and-cost.svg",
+          "sha256": "014faf356617b12456140af4163dabfacc1a6148ba55e403f1db2251e726bbcd",
+          "bytes": 25149
+        }
+      ],
+      "original_source_sha256": "a92bbcfe88bb2897867020b6e4764227fed1e761e53eb1a6d1a0a33850a7008d",
+      "original_pdf_sha256": "4038d756ebcc46c3617255ea49aa8ffcc147cc72da8c63f7ca3b9ee83415e9fa",
+      "original_typst_sha256": "61319a2e3fadf23d796443a2fc1bac6f3c62c792e59b365550c607e07557fce0",
+      "original_pdf_pages": 12,
+      "references": 18,
+      "original_typst_normalized_sha256": "6d02af782020190e14aa4ffdd849310a8592f1ff67b2c2638f567175a4dc1a48"
+    }
+  },
+  "historical_binaries": [
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/explainers/probeflow_EXPLAINER_KO.pdf",
+      "bytes": 389584,
+      "sha256": "61e1d75ba16de4e49e7b6bf3e8868cccd0416a047e0662268f278bbdc83a0e8f"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/explainers/second_chance_EXPLAINER_KO.pdf",
+      "bytes": 296080,
+      "sha256": "73762d3e9cb1ef1868fb7e0676d28173cce9495cad8121e8f48c173dd81cee93"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/explainers/skillmerge_EXPLAINER_KO.pdf",
+      "bytes": 383148,
+      "sha256": "3b0f0e7b9211db598afc84a3bd0c1a2de941f55ef5b9f68190225d61c9180968"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/papers/ProbeFlow_Week1_4p.pdf",
+      "bytes": 76884,
+      "sha256": "09e355db59b269f7a30be78a5e49de6b5e56db6154265cfcdae9349d24105a0f"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/papers/SecondChance_Week1_4p.pdf",
+      "bytes": 79232,
+      "sha256": "5097a3a0ab73f0148d0d5fc16002b597538e87da4401f66094db1157708b41f1"
+    },
+    {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/papers/SkillMerge_Week1_4p.pdf",
+      "bytes": 78799,
+      "sha256": "5ff2613a52bb9f3798b4a3a9906e8f9375615cd2fd14121762b36d706af6a3e6"
+    }
+  ],
+  "generated_source_comparison": "Universal-newline text decoded as UTF-8 then SHA-256; original raw Typst byte SHA is also retained separately."
+}

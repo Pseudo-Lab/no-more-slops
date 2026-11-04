@@ -1,0 +1,6 @@
+interface:
+  display_name: "한글 논문을 영문 Word로 번역"
+  short_description: "한글 논문 docx를 분야 용어에 맞춰 번역하고 서식을 유지한 영문 docx 저장"
+  default_prompt: "$translate-paper-to-english를 사용해 이 한글 논문 Word 파일을 해당 분야 논문 용어로 영어 번역하고 영문 Word 파일로 저장해 줘."
+policy:
+  allow_implicit_invocation: true

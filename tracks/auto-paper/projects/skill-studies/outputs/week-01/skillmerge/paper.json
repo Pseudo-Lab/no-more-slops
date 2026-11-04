@@ -1,0 +1,198 @@
+{
+  "id": "SkillMerge",
+  "title": "SkillMerge",
+  "subtitle": "Measuring Non-Compositional Behavior of Individually Qualified Skill Updates",
+  "abstract": "Two skill updates can improve a common ancestor separately yet violate the same task contract when combined. SkillMerge specifies a study of this conditional behavior, separating observable completion loss from an attributed interface mechanism. The primary estimand compares joint deployment with the average isolated branch on fresh, paired tasks. Independent qualification, cohort audit, and scoring observations prevent circular preservation claims. Order, token length, routing, resources, and grader validity are explicit controls. A small deterministic contract model supplies a counterexample and a sufficient preservation condition, without generalizing to language models. SkillsBench v1.1 is the planned main setting; 531 locally prepared SciFact cases support an adapted pilot, with SWE-bench Verified reserved for external replication. Budgeted integration is secondary. No agent effect has been measured; results remain NR and preregistration is incomplete.",
+  "status": "First-week research-design manuscript; pre-experimental; all agent-performance results NR; protocol locked=false.",
+  "contributions": [
+    "Primary: a qualification-conditioned, paired measurement protocol for update composition.",
+    "Secondary: equal-budget integration evaluation with preservation and retention accounting.",
+    "Tertiary: a separately specified continued-evolution study, currently unimplemented."
+  ],
+  "pages": [
+    {
+      "heading": "1. Question, estimand, and contribution boundary",
+      "sections": [
+        {
+          "heading": "1.1 Why individually useful edits may fail together",
+          "paragraphs": [
+            "An integration event fixes ancestor S0 and two separately authored edits A and B. Authors cannot inspect the other edit or its feedback. Both branches must improve over S0 under a frozen, independent qualification rule Q; authored fixtures alone do not meet this requirement. Improvement is distributional: the ancestor may already solve a retained witness task while each edit helps elsewhere.",
+            "RQ1 asks whether these eligible updates lose completion probability together under an unchanged final contract. Completion includes required preservation checks. Let p0, pA, pB, and pJ denote fresh success probabilities for ancestor, isolated edits, and the canonical joint order. The primary contrast uses the average isolated branch, avoiding selection of the apparently best branch on scoring data. Histories and source families receive predeclared weights."
+          ],
+          "equations": [
+            "d_(e,t) = p_J - frac(p_A + p_B, 2)",
+            "theta = E[d_(e,t) | Q_e = 1]"
+          ]
+        },
+        {
+          "heading": "1.2 Related work and realistic scope",
+          "paragraphs": [
+            "SkillsBench measures skill efficacy [1]; injection harm and prompt-module interference are established concerns [2,3]. Source-preserving replay, typed interface migration, and update-level regression validation already appear in SkillCommit, SkillSmith, and SkillEvoReg [4–6]. Our target is the specified common-ancestor qualification and fresh-scoring protocol, not discovery of interference or a new contract theorem. Full implementation-level overlap review remains pending.",
+            "Behavioral non-composition is the primary measurement. Evidence-guided budgeted integration is a secondary hypothesis. Continued meta-policy evolution is tertiary and requires a separate history experiment. None is an observed benefit."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Contract model and independent measurement",
+      "sections": [
+        {
+          "heading": "2.1 Author formal statements: counterexample and preservation",
+          "paragraphs": [
+            "Consider deterministic, resettable readers and reporters with honest semantic tags. R0 emits normalized Won; P0 accepts Won or Native and normalizes Native. Edit A emits Native while fixing a comma parser; edit B accepts only Won while preserving required identifiers. On an illustrative three-input distribution, S0 succeeds on one input, A and B on two each, and their combination on none. A retained input is 10 thousand-won: S0, A, and B return 10,000 won, but A+B rejects Native at B's input boundary. This is a calculated counterexample, not an agent observation or an independently authored empirical event.",
+            "A sufficient condition is stronger than isolated success: for every x in domain D, the upstream output must satisfy B's semantic precondition, and B must guarantee final predicate Φ for every admitted intermediate value. Substitution proves preservation. A Native-to-Won adapter satisfies this condition in the toy model. Untyped tag erasure instead risks reporting 10 won. Hidden state, dishonest tags, stochastic execution, and incomplete contracts invalidate the guarantee. This educational statement does not establish novelty over interface migration [5]."
+          ],
+          "equations": [
+            "R_A(x) in \"Pre\"(P_B, x)",
+            "forall x in D, forall m in \"Pre\"(P_B, x): Phi(x, P_B(m))",
+            "forall x in D: Phi(x, P_B(R_A(x)))"
+          ]
+        },
+        {
+          "heading": "2.2 Witnesses and alternative explanations",
+          "paragraphs": [
+            "A deterministic strict witness is (Y0,YA,YB,YJ)=(1,1,1,0). Stochastic witnesses require predeclared high and low thresholds plus uncertainty; insufficient precision is unresolved. Negative interaction alone is weaker: probabilities (.80,.95,.95,1.00) give τ=−.10 although joint deployment is best. Report strict witness incidence, acquired-capability loss, and θ separately.",
+            "Trace an intermediate artifact, state the violated requirement, then intervene on that boundary while matching unrelated content and resources. A repair that restores completion supports that particular explanation; a model-generated dependency graph or post-hoc narrative does not identify it. Preserve alternative causes and order sensitivity."
+          ],
+          "equations": [
+            "tau = p_J - p_A - p_B + p_0"
+          ]
+        },
+        {
+          "heading": "2.3 Q, C, and S",
+          "paragraphs": [
+            "Q qualifies branch improvements on data unseen during authorship. C independently selects ancestor-solved H and newly-solved G cohorts; its outcomes remain auditor-only. S supplies new scoring executions. Same-task C/S replay estimates task-conditioned retention, not unseen-task generalization. Development feedback D may tune policies, but Q/C/S observations cannot enter that tuning. Fresh seeds alone do not ensure isolation or independence."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Implementable evaluation and current evidence",
+      "sections": [
+        {
+          "heading": "3.1 Task populations and concrete update scopes",
+          "paragraphs": [
+            "SkillsBench v1.1 is the planned main benchmark [1]. Pin release/tooling b63b7b2 and task-tree 55bfe69 separately; audit task groups, oracle isolation, resetability, and individual asset terms before acquisition. A possible branch A preserves extracted intermediate units, keys, and provenance; B improves downstream aggregation and contract-compliant output. Authors receive the common ancestor and separate development contexts, never planted conflicts or final answers. Eligible event counts may be zero.",
+            "The adapted SciFact pilot [7] is locally prepared: 531 cited-document cases, 325 connected components, and train/dev/test counts 306/100/125. Selection excludes train components overlapping official development and chooses cited documents before consulting labels. Its new test comes from public original training data. Primary label accuracy uses all assigned cases; rationale coverage is diagnostic, permits annotated alternatives, and is not the native full SciFact score. The 44 constructed training-label faults belong to a separate evaluator stress track."
+          ]
+        },
+        {
+          "heading": "3.2 Controlled execution and analysis",
+          "paragraphs": [
+            "Assign all tasks to skill availability, including nonactivation; forced injection is a separate diagnostic. Compare S0/A/B/AB and BA with identical model snapshot, public contract, mounted resources, permissions, reset state, limits, and retries. Include instruction-only, tokenizer-length-matched irrelevant and padding, disjoint-scope, and semantic-interface controls. Neither byte matching nor an unaudited irrelevant skill proves a length control.",
+            "Freeze family partitions, Q gates, one primary θ, practical margin, canonical order, repetition allocation, and exclusions before S. Pair within task and update history; aggregate within source family and history rather than treating executions as independent samples. Crossed dependence requires cluster-aware uncertainty or a conservative design with genuinely independent blocks. Pilot variance and effective cluster count inform power; sample sizes and thresholds are currently unset. Witness/order/mechanism analyses are secondary with a frozen multiplicity plan."
+          ]
+        },
+        {
+          "heading": "3.3 Preparation is not a performance result",
+          "table": {
+            "headers": [
+              "Evidence or setting",
+              "Readiness",
+              "Agent effect"
+            ],
+            "rows": [
+              [
+                "v3 four-family contract prototype",
+                "31 local tests recorded; scripted executor",
+                "NR"
+              ],
+              [
+                "SciFact adapted pilot",
+                "531 inputs; semantic preparation replayed",
+                "NR"
+              ],
+              [
+                "SkillsBench v1.1 main",
+                "Metadata reviewed; native reset/oracle pending",
+                "NR"
+              ],
+              [
+                "SWE-bench Verified external [8]",
+                "Public 500-instance subset; adapter pending",
+                "NR"
+              ]
+            ],
+            "caption": "Counts describe software or corpus preparation, not independent skill-composition trials."
+          },
+          "paragraphs": [
+            "The v3 packet exporter reads actual SKILL.md bytes, but its demo ignores them and scripts answers. Imported outputs remain unverified without execution attestation. No actual independently qualified integration history exists in this project."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Secondary integration, falsification, and limits",
+      "sections": [
+        {
+          "heading": "4.1 Budgeted integration must preserve gains",
+          "paragraphs": [
+            "With candidates fixed, compare naive deployment, random replay, change-scope replay, and frozen-evidence selection under the same candidate pool, development feedback, charge schedule, and total budget. Return a merge, a scoped adapter, separated routing, or deferral. Charge scheduling, repairs, rejected attempts, cached work, and failures; account for qualification and final audits separately as research overhead. A changed state invalidates version-specific behavioral evidence.",
+            "C defines cohorts; fresh ancestor and selected-state scoring estimate old-capability failure FH and excess loss R. Baseline noise makes these different. Also report output success on G, all attempted/eligible events, no-gain, and deferral. An empty cohort is NA with denominator zero."
+          ],
+          "equations": [
+            "F_H = 1 - E_H[p_prime]",
+            "R = E_H[p_0 - p_prime]"
+          ]
+        },
+        {
+          "heading": "4.2 Refutation and first-week decision",
+          "paragraphs": [
+            "Rare natural strict witnesses would narrow the premise. Loss reproduced by matched irrelevant text, unchanged resources, order, or corrected grading weakens a specific interface explanation. A policy advantage disappearing under complete cost accounting, sacrificed G retention, or a fixed heuristic refutes the claimed integration benefit. Crafted conflicts establish diagnostic sensitivity only; they never estimate natural prevalence.",
+            "First-week work locks provenance and public contracts, challenges graders with valid alternatives, verifies reset and answer isolation, and pilots precision before preregistration. Native SkillsBench execution, model choice, authenticated authorship, token controls, and final budgets remain pending. SWE-bench replication is conditional on environment and data-rights checks. Public-data contamination, incomplete verifiers, and higher-order composition limit scope. The formal model guarantees only its stated deterministic assumptions; no general LLM compositionality claim follows."
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "number": 1,
+      "text": "Li et al. SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks. arXiv:2602.12670v4, 2026.",
+      "url": "https://arxiv.org/abs/2602.12670v4",
+      "claim_scope": "Skill benchmark motivation; latest abstract metadata, not local reproduction. Release pins are recorded separately in SOURCES.json."
+    },
+    {
+      "number": 2,
+      "text": "Yang and Ding. Signal or Noise? A Benchmark Study of Agent Skills in Web Development. arXiv:2608.23067v1, 2026.",
+      "url": "https://arxiv.org/abs/2608.23067v1",
+      "claim_scope": "Existing injection-harm and length/content-control study; inspected HTML methods, no reproduced effects."
+    },
+    {
+      "number": 3,
+      "text": "Lin and Liu. Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems. arXiv:2606.26356v1, 2026.",
+      "url": "https://arxiv.org/abs/2606.26356v1",
+      "claim_scope": "Existing volume/content/form interference protocol; selected HTML methods reviewed."
+    },
+    {
+      "number": 4,
+      "text": "He and Yang. SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion. arXiv:2608.15165v1, 2026.",
+      "url": "https://arxiv.org/abs/2608.15165v1",
+      "claim_scope": "Existing source validation, cross-instance replay, and behavior-preserving consolidation; selected HTML methods reviewed."
+    },
+    {
+      "number": 5,
+      "text": "Wei et al. SkillSmith: Co-Evolving Skills and Tools for Self-Improving Agent Systems. arXiv:2606.01314v2, 2026.",
+      "url": "https://arxiv.org/abs/2606.01314v2",
+      "claim_scope": "Existing skill interactions, typed tools, atomic interface migration and scoped failure memory; selected HTML setup and Appendix A.5 read."
+    },
+    {
+      "number": 6,
+      "text": "Nie et al. SkillEvoReg: Regularizing Agent Skill Evolution Against Overfitting. arXiv:2609.30861v1, 2026.",
+      "url": "https://arxiv.org/abs/2609.30861v1",
+      "claim_scope": "Abstract reports skill-evolution regularization and candidate-specific regression validation. Full methods/code audit pending."
+    },
+    {
+      "number": 7,
+      "text": "Wadden et al. Fact or Fiction: Verifying Scientific Claims. EMNLP, 2020.",
+      "url": "https://aclanthology.org/2020.emnlp-main.609/",
+      "claim_scope": "Scientific-claim dataset identity. Our 531-case adaptation/counts arise from local preparation, not this paper."
+    },
+    {
+      "number": 8,
+      "text": "Jimenez et al. SWE-bench: Can Language Models Resolve Real-World GitHub Issues? arXiv:2310.06770v3, 2024.",
+      "url": "https://arxiv.org/abs/2310.06770v3",
+      "claim_scope": "Repository issue-resolution task identity. Verified subset counts are from its official dataset card, not the original paper."
+    }
+  ]
+}

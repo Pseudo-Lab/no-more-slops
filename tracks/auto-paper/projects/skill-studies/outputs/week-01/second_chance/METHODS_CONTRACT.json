@@ -1,0 +1,434 @@
+{
+  "schema": "rf.second-chance.methods.v5",
+  "id": "SecondChance",
+  "created_date": "2026-10-12",
+  "status": {
+    "kind": "first_week_research_design",
+    "locked": false,
+    "preregistration": "incomplete",
+    "model_id": "unknown",
+    "real_model_calls_this_work": 0,
+    "actual_candidate_histories": 0,
+    "actual_correction_histories": 0,
+    "empirical_performance": "NR",
+    "new_runtime_implementation": "not_added"
+  },
+  "scope": {
+    "fixed_requirement": "G* is a fixed operational task contract and independently reviewed grading criterion; not infallible scientific truth.",
+    "changed_object": "Faulty evaluator V_old is corrected to V_new against unchanged G*.",
+    "excluded": "Changed task requirements, later user preference changes, weight-level unlearning, production rollback and unique counterfactual trajectory reconstruction.",
+    "claim": "Estimate downstream current-state effects of selection and external negative-lesson repair after correction; buffer/replay existence is not novel."
+  },
+  "formal_statements": [
+    {
+      "id": "ranking_identity",
+      "type": "author_algebra",
+      "assumptions": [
+        "Same frozen candidate output bank and score aggregation.",
+        "Historical winner w and rejected c retained as recorded; m=s_old(w)-s_old(c)>=0.",
+        "A fixed declared comparison margin delta and tie rule."
+      ],
+      "definition": "Delta(c)=s_new(c)-s_old(c).",
+      "identity": "s_new(c)-s_new(w)=Delta(c)-Delta(w)-m",
+      "strict_reversal": "s_new(c)-s_new(w)>delta iff Delta(c)-Delta(w)>m+delta",
+      "does_not_imply": [
+        "fresh usefulness",
+        "current-state recovery",
+        "necessity for every useful reject"
+      ]
+    },
+    {
+      "id": "recorded_path_slice",
+      "type": "author_graph_argument",
+      "assumptions": [
+        "Version-unfolded finite event DAG.",
+        "Inclusive Desc and Anc include their starting nodes.",
+        "Correctly identified invalidated evidence roots D; current live targets T.",
+        "Recorded content/selection/lesson dependencies complete for the asserted auditing scope."
+      ],
+      "definition": "R=Desc(D) intersect Anc(T)",
+      "claim": "R equals the set of nodes on at least one recorded D-to-T path; inspection covers those paths.",
+      "proof": "Every path node reaches T and is reachable from D. Conversely concatenate the two reachability paths; DAG acyclicity avoids repetition and yields a D-to-T path.",
+      "does_not_imply": [
+        "minimum behavioral repair actions or minimum-cost solution",
+        "completeness of unrecorded dependencies",
+        "validity of the correction itself",
+        "successful recovery under budget",
+        "coverage of useful candidates outside live dependency paths"
+      ]
+    }
+  ],
+  "lineage": {
+    "nodes": [
+      "artifact_version",
+      "candidate_execution",
+      "grading_evidence",
+      "selection_event",
+      "active_state_version",
+      "negative_lesson_version",
+      "context_exposure_event"
+    ],
+    "edge_types": {
+      "content": "Actual supplied artifact/context used to construct an output or later artifact.",
+      "selection": "Recorded candidate/winner comparison under a specified evaluator linked to selected pointer.",
+      "lesson": "Evidence and decision supporting external lesson; actual later context exposures linked separately."
+    },
+    "rules": [
+      "Event identity differs from content hash; identical text may occur in different histories.",
+      "Edges follow event-time/version order, not cyclic artifact names.",
+      "Append versions retaining original text, evidence IDs and prior_hash.",
+      "No missing relation inferred as causal fact.",
+      "An obsolete lesson can be suspended or scoped without deleting its historical record.",
+      "New implementation of a complete lineage DAG remains planned; v3 exposes crafted relations only."
+    ]
+  },
+  "history_unit": {
+    "definition": "An independently initiated, actually executed evolution prefix with fixed model/task context and its observed candidate decisions, current state, archive and external lessons.",
+    "freeze_before_policy_assignment": true,
+    "grouping": [
+      "All policy forks of one prefix are paired observations, not independent histories.",
+      "Repeated generations/checkpoints are nested observations.",
+      "Task components and any shared ancestor or model session induce additional clustering.",
+      "531 task IDs or 44 seeded fault records cannot be counted as 531/44 histories."
+    ],
+    "all_attempts_retained": [
+      "no useful reject",
+      "no recorded lesson",
+      "fault not exposed",
+      "no ranking change",
+      "generation failure",
+      "invalid output",
+      "budget defer",
+      "archive unavailable"
+    ]
+  },
+  "correction_gate": {
+    "status": "planned_for_real_model_study",
+    "steps": [
+      "Freeze G* and accepted alternatives before introducing faults.",
+      "Independently author/review V_new without importing policy or executor logic.",
+      "Challenge units, ties, NULL, inclusive boundaries and equivalent valid answers.",
+      "Identify exact invalidated assertion/evidence; record both evaluator versions and source hashes.",
+      "Classify correction as seeded fault or genuine independently adjudicated bug.",
+      "Keep unreviewed or ambiguous correction cases pending, rather than forcing changed labels."
+    ],
+    "gold_access": "Policy receives only declared development feedback and correction notice. Useful-status qualification and final audit gold remain auditor-only. Identical rights across arms."
+  },
+  "candidate_quality": {
+    "selector_stage": "Freeze one actual archive and candidate pool for every policy fork; forbid new proposals during primary selector comparison.",
+    "proposal_stage": "Separate continued-generation experiment from matched initial checkpoints; pools may diverge and estimand changes.",
+    "qualification": "Independently fresh qualification observations define useful rejected candidates and represented capabilities before final scoring; do not use historical score reversal or final outputs as qualification.",
+    "useful_reject_rule": "Candidate was actually rejected under V_old; passes predeclared corrected qualification and satisfies declared margin/retention criteria against a pinned baseline. Exact thresholds remain to be locked.",
+    "empty_cohort": "Report NA conditional recovery/recall with zero denominator; preserve history in all-history success/failure denominators.",
+    "many_to_one": "Maintain candidate-to-capability mapping; recovery by another candidate or new repair restores capability without falsely counting rejected-candidate integration.",
+    "fixed_pool_arms": [
+      "grader_only",
+      "random_replay",
+      "margin_replay",
+      "content_only",
+      "decision_aware",
+      "lesson_frozen",
+      "lesson_only_factorial_cell"
+    ],
+    "incumbent_repair": "A separate end-to-end matched-budget comparator permitting newly authored edits. It does not estimate fixed-pool selector quality, though the same initial historical archive and feedback rights remain available."
+  },
+  "arms": [
+    {
+      "id": "grader_only",
+      "selection_repair": false,
+      "lesson_repair": false,
+      "definition": "V_new replaces grader; active skill and old lesson retained; unused repair resources disclosed."
+    },
+    {
+      "id": "incumbent_repair",
+      "selection_repair": "retune incumbent",
+      "lesson_repair": "predeclared common rule",
+      "definition": "No exclusive access to useful candidate labels or hidden audit feedback; actual edit costs counted."
+    },
+    {
+      "id": "random_replay",
+      "selection_repair": "seeded random common archive order",
+      "lesson_repair": "predeclared common rule",
+      "definition": "Same candidates, metadata and development signals."
+    },
+    {
+      "id": "margin_replay",
+      "selection_repair": "predeclared historical margin rule",
+      "lesson_repair": "predeclared common rule",
+      "definition": "Do not use final audit labels to rank."
+    },
+    {
+      "id": "content_only",
+      "selection_repair": "content lineage only",
+      "lesson_repair": false,
+      "definition": "Omits decision/lesson selection signals, with omitted-signal bytes and access logged."
+    },
+    {
+      "id": "decision_aware",
+      "selection_repair": true,
+      "lesson_repair": true,
+      "definition": "Audits invalidated decision lineage, independently validates selected repair, and appends scoped lesson version."
+    },
+    {
+      "id": "lesson_frozen",
+      "selection_repair": true,
+      "lesson_repair": false,
+      "definition": "Paired memory audit: freeze one selected and integrated repair artifact, its hashes and pre-lesson base state; fork identical copies and retain the old lesson in this arm. Do not independently rerun a stochastic selector and call the resulting comparison lesson-only.",
+      "contrast": "paired_memory_contrast; full factorial procedure effects are specified separately"
+    }
+  ],
+  "factorial": {
+    "status": "planned",
+    "factors": [
+      "Selection repair off/on",
+      "External lesson repair off/on"
+    ],
+    "all_arms_corrected_grader": true,
+    "required_additional_cell": "Lesson repair alone with selection unchanged.",
+    "estimand": "Paired endpoint differences and interaction Y11-Y10-Y01+Y00 over common history forks.",
+    "identification_assumptions": [
+      "Pre-treatment history frozen before policy assignment.",
+      "Correction and task contract stable.",
+      "Randomized arm execution order/seeds and logged stochastic settings.",
+      "Consistency of implemented intervention.",
+      "No cross-fork memory/tool-state contamination.",
+      "Matched correction information and accessible gold rights.",
+      "Do not infer a pure lesson effect from independently executed stochastic selectors with merely identical mechanisms/candidate pools."
+    ],
+    "limitation": "Procedure effect under these conditions; not identification of every hidden model pathway.",
+    "sham_control": "Equal correction notice/repair attention for unchanged valid grader; report effort effects separately.",
+    "contrast_boundary": "The four cells compare full selection/lesson procedures under common starting history. They may yield different selected artifacts. Their interaction is not a fixed-artifact lesson-only contrast; use paired_memory_contrast for that estimand."
+  },
+  "matching": {
+    "archive": "Identical frozen candidate content and public metadata for every non-oracle fork.",
+    "information": "Same correction notice, G* public rules, developer examples and development-feedback rights; decision-aware differs by explicit use of typed history, not secret audit results.",
+    "candidate_ids": "Neutral opaque IDs; exported filenames/headings/descriptions must not signal useful/correct/gold.",
+    "resources": [
+      "Record historical generation and archive construction separately.",
+      "Meter archive reads and bytes, retrieval, grading, validation, integration and lesson edits.",
+      "Record real invocation/tool counts, input/output tokens, latency and billed cost when actually available.",
+      "Same post-correction budget envelope; preserve unused, failed and deferred expenditures.",
+      "No token/currency conversion from synthetic fixture action units."
+    ],
+    "oracle": "Full audited-candidate selection or unrestricted complete-archive replay is diagnostic; its additional information/resources must be labeled, not mixed into primary policy outcomes."
+  },
+  "endpoints": [
+    {
+      "id": "saved_output_rescore",
+      "definition": "Apply V_new to exactly the old response bytes; no new generation.",
+      "requires": [
+        "old response hash",
+        "task/evaluator hashes",
+        "parent historical record"
+      ],
+      "fresh_execution": false,
+      "current_recovery": false
+    },
+    {
+      "id": "fresh_candidate_rerun",
+      "definition": "New invocation of pinned candidate/current context on development or independent challenge input.",
+      "requires": [
+        "runner-authenticated invocation event",
+        "model/settings",
+        "public packet hash",
+        "actual candidate/input hashes",
+        "tool and resource log"
+      ],
+      "limitation": "Fresh candidate success is not committed-state success."
+    },
+    {
+      "id": "current_state_recovery",
+      "definition": "Independent new execution of the integrated active state with recorded lesson/context exposure and preserved later valid changes.",
+      "requires": [
+        "actual activation/state hash",
+        "independent audit packet",
+        "invocation log",
+        "hidden auditor score"
+      ],
+      "limitation": "Provided state/timestamp strings or importing an old answer do not authenticate this endpoint."
+    }
+  ],
+  "metrics": {
+    "current_success": {
+      "definition": "Mean corrected success over all assigned final tasks at each checkpoint; invalid/failed/deferred output counts as failure.",
+      "all_assigned_denominator": true,
+      "unobserved_checkpoint": "NA; do not fabricate outcome."
+    },
+    "left_rauc": {
+      "formula": "sum_j (q[j+1]-q[j])*U[j]",
+      "grid": "0=q0<...<qJ=1, budget b_j=q_j B.",
+      "step_rule": "Last committed state with recorded cost<=b_j; no trapezoidal interpolation.",
+      "missing": "Any positive-width missing left observation -> NA. Missing final-only observation leaves observed left summary defined but final_success NA.",
+      "meaning": "Sampled-grid left-step summary, not exact area of unobserved state changes."
+    },
+    "final_success": {
+      "definition": "U[J] separately reported; does not enter a left interval after the cap."
+    },
+    "useful_rejection_recall": {
+      "numerator": "Unique reviewed independently qualified historically rejected candidates.",
+      "denominator": "All independently qualified useful rejected candidates in that history archive.",
+      "empty_or_unaudited": "NA"
+    },
+    "current_verified_recovery": {
+      "numerator": "Independently passed qualified represented capabilities in the committed current state.",
+      "denominator": "Qualified capabilities; not automatically candidate count.",
+      "empty_or_unaudited": "NA"
+    },
+    "collateral_failure": {
+      "formula": "F_H(S)=1-mean[t in H] p_t(S)",
+      "membership": "Contract-audited unaffected tasks plus separate incumbent-success qualification; final observations separate."
+    },
+    "incremental_collateral_loss": {
+      "formula": "R_excess(S)=mean[t in H](p_t(S0)-p_t(S))",
+      "range": "May be negative; not clipped.",
+      "empty_H": "NA"
+    },
+    "first_observed_recovery": {
+      "definition": "First observed checkpoint attaining predeclared target theta.",
+      "non_hit": "Right-censored at planned cap; last actually observed budget separately retained.",
+      "missing_for_hit_and_nonhit": [
+        "observation_complete",
+        "missing checkpoints/count",
+        "incomplete_window",
+        "hit_window_complete",
+        "last observed budget"
+      ],
+      "nonmonotonic": "Keep first observed hit even if later regression. Failure-to-hit observation bracket is not a bound on first-ever true recovery without additional assumptions."
+    },
+    "recurrence": {
+      "definition": "Independent later-panel failure after a separately qualified initial current recovery.",
+      "conditional_denominator": "Histories meeting independent initial-recovery qualification; zero -> NA.",
+      "all_history_denominator": "All eligible frozen histories, with nonrecovery and missing statuses retained; do not imply all histories recovered.",
+      "scope": "Actual continued generation required. V3 programmed resets are fixture tests only.",
+      "all_history_definition": "Report later independent-panel failure over all eligible histories as later_failure_all_histories, with initial-recovery statuses. A failure without initial recovery is not strict recurrence.",
+      "joint_burden": "Optionally report initially recovered AND later failed over all histories as a separate joint-event proportion; do not silently substitute it for conditional recurrence.",
+      "v3_compatibility": "V3 field recurrence_all_histories uses later-panel failures, including histories not qualified recovered. Preserve the old field and clarify meaning; scientific labels should distinguish it from strict recurrence."
+    },
+    "repeated_sampling": "Repeat success rate is not pass@k. If estimating pass@k, predeclare n,c,k and sampling assumptions; repeated answers are not independent task units.",
+    "uncertainty": "No confidence interval or minimum sample count is fixed yet. Predeclare primary contrast, meaningful effect, history/component clustering and multiplicity before final data."
+  },
+  "tasks": {
+    "crafted_v3": {
+      "families": [
+        "unit_conversion",
+        "numeric_ranking_ties",
+        "NULL_excluding_mean",
+        "inclusive_boundary_valid_alias"
+      ],
+      "tasks": 32,
+      "candidates": 16,
+      "actual_model_histories": 0,
+      "provenance": "crafted_fixture_correctness_demo",
+      "executor": "registered scripted behaviors; no instruction-text interpretation",
+      "recurrence": "scripted perturbation"
+    },
+    "scifact_v4": {
+      "adaptation": "SciFact-CitedPair-RFv4",
+      "eligible_tasks": 531,
+      "components": 325,
+      "train": {
+        "tasks": 306,
+        "components": 193
+      },
+      "development": {
+        "tasks": 100,
+        "components": 62
+      },
+      "test": {
+        "tasks": 125,
+        "components": 70
+      },
+      "seeded_train_fault_records": 44,
+      "official_error_histories": 0,
+      "actual_candidate_histories": 0,
+      "actual_correction_histories": 0,
+      "selection": "Cited-document SHA before label lookup; component SHA modulo 10 split; official-dev-linked training components excluded.",
+      "primary": "All-assigned-task label accuracy.",
+      "secondary": [
+        "annotation_coverage_joint_pass",
+        "best_annotated_precision"
+      ],
+      "coverage_limitation": "Predicting all sentences can satisfy annotation coverage. It is not exact evidence precision or official SciFact scoring.",
+      "meaning": "Insufficient label is relative to supplied cited document/annotation, not global scientific falsity.",
+      "public_gold_exposure": "Unknown pretrained exposure; local auditor-only files are not secrecy or OS isolation."
+    }
+  },
+  "required_real_history_records": [
+    "G* version and correction adjudication",
+    "V_old/V_new hashes and exact fault evidence",
+    "actual model/settings and packet/candidate hashes",
+    "old-grader raw outputs and score receipts",
+    "observed accept/reject and tie decisions",
+    "actual winner/lesson creation and exposure events",
+    "preassignment frozen archive/current checkpoint",
+    "policy allocation and all costs",
+    "fresh current invocation and independent audit receipt"
+  ],
+  "first_week_checkpoints": [
+    {
+      "id": "C0",
+      "deliverable": "Lock correction validity, permitted answer alternatives and scorer contract.",
+      "fail_action": "Pending ambiguous cases; do not claim established correction."
+    },
+    {
+      "id": "C1",
+      "deliverable": "Audit export leakage and runner provenance; freeze model/data scope/resource limits.",
+      "fail_action": "No live execution before separate required authorization/configuration."
+    },
+    {
+      "id": "C2",
+      "deliverable": "Collect pilot old-grader histories with complete failure/no-reject receipts.",
+      "fail_action": "Zero useful rejects is a finding; redesign planned power before a new preregistration."
+    },
+    {
+      "id": "C3",
+      "deliverable": "Freeze history forks and independently qualify rejects/capabilities.",
+      "fail_action": "NA empty cohorts; no final-score based filtering."
+    },
+    {
+      "id": "C4",
+      "deliverable": "Run matched selector/factorial pilot and separate endpoint audits.",
+      "fail_action": "No recovery claim without actual current activation/invocation evidence."
+    },
+    {
+      "id": "C5",
+      "deliverable": "Test recurrence and collateral on later independent panels.",
+      "fail_action": "Retain nonrecoveries, missingness and regression."
+    },
+    {
+      "id": "C6",
+      "deliverable": "Lock final contrast/sample/cluster plan and versioned adapter choices.",
+      "fail_action": "Remain pilot/design status until locked."
+    }
+  ],
+  "falsification": [
+    "No useful historical rejects under independent qualification.",
+    "Joint repair fails to improve paired current recovery versus simple matched replay/retuning.",
+    "Lesson intervention has no measurable incremental effect or harms retention.",
+    "Advantage vanishes when archive/history/audit and repair costs are separated accurately.",
+    "Observed gains appear only in saved-output rescoring or repeated qualification outputs.",
+    "Wrong-root/deleted-edge controls expose incomplete path-auditing assumptions."
+  ],
+  "verification_scope": "Local source hashes, schema, mathematics and artifact consistency can be checked. They do not certify empirical performance, novelty, external provenance or scientific truth.",
+  "paired_memory_contrast": {
+    "status": "planned_not_implemented_for_real_models",
+    "estimand": "Lesson intervention effect conditional on the common fixed selection/integration artifact and base state, distinct from full 2x2 procedure effects.",
+    "freeze_before_memory_assignment": [
+      "selected_candidate_id_and_content_hash",
+      "committed_integration_artifact_and_hash",
+      "active_skill_and_routing_hashes",
+      "preserved_later_valid_changes",
+      "tool_and_environment_snapshot",
+      "pre_lesson_base_state_hash",
+      "archive_and_correction_notice",
+      "development_feedback_rights"
+    ],
+    "fork": "Create identical isolated copies from this frozen checkpoint before assigning lesson intervention; vary only retain/scope/suspend/replace the external lesson under a locked rule.",
+    "state_hash_rule": "Pre-intervention full checkpoint hashes match. Active-skill/integration/routing/environment hashes stay identical at initial audit; lesson versions and post-intervention complete-state hashes may differ because the lesson is the treatment.",
+    "selector_rule": "Selection and integration are executed once for the common checkpoint; same algorithm, candidates or seeds alone do not ensure identical stochastic repair outputs.",
+    "budget_rule": "Equal additional resource envelopes after the common checkpoint. Record common selection/integration expenditure and attribute it identically; meter lesson edits, validation, failures and unused resources separately.",
+    "initial_audit": "No new selection/integration before the initial independent current-state audit. Same task assignment, scorer and execution settings; no cross-fork state sharing.",
+    "later_evolution": "If studying recurrence, later proposals and selection may diverge as outcomes of memory treatment under the same continuation protocol and budget; report that later estimand separately.",
+    "not_a_claim": "No real paired memory fork or causal estimate has been executed."
+  }
+}

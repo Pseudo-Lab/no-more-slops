@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>아기 릴스 자동화 파이프라인 | 1·2주차</title>
+  <style>
+    :root {
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      color: #17243a;
+      background: #f6f4ef;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; line-height: 1.6; }
+    a { color: inherit; text-underline-offset: 3px; }
+    button, input { font: inherit; }
+    button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid #fd7b61; outline-offset: 3px; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .hero { position: relative; isolation: isolate; overflow: hidden; color: #f9fbff; background: #122237; border-radius: 0 0 36px 36px; }
+    .hero::before { content: ""; position: absolute; z-index: -1; width: 600px; height: 600px; right: -190px; top: -230px; border-radius: 50%; border: 100px solid rgba(114, 233, 210, .13); box-shadow: 0 0 0 100px rgba(114, 233, 210, .045); }
+    .hero::after { content: ""; position: absolute; z-index: -1; width: 290px; height: 290px; left: 47%; bottom: -215px; border-radius: 50%; background: #ff806b; filter: blur(100px); opacity: .35; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px 0 0; }
+    .brand { font-size: .84rem; font-weight: 900; letter-spacing: .18em; color: #80e5d3; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 8px; }
+    .topbar a { text-decoration: none; color: #e5eff9; border: 1px solid #647487; border-radius: 100px; padding: 7px 13px; font-size: .85rem; }
+    .topbar a:hover { background: #263e54; }
+    .hero-content { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(330px, .8fr); align-items: center; gap: 52px; padding: 78px 0 58px; }
+    .eyebrow { margin: 0 0 14px; color: #80e5d3; font-size: .83rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 760px; font-size: clamp(2.45rem, 5vw, 4.75rem); line-height: 1.14; letter-spacing: -.065em; margin-bottom: 22px; }
+    .hero-lead { color: #d4e0ea; font-size: clamp(1rem, 1.45vw, 1.15rem); max-width: 610px; margin-bottom: 0; }
+    .hero-aside { min-width: 0; display: grid; gap: 14px; }
+    .treasure-stage { position: relative; height: 300px; overflow: hidden; border: 1px solid rgba(173, 216, 223, .28); border-radius: 24px; background: radial-gradient(circle at 50% 68%, rgba(255, 176, 95, .3), transparent 36%), radial-gradient(circle at 50% 94%, rgba(113, 228, 208, .25), transparent 55%), rgba(255, 255, 255, .055); }
+    .treasure-stage::before { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(220, 242, 239, .12); border-radius: 17px; pointer-events: none; }
+    .treasure-stage canvas { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; opacity: 0; }
+    .treasure-stage[data-renderer="three"] canvas { opacity: 1; }
+    .css-chest { position: absolute; z-index: 1; left: 50%; top: 49%; width: 215px; height: 132px; transform: translate(-50%, -35%); filter: drop-shadow(0 28px 28px rgba(0, 0, 0, .35)); transition: opacity .3s; pointer-events: none; }
+    .treasure-stage[data-renderer="three"] .css-chest { opacity: 0; }
+    .css-chest::before { content: ""; position: absolute; left: 15px; top: -7px; width: 185px; height: 21px; border-radius: 50%; background: #ffc877; filter: blur(12px); box-shadow: 0 0 35px #ffc877; }
+    .css-chest-body { position: absolute; inset: 20px 0 0; border: 5px solid #d8a75e; border-radius: 8px 8px 13px 13px; background: repeating-linear-gradient(90deg, transparent 0 47px, rgba(247, 193, 105, .8) 47px 57px, transparent 57px 107px), linear-gradient(#965a3e, #4c2c2c); box-shadow: inset 0 -16px 0 rgba(36, 20, 23, .28), 0 0 32px rgba(255, 187, 91, .27); }
+    .css-chest-lid { position: absolute; z-index: 1; left: -3px; right: -3px; top: -11px; height: 44px; border: 5px solid #e5b86e; border-radius: 22px 22px 5px 5px; background: repeating-linear-gradient(90deg, transparent 0 48px, #e0ac61 48px 59px, transparent 59px 108px), linear-gradient(#ab6d48, #693c33); transform-origin: center 100%; transition: transform .6s ease; }
+    .is-open .css-chest-lid { transform: translateY(-20px) rotate(-13deg); }
+    .css-chest-gem { position: absolute; z-index: 2; top: 56px; left: 89px; width: 37px; height: 37px; border: 6px solid #e5b86e; border-radius: 7px; background: #59d8cc; transform: rotate(45deg); box-shadow: 0 0 23px rgba(101, 245, 216, .8); }
+    .stage-toggle { position: absolute; z-index: 3; inset: 0; width: 100%; border: 0; background: transparent; cursor: pointer; color: #f8fbfa; }
+    .stage-toggle span { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); white-space: nowrap; padding: 6px 11px; border: 1px solid rgba(218, 244, 239, .45); border-radius: 99px; background: rgba(16, 36, 46, .8); font-size: .75rem; font-weight: 800; }
+    .renderer-status { position: absolute; z-index: 3; top: 12px; right: 15px; padding: 4px 8px; border-radius: 99px; background: rgba(16, 36, 46, .7); color: #d6e8e5; font-size: .68rem; pointer-events: none; }
+    .hero-note { border: 1px solid rgba(173, 216, 223, .3); border-radius: 22px; background: rgba(255, 255, 255, .085); padding: 19px 23px; backdrop-filter: blur(12px); }
+    .hero-note strong { display: block; font-size: .91rem; color: #8cebd9; margin-bottom: 12px; }
+    .hero-note p { margin-bottom: 0; font-size: 1.14rem; font-weight: 750; line-height: 1.55; }
+    .hero-note small { display: block; margin-top: 12px; color: #bdccd7; }
+    .numbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(226, 243, 247, .2); border-top: 1px solid rgba(226, 243, 247, .2); }
+    .numbers > div { padding: 19px 28px 22px; background: #15283e; }
+    .numbers strong { display: block; font-size: 2rem; line-height: 1.1; letter-spacing: -.05em; }
+    .numbers span { color: #bfcfdc; font-size: .9rem; }
+    main { padding: 64px 0 90px; }
+    .demo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .75fr); gap: 30px; align-items: center; padding: 30px; border: 1px solid #cde3dc; border-radius: 24px; background: linear-gradient(110deg, #e8f5ee, #fff9eb); box-shadow: 0 18px 46px rgba(28, 67, 58, .07); }
+    .demo-label { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border: 1px solid #6eaa92; border-radius: 99px; color: #156554; font-size: .74rem; font-weight: 900; letter-spacing: .04em; }
+    .demo h2 { margin: 15px 0 7px; font-size: clamp(1.5rem, 2.3vw, 2.25rem); letter-spacing: -.045em; }
+    .demo p { margin-bottom: 0; color: #536a67; font-size: .91rem; }
+    .demo-controls { display: grid; gap: 11px; }
+    .demo-progress { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: .82rem; font-weight: 800; }
+    .demo progress { display: block; width: 100%; height: 11px; appearance: none; border: 0; border-radius: 99px; overflow: hidden; background: #d9e9de; }
+    .demo progress::-webkit-progress-bar { background: #d9e9de; }
+    .demo progress::-webkit-progress-value { background: #208774; border-radius: 99px; }
+    .demo progress::-moz-progress-bar { background: #208774; }
+    .gems { display: flex; gap: 7px; align-items: center; }
+    .gems span { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; color: #b7c4bc; background: #eff2eb; font-size: .96rem; }
+    .gems span.earned { color: #fff; background: #eaa656; box-shadow: 0 3px 12px rgba(232, 152, 69, .36); }
+    @media (prefers-reduced-motion: no-preference) { .gems span.earned { animation: gem-pop .35s ease-out; } }
+    @keyframes gem-pop { 50% { transform: translateY(-5px) scale(1.16); } }
+    .demo-advance { width: 100%; border: 0; border-radius: 12px; padding: 12px 16px; background: #1c5c51; color: #fff; font-weight: 850; cursor: pointer; }
+    .demo-advance:hover { background: #14463e; }
+    .real-activity { padding-top: 9px; border-top: 1px solid #bfd7c9; }
+    .real-activity b { color: #156554; }
+    section + section { margin-top: 80px; }
+    .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 24px; }
+    .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); line-height: 1.25; letter-spacing: -.045em; margin-bottom: 8px; }
+    .section-head p { max-width: 650px; color: #5d6879; margin-bottom: 0; }
+    .kicker { display: block; color: #0d8374; font-size: .78rem; font-weight: 900; letter-spacing: .15em; margin-bottom: 10px; }
+    .flow-shell, .matrix-shell, .tool-shell { background: #fff; border: 1px solid #e3e5e4; box-shadow: 0 18px 55px rgba(28, 41, 55, .045); border-radius: 26px; }
+    .flow-shell { padding: 29px; }
+    .lane { display: grid; grid-template-columns: 135px minmax(0, 1fr); gap: 18px; align-items: stretch; }
+    .lane + .lane { border-top: 1px dashed #cbd7d6; margin-top: 26px; padding-top: 26px; }
+    .lane-label { padding: 20px 12px; border-radius: 17px; background: #e8f7f3; color: #11655e; }
+    .lane-label.warm { background: #fff1e9; color: #ad4e3b; }
+    .lane-label b { display: block; font-size: .77rem; letter-spacing: .08em; }
+    .lane-label span { display: block; font-size: 1.18rem; font-weight: 850; line-height: 1.35; margin-top: 8px; }
+    .stages { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .stage { position: relative; min-width: 0; padding: 18px 17px 16px; border-radius: 17px; background: #f7f9f8; border: 1px solid #e9eeee; }
+    .stage.warm { background: #fffaf7; border-color: #f6e7df; }
+    .stage:not(:last-child)::after { content: "→"; position: absolute; z-index: 1; right: -13px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%; background: #d9eee9; color: #176d63; line-height: 23px; text-align: center; font-weight: 900; }
+    .stage.warm:not(:last-child)::after { background: #ffe4d5; color: #ad4e3b; }
+    .step { display: inline-grid; place-items: center; width: 29px; height: 29px; border-radius: 9px; background: #176d63; color: #fff; font-size: .78rem; font-weight: 850; }
+    .warm .step { background: #d26951; }
+    .stage h3 { margin: 14px 0 7px; font-size: 1rem; line-height: 1.35; }
+    .stage p { color: #596878; font-size: .85rem; line-height: 1.55; margin-bottom: 0; }
+    .handoff { display: flex; gap: 14px; align-items: start; margin: 20px 0 0 153px; padding: 15px 18px; border-radius: 14px; background: #172a40; color: #f4f8fa; font-size: .91rem; }
+    .handoff b { color: #8de5d2; white-space: nowrap; }
+    .matrix-shell { overflow: hidden; }
+    .matrix-top { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; align-items: center; padding: 26px 30px; border-bottom: 1px solid #e4e9e8; }
+    .matrix-top strong { display: block; font-size: 1.45rem; line-height: 1.2; }
+    .matrix-top small { color: #637080; }
+    .file-label { display: inline-flex; align-items: center; gap: 9px; padding: 10px 15px; border: 1px solid #bacacb; border-radius: 12px; font-size: .88rem; font-weight: 750; cursor: pointer; background: #fff; }
+    .file-label:hover { border-color: #168275; background: #f2faf7; }
+    .file-label input { width: 160px; max-width: 45vw; font-size: .73rem; }
+    .file-label input::file-selector-button { display: none; }
+    .matrix-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(275px, .75fr); }
+    .matrix-table-wrap { overflow-x: auto; padding: 22px; }
+    table { width: 100%; min-width: 565px; border-collapse: separate; border-spacing: 7px; table-layout: fixed; }
+    th { font-size: .78rem; color: #657386; font-weight: 800; padding: 7px; text-align: center; }
+    th[scope="row"] { width: 63px; color: #223a4b; font-size: .93rem; }
+    td { padding: 0; }
+    .cell { width: 100%; min-height: 87px; padding: 11px 9px; text-align: left; border: 2px solid transparent; border-radius: 14px; cursor: pointer; background: #f1f4f5; color: #344658; }
+    .cell:hover { border-color: #9db2bc; }
+    .cell[aria-pressed="true"] { border-color: #147f72; box-shadow: 0 0 0 2px rgba(20, 127, 114, .14); }
+    .cell.ready { background: #e3f5eb; color: #155b49; }
+    .cell.missing { background: #f7f3ed; color: #8a7762; }
+    .cell b { display: block; font-size: .85rem; line-height: 1.25; margin-bottom: 5px; }
+    .cell small { display: block; font-size: .73rem; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .detail { border-left: 1px solid #e4e9e8; padding: 29px 28px; background: #fafbf9; }
+    .detail .status { display: inline-block; padding: 4px 9px; border-radius: 100px; background: #e8edef; color: #405a67; font-size: .76rem; font-weight: 800; }
+    .detail h3 { font-size: 1.43rem; margin: 15px 0 8px; letter-spacing: -.035em; }
+    .detail p { color: #5f6c7a; font-size: .9rem; margin-bottom: 18px; }
+    .detail dl { margin: 0; display: grid; gap: 14px; }
+    .detail dt { color: #6a7683; font-size: .77rem; font-weight: 800; }
+    .detail dd { margin: 2px 0 0; font-size: .96rem; font-weight: 750; overflow-wrap: anywhere; }
+    .matrix-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 30px 19px; border-top: 1px solid #e4e9e8; color: #5c6977; font-size: .83rem; }
+    .matrix-bottom p { margin: 0; }
+    #load-message { font-weight: 750; }
+    .rule-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .rule { min-width: 0; background: #fff; border: 1px solid #e3e5e4; border-radius: 20px; padding: 24px; }
+    .rule span { display: inline-block; color: #0e796e; font-size: .76rem; letter-spacing: .08em; font-weight: 900; margin-bottom: 14px; }
+    .rule h3 { font-size: 1.1rem; margin-bottom: 9px; }
+    .rule p { color: #5e6a77; font-size: .9rem; margin-bottom: 0; }
+    .rule.alert { border-color: #f0d8cc; background: #fffaf7; }
+    .rule.alert span { color: #b35c45; }
+    .tool-shell { display: grid; grid-template-columns: 1.05fr .95fr; overflow: hidden; }
+    .tool-main, .tool-side { padding: 32px; }
+    .tool-side { background: #f0f7f4; border-left: 1px solid #e0ebe7; }
+    .tool-main h3, .tool-side h3 { margin-bottom: 17px; font-size: 1.12rem; }
+    .tool-list { display: grid; gap: 12px; margin: 0; }
+    .tool-list div { display: grid; grid-template-columns: 125px 1fr; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #e6ecea; }
+    .tool-list dt { font-weight: 850; }
+    .tool-list dd { margin: 0; color: #5f6b77; font-size: .9rem; }
+    .tool-side p { font-size: .9rem; color: #526773; }
+    pre { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px; background: #172a40; color: #e3f6f0; border-radius: 13px; font-size: .82rem; line-height: 1.6; }
+    code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+    .tool-side small { color: #526773; }
+    .terms { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; }
+    .terms div { min-width: 0; padding: 19px; border: 1px solid #e3e5e4; border-radius: 16px; background: #fff; }
+    .terms dt { font-size: .95rem; font-weight: 900; color: #156e65; }
+    .terms dd { margin: 7px 0 0; color: #5b6876; font-size: .84rem; }
+    .closing { display: flex; justify-content: space-between; gap: 25px; align-items: center; padding: 31px; border-radius: 23px; color: #fff; background: #173d3a; }
+    .closing h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); margin-bottom: 6px; }
+    .closing p { color: #d6e8e4; max-width: 630px; margin-bottom: 0; }
+    .pr-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pr-links a { white-space: nowrap; text-decoration: none; border-radius: 11px; padding: 10px 14px; background: #fff; color: #1b4d47; font-size: .88rem; font-weight: 850; }
+    .pr-links a:hover { background: #ddf4eb; }
+    footer { color: #66717d; font-size: .82rem; padding: 0 0 34px; }
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 30px; padding: 65px 0 55px; }
+      .hero-aside { max-width: 650px; width: 100%; }
+      .demo { grid-template-columns: 1fr; }
+      .hero-note { max-width: 590px; }
+      .lane { grid-template-columns: 1fr; }
+      .lane-label { padding: 13px 17px; }
+      .lane-label span { display: inline; margin: 0 0 0 10px; }
+      .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stage::after { display: none; }
+      .handoff { margin-left: 0; }
+      .matrix-body { grid-template-columns: 1fr; }
+      .detail { border-left: 0; border-top: 1px solid #e4e9e8; }
+      .rule-grid { grid-template-columns: 1fr; }
+      .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 650px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .topbar { align-items: start; }
+      .topbar nav { justify-content: end; }
+      .numbers > div { padding: 16px 11px; }
+      .numbers strong { font-size: 1.55rem; }
+      .numbers span { font-size: .75rem; }
+      main { padding-top: 45px; }
+      section + section { margin-top: 57px; }
+      .flow-shell { padding: 17px; }
+      .stages { grid-template-columns: 1fr; }
+      .matrix-top, .detail, .tool-main, .tool-side { padding: 23px; }
+      .matrix-table-wrap { padding: 12px; }
+      .tool-shell { grid-template-columns: 1fr; }
+      .tool-side { border-left: 0; border-top: 1px solid #e0ebe7; }
+      .tool-list div { grid-template-columns: 1fr; gap: 2px; }
+      .terms { grid-template-columns: 1fr; }
+      .closing { flex-direction: column; align-items: start; }
+    }
+    @media (prefers-reduced-motion: reduce) { .css-chest-lid, .css-chest { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <span class="brand">AUTO / POST · FAMILY REEL</span>
+        <nav aria-label="페이지 이동"><a href="#demo">진행 시연</a><a href="#flow">파이프라인</a><a href="#market-map">12개 조합</a><a href="#tools">실행 도구</a></nav>
+      </div>
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Week 02 → Week 01 / Research to Reel</p>
+          <h1>유행을 고르고,<br>아기 장면에 맞춰<br>릴스를 완성합니다.</h1>
+          <p class="hero-lead">한국·일본·미국의 Instagram, YouTube, TikTok, X에서 아이디어를 찾고, 확인된 원본 영상과 아기 안전을 거쳐 Instagram 릴스 제작으로 연결하는 작업 흐름입니다.</p>
+        </div>
+        <div class="hero-aside">
+          <div class="treasure-stage" id="treasure-stage" data-renderer="fallback" aria-label="추억 보물상자 화면">
+            <div class="css-chest" aria-hidden="true"><div class="css-chest-lid"></div><div class="css-chest-body"></div><div class="css-chest-gem"></div></div>
+            <canvas id="treasure-canvas" aria-hidden="true"></canvas>
+            <button class="stage-toggle" id="stage-toggle" type="button" aria-expanded="false" aria-label="보물상자 열어보기 시연"><span>상자 열어보기 · 시연</span></button>
+            <span class="renderer-status" id="renderer-status" role="status">2D 대체 화면 · 3D 지원 시 자동 표시</span>
+          </div>
+          <aside class="hero-note" aria-label="현재 상태">
+            <strong>2026.10.13 기준 · 실제 검증 상태</strong>
+            <p>12개 조합 중 확정 후보 0개. 근거가 모일 때까지 선택을 보류합니다.</p>
+            <small>유행 아이디어가 없어도 원본 아기 장면 중심으로 제작할 수 있습니다.</small>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <div class="numbers" aria-label="핵심 기준">
+      <div><div class="wrap"><strong>4 × 3</strong><span>플랫폼 × 국가</span></div></div>
+      <div><div class="wrap"><strong>72h</strong><span>게시·관측 최근성</span></div></div>
+      <div><div class="wrap"><strong>2+</strong><span>조합별 서로 다른 게시자</span></div></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="demo" class="demo" aria-labelledby="demo-title">
+      <div>
+        <span class="demo-label">✦ 화면 시연 · 실제 영상 처리 아님</span>
+        <h2 id="demo-title">우리만의 릴스 여정을 시작해요</h2>
+        <p id="demo-message" aria-live="polite">다섯 장면을 따라가며 보석을 모아 보세요. 시연 버튼은 Python·FFmpeg 작업을 실행하지 않습니다.</p>
+      </div>
+      <div class="demo-controls">
+        <div class="demo-progress"><span id="demo-position">시연 대기 · 0 / 5단계</span><span id="demo-reward">보석 0 / 5</span></div>
+        <progress id="demo-meter" max="5" value="0" aria-label="화면 시연 진행 단계">0 / 5</progress>
+        <div class="gems" id="demo-gems" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></div>
+        <button class="demo-advance" id="demo-advance" type="button">시연 시작</button>
+        <p class="real-activity" role="status" aria-live="polite"><b>실제 JSON 상태</b> · <span id="real-activity-text">파일 대기. 아래에서 기획안을 선택하면 읽기·형식 검증 결과가 표시됩니다.</span></p>
+      </div>
+    </section>
+
+    <section id="flow" aria-labelledby="flow-title">
+      <div class="section-head"><div><span class="kicker">01 / THE FLOW</span><h2 id="flow-title">2주차 기획이 1주차 제작으로 이어집니다</h2><p>선별은 편집 전 단계입니다. 점수로 후보를 좁힌 뒤에도 사람이 원본과 실제 촬영 장면을 확인합니다.</p></div></div>
+      <div class="flow-shell">
+        <div class="lane">
+          <div class="lane-label"><b>WEEK 02</b><span>밈 사전 선별</span></div>
+          <div class="stages">
+            <article class="stage"><span class="step">01</span><h3>시장별 발견</h3><p>4개 플랫폼을 KR·JP·US별로 탐색. 차트·검색·해시태그는 후보 발견 신호로 기록합니다.</p></article>
+            <article class="stage"><span class="step">02</span><h3>원본 근거</h3><p>최근 72시간의 개별 영상 URL·게시자·게시/관측 시각·영상 조회수를 확인합니다.</p></article>
+            <article class="stage"><span class="step">03</span><h3>안전·장면 검토</h3><p>성인·선정적 표현과 위험 행동을 제외하고, 아기에게 강요 없이 실제 장면에 맞는지 봅니다.</p></article>
+            <article class="stage"><span class="step">04</span><h3>같은 조합 비교</h3><p>게시자 2명 이상이면 시간당 조회수 중앙값을 비교. 조합별 1안·대안을 사람이 검토합니다.</p></article>
+          </div>
+        </div>
+        <div class="handoff"><b>기획 → 편집</b><span>보류 조합을 억지로 채우지 않습니다. 확인된 포맷만 실제 아기 동작에 맞춰 적용합니다.</span></div>
+        <div class="lane">
+          <div class="lane-label warm"><b>WEEK 01</b><span>릴스 제작</span></div>
+          <div class="stages">
+            <article class="stage warm"><span class="step">01</span><h3>원본 확인</h3><p>클립을 작업 폴더에 복사하고 ffprobe로 방향·길이·영상/음성 스트림을 확인합니다.</p></article>
+            <article class="stage warm"><span class="step">02</span><h3>자막·소리 설계</h3><p>실제 동작에 맞는 SRT 자막, 사용 권리가 확인된 BGM, 필요한 순간의 효과음을 준비합니다.</p></article>
+            <article class="stage warm"><span class="step">03</span><h3>렌더링·보정</h3><p>Python과 FFmpeg로 9:16 영상, ASS 자막, 소리, 자연스러운 색감과 용량 설정을 적용합니다.</p></article>
+            <article class="stage warm"><span class="step">04</span><h3>QA·게시 문구</h3><p>스트림·길이·9:16·용량·자막·A/V 싱크를 검사하고, 첫·중간·끝 장면과 소리를 사람이 본 뒤 문구를 작성합니다.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="market-map" aria-labelledby="matrix-title">
+      <div class="section-head"><div><span class="kicker">02 / MARKET MAP</span><h2 id="matrix-title">국가 × 플랫폼 결과판</h2><p>각 칸은 그 조합 안에서만 비교합니다. 국가별 인기 차트는 시장 연관 신호이며 해당 국가 시청자만의 조회수가 아닙니다.</p></div></div>
+      <div class="matrix-shell">
+        <div class="matrix-top">
+          <div><strong id="result-count">0 / 12 조합에 검토 후보</strong><small id="result-date">기본 기록 · 2026-10-13 00:40 +09:00</small></div>
+          <label class="file-label" for="plan-file">내 기획안 열기 <input id="plan-file" type="file" accept=".json,application/json" aria-describedby="file-help"></label>
+        </div>
+        <div class="matrix-body">
+          <div class="matrix-table-wrap">
+            <table>
+              <caption class="sr-only">한국, 일본, 미국과 네 플랫폼의 밈 후보 상태. 각 버튼을 누르면 상세 내용이 표시됩니다.</caption>
+              <thead><tr><th scope="col">시장</th><th scope="col">Instagram</th><th scope="col">YouTube</th><th scope="col">TikTok</th><th scope="col">X</th></tr></thead>
+              <tbody id="matrix-rows"></tbody>
+            </table>
+          </div>
+          <div class="detail" aria-live="polite" aria-atomic="true">
+            <span class="status" id="detail-status">보류</span>
+            <h3 id="detail-title">KR · Instagram</h3>
+            <p id="detail-explain">원본 영상 근거와 사람의 장면 검토가 필요합니다.</p>
+            <dl><div><dt>1안</dt><dd id="detail-selected">없음</dd></div><div><dt>대안</dt><dd id="detail-alternate">없음</dd></div></dl>
+          </div>
+        </div>
+        <div class="matrix-bottom"><p id="file-help">JSON은 브라우저 안에서만 읽습니다. 점수 계산·업로드·자동 게시를 하지 않습니다.</p><p id="load-message" role="status" aria-live="polite">기본 기획안: 12개 조합 모두 보류</p></div>
+      </div>
+      <noscript><p>결과판을 조작하려면 브라우저에서 JavaScript를 켜야 합니다. 기본 기록의 12개 조합은 모두 보류 상태입니다.</p></noscript>
+    </section>
+
+    <section aria-labelledby="rules-title">
+      <div class="section-head"><div><span class="kicker">03 / DECISION RULES</span><h2 id="rules-title">조회수보다 먼저 확인할 것</h2><p>숫자만 높아도 아기에게 맞지 않거나 근거가 불분명하면 편집으로 넘기지 않습니다.</p></div></div>
+      <div class="rule-grid">
+        <article class="rule"><span>01 · EVIDENCE</span><h3>같은 조합, 독립된 표본</h3><p>최근 72시간 안에 게시·관측한 원본 영상의 조회수 ÷ 게시 후 시간을 계산합니다. 서로 다른 게시자 2명 이상일 때만 중앙값을 비교합니다.</p></article>
+        <article class="rule"><span>02 · EDITORIAL</span><h3>아기 안전과 실제 장면</h3><p>선정성·성인 농담·신체 대상화·위험 행동을 제외합니다. 억지 반응을 유도하지 않고 실제 촬영된 동작과 맞는 포맷만 사람이 승인합니다.</p></article>
+        <article class="rule alert"><span>03 · LIMIT</span><h3>발견 신호 ≠ 재생수</h3><p>X의 유행 키워드·게시물 수, TikTok 해시태그 전체 조회수, YouTube 지역 차트 순위를 개별 영상 조회수에 더하지 않습니다. 노출 성과도 보장하지 않습니다.</p></article>
+      </div>
+    </section>
+
+    <section id="tools" aria-labelledby="tools-title">
+      <div class="section-head"><div><span class="kicker">04 / IMPLEMENTATION</span><h2 id="tools-title">실제 쓰는 도구와 실행 경계</h2><p>HTML은 흐름과 결과를 보는 화면입니다. 조사 자료 입력, 점수 계산, 렌더링과 게시 판단은 아래 작업 절차에서 이뤄집니다.</p></div></div>
+      <div class="tool-shell">
+        <div class="tool-main">
+          <h3>현재 파이프라인</h3>
+          <dl class="tool-list">
+            <div><dt>Codex</dt><dd>조사·편집 절차 설계, 스크립트 및 문구 작성 보조. 사용 모델의 정확한 이름은 실행 기록으로 확인해야 합니다.</dd></div>
+            <div><dt>Python</dt><dd><code>score_reel_memes.py</code>로 선별표와 기획안을 만들고, <code>render_instagram_reel.py</code>로 편집 단계를 연결합니다.</dd></div>
+            <div><dt>ffprobe</dt><dd>원본의 길이, 방향, 영상·음성 스트림을 검사합니다.</dd></div>
+            <div><dt>FFmpeg</dt><dd>9:16·1080×1920·30 fps, H.264/AAC 출력, 자막·BGM·효과음·가벼운 색 보정과 기술 QA를 수행합니다.</dd></div>
+            <div><dt>소리·자막</dt><dd>실제 적용 BGM은 NumPy로 만든 WAV, 효과음은 Python으로 생성했습니다. 장면 자막은 SRT로 작성하고 렌더 시 ASS 스타일을 적용합니다.</dd></div>
+          </dl>
+        </div>
+        <div class="tool-side">
+          <h3>로컬에서 실행</h3>
+          <p>아래 점수 계산·영상 렌더 명령은 별도 제작 저장소의 실행 예시입니다. 해당 Python 스크립트와 영상 입력은 이 공유 저장소에 포함되어 있지 않습니다. 이 저장소에서는 아래 안내에 따라 HTML 화면을 열고 이미 생성한 JSON을 확인할 수 있습니다.</p>
+          <p>후보·원본 조회수·안전 검토를 JSON에 기록한 뒤 점수 스크립트를 실행합니다. 생성된 <code>trend-plan.json</code>을 이 화면의 “내 기획안 열기”로 확인할 수 있습니다.</p>
+          <pre><code>python scripts/score_reel_memes.py INPUT.json \
+  --brief trend-brief.md --plan trend-plan.json</code></pre>
+          <p>편집자는 검토한 장면 자막과 권리가 확인된 소리를 넣어 별도 렌더 스크립트를 실행합니다.</p>
+          <pre><code>python scripts/render_instagram_reel.py \
+  work/source.mp4 work/scenes.srt work/owned-bgm.wav \
+  --output out/reel.mp4</code></pre>
+          <small>Whisper 음성 인식은 장면 자막에 필요하지 않았습니다. Seedance와 ElevenLabs는 향후 선택적으로 검토할 도구이며 이 작업의 영상·소리 제작에는 사용하지 않았습니다. 플랫폼 API를 통한 실시간 자동 수집도 아직 연결되지 않았습니다.</small>
+          <p style="margin-top: 16px; margin-bottom: 0;">3D 미리보기는 Three.js를 CDN에서 읽습니다. 팀 저장소 루트에서 <code>python -m http.server 8000</code>을 실행하고 <code>http://localhost:8000/tracks/auto-post/projects/family-reels/outputs/week-02/instagram-automation-pipeline.html</code>을 여세요. 네트워크나 WebGL을 사용할 수 없으면 2D 상자가 표시됩니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="terms-title">
+      <div class="section-head"><div><span class="kicker">05 / QUICK GLOSSARY</span><h2 id="terms-title">발표에 나오는 용어</h2><p>선별과 렌더링에서 각각 무엇에 쓰였는지 한 줄씩 정리했습니다.</p></div></div>
+      <dl class="terms">
+        <div><dt>SRT</dt><dd>SubRip Subtitle. 시간 구간과 문장을 적은 장면 자막 원본 파일입니다.</dd></div>
+        <div><dt>ASS</dt><dd>Advanced SubStation Alpha. 렌더링할 때 글꼴·위치·모양을 적용하는 자막 형식입니다.</dd></div>
+        <div><dt>STT</dt><dd>Speech-to-Text. 음성을 글로 옮기는 기술입니다. 이 장면 자막에는 Whisper STT를 쓰지 않았습니다.</dd></div>
+        <div><dt>BGM / SFX</dt><dd>Background Music / Sound Effects. 배경음악과 짧은 효과음이며, 소리 사용 권리와 삽입 시점을 확인합니다.</dd></div>
+        <div><dt>FFmpeg / ffprobe</dt><dd>영상 인코딩·소리 합성 도구 / 원본 스트림·길이·방향 확인 도구입니다.</dd></div>
+        <div><dt>QA</dt><dd>Quality Assurance. 기술 검사와 사람의 화면·소리 검수를 합친 최종 품질 확인입니다.</dd></div>
+        <div><dt>API</dt><dd>Application Programming Interface. 플랫폼 자료를 자동으로 읽는 연결 방식이며 실시간 수집은 아직 연결하지 않았습니다.</dd></div>
+        <div><dt>H.264 / AAC</dt><dd>최종 MP4에 쓰는 영상 / 음성 압축 형식입니다. 릴스 출력의 호환성 검사를 받습니다.</dd></div>
+      </dl>
+    </section>
+
+    <section class="closing" aria-label="주차별 팀 PR">
+      <div><h2>기록은 주차별로, 판단은 사람이.</h2><p>1주차는 릴스 제작 스킬과 결과물 링크, 2주차는 다국가·다플랫폼 밈 사전 선별 스킬입니다. 실제 가족 영상은 이 화면에 포함하지 않습니다.</p></div>
+      <div class="pr-links"><a href="https://github.com/Pseudo-Lab/no-more-slops/pull/15">1주차 PR #15 ↗</a><a href="https://github.com/Pseudo-Lab/no-more-slops/pull/9">2주차 PR #9 ↗</a></div>
+    </section>
+  </main>
+  <footer class="wrap">2026-10-13 기준 파이프라인 설명 · 후보 선별과 기술 QA는 업로드 승인이나 조회수 보장이 아닙니다.</footer>
+
+  <script>
+    (() => {
+      "use strict";
+      const markets = ["KR", "JP", "US"];
+      const platforms = ["instagram", "youtube", "tiktok", "x"];
+      const names = { instagram: "Instagram", youtube: "YouTube", tiktok: "TikTok", x: "X" };
+      const rows = document.getElementById("matrix-rows");
+      const fileInput = document.getElementById("plan-file");
+      const message = document.getElementById("load-message");
+      const realActivity = document.getElementById("real-activity-text");
+      const stage = document.getElementById("treasure-stage");
+      const stageToggle = document.getElementById("stage-toggle");
+      const demoButton = document.getElementById("demo-advance");
+      const demoGems = [...document.querySelectorAll("#demo-gems span")];
+      const demoSteps = [
+        ["트렌드 지도를 펼치고 있어요", "네 플랫폼과 세 시장의 아이디어를 둘러보는 화면 시연입니다."],
+        ["아기에게 어울리는 장면을 살펴봐요", "안전한 표현과 실제 동작에 맞는 포맷을 고르는 과정을 보여줍니다."],
+        ["추억을 정리하고 있습니다", "원본 영상을 살피고 자막을 붙일 장면을 고르는 과정을 보여줍니다."],
+        ["소리와 자막으로 순간을 꾸미고 있어요", "배경음·효과음·장면 자막을 준비하는 과정을 보여줍니다."],
+        ["완성된 장면을 함께 확인해요", "렌더 결과와 게시 문구를 사람이 검수하는 과정을 보여줍니다."]
+      ];
+      let plan = new Map(markets.flatMap(market => platforms.map(platform => [`${market}:${platform}`, { market, platform, selected: null, alternate: null }])));
+      let active = "KR:instagram";
+      let demoStep = -1;
+      let gemsEarned = 0;
+
+      function setChestOpen(open) {
+        stage.classList.toggle("is-open", open);
+        stageToggle.setAttribute("aria-expanded", String(open));
+        stageToggle.setAttribute("aria-label", open ? "보물상자 닫기 시연" : "보물상자 열어보기 시연");
+        stageToggle.querySelector("span").textContent = open ? "상자 닫기 · 시연" : "상자 열어보기 · 시연";
+        stage.dispatchEvent(new Event("chest-change"));
+      }
+      stageToggle.addEventListener("click", () => setChestOpen(!stage.classList.contains("is-open")));
+
+      function showDemo() {
+        const title = document.getElementById("demo-title");
+        const detail = document.getElementById("demo-message");
+        const position = document.getElementById("demo-position");
+        const meter = document.getElementById("demo-meter");
+        if (demoStep < 0) {
+          title.textContent = "우리만의 릴스 여정을 시작해요";
+          detail.textContent = "다섯 장면을 따라가며 보석을 모아 보세요. 시연 버튼은 Python·FFmpeg 작업을 실행하지 않습니다.";
+          position.textContent = "시연 대기 · 0 / 5단계";
+          meter.value = 0;
+          demoButton.textContent = "시연 시작";
+        } else if (demoStep < demoSteps.length) {
+          title.textContent = demoSteps[demoStep][0];
+          detail.textContent = demoSteps[demoStep][1];
+          position.textContent = `화면 시연 · ${demoStep + 1} / 5단계`;
+          meter.value = demoStep + 1;
+          demoButton.textContent = demoStep === 4 ? "시연 완료 · 상자 열기" : "다음 단계 시연";
+        } else {
+          title.textContent = "추억 보석 5개를 모았어요!";
+          detail.textContent = "화면 시연이 끝났습니다. 실제 후보 검증과 영상 제작 상태는 아래 결과판에서 따로 확인하세요.";
+          position.textContent = "화면 시연 완료 · 5 / 5단계";
+          meter.value = 5;
+          demoButton.textContent = "다시 시연";
+        }
+        document.getElementById("demo-reward").textContent = `보석 ${gemsEarned} / 5`;
+        demoGems.forEach((gem, index) => gem.classList.toggle("earned", index < gemsEarned));
+      }
+      demoButton.addEventListener("click", () => {
+        if (demoStep === demoSteps.length) {
+          demoStep = -1;
+          gemsEarned = 0;
+          setChestOpen(false);
+        } else {
+          if (demoStep >= 0) gemsEarned = demoStep + 1;
+          demoStep += 1;
+          if (demoStep === demoSteps.length) setChestOpen(true);
+        }
+        showDemo();
+      });
+
+      function showDetail(key) {
+        active = key;
+        const [market, platform] = key.split(":");
+        const item = plan.get(key);
+        const state = !item ? "자료 없음" : item.selected ? "사람 검토 필요" : "보류";
+        document.getElementById("detail-status").textContent = state;
+        document.getElementById("detail-title").textContent = `${market} · ${names[platform]}`;
+        document.getElementById("detail-explain").textContent = !item
+          ? "불러온 파일에 이 조합의 결과가 없습니다."
+          : item.selected ? "점수로 좁힌 후보입니다. 원본·권리·아기 장면을 사람이 확인한 뒤 선택합니다."
+          : "원본 영상 근거와 사람의 장면 검토가 필요합니다.";
+        document.getElementById("detail-selected").textContent = item?.selected || "없음";
+        document.getElementById("detail-alternate").textContent = item?.alternate || "없음";
+        rows.querySelectorAll("button.cell").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.key === key)));
+      }
+
+      function render() {
+        rows.replaceChildren();
+        for (const market of markets) {
+          const tr = document.createElement("tr");
+          const heading = document.createElement("th");
+          heading.scope = "row";
+          heading.textContent = market;
+          tr.append(heading);
+          for (const platform of platforms) {
+            const key = `${market}:${platform}`;
+            const item = plan.get(key);
+            const state = !item ? "자료 없음" : item.selected ? "후보 있음" : "보류";
+            const td = document.createElement("td");
+            const button = document.createElement("button");
+            const title = document.createElement("b");
+            const subtitle = document.createElement("small");
+            button.type = "button";
+            button.className = `cell ${!item ? "missing" : item.selected ? "ready" : ""}`;
+            button.dataset.key = key;
+            button.setAttribute("aria-label", `${market} ${names[platform]}, ${state}${item?.selected ? `, 1안 ${item.selected}` : ""}`);
+            title.textContent = state;
+            subtitle.textContent = item?.selected || "원본 근거·검토 대기";
+            button.append(title, subtitle);
+            button.addEventListener("click", () => showDetail(key));
+            td.append(button);
+            tr.append(td);
+          }
+          rows.append(tr);
+        }
+        document.getElementById("result-count").textContent = `${[...plan.values()].filter(item => item.selected).length} / 12 조합에 검토 후보`;
+        showDetail(active);
+      }
+
+      fileInput.addEventListener("change", async () => {
+        const file = fileInput.files?.[0];
+        if (!file) return;
+        realActivity.textContent = `${file.name} 읽는 중`;
+        try {
+          if (file.size > 2 * 1024 * 1024) throw new Error("2 MB 이하 JSON 파일을 선택해 주세요.");
+          const data = JSON.parse(await file.text());
+          if (!data || typeof data !== "object" || !Array.isArray(data.rankings) || !data.rankings.length || data.rankings.length > 12) {
+            throw new Error("trend-plan.json 형식의 rankings 배열이 필요합니다.");
+          }
+          const next = new Map();
+          for (const item of data.rankings) {
+            if (!item || typeof item !== "object" || !markets.includes(item.market) || !platforms.includes(item.platform)
+              || !(item.selected === null || (typeof item.selected === "string" && item.selected.length <= 200))
+              || !(item.alternate === null || (typeof item.alternate === "string" && item.alternate.length <= 200))) {
+              throw new Error("시장·플랫폼 또는 후보 필드가 올바르지 않습니다.");
+            }
+            const key = `${item.market}:${item.platform}`;
+            if (next.has(key)) throw new Error("같은 시장·플랫폼 결과가 중복되었습니다.");
+            next.set(key, { market: item.market, platform: item.platform, selected: item.selected, alternate: item.alternate });
+          }
+          if (typeof data.as_of !== "string" || !Number.isFinite(Date.parse(data.as_of))) throw new Error("분석 시각(as_of)이 올바르지 않습니다.");
+          plan = next;
+          render();
+          document.getElementById("result-date").textContent = `불러온 기획안 · ${data.as_of}`;
+          message.textContent = `${file.name}을(를) 로컬에서 읽었습니다. ${next.size}개 조합이 포함되어 있습니다.`;
+          realActivity.textContent = `읽기·형식 검증 완료 · ${next.size}개 조합 표시`;
+        } catch (error) {
+          message.textContent = `파일을 열지 못했습니다: ${error.message}`;
+          realActivity.textContent = `검증 실패 · ${error.message}`;
+        }
+      });
+
+      render();
+    })();
+  </script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js"}}</script>
+  <script type="module">
+    const stage = document.getElementById("treasure-stage");
+    const canvas = document.getElementById("treasure-canvas");
+    const status = document.getElementById("renderer-status");
+    try {
+      const THREE = await import("three");
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "low-power" });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.65;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
+      camera.position.set(4.3, 3.0, 7.1);
+      camera.lookAt(0, 0.28, 0);
+      scene.add(new THREE.HemisphereLight(0xc9fff1, 0x4a2730, 2.3));
+      const key = new THREE.DirectionalLight(0xffddab, 3.1);
+      key.position.set(-4, 7, 5);
+      scene.add(key);
+      const glow = new THREE.PointLight(0xffbf6c, 3.1, 5.5);
+      glow.position.set(0, 0.95, 1.18);
+      scene.add(glow);
+
+      const chest = new THREE.Group();
+      chest.position.y = -0.38;
+      scene.add(chest);
+      const wood = new THREE.MeshStandardMaterial({ color: 0x704432, roughness: 0.78, metalness: 0.05 });
+      const woodLight = new THREE.MeshStandardMaterial({ color: 0xa96a42, roughness: 0.67 });
+      const gold = new THREE.MeshStandardMaterial({ color: 0xdab06b, metalness: 0.72, roughness: 0.28 });
+      const darkGold = new THREE.MeshStandardMaterial({ color: 0x846443, metalness: 0.68, roughness: 0.37 });
+      const gem = new THREE.MeshPhysicalMaterial({ color: 0x65f7de, metalness: 0.2, roughness: 0.13, emissive: 0x147f78, emissiveIntensity: 0.7 });
+      const addBox = (parent, size, position, material) => {
+        const mesh = new THREE.Mesh(new THREE.BoxGeometry(...size), material);
+        mesh.position.set(...position);
+        parent.add(mesh);
+        return mesh;
+      };
+      addBox(chest, [3.25, 1.45, 2.1], [0, 0, 0], wood);
+      addBox(chest, [3.48, 0.15, 2.29], [0, -0.78, 0], darkGold);
+      for (const x of [-1.48, -0.49, 0.49, 1.48]) addBox(chest, [0.025, 1.28, 0.035], [x, 0, 1.07], woodLight);
+      for (const x of [-1.12, 1.12]) {
+        addBox(chest, [0.17, 1.53, 0.13], [x, 0, 1.07], gold);
+        addBox(chest, [0.13, 1.53, 2.23], [x, 0, 0], gold);
+      }
+      for (const y of [-0.63, 0.64]) addBox(chest, [3.45, 0.15, 0.13], [0, y, 1.07], gold);
+      addBox(chest, [0.68, 0.65, 0.16], [0, 0.10, 1.13], darkGold);
+      addBox(chest, [0.51, 0.49, 0.18], [0, 0.10, 1.19], gold);
+      const jewel = new THREE.Mesh(new THREE.OctahedronGeometry(0.24), gem);
+      jewel.position.set(0, 0.1, 1.32);
+      chest.add(jewel);
+
+      const lid = new THREE.Group();
+      lid.position.set(0, 0.72, -1.05);
+      chest.add(lid);
+      addBox(lid, [3.42, 0.46, 2.27], [0, 0.24, 1.08], woodLight);
+      addBox(lid, [3.58, 0.13, 2.39], [0, 0.49, 1.08], gold);
+      addBox(lid, [3.55, 0.14, 0.15], [0, 0.24, 2.25], gold);
+      for (const x of [-1.12, 1.12]) addBox(lid, [0.17, 0.55, 2.35], [x, 0.26, 1.08], gold);
+      const seam = addBox(chest, [3.04, 0.052, 1.85], [0, 0.745, 0], new THREE.MeshBasicMaterial({ color: 0xffd483, transparent: true, opacity: 0.48 }));
+      const floor = new THREE.Mesh(new THREE.CircleGeometry(2.4, 40), new THREE.MeshBasicMaterial({ color: 0x4c806e, transparent: true, opacity: 0.19, depthWrite: false }));
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.y = -1.25;
+      scene.add(floor);
+      const particles = [];
+      for (let i = 0; i < 21; i++) {
+        const material = new THREE.MeshBasicMaterial({ color: i % 3 === 0 ? 0x9cfff1 : 0xffd590, transparent: true, opacity: 0.25 });
+        const particle = new THREE.Mesh(new THREE.SphereGeometry(0.025 + (i % 4) * 0.006, 7, 5), material);
+        const angle = i * 2.4;
+        const radius = 0.28 + (i % 6) * 0.16;
+        const baseY = 0.78 + (i % 7) * 0.13;
+        particle.position.set(Math.cos(angle) * radius, baseY, Math.sin(angle) * radius + 0.38);
+        chest.add(particle);
+        particles.push({ particle, baseY, phase: i * 0.75 });
+      }
+
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function resize() {
+        const width = stage.clientWidth;
+        const height = stage.clientHeight;
+        if (!width || !height) return;
+        renderer.setSize(width, height, false);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        draw(performance.now());
+      }
+      function draw(now) {
+        const time = now * 0.001;
+        const open = stage.classList.contains("is-open");
+        const target = open ? -0.82 : 0;
+        lid.rotation.x += (target - lid.rotation.x) * (reduced ? 1 : 0.075);
+        glow.intensity = open ? 5.1 : 3.1;
+        seam.material.opacity = open ? 0.9 : 0.48;
+        if (!reduced) {
+          chest.rotation.y = Math.sin(time * 0.4) * 0.065;
+          chest.position.y = -0.38 + Math.sin(time * 0.9) * 0.035;
+          camera.position.x = 4.3 + Math.sin(time * 0.28) * 0.17;
+          camera.lookAt(0, 0.28, 0);
+        }
+        particles.forEach(({ particle, baseY, phase }) => {
+          particle.position.y = baseY + (reduced ? 0 : Math.sin(time * 1.2 + phase) * 0.11);
+          particle.material.opacity = (open ? 0.75 : 0.31) * (0.74 + Math.sin(time * 1.9 + phase) * 0.2);
+        });
+        renderer.render(scene, camera);
+      }
+      const observer = new ResizeObserver(resize);
+      observer.observe(stage);
+      stage.addEventListener("chest-change", () => draw(performance.now()));
+      canvas.addEventListener("webglcontextlost", event => {
+        event.preventDefault();
+        stage.dataset.renderer = "fallback";
+        status.textContent = "3D 연결 중단 · 2D 상자 표시";
+      });
+      resize();
+      stage.dataset.renderer = "three";
+      status.textContent = "Three.js 3D 상자 · 화면 시연";
+      if (!reduced) {
+        const loop = now => {
+          if (stage.dataset.renderer === "three" && !document.hidden) draw(now);
+          requestAnimationFrame(loop);
+        };
+        requestAnimationFrame(loop);
+      }
+    } catch (error) {
+      stage.dataset.renderer = "fallback";
+      status.textContent = "3D 사용 불가 · 2D 상자 표시";
+    }
+  </script>
+</body>
+</html>

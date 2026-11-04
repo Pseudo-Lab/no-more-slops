@@ -1,0 +1,100 @@
+{
+  "account": {
+    "display_name": "치와와 AI Lab",
+    "handle": "chihuahua_ai.lab"
+  },
+  "edition_date": "2026-10-17",
+  "announcement_date": "2026-10-16",
+  "topic": "Mercedes-Benz and NVIDIA expand automated-driving partnership",
+  "deliverable": {
+    "type": "silent_reel",
+    "width": 2160,
+    "height": 3840,
+    "fps": 30,
+    "duration_seconds": 60,
+    "audio_streams": 0
+  },
+  "safe_area_at_1080": [
+    120,
+    280,
+    890,
+    1440
+  ],
+  "brand": {
+    "accent": "#FF4D00",
+    "accent_role": "small brand mark, scene number and current progress only",
+    "neutral_background": "#101719"
+  },
+  "motion": {
+    "main_visual": "fixed real photographic background; large unboxed information across the safe screen area",
+    "photography": "fixed size, crop, source and opacity throughout 60 seconds",
+    "graphics": "roles, technology-to-function mapping, development scope, disclosure status",
+    "reveal": "Reveal each fact once in reading order; no circulating connectors, moving cars or repeated focus sweeps",
+    "copy": "readable headings and rows; brief soft handoffs",
+    "progress": "eight separate scene bars with individual scene durations"
+  },
+  "caption_policy": {
+    "max_characters": 499,
+    "hashtag_count": 3,
+    "acknowledgement": "이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다."
+  },
+  "no_mascot": true,
+  "natural_photo_colors": true,
+  "recompression_review_required": true,
+  "motion_policy": {
+    "mode": "information_linked",
+    "scope": "information-bearing reveals and scene handoffs",
+    "reading_holds_allowed": true,
+    "reject": [
+      "invented driving demonstrations",
+      "moving particles without added information",
+      "looping arrows",
+      "unnecessary graphical metaphors",
+      "continuous movement solely to change pixels"
+    ],
+    "preference_resolution": "Latest feedback prioritizes information clarity and rejects forced, distracting visualization; movement now introduces actual information and allows reading time"
+  },
+  "user_feedback": "2026-10-17: Information content is satisfactory, but explanation should not be confined to a small panel. Use the main screen for large clear information.",
+  "review_status": "user approved this treatment for future Reels on 2026-10-17",
+  "planning_note": "Photo stays fixed; animated rows add source-grounded information once. No requirement to animate an otherwise static fact just for movement.",
+  "visual_layout": {
+    "information_area_at_1080": [
+      136,
+      600,
+      874,
+      1300
+    ],
+    "container": "No enclosing small card or panel",
+    "type": "large editorial typography, open comparisons and separators",
+    "reading_hierarchy": "Each scene’s important facts occupy the main screen area; auxiliary labels smaller"
+  },
+  "visual_treatment": "large_editorial_fixed_photo",
+  "preference_status": "approved",
+  "approved_at": "2026-10-17",
+  "skill_profile": "instagram-content/references/chihuahua-ai-lab.brief.json",
+  "layout_revision": {
+    "reason": "2026-10-17 actual Instagram screenshot showed excess unused space below the old progress indicator",
+    "safe_area_at_1080": [
+      120,
+      280,
+      890,
+      1660
+    ],
+    "information_area_at_1080": [
+      136,
+      636,
+      874,
+      1546
+    ],
+    "progress_y_at_1080": 1640,
+    "photo_at_1080": {
+      "x": -32,
+      "y": 515,
+      "width": 1144,
+      "height": 1030,
+      "fit": "cover",
+      "position": "center; constant for all frames"
+    },
+    "uploaded_review": "Only the previous editorial video was uploaded and captured; the new revision is locally reviewed"
+  }
+}

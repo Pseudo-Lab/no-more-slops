@@ -1,0 +1,324 @@
+#import "conference.typ": *
+#show: research-paper.with(title: "ProbeFlow: When Acquisition Planning Cannot Repair the Predictor: A support-first audit of predictive utility, source prices, and selection failure in exposed sensor data")
+#title-block("ProbeFlow: When Acquisition Planning Cannot Repair the Predictor: A support-first audit of predictive utility, source prices, and selection failure in exposed sensor data","Executed v11/v12 exposed-data development evidence; v13 is a literature-verified manuscript restructuring with no new experiments. Conference-style preprint, not an accepted conference paper.")
+#abstract-block[#text("A cost-aware acquisition policy cannot be interpreted independently of the predictor it serves. We report an auditable development study in which repairing an obvious class-support failure still leaves a selective sensor classifier with zero coverage. Using three channels of the public Hydraulic dataset, we then lock three simple predictors and all eight source masks, choose one predictor on 204 chronological selection cycles, and retain the previously exposed 421-cycle evaluation segment. All evaluation head labels appear in training, yet 391 of 421 evaluation cycles have joint label conditions absent from the training prefix. Removing a centroid prior offset reduces full-source component error from 0.723872 to 0.473872; the entire 0.25 change comes from one of four heads. A selection-chosen nearest neighbor ties that score, but additional channels can worsen its predictions. Under raw-sample quotes a fixed TS1 subset matches the full-source score at quote 60 versus 6660, whereas under equal source prices the selection-locked subset loses to a simple order baseline. These observations motivate diagnosing support, predictive utility, and terminal coverage before adding policy search. We provide exact consumed-code and prediction receipts, strong simple controls, and a contract-level comparison with active feature acquisition methods. This is an exposed-data development study, not a native-method reproduction, independent final evaluation, risk certificate, or deployment claim.")]
+
+= #text("Introduction")
+
+#text("Active feature acquisition decides which information to request before making a prediction. More elaborate policies can reason over future observations, remaining budgets, and stop decisions. Yet a policy comparison can be uninformative when its fixed predictor cannot exploit even the complete permitted input. ProbeFlow studies that dependency in a public sensor replay: what should be checked before spending additional effort on acquisition search?")
+
+#text("The practical waste is specific. A longer search tree requires future-observation estimates, additional inference, parameter choices, and a larger audit surface. If every resulting terminal diagnosis abstains, or if its error is unchanged across source masks, a lower planning objective cannot establish useful diagnosis. We therefore diagnose data support, predictive utility, and terminal coverage before escalating acquisition complexity. This ordering is a proposed research discipline illustrated by the present sequence; we have not randomized research teams or measured its general effect on research productivity.")
+
+#text("The public Hydraulic dataset contains recorded 60-second cycles and four categorical condition targets ")#link(<bib1>)[#text("[1]")]#text(". Our local assets contain PS1, FS1, and TS1 only. We do not evaluate the full physical sensor bank. The current task is retrospective classification of completed recorded cycles, not online equipment control or causal fault intervention. Reading an offline file does not demonstrate that the same sensor request would have the modeled cost or measurement effect in a deployed system.")
+
+#text("All numerical results below are local computations on these assets. Earlier finite examples, the v11 sensor replay, the v12 predictor comparison, and author-reported literature results remain distinct evidence classes. The 421 evaluation cycles were already inspected in v9 and v11; locking a new program before its current evaluation pass supplies a reproducible procedural boundary, not renewed blindness. We use no independent-sample confidence intervals or population significance tests.")
+
+#text("Figure 1 locates the observed failures in this sequence. The support check remains qualified even after marginal class presence is restored. The subsequent bounded predictor contrast supplies a reason to run small, matched acquisition controls, while its unfavorable results limit further claims. A richer information-state contract remains a hypothesis for a later, properly supported experiment.")
+
+#figure(image("figures/overview.svg", width: 100%), caption: [#text("Diagnostic ordering and the observed v11-to-v12 detour. Zero selective coverage leads to a bounded predictor audit before additional planner search. Arrows describe the study logic, not a proven causal benefit or universally sufficient checklist.")]) <fig-overview>
+
+#text(weight: "bold")[Contributions.]
+
+- #text("A diagnostic ordering that separates marginal and joint support, fixed-predictor utility, selective terminal coverage, and acquisition comparison, with explicit stopping conditions for unproductive policy search.")
+- #text("A locked three-predictor by eight-mask comparison using train-only fitting, one selection-only model choice, an openly exposed evaluation interval, and per-cycle prediction receipts.")
+- #text("A common-predictor comparison against fixed subsets and deterministic orders under two separate price systems, preserving both a favorable raw-price contrast and an unfavorable equal-price transfer result.")
+- #text("A reproducibility and claim-scope package connecting negative results, exact consumed code, unit-aware costs, and conceptual comparisons to primary AFA literature without claiming native reproductions.")
+
+= #text("Related Work")
+
+#text("Our closest comparison is active feature acquisition (AFA): a predictor and an information policy are evaluated together under acquisition constraints. A recent survey organizes this literature using partially observed decision problems and model-based, model-free, and hybrid approaches ")#link(<bib13>)[#text("[13]")]#text(". We use that taxonomy to locate the study, while separating conceptual similarity from an executed comparison. External benchmark scores are not inserted into our local result tables.")
+
+== #text("Learned policies, surrogates, and strong greedy controls")
+
+#text("Joint acquisition and classification can learn a cost-sensitive stop-or-acquire agent alongside a variable-size representation ")#link(<bib8>)[#text("[8]")]#text(". EDDI uses a partial variational model and expected information gain ")#link(<bib12>)[#text("[12]")]#text("; generative-surrogate AFA supplies models of missing features to support decisions ")#link(<bib9>)[#text("[9]")]#text(". These approaches clarify why a current confidence value is not a distribution over unobserved outcomes. ProbeFlow does not train these generative components or test their conditional forecasts.")
+
+#text("Amortized conditional-mutual-information selection provides a learned greedy alternative ")#link(<bib10>)[#text("[10]")]#text(". Its relevance here is comparator strength: a small or greedy policy deserves careful construction before a longer horizon is credited. Our cheapest-first, pressure-first, and exhaustive eight-subset development controls are simpler still. They are useful within this small action space but cannot substitute for the native objectives, architectures, or training resources of these methods.")
+
+== #text("Recent nonmyopic and grouped-source methods")
+
+#text("Learning-To-Measure combines an in-context predictor with acquisition and includes greedy and lookahead variants ")#link(<bib2>)[#text("[2]")]#text(". BRiG-AFA learns remaining-budget risk-to-go for a fixed predictor ")#link(<bib3>)[#text("[3]")]#text(". O-MPAC learns source-acquisition decisions from offline planning ")#link(<bib4>)[#text("[4]")]#text(". NM-PPG optimizes nonmyopic trajectories with pathwise policy gradients ")#link(<bib5>)[#text("[5]")]#text(". These primary texts establish that lookahead, fixed-predictor planning, and grouped acquisition are existing design choices. None alone is a novelty claim here.")
+
+#text("We distinguish three possible comparisons. A native reproduction preserves the original method and evaluation contract. A common-contract adapter may change actions, prices, terminal loss, or predictor and must disclose those changes. A handcrafted reference policy makes no claim to implement a named method. Our v11 empirical planner belongs to the third category. Native reproduction counts remain zero; a future comparison must separately budget training, teachers, forecasts, and tuning.")
+
+#result-table(([#text("Reference")],[#text("Relevant design feature")],[#text("Missing native reproduction component")],),(([#text("Learning-To-Measure ")#link(<bib2>)[#text("[2]")]#text("")],[#text("Predictor/acquisition coupling; greedy and lookahead")],[#text("Native meta-predictor, training, retrospective-support assumptions")],),([#text("BRiG-AFA ")#link(<bib3>)[#text("[3]")]#text("")],[#text("Fixed predictor and learned future risk")],[#text("Backward fitted networks and original acquisition objective")],),([#text("O-MPAC ")#link(<bib4>)[#text("[4]")]#text("")],[#text("Training-record teacher and receding source planning")],[#text("Original teacher/scorer training and native data protocol")],),([#text("NM-PPG ")#link(<bib5>)[#text("[5]")]#text("")],[#text("Trajectory objective and nonmyopic optimization")],[#text("Pathwise optimization, native transition and cost model")],),),"Method comparisons are conceptual and contract-level. No source-reported benchmark number is placed in our locally measured performance tables.")
+
+== #text("Selective decisions, offline evaluation, and structural assumptions")
+
+#text("Selective classification makes coverage part of the outcome ")#link(<bib18>)[#text("[18]")]#text(". SelectiveNet jointly learns prediction and rejection ")#link(<bib17>)[#text("[17]")]#text(", whereas our v11 fixed predictor uses a development-selected threshold. SGR supplies a risk-control construction under its sampling and selection assumptions ")#link(<bib6>)[#text("[6]")]#text("; the present threshold is not such a certificate. Empty coverage leaves selective error undefined.")
+
+#text("Offline AFA evaluation can depend on how data were acquired and on assumptions connecting observed and deployed acquisition ")#link(<bib11>)[#text("[11]")]#text(". Adaptive-submodularity guarantees likewise require a specified distribution and objective satisfying the theorem conditions ")#link(<bib7>)[#text("[7]")]#text(". A complete-record replay with a mask lookup is not automatically a valid evaluation of arbitrary adaptive histories, and our fixed classifier is not covered by a generic guarantee of monotone empirical error.")
+
+= #text("Problem and Diagnostic Method")
+
+#text("A latent record consists of complete sensor traces and the condition label. The controller initially receives the declared source catalogue, legal action set, quote map, budget, and any explicitly public history. It may receive a statistic only after the corresponding successful action. The true evaluation label, unrequested numerical features, candidate future outcomes from the evaluation record, and private cache intermediates are excluded from controller inputs.")
+
+#text("In the general contract, state must distinguish publicly disclosed features from work already completed by the executor. A cached raw record need not mean that every derived statistic has been disclosed. Reusing an already-read source can change a marginal quote without granting free access to every downstream transform. This is a contract requirement, not an established empirical advantage of a new state representation.")
+
+#text("The present three-channel experiment is a restricted case: requesting one channel discloses all three predefined statistics together, requests succeed deterministically, and each source has a fixed quote. The cache is reconstructible from the requested-channel history. In this case the observed mask, disclosed values, remaining budget, and catalogue suffice for the implemented policy comparison; we do not claim that an unobserved cache variable provides additional predictive power. Partial windows, overlapping sources, failed reads after partial work, or separate transform requests require a subsequent experiment.")
+
+#text("A planner additionally needs a predictive distribution for future observations. Current confidence is not that distribution. The v11 empirical planner used complete training prototypes to forecast possible source outcomes; it never used unrequested evaluation values as its forecast target. Those empirical forecasts may be wrong under joint-condition shift. The v12 study deliberately steps back to fixed mask baselines so that a predictor failure cannot be mistaken for evidence favoring or disfavoring a sophisticated transition model.")
+
+$ J(p) = E[L + alpha C] $
+
+$ C(A) = sum_(g in G(A)) c_g $
+
+== #text("Unit-aware source quotes and hard budgets")
+
+#text("For a selected source, mean, population standard deviation, and slope share one source-read quote. The raw-sample price system assigns PS1=6000, FS1=600, and TS1=60. A separate equal-source system assigns one unit to each channel. These units are never summed across price systems. A preflight failure consumes no quote and discloses nothing. Repeated statistics of the same acquired source are not charged as independent raw reads.")
+
+#text("The quote is a logical replay proxy, not a measured physical I/O, energy, monetary, or end-to-end latency cost. In fact, the offline evaluator loads the complete feature bank to support all mask projections; the quote records the information rights assigned to a policy, not which files the audit host physically avoided reading. Training, feature-bank construction, and inference wall time are reported separately. Substituting a source-count quote for a raw-sample quote changes the decision problem, even if the predictor remains fixed.")
+
+#text("Our scalar objective is component error plus 0.05 times mean quote normalized by the sum of the three source prices. The normalization and coefficient were fixed before the v12 run. They are not fitted after observing a favorable ranking. Hard budget feasibility is enforced separately from the soft penalty; a low expected penalty cannot license an over-budget action.")
+
+== #text("Diagnostic admission and selective denominators")
+
+#text("The admission sequence asks different questions rather than collapsing them into one pass flag. Are the source bytes and label definitions pinned? Are the evaluation marginal labels and joint conditions represented in training? Does a fixed predictor improve on no evidence under complete and partial masks? Does the terminal rule make accepted predictions? Only then is a policy-specific comparison interpretable. An unmet support condition is disclosed, not silently repaired by excluding hard cycles.")
+
+#text("We measure mean four-head component error, complete-vector error, terminal coverage, and scenario-specific quote. Component error counts four decisions per cycle; vector error counts a cycle incorrect if any head is wrong. These denominators are descriptive and correlated. Coverage is accepted cycles divided by all declared cycles. Selective risk divides accepted errors by accepted decisions and is null when none are accepted. The v12 predictor audit makes no selective-risk claim and does not replace the v11 terminal result.")
+
+$ R = (e_1 + e_2 + e_3 + e_4) / (4 n) $
+
+$ R_("vec") = (1 / n) sum_(i=1)^n bold(1)(hat(y)_i != y_i) $
+
+$ "coverage" = n_("accepted") / n $
+
+= #text("Experimental Setup")
+
+#text("We reuse the exact local public-data assets and the executed v11/v12 runs. V13 changes the argument, source review, and presentation; it adds no model candidate, data, policy trial, or final-set claim. The next subsections specify the resources that were available before the bounded v12 run.")
+
+== #text("Data, chronology, and support")
+
+#text("The raw assets are byte-identical to the earlier registered subset: PS1 contains 6000 values per cycle, FS1 600, and TS1 60; profile supplies the four condition labels. We preserve all 2205 cycles as the data inventory, although only the declared train, selection, and evaluation intervals are used by the comparison. The feature extractor computes the same three statistics per channel as v9/v11. Label fields, the stability flag, and cycle index are not predictive features.")
+
+#text("The v9 chronological training prefix ended at cycle 1323 and contained no cooler=100 example; all 421 evaluation cycles had cooler=100. The v11/v12 prefix ends at 1540 and contains cooler counts 732, 732, and 76 for classes 3, 20, and 100. Each evaluation head class is now present in training. This repairs a marginal-label admission failure but does not establish support for the joint diagnostic question.")
+
+#text("All 76 training records with cooler=100 have the same four-head condition tuple, (100,100,0,90). The evaluation segment contains that tuple only 30 times. Therefore 391 of 421 evaluation cycles, or 92.87%, have joint conditions absent from training. Across all classes, the training set contains 97 distinct condition tuples, selection 11, and evaluation 38. The 194 contiguous same-condition runs in the full profile are not established independent experimental units or physical assets.")
+
+#text("This distinction prevents a misleading remedy: merely showing every head label somewhere in training does not supply examples of every relevant mechanism combination. Our reported errors remain well-defined descriptive errors on the exposed interval, but their scientific interpretation is conditional on this narrow single-rig support. A random cycle split could mix adjacent experimental regimes; we do not introduce one to manufacture an easier final result.")
+
+#text("Structured validation should match the intended deployment problem: blocking may reduce dependence but can also change interpolation into extrapolation ")#link(<bib16>)[#text("[16]")]#text(". Our two 20-cycle gaps are transparent exclusions, not evidence that adjacent retained cycles are independent. The absence of verified asset or physical-session identities prevents us from defining a justified independent-unit count.")
+
+#result-table(([#text("Partition")],[#text("Inclusive cycles")],[#text("Count")],[#text("Permitted use")],),(([#text("Training")],[#text("1-1540")],[#text("1540")],[#text("Scaler, centroids, nearest-neighbor reference bank")],),([#text("Embargo")],[#text("1541-1560")],[#text("20")],[#text("Excluded")],),([#text("Selection")],[#text("1561-1764")],[#text("204")],[#text("One model choice and predeclared subset selection")],),([#text("Embargo")],[#text("1765-1784")],[#text("20")],[#text("Excluded")],),([#text("Exposed evaluation")],[#text("1785-2205")],[#text("421")],[#text("Fixed comparison and descriptive audit")],),),"The embargo preserves temporal ordering; it does not prove statistical independence. Current evaluation decoding occurs after the new selection artifact is frozen, but earlier exposure remains.")
+
+== #text("Frozen predictor contrasts and selection rights")
+
+#text("We limit the candidate set to three simple predictors. The prior-weighted centroid is exactly the existing v9/v11 rule: training-only feature means and population standard deviations; one standardized centroid per head/class; average squared distance over disclosed dimensions; and a log training class-prior offset. Each head is classified independently. Tests compare this implementation against the original predictor on every mask.")
+
+#text("The prior-neutral centroid uses the same fitted means, scales, centroids, and masked distance. For nonempty masks it removes only the log-prior offset. This is a controlled software scoring contrast, not a claim that a balanced prior is correct for an industrial population. The empty-mask fallback is held common across all candidates: the modal training class per head, with numerical label ordering for ties.")
+
+#text("The one-nearest-neighbor predictor searches complete training cycles using standardized distance in the disclosed feature subspace and returns the winning training cycle's four labels. Exact distance ties choose the earliest training row; the index is a deterministic tie rule, not an input feature. No k, metric, preprocessing, or mask-specific fit is tuned. This changes local representation, multi-head coupling, and inductive bias together, so its difference from a centroid cannot uniquely identify one representation mechanism.")
+
+#text("All eight source subsets, including the empty set, are evaluated with one shared training fit per candidate family. We select exactly one predictor using the equal mean selection component error across the eight masks; ties follow the declared candidate order. No evaluation outcome enters that choice. The selection criterion intentionally differs from choosing the best all-source score, because acquisition systems operate under partial observations.")
+
+#text("Finite-sample model selection can itself overfit a development criterion ")#link(<bib14>)[#text("[14,15]")]#text(". We therefore preserve both rights boundaries and their limits: the same 204 labels support the model choice and the permitted subset choices; the subsequent segment was exposed in earlier work. Freezing the current selection artifact before current evaluation decoding makes the run reproducible, but does not turn the interval into a fresh holdout.")
+
+#method-algorithm(([#text("Pin plan, raw hashes, dependency hash, and exact consumed code in a new output directory.")],[#text("Fit one common scaler and training-only reference parameters on cycles 1-1540.")],[#text("Evaluate the three declared predictors under all eight masks on the 204 selection cycles.")],[#text("Select one predictor by mean selection mask error; freeze the choice and any permitted subset masks.")],[#text("Decode the current evaluation segment; record all 24 fixed model-mask prediction groups.")],[#text("Reconcile recorded predictions, head errors, vector errors, mask prices, and denominators.")],[#text("Retain negative comparisons, price-dependent reversals, and the earlier exposure record.")],),"One bounded run; no additional candidates are proposed after its evaluation results.")
+
+== #text("Conditional acquisition controls")
+
+#text("Before evaluation, the selected predictor must improve its full-source selection component error by at least 0.05 over the common no-evidence baseline, with no invalid prediction. If this usefulness gate fails, no policy search is added. The gate is a development eligibility rule, not a statistical certificate. It prevents a longer planner from being evaluated against a system that cannot use even the complete declared input.")
+
+#text("If eligible, four fixed policies share the selected predictor: stop; cheapest-first; pressure-first; and selection-locked subset. The last policy considers all eight feasible masks and chooses the lowest selection error plus normalized quote. Ties prefer lower quote and then mask index. It is a strong small-design baseline, not a new adaptive algorithm. Cheapest-first uses price order with deterministic lexical ties; pressure-first uses PS1, FS1, TS1 and skips unaffordable sources.")
+
+#text("Raw-sample budgets are 0, 60, 660, 6000, and 6660; equal-source budgets are 0, 1, 2, and 3. Every chosen mask satisfies the corresponding hard cap. Model selection and subset selection reuse the same 204 development labels, which can overfit their conditions. We report that reuse explicitly rather than introducing an unobserved calibration or final set.")
+
+#text("Policy evaluation reuses the saved predictions of the frozen model-mask groups. It does not invoke a new predictor with test labels and does not generate additional independent outcomes. This is possible because the policies are fixed subsets. It would not justify counterfactual replay of a genuinely adaptive policy whose information history or state transition was absent from the trace.")
+
+= #text("Results and Analysis")
+
+#text("Results follow the diagnostic order rather than presenting a single favorable aggregate. The earlier selective failure, the bounded predictor change, the source-mask geometry, and the price-dependent policy controls answer different questions. Every reported local arm remains in its original denominator.")
+
+== #text("V11: repaired marginal labels, zero terminal coverage")
+
+#text("Restoring marginal class presence in v11 did not produce useful selective diagnoses. The selection-tuned common threshold was 1.01, so all 47 policy-budget-price groups had zero coverage and undefined selective error; their terminal abstention loss was 0.3. A separate, explicitly posthoc one-run diagnostic forced the threshold to zero. It was not substituted for the main selective result.")
+
+#text("Under that diagnostic and raw budget 6660, empirical greedy and two-step lookahead acquired mean quotes 269.50 and 2419.38, respectively. The complete three-source reference cost 6660. All had forced component error 0.723872 and vector error 1. The longer planner increased the quote without predictive benefit. Planning plus replay wall time was approximately 2.48 seconds for greedy, 23.03 for two-step lookahead, and 0.015 for stop on that single sequential host run; these times are not randomized performance estimates or physical measurement costs.")
+
+#text("This failure does not refute nonmyopic acquisition in general. It identifies a concrete dependency of the experiment: if the predictor and its forecast provide no useful terminal decision on the target segment, additional search is not evidence of improved information use. We preserve this unsuccessful stage rather than presenting the later predictor contrast as if it had been the initial selective hypothesis.")
+
+== #text("V12: a full-source gain confined to one head")
+
+#text("The selection mean mask errors were 0.555147 for the prior centroid, 0.348499 for the prior-neutral centroid, and 0.339308 for one-nearest-neighbor. The declared rule selected one-nearest-neighbor. Its full-source selection error was 0.305147 against a no-evidence error of 0.555147, so the 0.05 usefulness gate passed with an observed development gain of 0.25.")
+
+#text("On the exposed evaluation interval, the prior centroid had component error 0.723872 under every mask. Removing the prior offset reduced full-source error to 0.473872; one-nearest-neighbor had the same full-source error. In both improved full-source cases the cooler head had zero errors, while valve, pump, and accumulator errors remained 273, 246, and 279 out of 421. Thus the full-source 0.25 reduction is exactly one corrected head per cycle, not broad four-component diagnostic recovery.")
+
+#text("The full-source nearest-neighbor prediction was the same tuple, (100,100,0,90), on all 421 cycles. Thirty cycles matched it completely and 391 did not, giving vector error 0.928741. The improved component score therefore coexists with a high rate of incorrect complete diagnostic vectors. Reporting only the component mean would conceal this limitation.")
+
+#text("The same-centroid contrast shows that changing the explicit scoring offset is sufficient to produce this cooler-head change within the fixed program and data. It does not identify a hydraulic causal mechanism or establish that prior removal will help a new population. The nearest-neighbor full-source tie with the much simpler prior-neutral centroid also prevents attributing that particular gain to a new nonparametric representation.")
+
+#result-table(([#text("Predictor")],[#text("Selection mean mask error")],[#text("Evaluation mean mask error")],[#text("Evaluation full-source error")],[#text("Full-source vector error")],),(([#text("Prior centroid")],[#text("0.555147")],[#text("0.723872")],[#text("0.723872")],[#text("1.000000")],),([#text("Prior-neutral centroid")],[#text("0.348499")],[#text("0.546096")],[#text("0.473872")],[#text("0.928741")],),([#text("1NN, selection chosen")],[#text("0.339308")],[#text("0.523901")],[#text("0.473872")],[#text("0.928741")],),),"Each evaluation number uses the same 421 exposed cycles. The 24 evaluation model-mask groups contain 10104 prediction records, not 10104 independent samples.")
+
+== #text("Source-mask errors are not monotone")
+
+#text("The selected nearest-neighbor predictor makes the information issue concrete. FS1 alone has component error 0.477435, but PS1 plus FS1 has error 0.574228. TS1 alone, FS1 plus TS1, and all three sources have the same 0.473872 component error. A larger observed mask changes the neighbor geometry; it does not give this fixed predictor an option to ignore every harmful added dimension.")
+
+#text("This observation concerns the implemented fixed decision rule. Additional coordinates alter its nearest-neighbor geometry, while the program has no learned option to ignore every harmful added coordinate. It is therefore inappropriate to impose a monotonic-error constraint on this table or treat the all-source reference as an empirical upper bound on accuracy. Figure 2 displays the complete three-by-eight comparison on one common error scale.")
+
+#text("The FS1-only prediction also trades head errors: cooler 398, valve 153, pump 51, accumulator 202. The TS1-only errors are 0, 273, 246, and 279. Similar component means can represent very different diagnostic failures. Equal component weights are a declared experimental choice, not an elicited industrial utility function. An application with safety-critical pump decisions might rank these policies differently.")
+
+#result-table(([#text("Disclosed channels")],[#text("Prior centroid error")],[#text("Prior-neutral error")],[#text("1NN error")],[#text("1NN vector error")],),(([#text("None")],[#text("0.723872")],[#text("0.723872")],[#text("0.723872")],[#text("1.000000")],),([#text("PS1")],[#text("0.723872")],[#text("0.498219")],[#text("0.520190")],[#text("0.928741")],),([#text("FS1")],[#text("0.723872")],[#text("0.696556")],[#text("0.477435")],[#text("0.969121")],),([#text("PS1 + FS1")],[#text("0.723872")],[#text("0.550475")],[#text("0.574228")],[#text("0.928741")],),([#text("TS1")],[#text("0.723872")],[#text("0.478029")],[#text("0.473872")],[#text("0.928741")],),([#text("PS1 + TS1")],[#text("0.723872")],[#text("0.473872")],[#text("0.473872")],[#text("0.928741")],),([#text("FS1 + TS1")],[#text("0.723872")],[#text("0.473872")],[#text("0.473872")],[#text("0.928741")],),([#text("PS1 + FS1 + TS1")],[#text("0.723872")],[#text("0.473872")],[#text("0.473872")],[#text("0.928741")],),),"Fixed-mask development errors, not an exhaustive industrial sensor benchmark or native-method leaderboard.")
+
+#figure(image("figures/predictor-mask-errors.svg", width: 100%), caption: [#text("Mean four-head component error for three predictors and eight source masks on the same 421 exposed evaluation cycles. The 1NN model was chosen using the separate 204-cycle selection interval. Adding PS1 to FS1 worsens this fixed predictor; the full-source 0.25 gain affects only cooler and still leaves complete-vector error 0.928741.")]) <fig-predictor-mask-errors>
+
+== #text("Price-sensitive controls expose a selection-transfer failure")
+
+#text("Under the raw-sample quote, the selection-locked subset chooses TS1 for every nonzero declared budget. At budget 6660 it attains the same exposed evaluation component error, 0.473872, as the three-source reference, with quote 60 instead of 6660. At budget 660, cheapest and pressure-first acquire FS1 plus TS1 for quote 660 and again have the same error. This is a useful strong-simple-baseline observation; it is not a measured physical saving or proof that temperature alone is sufficient for future diagnosis.")
+
+#text("Under equal source quotes, several source masks have identical selection error. The declared lower-mask-index tie rule selects PS1. At budget 1, the selection-locked policy has evaluation error 0.520190, worse than cheapest-first FS1 at 0.477435. At budget 3 it remains on PS1 while the full-source baseline has error 0.473872; even the penalized objective favors full-source on that exposed interval. We retain the unfavorable result and do not replace the tie rule with an evaluation-informed preference for TS1.")
+
+#text("The comparison illustrates two different uncertainties. Price assumptions change feasibility and which tied validation choice is favored. Separately, equal selection scores need not transfer equally to a later condition regime. No novel optimizer is required to observe either issue. A complex adaptive policy should be compared against these fixed subset and prior-neutral baselines, with the same predictor rights and development resources, before a policy-specific contribution is claimed.")
+
+#text("Figure 3 puts this price reversal beside the support limitation. Its panels use distinct quote units rather than a shared numerical cost axis. The policy table contains 36 summaries obtained by lookup in the frozen selected-model predictions; it adds no independent physical trial or new prediction call.")
+
+#result-table(([#text("Price system / budget")],[#text("Policy")],[#text("Chosen mask")],[#text("Quote")],[#text("Evaluation component error")],),(([#text("Raw / 6660")],[#text("Stop")],[#text("None")],[#text("0")],[#text("0.723872")],),([#text("Raw / 6660")],[#text("Cheapest or pressure-first")],[#text("All three")],[#text("6660")],[#text("0.473872")],),([#text("Raw / 6660")],[#text("Selection-locked subset")],[#text("TS1")],[#text("60")],[#text("0.473872")],),([#text("Equal / 1")],[#text("Cheapest-first")],[#text("FS1")],[#text("1")],[#text("0.477435")],),([#text("Equal / 1")],[#text("Selection-locked subset")],[#text("PS1")],[#text("1")],[#text("0.520190")],),([#text("Equal / 3")],[#text("All-source fixed order")],[#text("All three")],[#text("3")],[#text("0.473872")],),([#text("Equal / 3")],[#text("Selection-locked subset")],[#text("PS1")],[#text("1")],[#text("0.520190")],),),"All policies share the selection-chosen 1NN predictor. Quotes from different rows' price systems are not interchangeable. The policy rows reuse fixed-mask predictions.")
+
+#figure(image("figures/support-and-cost.svg", width: 100%), caption: [#text("Joint support and two matched-price contrasts. The 76 training cooler=100 cycles have one tuple; 391 of 421 evaluation cycles have train-unseen joint conditions. At raw budget 6660 TS1 and all-source component errors tie at quotes 60 and 6660. At equal budget 1 the selected PS1 subset is worse than cheapest-first FS1 at the same quote 1. Quotes are replay proxies, not measured physical savings.")]) <fig-support-and-cost>
+
+= #text("Discussion and Limitations")
+
+#text("The point of the diagnostic ordering is to identify what an acquisition comparison could establish. A failed predictor check directs attention to scoring and support; it does not prove that a better planner is impossible. A successful predictor check only admits a policy comparison; it does not certify safe deployment. Here that distinction stops the earlier zero-coverage result from being hidden by a later component-error gain, and stops a raw-price saving from hiding an equal-price loss.")
+
+== #text("Falsification and alternative explanations")
+
+#text("We distinguish a data-admission failure from a poor valid prediction, an empty selective denominator, a resource rejection, and an unavailable independent evaluation. The original v9 class-support failure remains visible. V11 zero coverage remains a null selective error rather than a zero error. V12 produces valid four-head outputs under all 24 masks/models, but high vector error remains a negative outcome rather than a rejected record.")
+
+#text("Every comparison preserves failed or unfavorable arms. We do not retune the source prices, candidate order, mask tie rule, metric weights, or the 0.05 usefulness threshold after evaluation. The three models and all masks share training and selection rights; the subset policy's use of selection labels is declared. Evaluation results for the other candidates are descriptive contrasts, not permission to replace the frozen selected model.")
+
+#text("Our candidate explanations have explicit falsifiers. If a same-centroid prior-neutral contrast does not change predictions on new, supported conditions, the present scoring explanation does not transfer. If a stronger simple predictor with adequate condition coverage removes a planner's advantage, a policy-specific claim weakens. If correct source identity and disclosure remove a reported cost advantage, that advantage was bookkeeping or leakage. If a history-aware baseline reconstructs the relevant executor state, a richer hidden-state claim is unnecessary.")
+
+#text("No failure in this finite development sequence establishes a population rate. Conversely, a narrow, correctly scoped descriptive report should not be rejected for lacking an experiment that it explicitly does not claim to have performed. Research Forge records the current claim, supporting artifact, contrary observation, and next required evidence separately. This claim-scope discipline prevents speculative next steps from being promoted to supported results.")
+
+== #text("Boundaries and the next confirmatory study")
+
+#text("The most important limitation is support and exposure, not manuscript length. The evaluation segment is already known, uses one rig and a small channel subset, and contains many joint conditions absent from the training prefix. We have no verified physical experiment/session/asset map and no fresh independent final set. A chronological gap cannot supply those missing identities. The 421 cycles are a descriptive denominator, not a proved independent sample count.")
+
+#text("The feature representation is deliberately simple and uses a completed cycle. The 1NN fit changes several inductive assumptions and has no calibrated confidence. A constant-label full-source predictor can improve component mean by correcting only one head. Fixed subset baselines do not establish adaptive or nonmyopic value, and the present grouped action cannot test all of ProbeFlow's proposed partial-disclosure and shared-cache distinctions.")
+
+#text("The next confirmatory study should first obtain reliable physical-block provenance and adequately supported condition combinations. Predictor and future-observation model development must remain within training; an explicit development/calibration/final resource envelope must precede any final evaluation. The comparator set should retain the prior-neutral centroid, fixed subset design, and history-aware simple baselines, alongside faithful native or clearly declared adapted literature methods. Computational planning costs, failures, tuning, and teacher work must be included or separately bounded.")
+
+#text("Within that new setting, a typed executor can vary overlapping sources, partial disclosure, failed requests, and cache reuse while preserving public information and quotes across policies. A matched comparison would be needed to isolate the value of executor state from a history-aware baseline that reconstructs it. For now, neither industrial generalization, an independent algorithmic effect, nonmyopic superiority, nor a certified risk guarantee is established.")
+
+= #text("Conclusion")
+
+#text("A support-first audit changes the immediate research question from how deeply to plan to whether the available evidence can improve the declared diagnosis. In this exposed Hydraulic replay, marginal support repair leaves substantial joint mismatch, prior removal improves only one head, and fixed-subset controls reveal both an inexpensive tie and a transfer failure. ProbeFlow contributes an inspectable diagnostic sequence and bounded measurements. Independent supported data and faithful comparators remain prerequisites for a policy-performance claim.")
+
+#heading(numbering: none)[Acknowledgements]
+
+#text("This work was created as part of the No-More-Slops group activities at Pseudo Lab.")
+
+#heading(numbering: none)[References]
+
+#bibliography-entry(1, [#text("N. Helwig, E. Pignanelli, and A. Schütze. Condition monitoring of hydraulic systems. UCI Machine Learning Repository, 2015.")],"https://archive.ics.uci.edu/dataset/447/condition+monitoring+of+hydraulic+systems") <bib1>
+
+#bibliography-entry(2, [#text("Y. Kobayashi, Z. Jing, J. Yao, H. Namkoong, and S. Joshi. Learning-To-Measure: In-Context Active Feature Acquisition. arXiv:2510.12624v2, 2026.")],"https://arxiv.org/html/2510.12624v2") <bib2>
+
+#bibliography-entry(3, [#text("J. Feng, Q. Li, and Y. Li. BRiG-AFA: Bellman Risk-to-Go Learning for Non-Myopic Active Feature Acquisition. arXiv:2608.02305v1, 2026.")],"https://arxiv.org/html/2608.02305v1") <bib3>
+
+#bibliography-entry(4, [#text("Z. Zhao, R. Xu, and Q. Ni. Learning Source Acquisition Policies by Offline Planning. arXiv:2609.14299v1, 2026.")],"https://arxiv.org/html/2609.14299v1") <bib4>
+
+#bibliography-entry(5, [#text("L. Aronsson and M. Haghir Chehreghani. Non-Myopic Active Feature Acquisition via Pathwise Policy Gradients. arXiv:2605.05511v2, 2026.")],"https://arxiv.org/html/2605.05511v2") <bib5>
+
+#bibliography-entry(6, [#text("Y. Geifman and R. El-Yaniv. Selective Classification for Deep Neural Networks. arXiv:1705.08500v2, 2017.")],"https://arxiv.org/html/1705.08500v2") <bib6>
+
+#bibliography-entry(7, [#text("D. Golovin and A. Krause. Adaptive Submodularity: Theory and Applications in Active Learning and Stochastic Optimization. JAIR 42; arXiv:1003.3967v5, 2011.")],"https://arxiv.org/html/1003.3967v5") <bib7>
+
+#bibliography-entry(8, [#text("H. Shim, S. J. Hwang, and E. Yang. Joint Active Feature Acquisition and Classification with Variable-Size Set Encoding. NeurIPS, 2018.")],"https://proceedings.neurips.cc/paper_files/paper/2018/hash/e5841df2166dd424a57127423d276bbe-Abstract.html") <bib8>
+
+#bibliography-entry(9, [#text("Y. Li and J. B. Oliva. Active Feature Acquisition with Generative Surrogate Models. ICML, PMLR 139:6450-6459, 2021.")],"https://proceedings.mlr.press/v139/li21p.html") <bib9>
+
+#bibliography-entry(10, [#text("I. C. Covert, W. Qiu, M. Lu, N. Y. Kim, N. J. White, and S.-I. Lee. Learning to Maximize Mutual Information for Dynamic Feature Selection. ICML, PMLR 202:6424-6447, 2023.")],"https://proceedings.mlr.press/v202/covert23a.html") <bib10>
+
+#bibliography-entry(11, [#text("H. von Kleist, A. Zamanian, I. Shpitser, and N. Ahmidi. Evaluation of Active Feature Acquisition Methods for Time-varying Feature Settings. JMLR 26(60):1-84, 2025.")],"https://jmlr.org/beta/papers/v26/23-1635.html") <bib11>
+
+#bibliography-entry(12, [#text("C. Ma, S. Tschiatschek, K. Palla, J. M. Hernandez-Lobato, S. Nowozin, and C. Zhang. EDDI: Efficient Dynamic Discovery of High-Value Information with Partial VAE. ICML, PMLR 97:4234-4243, 2019.")],"https://proceedings.mlr.press/v97/ma19c.html") <bib12>
+
+#bibliography-entry(13, [#text("L. Aronsson, A. Rahbar, and M. Haghir Chehreghani. A Survey on Active Feature Acquisition Strategies. IJCAI Survey Track, pages 7740-7748, 2026.")],"https://www.ijcai.org/proceedings/2026/860") <bib13>
+
+#bibliography-entry(14, [#text("G. C. Cawley and N. L. C. Talbot. On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation. JMLR 11(70):2079-2107, 2010.")],"https://www.jmlr.org/beta/papers/v11/cawley10a.html") <bib14>
+
+#bibliography-entry(15, [#text("S. Varma and R. Simon. Bias in error estimation when using cross-validation for model selection. BMC Bioinformatics 7:91, 2006.")],"https://link.springer.com/article/10.1186/1471-2105-7-91") <bib15>
+
+#bibliography-entry(16, [#text("D. R. Roberts et al. Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. Ecography 40:913-929, 2017.")],"https://nsojournals.onlinelibrary.wiley.com/doi/10.1111/ecog.02881") <bib16>
+
+#bibliography-entry(17, [#text("Y. Geifman and R. El-Yaniv. SelectiveNet: A Deep Neural Network with an Integrated Reject Option. ICML, PMLR 97:2151-2159, 2019.")],"https://proceedings.mlr.press/v97/geifman19a.html") <bib17>
+
+#bibliography-entry(18, [#text("R. El-Yaniv and Y. Wiener. On the Foundations of Noise-free Selective Classification. JMLR 11(53):1605-1641, 2010.")],"https://www.jmlr.org/papers/v11/el-yaniv10a.html") <bib18>
+
+#pagebreak()
+#set heading(numbering: "A.1")
+#counter(heading).update(0)
+= #text("Computation and exact-byte reproducibility")
+
+#text("The bounded v12 run took approximately 20.22 seconds on the local host, including parsing, fitting, selection, evaluation, and output generation. Shared fitting took about 0.0067 seconds. Across the eight evaluation masks, measured inference totals were about 0.165 seconds for the prior centroid, 0.141 seconds for the prior-neutral centroid, and 8.970 seconds for 1NN. Full-source inference alone was about 0.030, 0.026, and 1.954 seconds, respectively. These are single sequential wall-time observations, not randomized throughput comparisons; no hardware efficiency claim is made.")
+
+#text("The run uses only the Python standard library and existing local data. It makes zero model API calls, network requests, or downloads. This does not mean that no predictive model was fitted: centroids, scalers, and a nearest-neighbor reference bank are fitted machine-learning components. It means that no external or local generative-model endpoint was invoked for the experiment.")
+
+#text("PLAN.json, raw-file SHA-256 values, the inherited feature extractor hash, exact consumed runner bytes, frozen fitted parameters, selection predictions, frozen model/policy choice, evaluation predictions, event ordering, and result metrics are saved in a fresh run directory. The exact code snapshot is created before fitting so later source changes cannot silently substitute for the consumed implementation. Hashes establish byte identity, not dataset truth, independent review, or scientific validity.")
+
+#text("Eight focused checks cover train-only fitting, exclusion of unqueried dimensions, the isolated prior-term counterfactual, preservation of the original predictor, deterministic model selection and nearest-neighbor ties, quote/budget separation, and explicit nonempty metric denominators. A separate saved-trace audit recomputes counts, losses, class support, and policy costs without new prediction calls.")
+
+#text("A v11 audit discovered that two aggregate ledger fields had added unlike price units. We retained that original report, marked those scalar totals invalid, and recomputed a scenario-separated ledger from its unchanged prediction trace. Its per-arm costs and predictive outcomes were unaffected. The exact consumed code was archived before correcting the future runner. This incident motivates a practical invariant: numerical provenance must bind units as well as hashes. A matching hash cannot repair a dimensionally invalid sum.")
+
+= #text("Artifact map and execution recipe")
+
+#text("The project directory is projects/research_manuscripts_v12_20261018/probeflow. Its PLAN.json and run_experiment.py define the bounded study; test_experiment.py checks contracts; SOURCES.json records inherited primary-source review scopes; README_KO.md explains the result in Korean; and paper.json is the structured source of this manuscript. The run directory is runs/research_manuscripts_v12_20261018_01/probeflow.")
+
+#text("The run contains locked_plan.json, source_receipt.json, consumed_code/run_experiment.py, frozen_fit.json, selection_predictions.jsonl, frozen_selection_and_policies.json, evaluation_predictions.jsonl, results.json, and events.json. The current-run selection artifact precedes current evaluation decoding in the event log. Neither that log nor a hash erases the previous exposure disclosed in the plan.")
+
+#text("From the repository root, run Python with UTF-8 and bytecode disabled: python -X utf8 -B projects/research_manuscripts_v12_20261018/probeflow/test_experiment.py. To repeat the sensor computation, pass a new, unused output directory to run_experiment.py --out. Never rerun into an existing result directory. The original v9/v11 assets and active research skills are preserved.")
+
+#text("Policy rows are lookups into the selected predictor's saved mask predictions: 36 budget-price-policy summaries do not constitute 36 independent tests. There are 4896 selection prediction records and 10104 evaluation records, over 204 and 421 unique cycles respectively. The audit should check per-head errors, full-vector errors, duplicate cycles within an arm, permitted source dimensions, exact fit/selection hashes, and price units before consuming a summary.")
+
+= #text("Admission checklist for a future policy claim")
+
+- #text("Dataset identity: pin source bytes, extractor version, units, target definitions, and physical block provenance.")
+- #text("Support: disclose marginal labels and joint/condition support separately; retain unsupported cases in the declared denominator.")
+- #text("Predictor: demonstrate useful complete and partial-input behavior before attributing value to policy search; retain strong simple alternatives.")
+- #text("Information rights: bind public observations, private cached work, permitted future forecasts, and target exclusion for every action.")
+- #text("Prices: separate hard caps from soft penalties; charge a shared source once; never add unlike units or label replay quotes physical savings.")
+- #text("Selection: freeze candidate set, mask weighting, tie rules, thresholds, and tuning budget; label exposed development and independent final evidence correctly.")
+- #text("Comparison: distinguish native reproduction, substantive common-contract adaptation, and handcrafted reference policies.")
+- #text("Reporting: preserve empty selective denominators, failed arms, unfavorable simple baselines, exact consumed code, and subsequent corrections.")
+= #text("Primary-source review boundaries")
+
+#text("The v13 source ledger records a new direct review of selected primary HTML pages. Some entries cover official abstracts only; others cover identified definitions and method sections. Such a review verifies a bounded description, not complete proofs, code identity, native accuracy, or the correctness of every author claim. No external benchmark result becomes a local observation.")
+
+#text("SOURCES.json binds each review note to its URL, scope, review time, and a canonical review-record SHA-256. It does not invent a publisher-byte hash: original response bytes were not archived, and their hash is null. Local experiment and code hashes refer to actual files. CLAIMS.json links empirical statements to these immutable records and separates observed results from proposals and untested generalization.")
+
+= Source inspection boundaries
+
+#text("")#link(<bib1>)[#text("[1]")]#text(" Direct v13 primary HTML review: dataset, variables, citation, and license; physical independent-block IDs and deployment costs unverified.")
+
+#text("")#link(<bib2>)[#text("[2]")]#text(" Direct primary HTML review of setup and predictor/acquisition methods in Sections 3-4.2; no native implementation, full proof, or numerical reproduction.")
+
+#text("")#link(<bib3>)[#text("[3]")]#text(" Direct primary HTML review of fixed-predictor risk-to-go and reviewed unit-cost budget setup, Sections 3-4.2; no native reproduction.")
+
+#text("")#link(<bib4>)[#text("[4]")]#text(" Direct primary HTML review of grouped-source setup and method, Sections 2-3.4; no native teacher/scorer training or benchmark reproduction.")
+
+#text("")#link(<bib5>)[#text("[5]")]#text(" Direct primary HTML review of setup and pathwise-policy approach; no complete gradient proof or native reproduction.")
+
+#text("")#link(<bib6>)[#text("[6]")]#text(" Direct v13 review of risk/coverage definitions and SGR assumptions; no risk guarantee is transferred to the present descriptive threshold.")
+
+#text("")#link(<bib7>)[#text("[7]")]#text(" Direct v13 review of definitions and a greedy-guarantee statement only; no industrial, history-dependent-price, or current-predictor theorem claimed.")
+
+#text("")#link(<bib8>)[#text("[8]")]#text(" Official abstract: joint acquisition/classification, cost-sensitive stop-or-acquire agent and set representation only.")
+
+#text("")#link(<bib9>)[#text("[9]")]#text(" Official abstract: generative-surrogate support for model-based acquisition; no architecture/proof/benchmark verification.")
+
+#text("")#link(<bib10>)[#text("[10]")]#text(" Official abstract: amortized conditional mutual information and learned greedy selection; no numerical superiority transferred.")
+
+#text("")#link(<bib11>)[#text("[11]")]#text(" Official abstract: acquisition-distribution and offline/semi-offline evaluation assumptions only; no guarantee applied here.")
+
+#text("")#link(<bib12>)[#text("[12]")]#text(" Official abstract: partial VAE and information-gain acquisition; no local implementation or external benchmark reproduction.")
+
+#text("")#link(<bib13>)[#text("[13]")]#text(" Official proceedings abstract: POMDP framing and model-based/model-free/hybrid taxonomy only.")
+
+#text("")#link(<bib14>)[#text("[14]")]#text(" Official abstract: finite-sample selection-criterion overfitting and evaluation bias; no quantitative bound applied.")
+
+#text("")#link(<bib15>)[#text("[15]")]#text(" Direct primary HTML abstract/background: selection inside evaluation and nested validation; no claim that random nested CV solves this temporal problem.")
+
+#text("")#link(<bib16>)[#text("[16]")]#text(" Direct primary HTML review of structured dependence, blocked evaluation, and extrapolation tradeoffs; no independence guarantee for a fixed gap.")
+
+#text("")#link(<bib17>)[#text("[17]")]#text(" Official abstract: integrated prediction/rejection learning; not implemented here.")
+
+#text("")#link(<bib18>)[#text("[18]")]#text(" Official abstract: foundational risk/coverage and reject-option framing; noise-free assumptions are not asserted for Hydraulic.")

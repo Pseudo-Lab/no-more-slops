@@ -1,0 +1,36 @@
+{
+  "schema": "nms_v13_bundled_evidence_v1",
+  "publication": {
+    "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/build/PUBLICATION.json",
+    "bytes": 10295,
+    "sha256": "b1458e0cef0fbf84814c727e85d8c9b685093adda3f4facb31c6db4669741331"
+  },
+  "checker": {
+    "path": "tracks/auto-paper/projects/skill-studies/app/v13/check_evidence.py",
+    "bytes": 2394,
+    "sha256": "a04bad75309231f133ea98d847f413a4c14a39cafc7f40e1365c14e824ee0cec"
+  },
+  "figure_receipt": {
+    "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/evidence/figure-receipt.json",
+    "bytes": 15692,
+    "sha256": "cd97837c5f2fba6354f6ae496b1356f3f80d39709ff404c71881ce0e093ad2d9"
+  },
+  "summaries": {
+    "skillmerge": {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/evidence/skillmerge-results.json",
+      "bytes": 10972,
+      "sha256": "267e45616c9da223efc47071a9e676f6d2cc0479bfe187db3b6421dbef12f063"
+    },
+    "second_chance": {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/evidence/second_chance-results.json",
+      "bytes": 8648,
+      "sha256": "11654fe78a1d7ed4953cd5f1370c46c4ab25d26f40e4107a0b3df4a7a32eea2d"
+    },
+    "probeflow": {
+      "path": "tracks/auto-paper/projects/skill-studies/outputs/week-01/revisions/v13-20261018/evidence/probeflow-results.json",
+      "bytes": 70733,
+      "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb"
+    }
+  },
+  "scope": "Preserved descriptive result summaries and figure-record hashes; no raw rows, source-code reproduction, new model call or scientific rerun."
+}

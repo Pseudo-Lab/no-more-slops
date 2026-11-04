@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+<style>
+  /* 감성 소개: 사진 위 줄글 + 텍스트 박스 (?s=번호) */
+  :root { --yellow: #f7ee5e; --coral: #f0502f; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body { font-family: 'Pretendard', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; word-break: keep-all; background: #111; }
+  #slide { position: absolute; inset: 0; overflow: hidden; color: #fff; }
+
+  .photo { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(0 0 0 / 0.05) 35%, rgb(0 0 0 / 0.78) 100%); }
+  .count { position: absolute; right: 64px; top: 56px; font-size: 26px; font-weight: 700; padding: 8px 18px; border-radius: 999px; background: rgb(0 0 0 / 0.35); color: #fff; z-index: 3; }
+  .light .count { background: rgb(0 0 0 / 0.08); color: #111; }
+
+  /* 텍스트 박스: 사진 위에 붙인 메모 */
+  .box { position: absolute; z-index: 3; background: #fff; color: #111; font-size: 34px; font-weight: 700; letter-spacing: -0.02em; padding: 14px 24px; box-shadow: 0 8px 24px rgb(0 0 0 / 0.18); }
+  .box.dark { background: #111; color: #fff; }
+  .box.yellow { background: var(--yellow); color: #111; }
+  .bubble { border-radius: 999px; padding: 16px 30px; }
+
+  /* 줄글 */
+  .story { position: absolute; left: 72px; right: 72px; bottom: 120px; z-index: 3; display: grid; gap: 26px; }
+  .story h2 { font-size: 76px; font-weight: 800; line-height: 1.25; letter-spacing: -0.045em; }
+  .story p { font-size: 42px; font-weight: 500; line-height: 1.62; letter-spacing: -0.025em; color: rgb(255 255 255 / 0.92); }
+  .story .label { font-size: 32px; font-weight: 700; color: var(--yellow); }
+  .light { background: #fbf8f3; color: #111; }
+  .light .story p { color: #2b2825; }
+  .yel { background: var(--yellow); color: #111; }
+  .yel .story p { color: #2e2c16; }
+
+  .shot { position: absolute; left: 50%; transform: translateX(-50%); border-radius: 36px; overflow: hidden; border: 10px solid #151515; box-shadow: 0 30px 70px rgb(0 0 0 / 0.22); }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+  .brand { position: absolute; left: 72px; bottom: 52px; display: flex; align-items: center; gap: 12px; font-size: 30px; font-weight: 800; z-index: 3; }
+  .brand svg { width: 44px; height: 44px; }
+  .credit { position: absolute; right: 44px; bottom: 28px; font-size: 20px; color: rgb(255 255 255 / 0.4); z-index: 3; }
+</style>
+</head>
+<body>
+<div id="slide"></div>
+<svg width="0" height="0" style="position:absolute"><symbol id="mark" viewBox="0 0 32 32"><rect width="32" height="32" rx="9.5" fill="#f0502f"/><g transform="rotate(-12 16 17)" fill="#fff"><path d="M16 14.6c-3.2 0-6.6 4.3-6.6 7 0 2.1 1.7 2.9 3.4 2.9 1.3 0 2.1-.7 3.2-.7s1.9.7 3.2.7c1.7 0 3.4-.8 3.4-2.9 0-2.7-3.4-7-6.6-7z"/><ellipse cx="8.9" cy="13.6" rx="1.9" ry="2.5" transform="rotate(-22 8.9 13.6)"/><ellipse cx="13.1" cy="9.4" rx="2" ry="2.7" transform="rotate(-8 13.1 9.4)"/><ellipse cx="18.9" cy="9.4" rx="2" ry="2.7" transform="rotate(8 18.9 9.4)"/><ellipse cx="23.1" cy="13.6" rx="1.9" ry="2.5" transform="rotate(22 23.1 13.6)"/></g></symbol></svg>
+<script>
+const S = +(new URLSearchParams(location.search).get('s') || 1);
+const brand = '<span class="brand"><svg><use href="#mark"/></svg>Pawstamp</span>';
+const photo = (src, pos = '50% 50%') => `<div class="photo" style="background-image:url(${src});background-position:${pos}"></div><div class="shade"></div>`;
+
+const SLIDES = [
+  { html: `${photo('photo0.jpg', '50% 35%')}
+    <span class="box" style="left:72px;top:150px">11살 보스턴테리어 옹심</span>
+    <span class="box dark" style="right:72px;top:250px">9월엔 꽃 보러 산책</span>
+    <div class="story"><span class="label">Pawstamp</span><h2>우리 강아지가 다녀간 곳,<br />지도에 남겨두기</h2></div>${brand}` },
+
+  { html: `${photo('photo4.jpg', '50% 60%')}
+    <span class="box bubble" style="left:72px;top:150px">여기 어디였더라?</span>
+    <div class="story"><p>산책 사진은 매일 쌓이는데, 어디였는지는 금방 잊혀요.</p><p>그 길, 그 계절을 <b>지도 위에 남겨두고 싶었어요.</b></p></div>` },
+
+  { html: `${photo('photo1.jpg', '50% 40%')}
+    <span class="box yellow" style="left:72px;top:150px">사진 한 장이면 끝</span>
+    <div class="story"><p>사진을 올리면 찍은 위치를 알아서 찾아서 지도에 꽂아줘요.</p><p>위치가 없는 사진은 장소를 검색해서 고르면 돼요.</p></div>` },
+
+  { cls: 'light', html: `<div class="story" style="top:120px;bottom:auto"><p>멀리서 보면 우리 동네 강아지들이 <b>견종 캐릭터</b>로 모여 있고, 가까이 가면 친구들 사진으로 바뀌어요.</p></div>
+    <div class="shot" style="top:470px;width:470px;height:770px"><img src="map.jpg" alt="" /></div>
+    <span class="box dark" style="left:50%;transform:translateX(-50%);top:1170px;white-space:nowrap">오늘은 누가 다녀갔을까?</span>` },
+
+  { html: `${photo('photo3.jpg', '50% 55%')}
+    <span class="box bubble" style="right:72px;top:150px">우리도 왔었어요!</span>
+    <div class="story"><p>먼저 남겨진 꼬순내에 하트를 누르고, 같은 곳에 우리 사진도 남겨요.</p><p>산책길에 <b>친구가 생기는 기분</b>이에요.</p></div>` },
+
+  { cls: 'yel', html: `<div class="story" style="top:120px;bottom:auto"><span class="box dark" style="position:static;width:max-content">강아지가 아니어도 괜찮아요</span><p>길에서 마주친 고양이도 남길 수 있어요. 대신 새 장소는 <b>100m쯤 흐리게</b> 표시해요.</p><p>길고양이를 지키기 위해서요.</p></div>
+    <div class="shot" style="top:720px;width:400px;height:640px;border-radius:36px 36px 0 0;border-bottom:0"><img src="cat.jpg" alt="" /></div>` },
+
+  { html: `${photo('photo6.jpg', '55% 40%')}
+    <span class="box" style="left:72px;top:150px">설치 없이, 링크로 바로</span>
+    <div class="story"><h2>우리 동네에<br />첫 꼬순내를 남겨주세요</h2><span class="box yellow" style="position:static;width:max-content;font-size:40px;font-weight:800">pawstamp.vercel.app</span></div>${brand}` },
+];
+
+const s = SLIDES[S - 1];
+const el = document.getElementById('slide');
+el.className = s.cls || '';
+el.innerHTML = `${S > 1 ? `<span class="count">${S}/${SLIDES.length}</span>` : ''}${s.html}`;
+</script>
+</body>
+</html>

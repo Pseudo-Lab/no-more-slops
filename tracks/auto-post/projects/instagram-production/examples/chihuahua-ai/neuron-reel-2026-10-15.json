@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "content_type": "news",
+  "edition_date": "2026-10-15",
+  "topic": "Neuron AI — dated replay example",
+  "caption": "로봇 AI에 촉각과 기억을?!\n\nNEURA Robotics가 10월 14일 공개한 Neuron AI를 1분으로 정리했습니다. 여러 감각과 기억을 연결해, 카메라에 보이지 않는 상황까지 판단하도록 설계했습니다.\n\n10월 20~22일에는 11분 세탁물 처리 시연을 예고했습니다. 세탁·건조 시간이 11분이라는 뜻은 아닙니다.\n\n출처·영상: NEURA Robotics\nhttps://neura-robotics.com/neuron-ai/\nhttps://www.businesswire.com/news/home/20261013482085/en/NEURA-Robotics-Introduces-Neuron-AI-The-Brain-of-the-Physical-World\n\n#AI뉴스 #피지컬AI #치와와AILab\n\n이 결과물은 가짜연구소(Pseudo Lab) No-More-Slops 그룹 활동의 일환으로 제작되었습니다.",
+  "sources": [
+    {
+      "id": "neura",
+      "publisher": "NEURA Robotics / Business Wire",
+      "title": "NEURA Robotics Introduces Neuron AI: The Brain of the Physical World",
+      "url": "https://www.businesswire.com/news/home/20261013482085/en/NEURA-Robotics-Introduces-Neuron-AI-The-Brain-of-the-Physical-World",
+      "published_at": "2026-10-14T02:29:00-04:00",
+      "checked_at": "2026-10-15T12:00:00+09:00"
+    },
+    {
+      "id": "product",
+      "publisher": "NEURA Robotics",
+      "title": "Neuron AI",
+      "url": "https://neura-robotics.com/neuron-ai/",
+      "checked_at": "2026-10-15T12:00:00+09:00"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "intro",
+      "layout": "metric",
+      "duration": 8,
+      "kicker": "NEURA Robotics · 2026.10.14 공개",
+      "title": [
+        "감각에 기억을",
+        "더한 로봇 AI"
+      ],
+      "body": [
+        "10월 14일 공개한 Neuron AI",
+        "여러 감각과 기억을 함께 처리"
+      ],
+      "credit": "NEURA Robotics 공식 발표 기준 · 설명용 도식",
+      "requires_sources": true,
+      "visual": {
+        "value": "5",
+        "label": "다섯 종류의 입력",
+        "note": "시각·촉각·소리·몸의 상태·언어"
+      },
+      "source_ids": [
+        "neura"
+      ],
+      "evidence_note": "The announcement lists 3D vision, touch/force, audio, robot state and language; these are input types, not five human senses."
+    },
+    {
+      "id": "senses",
+      "layout": "flow",
+      "duration": 8,
+      "kicker": "인식 → 판단 → 행동",
+      "title": [
+        "다섯 가지 입력",
+        "하나의 행동"
+      ],
+      "body": [
+        "시각·촉각·소리·몸의 상태·언어를",
+        "기억과 함께 처리해 행동을 결정"
+      ],
+      "credit": "NEURA Robotics 공식 발표 기준 · 설명용 도식",
+      "requires_sources": true,
+      "visual": {
+        "nodes": [
+          {
+            "symbol": "V",
+            "label": "3D 시각"
+          },
+          {
+            "symbol": "T",
+            "label": "촉각·힘"
+          },
+          {
+            "symbol": "S",
+            "label": "소리"
+          },
+          {
+            "symbol": "B",
+            "label": "몸의 상태"
+          },
+          {
+            "symbol": "L",
+            "label": "언어"
+          }
+        ],
+        "center": [
+          "기억과 함께",
+          "판단 → 행동"
+        ]
+      },
+      "source_ids": [
+        "neura"
+      ],
+      "evidence_note": "A multimodal architecture combines sensory input, language and memory to select actions."
+    },
+    {
+      "id": "memory",
+      "layout": "occlusion",
+      "duration": 8,
+      "kicker": "기억 · 보이지 않는 물체",
+      "title": [
+        "가려져도",
+        "기억은 계속"
+      ],
+      "body": [
+        "물체가 가려진 동안에도",
+        "앞선 위치와 행동의 결과를 기억"
+      ],
+      "credit": "NEURA Robotics 공식 발표 기준 · 설명용 도식",
+      "requires_sources": true,
+      "visual": {
+        "cover_label": "가림",
+        "memory_label": "이전 위치 기억",
+        "note": "보이지 않아도 위치를 유지"
+      },
+      "source_ids": [
+        "neura"
+      ],
+      "evidence_note": "The product description discusses object permanence and memory; this original diagram is not a benchmark."
+    },
+    {
+      "id": "training",
+      "layout": "cards",
+      "duration": 8,
+      "kicker": "학습 · 세 종류의 경험",
+      "title": [
+        "경험은",
+        "세 곳에서"
+      ],
+      "body": [
+        "실제 로봇·시뮬레이션·사람의 시범",
+        "세 종류의 경험을 함께 학습"
+      ],
+      "credit": "NEURA Robotics 공식 발표 기준 · 설명용 도식",
+      "requires_sources": true,
+      "visual": {
+        "items": [
+          {
+            "symbol": "R",
+            "label": "실제 로봇",
+            "detail": "현장에서 쌓는 경험"
+          },
+          {
+            "symbol": "S",
+            "label": "가상환경",
+            "detail": "상황을 바꾸며 연습"
+          },
+          {
+            "symbol": "H",
+            "label": "사람의 시범",
+            "detail": "사람의 동작을 기록"
+          }
+        ]
+      },
+      "source_ids": [
+        "neura"
+      ],
+      "evidence_note": "The three training pillars are real-world robot data, simulation and human demonstrations."
+    },
+    {
+      "id": "local",
+      "layout": "flow",
+      "duration": 8,
+      "kicker": "실행 · 로봇 내부의 AI",
+      "title": [
+        "판단은",
+        "로봇 안에서"
+      ],
+      "body": [
+        "로봇 안에서 모델이 직접 판단",
+        "클라우드 연결 없이 작동하도록 설계"
+      ],
+      "credit": "NEURA Robotics 공식 발표 기준 · 설명용 도식",
+      "requires_sources": true,
+      "visual": {
+        "nodes": [
+          {
+            "symbol": "S",
+            "label": "감각 정보"
+          },
+          {
+            "symbol": "M",
+            "label": "기억"
+          }
+        ],
+        "center": [
+          "로봇 내부에서",
+          "행동 결정"
+        ]
+      },
+      "source_ids": [
+        "product"
+      ],
+      "evidence_note": "Local inference does not require cloud connectivity; this does not imply all training and updates are offline."
+    },
+    {
+      "id": "demo",
+      "layout": "steps",
+      "duration": 11,
+      "kicker": "GTC 베를린 · 10월 20~22일 예정",
+      "title": [
+        "11분짜리",
+        "세탁물 처리 시연"
+      ],
+      "body": [
+        "11분은 세탁물 처리 시연의 길이",
+        "세탁·건조 소요시간을 뜻하지 않음"
+      ],
+      "credit": "NEURA Robotics 공식 발표 기준 · 설명용 도식",
+      "requires_sources": true,
+      "visual": {
+        "items": [
+          {
+            "symbol": "1",
+            "label": "분류"
+          },
+          {
+            "symbol": "2",
+            "label": "세탁기에 넣기"
+          },
+          {
+            "symbol": "3",
+            "label": "건조기로 옮기기"
+          }
+        ],
+        "token": "+",
+        "note": "세탁·건조 소요시간이 아님"
+      },
+      "source_ids": [
+        "neura"
+      ],
+      "evidence_note": "A future GTC Berlin demonstration is planned for October 20–22; eleven minutes describes the laundry-handling sequence, not the wash/dry duration or an independently verified test."
+    },
+    {
+      "id": "closing",
+      "layout": "metric",
+      "duration": 9,
+      "kicker": "치와와 AI Lab의 관전 포인트",
+      "title": [
+        "일을 끝까지",
+        "해낼 수 있을까?"
+      ],
+      "body": [
+        "여러 단계의 작업을 이어서",
+        "끝까지 해내는지가 관전 포인트"
+      ],
+      "credit": "NEURA Robotics 공식 발표 기준 · 설명용 도식",
+      "requires_sources": true,
+      "visual": {
+        "value": "끝까지",
+        "label": "여러 작업을 이어 수행",
+        "note": "치와와 AI Lab의 관전 포인트"
+      },
+      "source_ids": [
+        "neura"
+      ],
+      "evidence_note": "Editorial question, not a claim of independently verified success."
+    }
+  ]
+}
