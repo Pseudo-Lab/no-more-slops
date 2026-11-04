@@ -1,0 +1,19 @@
+{
+  "scope": "Completed local masters; not downloadable from this repository",
+  "artifacts": [
+    {
+      "artifact": "carousel/carousel.zip",
+      "sha256": "2d8273d361cfac182139dcf83ace6f05fe1c64f85fd4df0165ceddf91fe028cb",
+      "bytes": 2667546,
+      "repository_inclusion": false,
+      "reason": "Contains third-party promotional media whose permission for public repository redistribution is unconfirmed"
+    },
+    {
+      "artifact": "reel/reel.mp4",
+      "sha256": "daffb83ca6b507bb7f49baf5193edd7c6512e989595e08b92f1ddc0e0ca96d62",
+      "bytes": 108959117,
+      "repository_inclusion": false,
+      "reason": "Contains third-party promotional media whose permission for public repository redistribution is unconfirmed"
+    }
+  ]
+}

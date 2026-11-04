@@ -4,7 +4,7 @@
 
 Owner: [유민형 · gogoymh](https://github.com/gogoymh). Original contribution: [PR #5](https://github.com/Pseudo-Lab/no-more-slops/pull/5).
 
-All repository commands below run from the repository root. The canonical skills live in `tracks/auto-post/skills/`; account inputs live in `examples/` and shared production results in [outputs/week-01/](outputs/week-01/README.md).
+All repository commands below run from the repository root. The canonical skills live in `tracks/auto-post/skills/`; account inputs live in `examples/` and shared production results in [Week 01](outputs/week-01/README.md) and [Week 03](outputs/week-03/README.md).
 
 ## Production skills
 
