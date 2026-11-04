@@ -1,0 +1,96 @@
+Warning: True color (24-bit) support not detected. Using a terminal with true color enabled will result in a better visual experience.
+Attempt 1 failed. Retrying with backoff... Error: exception TypeError: fetch failed sending request
+    at file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267745:13
+    at async Models.generateContentStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:268766:16)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:312686:19
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:288953:23
+    at async retryWithBackoff (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:309072:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334134:28)
+    at async GeminiChat.streamWithRetries (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:333829:29)
+    at async Turn.run (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334873:24)
+    at async GeminiClient.processTurn (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348818:22)
+    at async GeminiClient.sendMessageStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348915:14)
+Attempt 2 failed. Retrying with backoff... Error: exception TypeError: fetch failed sending request
+    at file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267745:13
+    at async Models.generateContentStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:268766:16)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:312686:19
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:288953:23
+    at async retryWithBackoff (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:309072:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334134:28)
+    at async GeminiChat.streamWithRetries (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:333829:29)
+    at async Turn.run (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334873:24)
+    at async GeminiClient.processTurn (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348818:22)
+    at async GeminiClient.sendMessageStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348915:14)
+Attempt 3 failed with status 503. Retrying with backoff... _ApiError: {"error":{"message":"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n","code":503,"status":"Service Unavailable"}}
+    at throwErrorIfNotOK (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267907:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267670:7
+    at async Models.generateContentStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:268766:16)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:312686:19
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:288953:23
+    at async retryWithBackoff (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:309072:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334134:28)
+    at async GeminiChat.streamWithRetries (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:333829:29)
+    at async Turn.run (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334873:24) {
+  status: 503
+}
+Attempt 4 failed. Retrying with backoff... Error: exception TypeError: fetch failed sending request
+    at file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267745:13
+    at async Models.generateContentStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:268766:16)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:312686:19
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:288953:23
+    at async retryWithBackoff (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:309072:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334134:28)
+    at async GeminiChat.streamWithRetries (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:333829:29)
+    at async Turn.run (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334873:24)
+    at async GeminiClient.processTurn (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348818:22)
+    at async GeminiClient.sendMessageStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348915:14)
+Attempt 5 failed with status 503. Retrying with backoff... _ApiError: {"error":{"message":"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n","code":503,"status":"Service Unavailable"}}
+    at throwErrorIfNotOK (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267907:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267670:7
+    at async Models.generateContentStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:268766:16)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:312686:19
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:288953:23
+    at async retryWithBackoff (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:309072:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334134:28)
+    at async GeminiChat.streamWithRetries (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:333829:29)
+    at async Turn.run (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334873:24) {
+  status: 503
+}
+Attempt 6 failed with status 503. Retrying with backoff... _ApiError: {"error":{"message":"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n","code":503,"status":"Service Unavailable"}}
+    at throwErrorIfNotOK (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267907:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267670:7
+    at async Models.generateContentStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:268766:16)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:312686:19
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:288953:23
+    at async retryWithBackoff (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:309072:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334134:28)
+    at async GeminiChat.streamWithRetries (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:333829:29)
+    at async Turn.run (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334873:24) {
+  status: 503
+}
+Attempt 7 failed. Retrying with backoff... Error: exception TypeError: fetch failed sending request
+    at file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267745:13
+    at async Models.generateContentStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:268766:16)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:312686:19
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:288953:23
+    at async retryWithBackoff (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:309072:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334134:28)
+    at async GeminiChat.streamWithRetries (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:333829:29)
+    at async Turn.run (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334873:24)
+    at async GeminiClient.processTurn (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348818:22)
+    at async GeminiClient.sendMessageStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348915:14)
+Attempt 8 failed. Retrying with backoff... Error: exception TypeError: fetch failed sending request
+    at file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:267745:13
+    at async Models.generateContentStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:268766:16)
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:312686:19
+    at async file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:288953:23
+    at async retryWithBackoff (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:309072:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334134:28)
+    at async GeminiChat.streamWithRetries (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:333829:29)
+    at async Turn.run (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:334873:24)
+    at async GeminiClient.processTurn (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348818:22)
+    at async GeminiClient.sendMessageStream (file:///home/soo/.nvm/versions/node/v24.11.1/lib/node_modules/@google/gemini-cli/bundle/chunk-DKZARV6U.js:348915:14)
+gemini exit 0
