@@ -1,0 +1,205 @@
+{
+  "id": "SecondChance",
+  "title": "Second-Chance Skills",
+  "subtitle": "Repairing Selection and Negative-Lesson Lineage After Evaluator Correction",
+  "abstract": "A faulty evaluator can select a poor skill and convert a useful rejection into a durable negative lesson. Correcting its labels need not repair either downstream state. We propose a controlled study of this decision-history problem, with fixed requirements, independently adjudicated corrections, identical archives, and matched recovery budgets. Typed provenance separates content, selection, and lesson edges. A frozen-output ranking identity identifies reconsideration cases; a reachability argument bounds recorded-path auditing without promising behavioral recovery. Factorial selection and lesson interventions distinguish archive retrieval from present-state repair. Saved-output rescoring, fresh candidate reruns, and current-state recovery remain separate endpoints. An offline harness and a SciFact adaptation provide infrastructure, while real-model histories, causal effects, and recovery performance remain NR.",
+  "status": "First-week research-design manuscript. Protocol unlocked; preregistration incomplete; model unknown; real-model results NR.",
+  "contributions": [
+    "Bounded score-reversal and recorded-path analyses.",
+    "Matched selection and external-lesson interventions.",
+    "Distinct endpoints, denominators, missingness and provenance."
+  ],
+  "pages": [
+    {
+      "heading": "Problem and contribution",
+      "sections": [
+        {
+          "heading": "1. Correction can leave a contaminated state",
+          "paragraphs": [
+            "Let G* denote a fixed operational requirement and independently reviewed grading criterion, not infallible scientific truth. Faulty V_old can reject candidate c, retain winner w, and support an external lesson discouraging c's strategy. Later edits may inherit this decision. Replacing V_old with V_new changes evidence validity without automatically replacing the winner or invalidating lessons. We ask whether downstream repair improves independent current behavior under a limited budget.",
+            "Requirements, accepted answers, and G* remain fixed; new preferences define another study. Seeded faults include unit offsets, ties, NULL denominators, inclusive boundaries, and rejection of valid alternatives. Independently challenge each correction against the fixed contract before comparison. Correction alone does not qualify a reject as useful."
+          ]
+        },
+        {
+          "heading": "2. What is distinctive and falsifiable?",
+          "paragraphs": [
+            "SkillOpt already stores rejected edits [1]; SkillOpt-Sleep describes replay and memory consolidation [2]. Neither a buffer nor replay is our contribution. Output refinement [3], reflective feedback memory [4], and selective retrieval [5] are adjacent mechanisms. Label repair [6] and evaluator-bias analysis [7] motivate correction. No comparator adapter or superiority test is complete; our proposed estimand concerns downstream selection and lesson consequences.",
+            "The hypothesis is positive paired recovery benefit from joint repair over equally informed archive replay or incumbent repair. A lesson-frozen arm and factorial interventions test this pathway. Equal performance, absent useful rejects, collateral losses, or an advantage disappearing after full cost accounting can refute practical benefit. Graph edges record exposure and support, not an established causal mechanism."
+          ]
+        },
+        {
+          "heading": "3. Evidence boundary",
+          "paragraphs": [
+            "The implementation is a scripted correctness harness with four crafted families and external lessons; it neither interprets instructions nor runs natural evolution. Prepared SciFact tasks and seeded faults [8] are not observed histories. Actual generation, rejection, evolution, and fresh recovery must still be collected. Scientific outcomes remain NR; this is a first-week investigation design."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Formal statements and experimental intervention",
+      "sections": [
+        {
+          "heading": "4. A frozen-output ranking identity",
+          "paragraphs": [
+            "For the same archived output bank, define s_old and s_new as old and corrected scores. Suppose w defeated c with old margin m >= 0. Set Δ(c)=s_new(c)−s_old(c). Direct subtraction gives the identity below. Corrected superiority exceeding a declared margin δ occurs exactly when the relative score correction exceeds m+δ. This author analysis is algebra for a frozen pair, not an empirical capability guarantee. Ties retain the declared tie rule; an old winner must not be relabeled a rejection retrospectively.",
+            "Score reversal prioritizes reconsideration. It is neither sufficient for fresh usefulness nor necessary for all currently useful rejects: task context, later edits, and stochastic execution can differ from archived outputs. Useful-rejection qualification therefore uses an independent corrected panel and is not defined by the reversal itself."
+          ],
+          "equations": [
+            "m = s_(\"old\")(w) - s_(\"old\")(c) >= 0",
+            "Delta(c) = s_(\"new\")(c) - s_(\"old\")(c)",
+            "s_(\"new\")(c) - s_(\"new\")(w) = Delta(c) - Delta(w) - m"
+          ]
+        },
+        {
+          "heading": "5. Typed lineage and recorded-path coverage",
+          "paragraphs": [
+            "A version-unfolded directed acyclic graph distinguishes artifact construction, comparison-to-selection, and rejection-to-lesson edges. Events have separate identities even when text hashes coincide. Let D be corrected evidence roots and T current active pointers and lessons. Using inclusive reachability, R=Desc(D)∩Anc(T) contains exactly the nodes lying on some recorded D-to-T path: path membership implies both reachabilities; conversely their concatenation yields a path in this acyclic graph.",
+            "With complete recorded dependencies and correct roots, inspecting R covers every recorded affected live path. This is a sufficient auditing condition, not a minimal behavioral repair theorem. Missing edges, weight-level effects, lost candidates, unlogged context, or an insufficient budget break the operational implication. Rejected candidates outside R can still merit retrieval for new usefulness. We preserve valid later changes and append scoped lesson versions, rather than claiming a unique counterfactual history."
+          ],
+          "equations": [
+            "R = \"Desc\"(D) ∩ \"Anc\"(T)"
+          ]
+        },
+        {
+          "heading": "6. Identify effects by controlled forks",
+          "paragraphs": [
+            "Freeze an actually generated old-grader history before assigning recovery policies. Fork identical active state, archive, correction notice, and development feedback. A two-factor intervention varies selection repair and lesson repair; all arms use the corrected grader. The difference-in-differences tests interaction of these interventions, under consistency, no cross-fork interference, and declared stochastic controls. It does not identify every hidden pathway. Separately, a paired memory contrast freezes one selection/integration artifact and base-state hash, forks identical copies, varies only lessons, and grants equal additional budgets. It does not rerun a stochastic selector.",
+            "Fix the candidate pool first to estimate selector quality. Incumbent retuning is a separate end-to-end budget comparison, not a fixed-pool selector test. A continued-generation stage estimates proposal quality and recurrence, with histories clustered as units. Policies receive identical gold-access rights and archive availability; retrieval, reading, validation, edits, tool calls, and generation are charged. An oracle inspecting final audit outcomes is a separate diagnostic, not a deployable policy."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tasks, comparisons and quantitative endpoints",
+      "sections": [
+        {
+          "heading": "7. Construct histories before claiming recovery",
+          "paragraphs": [
+            "The v4 SciFact-CitedPair-RFv4 adaptation contains 531 tasks in 325 citation/normalized-claim components: train 306/193, development 100/62, test 125/70. Official-dev-linked training components were excluded, cited documents were selected before labels, and component hashes fixed splits. Forty-four training label-swap records are constructed faults, not official error histories. Actual model candidate histories and correction histories number zero.",
+            "On training inputs, genuine candidate outputs must first encounter V_old, generate recorded accept/reject comparisons, and, where produced, external negative lessons. After a fixed history horizon, independently review the correction and freeze the archive. Development feedback can guide repair; useful-rejection qualification and final scoring use separate observations. Split components constrain task dependence but do not make repeated policy trials independent histories.",
+            "Primary scoring is label accuracy over all assigned cited-pair tasks, including malformed, failed, and deferred responses as failures. Annotation-coverage joint pass and best-annotated precision are local secondary diagnostics, not official SciFact scores; selecting every sentence can satisfy coverage. Missing annotations mean insufficient evidence in the supplied document, not universal claim falsity. Public-label training exposure remains unknown."
+          ]
+        },
+        {
+          "heading": "8. Matched comparisons",
+          "paragraphs": [
+            "All non-oracle arms share the same archive and correction information. Random and margin replay test whether a sophisticated selector is necessary. Content-only omits decision/lesson dependencies; the paired lesson-frozen audit holds the exact integrated artifact while retaining old lessons. A sham-correction control separates additional repair effort from the seeded correction. Version-pinned external adapters require further implementation review."
+          ],
+          "table": {
+            "headers": [
+              "Arm",
+              "Permitted intervention",
+              "Primary status"
+            ],
+            "rows": [
+              [
+                "Grader only",
+                "Replace evaluator; retain state",
+                "NR"
+              ],
+              [
+                "Incumbent repair",
+                "Retune current winner",
+                "NR"
+              ],
+              [
+                "Archive replay",
+                "Random/margin/content selection",
+                "NR"
+              ],
+              [
+                "Decision + lesson",
+                "Reconsider decisions; scope lessons",
+                "NR"
+              ],
+              [
+                "Lesson frozen",
+                "Same integrated artifact; old lesson",
+                "NR"
+              ]
+            ],
+            "caption": "Proposed real-model arms. Fixture values are excluded from this table."
+          }
+        },
+        {
+          "heading": "9. Endpoint and budget accounting",
+          "paragraphs": [
+            "Rescoring grades identical stored bytes. Fresh rerunning executes a pinned candidate anew. Current recovery assesses the committed integrated state on independent inputs, allowing an alternative repair to restore the same capability. These endpoints cannot substitute for one another. At declared fractions q_j of budget B, U_j is current-state success and RAUC uses left endpoints; final success is reported separately. Positive-width missing left observations make RAUC NA. The sampled summary is not an exact continuous-time integral."
+          ],
+          "equations": [
+            "\"RAUC\" = sum_(j=0)^(J-1) (q_(j+1) - q_(j)) U_(j)"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Interpretation, risks and first-week decisions",
+      "sections": [
+        {
+          "heading": "10. Denominators, censoring and collateral effects",
+          "paragraphs": [
+            "Useful-rejection recall divides reviewed independently qualified rejects by the qualified rejected-candidate count. Current verified recovery instead divides recovered independently qualified capabilities by the capability count; many candidates may represent one capability. Empty or unaudited cohorts are NA. Unaffected membership H comes from separate contract review and qualification. Absolute collateral failure 1−mean_H(p_new) differs from incremental loss mean_H(p_base−p_new), which may be negative.",
+            "Time to target is the first observed qualifying checkpoint. Non-hits are censored; missing checkpoints remain explicit for hits and non-hits. Without monotonicity, the last observed failure-to-hit bracket cannot bound the first-ever true recovery. Strict recurrence is later independent failure among qualified initial recoveries; later-panel failure over all histories is reported separately. Their joint-event burden uses all histories as its denominator."
+          ]
+        },
+        {
+          "heading": "11. Failure tests and deliverable boundary",
+          "paragraphs": [
+            "Test corrected grading with boundary and valid-alternative challenges, and graph auditing with deleted-edge and wrong-root controls. A corrected archived winner can still outperform rejects; a later valid update may make an old candidate harmful. Diagnose ranking, selection, integration, and lesson effects separately. Specify a meaningful paired effect, history-level sampling, clustered uncertainty, and multiplicity before final testing; no unsupported confidence interval is supplied.",
+            "The offline harness has provenance-aware packet export, artifact import, and semantic verification. Imported model identifiers, timestamps, and state hashes remain unverified without invocation and activation evidence. Fixtures demonstrate measurement correctness only. The first week should lock grading and leakage controls, collect pilot histories under an authorized model/budget, and decide whether useful rejections and measurable current-state effects exist. Model choice, sample size, adapters, and preregistration remain unresolved; recovery, recurrence, and causal benefit are NR."
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "number": 1,
+      "text": "Y. Yang et al. SkillOpt: Executive Strategy for Self-Evolving Agent Skills. arXiv:2605.23904v2, 2026.",
+      "url": "https://arxiv.org/abs/2605.23904v2",
+      "claim_scope": "Abstract establishes a rejected-edit buffer, bounded optimization and held-out gating; no performance figure is adopted."
+    },
+    {
+      "number": 2,
+      "text": "Microsoft. SkillOpt-Sleep: Deployment-Time Companion (Preview). Official software documentation, reviewed 2026-10-12.",
+      "url": "https://github.com/microsoft/SkillOpt/blob/main/docs/sleep/README.md",
+      "claim_scope": "Mutable official README describes replay, reflection, memory updates and gating; executable adapter equivalence remains unverified."
+    },
+    {
+      "number": 3,
+      "text": "A. Madaan et al. Self-Refine: Iterative Refinement with Self-Feedback. arXiv:2303.17651, 2023.",
+      "url": "https://arxiv.org/abs/2303.17651",
+      "claim_scope": "Iterative self-feedback/refinement is an adjacent output-repair mechanism."
+    },
+    {
+      "number": 4,
+      "text": "N. Shinn et al. Reflexion: Language Agents with Verbal Reinforcement Learning. arXiv:2303.11366, 2023.",
+      "url": "https://arxiv.org/abs/2303.11366",
+      "claim_scope": "Verbal reflective feedback retained as episodic memory motivates a serious lesson-memory comparator."
+    },
+    {
+      "number": 5,
+      "text": "J. S. Park et al. Generative Agents: Interactive Simulacra of Human Behavior. arXiv:2304.03442v2, 2023.",
+      "url": "https://arxiv.org/abs/2304.03442v2",
+      "claim_scope": "Experience memory, reflection, and retrieval contextualize memory selection; HTML section 4.1 verifies relevance/recency/importance."
+    },
+    {
+      "number": 6,
+      "text": "C. G. Northcutt, L. Jiang, I. L. Chuang. Confident Learning: Estimating Uncertainty in Dataset Labels. JAIR, 2021.",
+      "url": "https://arxiv.org/abs/1911.00068v6",
+      "claim_scope": "Label-error estimation under noise assumptions motivates comparison with supervision repair; it is not decision-history recovery evidence."
+    },
+    {
+      "number": 7,
+      "text": "L. Zheng et al. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. arXiv:2306.05685, 2023.",
+      "url": "https://arxiv.org/abs/2306.05685",
+      "claim_scope": "Documented evaluator biases motivate independently challenged grading; their magnitude is not an estimate for this study."
+    },
+    {
+      "number": 8,
+      "text": "D. Wadden et al. Fact or Fiction: Verifying Scientific Claims. EMNLP, 2020.",
+      "url": "https://aclanthology.org/2020.emnlp-main.609/",
+      "claim_scope": "Scientific claim verification with annotated evidence provides source tasks; the local cited-pair scoring contract is distinct."
+    }
+  ]
+}

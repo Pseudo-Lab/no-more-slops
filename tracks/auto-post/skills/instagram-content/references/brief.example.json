@@ -1,0 +1,35 @@
+{
+  "account": {
+    "display_name": "Cobalt Studio",
+    "handle": "",
+    "status": "draft"
+  },
+  "audience": "People interested in everyday creative practice",
+  "topic": "Creative process",
+  "language": "en",
+  "timezone": "UTC",
+  "tone": "Clear and curious",
+  "brand": {
+    "background": "#2457FF",
+    "text": "#FFFFFF"
+  },
+  "visual_direction": "Photo-led; preserve natural image colors",
+  "deliverable": {
+    "type": "carousel",
+    "width": 1080,
+    "height": 1350,
+    "slides": 4,
+    "preview_columns": 2
+  },
+  "acknowledgement": "",
+  "notes": "Fictional schema example. Replace values with this task's choices; do not load automatically.",
+  "caption_policy": {
+    "max_characters": 499,
+    "max_hashtags": 3
+  },
+  "punctuation_policy": {
+    "headlines": "omit_terminal_period",
+    "short_captions": "omit_terminal_period",
+    "large_display_copy": "omit_terminal_period"
+  }
+}

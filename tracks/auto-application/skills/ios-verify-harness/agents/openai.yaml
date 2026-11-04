@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS 검증 하네스"
+  short_description: "DEBUG 실행 인수, 앱 안 자가 점검, 기능별 무변화 감사, 실기기 설치로 '동작한다'를 확인합니다"
+  default_prompt: "$ios-verify-harness로 이 앱의 모든 화면을 실행 인수로 열 수 있게 하고, 각 기능이 실제로 결과를 바꾸는지 점검해줘."

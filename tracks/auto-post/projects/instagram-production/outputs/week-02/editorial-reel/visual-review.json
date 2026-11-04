@@ -1,0 +1,27 @@
+{
+  "master_sha256": "b986561d3909afd8f9587074cbd316d585ba439f98ab37c054662657cd2fdbec",
+  "status": "reviewed locally",
+  "full_playback": {
+    "files": [
+      "reel.mp4",
+      "recompression-review/review-only-1080p.mp4",
+      "recompression-review/review-only-720p.mp4"
+    ],
+    "css_width_px": 290,
+    "playback_rate": 1,
+    "all_reached_end_seconds": 60,
+    "errors_observed": false
+  },
+  "layout_review": [
+    "Actual uploaded reference aligned to unchanged brand and heading: scale 1.238, x=-65.368, y=-0.876 at original capture size",
+    "Explanation coordinates spaced 37% farther vertically, primary copy 4% larger",
+    "Information SVG 670 to 910 logical pixels tall; no enclosing panel",
+    "Fixed photo field extended to y=1545; constant crop and position during playback",
+    "Credits and segmented progress moved below the enlarged information; progress y=1640",
+    "Important copy kept within x120–890,y280–1660; right controls and account overlay remain reserved in the reference model"
+  ],
+  "readability": "Main explanation remains readable at 290px in master and local stress derivatives; smallest credit line is softer after compression",
+  "actual_instagram_upload_verified": false,
+  "reference_capture": "User-provided previous editorial upload from 2026-10-17; before/after comparison labels the new placement as simulation",
+  "user_feedback": "New revision pending"
+}

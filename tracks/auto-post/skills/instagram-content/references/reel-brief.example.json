@@ -1,0 +1,38 @@
+{
+  "account": {
+    "display_name": "Cobalt Studio",
+    "handle": ""
+  },
+  "brand": {
+    "background": "#2457FF",
+    "text": "#FFFFFF"
+  },
+  "language": "en",
+  "timezone": "UTC",
+  "deliverable": {
+    "type": "reel",
+    "width": 2160,
+    "height": 3840,
+    "min_short_side": 2048,
+    "fps": 30,
+    "duration_seconds": 60,
+    "min_scene_seconds": 3,
+    "audio": "none",
+    "safe_area": {
+      "left": 0.1111111111111111,
+      "top": 0.14583333333333334,
+      "right": 0.17592592592592593,
+      "bottom": 0.25
+    }
+  },
+  "caption_policy": {
+    "max_characters": 499,
+    "max_hashtags": 3
+  },
+  "punctuation_policy": {
+    "headlines": "omit_terminal_period",
+    "short_captions": "omit_terminal_period",
+    "large_display_copy": "omit_terminal_period"
+  },
+  "acknowledgement": ""
+}

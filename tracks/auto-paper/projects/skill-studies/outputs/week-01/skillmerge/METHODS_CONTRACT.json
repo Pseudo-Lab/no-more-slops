@@ -1,0 +1,543 @@
+{
+  "schema": "rf.skillmerge.methods-contract.v5",
+  "id": "SkillMerge",
+  "created_date": "2026-10-12",
+  "locked": false,
+  "stage": "first_week_research_design",
+  "scientific_results": "NR",
+  "live_model_calls": 0,
+  "preregistration": {
+    "complete": false,
+    "registry": null,
+    "reason": "Model, operating gates, effective cluster count, precision/power target, budget and final native adapter are not locked."
+  },
+  "ownership": {
+    "write_scope": "projects/skill_research_v5_20261012/skillmerge/",
+    "originals_preserved": true,
+    "active_skills_changed": false
+  },
+  "contribution_hierarchy": {
+    "primary": "Measure behavioral non-composition of common-ancestor updates that independently satisfy a frozen branch-improvement qualification rule.",
+    "secondary": "Evaluate a fixed-candidate integration policy with identical evidence access and complete cost accounting.",
+    "tertiary": "Separate continued-evolution/meta-policy experiment; histories diverge; not implemented or tested.",
+    "not_claimed": [
+      "first discovery of skill interference",
+      "new interface-composition theorem",
+      "causal mechanism from a graph or narrative alone",
+      "natural prevalence from authored conflicts",
+      "policy superiority",
+      "live model readiness",
+      "contamination-free public tests"
+    ]
+  },
+  "event_schema": {
+    "required_fields": [
+      "event_id",
+      "common_ancestor_hash",
+      "ancestor_skill_inventory",
+      "authoring_history_A",
+      "authoring_history_B",
+      "candidate_hash_A",
+      "candidate_hash_B",
+      "model_snapshot",
+      "runner_hash",
+      "tokenizer_revision",
+      "task_contract_hash",
+      "task_source_group_id",
+      "environment_snapshot",
+      "tool_rights_hash",
+      "mounted_asset_hashes",
+      "routing_policy_hash",
+      "canonical_activation_order",
+      "proposal_budget",
+      "qualification_panel_id",
+      "qualification_rule_hash",
+      "cohort_panel_id",
+      "scoring_panel_id",
+      "generation_attempt_inventory"
+    ],
+    "authorship_independence": "Separate information contexts and access records; no access to the other branch contents, diffs, validation results or negative lessons until both are frozen. Shared model/platform does not imply independent outcomes.",
+    "eligibility": "Q improvement for A and B against the same ancestor; frozen nonregression/resource gate; complete version and replay provenance. Hand-authored candidates lack empirical independent-improvement status until this is observed.",
+    "pair_selection": "Schedule candidate pairs and task allocations without looking at AB/BA scoring failures. A targeted challenge set is separately labeled.",
+    "composition_rule": "Freeze the deterministic update-application and assembly rule before trials. Record replace versus add, overlapping diffs, duplicate names/triggers and resource conflicts; never silently overwrite A with B while calling both preserved. Check installed/available content hashes. Nonactivation remains in availability outcomes but does not prove execution-time semantic interference.",
+    "all_attempt_records": "Retain failed generation, invalid candidates, qualification failures, zero eligible pairs, exclusions and incomplete events."
+  },
+  "observation_roles": {
+    "D": {
+      "name": "authoring and policy development",
+      "access": "Designated development inputs/feedback only.",
+      "boundary": "D may be adaptively reused with its attempt ledger; it is not final Q/C/S evidence."
+    },
+    "Q": {
+      "name": "individual improvement qualification",
+      "access": "Auditor evaluates frozen branches; authors do not tune on the qualification feedback.",
+      "inputs": "Source/task groups disjoint from final scoring and authoring. If qualification feedback is reused for editing, the panel becomes development and a fresh reserved Q is required.",
+      "repeat_policy": "Predeclare attempt/requalification stopping and multiplicity or obtain new independent observations."
+    },
+    "C": {
+      "name": "cohort selection audit",
+      "access": "Auditor-only; not returned to integration policy or skill authors.",
+      "inputs": "Independent executions of ancestor and isolated branches on planned scoring task identities for task-conditioned H/G, or a separately declared family/capability sampling rule.",
+      "boundary": "Do not identify H using the same outcome later counted as fresh baseline performance. Do not choose a harmful AB cohort to estimate natural incidence."
+    },
+    "S": {
+      "name": "fresh final scoring",
+      "access": "Independent final auditor; policy output frozen before feedback.",
+      "inputs": "Fresh executions, distinct from Q/C/D. Same-task replay retains input/contract hash; variant transfer requires a different family estimand.",
+      "boundary": "Seeds/repetitions are execution replicates, not independent tasks or leakage protection."
+    }
+  },
+  "treatments": {
+    "primary_mode": "skill availability",
+    "primary_population": "Every task assigned to the availability arm, including tasks where routing activates neither branch.",
+    "states": [
+      "S0",
+      "S0+A",
+      "S0+B",
+      "S0+A+B"
+    ],
+    "canonical_joint_order": "AB; editable proposal, must be frozen before S and interpreted within native router semantics.",
+    "secondary_order": "BA, not selected post hoc to maximize or minimize effect.",
+    "diagnostic_mode": "Forced injection of all registered skill content; separate from availability.",
+    "reset": "Fresh workspace/environment from the same snapshot per task/arm/repetition; no prior arm outputs, candidate edits, hidden solution scripts or cache-derived answer reuse.",
+    "resource_match": "Same final contract, mounted assets and executable resources, tool rights, model snapshot, context/output caps, timeout and retry attribution in instruction-only comparisons.",
+    "package_effect": "A separate native-package comparison may allow resources to differ and must say so."
+  },
+  "estimands": {
+    "primary": {
+      "id": "theta_joint_vs_average_single",
+      "dataset": "SkillsBench v1.1 main only; do not pool heterogeneous benchmark outcomes.",
+      "outcome": "Y=externally verified native task completion plus all public mandatory preservation checks; agent-caused invalid/timeout counts as zero.",
+      "formula": "d_e,t = p_J - (p_A+p_B)/2; theta = weighted_mean(d_e,t | Q_e=1)",
+      "weighting": "Explicit target weights on independently generated histories and original source-family groups, then fixed within-group task weights; final weights unset until inventory audit.",
+      "interpretation": "Expected additional completion gain/loss of canonical joint deployment relative to a fair mixture of isolated branches, conditional on the qualification protocol.",
+      "not_interpreted_as": "Loss against an oracle-best branch, source-population universal frequency, or a causal interface diagnosis."
+    },
+    "secondary": [
+      {
+        "id": "tau",
+        "formula": "p_J-p_A-p_B+p_0",
+        "warning": "Negative tau alone is not a strict failure; ceiling saturation can give negative tau with the joint arm best."
+      },
+      {
+        "id": "strict_witness",
+        "formula": "W_e,t=1[min(p_0,p_A,p_B)>=h]1[p_J<=l]",
+        "thresholds": {
+          "h": null,
+          "l": null
+        },
+        "classification": "confirmed only under a frozen uncertainty rule; unresolved when precision is insufficient; separate AB/BA."
+      },
+      {
+        "id": "deterministic_fixture_witness",
+        "formula": "(Y0,YA,YB,YJ)=(1,1,1,0)",
+        "warning": "Calculated or scripted manipulation check; not an empirical natural-event estimate."
+      },
+      {
+        "id": "new_capability_loss",
+        "definition": "An ancestor-failing, isolated-branch-successful cohort loses success in joint deployment; not labeled strict1110."
+      },
+      {
+        "id": "F_H",
+        "formula": "1-mean_H(p_out)",
+        "meaning": "Absolute fresh selected-output failure rate in the independently selected H cohort."
+      },
+      {
+        "id": "R_excess",
+        "formula": "mean_H(p_0-p_out)",
+        "meaning": "Additional fresh failure relative to the fresh ancestor in H; can be negative."
+      },
+      {
+        "id": "G_retention",
+        "formula": "mean_G(p_out)",
+        "meaning": "Fresh success among independently selected branch-acquired tasks; report the same comparator reference and cohort rule."
+      }
+    ],
+    "empty_denominators": "NA/null plus denominator=0 and absence reason; unaudited, missing, and empty are distinct.",
+    "natural_frequency": "Report all-attempt event counts, Q-eligible counts, assigned event-task counts, determinate witness counts, unresolved counts, and unresolved-aware bounds. Do not silently remove ambiguous cases.",
+    "selection_bias": "Qualification conditions the population. C selection produces regression-to-mean even with fresh S. Same-task C/S does not establish unseen-family retention."
+  },
+  "formal_statements": {
+    "status": "author educational mathematical model, not empirical skill independence or a novelty claim",
+    "prior_overlap": "SkillSmith v2 already treats typed signatures, atomic migration and scoped failure persistence. Our model illustrates semantic preconditions and the measurement distinction.",
+    "assumptions": [
+      "deterministic functions",
+      "fixed domain of three authored valid inputs",
+      "reset and no hidden state",
+      "honest tagged artifacts",
+      "fixed final predicate Φ",
+      "errors counted as failure",
+      "uniform educational input distribution"
+    ],
+    "types": {
+      "X": "{text, unit ∈ {won, thousand_won}, record_id, require_id}",
+      "Won": "{kind:'Won', amount_won, record_id}",
+      "Native": "{kind:'Native', amount_native, unit, record_id}",
+      "O": "{amount_won, optional record_id}",
+      "Phi": "Correct normalized amount, and matching record_id iff require_id is true."
+    },
+    "functions": {
+      "R0": "If text contains ',' return error; otherwise parse integer and multiply by unit factor, emit Won with original record_id.",
+      "RA": "Remove ',' on this restricted valid domain, parse integer, emit Native with unchanged unit and record_id.",
+      "P0": "Accept Won or Native; normalize native units; emit correct amount only, omit record_id.",
+      "PB": "Accept Won only; emit amount_won and record_id; reject Native.",
+      "adapter_T": "Accept Native, convert by its true unit factor, emit Won with unchanged record_id."
+    },
+    "inputs": [
+      {
+        "id": "t0",
+        "text": "10",
+        "unit": "thousand_won",
+        "record_id": "r0",
+        "require_id": false,
+        "expected_amount_won": 10000
+      },
+      {
+        "id": "tA",
+        "text": "1,000",
+        "unit": "won",
+        "record_id": "ra",
+        "require_id": false,
+        "expected_amount_won": 1000
+      },
+      {
+        "id": "tB",
+        "text": "10",
+        "unit": "won",
+        "record_id": "rb",
+        "require_id": true,
+        "expected_amount_won": 10
+      }
+    ],
+    "success_table": {
+      "columns": [
+        "S0=P0∘R0",
+        "A=P0∘RA",
+        "B=PB∘R0",
+        "AB=PB∘RA",
+        "adapter=PB∘T∘RA"
+      ],
+      "rows": [
+        {
+          "task": "t0",
+          "values": [
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "task": "tA",
+          "values": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "task": "tB",
+          "values": [
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      ],
+      "means": [
+        0.3333333333333333,
+        0.6666666666666666,
+        0.6666666666666666,
+        0,
+        1
+      ]
+    },
+    "counterexample": "A and B each improve the mathematical uniform mean by 1/3 over S0, while AB loses the retained t0. This does not supply empirical authorship isolation, sampling or Q/S evidence.",
+    "preservation": {
+      "assumption_one": "For every x∈D, RA(x)∈Pre(PB,x).",
+      "assumption_two": "For every x∈D and every m∈Pre(PB,x), Φ(x,PB(m)) holds.",
+      "conclusion": "For every x∈D, Φ(x,PB(RA(x))) holds.",
+      "proof_sketch": "Substitute m=RA(x) from assumption one into assumption two. For the toy adapter, unit normalization and ID preservation make T(RA(x)) an admitted Won artifact, so all three cases satisfy Φ.",
+      "limitations": "A static number type does not capture units, identity, evidence or side effects. Incompatible typed outputs may be safely rejected; this is a completion failure/deferral, not silent wrong arithmetic. A tag-erasing adapter can silently break semantic refinement. No stochastic LLM guarantee follows.",
+      "semantic_precondition": "Pre(PB,x) consists of Won records whose amount equals the correct unit-normalized input x and whose record_id equals x.record_id when required. This is a semantic refinement, not all records tagged Won. PB copies the correct fields; syntax validation alone does not establish this assumption."
+    }
+  },
+  "benchmarks": [
+    {
+      "id": "skillsbench_v1_1",
+      "role": "main",
+      "source_ids": [
+        "sb_release",
+        "sb_commit",
+        "sb_registry",
+        "sb_pdf_task",
+        "sb_pdf_verifier",
+        "sb_license",
+        "paper_skillsbench_v4"
+      ],
+      "inventory": {
+        "native_tasks": 87,
+        "categories": 8,
+        "extra_tasks_excluded": 14
+      },
+      "pins": {
+        "tooling_release": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+        "task_tree": "55bfe693f2a19f6b2f29aca3f54fe98b9d994668",
+        "local_artifact_digest": null
+      },
+      "status": {
+        "metadata": "reviewed",
+        "local_tasks": "not_acquired_in_this_scope",
+        "native_oracle": "not_run",
+        "reset": "not_verified",
+        "live_agent": "not_run",
+        "asset_terms": "per-asset_unknown"
+      },
+      "adapter_plan": "Newly author S0/A/B instruction candidates; keep native task contract and identical permitted resources. Do not redistribute bundled third-party skills before asset review. Native with/no-skill support does not create qualified common-ancestor events."
+    },
+    {
+      "id": "scifact_citedpair_rfv4",
+      "role": "adapted_pilot",
+      "local_manifest": "projects/skill_research_dataset_v4_20261012/data/scifact_citedpair/manifest.json",
+      "source_code_revision": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+      "corpus_counts": {
+        "documents": 5183,
+        "official_train_claims": 809,
+        "official_dev_claims": 300,
+        "excluded_train_claims": 278,
+        "prepared_tasks": 531,
+        "connected_components": 325
+      },
+      "splits": {
+        "train": {
+          "tasks": 306,
+          "components": 193
+        },
+        "dev": {
+          "tasks": 100,
+          "components": 62
+        },
+        "test": {
+          "tasks": 125,
+          "components": 70
+        }
+      },
+      "split_rule": "Hash original cited-document/normalized-claim connected components before using labels; exclude any train component touching official dev. New test is a public original-train adaptation.",
+      "selector": "Exactly one cited document per claim by deterministic hash of IDs, without consulting gold labels. Absence of annotation yields annotation-based insufficient; not an independent factual certification.",
+      "role_assignment_proposal": {
+        "D": "A new component split within adapted train for authoring and policy development.",
+        "Q": "Adapted dev reserved for one-shot branch qualification; not policy tuning.",
+        "C": "Auditor-only fresh cohort runs on assigned adapted-test task hashes.",
+        "S": "Separate executions on those assigned test hashes; task-conditioned endpoint."
+      },
+      "primary_outcome": "Schema-valid label_correct over all assigned cases; an invalid, missing, or agent-caused timeout response contributes zero. Rationale coverage and precision are separate diagnostics.",
+      "rationale_boundary": "All complete annotated alternatives and supersets accepted; all-sentence outputs can meet coverage but may have low precision. This is not native SciFact retrieval/rationale F1.",
+      "mutation_count": 44,
+      "mutations_scope": "train-only constructed evaluator-stress file; not original labels, authenticated error history or SkillMerge event count.",
+      "status": {
+        "local_preparation": "531 cases prepared and semantic replay recorded",
+        "scientific_effect": "NR",
+        "candidate_histories": 0,
+        "os_answer_isolation": "not_implemented"
+      },
+      "licenses": {
+        "claims_evidence": "CC-BY-4.0 author declaration",
+        "abstracts": "ODC-By-1.0 author declaration",
+        "code": "Apache-2.0 author declaration",
+        "mirror_card_conflict": "Record-level source matters; HF mirror has older CC-BY-NC-2.0 declaration."
+      }
+    },
+    {
+      "id": "swe_bench_verified",
+      "role": "external",
+      "inventory": {
+        "reported_test_instances": 500
+      },
+      "status": {
+        "metadata": "reviewed",
+        "local_environment": "not_prepared_in_this_scope",
+        "model_trials": "NR",
+        "dataset_revision": null,
+        "harness_commit": null,
+        "image_digests": null,
+        "data_and_patch_terms": "unknown_per_repository"
+      },
+      "plan": "Create disjoint repository/module source groups before candidate work; use fresh base-commit environment per arm, evaluator-only gold/test patches and native FAIL_TO_PASS/PASS_TO_PASS completion. Remove future-commit and cached-output leakage according to a reviewed adapter. Core dataset does not natively provide SKILL composition or histories."
+    }
+  ],
+  "controls": [
+    {
+      "name": "AB_vs_BA",
+      "purpose": "Order sensitivity",
+      "requirement": "Both orders preallocated; canonical primary order fixed before scoring; no favorable-order selection."
+    },
+    {
+      "name": "instruction_only",
+      "purpose": "Instructions rather than extra code/resources",
+      "requirement": "All arms share executable resources, source data and tool permissions; package-level effect separately reported."
+    },
+    {
+      "name": "token_length_irrelevant",
+      "purpose": "Prompt length/content confound",
+      "requirement": "Actual tokenizer matched input blocks within a frozen tolerance; irrelevance audited on development without final answer access."
+    },
+    {
+      "name": "token_length_padding",
+      "purpose": "Second length-control content/form sensitivity",
+      "requirement": "Padding structure and placement fixed; not assumed behaviorally neutral."
+    },
+    {
+      "name": "disjoint_scope",
+      "purpose": "General co-residence versus shared artifact scope",
+      "requirement": "Task relevance and positive exposure checked; easy irrelevant pairs cannot be treated as equivalent stress."
+    },
+    {
+      "name": "semantic_adapter",
+      "purpose": "Candidate mechanism intervention",
+      "requirement": "Matched unrelated text/tokens/resources; explicit unit/key/provenance boundary correction; no changed final task."
+    },
+    {
+      "name": "native_availability_vs_forced",
+      "purpose": "Routing versus execution content",
+      "requirement": "Nonactivation remains in availability denominator; activation observations are posttreatment diagnostics."
+    },
+    {
+      "name": "grader_and_dataset_challenge",
+      "purpose": "Measurement false failures",
+      "requirement": "Independent valid alternatives, corrupt answers, source mismatches, semantic/split replay; old artifacts remain preserved."
+    }
+  ],
+  "integration_secondary": {
+    "candidate_pool": "Same Q-eligible immutable candidates; generation fixed and separately costed.",
+    "policies": [
+      "naive_joint",
+      "random_replay",
+      "change_scope_replay",
+      "frozen_evidence"
+    ],
+    "allowed_actions": [
+      "joint",
+      "scoped_adapter",
+      "separate_declared_routing",
+      "retain_ancestor_defer"
+    ],
+    "evidence_access": "D evidence only; no C/S/auditor-only labels or expected artifacts.",
+    "cache": "Key by state, candidate, task, contract, evaluator and environment; history reuse is context evidence, not a fresh behavioral success.",
+    "costs": "Record real model tokens including cache tokens, authoring/scheduling/repair calls, tool CPU/wall time, retries and failures. One primary resource cap and cost sensitivity locked before S; synthetic fixture units are not money or energy.",
+    "qualification_and_audit": "Separately report full research overhead; independent final audit does not become policy feedback.",
+    "not_implemented": [
+      "adaptive meta-context optimization",
+      "OS-enforced auditor isolation",
+      "authenticated live runner",
+      "continued evolution"
+    ],
+    "policy_endpoint": "Output completion at one fixed budget versus strongest D-selected equal-budget baseline, together with F_H/R_excess/G retention and no-gain/deferral."
+  },
+  "analysis": {
+    "primary_unit": "Paired event-task contrast nested within original source groups and update histories.",
+    "dependence": "Many tasks share one candidate history; many histories share one task family. Execution repeats, seed matches, orders and variants are not independent population samples.",
+    "uncertainty": "Choose a justified crossed cluster/bootstrap model or deliberately independent blocks after inspecting cluster counts. Do not automatically apply a one-axis bootstrap to crossed data.",
+    "family_weighting": "Lock whether equal-family/equal-history weighting or a task-frequency target is intended; report secondary task-weighted results rather than switching silently.",
+    "multiplicity": "One primary theta; predeclare witness/order/contract-intervention contrasts and a Holm family where suitable. No corrected test has been run.",
+    "missingness": "Preserve all raw records. Agent-caused invalid/timeout=completion failure. External outages/censoring remain explicit under frozen retry rules; include conservative bounds when unresolved, never complete-case success as primary.",
+    "power": "Use pilot independent-cluster variance/covariance and qualification yield to simulate budget/precision before final sample-size lock; target effect, CI width and alpha currently null.",
+    "natural_vs_stress": "Separate natural proposal-stream frequency from intentionally incompatible crafted tasks/skills and from deterministic software fixtures.",
+    "secondary_evolution": "Policy-specific histories diverge; analyze generation+integration+execution as history-level treatment, not fixed-candidate paired effects."
+  },
+  "falsification": [
+    "Q-eligible natural events show no material negative theta or very rare strict witnesses within prespecified precision.",
+    "Matched length/order/resource or corrected-grader controls account for apparent collapse.",
+    "An interface intervention does not improve the planned contract check under matched controls, or a different intervention is sufficient.",
+    "Budgeted policy fails the practical advantage against a strong fixed baseline, loses newly acquired capabilities, or wins only by deferring everything.",
+    "Continued adaptive policy offers no measurable value beyond a frozen mechanism at full cost."
+  ],
+  "known_current_evidence": {
+    "v3": {
+      "validation": "projects/skill_research_v3_20261012/skillmerge/validation_v2.json",
+      "recorded_tests": 31,
+      "authored_tasks": 24,
+      "authored_skill_packages": 12,
+      "planned_packets": 120,
+      "scripted_records": 192,
+      "fixture_events": 8,
+      "authenticated_model_runs": 0,
+      "warning": "Tests exercise software; scripted executor ignores skill instructions. Import examples are authored and unverified."
+    },
+    "v4": {
+      "validation": "projects/skill_research_dataset_v4_20261012/VALIDATION.json",
+      "recorded_tests": 13,
+      "prepared_scifact_cases": 531,
+      "semantic_preparation_replayed": true,
+      "model_calls": 0,
+      "warning": "Data preparation and semantic manifest validation are not benchmark success."
+    }
+  },
+  "first_week_plan": [
+    {
+      "day": 1,
+      "deliverable": "Freeze source/version/license inventory and common-ancestor event schema.",
+      "gate": "No hidden oracle/skill assets enter authoring; unknown terms retained."
+    },
+    {
+      "day": 2,
+      "deliverable": "Challenge native/adapted graders with independent valid alternatives and corruption counterexamples.",
+      "gate": "No model effect reported before false-failure review."
+    },
+    {
+      "day": 3,
+      "deliverable": "Specify clean reset and public trial packets for all arms with tokenizer/resource controls.",
+      "gate": "Environment and auditor separation verified locally; live credentials/model not inferred."
+    },
+    {
+      "day": 4,
+      "deliverable": "Pilot measurement precision and qualification yield only after model/input/budget authorization is concrete.",
+      "gate": "Current manuscript leaves these unknown; no live run performed."
+    },
+    {
+      "day": 5,
+      "deliverable": "Lock one primary estimand, weights, gates, effective unit, cost cap, stopping and multiplicity plan.",
+      "gate": "Version a preregistration; do not retrofit after S."
+    },
+    {
+      "day": 6,
+      "deliverable": "Audit raw ledger/import and semantic verification against altered metrics/provenance.",
+      "gate": "Hashes prove consistency, not authentication."
+    },
+    {
+      "day": 7,
+      "deliverable": "Publish prepared research design and complete readiness gaps; any small observed pilot separately labeled.",
+      "gate": "No empirical claim without complete independent evidence."
+    }
+  ],
+  "local_content_validation": {
+    "status": "passed_author_content_checks",
+    "files": 4,
+    "pages": 4,
+    "page_words_including_top_or_references": [
+      410,
+      364,
+      399,
+      370
+    ],
+    "total_page_words": 1543,
+    "abstract_words": 130,
+    "explainer_characters": 41507,
+    "explainer_hangul_syllables": 20631,
+    "numbered_sections": 20,
+    "qa": 15,
+    "primary_sources": 31,
+    "local_source_hashes_checked": 17,
+    "claim_links_checked": 12,
+    "toy_counts_and_scalar_examples": "passed",
+    "live_model_calls": 0,
+    "scientific_results": "NR",
+    "checked_date": "2026-10-12",
+    "scope": "Author static document/schema/source-link/hash checks and scalar examples; no benchmark/model tests.",
+    "parent_report": "Root separately reported independent five-arm toy verification and four-page/full-prose/math compilation; final integration receipts are root-owned."
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "앱 디자인 점검"
+  short_description: "바이브코딩 티가 나는 화면과 결과가 안 보이는 상호작용을 찾아 고칩니다"
+  default_prompt: "$app-design-review로 이 앱의 모든 화면을 찍어 AI가 만든 티가 나는 곳과 눌러도 변화가 안 보이는 곳을 찾아 고쳐줘."

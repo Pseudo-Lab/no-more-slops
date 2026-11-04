@@ -1,0 +1,706 @@
+{
+  "schema": "probeflow_v13_sources_v1",
+  "recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+  "new_experiments": false,
+  "new_model_api_calls": 0,
+  "new_data_downloads": 0,
+  "primary_html_browsing_performed": true,
+  "primary_reference_count": 18,
+  "hash_semantics": {
+    "review_record_sha256": "SHA-256 of canonical UTF-8 JSON review metadata before this hash field; not a publisher response or paper-file hash",
+    "publisher_response_sha256": "null because original response bytes were not archived; web inspection is bounded by stated locators",
+    "local_artifacts_sha256": "SHA-256 of actual local file bytes at the recorded check time"
+  },
+  "source_review_limits": [
+    "No native literature algorithm or external benchmark was executed.",
+    "Official-abstract-only entries support only their stated high-level methods, not detailed algorithms, proofs or quantitative ranking.",
+    "A primary page verifies identity and bounded description; it does not certify every author claim.",
+    "Source-reported performance and earlier UI/photo/lens material are not local v13 experimental evidence."
+  ],
+  "primary_reviews": [
+    {
+      "id": "R01",
+      "reference_number": 1,
+      "bibliographic_text": "N. Helwig, E. Pignanelli, and A. Schütze. Condition monitoring of hydraulic systems. UCI Machine Learning Repository, 2015.",
+      "url": "https://archive.ics.uci.edu/dataset/447/condition+monitoring+of+hydraulic+systems",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "primary_dataset_page",
+      "reviewed_locators": "Dataset metadata, variables, cycles, citation and license",
+      "verified_claim_scope": "Public completed-cycle Hydraulic data; no verified physical independent-unit map.",
+      "claim_ids": [
+        "C01"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "78f4ac03235af974b45d2f4ddad0036446167bb3a16c16a7c1ca8504ba109991"
+    },
+    {
+      "id": "R02",
+      "reference_number": 2,
+      "bibliographic_text": "Y. Kobayashi, Z. Jing, J. Yao, H. Namkoong, and S. Joshi. Learning-To-Measure: In-Context Active Feature Acquisition. arXiv:2510.12624v2, 2026.",
+      "url": "https://arxiv.org/html/2510.12624v2",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "selected_primary_html_sections",
+      "reviewed_locators": "Sections 3-4.2; setup and predictor/acquisition description",
+      "verified_claim_scope": "In-context predictor and both greedy and lookahead variants; no native execution here.",
+      "claim_ids": [
+        "L02",
+        "C12"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "1482eb1afd05d6d73ad6c064ea546961c7030d6f71b4a76e383e501c081f6e6e"
+    },
+    {
+      "id": "R03",
+      "reference_number": 3,
+      "bibliographic_text": "J. Feng, Q. Li, and Y. Li. BRiG-AFA: Bellman Risk-to-Go Learning for Non-Myopic Active Feature Acquisition. arXiv:2608.02305v1, 2026.",
+      "url": "https://arxiv.org/html/2608.02305v1",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "selected_primary_html_sections",
+      "reviewed_locators": "Abstract and Sections 3-4.2",
+      "verified_claim_scope": "Fixed-predictor remaining-budget risk-to-go; unit-cost exactly-B formulation is method-specific.",
+      "claim_ids": [
+        "L03",
+        "C12"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "7344e3bd46e56f416ed5efe20d23c74b27e81d3341e44e9effb02592703cd873"
+    },
+    {
+      "id": "R04",
+      "reference_number": 4,
+      "bibliographic_text": "Z. Zhao, R. Xu, and Q. Ni. Learning Source Acquisition Policies by Offline Planning. arXiv:2609.14299v1, 2026.",
+      "url": "https://arxiv.org/html/2609.14299v1",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "selected_primary_html_sections",
+      "reviewed_locators": "Sections 2-3.4; grouped-source setup and method",
+      "verified_claim_scope": "Grouped-source acquisition and offline planning; native teacher/scorer not implemented here.",
+      "claim_ids": [
+        "L04",
+        "C12"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "0b8e619f0e5c0a8a1ba988e7b088e98913e4256d4c229a8c91288c10ddc0f372"
+    },
+    {
+      "id": "R05",
+      "reference_number": 5,
+      "bibliographic_text": "L. Aronsson and M. Haghir Chehreghani. Non-Myopic Active Feature Acquisition via Pathwise Policy Gradients. arXiv:2605.05511v2, 2026.",
+      "url": "https://arxiv.org/html/2605.05511v2",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "selected_primary_html_sections",
+      "reviewed_locators": "Abstract and Sections 2-3.2",
+      "verified_claim_scope": "Nonmyopic trajectory optimization via pathwise gradients; no native code or proof reproduction.",
+      "claim_ids": [
+        "L05",
+        "C12"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "32cd8f1259dfa7e554275fbc64c772c135d9de37794a1528654b3f63e582767e"
+    },
+    {
+      "id": "R06",
+      "reference_number": 6,
+      "bibliographic_text": "Y. Geifman and R. El-Yaniv. Selective Classification for Deep Neural Networks. arXiv:1705.08500v2, 2017.",
+      "url": "https://arxiv.org/html/1705.08500v2",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "selected_primary_html_sections",
+      "reviewed_locators": "Sections 2-3, Algorithm 1 and Theorem 3.2",
+      "verified_claim_scope": "Risk/coverage and an SGR construction with sampling/selection assumptions; not our threshold certificate.",
+      "claim_ids": [
+        "L06",
+        "C03"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "a70d39fa3a6474c3ba0668c0c7a53dc19595ff0e8d4ed6dab60e0949db8f472c"
+    },
+    {
+      "id": "R07",
+      "reference_number": 7,
+      "bibliographic_text": "D. Golovin and A. Krause. Adaptive Submodularity: Theory and Applications in Active Learning and Stochastic Optimization. JAIR 42; arXiv:1003.3967v5, 2011.",
+      "url": "https://arxiv.org/html/1003.3967v5",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "selected_primary_html_sections",
+      "reviewed_locators": "Section 3.2 definitions and Theorem 5 statement",
+      "verified_claim_scope": "Greedy guarantees require stated adaptive monotonicity/submodularity and distribution assumptions.",
+      "claim_ids": [
+        "L07"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "fd8ec113987648c9b359a5f3d89d0766820f27eb7414741d607037a808ac9de5"
+    },
+    {
+      "id": "R08",
+      "reference_number": 8,
+      "bibliographic_text": "H. Shim, S. J. Hwang, and E. Yang. Joint Active Feature Acquisition and Classification with Variable-Size Set Encoding. NeurIPS, 2018.",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/hash/e5841df2166dd424a57127423d276bbe-Abstract.html",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official NeurIPS abstract",
+      "verified_claim_scope": "Joint classification/acquisition with cost-sensitive RL and variable-size set representation.",
+      "claim_ids": [
+        "L08"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "13326d785aaea08322e281ecf6e10896443b3001925f9cb73ab4451d0b93a2ec"
+    },
+    {
+      "id": "R09",
+      "reference_number": 9,
+      "bibliographic_text": "Y. Li and J. B. Oliva. Active Feature Acquisition with Generative Surrogate Models. ICML, PMLR 139:6450-6459, 2021.",
+      "url": "https://proceedings.mlr.press/v139/li21p.html",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official PMLR abstract",
+      "verified_claim_scope": "Generative-surrogate model-based AFA and auxiliary acquisition information.",
+      "claim_ids": [
+        "L09"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "561c3716c83c1f58e282626ca312e541d5c0a22e41b97146382e899a452e5b42"
+    },
+    {
+      "id": "R10",
+      "reference_number": 10,
+      "bibliographic_text": "I. C. Covert, W. Qiu, M. Lu, N. Y. Kim, N. J. White, and S.-I. Lee. Learning to Maximize Mutual Information for Dynamic Feature Selection. ICML, PMLR 202:6424-6447, 2023.",
+      "url": "https://proceedings.mlr.press/v202/covert23a.html",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official PMLR abstract",
+      "verified_claim_scope": "Amortized conditional-mutual-information selection as a learned greedy comparator.",
+      "claim_ids": [
+        "L10"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "75c77bb97fadaff26c9b824e17ebaa3dfd7a54fea0502b0f3a0e6e9cacaeb2cc"
+    },
+    {
+      "id": "R11",
+      "reference_number": 11,
+      "bibliographic_text": "H. von Kleist, A. Zamanian, I. Shpitser, and N. Ahmidi. Evaluation of Active Feature Acquisition Methods for Time-varying Feature Settings. JMLR 26(60):1-84, 2025.",
+      "url": "https://jmlr.org/beta/papers/v26/23-1635.html",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official JMLR abstract",
+      "verified_claim_scope": "Acquisition distributions and assumptions matter for offline/semi-offline AFA evaluation.",
+      "claim_ids": [
+        "L11",
+        "C11"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "97b2db80c3691f83d0ca4b84375e65c1ea24e30c02efd9c95db5aa63be5966fd"
+    },
+    {
+      "id": "R12",
+      "reference_number": 12,
+      "bibliographic_text": "C. Ma, S. Tschiatschek, K. Palla, J. M. Hernandez-Lobato, S. Nowozin, and C. Zhang. EDDI: Efficient Dynamic Discovery of High-Value Information with Partial VAE. ICML, PMLR 97:4234-4243, 2019.",
+      "url": "https://proceedings.mlr.press/v97/ma19c.html",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official PMLR abstract",
+      "verified_claim_scope": "Partial VAE and expected information-gain acquisition.",
+      "claim_ids": [
+        "L12"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "2093b3de45234f62652323b3e90afc3d0e7f09c866421fceaebf7f29f3bcd06b"
+    },
+    {
+      "id": "R13",
+      "reference_number": 13,
+      "bibliographic_text": "L. Aronsson, A. Rahbar, and M. Haghir Chehreghani. A Survey on Active Feature Acquisition Strategies. IJCAI Survey Track, pages 7740-7748, 2026.",
+      "url": "https://www.ijcai.org/proceedings/2026/860",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official IJCAI proceedings abstract",
+      "verified_claim_scope": "POMDP framing and AFA taxonomy; not a local result.",
+      "claim_ids": [
+        "L13"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "d9b601af2763426125811fb81628f50dfcc42c719cdac42062f2830bff5f438c"
+    },
+    {
+      "id": "R14",
+      "reference_number": 14,
+      "bibliographic_text": "G. C. Cawley and N. L. C. Talbot. On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation. JMLR 11(70):2079-2107, 2010.",
+      "url": "https://www.jmlr.org/beta/papers/v11/cawley10a.html",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official JMLR abstract",
+      "verified_claim_scope": "Optimizing finite-sample model selection criteria can bias subsequent evaluation.",
+      "claim_ids": [
+        "L14",
+        "C02",
+        "C08"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "b431b6e367a7d804352874c2dc1417fb28de72598afd82352995ee1d4c276db9"
+    },
+    {
+      "id": "R15",
+      "reference_number": 15,
+      "bibliographic_text": "S. Varma and R. Simon. Bias in error estimation when using cross-validation for model selection. BMC Bioinformatics 7:91, 2006.",
+      "url": "https://link.springer.com/article/10.1186/1471-2105-7-91",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "selected_primary_html_sections",
+      "reviewed_locators": "Abstract and Background",
+      "verified_claim_scope": "Model selection must be accounted for within evaluation; nested-validation argument, not a Hydraulic prescription.",
+      "claim_ids": [
+        "L15",
+        "C02",
+        "C08"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "265a3fe7309808fc712930ac83725d07c23c33c8a33c058eaf8421a7b6bd6ce9"
+    },
+    {
+      "id": "R16",
+      "reference_number": 16,
+      "bibliographic_text": "D. R. Roberts et al. Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. Ecography 40:913-929, 2017.",
+      "url": "https://nsojournals.onlinelibrary.wiley.com/doi/10.1111/ecog.02881",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "selected_primary_html_sections",
+      "reviewed_locators": "Article metadata and structured-validation argument, HTML lines 311-347 of reviewed extraction",
+      "verified_claim_scope": "Dependence-aware blocking and extrapolation target matter; no fixed-gap independence certificate.",
+      "claim_ids": [
+        "L16",
+        "C02",
+        "C10"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "dec73b2084c4d1061fab8f51c6643e5e35f625d31364c7b366db074ba939bfb1"
+    },
+    {
+      "id": "R17",
+      "reference_number": 17,
+      "bibliographic_text": "Y. Geifman and R. El-Yaniv. SelectiveNet: A Deep Neural Network with an Integrated Reject Option. ICML, PMLR 97:2151-2159, 2019.",
+      "url": "https://proceedings.mlr.press/v97/geifman19a.html",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official PMLR abstract",
+      "verified_claim_scope": "Integrated prediction/rejection training contrasts with our fixed-gate comparison.",
+      "claim_ids": [
+        "L17",
+        "C03"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "6de48387a9beaffbbccc239f66ad8a996f5eaeffd971f6cf86dd94aca484e16e"
+    },
+    {
+      "id": "R18",
+      "reference_number": 18,
+      "bibliographic_text": "R. El-Yaniv and Y. Wiener. On the Foundations of Noise-free Selective Classification. JMLR 11(53):1605-1641, 2010.",
+      "url": "https://www.jmlr.org/papers/v11/el-yaniv10a.html",
+      "primary_source": true,
+      "review_recorded_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "reviewed_on_utc": "2026-10-18",
+      "review_channel": "web primary HTML inspection; no PDF downloaded",
+      "review_scope": "official_abstract_only",
+      "reviewed_locators": "Official JMLR abstract",
+      "verified_claim_scope": "Foundational reject-option/risk-coverage framing under noise-free theory; assumptions not transferred.",
+      "claim_ids": [
+        "L18",
+        "C03"
+      ],
+      "original_response_bytes_archived": false,
+      "publisher_response_sha256": null,
+      "unverified": [
+        "complete-paper correctness",
+        "unread sections and appendices",
+        "native code identity",
+        "author-reported benchmark reproduction",
+        "local performance transfer"
+      ],
+      "review_record_sha256": "72f43c3f6f9312f38b763730aa078604c533ba1db32358d9385482d55da517ac"
+    }
+  ],
+  "local_artifacts": [
+    {
+      "id": "A01",
+      "path": "projects/research_manuscripts_v12_20261018/probeflow/PLAN.json",
+      "bytes": 3472,
+      "sha256": "bbea5d894e3d59da815c0495626f6f6c42071652a1443d609fb9107d3aa20b66",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A02",
+      "path": "projects/research_manuscripts_v12_20261018/probeflow/paper.json",
+      "bytes": 39501,
+      "sha256": "8863c2ff62fb237d51ba201b91686e47661a727fdad4487c3e419ecfb1114b29",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A03",
+      "path": "projects/research_manuscripts_v12_20261018/probeflow/VALIDATION.json",
+      "bytes": 3742,
+      "sha256": "a456c3a50f5496c9838ca90bfd669b029bd6d325f58eed64acb814231ac59c13",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A04",
+      "path": "projects/research_manuscripts_v12_20261018/probeflow/run_experiment.py",
+      "bytes": 12938,
+      "sha256": "0912f6efb027b8cfe47bb2c1970493e2bb859535ad44e3db371908b0a5a7acd8",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A05",
+      "path": "projects/research_manuscripts_v12_20261018/probeflow/test_experiment.py",
+      "bytes": 3856,
+      "sha256": "f3d161dc587b637547165c4981b998e51b151a867f034a855c60388c88d22a30",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A06",
+      "path": "projects/research_manuscripts_v12_20261018/probeflow/verify.py",
+      "bytes": 6777,
+      "sha256": "b16deac6d8d65f2facdeb3ea3f6d41e2d8d70b063d4a5fa2b851bd9aa0afc751",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A07",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/results.json",
+      "bytes": 70733,
+      "sha256": "85e62fac854502274a3bc361e15c05206b4d74f8fa443697ed2a901f4131cecb",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A08",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/source_receipt.json",
+      "bytes": 1298,
+      "sha256": "ae10c1486cc888edd1b47b6d67a88500a9d4a318268654b1d9437f4ef3085395",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A09",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/locked_plan.json",
+      "bytes": 3904,
+      "sha256": "8f364f9a254b97d15fc67b07ab1d956089e04df35bc58b6f615b82f1f807b3c6",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A10",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/consumed_code/run_experiment.py",
+      "bytes": 12938,
+      "sha256": "0912f6efb027b8cfe47bb2c1970493e2bb859535ad44e3db371908b0a5a7acd8",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A11",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/frozen_fit.json",
+      "bytes": 489466,
+      "sha256": "c0e6cf416881f20a693f7c26c362b238383d52d59512a51d8df0dab15302524c",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A12",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/frozen_selection_and_policies.json",
+      "bytes": 7302,
+      "sha256": "b77545bd8431651dabde3fca0e7ba282a592c60d935d5059b14ddfb85c354ea8",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A13",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/selection_predictions.jsonl",
+      "bytes": 492053,
+      "sha256": "8c5ac57299fe6a8e2fcad46af78ea5ce6342fad896e3f322ded656fef0d0a069",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A14",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/evaluation_predictions.jsonl",
+      "bytes": 1015048,
+      "sha256": "196147bf488f8258bc23da6708839291bf4a45a8ee37bbb9b425298d2f4900a5",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A15",
+      "path": "runs/research_manuscripts_v12_20261018_01/probeflow/events.json",
+      "bytes": 864,
+      "sha256": "a32c38f6d100cd6be195a164706b081f6e7004efcd30f6fbbfc88c40f613b9fb",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A16",
+      "path": "runs/research_progress_v11_20261018_01/probeflow/results.json",
+      "bytes": 50289,
+      "sha256": "600d2868abad1223318f2767b6a36ae3e63f6e5eeac34810e27891b75436fffd",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A17",
+      "path": "runs/research_progress_v11_20261018_01/probeflow/source_receipt.json",
+      "bytes": 1369,
+      "sha256": "8ccb1024124c390769a17901bc155531b0df17b01389258b3dcc9cc07cef3753",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A18",
+      "path": "runs/research_progress_v11_20261018_01/probeflow/consumed_code/run_experiment.py",
+      "bytes": 13768,
+      "sha256": "224938e5b6bcd0518babd1891332b40b744fecdbfbb183d95c5b4f2f3de2a832",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A19",
+      "path": "runs/research_progress_v11_20261018_01/probeflow/forced_terminal_diagnostic/results.json",
+      "bytes": 49618,
+      "sha256": "a8ac8e044e3d06647b5e47471ef9452bfe0f0348d7a764d400670a9dccc13ef0",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A20",
+      "path": "projects/research_comparisons_v9_20261018/probeflow/INDUSTRIAL_PILOT_PLAN.json",
+      "bytes": 7615,
+      "sha256": "f30f98b6b81f3303f75a3526bce0fbf472f593bd40eae0b7f048ca0523dc9221",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A21",
+      "path": "projects/research_comparisons_v9_20261018/probeflow/industrial_pilot.py",
+      "bytes": 16149,
+      "sha256": "93a8826ce21f5d5e22df31ce80915a0bc8ef894485cf2e366215a003c7008865",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A22",
+      "path": "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/raw/PS1.txt",
+      "bytes": 91391892,
+      "sha256": "168e2e663bb511043a15a9c978b93a6e0280b27b113133d0a26f738170af39c0",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A23",
+      "path": "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/raw/FS1.txt",
+      "bytes": 7581926,
+      "sha256": "7ff09b17047f776befc136b7902bc7bd4419f96dc107a7ae94d8c412effe0375",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A24",
+      "path": "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/raw/TS1.txt",
+      "bytes": 904586,
+      "sha256": "49cae5e9013d8e230698d95f53a98bb77fedfe3c86985b812cf701dcc9ef06d8",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    },
+    {
+      "id": "A25",
+      "path": "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/raw/profile.txt",
+      "bytes": 31196,
+      "sha256": "867987ca884b2f0fd607ad3918329eba887d095af2befa21122cea518eaa584a",
+      "hash_checked_at_utc": "2026-10-18T13:24:29.886745+00:00",
+      "scope": "actual local bytes; no assertion of independent units, scientific validity or reviewer signature"
+    }
+  ]
+}

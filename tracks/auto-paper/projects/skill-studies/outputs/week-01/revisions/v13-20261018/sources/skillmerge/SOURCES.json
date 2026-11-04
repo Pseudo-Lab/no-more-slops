@@ -1,0 +1,808 @@
+{
+  "schema": "skillmerge_conference_source_scope_v1",
+  "project": "SkillMerge",
+  "inspection_date": "2026-10-18",
+  "scope": "Bounded primary-source inspection for a neutral working paper. Bibliographic identity and the specified passages were inspected; no external result was reproduced or independently certified. Existing v11/v12 artifacts are preserved.",
+  "hash_policy": "source_receipts.py separately acquires bounded HTML/plain-code bytes and records time/hash without storing full copyrighted text. The hash identifies that HTTP response, not a PDF, an abstract's truth, or the browser-rendered passage. Failed retrieval is null; browser inspection and byte acquisition are separate observations.",
+  "sources": [
+    {
+      "id": "scifact-paper",
+      "reference_number": 1,
+      "bibliography": "David Wadden, Shanchuan Lin, Kyle Lo, Lucy Lu Wang, Madeleine van Zuylen, Arman Cohan, and Hannaneh Hajishirzi. 2020. Fact or Fiction: Verifying Scientific Claims. Proceedings of EMNLP, 7534–7550.",
+      "url": "https://aclanthology.org/2020.emnlp-main.609/",
+      "inspected_urls": [
+        "https://aclanthology.org/2020.emnlp-main.609/",
+        "https://arxiv.org/html/2004.14974v2"
+      ],
+      "inspection_scope": "ACL bibliographic record and abstract; arXiv v2 Sections 3.3 and 4.1–4.2. Original rationale alternatives, abstract-level containment/cap, and separate sentence-level precision/recall. v2's statement that the longest rationale has three sentences is not transferred to the later local raw snapshot, which contains one four-sentence-only task.",
+      "claim_links": [
+        "L01",
+        "M01",
+        "E02"
+      ],
+      "excluded_inferences": [
+        "No native SciFact leaderboard reproduction",
+        "No semantic certification of all local labels",
+        "No equivalence of v2 population and prepared local subset"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://aclanthology.org/2020.emnlp-main.609/",
+          "acquired_at_utc": "2026-10-18T13:23:48.162856+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://aclanthology.org/2020.emnlp-main.609/",
+          "content_type": "text/html",
+          "bytes": 44272,
+          "sha256": "e5f910f81d545d50a2f815b62bc4426adf11ebc243f8a3c206b42758293f20d3"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2004.14974v2",
+          "acquired_at_utc": "2026-10-18T13:23:48.734881+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2004.14974v2",
+          "content_type": "text/html",
+          "bytes": 206754,
+          "sha256": "eb49bb022990c7fe7ac36d2016516d3fdd903882efbce79d31f2941a2b0189a7"
+        }
+      ]
+    },
+    {
+      "id": "scifact-pinned-evaluator",
+      "reference_number": 2,
+      "bibliography": "Allen Institute for AI. SciFact evaluation implementation, commit 68b98a56d93e0f9da0d2aab4e6c3294699a0f72e. verisci/evaluate/lib/metrics.py and data.py.",
+      "url": "https://github.com/allenai/scifact/blob/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py",
+      "inspected_urls": [
+        "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py",
+        "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/data.py"
+      ],
+      "inspection_scope": "metrics.py lines 10–52: MAX_ABSTRACT_SENTS=3 and supplied-list slicing before containment. data.py lines 218–242: sentences assigned to prediction rationale without sorting in the inspected parser. Sentence endpoint is separate. Local document-prefix ordering is an authored diagnostic policy, not parser-imposed sorting.",
+      "claim_links": [
+        "M01",
+        "E02",
+        "E04"
+      ],
+      "excluded_inferences": [
+        "Not a full native evaluator run",
+        "No claim that upstream silently sorts response IDs",
+        "No cap increase or endpoint promotion"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py",
+          "acquired_at_utc": "2026-10-18T13:23:49.698515+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py",
+          "content_type": "text/plain",
+          "bytes": 5738,
+          "sha256": "ffda621f72cf3f1c557cc88be1e02fdee49b3966f5892f9f08db49f1ed29200b"
+        },
+        {
+          "requested_url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/data.py",
+          "acquired_at_utc": "2026-10-18T13:23:49.658346+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/data.py",
+          "content_type": "text/plain",
+          "bytes": 8911,
+          "sha256": "b413aedc068d980520e9a54870591738d9833ca6e24614742ad070b7edcc3ca5"
+        }
+      ]
+    },
+    {
+      "id": "fever",
+      "reference_number": 3,
+      "bibliography": "James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. 2018. FEVER: a Large-scale Dataset for Fact Extraction and VERification. Proceedings of NAACL-HLT, 809–819.",
+      "url": "https://aclanthology.org/N18-1074/",
+      "inspected_urls": [
+        "https://aclanthology.org/N18-1074/",
+        "https://arxiv.org/html/1803.05355v3"
+      ],
+      "inspection_scope": "ACL identity/abstract and original HTML evaluation discussion, including label-plus-evidence versus label-only scoring and Section 5.2 warning that evidence annotations may be incomplete. No reported baseline percentage is imported.",
+      "claim_links": [
+        "L01",
+        "M01"
+      ],
+      "excluded_inferences": [
+        "No local FEVER execution",
+        "No equivalence between FEVER and local SciFact adapter"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://aclanthology.org/N18-1074/",
+          "acquired_at_utc": "2026-10-18T13:23:48.162856+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://aclanthology.org/N18-1074/",
+          "content_type": "text/html",
+          "bytes": 42019,
+          "sha256": "5263efaed8b18c4b4c8664136bf1ec9eeceac5ae27c798db20927b3ac11ad9b8"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/1803.05355v3",
+          "acquired_at_utc": "2026-10-18T13:23:48.575067+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/1803.05355v3",
+          "content_type": "text/html",
+          "bytes": 202084,
+          "sha256": "66aba1b30ba9052842475d91c45dba630edaf9badbae8283a9eae57fe7348157"
+        }
+      ]
+    },
+    {
+      "id": "eraser",
+      "reference_number": 4,
+      "bibliography": "Jay DeYoung, Sarthak Jain, Nazneen Fatema Rajani, Eric Lehman, Caiming Xiong, Richard Socher, and Byron C. Wallace. 2020. ERASER: A Benchmark to Evaluate Rationalized NLP Models. Proceedings of ACL, 4443–4458.",
+      "url": "https://aclanthology.org/2020.acl-main.408/",
+      "inspected_urls": [
+        "https://aclanthology.org/2020.acl-main.408/",
+        "https://arxiv.org/html/1911.03429v2"
+      ],
+      "inspection_scope": "ACL identity/abstract and HTML Sections 1 and 4. Agreement with human rationales and faithfulness to the model's prediction are distinct. Its confidence-perturbation sufficiency is not our annotation-set sufficient-containment endpoint.",
+      "claim_links": [
+        "L01",
+        "M01"
+      ],
+      "excluded_inferences": [
+        "No ERASER native evaluation",
+        "No rationale faithfulness measurement in the current study"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://aclanthology.org/2020.acl-main.408/",
+          "acquired_at_utc": "2026-10-18T13:23:48.160847+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://aclanthology.org/2020.acl-main.408/",
+          "content_type": "text/html",
+          "bytes": 45787,
+          "sha256": "68f5b2678ee57826f9850d6df17898431c08088d729f321ad2c95d586971822c"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/1911.03429v2",
+          "acquired_at_utc": "2026-10-18T13:23:48.666859+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/1911.03429v2",
+          "content_type": "text/html",
+          "bytes": 255206,
+          "sha256": "6bdcb29f4cee4d4c2b56d4ece976f4aadf044393af1b1c7f18a4117539d5812e"
+        }
+      ]
+    },
+    {
+      "id": "checklist",
+      "reference_number": 5,
+      "bibliography": "Marco Tulio Ribeiro, Tongshuang Wu, Carlos Guestrin, and Sameer Singh. 2020. Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. Proceedings of ACL, 4902–4912.",
+      "url": "https://aclanthology.org/2020.acl-main.442/",
+      "inspected_urls": [
+        "https://aclanthology.org/2020.acl-main.442/",
+        "https://arxiv.org/html/2005.04118v1"
+      ],
+      "inspection_scope": "ACL identity/abstract and HTML Section 2.2 minimum functionality, invariance, and directional expectations. Supports focused behavioral/relationship tests; current tests exercise deterministic graders rather than a model through CheckList software.",
+      "claim_links": [
+        "L02",
+        "M02"
+      ],
+      "excluded_inferences": [
+        "No CheckList native software run",
+        "No proof that a passed invariance test establishes semantic validity"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://aclanthology.org/2020.acl-main.442/",
+          "acquired_at_utc": "2026-10-18T13:23:48.161857+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://aclanthology.org/2020.acl-main.442/",
+          "content_type": "text/html",
+          "bytes": 42544,
+          "sha256": "636d99f76c60b4745323bdf96f8d1bea886878e402dd194d3029d1cca1fb64a9"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2005.04118v1",
+          "acquired_at_utc": "2026-10-18T13:23:48.775060+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2005.04118v1",
+          "content_type": "text/html",
+          "bytes": 328090,
+          "sha256": "a66e1688252f4b4ad1c270cab85d66d6a095e94161db5d3e659d856f4607093d"
+        }
+      ]
+    },
+    {
+      "id": "helm",
+      "reference_number": 6,
+      "bibliography": "Percy Liang et al. 2023. Holistic Evaluation of Language Models. arXiv:2211.09110v2.",
+      "url": "https://arxiv.org/abs/2211.09110v2",
+      "inspected_urls": [
+        "https://arxiv.org/abs/2211.09110",
+        "https://arxiv.org/html/2211.09110v2"
+      ],
+      "inspection_scope": "Pinned v2 identity and Section 1.1 multi-metric measurement/targeted evaluation/standardization. Supports reporting different task desiderata separately. No external model numbers are copied.",
+      "claim_links": [
+        "L02",
+        "P02"
+      ],
+      "excluded_inferences": [
+        "No HELM execution",
+        "No generality certification of our local pilot"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/2211.09110",
+          "acquired_at_utc": "2026-10-18T13:23:48.341577+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/2211.09110",
+          "content_type": "text/html",
+          "bytes": 52002,
+          "sha256": "3d95aeb51499159d0652860c626f21c231f4150477148d51dec2dd284870e0d5"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2211.09110v2",
+          "acquired_at_utc": "2026-10-18T13:23:49.043160+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2211.09110v2",
+          "content_type": "text/html",
+          "bytes": 1714186,
+          "sha256": "cc63bffef6b3140bb5734ea1aab3489e694ca0c2e0329df3f746ae352ea5601a"
+        }
+      ]
+    },
+    {
+      "id": "bigbench",
+      "reference_number": 7,
+      "bibliography": "Aarohi Srivastava et al. 2023. Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models. arXiv:2206.04615v3.",
+      "url": "https://arxiv.org/abs/2206.04615v3",
+      "inspected_urls": [
+        "https://arxiv.org/abs/2206.04615",
+        "https://arxiv.org/html/2206.04615v3"
+      ],
+      "inspection_scope": "Pinned v3 title/lead author and Sections 3.4.2–3.5. Metric/task specification affects observed capability patterns. Cite the inspected arXiv revision, without guessing a journal publication year.",
+      "claim_links": [
+        "L02",
+        "P02"
+      ],
+      "excluded_inferences": [
+        "No BIG-bench trial",
+        "No claim that all emergence or all composition effects are scoring artifacts"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/2206.04615",
+          "acquired_at_utc": "2026-10-18T13:23:48.230455+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/2206.04615",
+          "content_type": "text/html",
+          "bytes": 121674,
+          "sha256": "bca36d0edd9982042dbb9b38545f2a02c0da2a6f14987d503fe4a061dfffcb4c"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2206.04615v3",
+          "acquired_at_utc": "2026-10-18T13:23:48.970999+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2206.04615v3",
+          "content_type": "text/html",
+          "bytes": 1454245,
+          "sha256": "0381b50c1c2765681704af6fd5c3369e73fc37dcc38af497212dfc9626781825"
+        }
+      ]
+    },
+    {
+      "id": "benchmarking-epistemology",
+      "reference_number": 8,
+      "bibliography": "Timo Freiesleben and Sebastian Zezulka. 2025. The Benchmarking Epistemology: Construct Validity for Evaluating Machine Learning Models. arXiv:2510.23191v1.",
+      "url": "https://arxiv.org/html/2510.23191v1",
+      "inspected_urls": [
+        "https://arxiv.org/html/2510.23191v1"
+      ],
+      "inspection_scope": "Title/authors and Sections 2–3. Score-to-scientific-inference validity depends on intended inference, assumptions, and supporting/refuting evidence. The pinned title is used; later differently titled publisher metadata is not merged.",
+      "claim_links": [
+        "L02",
+        "P01"
+      ],
+      "excluded_inferences": [
+        "No novelty claim for construct validity",
+        "No assertion that the current audit settles all validity conditions"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/html/2510.23191v1",
+          "acquired_at_utc": "2026-10-18T13:23:49.319844+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2510.23191v1",
+          "content_type": "text/html",
+          "bytes": 273583,
+          "sha256": "bee2f47a8ba1a398570f4b7a34b112dddc46f115d65971b4007586369a9bfcc2"
+        }
+      ]
+    },
+    {
+      "id": "measuring-what-matters",
+      "reference_number": 9,
+      "bibliography": "Andrew M. Bean et al. 2025. Measuring what Matters: Construct Validity in Large Language Model Benchmarks. arXiv:2511.04703v1.",
+      "url": "https://arxiv.org/html/2511.04703v1",
+      "inspected_urls": [
+        "https://arxiv.org/html/2511.04703v1"
+      ],
+      "inspection_scope": "Identity and selected Sections 3.2–3.4 and 3.8. Auxiliary formatting demands, reuse limitations, and phenomenon-to-task-to-code-to-claim links. No survey percentage is imported.",
+      "claim_links": [
+        "L02",
+        "P01",
+        "P02"
+      ],
+      "excluded_inferences": [
+        "No replication of its reviewed benchmark collection",
+        "No claim that dataset disjointness removes pretraining contamination"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/html/2511.04703v1",
+          "acquired_at_utc": "2026-10-18T13:23:49.394428+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2511.04703v1",
+          "content_type": "text/html",
+          "bytes": 433874,
+          "sha256": "275b1378cf93fa65d6c531d1a6f16786b02862d676dd184f2d303974371b103c"
+        }
+      ]
+    },
+    {
+      "id": "dspy",
+      "reference_number": 10,
+      "bibliography": "Omar Khattab et al. 2023. DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines. arXiv:2310.03714v1.",
+      "url": "https://arxiv.org/html/2310.03714v1",
+      "inspected_urls": [
+        "https://arxiv.org/abs/2310.03714",
+        "https://arxiv.org/html/2310.03714v1"
+      ],
+      "inspection_scope": "Identity and Sections 3–4/Appendix E.1. Declarative modules and compilation; a specified metric filters traces. This is the inspected v1 title, not a merged later conference-title record.",
+      "claim_links": [
+        "L03",
+        "P03"
+      ],
+      "excluded_inferences": [
+        "No DSPy native reproduction",
+        "No equivalence between compiler optimization and independent skill qualification"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/2310.03714",
+          "acquired_at_utc": "2026-10-18T13:23:48.353652+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/2310.03714",
+          "content_type": "text/html",
+          "bytes": 44863,
+          "sha256": "85372a7fb5d13430045e40a48d8f99c2b5ce0b81126e2e86d2f4c4c77e6e671c"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2310.03714v1",
+          "acquired_at_utc": "2026-10-18T13:23:49.204631+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2310.03714v1",
+          "content_type": "text/html",
+          "bytes": 753195,
+          "sha256": "7e197d1baf49c36474e1d8b9fd44cf59b626e9f8f8a59652b72f39118a9915e8"
+        }
+      ]
+    },
+    {
+      "id": "underspecification",
+      "reference_number": 11,
+      "bibliography": "Alexander D’Amour et al. 2022. Underspecification Presents Challenges for Credibility in Modern Machine Learning. Journal of Machine Learning Research, 23(226):1–61.",
+      "url": "https://jmlr.org/papers/v23/20-1335.html",
+      "inspected_urls": [
+        "https://jmlr.org/papers/v23/20-1335.html"
+      ],
+      "inspection_scope": "Official JMLR metadata and abstract only. Similar held-out predictive performance can coexist with different deployment behavior. Full article not claimed as read.",
+      "claim_links": [
+        "L02",
+        "P02"
+      ],
+      "excluded_inferences": [
+        "Not a theorem about agent skills",
+        "No equivalence between underspecification and observed first-three order flips"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://jmlr.org/papers/v23/20-1335.html",
+          "acquired_at_utc": "2026-10-18T13:23:49.658346+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://jmlr.org/papers/v23/20-1335.html",
+          "content_type": "text/html",
+          "bytes": 8867,
+          "sha256": "61a3e78239d58fbae1f2dde71199f781744a618cc54de1eeef79cc99f348df4a"
+        }
+      ]
+    },
+    {
+      "id": "datasheets",
+      "reference_number": 12,
+      "bibliography": "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2021. Datasheets for Datasets. arXiv:1803.09010v8.",
+      "url": "https://arxiv.org/html/1803.09010v8",
+      "inspected_urls": [
+        "https://arxiv.org/abs/1803.09010",
+        "https://arxiv.org/html/1803.09010v8"
+      ],
+      "inspection_scope": "Pinned v8 identity/abstract and documentation categories covering motivation, composition, collection, and recommended use. Supports explicit source/split/exposure documentation; no certification of dataset quality.",
+      "claim_links": [
+        "L02",
+        "E01"
+      ],
+      "excluded_inferences": [
+        "No claim that a datasheet guarantees contamination-free evaluation"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/1803.09010",
+          "acquired_at_utc": "2026-10-18T13:23:48.162856+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/1803.09010",
+          "content_type": "text/html",
+          "bytes": 42771,
+          "sha256": "a797ae3b75d7bd60adb85a2175ed4bcac98b8fec91082a37edf5d4f43da2584e"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/1803.09010v8",
+          "acquired_at_utc": "2026-10-18T13:23:48.646186+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/1803.09010v8",
+          "content_type": "text/html",
+          "bytes": 98628,
+          "sha256": "8be771254f0b1fca0c65c5ecdd01a2bf3c8df9a2dbaaa4a82e7b1f355a7c3a48"
+        }
+      ]
+    },
+    {
+      "id": "benchmark-lottery",
+      "reference_number": 13,
+      "bibliography": "Mostafa Dehghani, Yi Tay, Alexey A. Gritsenko, Zhe Zhao, Neil Houlsby, Fernando Diaz, Donald Metzler, and Oriol Vinyals. 2021. The Benchmark Lottery. arXiv:2107.07002v1.",
+      "url": "https://arxiv.org/html/2107.07002v1",
+      "inspected_urls": [
+        "https://arxiv.org/html/2107.07002v1"
+      ],
+      "inspection_scope": "Title/authors, abstract, and discussion of benchmark/task choice affecting apparent method rankings. Supports fixing weighting and task family coverage before final comparison; not a local ranking result.",
+      "claim_links": [
+        "L02",
+        "P02"
+      ],
+      "excluded_inferences": [
+        "No Benchmark Lottery experiment rerun",
+        "No claim that all leaderboard gains are invalid"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/html/2107.07002v1",
+          "acquired_at_utc": "2026-10-18T13:23:48.879485+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2107.07002v1",
+          "content_type": "text/html",
+          "bytes": 346943,
+          "sha256": "973a41263f6c7ac6e023be637e63914c58e9f0e4291628a721003181b3cf70dc"
+        }
+      ]
+    },
+    {
+      "id": "skillcommit",
+      "reference_number": 14,
+      "bibliography": "Yu He and Weikai Yang. 2026. SkillCommit: Evolving Agent Skills through Behaviorally Validated Scope Expansion. arXiv:2608.15165v1.",
+      "url": "https://arxiv.org/html/2608.15165v1",
+      "inspected_urls": [
+        "https://arxiv.org/abs/2608.15165",
+        "https://arxiv.org/html/2608.15165v1"
+      ],
+      "inspection_scope": "Primary identity and selected patch/replay/compatibility/consolidation sections. Source-case replay and narrowing/rejection/splitting before commit. Teacher and executor information access differ. No numerical result is imported.",
+      "claim_links": [
+        "L03",
+        "P03"
+      ],
+      "excluded_inferences": [
+        "No native reproduction",
+        "No matched-budget superiority claim",
+        "No certification that source replay generalizes to Q/S"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/2608.15165",
+          "acquired_at_utc": "2026-10-18T13:23:48.489610+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/2608.15165",
+          "content_type": "text/html",
+          "bytes": 42136,
+          "sha256": "1c02d54bb4b9d496df404715eb820fd2cbba398de83b5629b520170c44d476be"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2608.15165v1",
+          "acquired_at_utc": "2026-10-18T13:23:49.457501+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2608.15165v1",
+          "content_type": "text/html",
+          "bytes": 172927,
+          "sha256": "38647f722777562e0d5f528073ee8ca961897ad3867eaddd4e8f2c1c69770072"
+        }
+      ]
+    },
+    {
+      "id": "skillsmith",
+      "reference_number": 15,
+      "bibliography": "Yangbo Wei et al. 2026. SkillSmith: Co-Evolving Skills and Tools for Self-Improving Agent Systems. arXiv:2606.01314v2.",
+      "url": "https://arxiv.org/html/2606.01314v2",
+      "inspected_urls": [
+        "https://arxiv.org/abs/2606.01314",
+        "https://arxiv.org/html/2606.01314v2"
+      ],
+      "inspection_scope": "Identity, selected typed operations in Section 3.4 and appendix interaction assumptions. Patch/Retype/Extract/Inline and required caller updates. Static legality is not behavioral qualification; its interaction assumptions are not theta_Q.",
+      "claim_links": [
+        "L03",
+        "P03"
+      ],
+      "excluded_inferences": [
+        "No native tool migration run",
+        "No extrapolation of theoretical guarantees to the local proposed study"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/2606.01314",
+          "acquired_at_utc": "2026-10-18T13:23:48.416088+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/2606.01314",
+          "content_type": "text/html",
+          "bytes": 41885,
+          "sha256": "cce287ad2c5aedd8c908731e924f0dddcbe7a346af966c1014ae7ba48eb62862"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2606.01314v2",
+          "acquired_at_utc": "2026-10-18T13:23:49.417570+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2606.01314v2",
+          "content_type": "text/html",
+          "bytes": 519380,
+          "sha256": "25485c9280d3668141eb72e038ac49ff935f5fdd89f3fb410724b4a1c896f81c"
+        }
+      ]
+    },
+    {
+      "id": "skillcat",
+      "reference_number": 16,
+      "bibliography": "Kunfeng Chen, Qihuang Zhong, Juhua Liu, and Bo Du. 2026. SkillCAT: Contrastive, Assessment-Augmented and Topology-Aware Skill Self-Evolution for LLM Agents. arXiv:2606.13317v2.",
+      "url": "https://arxiv.org/html/2606.13317v2",
+      "inspected_urls": [
+        "https://arxiv.org/abs/2606.13317",
+        "https://arxiv.org/html/2606.13317v2"
+      ],
+      "inspection_scope": "Identity and selected test-time routing/assembly section, equations 5–6. v2 uses an LLM router and an LLM assembler over selected topology nodes. Concatenation is a separate control, not labeled native SkillCAT.",
+      "claim_links": [
+        "L03",
+        "P03"
+      ],
+      "excluded_inferences": [
+        "No native reproduction",
+        "No substitution of naive concatenation for native v2 assembly",
+        "No uncharged router/assembler calls"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/2606.13317",
+          "acquired_at_utc": "2026-10-18T13:23:48.432702+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/2606.13317",
+          "content_type": "text/html",
+          "bytes": 42543,
+          "sha256": "ac50b030d720a5cabf451777674a212c222d4189343ce3818e465f668b918dac"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2606.13317v2",
+          "acquired_at_utc": "2026-10-18T13:23:49.418579+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2606.13317v2",
+          "content_type": "text/html",
+          "bytes": 297344,
+          "sha256": "ddcb98f24e69dafe9e14e90ce9dab30289d5e705b2640fc9204e1fff80465990"
+        }
+      ]
+    },
+    {
+      "id": "skillevoreg",
+      "reference_number": 17,
+      "bibliography": "Guanyu Nie et al. 2026. SkillEvoReg: Regularizing Agent Skill Evolution Against Overfitting. arXiv:2609.30861v1.",
+      "url": "https://arxiv.org/html/2609.30861v1",
+      "inspected_urls": [
+        "https://arxiv.org/abs/2609.30861",
+        "https://arxiv.org/html/2609.30861v1"
+      ],
+      "inspection_scope": "Identity and selected CCV/counterfactual validation and Section 4 passages. Candidate-conditioned regression validation/repair; the source itself distinguishes its operational analysis from formal causal identification under stochastic or multi-edit settings.",
+      "claim_links": [
+        "L03",
+        "P03"
+      ],
+      "excluded_inferences": [
+        "No native reproduction",
+        "No natural-history incidence inference from stress-mined cases",
+        "No causal certification"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/2609.30861",
+          "acquired_at_utc": "2026-10-18T13:23:48.557020+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/2609.30861",
+          "content_type": "text/html",
+          "bytes": 41924,
+          "sha256": "b3a67da921dbc0ce841903a820c56d261f865434904c997b5a22f687596abe89"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2609.30861v1",
+          "acquired_at_utc": "2026-10-18T13:23:49.507533+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2609.30861v1",
+          "content_type": "text/html",
+          "bytes": 513189,
+          "sha256": "c13de6f6a5413cf0b88bc9f2a97a5c62279a8c9855ce3201b0f314a3c162b0bf"
+        }
+      ]
+    },
+    {
+      "id": "signal-noise",
+      "reference_number": 18,
+      "bibliography": "Ziyue Yang and Fan Ding. 2026. Signal or Noise? A Benchmark Study of Agent Skills in Web Development. arXiv:2608.23067v1.",
+      "url": "https://arxiv.org/html/2608.23067v1",
+      "inspected_urls": [
+        "https://arxiv.org/abs/2608.23067",
+        "https://arxiv.org/html/2608.23067v1"
+      ],
+      "inspection_scope": "Identity and Section 3 controls C0–C3. SKILL.md injection versus separately mounted assets, target/irrelevant byte-matched instructions, and slices. Byte matching is not equality under the actual model tokenizer; reported performance not imported.",
+      "claim_links": [
+        "L03",
+        "P03"
+      ],
+      "excluded_inferences": [
+        "No native web benchmark run",
+        "No token equality claim from byte matching",
+        "No reuse of reported score as our control result"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://arxiv.org/abs/2608.23067",
+          "acquired_at_utc": "2026-10-18T13:23:48.490116+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/abs/2608.23067",
+          "content_type": "text/html",
+          "bytes": 42693,
+          "sha256": "d899d0838a4042aaab6f3092c1b0e4e59c45c8f6f64f6bd4bfc560c6f10aba38"
+        },
+        {
+          "requested_url": "https://arxiv.org/html/2608.23067v1",
+          "acquired_at_utc": "2026-10-18T13:23:49.475714+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://arxiv.org/html/2608.23067v1",
+          "content_type": "text/html",
+          "bytes": 219395,
+          "sha256": "9c04735472068e5c1f4afce0f81a11a364744f2c4e764a122ba2e743d0484c88"
+        }
+      ]
+    },
+    {
+      "id": "skillsbench-release",
+      "reference_number": 19,
+      "bibliography": "BenchFlow contributors. 2026. SkillsBench v1.1: native task.md package release. Official release artifact.",
+      "url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+      "inspected_urls": [
+        "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1"
+      ],
+      "inspection_scope": "Official release sections describing task/environment/oracle/verifier packages and pinned 0.6.x tooling. Prospective workflow benchmark requires its native environment and skill/no-skill contract. Release inventory is not reproduced as a local result.",
+      "claim_links": [
+        "L03",
+        "P03"
+      ],
+      "excluded_inferences": [
+        "No native benchmark execution",
+        "No local task acquisition or rights audit",
+        "No assumption that a tag page is a frozen experiment"
+      ],
+      "retrieval_receipts": [
+        {
+          "requested_url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+          "acquired_at_utc": "2026-10-18T13:23:49.632188+00:00",
+          "body_stored": false,
+          "status": "retrieved",
+          "final_url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+          "content_type": "text/html",
+          "bytes": 229119,
+          "sha256": "1369e6105ded739fcdcd73c0de6561e2ad0df5986bda22717c27b1c1f477fa18"
+        }
+      ]
+    }
+  ],
+  "local_evidence": [
+    {
+      "id": "v11-audit",
+      "path": "runs/research_progress_v11_20261018_01/skillmerge/audit_01/results.json",
+      "receipt": "runs/research_progress_v11_20261018_01/skillmerge/audit_01/receipt.json",
+      "claim_links": [
+        "E01",
+        "E02"
+      ],
+      "path_bytes": 12388,
+      "path_sha256": "3e5c9a623c9e9e537509e30b63bdc3dca5fc7b135f2e6e6260b5402390eee473",
+      "receipt_bytes": 5016,
+      "receipt_sha256": "525907a5e9f5e16a49b3505a4626bb81deb4b19bfed215456b4d2346af08a441"
+    },
+    {
+      "id": "v12-measurement",
+      "path": "runs/research_manuscripts_v12_20261018_01/skillmerge/measurement_01/results.json",
+      "receipt": "runs/research_manuscripts_v12_20261018_01/skillmerge/measurement_01/receipt.json",
+      "claim_links": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06"
+      ],
+      "path_bytes": 10972,
+      "path_sha256": "267e45616c9da223efc47071a9e676f6d2cc0479bfe187db3b6421dbef12f063",
+      "receipt_bytes": 5387,
+      "receipt_sha256": "93e6014be9c1b980856c95194b3c0e8edb7e0f758fd233ef45c867ab3517bae3"
+    },
+    {
+      "id": "v12-validation",
+      "path": "projects/research_manuscripts_v12_20261018/skillmerge/VALIDATION.json",
+      "claim_links": [
+        "E01",
+        "E05",
+        "E06"
+      ],
+      "path_bytes": 1709,
+      "path_sha256": "02a7b59092bbb00caed0dda7968447746f441ef963d975e2a0a8054a2f94ba58"
+    }
+  ],
+  "retrievals_not_used_as_evidence": [
+    {
+      "url": "https://jmlr.org/papers/v24/22-1144.html",
+      "reason": "A guessed locator resolved to PaLM, not BIG-bench. Rejected; no metadata or claim carried forward."
+    },
+    {
+      "url": "https://arxiv.org/html/2211.09110v4",
+      "reason": "Unresolved guessed version. Correct inspected HELM version is v2."
+    },
+    {
+      "url": "https://arxiv.org/html/2310.03714v2",
+      "reason": "Unresolved guessed version. Correct inspected DSPy version is v1."
+    }
+  ],
+  "model_calls": 0,
+  "new_predictive_experiments": 0,
+  "active_skills_changed": false,
+  "receipt_summary": {
+    "attempted_urls": 33,
+    "retrieved_urls": 33,
+    "representation": "Exact bytes of a separately fetched HTML/code HTTP response, not PDF bytes or the browser-rendered representation.",
+    "not_a_full_text_archive": true
+  }
+}

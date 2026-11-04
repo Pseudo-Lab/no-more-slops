@@ -1,0 +1,563 @@
+{
+  "schema": "rf.probeflow.sources.v5",
+  "id": "ProbeFlow",
+  "date": "2026-10-12",
+  "evidence_policy": "Separate original authors' reports, local software mechanics, root raw-data readiness, analytic authored examples, proposed methods and untested hypotheses.",
+  "scientific_outcomes": "NR",
+  "external_sources": [
+    {
+      "id": "PF-REF-1",
+      "reference_number": 1,
+      "title": "Kobayashi et al. Learning-To-Measure. ICML, PMLR 306, 2026.",
+      "url": "https://proceedings.mlr.press/v306/kobayashi26a.html",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Existing uncertainty-guided sequential feature acquisition; no reproduced outcomes.",
+      "retrieval_scope": "official PMLR metadata and abstract",
+      "source_full_method_or_code_audit": "not performed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-REF-2",
+      "reference_number": 2,
+      "title": "Aronsson and Chehreghani. Non-Myopic Active Feature Acquisition via Pathwise Policy Gradients. arXiv:2605.05511v2, 2026.",
+      "url": "https://arxiv.org/abs/2605.05511v2",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Existing non-myopic AFA; checked Section 2 uses additive feature costs; adaptation unimplemented.",
+      "retrieval_scope": "pinned arXiv abstract and HTML Section 2 formulation",
+      "source_full_method_or_code_audit": "formulation sections only; code not adopted/executed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-REF-3",
+      "reference_number": 3,
+      "title": "Feng, Li, and Li. BRiG-AFA. arXiv:2608.02305v1, 2026.",
+      "url": "https://arxiv.org/abs/2608.02305v1",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Existing frozen-predictor Bellman risk regression; checked formulation has unit costs and exactly B acquisitions.",
+      "retrieval_scope": "pinned arXiv abstract and HTML Sections 3-4 formulation",
+      "source_full_method_or_code_audit": "formulation sections only; code not adopted/executed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-REF-4",
+      "reference_number": 4,
+      "title": "Golovin and Krause. Adaptive Submodularity. JAIR 42, 2011. DOI:10.1613/jair.3278.",
+      "url": "https://jair.org/index.php/jair/article/view/10731",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Greedy guarantees require adaptive-submodular assumptions, not assumed for this model.",
+      "retrieval_scope": "official JAIR metadata/abstract/DOI; publisher PDF not collected",
+      "source_full_method_or_code_audit": "not performed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-REF-5",
+      "reference_number": 5,
+      "title": "Golovin, Krause, and Ray. Near-Optimal Bayesian Active Learning with Noisy Observations. NeurIPS, 2010.",
+      "url": "https://proceedings.neurips.cc/paper/2010/hash/1e6e0a04d20f50967c64dac2d639a577-Abstract.html",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Known-prior costly-test identification and EC2; no industrial guarantee inherited.",
+      "retrieval_scope": "official NeurIPS metadata/abstract; no PDF collection",
+      "source_full_method_or_code_audit": "not performed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-REF-6",
+      "reference_number": 6,
+      "title": "Geifman and El-Yaniv. Selective Classification for Deep Neural Networks. NeurIPS, 2017.",
+      "url": "https://proceedings.neurips.cc/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Risk-coverage and rejection context; this study has no calibrated risk guarantee.",
+      "retrieval_scope": "official NeurIPS metadata/abstract; no PDF collection",
+      "source_full_method_or_code_audit": "not performed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-REF-7",
+      "reference_number": 7,
+      "title": "Barber et al. Conformal Prediction Beyond Exchangeability. arXiv:2202.13415v5, 2023.",
+      "url": "https://arxiv.org/abs/2202.13415v5",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Exchangeability/shift assumptions need explicit treatment; arbitrary adaptive-mask coverage not certified.",
+      "retrieval_scope": "pinned arXiv v5 metadata/abstract; no PDF collection",
+      "source_full_method_or_code_audit": "not performed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-REF-8",
+      "reference_number": 8,
+      "title": "Helwig et al. Condition Monitoring of Hydraulic Systems. UCI 447. DOI:10.24432/C5CW21.",
+      "url": "https://archive.ics.uci.edu/dataset/447/condition+monitoring+of+hydraulic+systems",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Official target/channel metadata and raw-data license; local schema counts have separate receipts.",
+      "retrieval_scope": "official indexed UCI dataset text rechecked; direct page attempts timed out; root raw receipts separate",
+      "source_full_method_or_code_audit": "not performed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-REF-9",
+      "reference_number": 9,
+      "title": "Bian et al. Resource-Aware Safety-First Active Sensor Acquisition. Sensors 26(16):5065, 2026.",
+      "url": "https://www.mdpi.com/1424-8220/26/16/5065",
+      "authority": "official proceedings/publisher/repository or author-submitted arXiv",
+      "checked_date": "2026-10-12",
+      "supports": "Existing industrial screening/confirmation acquisition; official abstract verified, full cache/disclosure implementation not audited.",
+      "retrieval_scope": "official publisher-indexed metadata/abstract and version notes; complete HTML inaccessible",
+      "source_full_method_or_code_audit": "not performed",
+      "quote_words": 0,
+      "external_performance_numbers_reused": false
+    },
+    {
+      "id": "PF-DATA-SKAB",
+      "title": "waico/SKAB official author repository",
+      "url": "https://github.com/waico/SKAB",
+      "authority": "dataset author",
+      "checked_date": "2026-10-12",
+      "retrieval_scope": "prior same-day v4 official review; current writing reads pinned local catalog",
+      "supports": "anomaly/change-point endpoints separate from four-component prediction",
+      "new_raw_download": false
+    },
+    {
+      "id": "PF-DATA-METROPT",
+      "title": "MetroPT-3 UCI dataset 791",
+      "url": "https://archive.ics.uci.edu/dataset/791/metropt+3+dataset",
+      "authority": "official dataset metadata",
+      "checked_date": "2026-10-12",
+      "retrieval_scope": "prior same-day v4 official review; current writing reads pinned local catalog",
+      "supports": "limited failure reports do not certify dense component/rootcause labels",
+      "new_raw_download": false
+    }
+  ],
+  "local_inventory": [
+    {
+      "path": "projects/skill_research_v3_20261012/probeflow/probeflow.py",
+      "bytes": 27985,
+      "sha256": "1298bad809c2f32955a4836215c34411d02d8645c15008a5353e598ddd3a9d43",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/probeflow/METHODS.md",
+      "bytes": 11695,
+      "sha256": "b47e3ee5f7de42d90dd2bbfba07a9841be59c9f8d588b28237ca791d75258c42",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/probeflow/protocol.json",
+      "bytes": 6586,
+      "sha256": "9a9512a3f32e2998a2a3ac8e836b08e80725fbe380b6ad9f8a0babb52f3788c2",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/probeflow/claim_evidence.json",
+      "bytes": 4598,
+      "sha256": "a24fcce9305c108706a2cbcc600680b8f02802c89a41c3ddb8bed80cee142ee4",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/probeflow/validation/final_checks_20261012.json",
+      "bytes": 2127,
+      "sha256": "cd6f9139b94287e77e0e245b49dda37b329f7f8bc640fdd6603e047269cc19e4",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_v3_20261012/papers_v3/sources/ProbeFlow.json",
+      "bytes": 23021,
+      "sha256": "6c4c2ccb5242a2d7c4c55fbf725e3e03327f1a93c98b297eeec915952cbaf3b5",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/industrial_datasets/catalog.json",
+      "bytes": 44272,
+      "sha256": "e27171a9ed39c43fdfa4c9e2014424f0f181cf2e4ca15be01f2c4631862f92a4",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/industrial_datasets/readiness_contract.json",
+      "bytes": 25904,
+      "sha256": "0d1d09b3d27a9d245fdbd96ab326b487d4e75056518fddbf75c8b29f72bf132f",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/download_receipt.json",
+      "bytes": 488,
+      "sha256": "dcd1bd5ddd5cf74c90228dee967b393d2c92bdaa2608fa0da333fa2df3c722b3",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/manifest.json",
+      "bytes": 2433,
+      "sha256": "19a43c01245fd2c87c6eb1df3871ae25cb6e467d871b7a837afd2493cb03c444",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/probeflow_readiness/runs/uci_selected_20261012/data_audit.json",
+      "bytes": 2194,
+      "sha256": "29ba81c93481a01d2baeba2245dc809a4fe6826cb474f2a2eb64839814bcd463",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    },
+    {
+      "path": "projects/skill_research_dataset_v4_20261012/probeflow_readiness/runs/uci_selected_20261012/manifest.json",
+      "bytes": 1100,
+      "sha256": "ad6a0b45768ee40c6c325ad90670991f6cc840d4cf8f0a5168386ff0371befac",
+      "read_only": true,
+      "origin": "existing v3/v4 source or receipt; not executed as original ZIP code"
+    }
+  ],
+  "local_scope": {
+    "trusted_kernel": "v3 newly authored standard-library code, explicitly not original ZIP code",
+    "old_tests": "25-test receipt inspected; no new rerun claim",
+    "source_current_kernel_hash": "1298bad809c2f32955a4836215c34411d02d8645c15008a5353e598ddd3a9d43",
+    "fixture": "16 authored worlds, one generator, 1152 nested trials, independent scientific groups 0",
+    "raw_receipt": "v4 root acquisition, 76601704 bytes, archive24128aad...; sensor/profile intake audited separately",
+    "raw_sensors_reparsed_in_v5": false,
+    "raw_archive_rehashed_in_v5": false,
+    "hashes_in_v5": "small source/metadata/receipt files freshly hashed; not the raw ZIP",
+    "readiness_provenance": "profile snapshot semantic reparse possible; readiness physical signal snapshot absent; originals retained in acquisition root; no publisher signature/atomic-capture certification",
+    "model_training_or_live_calls_in_v5": 0,
+    "new_dependencies": 0,
+    "new_raw_downloads_in_v5": 0
+  },
+  "claim_connections": [
+    {
+      "id": "PF-V5-C1",
+      "claim": "Typed ledger separates raw acquisition, internal computed outputs and disclosed evidence.",
+      "kind": "implementation_mechanics_and_proposed_extended_contract",
+      "local_paths": [
+        "projects/skill_research_v3_20261012/probeflow/probeflow.py",
+        "projects/skill_research_v3_20261012/probeflow/validation/final_checks_20261012.json"
+      ],
+      "supported_scope": "trusted authored executor; v5 raw-hash key extensions remain proposed",
+      "unsupported": [
+        "hostile-code isolation",
+        "industrial superiority",
+        "first DAG acquisition"
+      ]
+    },
+    {
+      "id": "PF-V5-C2",
+      "claim": "Values/masks/budget omit cost-relevant state in the specified value-independent failure-cache regime.",
+      "kind": "conditional authored construction",
+      "local_evidence": "METHODS_CONTRACT.json formal_examples PF-V5-FAILURE-CACHE; exact arithmetic self-check",
+      "supported_scope": "same disclosed packet and confidence, next marginal cost1 vs5, remaining3",
+      "necessary_caveat": "successful deterministic complete-provenance histories can reconstruct cache from mask; quote/history can be equivalent",
+      "unsupported": [
+        "every feature-only state fails",
+        "default v3 pressure6/flow5 is this equal-cost example"
+      ]
+    },
+    {
+      "id": "PF-V5-C3",
+      "claim": "Complementary XOR outcomes violate diminishing returns for the declared information/terminal-gain objective.",
+      "kind": "analytic authored example",
+      "sources": [
+        "PF-REF-4"
+      ],
+      "local_evidence": "XOR four-world table plus proxy exact probability enumeration",
+      "supported_scope": "one-bit information0, pair1bit; specified positive-gain greedy can fail; proxy has immediate positive gain",
+      "unsupported": [
+        "new XOR result",
+        "all greedy fails",
+        "industrial effect",
+        "same objective automatically inherits adaptive-submodular guarantee"
+      ]
+    },
+    {
+      "id": "PF-V5-C4",
+      "claim": "Finite Bellman recursion and free-information relaxation support a model-expected stopping gap.",
+      "kind": "elementary derivation with stated assumptions",
+      "sources": [
+        "PF-REF-5"
+      ],
+      "local_evidence": "paper page4; EXPLAINER section11; METHODS bellman_and_certificate",
+      "supported_scope": "known finite joint model, correct Markov state, deterministic nonnegative costs, bounded fresh actions and Bayes relaxation",
+      "unsupported": [
+        "guarantee for estimated industrial forecast",
+        "polynomial large-state planner",
+        "teacher is bound",
+        "realized individual accuracy"
+      ]
+    },
+    {
+      "id": "PF-V5-C5",
+      "claim": "Non-myopic and frozen-predictor risk-to-go acquisition pre-exist ProbeFlow.",
+      "kind": "official literature/formulation inspection",
+      "sources": [
+        "PF-REF-1",
+        "PF-REF-2",
+        "PF-REF-3",
+        "PF-REF-5",
+        "PF-REF-9"
+      ],
+      "supported_scope": "checked BRiG unit-cost exactlyB and frozen predictor; checked NM-PPG additive feature formulation; industrial screening/confirmation precedent",
+      "unsupported": [
+        "all earlier methods omit shared costs",
+        "full industrial comparator implementation audited",
+        "reproduced external benchmark"
+      ]
+    },
+    {
+      "id": "PF-V5-C6",
+      "claim": "Calibration/selection guarantees require population/mask/independence assumptions.",
+      "kind": "literature context plus authored mixture calculation",
+      "sources": [
+        "PF-REF-6",
+        "PF-REF-7"
+      ],
+      "local_evidence": "EXPLAINER section14; pooled0.1 versus selected0.2 mask example",
+      "supported_scope": "no automatic transfer from full-input/random-mask calibration; frozen on-policy exchangeable episode calibration can be considered",
+      "unsupported": [
+        "adaptive masks always invalidate calibration",
+        "current calibrated guarantee",
+        "arbitrary-shift safety"
+      ]
+    },
+    {
+      "id": "PF-V5-C7",
+      "claim": "Actual limited Hydraulic preparation audited2205 cycles and3 physical channels.",
+      "kind": "root executed raw-intake/readiness receipts",
+      "sources": [
+        "PF-REF-8"
+      ],
+      "local_paths": [
+        "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/download_receipt.json",
+        "projects/skill_research_dataset_v4_20261012/probeflow_readiness/runs/uci_selected_20261012/data_audit.json"
+      ],
+      "supported_scope": "PS1/FS1/TS1/profile shape; 11channelsunprepared; stable audit and194adjacent runs",
+      "unsupported": [
+        "194independentgroups",
+        "learned predictor/calibration/policy",
+        "sensor sufficiency",
+        "rootcause validation"
+      ]
+    },
+    {
+      "id": "PF-V5-C8",
+      "claim": "Charge×disclosure2×2 is a harness diagnostic, not valid policy performance.",
+      "kind": "proposed mechanism diagnostic",
+      "local_evidence": "METHODS mechanism_2x2 and EXPLAINER section16",
+      "supported_scope": "intentional duplicate charge and free-derived leak cells kept separate",
+      "unsupported": [
+        "leaky cell promoted",
+        "double-charged baseline used for superiority"
+      ]
+    },
+    {
+      "id": "PF-V5-H1",
+      "claim": "Ledger-aware continuation improves industrial terminal utility at a common actual resource envelope.",
+      "kind": "hypothesis",
+      "state": "NR",
+      "required": [
+        "audited groups/splits",
+        "fixed industrial predictor",
+        "strong matched adapters",
+        "no leak/common marginal ledger",
+        "planning costs",
+        "locked useful margin/budget/penalty"
+      ]
+    },
+    {
+      "id": "PF-V5-H2",
+      "claim": "Improvement is specifically due to sharing/history or complementary information.",
+      "kind": "hypothesis",
+      "state": "NR",
+      "required": [
+        "conditional-state strata",
+        "horizon ablation",
+        "separate-source-identity interface control",
+        "unchanged real primary charges",
+        "mechanisms reported separately"
+      ]
+    },
+    {
+      "id": "PF-V5-H3",
+      "claim": "Selective decisions remain useful under missing channels and held-out combinations.",
+      "kind": "hypothesis",
+      "state": "NR",
+      "required": [
+        "actual calibration/group support",
+        "separate naturallymissing/simulatedmask strata",
+        "coverage/vector/component/terminal loss and NA",
+        "unknown-shift limits"
+      ]
+    }
+  ],
+  "analytic_validation": {
+    "status": "PASS",
+    "local_inventory": [
+      {
+        "path": "projects/skill_research_v3_20261012/probeflow/probeflow.py",
+        "bytes": 27985,
+        "sha256": "1298bad809c2f32955a4836215c34411d02d8645c15008a5353e598ddd3a9d43"
+      },
+      {
+        "path": "projects/skill_research_v3_20261012/probeflow/METHODS.md",
+        "bytes": 11695,
+        "sha256": "b47e3ee5f7de42d90dd2bbfba07a9841be59c9f8d588b28237ca791d75258c42"
+      },
+      {
+        "path": "projects/skill_research_v3_20261012/probeflow/protocol.json",
+        "bytes": 6586,
+        "sha256": "9a9512a3f32e2998a2a3ac8e836b08e80725fbe380b6ad9f8a0babb52f3788c2"
+      },
+      {
+        "path": "projects/skill_research_v3_20261012/probeflow/claim_evidence.json",
+        "bytes": 4598,
+        "sha256": "a24fcce9305c108706a2cbcc600680b8f02802c89a41c3ddb8bed80cee142ee4"
+      },
+      {
+        "path": "projects/skill_research_v3_20261012/probeflow/validation/final_checks_20261012.json",
+        "bytes": 2127,
+        "sha256": "cd6f9139b94287e77e0e245b49dda37b329f7f8bc640fdd6603e047269cc19e4"
+      },
+      {
+        "path": "projects/skill_research_v3_20261012/papers_v3/sources/ProbeFlow.json",
+        "bytes": 23021,
+        "sha256": "6c4c2ccb5242a2d7c4c55fbf725e3e03327f1a93c98b297eeec915952cbaf3b5"
+      },
+      {
+        "path": "projects/skill_research_dataset_v4_20261012/industrial_datasets/catalog.json",
+        "bytes": 44272,
+        "sha256": "e27171a9ed39c43fdfa4c9e2014424f0f181cf2e4ca15be01f2c4631862f92a4"
+      },
+      {
+        "path": "projects/skill_research_dataset_v4_20261012/industrial_datasets/readiness_contract.json",
+        "bytes": 25904,
+        "sha256": "0d1d09b3d27a9d245fdbd96ab326b487d4e75056518fddbf75c8b29f72bf132f"
+      },
+      {
+        "path": "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/download_receipt.json",
+        "bytes": 488,
+        "sha256": "dcd1bd5ddd5cf74c90228dee967b393d2c92bdaa2608fa0da333fa2df3c722b3"
+      },
+      {
+        "path": "projects/skill_research_dataset_v4_20261012/data/hydraulic_selected/manifest.json",
+        "bytes": 2433,
+        "sha256": "19a43c01245fd2c87c6eb1df3871ae25cb6e467d871b7a837afd2493cb03c444"
+      },
+      {
+        "path": "projects/skill_research_dataset_v4_20261012/probeflow_readiness/runs/uci_selected_20261012/data_audit.json",
+        "bytes": 2194,
+        "sha256": "29ba81c93481a01d2baeba2245dc809a4fe6826cb474f2a2eb64839814bcd463"
+      },
+      {
+        "path": "projects/skill_research_dataset_v4_20261012/probeflow_readiness/runs/uci_selected_20261012/manifest.json",
+        "bytes": 1100,
+        "sha256": "ad6a0b45768ee40c6c325ad90670991f6cc840d4cf8f0a5168386ff0371befac"
+      }
+    ],
+    "analytic_checks": {
+      "xor_proxy_terminal_risks": {
+        "none": 0.3,
+        "X1": 0.3,
+        "X2": 0.3,
+        "Z": 0.2,
+        "Z,X1": 0.2,
+        "X1,X2": 0
+      },
+      "greedy_proxy_objective": 0.25,
+      "pair_objective": 0.1,
+      "shared_fixture_charge": 9,
+      "duplicate_fixture_charge": 15,
+      "shared_value_count": 6660,
+      "duplicate_value_count": 12660,
+      "cache_failure_next_costs": [
+        1,
+        5
+      ],
+      "metric_example_terminal_loss": 0.165,
+      "metric_example_component_error": 0.075,
+      "pooled_vs_selected_mask_error": [
+        0.1,
+        0.2
+      ],
+      "mutual_information_bits": {
+        "I_Y_X1": 0,
+        "I_Y_X2": 0,
+        "I_Y_X2_given_X1": 1
+      }
+    },
+    "scope": "authored exact probability/arithmetic and receipt consistency only; no industrial data experiment"
+  },
+  "source_retrieval_failures": [
+    {
+      "source": "official Hydraulic direct page",
+      "outcome": "timeout; official indexed text and existing v4 receipts used; no new binary request"
+    },
+    {
+      "source": "MDPI complete HTML",
+      "outcome": "inaccessible; official indexed abstract/version notes used; no absence-of-mechanism claim"
+    }
+  ],
+  "preservation": "Only four assigned v5/probeflow writing files created; v3/v4 source/runs, active skills, core Forge and original ZIP unchanged",
+  "documentation_validation": {
+    "status": "PASS",
+    "paper_pages": 4,
+    "page_words_with_title_status_abstract_or_references": [
+      468,
+      370,
+      367,
+      471
+    ],
+    "abstract_words": 110,
+    "references": 9,
+    "explainer_characters": 48781,
+    "hangul_characters": 18267,
+    "explainer_sections": 18,
+    "qa": 12,
+    "local_links_checked": 7,
+    "primary_external_sources": 11,
+    "small_source_hashes": 12,
+    "mutual_information_bits": {
+      "I_Y_X1": 0,
+      "I_Y_X2": 0,
+      "I_Y_X2_given_X1": 1
+    },
+    "files": {
+      "paper.json": {
+        "bytes": 17360,
+        "sha256": "8e00eb50a12d4f0511a9c9915254c2da6d16e0fe62dc89d01d8728c1bd7722d4"
+      },
+      "METHODS_CONTRACT.json": {
+        "bytes": 22105,
+        "sha256": "29182a834aa29a4e7294605548b2651fad9e0e6e65d609cb352821ead49d3c31"
+      },
+      "EXPLAINER_KO.md": {
+        "bytes": 85649,
+        "sha256": "1c622326080e23cdc2267e3cd951cf8523e0c7e45748e1ba872f879e63e387a0"
+      }
+    },
+    "scope": "document/JSON/link/claim and authored arithmetic checks; no industrial model, raw sensor experiment or PDF rendering",
+    "not_checked": [
+      "PDF physical page count/layout; root owns rendering",
+      "fresh v3 unit-test rerun",
+      "raw sensor/ZIP reparse or hash recomputation",
+      "industrial model fitting/policy/calibration"
+    ]
+  }
+}

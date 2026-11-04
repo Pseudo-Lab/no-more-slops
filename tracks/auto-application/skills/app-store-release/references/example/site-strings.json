@@ -1,0 +1,150 @@
+{
+  "en-US": {
+    "native": "English",
+    "languages": "Languages",
+    "indexDesc": "Read the skin tone in your photo and set the shade you want. Every edit runs on your iPhone.",
+    "headline": "Read your skin tone and set the one you want",
+    "lead": "Tonlit measures the skin colour in your photo and moves it to the shade you choose, from fair to deep. Every edit runs on your iPhone, with no account, ads or subscriptions.",
+    "supportTitle": "Support",
+    "supportDocTitle": "Tonlit Support",
+    "supportDesc": "Help with Tonlit, the skin tone photo editor for iPhone.",
+    "supportMeta": "Tonlit for iPhone, iOS 17 or later",
+    "faq": [
+      [
+        "How does Tonlit read my shade?",
+        "Tonlit measures skin colour on the forehead, cheeks, chin, under the eyes and on the neck, and shows where it measured. Your shade is a number on Tonlit's own 15-step scale, from Fair (1) to Rich (15), with an undertone: cool, neutral or warm."
+      ],
+      [
+        "Why is my shade different from photo to photo?",
+        "Light, camera and makeup change skin colour in a photo. For the steadiest reading, use a bright, front-facing photo in daylight without a filter. Shade numbers are an editing guide, not a medical or personal colour diagnosis, and they do not match any brand's foundation shades."
+      ],
+      [
+        "Are my photos uploaded?",
+        "No. Every reading and edit runs on your iPhone. Tonlit has no account and no server, and it never sends your photos anywhere."
+      ],
+      [
+        "A tool doesn't change my photo",
+        "Face tools need a face that is clearly visible. Arms needs at least one arm visible from the shoulder. Hair needs visible hair. When a tool can't find what it works on, the photo stays as it is."
+      ],
+      [
+        "How do I save?",
+        "Tap Save, then Save to Photos. Tonlit asks only for permission to add photos to your library. You can save the full-size photo or a tone card."
+      ],
+      [
+        "Refunds",
+        "Purchases are handled by Apple. Request a refund at {refund}."
+      ]
+    ],
+    "contactTitle": "Contact",
+    "contact": "Email {email}. Please include your iPhone model and iOS version. Don't send photos you don't want to share.",
+    "privacyTitle": "Privacy Policy",
+    "privacyDocTitle": "Tonlit Privacy Policy",
+    "privacyDesc": "Tonlit collects no personal information. Photos are edited on your iPhone and never uploaded.",
+    "privacyUpdated": "Last updated: October 2026",
+    "privacy": [
+      [
+        "What we collect",
+        "Tonlit does not require an account and does not collect personal information. Photos, skin readings and saved tones are processed and stored only on your device and are never sent anywhere."
+      ],
+      [
+        "Purchase",
+        "The app is bought through the App Store. Apple handles payment, and we never see your payment details."
+      ],
+      [
+        "Ads",
+        "Tonlit shows no ads and uses no third-party ad networks or advertising identifiers."
+      ],
+      [
+        "Analytics",
+        "Tonlit does not include third-party analytics SDKs. Apple may share aggregated, anonymised crash and usage data with us if you opted in on your device."
+      ],
+      [
+        "Permissions",
+        "Photo library access is used only to open the photos you choose and to save your exports. Camera access is used only when you tap the camera button."
+      ],
+      [
+        "Children",
+        "Tonlit is not directed at children under 13 and does not knowingly collect information from them."
+      ],
+      [
+        "Contact",
+        "For questions about this policy or the app, use the support link on Tonlit's App Store page."
+      ]
+    ],
+    "footer": "Tonlit for iPhone"
+  },
+  "ko": {
+    "native": "한국어",
+    "languages": "언어",
+    "indexDesc": "사진 속 피부톤을 읽고 원하는 셰이드로 옮겨요. 모든 보정은 아이폰 안에서 이뤄져요.",
+    "headline": "내 피부톤을 읽고 원하는 톤으로",
+    "lead": "톤릿은 사진 속 피부색을 재서 밝은 톤부터 깊은 톤까지 내가 고른 셰이드로 옮겨 줘요. 모든 보정은 아이폰 안에서 이뤄지고 계정, 광고, 구독이 없어요.",
+    "supportTitle": "지원",
+    "supportDocTitle": "톤릿 지원",
+    "supportDesc": "아이폰용 피부톤 보정 앱 톤릿의 도움말이에요.",
+    "supportMeta": "아이폰용 톤릿, iOS 17 이상",
+    "faq": [
+      [
+        "톤릿은 피부톤을 어떻게 읽나요?",
+        "이마, 볼, 턱, 눈 밑, 목의 피부색을 재고 어디를 쟀는지 사진 위에 보여 줘요. 셰이드는 톤릿의 15단계 눈금(1번 페어부터 15번 리치까지) 번호와 언더톤(쿨톤, 뉴트럴, 웜톤)으로 알려 주고, 한국어 화면에서는 가까운 호수도 함께 보여 줘요."
+      ],
+      [
+        "사진마다 셰이드가 다르게 나와요",
+        "조명, 카메라, 메이크업에 따라 사진 속 피부색이 달라져요. 필터 없이 밝은 곳에서 정면으로 찍은 사진이 가장 안정적으로 읽혀요. 셰이드 번호는 편집을 위한 가이드이며 의학적 진단이나 퍼스널컬러 진단이 아니고, 특정 브랜드의 파운데이션 호수와 일치하지 않아요."
+      ],
+      [
+        "사진이 업로드되나요?",
+        "아니요. 모든 분석과 보정은 아이폰 안에서 이뤄져요. 톤릿에는 계정과 서버가 없고 사진을 어디에도 보내지 않아요."
+      ],
+      [
+        "보정 도구를 움직여도 사진이 바뀌지 않아요",
+        "얼굴 도구는 얼굴이 잘 보여야 하고, 팔뚝은 어깨부터 팔이 한쪽 이상 보여야 하며, 머릿결은 머리카락이 보여야 해요. 도구가 대상을 찾지 못하면 사진은 그대로 유지돼요."
+      ],
+      [
+        "어떻게 저장하나요?",
+        "저장을 누른 뒤 사진에 저장을 누르세요. 톤릿은 사진 보관함에 사진을 추가하는 권한만 요청해요. 원본 크기 사진이나 톤 카드를 저장할 수 있어요."
+      ],
+      [
+        "환불",
+        "결제는 Apple이 처리해요. 환불은 {refund}에서 요청해 주세요."
+      ]
+    ],
+    "contactTitle": "문의",
+    "contact": "{email}으로 메일을 보내 주세요. 아이폰 모델과 iOS 버전을 함께 알려 주시면 도움이 돼요. 공유하고 싶지 않은 사진은 보내지 마세요.",
+    "privacyTitle": "개인정보 처리방침",
+    "privacyDocTitle": "톤릿 개인정보 처리방침",
+    "privacyDesc": "톤릿은 개인정보를 수집하지 않아요. 사진은 아이폰 안에서 보정되고 업로드되지 않아요.",
+    "privacyUpdated": "최종 업데이트 2026년 10월",
+    "privacy": [
+      [
+        "수집하는 정보",
+        "톤릿은 계정이 필요 없고 개인정보를 수집하지 않아요. 사진, 피부 분석, 저장한 톤은 기기 안에서만 처리하고 보관하며 어디에도 전송하지 않아요."
+      ],
+      [
+        "구매",
+        "앱은 App Store에서 구매해요. 결제는 Apple이 처리하며 결제 정보는 저희가 볼 수 없어요."
+      ],
+      [
+        "광고",
+        "톤릿은 광고를 보여주지 않고 외부 광고 네트워크나 광고 식별자를 쓰지 않아요."
+      ],
+      [
+        "분석",
+        "톤릿에는 제3자 분석 SDK가 없어요. 기기에서 동의한 경우 Apple이 익명으로 집계한 충돌 및 사용 데이터를 저희에게 제공할 수 있어요."
+      ],
+      [
+        "권한",
+        "사진 보관함 접근은 고른 사진을 열고 결과를 저장할 때만 사용해요. 카메라는 카메라 버튼을 누를 때만 사용해요."
+      ],
+      [
+        "아동",
+        "톤릿은 만 13세 미만 아동을 대상으로 하지 않으며 아동의 정보를 의도적으로 수집하지 않아요."
+      ],
+      [
+        "문의",
+        "이 방침이나 앱에 관한 문의는 App Store의 톤릿 페이지에 있는 지원 링크를 이용해 주세요."
+      ]
+    ],
+    "footer": "아이폰용 톤릿"
+  }
+}
