@@ -1,0 +1,20 @@
+% Compilable demo of every table template (placeholders shown verbatim).
+% Build: latexmk -pdf tables_demo.tex   (undefined-citation warnings are expected)
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{newtxtext,newtxmath}
+\usepackage[margin=0.75in,columnsep=0.25in]{geometry}
+\usepackage{xcolor}
+\input{table_macros}
+\begin{document}
+\section{Demo}\label{sec:analysis}
+\input{main_results_ml}
+\input{ablation}
+\input{diagnostic_arms}
+\input{main_results_cv}
+\appendix
+\section{Statistics}\label{app:stats}
+\input{stats_appendix}
+\end{document}

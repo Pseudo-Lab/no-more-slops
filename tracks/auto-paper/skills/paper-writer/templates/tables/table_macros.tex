@@ -1,0 +1,28 @@
+% =====================================================================
+% Table macros for conference-style results tables (paper-writer skill).
+% \input{table_macros} in the preamble, AFTER xcolor is loaded.
+% Provenance markers (define every marker you use in the caption/note):
+%   \pub      *  number copied from the cited paper (PUBLISHED)
+%   \repro    †  original method re-run by us under our protocol (REPRODUCED)
+%   \incompat ‡  different protocol; context only, never ranked (INCOMPATIBLE)
+% Never mark a published number \repro or a reproduced number \pub.
+% Optional shaded "ours" row: \usepackage{colortbl} and
+%   \renewcommand{\oursrow}{\rowcolor{gray!12}}
+% (colortbl is not installed on every TeX setup, so it is not loaded here.)
+% =====================================================================
+\usepackage{booktabs}
+\usepackage{multirow}
+\providecommand{\pub}{\textsuperscript{*}}
+\providecommand{\repro}{\textsuperscript{\dag}}
+\providecommand{\incompat}{\textsuperscript{\ddag}}
+\providecommand{\best}[1]{\textbf{#1}}
+\providecommand{\second}[1]{\underline{#1}}
+\providecommand{\pmstd}[2]{#1{\,$\pm$\,}#2}
+\makeatletter
+\AtBeginDocument{\@ifundefined{checkmark}%
+  {\providecommand{\cmark}{\ensuremath{\surd}}}%
+  {\providecommand{\cmark}{\ensuremath{\checkmark}}}}
+\makeatother
+\providecommand{\xmark}{\ensuremath{\times}}
+\providecommand{\na}{--}
+\providecommand{\oursrow}{}

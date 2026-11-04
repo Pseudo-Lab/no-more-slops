@@ -1,0 +1,315 @@
+{
+  "_comment": "Machine-readable venue profiles used by paper-to-latex/scripts/check_page_limit.py and paper-writer. Human-readable rationale and sources: venue_profiles.md. 'limit' = submission main-content pages. Re-verify against the official call for the target year before submission; 'status' records what was verified and when.",
+  "_checked": "2026-10-17",
+  "default": "default-4",
+  "profiles": {
+    "default-4": {
+      "name": "User default: 4-page workshop-style paper",
+      "limit": 4,
+      "references_count": false,
+      "appendix_counts": false,
+      "template": "paper-to-latex/templates/main_twocolumn.tex",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [
+        "twocolumn"
+      ],
+      "required_packages": [
+        "geometry"
+      ],
+      "required_geometry": [
+        "margin=0.75in"
+      ],
+      "family": "ml",
+      "status": "User default (global CLAUDE pipeline). Not a venue rule."
+    },
+    "neurips-workshop-4": {
+      "name": "NeurIPS workshop short paper (typical)",
+      "limit": 4,
+      "references_count": false,
+      "appendix_counts": false,
+      "template": "official kit (neurips_2026 2026-01-29), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "neurips_2026"
+      ],
+      "family": "ml",
+      "status": "Limits are set per workshop (e.g. MechInterp@NeurIPS 2025: short <=4, long <=9). Always confirm the specific workshop CFP.",
+      "kit": "paper-writer/templates/venues/_downloads/neurips2026/kit",
+      "kit_main": "neurips_2026.tex"
+    },
+    "neurips": {
+      "name": "NeurIPS main track",
+      "limit": 9,
+      "camera_ready_limit": 10,
+      "references_count": false,
+      "appendix_counts": false,
+      "checklist_counts": false,
+      "template": "official kit (neurips_2026 2026-01-29), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "neurips_2026"
+      ],
+      "family": "ml",
+      "stats_expectation": "Paper checklist asks whether results supporting main claims have error bars, CIs or significance tests, with sources of variability and std vs s.e. stated; may be in tables or plots, explained in text.",
+      "status": "NeurIPS 2026 CFP + official kit verified 2026-10-17: 9 pages incl. figures; refs, checklist, appendices excluded.",
+      "kit": "paper-writer/templates/venues/_downloads/neurips2026/kit",
+      "kit_main": "neurips_2026.tex"
+    },
+    "icml": {
+      "name": "ICML main track",
+      "limit": 8,
+      "camera_ready_limit": 9,
+      "references_count": false,
+      "appendix_counts": false,
+      "template": "official kit (icml2026 v2.0 2025/10/29), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "icml2026"
+      ],
+      "family": "ml",
+      "status": "ICML 2026 CFP/author instructions verified 2026-10-17: 8 pages main body; references, impact statement, appendices unlimited; over-limit auto-rejected.",
+      "kit": "paper-writer/templates/venues/_downloads/icml2026/kit",
+      "kit_main": "example_paper.tex"
+    },
+    "iclr": {
+      "name": "ICLR main track",
+      "limit": 9,
+      "camera_ready_limit": 10,
+      "references_count": false,
+      "appendix_counts": false,
+      "template": "official kit (iclr2026_conference), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "iclr2026_conference"
+      ],
+      "family": "ml",
+      "status": "ICLR 2026 author guide verified 2026-10-17: <=9 pages main text at submission, 10 at rebuttal/camera-ready; references unlimited; appendices after bibliography.",
+      "kit": "paper-writer/templates/venues/_downloads/iclr2026/kit/iclr2026",
+      "kit_main": "iclr2026_conference.tex"
+    },
+    "cvpr": {
+      "name": "CVPR main track",
+      "limit": 8,
+      "references_count": false,
+      "appendix_counts": false,
+      "template": "official kit (cvpr 2026), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [
+        "twocolumn"
+      ],
+      "required_packages": [
+        "cvpr"
+      ],
+      "family": "cv",
+      "status": "CVPR 2023-2025 official: 8 pages incl. figures/tables, extra pages only for references; 2026 assumed same (verify).",
+      "kit": "paper-writer/templates/venues/_downloads/cvpr2026/kit/author-kit-CVPR2026-v1-latex-",
+      "kit_main": "main.tex"
+    },
+    "iccv": {
+      "name": "ICCV main track",
+      "limit": 8,
+      "references_count": false,
+      "appendix_counts": false,
+      "template": "official kit (iccv 2025), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [
+        "twocolumn"
+      ],
+      "required_packages": [
+        "iccv"
+      ],
+      "family": "cv",
+      "status": "ICCV 2025 official: 8 pages excluding references; over-limit rejected without review.",
+      "kit": "paper-writer/templates/venues/_downloads/iccv2025/kit/ICCV2025-Author-Kit-Feb",
+      "kit_main": "main.tex"
+    },
+    "eccv": {
+      "name": "ECCV main track",
+      "limit": 14,
+      "camera_ready_limit": 15,
+      "references_count": false,
+      "appendix_counts": false,
+      "template": "official kit (eccv (2026 kit, tag Latest)), downloaded 2026-10-17",
+      "documentclass": "llncs",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "eccv"
+      ],
+      "family": "cv",
+      "status": "ECCV 2026 policy: 14 pages incl. figures/tables, LNCS; reference-only pages exempt (policy wording slightly inconsistent; confirm with author kit). Kit text: 14 pages + additional pages for references; reference section not counted.",
+      "kit": "paper-writer/templates/venues/_downloads/eccv2026/kit/paper-template-Latest",
+      "kit_main": "main.tex"
+    },
+    "aaai": {
+      "name": "AAAI main technical track",
+      "limit": 7,
+      "references_count": false,
+      "appendix_counts": false,
+      "checklist_counts": false,
+      "template": "official kit (aaai2026 2026/06/17), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "aaai2026"
+      ],
+      "family": "ml",
+      "stats_expectation": "Reproducibility checklist: number of runs per result; measures of variation beyond single summaries; significance judged with appropriate tests (e.g. Wilcoxon signed-rank). Satisfied in paper or referenced technical appendix.",
+      "status": "AAAI-26 verified 2026-10-17: up to 7 pages technical content + pages only for references and reproducibility checklist. Check AAAI-27 call.",
+      "kit": "paper-writer/templates/venues/_downloads/aaai2026/kit/AuthorKit26/AnonymousSubmission/LaTeX",
+      "kit_main": "anonymous-submission-latex-2026.tex"
+    },
+    "aaai27": {
+      "name": "AAAI-27 main technical track",
+      "limit": 7,
+      "references_count": false,
+      "appendix_counts": false,
+      "kit": "paper-writer/templates/venues/_downloads/aaai2027/kit/AuthorKit27",
+      "kit_main": "AnonymousSubmission2027.tex",
+      "template": "official kit (aaai2027 2027/05/04), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "aaai2027"
+      ],
+      "family": "ml",
+      "status": "AAAI-27 kit downloaded 2026-10-17; 7-page limit carried over from AAAI-26, verify in the AAAI-27 call."
+    },
+    "aistats": {
+      "name": "AISTATS",
+      "limit": 8,
+      "references_count": false,
+      "appendix_counts": false,
+      "kit": "paper-writer/templates/venues/_downloads/aistats2026/kit/AISTATS2026PaperPack",
+      "kit_main": "sample_paper.tex",
+      "template": "official kit (aistats2026 2026/08/29), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "aistats2026"
+      ],
+      "family": "ml",
+      "status": "AISTATS 2026 CFP verified 2026-10-17: 8 pages excl. references, reproducibility checklist, appendices (9 camera-ready).",
+      "camera_ready_limit": 9
+    },
+    "uai": {
+      "name": "UAI",
+      "limit": 8,
+      "references_count": false,
+      "appendix_counts": false,
+      "kit": "paper-writer/templates/venues/_downloads/uai2026/kit/uai2026-template",
+      "kit_main": "uai2026-template.tex",
+      "template": "official kit (uai2026.cls), downloaded 2026-10-17",
+      "documentclass": "uai2026",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [],
+      "family": "ml",
+      "status": "UAI 2026 submission instructions verified 2026-10-17: main part <= 8 pages; references and appendices unlimited, appendices start on a new page."
+    },
+    "ijcai": {
+      "name": "IJCAI-ECAI main track",
+      "limit": 7,
+      "references_count": false,
+      "appendix_counts": true,
+      "kit": "paper-writer/templates/venues/_downloads/ijcai2026/kit/FormattingGuidelines-IJCAI-ECAI-26",
+      "kit_main": "ijcai26.tex",
+      "template": "official kit (ijcai26), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "ijcai26"
+      ],
+      "family": "ml",
+      "status": "IJCAI-ECAI-26 kit text: max 7 pages + at most 2 for references/acknowledgements/contribution/ethics statements; appendices in the paper COUNT toward the limit.",
+      "max_reference_pages": 2
+    },
+    "acl-long": {
+      "name": "ACL / EMNLP / NAACL long paper (ARR)",
+      "limit": 8,
+      "references_count": false,
+      "appendix_counts": false,
+      "kit": "paper-writer/templates/venues/_downloads/acl/kit/acl-style-files-master",
+      "kit_main": "acl_latex.tex",
+      "template": "official kit (acl.sty (master, pushed 2026-06-29)), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 11,
+      "required_options": [],
+      "required_packages": [
+        "acl"
+      ],
+      "family": "nlp",
+      "status": "ACLPUB formatting verified 2026-10-17: long 8 pages content + unlimited references; Limitations section required and not counted.",
+      "camera_ready_limit": 9
+    },
+    "acl-short": {
+      "name": "ACL / EMNLP / NAACL short paper (ARR)",
+      "limit": 4,
+      "references_count": false,
+      "appendix_counts": false,
+      "kit": "paper-writer/templates/venues/_downloads/acl/kit/acl-style-files-master",
+      "kit_main": "acl_latex.tex",
+      "template": "official kit (acl.sty (master, pushed 2026-06-29)), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 11,
+      "required_options": [],
+      "required_packages": [
+        "acl"
+      ],
+      "family": "nlp",
+      "status": "ACLPUB formatting verified 2026-10-17: short 4 pages content + unlimited references; Limitations section required and not counted.",
+      "camera_ready_limit": 5
+    },
+    "tmlr": {
+      "name": "TMLR (journal)",
+      "limit": 12,
+      "references_count": false,
+      "appendix_counts": false,
+      "kit": "paper-writer/templates/venues/_downloads/tmlr/kit/tmlr-style-file-main",
+      "kit_main": "main.tex",
+      "template": "official kit (tmlr.sty (main, pushed 2023-06-30)), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "tmlr"
+      ],
+      "family": "ml",
+      "status": "TMLR has no hard page limit; 12 is a soft target (longer papers need justification). Treat OVER_LIMIT as advisory.",
+      "soft_limit": true
+    },
+    "colm": {
+      "name": "COLM",
+      "limit": 9,
+      "references_count": false,
+      "appendix_counts": false,
+      "kit": "paper-writer/templates/venues/_downloads/colm2026/kit/Template-master",
+      "kit_main": "colm2026_conference.tex",
+      "template": "official kit (colm2026_conference), downloaded 2026-10-17",
+      "documentclass": "article",
+      "min_font_pt": 10,
+      "required_options": [],
+      "required_packages": [
+        "colm2026_conference"
+      ],
+      "family": "nlp",
+      "status": "COLM 2026 kit text: strict 9 pages main text at submission; unlimited pages for citations."
+    }
+  },
+  "_kits": "Official style kits: ~/.claude/skills/paper-writer/templates/venues/_downloads (SOURCES.json has URLs + sha256)."
+}

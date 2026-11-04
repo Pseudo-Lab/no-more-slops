@@ -16,12 +16,13 @@ Auto-Paper 트랙의 [chewonc](https://github.com/chewonc) 기여입니다. 기�
 | [paper-visuals](https://github.com/chewonc/no-more-slops/blob/auto-paper-v2-chewon/tracks/auto-paper/skills/paper-visuals/SKILL.md) | 기존 원고와 근거에 맞춘 재현 가능한 표·그림 제작 |
 | [paper-writer](https://github.com/chewonc/no-more-slops/blob/auto-paper-v2-chewon/tracks/auto-paper/skills/paper-writer/SKILL.md) | 단일 연구 계획의 실험 전·후 전체 원고 작성 |
 | [prior-work-checker](../../skills/prior-work-checker/SKILL.md) | 벤치마크 기반 연구 질문의 선행연구 중복·신규성 확인 |
+| [research-benchmark-advisor](https://github.com/chewonc/no-more-slops/blob/auto-paper-v2-chewon/tracks/auto-paper/skills/research-benchmark-advisor/SKILL.md) | 실시간 웹 근거로 4일 안에 공개 SOTA 기준선을 넘을 가능성이 높은 하위 분야·벤치마크 조합 조사와 순위화 (단독 사용) |
 | [research-pipeline](../../skills/research-pipeline/SKILL.md) | 연구 질문, 벤치마크, 선행연구, 수행 가능성과 계획을 연결하는 연구 기획 조정 |
 | [research-planner](../../skills/research-planner/SKILL.md) | 벤치마크 기반 질문을 실행 가능한 연구 계획으로 구체화 |
 | [research-question-parser](../../skills/research-question-parser/SKILL.md) | 파일과 노트에서 연구 질문·아이디어 추출 |
 | [research-readiness-advisor](../../skills/research-readiness-advisor/SKILL.md) | 사용자 조건과 논문 완성 가능성을 기준으로 연구 후보 검토 |
 
-#1과 #12는 기초 연구 기획 스킬 7개의 최신 본문과 참조 자료를 함께 제공합니다. `experiment-runner`, `paper-results-reviser`, `paper-to-latex`, `paper-visuals`, `paper-writer`는 #12에 포함된 확장 스킬이며, 위 표는 해당 제출 브랜치의 원본으로 연결합니다.
+#1과 #12는 기초 연구 기획 스킬 7개의 최신 본문과 참조 자료를 함께 제공합니다. `experiment-runner`, `paper-results-reviser`, `paper-to-latex`, `paper-visuals`, `paper-writer`, `research-benchmark-advisor`는 #12에 포함된 확장 스킬이며, 위 표는 해당 제출 브랜치의 원본으로 연결합니다.
 
 같은 이름의 스킬을 주차별로 복사하지 않고 `tracks/auto-paper/skills/`의 기존 스킬을 개선합니다. 비슷한 스킬은 위 입력·역할 범위를 기준으로 선택합니다.
 

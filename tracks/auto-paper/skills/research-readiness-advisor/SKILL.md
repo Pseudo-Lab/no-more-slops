@@ -507,6 +507,29 @@ Assess, and record each item in the Output:
    size, the basis it extrapolates from (a number in the report or the
    archive), and the planned test's MDE. If the expected effect is below
    the MDE or the SESOI, S3 is at most PARTIAL (§4d.5).
+8. **Mechanism and Domain-Validity record (gate 12; shared definitions
+   §9).** Answer Q1–Q10 with sources. Label the mechanism's evidence
+   level E0 (intuitive), E1 (plausible), E2 (supported by prior research
+   or theory) or E3 (supported by direct experimental evidence). Give the
+   verdict PASS / PASS-EXPLORATORY / FLAG / FAIL. Rules:
+   - The S2 rating must be consistent with the E-level (E0 → S2 WEAK; S2
+     STRONG needs cause evidence).
+   - Check every assumption (Q4) against the benchmark's actual data and
+     problem classes (Q5): inspect samples, read the dataset card, cite
+     statistics. Assumptions that hold only for a subset scope the claim
+     (Q10).
+   - Name the simplest existing method that could produce the same
+     benefit (Q8), and put the discriminating matched-budget experiment
+     (Q9) into the MVRD.
+   - Use the prior-work literature map's "evidence against the
+     hypothesis" in Q6–Q7.
+   - FLAG or FAIL → Step 7 redesign. The redesign must change the
+     hypothesis or scope the claim. PASS-EXPLORATORY is allowed only
+     under the four conditions in §9c, and the uncertainty is stated in
+     the draft paper.
+   - Also record the performance-claim level the project targets (§4f).
+     Reaching only level 3 or 4 caps SOTA potential at LOW unless gate 9
+     is waived.
 
 By default, a credible SOTA path (at least MEDIUM) is a mandatory gate
 (shared definitions §7, gate 9). Scientific-diagnostic
@@ -738,6 +761,15 @@ Results before experiments: do NOT fabricate numerical results.
 - Leave every unknown numerical cell in result tables as `TBD`.
 - Clearly distinguish published baseline numbers (with their source) from
   unobserved proposed-method results.
+- Build tables to conference conventions
+  (`~/.claude/skills/paper-writer/references/paper_standards.md` §4):
+  - established method names with citations;
+  - PUBLISHED / REPRODUCED / OURS provenance markers;
+  - experimental configurations only in ablation tables;
+  - no p-value or CI columns in the main table (§5.3).
+- State the mechanism at its MDV evidence level ("we hypothesize" for
+  E0–E1). The draft's Limitations includes the Q6 failure conditions and
+  the Q10 scope.
 - Never invent accuracy, standard deviation, p-values, effect sizes, or any
   other measurement, in tables or in the prose (the narrative may state the
   intended direction of the result, but any number stays TBD).
@@ -841,6 +873,9 @@ For each candidate:
 | Proposed mechanism | The intervention and why it targets the weakness's cause |
 | SOTA potential (pre-experiment; §8 criterion 1) | HIGH / MEDIUM / LOW / UNKNOWN, with S1 documented weakness and headroom, S2 mechanism, S3 fair reproducible test, S4 feasible MVRD, each STRONG / PARTIAL / WEAK / UNVERIFIED (Step 5c, §4b) |
 | Technical depth | PASS / FAIL, with the depth case (Step 5d) |
+| Mechanism and domain validity (gate 12) | PASS / PASS-EXPLORATORY / FLAG / FAIL; evidence level E0–E3; Q1–Q10 answers in a sub-table; simplest alternative (Q8) and the discriminating experiment (Q9) (Step 5c item 8, shared definitions §9) |
+| Targeted claim level | 1 overall SOTA / 2 best reproducible baseline / 3 selected baseline / 4 restricted protocol (§4f) |
+| Novelty type | NT-A / NT-B / NT-C / NT-D, from the Evidence Report (resource §5a) |
 | Refinement history | Each redesign attempt: lever, change, re-evaluated ratings (Step 7) |
 | Novelty strength (§8 criterion 5) | HIGH / MEDIUM / LOW, mapped from the Evidence Report's classification and gate (Step 5c); never a novelty verdict of its own |
 | Prior-work evidence used | Evidence Report path, DRAFT / FINAL, evidence quality; novelty classification and gate (quoted, not re-judged) |

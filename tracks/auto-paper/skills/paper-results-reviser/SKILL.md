@@ -241,10 +241,26 @@ Format rules:
   bibliography commands; do not add `.bib` entries; keep it compilable
   (balanced environments/braces, no undefined macros introduced).
 
-Statistical reporting:
+Statistical reporting (rigor vs presentation; follows
+`~/.claude/skills/paper-writer/references/paper_standards.md` §5;
+changed 2026-10-17):
 
-- absolute values for each condition, then effect size, 95% CI, test,
-  p (raw and adjusted, with method), n;
+- **rigor (unchanged):** every pre-registered comparison keeps its
+  absolute values per condition, effect size, 95% CI, test, p (raw and
+  adjusted, with method) and n in the evidence map and the audit. Never
+  drop an analysis that was run;
+- **presentation (venue-appropriate):** the main results table carries
+  point estimates (`± std` over seeds where the venue family reports
+  it), with **no p-value or CI columns** unless a §5.3 condition holds
+  (gain within noise or near the SESOI; the claim is itself statistical;
+  the subfield's main tables routinely show it; a single costly run).
+  Mark such a table `% stats-ok: <reason>`. Each headline claim gets one
+  sentence in the text with effect, CI and test. The full statistics
+  table goes in an appendix or supplement when the format allows one.
+  Otherwise it goes in the text of the results section;
+- if the draft already shows p-value or CI columns in its main table
+  without a §5.3 reason, move them to the text or appendix and record
+  the move in the audit (a presentation change, not a result change);
 - percentage points (pp) for differences of percentages; % only for
   relative change, and never relative change alone;
 - rounding consistent across the paper and never changing a conclusion
@@ -263,6 +279,37 @@ scorer implementation, model/compute class. "State of the art" requires
 a comparison in A or B on the standard benchmark protocol; never claim it
 from C or D, and never from beating a weak baseline. Disclose failed or
 divergent reproductions.
+
+(These comparability classes A–D are a different axis from
+research-planner's contribution types and from prior-work's novelty
+types NT-A..D.) Also label each improvement claim with its
+performance-claim level (shared definitions §4f): 1 overall SOTA, 2 best
+reproducible baseline, 3 selected baseline, 4 restricted protocol. Use
+only that level's wording.
+
+Tables (mentor feedback 2026-10-17; `paper_standards.md` §4):
+- existing methods under their established names with a citation;
+- every number marked PUBLISHED (`*`), REPRODUCED (`†`), OURS, or
+  INCOMPATIBLE (`‡`, separate unranked block), with markers defined in
+  the caption. Class B rows are REPRODUCED, class C rows are
+  INCOMPATIBLE, class D rows are removed from the comparison;
+- experimental configuration labels in a main comparison table are
+  replaced by the method name, or moved to an ablation/analysis table;
+- run `python ~/.claude/skills/paper-writer/scripts/check_tables.py <revised paper>`
+  in Step 10.
+
+Claims vs evidence: apply the claim–evidence ladder (`paper_standards.md`
+§2). A measured difference never "proves" a mechanism unless the design
+included the experiment that separates it from the simplest alternative
+explanation.
+
+Page limit: if `format` gives a page limit (or the paper has a
+`pagelimit.json`), the revised paper must pass
+`~/.claude/skills/paper-to-latex/scripts/check_page_limit.py` on its
+compiled LaTeX version. For a `.tex` draft, run it directly on a copy in
+`out`. For `.md`, follow paper-writer Step 9b. Revise by the cut ladder,
+never by formatting hacks, and report a failure condition (exit 5)
+rather than cutting protected content.
 
 Figures and tables:
 
@@ -292,6 +339,12 @@ Re-read the revised paper end to end and check:
 - no remaining placeholders; every figure/table reference resolves;
 - no SOTA or "outperforms" claim without an A/B comparison;
 - pp vs % used correctly; CIs and p-values paired with their comparison;
+- main tables follow the table conventions (`check_tables.py`: no ERROR;
+  WARNs fixed or justified); statistics placed per `paper_standards.md`
+  §5.3, with the full results retained in text/appendix;
+- every claim within its evidence level and claim level (§2, §4f);
+- if a page limit applies: `check_page_limit.py` exit 0 (or the failure
+  is reported);
 - exploratory analyses labelled; deviations and exclusions disclosed;
 - citations unchanged except removals of claims they no longer support;
 - original draft and results directory untouched (compare to Step 2 list).

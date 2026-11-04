@@ -24,6 +24,7 @@ path once and use it for every script call below.
 | `scripts/extract_source.py` | Extract source into `_conversion/` (plain text, pandoc draft, media, inventory) |
 | `scripts/lint_project.py` | Static checks: paths, figures, cite keys, labels, forbidden spacing/font hacks |
 | `scripts/compile_and_check.py` | Compile, parse log/blg, count pages, check main length and references start page |
+| `scripts/check_page_limit.py` | Venue-aware page-limit gate on the compiled PDF (≤ N pages counted, formatting/template checks, required sections/labels, iteration cap; exit codes 0–6; used by paper-writer and the global Stop hook) |
 | `scripts/compare_content.py` | Source vs compiled-PDF comparison: numbers, sentences, added sentences/text; `--visuals` treats included supplied visuals as an allowed source |
 | `scripts/visuals.py` | Supplied visuals: `inventory` (classify, match to manuscript slots, conflicts), `convert` (vector-first, verified), `table` (CSV/TSV/MD → verbatim LaTeX table), `check` (placement, captions, refs, numbers, legibility, clipping risk, renders) |
 | `scripts/make_overleaf_zip.py` | Build Overleaf ZIP; checks every included visual is inside; `--verify` re-lints and recompiles it from a clean extract |
@@ -360,6 +361,31 @@ may take any number of pages.
   appendix; never drop or shrink a visual below the legibility limits to fit.
 - **Underflow:** never pad. Report and ask whether the shorter main paper
   (references on page X+1) is acceptable.
+
+**Programmatic verification (mandatory; added 2026-10-17).** After the
+ladder, write `<out>/pagelimit.json` (`{"venue": "<profile>", "limit": N,
+"main": "main.tex", "required_sections": [...], "required_labels":
+[...]}`). Venue profiles live in
+`~/.claude/skills/paper-writer/references/venue_profiles.json`; the
+default is `default-4` = this skill's template. Then run:
+
+```
+python "<SKILL_DIR>/scripts/check_page_limit.py" "<out>" --reset
+```
+
+It compiles and counts pages from the actual PDF (via `pl:refsstart` or
+`pl:bodyend`). It flags forbidden formatting and template mismatches
+(exit 3), missing required sections or labels (exit 6), and overflow
+(exit 1, with an overflow estimate in words and lines). Report its
+status and counted pages in the conversion report.
+
+This skill still never cuts content. On exit 1 after the ladder, ask the
+user, as above. The global Stop hook
+(`~/.claude/hooks/page_limit_gate.py`) will block the first attempt to
+end the turn while the PDF is over the limit. Answer it by restating
+that the overflow needs the user's decision; a second stop with an
+unchanged source is allowed. The content cuts themselves belong to
+paper-writer (Step 9b) or paper-results-reviser.
 
 ### Step 8 — Compare content against the source
 

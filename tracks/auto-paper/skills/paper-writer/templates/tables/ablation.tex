@@ -1,0 +1,19 @@
+% Component ablation: one component removed/replaced per row; Delta vs the full method.
+% Configuration labels ARE appropriate here (unlike the main table).
+\begin{table}[t]
+\centering
+\caption{Ablation on <Benchmark> (<split>, <metric> $\uparrow$, mean over <k> seeds).
+$\Delta$ is relative to the full method. Row (d) is the control that tests the
+alternative explanation <simpler explanation> (Sec.~\ref{sec:analysis}).}
+\label{tab:ablation}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+ & <C1> & <C2> & <C3> & <Metric> & $\Delta$ \\
+\midrule
+(a) Full method  & \cmark & \cmark & \cmark & xx.x & --     \\
+(b) w/o <C1>     & \xmark & \cmark & \cmark & xx.x & $-$x.x \\
+(c) w/o <C2>     & \cmark & \xmark & \cmark & xx.x & $-$x.x \\
+(d) <C3> $\to$ <simpler alt.> & \cmark & \cmark & \xmark & xx.x & $-$x.x \\
+\bottomrule
+\end{tabular}
+\end{table}

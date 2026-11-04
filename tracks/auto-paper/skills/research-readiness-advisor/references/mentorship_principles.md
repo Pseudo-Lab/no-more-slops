@@ -232,6 +232,39 @@ never skip the mandatory Negative-Result Interpretability Review. A
 precise negative result remains a legitimate, publishable outcome of a
 project selected for its SOTA potential.
 
+## Mentor feedback on a submitted paper (recorded 2026-10-17)
+
+This feedback comes from the user's mentor, on one of the user's papers.
+It refines the sections above and is operationalised in the files named
+below. Read those files; do not paraphrase this section into new rules.
+
+1. **Tables should look like major-CS-conference tables.**
+   - Existing methods appear under their established names, with
+     citations.
+   - Published results from the original papers are used where
+     appropriate, and are visibly distinguished from results reproduced
+     in our own experiments.
+   - Our experimental configurations do not replace standard method names
+     in the main comparison table.
+
+   → `~/.claude/skills/paper-writer/references/paper_standards.md` §4;
+   templates in `paper-writer/templates/tables/`; checker
+   `paper-writer/scripts/check_tables.py`.
+2. **p-values and CIs are not routine in main tables.** Statistical
+   validity stays required. Placement follows the venue: point estimates
+   (± std) in the table, the test result in the text, full statistics in
+   the appendix. → `paper_standards.md` §5 (rigor vs presentation).
+3. **Page limits need programmatic enforcement, not instructions.** →
+   `paper_standards.md` §6; `paper-to-latex/scripts/check_page_limit.py`
+   (compiled-PDF count); the global Stop hook
+   `~/.claude/hooks/page_limit_gate.py`.
+4. **Ideas need causal, domain-specific justification.** The test-case
+   generation proposal assumed that an LLM generator struggles with
+   extreme inputs, without explaining why the intervention should
+   improve fault exposure. Programs differ in behaviour and execution
+   cost, and more cases are not necessarily better. → the Mechanism and
+   Domain-Validity Gate, shared definitions §9 (gate 12).
+
 ## Active research design
 
 Before rejecting a promising candidate, attempt at least one meaningful

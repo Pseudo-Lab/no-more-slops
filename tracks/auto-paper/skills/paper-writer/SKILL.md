@@ -1,6 +1,6 @@
 ---
 name: paper-writer
-description: Manually invoked. Turns ONE project's final RQ/research-plan markdown and its provisional paper draft into a complete ~4-page research paper written through the Conclusion (pre-experiment: full narrative written as if the working hypothesis is supported, with every unmeasured number TBD; post-experiment: whole-paper rewrite against the measured evidence). Usage - /paper-writer <RQ_FILE> <DRAFT_FILE> [Project p | RQk | "exact title"] [page limit N] [results: <file or values>]
+description: "Manually invoked. Turns ONE project's final RQ/research-plan markdown and its provisional paper draft into a complete ~4-page research paper written through the Conclusion (pre-experiment: full narrative written as if the working hypothesis is supported, with every unmeasured number TBD; post-experiment: whole-paper rewrite against the measured evidence). Enforces venue-style tables (established method names + citations, published vs reproduced provenance, statistics in text/appendix rather than main tables), a claim–evidence ladder, and the page limit on the actual compiled PDF via check_page_limit.py. Usage - /paper-writer <RQ_FILE> <DRAFT_FILE> [Project p | RQk | \"exact title\"] [page limit N] [venue: <profile>] [results: <file or values>]"
 ---
 
 # Paper Writer
@@ -19,7 +19,7 @@ experiments.
 ## Invocation
 
 ```
-/paper-writer <RQ_FILE> <DRAFT_FILE> [project identifier] [page limit] [results: <file or pasted values>]
+/paper-writer <RQ_FILE> <DRAFT_FILE> [project identifier] [page limit] [venue: <profile>] [results: <file or pasted values>]
 ```
 
 Example: `/paper-writer research_pipeline_report_v6.md provisional_paper_drafts_v6.md RQ4 4`
@@ -42,6 +42,14 @@ Example: `/paper-writer research_pipeline_report_v6.md provisional_paper_drafts_
 - `results:` (optional): actual experimental results, as a file path or
   pasted values. Supplying results switches the skill to post-experiment
   revision mode.
+- `venue:` (optional): a venue profile id from
+  `references/venue_profiles.json` (`default-4`, `neurips-workshop-4`,
+  `neurips`, `icml`, `iclr`, `cvpr`, `iccv`, `eccv`, `aaai`, `aaai27`,
+  `aistats`, `uai`, `ijcai`, `acl-long`, `acl-short`, `colm`, `tmlr`). Default: the
+  RQ file's stated venue, else the researcher profile's default
+  (`default-4`). The venue fixes the template, the page limit (unless
+  `pages:` overrides it), what counts toward the limit, and the table and
+  statistics presentation family.
 
 Paths may be absolute or relative to the current working directory.
 
@@ -68,7 +76,7 @@ Read these completely before writing. Do not reconstruct or invent mentor
 advice; use only what these files say.
 
 - `~/.claude/skills/research-readiness-advisor/references/mentorship_principles.md`
-  (`C:\Users\elika\.claude\skills\research-readiness-advisor\references\mentorship_principles.md`):
+  (`C:\Users\<user>\.claude\skills\research-readiness-advisor\references\mentorship_principles.md`):
   the PRIMARY mentor reference for this skill. Its "Paper target",
   "Baseline and performance", "Writing first", and "Pivoting" sections
   govern paper shape, execution, experimental reasoning, result
@@ -79,6 +87,19 @@ advice; use only what these files say.
 - `~/.claude/skills/benchmark-finder/references/research_advice.md`:
   benchmark-first project-selection advice; use it only for framing (why
   the paper is built around an established benchmark).
+- `~/.claude/skills/paper-writer/references/paper_standards.md`
+  (MANDATORY, every run): the one-pass reader test (five Cs), the
+  claim–evidence ladder, section-by-section checks, table conventions
+  (provenance, method naming, protocol compatibility), statistics
+  rigor vs presentation, and the programmatic page-limit protocol. It
+  encodes Keshav's "How to Read a Paper" and the mentor's 2026-10-17
+  feedback.
+- `~/.claude/skills/paper-writer/references/venue_profiles.md` and
+  `venue_profiles.json`: page rules, templates, and table and statistics
+  conventions per venue family.
+- `~/.claude/skills/research-pipeline/references/research_design_principles.md`
+  §4f (performance-claim levels) and §9 (MDV record): what the paper may
+  claim about SOTA and about the mechanism.
 
 Mentor advice is guidance, not scientific evidence. It never establishes
 that a gap exists, a contribution is novel, or a result is true.
@@ -157,16 +178,20 @@ such as `[not yet specified: number of seeds]`.
 
 ### Step 6: Write the complete paper
 
-Target about four pages of main content plus references, unless the RQ
+Target the venue profile's page limit (default `default-4`: four pages
+of main content, two-column 10pt, references excluded), unless the RQ
 file specifies another length. Expand the selected draft into a credible
 short research paper; do not replace it with an unrelated paper, and do
 not merely lengthen bullet points.
 
-#### Page limit (only when the user supplies one)
+#### Page limit (always enforced; changed 2026-10-17)
 
-A user-supplied page limit N replaces the default target above and any
-length in the RQ file, and is a hard writing constraint, not a target to
-fill.
+The page limit is the venue profile's limit, or a user-supplied N
+(which replaces it and any length in the RQ file). It is a hard
+constraint, not a target to fill. It is **always** enforced on the
+compiled PDF (Step 9b). The word-count rules below are only a pre-check
+to get close before compiling. Prompt-only limits failed repeatedly in
+the past, so the PDF check is authoritative.
 
 - **What counts (the body):** everything from the Abstract through the
   end of the Conclusion, including section headings, tables, table
@@ -203,7 +228,10 @@ fill.
   them, save the shortest compliant version, and report the overrun and
   why.
 - **Before saving:** compute the body word count and page estimate; if
-  over tolerance, compress and recount until within it.
+  over tolerance, compress and recount until within it. The 650
+  words/page conversion assumes the two-column `default-4` template. For
+  single-column venue styles (NeurIPS/ICML/ICLR), use about 450
+  words/page. Then run Step 9b. The compiled PDF decides.
 
 Sections (combine where appropriate for space, but never omit Results,
 interpretation/Discussion, or Conclusion):
@@ -252,11 +280,20 @@ Limitations / Threats to Validity and "what cannot be concluded" are part
 of a real paper and stay in it; write them as the limitations of the
 working result, not as hedges on whether the result occurred.
 
-Section requirements:
+Section requirements (each also has the pass/fail checks in
+`paper_standards.md` §3; apply both):
 
+- Abstract: problem → limitation of the strongest existing method →
+  what we do (named) → main result with benchmark, metric and comparator
+  at its true claim level → implication. No p-values or CIs unless the
+  central claim is statistical.
 - Introduction: motivation → problem → closest prior work → precise gap →
   research question → proposed test → contribution. Do not exaggerate
-  novelty beyond the prior-work check and archive.
+  novelty beyond the prior-work check and archive. Explain **why the
+  mechanism should work** from the MDV record (Q1–Q3), at its evidence
+  level: "we hypothesize" for E0–E1, "prior work suggests [cite]" for E2.
+  Never state a speculative mechanism as fact. Describe the contribution
+  with its novelty type (NT-A..D) wording.
 - Related Work: from the archive and RQ file. Explain what the closest work
   tested, how this project differs, what gap remains, and why it is worth
   testing. Respect the collision verdict: PARTIAL OVERLAP must be described
@@ -271,8 +308,25 @@ Section requirements:
   testing, released outputs/checkpoints, and implementation details, only
   as supported by the inputs; placeholders for undecided details.
 - Results: construct the intended final results table(s) and figure
-  placeholders. Visibly distinguish published baseline values (with
-  source), measured project results, and `TBD` cells. Pre-experiment,
+  placeholders following `paper_standards.md` §4. Rules:
+  - Existing methods appear under their established names with
+    citations (`Method~\cite{key}` / `Method [n]`).
+  - Every number is PUBLISHED (`*`), REPRODUCED (`†`), OURS, or
+    INCOMPATIBLE (`‡`, separate unranked block). Markers are defined in
+    the caption.
+  - Experimental configurations or arms do not replace method names in
+    the main comparison table. They go in the ablation or analysis table.
+  - Published numbers enter a direct comparison only after the
+    protocol-compatibility check (§4.2).
+  - The main table carries point estimates (plus `± std` over seeds where
+    the venue family reports it). It has **no p-value or CI columns**
+    unless a §5.3 condition holds (then mark `% stats-ok: <reason>`).
+    The statistical result for each headline claim is one sentence in
+    the text. The full statistics go in an appendix table
+    (`templates/tables/stats_appendix.tex`) when the venue allows one.
+  - Start from the venue-family template in `templates/tables/`.
+  - Visibly distinguish published baseline values (with source), measured
+    project results, and `TBD` cells. Pre-experiment,
   write substantive prose that reports the hypothesised qualitative result
   as the paper's result and compares it with the relevant baseline, with
   every unmeasured number `TBD`. The negative/null-result meaning goes in
@@ -289,8 +343,11 @@ Section requirements:
 - Limitations / Threats to Validity: use the project's own validity
   analysis from the RQ file and archive (e.g. benchmark, model, or domain
   specificity, threshold dependence, released-output limitations,
-  calibration or reproduction uncertainty, external validity). No generic
-  filler limitations.
+  calibration or reproduction uncertainty, external validity). Include
+  the MDV failure conditions (Q6) and the problem classes where the
+  assumptions do not hold (Q5, Q10). No generic filler limitations.
+  Limitations are protected content: they are never cut to meet the page
+  limit.
 - Conclusion (mandatory, substantive): what question was tested; the
   answer (pre-experiment: the working conclusion, stated plainly, with
   numbers `TBD`); the contribution; what the result implies; what remains
@@ -329,7 +386,19 @@ Revise the entire paper, not only the `TBD` cells:
     if it is ACHIEVED. It must name the task, the evaluated slice (if not
     the full benchmark), the baseline, the metric and the model or access
     class. A slice result is never phrased as overall SOTA on the
-    benchmark.
+    benchmark. Label it with its performance-claim level (§4f): "state of
+    the art" only for level 1; "strongest reproducible baseline" for
+    level 2; "improves over <baseline>" for level 3; the restriction in
+    the same sentence for level 4.
+14. Re-grade every claim on the claim–evidence ladder
+    (`paper_standards.md` §2). A performance difference (L1/L2) never
+    "proves" or "demonstrates" a mechanism. Mechanism wording needs the
+    MDV Q9 discriminating experiment (L4). Otherwise write "consistent
+    with". Generalization wording must match the MDV Q10 scope.
+15. Statistics: put the measured test results in the text sentence and
+    the appendix table (`paper_standards.md` §5.3). Do not add p-value or
+    CI columns to the main table unless a §5.3 condition holds. Never
+    drop an analysis that was run.
 
 If the results differ from the working hypothesis, rewrite the Abstract,
 Results, Analysis, Discussion, Conclusion, title and claims as needed, and
@@ -370,10 +439,29 @@ Verify, and fix anything that fails:
 - Results and Discussion are consistent;
 - the Abstract and Conclusion are consistent with Results;
 - the Conclusion exists and is substantive;
-- if a page limit was supplied: the body (Abstract through Conclusion)
-  estimate is within the limit plus 5% under the Step 6 "Page limit"
-  conversion, with References, source-listing material and the Revision
-  guide excluded from the count.
+- the body (Abstract through Conclusion) word estimate is within the
+  limit plus 5% under the Step 6 "Page limit" conversion, with
+  References, source-listing material and the Revision guide excluded
+  (pre-check only; Step 9b is authoritative);
+- one-pass reader test: write the five Cs card from the title, abstract,
+  introduction, headings and conclusion only (`paper_standards.md` §1).
+  Revise until every C is answerable. Headings are informative;
+- claim–evidence ladder: no claim above its evidence level; no "proves"
+  or "demonstrates" for a mechanism without L4 evidence; no SOTA wording
+  above the claim level (§4f); novelty wording matches the novelty type;
+- tables: run
+  `python ~/.claude/skills/paper-writer/scripts/check_tables.py <paper file or latex dir>`.
+  Fix every ERROR. Fix or justify every WARN (missing citation on a
+  baseline row, configuration label in the main table, statistics in the
+  main table without `stats-ok`);
+- every PUBLISHED number has its source location and passed the
+  protocol-compatibility check; every REPRODUCED number says how it was
+  reproduced;
+- statistical rigor: the pre-registered test was run and is reported (in
+  text and/or appendix), with the number of runs, what ± means, and the
+  correction method stated in the setup;
+- the MDV record is reflected: the mechanism at its E-level, failure
+  conditions in Limitations, claims scoped to Q10.
 
 ### Step 9: Save the paper
 
@@ -385,6 +473,66 @@ Verify, and fix anything that fails:
   unused version number: `paper_RQk_v2.md`, `paper_RQk_v3.md`, and so on.
   Check which versions already exist first.
 - Never overwrite an existing paper file.
+
+### Step 9b: Compile and enforce the page limit on the PDF (mandatory; added 2026-10-17)
+
+The Markdown paper is the content record. The page limit is verified on
+a compiled LaTeX version in the target venue template:
+
+1. **Build** `paper_RQk_vN_latex/` next to the Markdown file. Use the
+   paper-to-latex conventions: `main.tex`, `references.bib`, `tables/`,
+   `figures/`, and the venue template.
+   - `default-4`: `~/.claude/skills/paper-to-latex/templates/main_twocolumn.tex`.
+   - Other venues: copy the bundled official kit named by the profile's
+     `kit` field (`templates/venues/_downloads/...`; sources in
+     `SOURCES.json`) and start from its `kit_main` example. Never edit
+     the `.sty`/`.cls`. For an unbundled venue or year, ask the user to
+     supply the file or approve a download from the official author kit.
+   - Copy `templates/tables/table_macros.tex` into the project.
+   - Put `\label{pl:bodyend}` right after the Conclusion's last line.
+     Keep paper-to-latex's `pl:refsstart` marker if its template is used.
+   - Wording is copied verbatim from the Markdown. This is a conversion,
+     not a rewrite.
+2. **Configure** `pagelimit.json` in that folder, following
+   `paper_standards.md` §6:
+   - the venue, the limit, and what counts toward the limit;
+   - `max_iterations: 6`;
+   - `required_sections`: one pattern per section that exists in this
+     paper (e.g. `"Experiment|Results"`, `"Limitation"`, `"Conclusion"`);
+   - `required_labels`: the main-results table label, and the
+     ablation/control table label when present.
+3. **Check:**
+   `python ~/.claude/skills/paper-to-latex/scripts/check_page_limit.py "<latex_dir>" --reset`
+   (use `--reset` only on the first check of a new paper version).
+4. **Loop on the exit code:**
+   - 0 PASS → done.
+   - 1 OVER LIMIT → revise by the cut ladder in `paper_standards.md` §6,
+     using the reported overflow (words/lines) to size the cut.
+   - 2 COMPILE FAILURE → fix the LaTeX.
+   - 3 FORMAT/TEMPLATE VIOLATION → remove the hack; never shrink fonts,
+     margins or spacing.
+   - 6 ESSENTIAL CONTENT MISSING → restore the cut section or table.
+
+   **Apply every content edit to both the `.md` and the `.tex`**, then
+   re-run. Never cut protected content (§6 item 4).
+5. **Failure condition:**
+   - exit 5 (MAX ITERATIONS), or
+   - only protected content remains to cut.
+
+   Then stop. Save the shortest compliant-as-possible version. In the
+   reply, report the measured overflow, what was cut, what remains and
+   why it is essential, and the options (approve specific cuts, move
+   named items to an appendix, change the limit or venue). Never silently
+   remove essential content.
+6. After PASS, run paper-to-latex's `compare_content.py` (Markdown
+   source vs compiled PDF) to confirm the two versions say the same
+   thing.
+
+The global Stop hook (`~/.claude/hooks/page_limit_gate.py`) re-runs this
+check automatically when the session ends and blocks completion while
+the PDF is over the limit. It is a backstop, not a substitute for this
+step. If no LaTeX toolchain is available, say that the page limit is
+UNVERIFIED. Never report an estimated page count as verified.
 
 ## Claim discipline
 
@@ -438,12 +586,13 @@ After saving, reply with:
   resolved;
 - placeholders left for undecided details;
 - the consistency-check result;
-- if a page limit was supplied: the requested page limit; the approximate
-  body word count (and figure placeholders counted); the approximate
-  body-page estimate (at 650 words/page); confirmation that References,
-  bibliography, source-listing material and the Revision guide were
-  excluded from the count; and, if the limit could not be met, the overrun
-  and why.
+- the venue profile and page limit; the **compiled-PDF page check
+  result** from Step 9b (status, counted pages, method, number of
+  revision rounds), plus the word-estimate pre-check; confirmation that
+  References, bibliography, source-listing material and the Revision
+  guide were excluded from the count; and, if the limit could not be
+  met, the overrun and why;
+- the five Cs card (one line each) and the `check_tables.py` result.
 
 The paper itself goes in the file. Do not reply with only an outline,
 suggestions, section summaries, TODOs, or writing advice.
@@ -459,4 +608,9 @@ Do NOT:
 - process more than the one selected project;
 - replace the supplied input files with versions found elsewhere;
 - invent mentor advice, citations, or measured results;
-- stop writing because experimental results are unavailable.
+- stop writing because experimental results are unavailable;
+- present a published number as reproduced, or a reproduced number as
+  published; compare against a published number from an incompatible
+  protocol;
+- meet the page limit by shrinking fonts, margins or spacing, by
+  switching to a denser template, or by deleting protected content.
