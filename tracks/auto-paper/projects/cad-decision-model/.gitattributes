@@ -1,0 +1,15 @@
+# Preserve original ACM distribution bytes and source hashes.
+outputs/week-03/paper-source/ACM-Reference-Format.bst -whitespace
+outputs/week-03/paper-source/acmart.cls -whitespace
+outputs/week-03/paper-source/template-source/acmart.dtx -whitespace
+
+# Preserve the tested API snapshot, including its existing terminal blank lines.
+# Other whitespace checks continue to apply to these files.
+app/README.md whitespace=-blank-at-eof
+app/cad_api/__init__.py whitespace=-blank-at-eof
+app/cad_api/jobs.py whitespace=-blank-at-eof
+app/cad_api/storage.py whitespace=-blank-at-eof
+app/cad_api/vendor/__init__.py whitespace=-blank-at-eof
+app/cad_api/vendor/v12/__init__.py whitespace=-blank-at-eof
+app/pyproject.toml whitespace=-blank-at-eof
+app/tests/test_connection_review.py whitespace=-blank-at-eof

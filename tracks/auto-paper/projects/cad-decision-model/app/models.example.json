@@ -1,0 +1,25 @@
+{
+  "default_backend": "jev",
+  "backends": [
+    {
+      "id": "jev",
+      "provider": "typesafe",
+      "endpoint": "https://api.typesafe.ai",
+      "model": "jev-1.14.0",
+      "api_key_env": "TYPESAFE_API_KEY",
+      "timeout_seconds": 90,
+      "concurrency": 8,
+      "max_request_tokens": 24000
+    },
+    {
+      "id": "custom",
+      "provider": "decision_http",
+      "endpoint": "http://127.0.0.1:9000/v1/decide",
+      "model": "decision-model-v1",
+      "api_key_env": "CUSTOM_DECISION_API_KEY",
+      "timeout_seconds": 90,
+      "concurrency": 8,
+      "max_request_tokens": 24000
+    }
+  ]
+}

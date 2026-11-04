@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "checked_date": "2026-10-26",
+  "checks": {
+    "relative_markdown_file_links": 26,
+    "bound_source_hashes": 95,
+    "public_metric_formulas": 6,
+    "synthetic_svg_xml": "valid",
+    "checked_project_files_excluding_this_receipt": 103
+  },
+  "open_pr_file_overlap": {
+    "checked_prs": [
+      29,
+      28,
+      27,
+      26,
+      25,
+      24,
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      11,
+      9,
+      4
+    ],
+    "overlap": []
+  },
+  "scope": "Publication copy links, hashes, metric arithmetic and exclusion list only; no model inference or new benchmark accuracy evaluation.",
+  "errors": [],
+  "whitespace_preservation": {
+    "attributes_file": "../../.gitattributes",
+    "unchanged_acm_distribution_files": 3,
+    "api_files_existing_terminal_blank_line_only": 8,
+    "source_hashes_preserved": true,
+    "validation_command": "git diff --check origin/main...HEAD"
+  }
+}
