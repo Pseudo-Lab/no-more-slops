@@ -1,0 +1,79 @@
+{
+  "schema": "evidence_tracked_research_procedure_revision_validation_v1",
+  "revision": "2026-10-18",
+  "checked_at_utc": "2026-10-18T14:59:50.207694+00:00",
+  "author": "@darkwingduck-code",
+  "track": "Auto-Paper",
+  "week": "Week 01 revision",
+  "original_pr": 11,
+  "skill": {
+    "path": "tracks/auto-paper/skills/evidence-tracked-research/SKILL.md",
+    "name": "evidence-tracked-research",
+    "sha256": "d805a2372269bf65b5900358896e3c962c7008e72f505e6cd7f578fb20df6d72",
+    "lines": 113
+  },
+  "checks": [
+    {
+      "command": "python scripts/check_repository.py --catalog",
+      "result": "pass",
+      "errors": 0,
+      "scope": "Repository paths and unique skill name; not semantic or behavioral efficacy."
+    },
+    {
+      "command": "python scripts/test_check_repository.py",
+      "result": "pass",
+      "tests": 8
+    },
+    {
+      "command": "python quick_validate.py tracks/auto-paper/skills/evidence-tracked-research",
+      "result": "pass",
+      "tool": "Installed official skill-creator quick_validate.py",
+      "scope": "Frontmatter and naming validation."
+    },
+    {
+      "command": "git diff --check",
+      "result": "pass"
+    },
+    {
+      "check": "Compare canonical SKILL bytes with the related paper contribution",
+      "result": "pass",
+      "shared_paths": [
+        "tracks/auto-paper/skills/evidence-tracked-research/SKILL.md"
+      ],
+      "related_pr": 14
+    },
+    {
+      "check": "Independent same-session reviewer of instructions and contribution docs",
+      "result": "two method-scope corrections applied",
+      "corrections": [
+        "Permit selection-set Q access when declared; require fresh final evidence only for claims needing independent final evaluation.",
+        "Use the average-single composition contrast for its stated research question; fix other estimands for other questions."
+      ],
+      "external_peer_review": false
+    }
+  ],
+  "submission": {
+    "same_existing_skill_name": true,
+    "new_skill_copies": 0,
+    "related_pr_dependency": false,
+    "unique_contribution": "Project comparison and scope documentation, Week 01 revision documentation and this validation receipt.",
+    "shared_file_policy": "Only canonical SKILL.md is shared with PR #14; its final bytes are identical. Merge and squash order simulations are reported in the submission PR, not certified by this structural receipt."
+  },
+  "status": {
+    "procedure_revision": true,
+    "active_skill_changed": false,
+    "model_calls": 0,
+    "new_experiments": 0,
+    "held_out_behavioral_evaluation": "not run",
+    "scientific_or_model_improvement": "not claimed",
+    "candidate_promotion": "not performed",
+    "external_peer_review": "not performed",
+    "remote_pr_merge": "not performed"
+  },
+  "limitations": [
+    "Historical research lessons informed these instructions; no control experiment isolates their effect.",
+    "Structural validation does not certify research truth, held-out independence or model performance.",
+    "Existing author records and previous validation descriptions are retained as historical records."
+  ],
+  "acknowledgement": "This work was created as part of the No-More-Slops group activities at Pseudo Lab."
+}
