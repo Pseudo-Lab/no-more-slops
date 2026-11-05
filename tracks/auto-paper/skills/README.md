@@ -13,6 +13,7 @@ contributions and are not part of this workflow.
 | **B. Paper and experiment loop** (required workflow) | paper-writer, experiment-runner | `experiment-runner` only accepts a paper from `paper-writer`, and its results go back into `paper-writer`. Group B's input is group A's output. |
 | **C. Finishing tools** (run independently; optional combinations) | paper-visuals, paper-to-latex, paper-results-reviser | Each is run by itself on any paper. They share some files with `paper-writer` (see Setup). |
 | **Standalone** | [research-benchmark-advisor](research-benchmark-advisor/README.md) | Has no dependency on the other skills. See its own README. |
+| **Standalone** | [hackathon-idea-strategist](hackathon-idea-strategist/SKILL.md) | 다른 스킬에 의존하지 않습니다. 해커톤 역대 수상작과 반복 수상자를 조사해 아이디어를 경쟁력 있는 MVP·일정·데모 계획으로 바꿉니다. |
 
 ## Purpose
 

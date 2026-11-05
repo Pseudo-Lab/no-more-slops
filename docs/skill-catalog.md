@@ -30,6 +30,7 @@
 | [paper-visuals](../tracks/auto-paper/skills/paper-visuals/SKILL.md) | 논문에 필요한 도표와 시각 자료를 구성합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [paper-writer](../tracks/auto-paper/skills/paper-writer/SKILL.md) | 하나의 연구 프로젝트를 실험 전·후 원고로 구성합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [prescreen-calibration](../tracks/auto-paper/skills/prescreen-calibration/SKILL.md) | 주제 사전 점검표가 실제 채택 논문까지 떨어뜨리는지, 본회의와 Findings를 가르는지 채택 논문 표본으로 확인하고 수정안을 냅니다. | [#33](https://github.com/Pseudo-Lab/no-more-slops/pull/33) |
+| [hackathon-idea-strategist](../tracks/auto-paper/skills/hackathon-idea-strategist/SKILL.md) | 대상 해커톤·관련 해커톤의 역대 수상작과 반복 수상자를 공개 출처로 조사·점수화해 전략을 뽑고, 사용자 아이디어를 경쟁력 있는 컨셉·MVP·아키텍처·일정·데모/피칭 계획으로 바꿉니다. 다른 스킬 없이 단독으로 사용합니다. | — |
 | [prior-work-checker](../tracks/auto-paper/skills/prior-work-checker/SKILL.md) | 기존 연구와의 중복·참신성·SOTA 비교 조건을 확인합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-benchmark-advisor](../tracks/auto-paper/skills/research-benchmark-advisor/SKILL.md) | 실시간 웹 근거로 하위 분야·공개 벤치마크·SOTA 방법을 조사해, 초보 연구자가 4일 안에 가장 강한 공개 기준선을 넘을 가능성이 높은 조합을 순위로 제시합니다. 다른 스킬 없이 단독으로 사용합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [research-pipeline](../tracks/auto-paper/skills/research-pipeline/SKILL.md) | 연구 질문·벤치마크·선행연구·계산 예산을 연결하는 연구 흐름 조합. #12에서 실험·집필 단계로 확장합니다. | [#1](https://github.com/Pseudo-Lab/no-more-slops/pull/1) · [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
