@@ -64,6 +64,8 @@
 | [ship-loop](../tracks/auto-application/skills/ship-loop/SKILL.md) | 단계마다 변경·검증·배포 기록을 반복합니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [skeleton-on-prod](../tracks/auto-application/skills/skeleton-on-prod/SKILL.md) | 운영 환경에서 동작하는 서비스 골격을 먼저 만듭니다. | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [decision-log](../tracks/auto-application/skills/decision-log/SKILL.md) | 소유자가 아직 정하지 않은 값·분기·확인 항목을 문서 한 장에 모으고 결정이 나면 닫습니다. | [#34](https://github.com/Pseudo-Lab/no-more-slops/pull/34) |
+| [kakao-login-console](../tracks/auto-application/skills/kakao-login-console/SKILL.md) | Supabase 서비스에 카카오 로그인을 붙일 때 콘솔 설정 순서·키 숨김 입력·운영 반영·점검을 안내합니다. 뼈대 전체를 세우는 `skeleton-on-prod`, 로컬·운영을 나누는 `env-split`과 달리 카카오 콘솔과 KOE 오류만 다룹니다. | #PRNUM |
+| [service-mcp](../tracks/auto-application/skills/service-mcp/SKILL.md) | Next.js + Supabase 서비스에 MCP 서버를 붙여 사용자가 AI 비서로 자기 데이터를 읽고 넣게 합니다. 개인 키(해시)·security definer 함수·일회용 파일 업로드 경로·점검 스크립트를 포함합니다. | #PRNUM |
 
 ## Auto-Post
 
