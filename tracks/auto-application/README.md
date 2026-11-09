@@ -15,4 +15,4 @@
 | [projects/tonlit](projects/tonlit/README.md) | @gogoymh | [#7](https://github.com/Pseudo-Lab/no-more-slops/pull/7) |
 | [projects/oraeorae](projects/oraeorae/README.md) | @Woo-Yeol | [#10](https://github.com/Pseudo-Lab/no-more-slops/pull/10) |
 | [projects/fewshot](projects/fewshot/README.md) | @gogoymh | [#20](https://github.com/Pseudo-Lab/no-more-slops/pull/20) |
-| [projects/with-trainer](projects/with-trainer/README.md) | @Woo-Yeol | [#34](https://github.com/Pseudo-Lab/no-more-slops/pull/34) |
+| [projects/with-trainer](projects/with-trainer/README.md) (코치코치) | @Woo-Yeol | [#34](https://github.com/Pseudo-Lab/no-more-slops/pull/34), [#39](https://github.com/Pseudo-Lab/no-more-slops/pull/39) |
