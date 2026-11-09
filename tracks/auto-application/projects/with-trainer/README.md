@@ -1,11 +1,14 @@
-# with trainer
+# 코치코치 (구 with trainer)
 
 - 작성자: @Woo-Yeol
 - 트랙: Auto-Application
-- 서비스: 로컬 전용(운영 배포 없음). 트레이너와 회원이 같은 웹을 역할별로 씁니다.
+- 서비스: https://coachcouch.kro.kr (5주차부터 운영, 카카오 로그인). 트레이너와 회원이 같은 웹을 역할별로 씁니다.
+- 이름: 코치(coach, PT 선생님) + 코치(couch, 소파 위 회원). 4주차까지는 with trainer였고, 폴더 경로는 링크 보존을 위해 그대로 둡니다.
 - 소스 코드: 비공개 저장소(Woo-Yeol/with-trainer). 이 폴더에는 서비스 소개, 결과 기록, 사용한 스킬만 둡니다.
 
 ## 무엇을 하나
+
+> 아래 소개와 그림은 4주차 기준입니다. 5주차에 바뀐 점(카카오 로그인, 다대다 연결, 회원 직접 기록·영상·공유, 댓글·대화, AI 비서 MCP)은 [Week 05](outputs/week-05/README.md#지난주-대비)에 정리했습니다.
 
 한국의 첫 PT 회원과 트레이너가 **같이 쓰는 기록장**입니다. 트레이너는 수업 뒤 자세 영상 한 개와 "기억할 것" 몇 줄을 카드로 보내고, 회원은 혼자 운동할 때 그 카드를 다시 보고 "기록" 한 번으로 남깁니다. 트레이너는 다음 수업 전에 회원이 혼자 한 운동과 "통증이 있었어요" 같은 메모를 한 화면(브리핑)으로 읽습니다.
 
@@ -28,7 +31,10 @@ flowchart LR
 
 ## 스택
 
-Next.js 16 App Router(cacheComponents) · Tailwind v4 · Supabase 로컬(익명 세션, RLS, security definer RPC, 비공개 Storage 버킷) · Playwright(2기기 E2E·스크린샷). 운영 배포, 로그인, 결제는 없습니다.
+Next.js 16 App Router(cacheComponents) · Tailwind v4 · Supabase(RLS, security definer RPC, 비공개 Storage 버킷) · Playwright(2기기 E2E·스크린샷).
+
+- 4주차: 로컬 Supabase, 익명 세션.
+- 5주차: Vercel(icn1) + 호스팅 Supabase(ap-northeast-2), 카카오 로그인(PKCE), 상태 없는 MCP 엔드포인트(`/api/mcp`). 결제는 아직 없습니다.
 
 ## 사용한 스킬
 
@@ -40,7 +46,10 @@ Next.js 16 App Router(cacheComponents) · Tailwind v4 · Supabase 로컬(익명 
 | [decision-log](../../skills/decision-log/SKILL.md) | **이번 PR에서 추가.** 소유자가 자리를 비운 사이 정하지 못한 것 16개를 문서 한 장에 모으고, 돌아온 뒤 12개를 닫음 |
 | [env-split](../../skills/env-split/SKILL.md) | 로컬 Supabase 포트를 다른 프로젝트(543xx·544xx·545xx)와 분리한 546xx, `.env.example` |
 | [glance-and-guardrails](../../skills/glance-and-guardrails/SKILL.md) | 브리핑 한눈 보기, 카드·일정 삭제 `<dialog>` 확인 |
-| [design-conductor](../../skills/design-conductor/SKILL.md) | 390·768·1440px 라이트/다크 스크린샷을 직접 보고 고침. 모바일과 데스크톱 레이아웃 분리 |
+| [design-conductor](../../skills/design-conductor/SKILL.md) | 390·768·1440px 라이트/다크 스크린샷을 직접 보고 고침. 모바일과 데스크톱 레이아웃 분리. 5주차 랜딩·회원 웹 화면 |
+| [skeleton-on-prod](../../skills/skeleton-on-prod/SKILL.md) | 5주차 운영 배포: Vercel·호스팅 Supabase·RLS 그대로 운영으로 |
+| [kakao-login-console](../../skills/kakao-login-console/SKILL.md) | **5주차 PR에서 추가.** 카카오 콘솔 설정 순서, 키 숨김 입력, `config diff` 후 운영 값 고정, 점검 스크립트 |
+| [service-mcp](../../skills/service-mcp/SKILL.md) | **5주차 PR에서 추가.** 회원 개인 키로 부르는 MCP 서버, 일회용 영상 업로드 경로 |
 
 `micro-saas-week`의 배포·로그인·결제 단계(skeleton-on-prod, launch-basics, core-feature-with-review, model-bakeoff)는 이번 주 범위(로컬 전용, AI 출력 없음)에 없어 쓰지 않았습니다.
 
@@ -55,5 +64,6 @@ Next.js 16 App Router(cacheComponents) · Tailwind v4 · Supabase 로컬(익명 
 ## 결과물
 
 - [Week 04](outputs/week-04/README.md)
+- [Week 05](outputs/week-05/README.md): 운영 배포, 코치코치로 이름 변경, 회원의 공간, AI 비서(MCP)
 
 > This work was created as part of the No-More-Slops group activities at Pseudo Lab.

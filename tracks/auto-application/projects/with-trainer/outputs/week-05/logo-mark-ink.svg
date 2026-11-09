@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="코치코치 로고: 땀 밴드를 두른 포니테일 남성 트레이너 얼굴(잉크 캐리커처)">
+  <defs>
+    <!-- 잉크 마커: 선을 흔들고 살짝 번지게 한 뒤 문턱값으로 다시 잘라 가장자리가 울퉁불퉁한 먹선을 만든다 -->
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="1.6" result="b"/>
+      <feComponentTransfer in="b"><feFuncA type="discrete" tableValues="0 0 1 1"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#fff"/>
+  <g filter="url(#ink)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 포니테일: 뒤통수에서 왼쪽 아래로 -->
+    <path fill="#000" stroke-width="6" d="M156 236 C 108 240, 82 290, 84 350 C 86 408, 102 452, 86 502 C 124 466, 138 414, 134 358 C 132 312, 140 280, 158 262 Z"/>
+    <path stroke-width="9" d="M146 236 C 136 246, 136 262, 148 270"/>
+    <!-- 굵은 목과 승모근 -->
+    <path stroke-width="12" d="M206 428 C 202 458, 176 478, 126 494 C 108 500, 98 506, 92 512"/>
+    <path stroke-width="12" d="M330 430 C 334 460, 360 480, 410 494 C 428 500, 438 506, 444 512"/>
+    <!-- 얼굴: 각진 턱 -->
+    <path stroke-width="12" d="M146 222 C 142 140, 200 92, 270 92 C 342 92, 394 140, 392 222 C 390 286, 384 338, 364 382 C 344 424, 306 446, 268 446 C 230 446, 194 426, 174 388 C 154 350, 148 290, 146 222 Z"/>
+    <!-- 뒤로 넘긴 머리 -->
+    <path fill="#000" stroke-width="6" d="M142 204 C 134 120, 200 68, 272 68 C 350 68, 404 122, 398 198 C 330 178, 214 178, 142 204 Z"/>
+    <!-- 땀 밴드 -->
+    <path stroke-width="10" d="M142 204 C 214 178, 330 178, 398 198 L 396 236 C 330 216, 214 216, 144 240 Z"/>
+    <path stroke-width="6" d="M196 196 L 196 226 M 340 192 L 340 222"/>
+    <!-- 귀 -->
+    <path stroke-width="10" d="M392 262 C 414 256, 422 294, 398 306"/>
+    <!-- 굵은 눈썹, 눈, 콧날 -->
+    <path stroke-width="18" d="M186 266 L 248 278 M 288 278 L 350 262"/>
+    <ellipse fill="#000" stroke-width="0" cx="222" cy="304" rx="9" ry="11"/>
+    <ellipse fill="#000" stroke-width="0" cx="318" cy="302" rx="9" ry="11"/>
+    <path stroke-width="10" d="M270 296 L 256 346 L 280 350"/>
+    <!-- 자신만만한 입꼬리 -->
+    <path stroke-width="10" d="M222 384 C 248 398, 290 398, 316 378"/>
+    <path stroke-width="8" d="M316 378 L 326 370"/>
+    <!-- 땀방울 -->
+    <path stroke-width="7" d="M424 220 C 414 238, 412 250, 424 254 C 436 250, 434 238, 424 220 Z"/>
+  </g>
+</svg>
