@@ -1,0 +1,5 @@
+data/preds/
+data/*.parquet
+data/*.log
+app/.venv/
+__pycache__/
