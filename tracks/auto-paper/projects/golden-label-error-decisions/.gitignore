@@ -3,3 +3,5 @@ data/*.parquet
 data/*.log
 app/.venv/
 __pycache__/
+outputs/week-04/paper.html
+outputs/week-04/.fonts/

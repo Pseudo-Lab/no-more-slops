@@ -2,7 +2,7 @@
 
 | 결과물 | 파일 | 상태 |
 | --- | --- | --- |
-| 논문 초안 | [paper.md](paper.md), [fig/](fig/) | 실험 결과 반영 1차 초안. 심사·퇴고 전 |
+| 논문 초안 v2 | [paper.md](paper.md), [paper.pdf](paper.pdf), [fig/](fig/) | 심사 1라운드(Major, 필수 12건) 전부 반영: [reviews/round1/](../../reviews/round1/) |
 
 ## 검증
 
