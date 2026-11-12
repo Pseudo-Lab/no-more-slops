@@ -15,7 +15,7 @@ google/gemma-7b google/gemma-2b microsoft/phi-2 01-ai/Yi-6B 01-ai/Yi-34B Eleuthe
 mosaicml/mpt-7b mosaicml/mpt-30b huggyllama/llama-7b huggyllama/llama-13b huggyllama/llama-30b huggyllama/llama-65b
 deepseek-ai/deepseek-llm-7b-base deepseek-ai/deepseek-llm-67b-base internlm/internlm2-7b
 upstage/SOLAR-10.7B-v1.0 HuggingFaceH4/zephyr-7b-beta teknium/OpenHermes-2.5-Mistral-7B openchat/openchat_3.5
-allenai/OLMo-7B stabilityai/stablelm-3b-4e1t tiiuae/falcon-180B Intel/neural-chat-7b-v3-1
+allenai/OLMo-7B-hf allenai/OLMo-1.7-7B-hf stabilityai/stablelm-3b-4e1t tiiuae/falcon-180B Intel/neural-chat-7b-v3-1
 lmsys/vicuna-13b-v1.5 lmsys/vicuna-7b-v1.5 WizardLM/WizardLM-70B-V1.0 NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO""".split()
 
 def norm(s): return re.sub(r"\s+", " ", s).strip()
