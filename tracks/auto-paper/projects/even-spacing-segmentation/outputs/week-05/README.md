@@ -14,6 +14,15 @@
 
 동료 심사를 받지 않은 프리프린트 초안입니다. 논문에 따르면 AI 코딩 에이전트가 분석 코드, 사전등록 4건, 실험 실행, 원고 초안을 맡았고, 저자가 제출 전에 코드와 원고를 검토했습니다.
 
+## 관련 작업: AutoResearchLab 수정
+
+지난주에 사용한 [TaewiKim/autoresearchlab](https://github.com/TaewiKim/autoresearchlab)을 Claude 런타임(`--agent-runtime claude`)에서 돌리며 토큰 사용처를 측정했습니다. 그 과정에서 찾은 버그 4건을 고쳐 원 저장소에 [PR #1](https://github.com/TaewiKim/autoresearchlab/pull/1)로 올렸고, 현재 리뷰 대기(open) 상태입니다. 수정 코드는 이 폴더에 포함하지 않았습니다.
+
+1. Claude 사용 한도 응답을 `quota_exceeded`로 분류하지 못해, 한도에 걸린 레인이 계속 실행됐습니다.
+2. 중간 크기 파일을 읽을 때 앞뒤 창이 겹치는 부분이 두 번 들어가 프롬프트가 부풀었습니다(9.3 KB 파일이 16 KB로 들어감).
+3. 결과를 끝에 한 번만 출력하는 Claude 레인을 idle watchdog이 멈춘 것으로 보고 900초에 종료했습니다.
+4. 카탈로그 모델 ID를 쓴 레인에 `--model`이 전달되지 않아, CLI 기본 모델(대개 가장 비싼 모델)로 실행됐습니다.
+
 ## 논문 요약
 
 **연구 질문**
