@@ -36,6 +36,11 @@ cd app
 uv run python fetch.py      # 데이터 다운로드(인증 없이 약 1시간)
 uv run python analyze.py    # 결과 CSV(약 1–2분)
 uv run python figures.py
+
+# PDF: 선행 리뷰 프로젝트의 빌더를 재사용(Chromium 필요)
+cd ../../golden-dataset-review/app
+uv run pdf.py --keep-all --float-wide --src ../../golden-label-error-decisions/outputs/week-04/paper.md \
+  --out ../../golden-label-error-decisions/outputs/week-04/paper.pdf
 ```
 
 ## 사용한 스킬과 도구
