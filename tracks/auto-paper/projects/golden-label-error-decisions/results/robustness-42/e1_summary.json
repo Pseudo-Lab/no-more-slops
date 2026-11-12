@@ -1,0 +1,17 @@
+{
+  "real_errors": {
+    "n_items": 5690,
+    "n_S": 5421,
+    "n_corrected": 100,
+    "n_unresolved": 269,
+    "err_rate_S": 0.018446781036709093,
+    "orig_label_is_modal_distractor": 0.43,
+    "model_acc_on_orig_label_corrected_items": 0.18714285714285714,
+    "model_acc_on_fixed_label_corrected_items": 0.530952380952381,
+    "model_acc_on_ok_items": 0.5950456860060318
+  },
+  "kendall_tau": {
+    "orig_S": 0.9924464197177538,
+    "published_all": 0.9907084785133565
+  }
+}
