@@ -90,25 +90,4 @@ ax.set_ylabel("라벨 수정 후 결정 반전율 (%)")
 fig.tight_layout()
 save(fig, "fig2_subject_flips")
 
-# Fig 3: 2x2 ablation and no-label-error baselines at n=870.
-order = [("swap", "문항 교체 기준선"), ("drop", "문항 제거 기준선"), ("random", "무작위 오류"),
-         ("hard_random", "어려운 문항 오류"), ("uniform_modal", "대표 오답 오류"), ("systematic", "체계적 오류")]
-g = e[(e.n == 870) & (e.rate == 0.03)].set_index("mech")
-order = [(m, lab) for m, lab in order if m in g.index]
-vals = [100 * g.loc[m, "flip_rate"] for m, _ in order]
-err = [[100 * (g.loc[m, "flip_rate"] - g.loc[m, "flip_ci_lo"]) for m, _ in order],
-       [100 * (g.loc[m, "flip_ci_hi"] - g.loc[m, "flip_rate"]) for m, _ in order]]
-cols = {"swap": "#a9b0b8", "drop": "#a9b0b8", "random": "#5b8fc9", "hard_random": "#2f6db0",
-        "uniform_modal": "#2f6db0", "systematic": "#0b2e5c"}
-fig, ax = plt.subplots(figsize=(COL, 1.85))
-ax.barh([lab for _, lab in order], vals, xerr=err, color=[cols[m] for m, _ in order], height=0.62,
-        error_kw=dict(lw=0.7, capsize=1.5, capthick=0.7))
-for i, (v, hi) in enumerate(zip(vals, err[1])):
-    ax.text(v + hi + 0.06, i, f"{v:.2f}", va="center", fontsize=7, color="#333")
-ax.invert_yaxis()
-ax.set_xlim(0, max(vals) * 1.22)
-ax.grid(axis="y", visible=False)
-ax.set_xlabel("결정 반전율 (%)")
-fig.tight_layout()
-save(fig, "fig3_ablation")
 print("ok")

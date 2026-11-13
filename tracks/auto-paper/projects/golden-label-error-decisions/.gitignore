@@ -1,4 +1,5 @@
 data/preds/
+data/rerun/
 data/*.parquet
 data/*.log
 app/.venv/

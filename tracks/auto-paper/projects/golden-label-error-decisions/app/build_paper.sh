@@ -6,7 +6,7 @@
 # Noto Serif KR (SIL OFL) is downloaded the same way. Both go to outputs/week-04/.build/ (git-ignored).
 #
 # Figures (figures.py) and table bodies (tables.py) are regenerated from results/ first; pass
-# --no-figures to only recompile the TeX.
+# --no-figures to only recompile the TeX. paper.md is regenerated from paper.tex by tex2md.py.
 # Requirements: tectonic (brew install tectonic), uv, curl. Usage: app/build_paper.sh [--no-figures]
 set -euo pipefail
 
@@ -34,6 +34,7 @@ if [ "${1:-}" != "--no-figures" ]; then
 fi
 
 cd "$OUT"
-tectonic -X compile paper.tex -Z search-path="$BUILD" --keep-logs
-rm -f paper.log
-echo "wrote $OUT/paper.pdf"
+tectonic -X compile paper.tex -Z search-path="$BUILD" --keep-logs --keep-intermediates
+(cd "$HERE" && uv run python tex2md.py)   # paper.md: GitHub-readable copy numbered from paper.aux
+rm -f paper.log paper.aux paper.bbl paper.out
+echo "wrote $OUT/paper.pdf and $OUT/paper.md"

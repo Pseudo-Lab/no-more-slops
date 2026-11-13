@@ -36,12 +36,12 @@ c = lambda v: f"{int(v):,}"
 write("tab_natural", [
     r"\begin{tabular}{@{}lrrrrr@{}}", r"\toprule",
     r"조건 & 기준 우세 & 반전 & 상실 & 허위 & 역전 \\", r"\midrule",
-    rf"\multicolumn{{6}}{{@{{}}l}}{{\textit{{전체 셋, {c(full.loc['orig_S', 'pairs'])}쌍}}}} \\",
+    rf"\multicolumn{{6}}{{@{{}}l}}{{\textit{{전체 평가셋, {c(full.loc['orig_S', 'pairs'])}쌍}}}} \\",
     row(r"$S$의 원래 정답", *(c(full.loc["orig_S", k]) for k in ["ref_decided", "flips", "lost", "spurious", "reversals"])),
     row(r"공개 점수", *(c(full.loc["published_all", k]) for k in ["ref_decided", "flips", "lost", "spurious", "reversals"])),
     row(r"McNemar--Holm", *(c(mh[k]) for k in ["decided", "flips", "lost", "spurious", "reversals"])),
     r"\midrule",
-    rf"\multicolumn{{6}}{{@{{}}l}}{{\textit{{과목 단위 셋, {x['subject_flip_correlation']['n_subjects']}과목, {c(sub.pairs)}쌍}}}} \\",
+    rf"\multicolumn{{6}}{{@{{}}l}}{{\textit{{과목 단위 평가셋, {x['subject_flip_correlation']['n_subjects']}과목, {c(sub.pairs)}쌍}}}} \\",
     row(r"$S$의 원래 정답", *(c(sub[k]) for k in ["ref_decided", "flips", "lost", "spurious", "reversals"])),
     row(r"McNemar--Holm", "--", c(smh["flips"]), "--", "--", c(smh["reversals"])),
     r"\bottomrule", r"\end{tabular}"])
@@ -70,13 +70,14 @@ write("tab_injection", lines)
 # Audit operating characteristic (509 items) next to flip rates at the same error rate.
 oc = pd.read_csv(R / "e3_audit_oc.csv")
 oc = oc[oc.audit_n == 509].set_index("rate")
-lines = [r"\begin{tabular}{@{}cccccc@{}}", r"\toprule",
-         r" & & \multicolumn{2}{c}{$n$ = 100} & \multicolumn{2}{c}{$n$ = 870} \\",
-         r"\cmidrule(lr){3-4}\cmidrule(l){5-6}",
-         r"오류율 & 통과 확률 & 무작위 & 체계적 & 무작위 & 체계적 \\", r"\midrule"]
+lines = [r"\begin{tabular}{@{}ccccccc@{}}", r"\toprule",
+         r" & & \multicolumn{2}{c}{$n$ = 100} & \multicolumn{3}{c}{$n$ = 870} \\",
+         r"\cmidrule(lr){3-4}\cmidrule(l){5-7}",
+         r"오류율 & 통과 확률 & 무작위 & 체계적 & 무작위 & 체계적 & 교체 \\", r"\midrule"]
 for rate in [0.0025, 0.005, 0.0075, 0.01]:
-    vals = [cell(d3_r, n, m, "flip_rate") for d3_r in [e[(e.delta == 0.03) & (e.rate == rate)].set_index(["n", "mech"])]
-            for n in [100, 870] for m in ["random", "systematic"]]
+    er = e[(e.delta == 0.03) & (e.rate == rate)].set_index(["n", "mech"])
+    vals = [cell(er, 100, m, "flip_rate") for m in ["random", "systematic"]]
+    vals += [cell(er, 870, m, "flip_rate") for m in ["random", "systematic", "swap"]]
     p = 100 * oc.loc[rate, "p_pass_zero_error"]
     lines.append(f"{num(100 * rate)} & {num(p, 1)} & " + " & ".join(vals) + r" \\")
 lines += [r"\bottomrule", r"\end{tabular}"]
@@ -92,4 +93,61 @@ for _, r in a.iterrows():
                  rf"{num(100 * r.acc_clean_S, 1)} & {num(r.shift_pp)} \\")
 lines += [r"\bottomrule", r"\end{tabular}"]
 write("tab_models", lines)
+# Local re-run (E0): our predictions next to the leaderboard's for the same prompts.
+if (R / "e0_rerun.csv").exists():
+    rr = pd.read_csv(R / "e0_rerun.csv")
+    lines = [r"\begin{tabular}{@{}lccc@{}}", r"\toprule",
+             r" & 예측 일치 & 로그우도 & 수정 후 변화(\%p) \\",
+             r"모델 & (\%) & 차이 & 리더보드, 재실행 \\", r"\midrule"]
+    for _, x in rr.iterrows():
+        lines.append(rf"{x.model.split('/')[1]} & {num(100 * x.pred_agreement, 1)} & "
+                     rf"{num(x.ll_median_abs_diff, 3)} & {num(x.shift_pp_board)}, {num(x.shift_pp_local)} \\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_rerun", lines)
+
+# Comparison with prior work: reported values (reference_numbers.py) next to ours from the same procedure.
+import reference_numbers as ref
+c = json.load(open(R / "e4_compare.json"))
+c1, pc, f6, v4, n5, c6 = (c["c1_redux_recount"], c["per_comparison"], c["fig6"], c["c4_vendrow"], c["c5_northcutt"],
+                          c["c6_noise"])
+pct = lambda x, d=1: num(100 * x, d)
+gv = pc["full_to_ok (Gema Table 2)"]["virology"]; sv = pc["full_to_random_nok"]["virology"]
+G, V, N, M, Cd, A = ref.GEMA, ref.VENDROW, ref.NORTHCUTT, ref.MADAAN, ref.CARD, ref.ALZAHRANI
+rows = [
+    (r"\citet{gema-etal-2025-done}", "MMLU 오류 문항 비율(층화 추정)", f"{pct(G['error_share_stratified'], 2)}\\%",
+     f"논문 표 5로 재계산 {pct(c1['error_share_stratified_paper_table'], 2)}\\%, 배포 자료 {pct(c1['error_share_stratified_data_expert_as_ok'], 2)}\\%(판단 유보 32문항 포함 시 {pct(c1['error_share_stratified_data'], 2)}\\%)"),
+    ("", "바이러스학을 오류 없는 문항으로만 채점할 때의 순위 변화",
+     f"Llama 3.1 405B가 HELM {G['virology_llama405b']['all'][1]}위에서 {G['table2_models']}개 모델 중 공동 {G['virology_llama405b']['correct'][1]}위로",
+     f"최대 {gv['max_rank_shift']}계단, $\\tau$ = {num(gv['kendall_tau'])}. 같은 수의 문항을 무작위로 뽑아도 최대 {sv['max_rank_shift']}계단, $\\tau$ = {num(sv['kendall_tau'])}"),
+    ("", "과목 정확도와 오류 없는 문항 비율의 모델별 상관", f"$r$ = {num(G['fig6_pearson_range'][0])}--{num(G['fig6_pearson_range'][1])}",
+     f"$r$ = {num(f6['pearson_min'])}--{num(f6['pearson_max'])}(중앙값 {num(f6['pearson_median'])})"),
+    (r"\midrule \citet{vendrow2025platinum}", "모델 오답 가운데 벤치마크 오류가 차지하는 몫",
+     f"MMLU 고교 수학 {pct(V['mmlu_hs_math_errors']['benchmark_share'], 0)}\\%, 벤치마크 14종 {pct(V['benchmark_share_range'][0], 0)}--{pct(V['benchmark_share_range'][1], 0)}\\%",
+     f"고교 수학 {pct(v4['high_school_mathematics']['benchmark_share'], 0)}\\%, MMLU 전체 {pct(v4['all']['benchmark_share'])}\\%(상위 5종 {pct(v4['all']['benchmark_share_top5_models'])}\\%), 바이러스학 {pct(v4['virology']['benchmark_share'], 0)}\\%"),
+    (r"\midrule \citet{northcutt2021pervasive}", "수정 가능한 오류 문항의 비율 $N_0$", f"ImageNet {pct(N['imagenet']['n0'])}\\%, CIFAR-10 {pct(N['cifar10']['n0'])}\\%",
+     f"{pct(n5['N0'], 2)}\\%({n5['n_C']}/{n5['n_C'] + n5['n_B']:,})"),
+    ("", f"오류 문항 비율을 {pct(N['imagenet']['increase'], 0)}\\%p 높일 때 수정 라벨에서 순서가 바뀌는 쌍(원래 비율 대비)",
+     "ImageNet에서 ResNet-18과 ResNet-50의 순서가 바뀜", f"{n5['pairs']}쌍 중 {n5['pairs_crossing_within_6pp']}쌍"),
+    ("", "수정 가능 문항에서 원래 라벨 순위와 수정 라벨 순위의 관계", "음의 관계(NASNet-large 1위에서 29위)",
+     f"Spearman $\\rho$ = {num(n5['spearman_C_original_vs_corrected'])}"),
+    ("", "전체 성능이 높은 모델이 원래의 틀린 라벨을 고르는 경향", "고용량 모델일수록 강함",
+     f"반대 방향, Spearman $\\rho$ = {num(n5['spearman_AB_vs_AC_original'])}"),
+    (r"\midrule \citet{madaan2024variance}", "100문항 부분셋에서 전체 평가셋과 순서가 바뀌는 쌍(그들은 IRT로 선택, 본 연구는 무작위)",
+     f"{pct(M['subset100_pair_flip_range'][0])}--{pct(M['subset100_pair_flip_range'][1])}\\%",
+     f"무작위 100문항 {pct(c6['random100_vs_full_pair_order_swaps_mean'])}\\%, 과목 단위 라벨 수정 {pct(c6['subject_relabel_pair_order_swaps_mean'])}\\%"),
+    ("", "MMLU 정확도의 학습 시드 표준편차", f"{num(M['mmlu_seed_std_pp'])}\\%p",
+     f"라벨 수정에 따른 정확도 변화 평균 {num(c6['label_shift_pp_mean'])}\\%p, 쌍 차이 변화 중앙값 {num(c6['pair_diff_change_pp_median'])}\\%p"),
+    (r"\midrule \citet{card-etal-2020-little}", "검정력 80\\%의 최소 검출 효과",
+     f"{Cd['mde_pp']['WNLI'][0]}문항 {num(Cd['mde_pp']['WNLI'][1])}\\%p, {Cd['mde_pp']['QNLI'][0]:,}문항 {num(Cd['mde_pp']['QNLI'][1])}\\%p",
+     f"100문항 {num(c6['mde80_pp_median']['100'], 1)}\\%p, 5,421문항 {num(c6['mde80_pp_median']['5421'], 1)}\\%p(쌍별 중앙값)"),
+    (r"\midrule \citet{alzahrani-etal-2024-benchmarks}", "순위가 바뀐 모델의 수와 최대 이동 폭",
+     f"MMLU 세 과목의 답 순서 섞기에서 {A['answer_shuffle']['models']}종 중 {A['answer_shuffle']['changed']}종, 여러 교란에서 최대 {A['max_rank_shift']}계단",
+     f"라벨 수정에서 42종 중 {c6['full_set_relabel']['models_rank_changed']}종, 최대 {c6['full_set_relabel']['max_rank_shift']}계단"),
+]
+lines = [r"\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{4.6cm}"
+         r">{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.7cm}@{}}", r"\toprule",
+         r"선행 연구 & 비교 항목 & 보고값 & 본 연구의 대응 값 \\", r"\midrule"]
+lines += [f"{a} & {b} & {cc} & {d} \\\\" for a, b, cc, d in rows]
+lines += [r"\bottomrule", r"\end{tabular}"]
+write("tab_compare", lines)
 print("ok")
