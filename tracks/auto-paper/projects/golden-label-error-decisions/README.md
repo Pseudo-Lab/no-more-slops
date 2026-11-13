@@ -2,7 +2,7 @@
 
 - 작성자: @sooyoung-wind
 - 트랙: Auto-Paper
-- 상태: Week 04 실험 초안. 선행 리뷰 [golden-dataset-review](../golden-dataset-review/)의 연구 공백(5.2절 첫째·넷째)을 실험으로 검증
+- 상태: Week 04 실험 초안. 선행 리뷰 [golden-dataset-review](../golden-dataset-review/)의 연구 공백(5.2절의 첫째와 넷째)을 실험으로 검증. 논문은 ACL 형식(심사용 익명 원고)
 - 원고 언어: 한국어 (영문 초록 병기)
 
 골든셋의 라벨 오류가 모델 쌍 비교 결정(배포 결정)을 얼마나 바꾸는지 측정합니다. MMLU-Redux 2.0의 전문가 수정 라벨과 Open LLM Leaderboard에 공개된 모델 42종의 문항별 예측을 사용하며, API 비용은 들지 않습니다.
@@ -24,10 +24,11 @@
 | `app/fetch.py` | MMLU-Redux와 리더보드 문항별 예측 다운로드(→ `data/`, git 제외, 약 130MB) |
 | `app/load.py` | 문항 결합과 라벨 조건(ok, 수정 가능, 미해결) |
 | `app/analyze.py` | E1 자연 실험, E2 오류 주입, E3 감사 작동 특성 |
-| `app/figures.py` | 그림 생성 |
-| [results/](results/) | 실험 결과 CSV·JSON과 그림 |
+| `app/figures.py`, `app/tables.py` | 그림(PDF, PNG)과 논문 표 생성(결과 파일에서 직접 생성) |
+| `app/build_paper.sh` | 논문 PDF 빌드(ACL 공식 스타일, XeLaTeX) |
+| [results/](results/) | 실험 결과(CSV, JSON)와 그림 |
 | [reviews/](reviews/) | 심사 보고서와 반영 내역 |
-| [outputs/week-04/](outputs/week-04/) | 논문 초안 |
+| [outputs/week-04/](outputs/week-04/) | 논문 초안(LaTeX 원본, PDF, Markdown 판) |
 
 ## 실행
 
@@ -35,13 +36,11 @@
 cd app
 uv run python fetch.py      # 데이터 다운로드(인증 없이 약 1시간)
 uv run python analyze.py    # 결과 CSV(약 1–2분)
-uv run python figures.py
-
-# PDF: 선행 리뷰 프로젝트의 빌더를 재사용(Chromium 필요)
-cd ../../golden-dataset-review/app
-uv run pdf.py --keep-all --float-wide --src ../../golden-label-error-decisions/outputs/week-04/paper.md \
-  --out ../../golden-label-error-decisions/outputs/week-04/paper.pdf
+cd ..
+app/build_paper.sh          # 그림과 표를 다시 만들고 outputs/week-04/paper.pdf 빌드
 ```
+
+PDF 빌드에는 [Tectonic](https://tectonic-typesetting.github.io/)(`brew install tectonic`)이 필요합니다. ACL 공식 스타일 파일(`acl-org/acl-style-files`)은 재배포를 허락하는 라이선스 표기가 없고 수정이 금지되어 있어 저장소에 넣지 않았습니다. 빌드 스크립트가 고정 커밋에서 내려받아 `outputs/week-04/.build/`(git 제외)에 둡니다. 한글 글꼴 Noto Serif KR(SIL OFL)도 같은 방식으로 내려받습니다.
 
 ## 사용한 스킬과 도구
 

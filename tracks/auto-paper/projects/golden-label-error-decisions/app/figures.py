@@ -1,55 +1,114 @@
-"""Figures for the paper from ../results CSVs."""
+"""Figures for the paper from ../results CSVs.
+
+Writes PNGs to ../results/fig/ and, for the paper, vector PDFs plus PNGs (paper.md) to
+../outputs/week-04/fig/ (the repository keeps final PDFs under outputs/). Sizes match the
+ACL two-column layout (column 7.7 cm, text width 16 cm) so the 8 pt labels print at 8 pt. Latin
+glyphs use STIX (Times-like, bundled with matplotlib) and Hangul falls back to Noto Serif KR, the
+same pair as the paper body. The font is downloaded by build_paper.sh into FONT_DIR.
+"""
+import os
 from pathlib import Path
-import pandas as pd, matplotlib
-matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
-R = Path(__file__).resolve().parent.parent / "results"
-e = pd.read_csv(R / "e2_injection.csv"); e = e[e.delta == 0.03]
+import matplotlib
+import pandas as pd
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib import font_manager
+
+ROOT = Path(__file__).resolve().parent.parent
+R = ROOT / "results"
+PAPER_FIG = ROOT / "outputs/week-04/fig"
+PAPER_FIG.mkdir(parents=True, exist_ok=True)
+FONT_DIR = Path(os.environ.get("FONT_DIR", ROOT / "outputs/week-04/.build/fonts"))
+font = FONT_DIR / "NotoSerifKR-Regular.otf"
+if not font.exists():
+    raise SystemExit(f"{font} not found: run app/build_paper.sh (it downloads the font) or set FONT_DIR")
+font_manager.fontManager.addfont(str(font))
+plt.rcParams.update({
+    "font.family": ["STIXGeneral", "Noto Serif KR"], "mathtext.fontset": "stix", "font.size": 8,
+    "axes.titlesize": 8, "axes.labelsize": 8, "xtick.labelsize": 7, "ytick.labelsize": 7, "legend.fontsize": 7,
+    "axes.linewidth": 0.6, "xtick.major.width": 0.6, "ytick.major.width": 0.6, "xtick.minor.width": 0.4,
+    "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "grid.color": "#e3e5e8",
+    "grid.linewidth": 0.5, "axes.axisbelow": True, "pdf.fonttype": 42, "savefig.bbox": "tight",
+    "savefig.pad_inches": 0.02,
+})
+COL, TEXT = 7.7 / 2.54, 16.0 / 2.54  # inches
+
+
+def save(fig, name):
+    fig.savefig(PAPER_FIG / f"{name}.pdf")
+    for d in (R / "fig", PAPER_FIG):
+        fig.savefig(d / f"{name}.png", dpi=220)
+    plt.close(fig)
+
+
+e = pd.read_csv(R / "e2_injection.csv")
+e = e[e.delta == 0.03]
 NMAX = e.n.max()
-colors = {100: "#9aa5b1", 300: "#5b7a99", 870: "#2a4d73", NMAX: "#0b1f3a"}
+# One-hue sequential ramp for the ordered set sizes; markers repeat the encoding for print and CVD.
+style = {100: ("#5b8fc9", "o"), 300: ("#2f6db0", "s"), 870: ("#1b4f8a", "^"), NMAX: ("#0b2e5c", "D")}
 
-# Fig 1: flip rate vs injected error rate, random vs systematic, with 95% CI over repetitions.
-fig, axs = plt.subplots(1, 2, figsize=(9, 3.4), sharey=True)
+# Fig 1: flip rate vs injected error rate, random vs systematic, 95% CI over repetitions.
+fig, axs = plt.subplots(1, 2, figsize=(TEXT, 2.25), sharey=True)
 for ax, mech, title in zip(axs, ["random", "systematic"],
-                           ["Random errors", "Systematic errors (hard items → modal distractor)"]):
+                           ["(a) 무작위 오류", "(b) 체계적 오류 (어려운 문항, 대표 오답)"]):
     for n, g in e[e.mech == mech].groupby("n"):
+        c, m = style[n]
         x = 100 * g.rate
-        ax.plot(x, 100 * g.flip_rate, marker="o", ms=3, color=colors[n], label=f"n={n}")
-        ax.fill_between(x, 100 * g.flip_ci_lo, 100 * g.flip_ci_hi, color=colors[n], alpha=0.15, lw=0)
-        low = g[g.rate * n < 1]  # expected number of corrupted items below one
-        ax.scatter(100 * low.rate, 100 * low.flip_rate, s=22, facecolors="white", edgecolors=colors[n], zorder=3)
-    ax.axvline(0.75, ls="--", color="#c0392b", lw=1)
-    ax.text(0.78, 0.97, "δ/4", color="#c0392b", fontsize=8, transform=ax.get_xaxis_transform(), va="top")
-    ax.set_xscale("log"); ax.set_title(title, fontsize=10); ax.set_xlabel("Injected label-error rate (%)")
-axs[0].set_ylabel("Pairwise decision flips (%)"); axs[0].legend(fontsize=8, frameon=False)
-fig.text(0.01, 0.01, "Open markers: expected corrupted items < 1. Bands: 95% CI over repetitions. δ = 3 pp.",
-         fontsize=7, color="#555")
-fig.tight_layout(rect=(0, 0.03, 1, 1)); fig.savefig(R / "fig" / "fig1_flip_vs_error.png", dpi=200)
+        ax.fill_between(x, 100 * g.flip_ci_lo, 100 * g.flip_ci_hi, color=c, alpha=0.15, lw=0)
+        ax.plot(x, 100 * g.flip_rate, color=c, lw=1.2, label=f"n = {n:,}")
+        hi = g[g.rate * n >= 1]
+        lo = g[g.rate * n < 1]  # expected number of corrupted items below one
+        ax.scatter(100 * hi.rate, 100 * hi.flip_rate, s=12, marker=m, color=c, zorder=3, lw=0)
+        ax.scatter(100 * lo.rate, 100 * lo.flip_rate, s=12, marker=m, facecolors="white", edgecolors=c,
+                   lw=0.8, zorder=3)
+    ax.axvline(0.75, ls="--", color="#b03a2e", lw=0.8)
+    ax.text(0.8, 0.97, r"$\delta/4$", color="#b03a2e", fontsize=7, transform=ax.get_xaxis_transform(), va="top")
+    ax.set_xscale("log")
+    ax.set_xticks([0.25, 0.5, 1, 2, 3, 5, 12], labels=["0.25", "0.5", "1", "2", "3", "5", "12"])
+    ax.minorticks_off()
+    ax.set_title(title, loc="left")
+    ax.set_xlabel("주입 오류율 (%)")
+axs[0].set_ylabel("결정 반전율 (%)")
+handles = [plt.Line2D([], [], color=c, marker=m, ms=3.5, lw=1.2, label=f"n = {n:,}") for n, (c, m) in style.items()]
+axs[0].legend(handles=handles, frameon=False, loc="upper left")
+fig.tight_layout(w_pad=1.5)
+save(fig, "fig1_flip_vs_error")
 
 # Fig 2: real subject error rate vs flips after correction.
-f = pd.read_csv(R / "e1_flips.csv"); s = f[(f.level == "subject") & (f.delta == 0.03)]
-pairs = int(s.pairs.iloc[0])
-fig, ax = plt.subplots(figsize=(4.5, 3.4))
-ax.scatter(100 * s.err_rate, 100 * s.flips / s.pairs, s=12, color="#2a4d73")
-for _, r in s[s.err_rate > 0.1].iterrows():
-    ax.annotate(r.unit, (100 * r.err_rate, 100 * r.flips / r.pairs), fontsize=7)
-ax.set_xlabel("Corrected-label share in subject (%)"); ax.set_ylabel("Decision flips after correction (%)")
-ax.set_title(f"MMLU-Redux, 57 subjects × {pairs} model pairs", fontsize=9)
-fig.tight_layout(); fig.savefig(R / "fig" / "fig2_subject_flips.png", dpi=200)
+f = pd.read_csv(R / "e1_flips.csv")
+s = f[(f.level == "subject") & (f.delta == 0.03)]
+names = {"virology": "바이러스학", "college_chemistry": "대학 화학"}
+fig, ax = plt.subplots(figsize=(COL, 2.1))
+ax.scatter(100 * s.err_rate, 100 * s.flips / s.pairs, s=9, color="#1b4f8a", lw=0, alpha=0.85)
+for _, r in s[s.unit.isin(names)].iterrows():
+    ax.annotate(names[r.unit], (100 * r.err_rate, 100 * r.flips / r.pairs), xytext=(-4, 0),
+                textcoords="offset points", ha="right", va="center", fontsize=7)
+ax.set_xlabel("과목의 수정 문항 비율 (%)")
+ax.set_ylabel("라벨 수정 후 결정 반전율 (%)")
+fig.tight_layout()
+save(fig, "fig2_subject_flips")
 
 # Fig 3: 2x2 ablation and no-label-error baselines at n=870.
-order = [("swap", "Swap items (no label error)"), ("drop", "Drop items (no label error)"),
-         ("random", "Uniform items, random label"), ("hard_random", "Hard items, random label"),
-         ("uniform_modal", "Uniform items, modal label"), ("systematic", "Hard items, modal label")]
+order = [("swap", "문항 교체 기준선"), ("drop", "문항 제거 기준선"), ("random", "무작위 오류"),
+         ("hard_random", "어려운 문항 오류"), ("uniform_modal", "대표 오답 오류"), ("systematic", "체계적 오류")]
 g = e[(e.n == 870) & (e.rate == 0.03)].set_index("mech")
-fig, ax = plt.subplots(figsize=(5.2, 3.0))
-names = [lab for m, lab in order if m in g.index]
-vals = [100 * g.loc[m, "flip_rate"] for m, _ in order if m in g.index]
-err = [[100 * (g.loc[m, "flip_rate"] - g.loc[m, "flip_ci_lo"]) for m, _ in order if m in g.index],
-       [100 * (g.loc[m, "flip_ci_hi"] - g.loc[m, "flip_rate"]) for m, _ in order if m in g.index]]
-cols = ["#b8c2cc", "#b8c2cc", "#5b7a99", "#5b7a99", "#2a4d73", "#2a4d73"][: len(names)]
-ax.barh(names, vals, xerr=err, color=cols, capsize=2)
-ax.invert_yaxis(); ax.set_xlabel("Pairwise decision flips (%)")
-ax.set_title("n = 870, perturbed share 3%, δ = 3 pp", fontsize=9); ax.tick_params(axis="y", labelsize=8)
-fig.tight_layout(); fig.savefig(R / "fig" / "fig3_ablation.png", dpi=200)
+order = [(m, lab) for m, lab in order if m in g.index]
+vals = [100 * g.loc[m, "flip_rate"] for m, _ in order]
+err = [[100 * (g.loc[m, "flip_rate"] - g.loc[m, "flip_ci_lo"]) for m, _ in order],
+       [100 * (g.loc[m, "flip_ci_hi"] - g.loc[m, "flip_rate"]) for m, _ in order]]
+cols = {"swap": "#a9b0b8", "drop": "#a9b0b8", "random": "#5b8fc9", "hard_random": "#2f6db0",
+        "uniform_modal": "#2f6db0", "systematic": "#0b2e5c"}
+fig, ax = plt.subplots(figsize=(COL, 1.85))
+ax.barh([lab for _, lab in order], vals, xerr=err, color=[cols[m] for m, _ in order], height=0.62,
+        error_kw=dict(lw=0.7, capsize=1.5, capthick=0.7))
+for i, (v, hi) in enumerate(zip(vals, err[1])):
+    ax.text(v + hi + 0.06, i, f"{v:.2f}", va="center", fontsize=7, color="#333")
+ax.invert_yaxis()
+ax.set_xlim(0, max(vals) * 1.22)
+ax.grid(axis="y", visible=False)
+ax.set_xlabel("결정 반전율 (%)")
+fig.tight_layout()
+save(fig, "fig3_ablation")
 print("ok")
