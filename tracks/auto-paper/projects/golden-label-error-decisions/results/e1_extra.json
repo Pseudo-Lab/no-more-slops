@@ -1,0 +1,88 @@
+{
+  "modal_distractor": {
+    "hits": 43,
+    "n": 100,
+    "rate": 0.43,
+    "chance": 0.3333333333333333,
+    "p_one_sided": 0.027567450062257234,
+    "wilson95": [
+      0.3373329852411011,
+      0.5278461045078768
+    ],
+    "tie_rule": "lowest option index among most-chosen wrong options"
+  },
+  "subject_flip_correlation": {
+    "pearson": 0.9544215625478868,
+    "spearman": 0.96666305271423,
+    "pearson_excl_virology": 0.8147544049947683,
+    "pearson_excl_virology_college_chemistry": 0.8846082506197739,
+    "subjects_with_zero_flips": 32,
+    "n_subjects": 57,
+    "subject_size_mean": 95.10526315789474,
+    "subject_size_min": 76,
+    "subject_size_max": 100
+  },
+  "subject_flips_by_delta": {
+    "0.0": 1086,
+    "0.01": 1086,
+    "0.02": 1086,
+    "0.03": 1086,
+    "0.05": 1086
+  },
+  "full_mcnemar_holm": [
+    {
+      "delta": 0.0,
+      "rule": "mcnemar_holm",
+      "flips": 4,
+      "reversals": 0,
+      "lost": 2,
+      "spurious": 2,
+      "decided": 776
+    },
+    {
+      "delta": 0.01,
+      "rule": "mcnemar_holm",
+      "flips": 4,
+      "reversals": 0,
+      "lost": 2,
+      "spurious": 2,
+      "decided": 776
+    },
+    {
+      "delta": 0.02,
+      "rule": "mcnemar_holm",
+      "flips": 5,
+      "reversals": 0,
+      "lost": 3,
+      "spurious": 2,
+      "decided": 776
+    },
+    {
+      "delta": 0.03,
+      "rule": "mcnemar_holm",
+      "flips": 8,
+      "reversals": 0,
+      "lost": 2,
+      "spurious": 6,
+      "decided": 735
+    },
+    {
+      "delta": 0.05,
+      "rule": "mcnemar_holm",
+      "flips": 1,
+      "reversals": 0,
+      "lost": 1,
+      "spurious": 0,
+      "decided": 654
+    }
+  ],
+  "subject_mcnemar_holm_delta3": {
+    "flips": 447,
+    "reversals": 0,
+    "pairs": 49077
+  },
+  "full_lost_of_decided_delta3": {
+    "lost": 2,
+    "decided": 735
+  }
+}
