@@ -2,7 +2,7 @@
 
 - 트랙: Auto-Paper
 - 작성자: @xiyoon
-- 원 PR: #번호
+- 원 PR: [#42](https://github.com/Pseudo-Lab/no-more-slops/pull/42)
 - 프로젝트 안내: [README](../../README.md)
 - 구성: 에이전트 보고 논문 개정본 + 다국어 채점기 논문 초안 + 감시 이동 연구 설계
 

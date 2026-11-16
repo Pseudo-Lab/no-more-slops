@@ -19,7 +19,7 @@
 | [experiment-report-to-paper](../tracks/auto-paper/skills/experiment-report-to-paper/SKILL.md) | 완료된 실험 Markdown 보고서를 학회 형식 Word 논문으로 작성합니다. | [#4](https://github.com/Pseudo-Lab/no-more-slops/pull/4) |
 | [experiment-runner](../tracks/auto-paper/skills/experiment-runner/SKILL.md) | 확정한 계획에 따라 대조군을 갖춘 실험 실행을 지원합니다. | [#12](https://github.com/Pseudo-Lab/no-more-slops/pull/12) |
 | [experiment-to-paper](../tracks/auto-paper/skills/experiment-to-paper/SKILL.md) | 저장된 JSON 실험 결과를 근거 표로 내보내고 원고를 작성합니다. | [#8](https://github.com/Pseudo-Lab/no-more-slops/pull/8) |
-| [free-gpu-smoke](../tracks/auto-paper/skills/free-gpu-smoke/SKILL.md) | 유료 GPU를 쓰기 전에 무료 GPU 노트북(Kaggle)에서 학습 코드를 시험 실행하고, 잰 시간을 본 장비의 시간·비용으로 환산합니다. | [#번호](https://github.com/Pseudo-Lab/no-more-slops/pull/번호) |
+| [free-gpu-smoke](../tracks/auto-paper/skills/free-gpu-smoke/SKILL.md) | 유료 GPU를 쓰기 전에 무료 GPU 노트북(Kaggle)에서 학습 코드를 시험 실행하고, 잰 시간을 본 장비의 시간·비용으로 환산합니다. | [#42](https://github.com/Pseudo-Lab/no-more-slops/pull/42) |
 | [llm-api-experiment-runs](../tracks/auto-paper/skills/llm-api-experiment-runs/SKILL.md) | 유료 LLM·검증기 API 실험의 사전 점검·비용 추정·재개 가능한 기록·실패 처리·완료 검사를 다룹니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [paper-code-audit](../tracks/auto-paper/skills/paper-code-audit/SKILL.md) | 논문의 방법·설정·수치를 코드·데이터·실행 기록과 대조하고 다시 계산합니다. 결과로 원고를 고치는 `paper-results-reviser`와 달리 구현과의 불일치를 찾습니다. | [#21](https://github.com/Pseudo-Lab/no-more-slops/pull/21) |
 | [paper-readability-pass](../tracks/auto-paper/skills/paper-readability-pass/SKILL.md) | 빌드된 짧은 논문 PDF의 가독성을 회차마다 점검합니다. 채택 논문 구조 비교, 원고만 읽는 새 리뷰어, 글·캡션만 고치는 수정, 쪽 이미지 확인을 반복합니다. 숫자·결과 대조와 형식 검사는 하지 않습니다. | [#22](https://github.com/Pseudo-Lab/no-more-slops/pull/22) |
