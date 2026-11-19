@@ -70,12 +70,15 @@
 | 스킬 | 적용 범위 | 최초 정리 PR |
 | --- | --- | --- |
 | [ad-planning](../tracks/auto-post/skills/ad-planning/SKILL.md) | 사람 없이 제품만 나오는 숏폼 광고의 제품 분석·스토리라인·컷별 그림 콘티와 새 컨텍스트 검토 기준을 제공합니다. | [#23](https://github.com/Pseudo-Lab/no-more-slops/pull/23) |
+| [coupang-partners-link](../tracks/auto-post/skills/coupang-partners-link/SKILL.md) | 쿠팡 상품 게시물에 파트너스 링크를 넣고 링크마다 파트너스 ID·상품 번호를 검사합니다. 대가 표시 문구와 채널별 링크 위치를 담습니다. | [#__](https://github.com/Pseudo-Lab/no-more-slops/pull/__) |
 | [design-punctuation](../tracks/auto-post/skills/design-punctuation/SKILL.md) | 제목·캡션 같은 짧은 시각 문구의 불필요한 끝마침표를 정리합니다. 다른 트랙에서도 링크로 재사용합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
 | [direct-news-copy](../tracks/auto-post/skills/direct-news-copy/SKILL.md) | 뉴스·카드뉴스·릴스 카피의 반복 해명을 줄이고 사실·계획·검증 범위를 직접 씁니다. 문장부호를 다루는 `design-punctuation`, 제작을 담당하는 `instagram-content`와 구분합니다. | [#18](https://github.com/Pseudo-Lab/no-more-slops/pull/18) |
 | [family-reel-meme-preflight](../tracks/auto-post/skills/family-reel-meme-preflight/SKILL.md) | 릴스 편집 전에 국가·플랫폼별 밈 근거와 아기 안전을 선별합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) |
 | [instagram-content](../tracks/auto-post/skills/instagram-content/SKILL.md) | 계정 설정과 출처를 바탕으로 캐러셀·프로필·무음 인포그래픽 릴스를 제작합니다. JSON 장면과 도식에서 시작하며, 촬영 영상 중심의 `instagram-reel` 편집과 구분합니다. | [#5](https://github.com/Pseudo-Lab/no-more-slops/pull/5) |
 | [instagram-reel](../tracks/auto-post/skills/instagram-reel/SKILL.md) | 가족 촬영 영상을 세로 릴스로 편집하고 자막·음량·화질을 확인합니다. | [#9](https://github.com/Pseudo-Lab/no-more-slops/pull/9) · [#15](https://github.com/Pseudo-Lab/no-more-slops/pull/15) |
+| [gemini-free-image](../tracks/auto-post/skills/gemini-free-image/SKILL.md) | 무료 Gemini 웹으로 카드·표지 이미지를 만들고 확대 캡처로 저장합니다. 유료 API는 쓰지 않습니다. | [#__](https://github.com/Pseudo-Lab/no-more-slops/pull/__) |
 | [ig-publish](../tracks/auto-post/skills/ig-publish/SKILL.md) | 완성된 릴스·사진을 인스타그램과 연결 채널에 올리고 게시 후 결과를 확인합니다. 계정·캡션 형식은 입력으로 받습니다. | [#27](https://github.com/Pseudo-Lab/no-more-slops/pull/27) |
 | [phantom-images](../tracks/auto-post/skills/phantom-images/SKILL.md) | Phantom Report의 프로젝트 규칙에 맞춘 사건 이미지와 캐러셀을 제작합니다. | [#3](https://github.com/Pseudo-Lab/no-more-slops/pull/3) |
 | [phantom-weekly](../tracks/auto-post/skills/phantom-weekly/SKILL.md) | Phantom Report의 주간 수집·사실 확인·집필·이미지 제작을 조합합니다. | [#3](https://github.com/Pseudo-Lab/no-more-slops/pull/3) |
 | [product-cgi-render](../tracks/auto-post/skills/product-cgi-render/SKILL.md) | 확정 콘티에서 회전체 용기 제품을 Blender로 렌더하고 마감·효과음·조립·수치 QC까지 합니다. 촬영 소스 없이 제품 프로필 JSON으로 동작합니다. | [#23](https://github.com/Pseudo-Lab/no-more-slops/pull/23) |
+| [sale-price-check](../tracks/auto-post/skills/sale-price-check/SKILL.md) | 올리브영·쿠팡 세일 상품의 판매가·세일가·쿠폰·행사 기간을 상품 페이지에서 따로 읽고 게시 직전에 다시 확인합니다. | [#__](https://github.com/Pseudo-Lab/no-more-slops/pull/__) |
