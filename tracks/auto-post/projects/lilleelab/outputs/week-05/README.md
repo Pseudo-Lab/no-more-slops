@@ -2,7 +2,7 @@
 
 - 작성자: @xiyoon
 - 트랙: auto-post
-- 원본 PR: #번호
+- 원본 PR: [#44](https://github.com/Pseudo-Lab/no-more-slops/pull/44)
 - 결과물: 세일 캐러셀 2편
   - 올리브영 인기 세일템 (8장): https://www.instagram.com/p/DfwwAl3mrpR/
   - 쿠팡 뷰티 인기템 (8장): https://www.instagram.com/p/Dfw03mymqqY/ · 구매 링크는 [스레드](https://www.threads.com/@lilleelab.kr/post/Dfw1DsIGsdh)
