@@ -1,0 +1,173 @@
+
+\section{Recorded exact checks}
+\label{sec:checks}
+The development protocol freezes all source, rational inputs and theoretical
+source fragments before the actual run. The 380 inputs comprise 224 unchanged
+parent regression problems with prefixed identifiers, 144 new problems
+(48 graph/offset configurations with three policies each), and 12 named guards.
+New random configurations use two to four original coordinates, origin-fixed
+members, nonzero rational offsets, directed rigid cycles, unequal weights,
+parallel arcs and one-way tight edges. Named guards cover aggregate cancellation,
+nonzero flat values, a hidden interior peak, fixed-origin constants and two
+nonmonotone blocks. These are designed development cases, not independent
+physical samples or a preregistered evaluation.
+
+A separate verifier imports no producer numerical code. It uses mutual
+reachability rather than the producer SCC routine, and evaluates original
+unary functions at every block kink to compute secant slopes rather than
+reusing slope-event accumulation. Source-zero distance inequalities and rooted
+tight trees with original arc identities certify every required profile.
+It reconstructs the selected block representatives, offsets, quotient arcs,
+constant contribution, original normalization and returned conditional truth.
+For one representative it independently evaluates a complete original-unary
+critical-point superset and checks all reported sweep segments and bends.
+
+For every development input, an additional oracle enumerates full-rank
+original-coordinate intersections of original constraint boundaries and unary
+kinks, using exact spanning-tree potentials. It filters by all original
+constraints and evaluates the actual weighted loss. Compactness and the affine
+cell argument ensure an original-coordinate optimum is included. This oracle
+uses neither the producer reduction nor its SCC, sparse shortest-path or sweep
+implementation. All 380 optimum values and returned truths passed. The original
+coordinate prototype also returned the same exact values on all 380 cases.
+This is separate implementation evidence for a shared mathematical definition,
+not an independently measured physical truth.
+
+The structural modes were endpoint 233, sweep 140
+and reduced arrangement 7.
+The parameter decreased strictly on 52 cases,
+was unchanged on 328 and never increased.
+
+For dimensions above one, the original-coordinate oracle checks the optimum
+and witness; it does not certify the compressed plane/basis inventory as a
+standalone complete proof. Offline replay reproduced all deterministic results
+and repeated the same original-coordinate oracle. Repeated inputs are not
+counted as new independent samples.
+
+\paragraph{Controls and repairs before the freeze.}
+The first root control attempt supplied Fraction objects where canonical
+rational strings were required; parsing rejected it before optimization.
+After correcting this driver fixture, all 12 named controls and eight analytical
+value checks passed. Earlier source bytes and the failure receipt were preserved.
+The independent checker rejected 26 actual mutations. Separate inventory guards
+rejected duplicated, missing and reordered cases. A conflicting earlier hash
+was also rejected rather than overwritten by a current hash for the same path.
+Native criticism found the latter two provenance gaps before the actual run:
+the verifier originally checked row count without frozen input identities,
+and a last-wins binding merge could discard the frozen expected hash.
+Both were repaired before execution. Exact input identities, order, uniqueness,
+cardinality and all original frozen bindings are now checked explicitly.
+All recorded control revisions include source snapshots. Native AI criticism
+is bounded review evidence, not human peer review.
+
+\section{Sparse parameter study}
+\label{sec:benchmark}
+We instantiate interior variants of the two families in Section~\ref{sec:rigid-theory}
+at $n=4,16,128,1024$, with signed rational offsets and sparse directed rigid
+cycles. Cancellation uses pairs $a=(3/2,1/2)$, $c=(1/2,3/2)$; the peak uses $a=(1,1)$, $c=(1/2,3/2)$. Each is evaluated at scales 1 and $10^6$, giving 16 configurations
+from eight structures. Every candidate kink lies strictly inside its original
+marginal, so the candidate-sign count is $k=n$; nevertheless the actual feasible
+sign patterns in this common-truth family are few. This is a separation of
+declared parameters, not an exponential lower bound or evidence against a
+presolved LP formulation.
+
+Each generated input is saved and hashed before analysis. Original-graph
+analysis includes feasible-potential preparation, origin profiles, iterative
+zero-edge SCCs, aggregate classification, quotient evidence and the selected
+profiles. Optimization uses the previous exact original-unary sweep or
+arrangement code after this new selection, including certificate construction
+and an original-arc feasibility check. We record analysis once and the median
+of three post-warmup optimization observations. Timings are dependent observations
+on one concurrently used Windows machine running Python 3.11.0rc2; no confidence
+interval or fitted complexity exponent is claimed.
+
+\begin{table}[ht]
+\centering\small
+\caption{Recorded scale-1 phase times in milliseconds. Refusals and unexecuted
+baselines are categorical outcomes, not comparative solution times. All16
+scale-1 and scale-$10^6$ records are preserved in the package.}
+\begin{tabular}{rlrrrrl}
+\toprule
+$n$ & Family & $r_{\rm orig}$ & $r_\star$ & Analysis & Optimize & Original prototype\\
+\midrule
+4 & cancellation & 2 & 0 & 1.121 & 0.077 & exact \\
+4 & peak & 2 & 1 & 0.895 & 0.236 & exact \\
+16 & cancellation & 8 & 0 & 3.219 & 0.285 & budget refusal \\
+16 & peak & 8 & 1 & 2.426 & 0.554 & budget refusal \\
+128 & cancellation & 64 & 0 & 15.609 & 2.145 & not run \\
+128 & peak & 64 & 1 & 20.580 & 5.691 & not run \\
+1024 & cancellation & 512 & 0 & 130.844 & 17.829 & not run \\
+1024 & peak & 512 & 1 & 267.992 & 63.090 & not run \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The original prototype was actually run only at $n\le16$, with its complete
+arrangement preflight budget of 1000 bases. Four configurations completed
+exactly and four refused before enumeration. The eight configurations with
+$n>16$ were not executed under that size policy. The displayed lower bound
+$\binom{2r_{\rm orig}}{r_{\rm orig}}$ follows from distinct lower/upper domain
+planes; it is theoretical and is not a measured refusal. No value is reported
+from an incomplete search. No optimized published solver or candidate-sign
+LP family was timed, and there is no solver-superiority claim.
+
+All16 structural results passed a separate original-input-bound checker.
+This combines independently reconstructed maximal rigid classes and aggregate
+secants with profile trees and original-unary endpoint/event optimality checks;
+it does not enumerate a 1024-dimensional truth arrangement. The independent
+checker uses $O(n(n+M))$ arithmetic/comparison operations and $O(n^2+M)$ storage
+for mutual reachability and direct cell checks. Those costs are distinct from
+producer preprocessing and sweep costs. All eight scale pairs preserved the
+block partition and scaled the optimum exactly. This is not timing invariance.
+The $n=1024$ cases have $r_{\rm orig}=512$ but $r_\star=0$ or 1, and use two
+or four actual profiles instead of the original prototype's theoretical 1026.
+
+\begin{figure}[ht]
+\centering\includegraphics[width=\linewidth]{figure1.pdf}
+\caption{The endpoint-equality guard, parameter separation, and recorded
+scale-1 timings. The peak in (a) is a named development guard; the interior
+benchmark pair has height one. In (c), lines guide the eye without fitting
+a complexity law.}
+\end{figure}
+
+\section{Interpretation, reproducibility and submission status}
+The concrete refinement is complete aggregate monotonicity after classical
+rigid contraction, with mandatory selection of all nonmonotone blocks.
+It removes arbitrary inflation of the original direction count on the displayed
+offset/cancellation families. A representative is a coordinate parameter,
+not a new independent observation. Rigid SCC extraction and offset substitution
+are direct classical antecedents \cite{tsamardinos1998}; earliest/latest and
+partial-assignment temporal bounds are also established \cite{dechter1991}.
+The bounded prior review does not certify priority of this specialization.
+
+General piecewise-linear temporal preferences have substantial precedent
+\cite{kumar2007,kumar2018}. Concave utility results and historical conjectures
+must not be turned into a general polynomiality or hardness claim for the
+present objective. The bound is still XP in $r_\star$, and this parameter need
+not be the smallest possible reduction dimension. Rational bit costs and
+floating-point zero robustness remain separate from exact operation counts.
+
+The source/result package contains every actual input, result and oracle row,
+pre-analysis large input hashes, all control source snapshots, fixed bindings,
+literature acquisition limits and an offline replay entry point. A SHA-256
+index checks every archive member byte; no archived code is executed when
+building or verifying that archive. Recorded replay instead uses reviewed
+local sources, without historical Orca state, parent result files, network
+or model calls. Preserving the documented outputs/study directory layout is
+required for its relative source bindings. Primary paper bytes were not
+collected by this review; note hashes authenticate notes, not original PDFs.
+Johnson's full original article remains uninspected.
+
+The guarantee is conditional on the supplied nonempty bounded closed STN.
+No new sensor/reference/alignment calibration or external holdout was obtained,
+and the previous empirical failure is not repaired or reclassified by these
+mathematical results. Human proof review, publishable-contribution and priority
+judgment remain outstanding. Existing manuscripts are preserved separately.
+
+\paragraph{Author and submission facts.}
+AI assistance was substantial in derivation, coding, checking and writing.
+Exact service/model revision, responsible human authors and order,
+affiliations, correspondence, funding, interests, public data/code destination,
+originality declarations and final human approval remain unconfirmed.
+No values are invented for these fields. This is an anonymous technical
+extension, not a submitted or submission-ready manuscript.
