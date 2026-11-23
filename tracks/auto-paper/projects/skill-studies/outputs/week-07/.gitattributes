@@ -1,0 +1,4 @@
+# Preserve the published source and PDF hashes across checkouts.
+*.tex -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.bib -text
+*.pdf binary

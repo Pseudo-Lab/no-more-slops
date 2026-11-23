@@ -1,0 +1,67 @@
+{
+  "schema": "weekly-paper-deliverables-v1",
+  "week": "07",
+  "period": "2026-11-23/2026-11-29",
+  "status": "research_drafts_for_peer_review",
+  "public_revision": "2026-11-23-acknowledgement-only",
+  "scientific_text_changes": false,
+  "acknowledgement_added_to_both_manuscripts": true,
+  "new_target_model_calls": 0,
+  "new_scientific_experiments": 0,
+  "stn_author_status": "Anonymous technical working draft; human author facts unconfirmed",
+  "raw_data_and_internal_records_included": false,
+  "files": [
+    {
+      "path": "probeflow/main.tex",
+      "bytes": 55506,
+      "sha256": "717db5ec9a63505559835c365c7dbdb92ea5826a89d9cea98331bd9c95f9f8dd"
+    },
+    {
+      "path": "probeflow/references.bib",
+      "bytes": 4859,
+      "sha256": "0ca116ee8d8ac1353b3c83c673618fc153ff318485728f52738d033e75c8cae5"
+    },
+    {
+      "path": "probeflow/figures_003/external_results.pdf",
+      "bytes": 14391,
+      "sha256": "3f6cef975655952cbb71f174cef8a6c50b3f5bc011b285cc624b0e38c84786af"
+    },
+    {
+      "path": "probeflow/figures_003/pivot_map.pdf",
+      "bytes": 23389,
+      "sha256": "259ac3666af020313aca00a6f48420ef502e3ec2fc6eb0f5696eb0fd695bd904"
+    },
+    {
+      "path": "probeflow/paper.pdf",
+      "bytes": 158844,
+      "sha256": "3e95d5a496d9d64f91788b5c70238f43c2564e078d24f8226844fc61676b568e",
+      "pages": 12
+    },
+    {
+      "path": "stn/main.tex",
+      "bytes": 4248,
+      "sha256": "addb91dc57a9e7fc02a936e44a50417ede24ccf43fe5777059330ba2e96304e5"
+    },
+    {
+      "path": "stn/theory.tex",
+      "bytes": 13203,
+      "sha256": "5aa52c3fcf441b09eedd6879b55310827bff184f23fa2792ad61ddd357e8d7a5"
+    },
+    {
+      "path": "stn/results.tex",
+      "bytes": 10654,
+      "sha256": "e8521ef8299b2b9625f025bb6e30ed3d0cb3b8b98bf82d265ec5ec9f0b9450da"
+    },
+    {
+      "path": "stn/figure1.pdf",
+      "bytes": 18129,
+      "sha256": "b4e7a84095d57615e9696a0722f13cf6d4ec9d7ed3242798cbc897e11bb5e2d5"
+    },
+    {
+      "path": "stn/paper.pdf",
+      "bytes": 123706,
+      "sha256": "6dcc2b5cde73e1147b428aa51fd251e9cf32d43b1023e552fb74088ad273a397",
+      "pages": 7
+    }
+  ]
+}

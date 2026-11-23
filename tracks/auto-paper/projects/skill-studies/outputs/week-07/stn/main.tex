@@ -1,0 +1,71 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{2em}
+\title{Rigid-Block Aggregation for Exact Comparative\\Absolute-Error Optimization on Temporal Networks}
+\author{Anonymous technical working draft}
+\date{23 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Exact comparative absolute-error optimization over a bounded temporal network
+can depend on the smaller group of increasing and decreasing coordinate losses.
+That count can be inflated by rigidly related coordinates whose aggregate
+slopes cancel. We combine classical rigid-component extraction with complete
+aggregate monotonicity classification and conditional extremal extensions.
+All nonmonotone blocks and the smaller remaining monotone group are selected,
+giving a sufficient parameter that never exceeds the original coordinate count.
+Origin-fixed contributions, nonzero flat terms, rational offsets and the
+original total-weight normalization are preserved. Equal aggregate endpoint
+values are insufficient: a two-coordinate example conceals an interior peak.
+With one selected representative, the previous exact original-unary event
+sweep remains valid; general fixed dimension retains an XP arrangement bound.
+All 380 fixed rational development problems agree with a separate full
+original-coordinate oracle and the earlier exact prototype. Sixteen sparse
+input-bound checks reach 1024 coordinates, where the parameter falls from
+512 to zero or one. Refused and unexecuted baselines are reported separately.
+The results concern declared mathematical uncertainty, without a general
+complexity classification, solver-superiority claim, physical calibration
+or certification of scientific priority.
+\end{abstract}
+\noindent\textbf{Keywords:} simple temporal networks; rigid components;
+absolute-error regret; aggregate monotonicity; exact certificates.
+\section{Question and scope}
+When baseline and candidate errors are compared at the same uncertain truth,
+the worst comparative loss must respect relational constraints between coordinates.
+For a closed bounded simple temporal network (STN), a prior exact construction
+fixes the smaller orientation group of monotone coordinate losses and fills
+the rest by conditional least or greatest feasible extensions. This leaves a
+representation issue: many coordinates may be rigidly linked, while their
+increasing and decreasing losses cancel after offsets are accounted for.
+Treating each coordinate separately can therefore overstate the necessary
+search dimension.
+
+We derive a sufficient refined parameter on aggregate block losses, prove
+that it cannot exceed the original count, and preserve the original unary
+terms in the exact sweep. The refinement does not assume that a block with
+different predictions is itself one weighted MAE term. Its classification
+requires all feasible kink cells. We then test exactness and audit provenance
+on fixed rational cases, with explicit control repairs before the final run.
+The scope is a mathematical method extension; it does not estimate unknown
+sensor bounds or report a new physical benchmark.
+\input{theory}
+\input{results}
+\section*{Acknowledgements}
+This work was created as part of the No-More-Slops group activities at Pseudo Lab.
+
+\begin{thebibliography}{9}
+\bibitem{tsamardinos1998} I.~Tsamardinos, N.~Muscettola and P.~Morris.
+Fast transformation of temporal plans for efficient execution. \emph{AAAI} (1998).
+\bibitem{dechter1991} R.~Dechter, I.~Meiri and J.~Pearl.
+Temporal constraint networks. \emph{Artificial Intelligence} 49 (1991), 61--95.
+\bibitem{johnson1977} D.~B.~Johnson. Efficient algorithms for shortest paths
+in sparse networks. \emph{Journal of the ACM} 24(1) (1977), 1--13.
+\bibitem{kumar2007} T.~K.~S.~Kumar. Fast (incremental) algorithms for useful
+classes of simple temporal problems with preferences. \emph{IJCAI} (2007).
+\bibitem{kumar2018} T.~K.~S.~Kumar, Z.~Wang, A.~Kumar, C.~M.~Rogers and C.~A.~Knoblock.
+Load scheduling of simple temporal networks under dynamic resource pricing.
+\emph{AAAI} (2018).
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,315 @@
+% Body fragment: the including document supplies amsmath and amssymb.
+\section{Rigid blocks and comparative absolute error}
+\label{sec:rigid-theory}
+
+The rigid-component construction is classical. Theorems~6--7 of
+Tsamardinos, Muscettola, and Morris~\cite{tsamardinos1998} directly precede
+the SCC characterization and representative/offset substitution below.
+Johnson reweighting is likewise classical~\cite{johnson1977}.
+We give a self-contained specialization to the declared loss and its
+reduction parameter; this attribution is not a novelty certificate.
+
+Let \(I=\{1,\ldots,n\}\), \(I_0=I\cup\{0\}\), and \(t_0=0\).
+Assume the finite directed constraints \(t_j-t_i\le b_{ij}\) define a
+nonempty bounded set \(S\). All inequalities are non-strict, so \(S\) is
+compact. In the arc orientation \(i\to j\), let \(D_{ij}\) be the
+shortest-path distance. These distances are finite and satisfy
+\[
+ D_{ij}=\max_{t\in S}(t_j-t_i),\qquad
+ \ell_i=-D_{i0},\quad u_i=D_{0i}.
+\]
+Indeed every path bounds the difference, while
+\(t_j=D_{pj}-D_{p0}\) is an anchored feasible vector attaining each
+bound from \(p\). The triangle inequality makes both \(\ell\) and \(u\)
+feasible. These are exact marginal endpoints, not independent box
+constraints replacing the STN.
+
+For finite fixed \(a_i,c_i\) and \(w_i>0\), put
+\[
+ f_i(z)=|c_i-z|-|a_i-z|,\quad
+ F(t)=\sum_{i\in I}w_i f_i(t_i),\quad
+ \Lambda=\sum_{i\in I}w_i,\quad
+ W=\max_{t\in S}F(t).
+\]
+Coordinate 0 has no loss; the comparative MAE is \(W/\Lambda\).
+Each unary term is globally monotone. Let \(p_{\rm orig},n_{\rm orig}\)
+count its effectively nonconstant increasing and decreasing coordinates,
+respectively, and \(r_{\rm orig}=\min(p_{\rm orig},n_{\rm orig})\).
+Effective constancy is exactly \(f_i(\ell_i)=f_i(u_i)\).
+
+\subsection{Classical rigid equivalence and offsets}
+
+Choose any feasible potential \(h\), normalized by \(h_0=0\), and form
+\(b'_{ij}=b_{ij}+h_i-h_j\ge0\). This arbitrary potential need not be the
+forward-0 distance profile. Consider the directed subgraph of exactly
+zero reduced-cost arcs.
+
+\noindent\textbf{Lemma 1 (rigid equivalence).}
+Its SCCs are precisely the maximal classes for which \(t_j-t_i\) is
+constant over \(S\); the constant is \(h_j-h_i\).
+
+\noindent\emph{Proof.}
+Zero-cost paths in both directions give the two opposite bounds
+forcing equality. Conversely a constant difference has that value
+because \(h\in S\). Tightness gives
+\(D_{ij}=h_j-h_i\) and \(D_{ji}=h_i-h_j\).
+Both reduced shortest-path distances are zero. Nonnegative costs force
+zero-length paths to consist entirely of zero-cost arcs.
+Thus the vertices lie in one zero-cost SCC. The constant-difference
+definition also proves independence from the chosen potential.
+\(\square\)
+
+Select a representative \(q_B\) in each block \(B\), with \(q_{B_0}=0\)
+for the origin block. Set
+\[
+ \delta_i=h_i-h_{q_B},\qquad t_i=x_B+\delta_i
+ \quad(i\in B).
+\]
+An arc \(i\in B\to j\in C\) becomes
+\[
+ x_C-x_B\le b_{ij}+\delta_i-\delta_j.                 \tag{1}
+\]
+These constraints with \(x_{B_0}=0\) define an exact quotient:
+every original truth satisfies them by Lemma~1, and every quotient
+truth reconstructs an original truth satisfying every arc by
+substitution. Representatives make the correspondence one-to-one.
+Internal arcs are automatic; parallel arcs may be replaced by their
+minimum bound while retaining original identities.
+Consequently
+\[
+ \begin{aligned}
+ D^Q_{BC}&=D_{q_Bq_C},\quad L_B=\ell_{q_B},\quad U_B=u_{q_B},\\
+ \ell_i&=L_B+\delta_i,\qquad u_i=U_B+\delta_i .
+ \end{aligned}
+\]
+No argument requires the original truth set to have full dimension.
+A single zero-cost arc, or weak connectivity of zero arcs, does not
+establish rigid equivalence.
+
+\subsection{Aggregate slopes and the reduction parameter}
+
+For \(B\ne B_0\), define
+\[
+ A_i=a_i-\delta_i,\quad C_i=c_i-\delta_i,\qquad
+ g_B(x)=\sum_{i\in B}w_i\bigl(|C_i-x|-|A_i-x|\bigr).
+\]
+All members of \(B_0\) are fixed. With
+\[
+ C_0=\sum_{i\in B_0\cap I}w_i
+       \bigl(|c_i-\delta_i|-|a_i-\delta_i|\bigr),
+ \qquad F(t)=C_0+\sum_{B\ne B_0}g_B(x_B),             \tag{2}
+\]
+arbitrary offsets and different unary pairs are preserved exactly.
+They need not combine into one weighted absolute-difference term.
+
+On each open segment between shifted kinks, the aggregate slope is
+\[
+ s_B(x)=\sum_{i\in B}2w_i\operatorname{sign}(a_i-c_i)
+  \mathbf{1}_{\{\min(A_i,C_i)<x<\max(A_i,C_i)\}}.     \tag{3}
+\]
+Inspect all positive-length segments in the exact interval
+\([L_B,U_B]\). Let \(\mathcal Z\) contain flat blocks, including
+singleton marginals; let \(\mathcal P\) contain nonconstant blocks
+whose segment slopes are all nonnegative, and \(\mathcal N\) those
+whose slopes are all nonpositive. The remaining blocks
+\(\mathcal B\) have slopes of both signs. These cases partition the
+nonorigin blocks. Sorting and combining the at most \(2n\) original
+events gives the classification in \(O(n\log(n+1))\) arithmetic and
+comparison operations.
+
+Endpoint comparison is insufficient: for \(t_1=t_2=x\in[0,2]\),
+\(a=(1,1)\), \(c=(0,2)\), and unit weights,
+\[
+ g(x)=
+ \begin{cases}2x,&0\le x\le1,\\4-2x,&1\le x\le2.\end{cases}
+\]
+Thus \(g(0)=g(2)=0\), whereas \(g(1)=2\).
+Flat block values may be nonzero: retain them in (2), or absorb them
+into \(C_0\). In either case \(\Lambda\) remains the total original
+weight, including all fixed and flat coordinates.
+
+\noindent\textbf{Lemma 2 (parameter domination).}
+The aggregate parameter satisfies
+\[
+ r_\star=|\mathcal B|+\min(|\mathcal P|,|\mathcal N|),
+ \qquad r_\star\le r_{\rm orig}.                    \tag{4}
+\]
+
+\noindent\emph{Proof.}
+Every nonconstant \(\mathcal P\) block contains an effectively
+increasing original term, every \(\mathcal N\) block a decreasing
+term, and every \(\mathcal B\) block at least one of each.
+Otherwise its sum could not have the declared slopes on its exact
+marginal. Offsets preserve direction and effective activity.
+Blocks are disjoint, so
+\[
+ |\mathcal B|+|\mathcal P|\le p_{\rm orig},\qquad
+ |\mathcal B|+|\mathcal N|\le n_{\rm orig}.
+\]
+Taking the smaller bound proves (4). \(\square\)
+
+\subsection{Exact conditional representative reduction}
+
+For any selected nonorigin blocks \(K\), define
+\[
+ Q_K=\{z:L_C\le z_C\le U_C,\
+              z_E-z_C\le D^Q_{CE}\ (C,E\in K)\}.
+\]
+Adjoin \(z_{B_0}=0\), write \(K_0=K\cup\{B_0\}\), and set
+\[
+ m_B(z)=\max_{C\in K_0}(z_C-D^Q_{BC}),\qquad
+ M_B(z)=\min_{C\in K_0}(z_C+D^Q_{CB}).               \tag{5}
+\]
+For empty \(K\) these are \(L\) and \(U\).
+
+\noindent\textbf{Lemma 3 (conditional extrema).}
+\(Q_K\) is the exact projection of the quotient STN.
+For every \(z\in Q_K\), both extensions in (5) are feasible, agree
+with \(z\) on \(K\), and bound every matching feasible \(x\) as
+\(m(z)\le x\le M(z)\).
+
+\noindent\emph{Proof.}
+Projected inequalities bound all branches at a selected block, and
+its own branch gives equality. The triangle inequality yields
+\[
+ z_C-D^Q_{EC}\le z_C-D^Q_{BC}+D^Q_{BE}
+                   \le m_B+D^Q_{BE};
+\]
+taking the maximum proves feasibility of \(m\).
+If \(C\) attains \(M_B\), then
+\(M_E\le z_C+D^Q_{CE}\le M_B+D^Q_{BE}\), proving the other case.
+Any matching feasible \(x\) lies above each lower branch and below
+each upper branch. Necessity of \(Q_K\) is immediate; the extensions
+prove sufficiency. This also handles lower-dimensional domains.
+\(\square\)
+
+\noindent\textbf{Theorem 1 (block-minority reduction).}
+If \(|\mathcal P|\le|\mathcal N|\), choose
+\(K=\mathcal B\cup\mathcal P\). Then
+\[
+ W=\max_{z\in Q_K}\left[C_0+
+                  \sum_{B\ne B_0}g_B(m_B(z))\right].              \tag{6}
+\]
+For \(|\mathcal N|\le|\mathcal P|\), choose
+\(K=\mathcal B\cup\mathcal N\) and use \(M\).
+
+\noindent\emph{Proof.}
+In the first case, all nonmonotone and increasing block losses are
+fixed on a fibre. Remaining nonconstant losses are nonincreasing,
+so the least extension maximizes their sum on that fibre.
+It is feasible, and the projection is exact; maximizing proves
+(6). The greatest-extension case is symmetric. Compactness gives
+attainment, and offsets reconstruct an original worst truth.
+\(\square\)
+
+For \(r_\star=0\) the appropriate endpoint extension suffices,
+even when original individual directions are mixed.
+This parameter is a sufficient reduction size, not a claim of
+minimal possible dimension.
+
+\subsection{One representative and strict separation families}
+
+For \(r_\star=1\), let \(p\) be the selected representative.
+Using original distances and original unary terms, the path is
+\[
+ t_i(z)=\max(\ell_i,z-D_{ip})
+ \quad\hbox{or}\quad
+ t_i(z)=\min(u_i,z+D_{pi}),\qquad z\in[\ell_p,u_p].   \tag{7}
+\]
+These formulas enforce all offsets automatically. They remain
+valid when the selected block loss is nonmonotone.
+Put \(l_i=\min(a_i,c_i)\), \(v_i=\max(a_i,c_i)\).
+On the least path, a nonconstant term has slope
+\(s_i=2w_i\operatorname{sign}(a_i-c_i)\) between
+\[
+ \max(\ell_i,l_i)+D_{ip}\quad\hbox{and}\quad v_i+D_{ip};
+\]
+skip \(a_i=c_i\) or \(\ell_i\ge v_i\).
+On the greatest path the event interval is
+\[
+ \bigl(l_i-D_{pi},\,\min(u_i,v_i)-D_{pi}\bigr);
+\]
+skip \(a_i=c_i\) or \(u_i\le l_i\).
+Each original term has at most two events. Between consecutive
+events the objective is affine, so an endpoint or event attains
+the maximum: at most \(2n+2\) candidates before deduplication.
+Initialize the right slope at the left domain endpoint, combine
+simultaneous events, and evaluate each event before updating its
+slope. No grid is required. Given the required profiles, the
+mathematical sweep takes \(O(n\log(n+1))\) operations and \(O(n)\)
+extra storage. Checking its witness against all \(M\) original arcs
+gives \(O(M+n\log(n+1))\) postprocessing, excluding preprocessing.
+
+Two analytical families give strict separation from the original
+coordinate parameter. Let \(n=2m\), all truths equal
+\(x\in[0,2]\), and all weights be one.
+Repeating \(m\) pairs \(a=(1,0)\), \(c=(0,1)\) cancels identically:
+\[
+ r_{\rm orig}=m,\qquad r_\star=0,\qquad W=W/\Lambda=0.
+\]
+Repeating \(m\) pairs \(a=(1,1)\), \(c=(0,2)\) gives the peak above:
+\[
+ r_{\rm orig}=m,\quad r_\star=1,\quad
+ W=2m\ \hbox{at }x=1,\quad \Lambda=2m,\quad W/\Lambda=1.
+\]
+Arbitrary rigid offsets preserve these identities when the same
+offset is added to each truth, baseline, and candidate entry.
+The displayed values assume unit weights; arbitrary positive
+weights are permitted by the theorem but need not preserve
+cancellation. This compares with the unreduced coordinate
+parameter, not every classical presolver, and reports no experiment.
+
+Interior alternatives use pairs \(a=(3/2,1/2)\), \(c=(1/2,3/2)\)
+for cancellation, or \(a=(1,1)\), \(c=(1/2,3/2)\) for the peak.
+The latter pair is zero outside \([1/2,3/2]\), rises with slope 2
+to height 1 at \(x=1\), then falls with slope \(-2\).
+Thus the respective \(r_\star\) values remain 0 and 1; the peak
+family has \(W=m\) and \(W/\Lambda=1/2\).
+Both alternatives have \(k=\#\{i:\ell_i<c_i<u_i\}=n\).
+This separates the parameters, not LP running times or lower bounds:
+common-truth families have few distinct levels and feasible sign patterns.
+
+\subsection{General dimension, implementation scope, and checking}
+
+For \(r=r_\star\ge1\), partition \(Q_K\) by equalities between
+conditional affine branches, their crossings of every shifted
+original unary kink, and projected-domain boundaries.
+Discard constant equalities and combine duplicate hyperplanes.
+With \(b\) blocks, there are
+\(H=O(br^2+nr+r^2)=O(nr^2)\) hyperplanes.
+The objective is affine on each cell closure, so some optimum is a
+cell vertex. Enumerating \(r\) independent active hyperplanes,
+checking the projection, and evaluating the extension gives
+\[
+ O\!\left(H^r(r^3+r^2+nr)\right)
+\]
+arithmetic complexity. Domain equalities supply missing normals
+in lower-dimensional cases. This is XP for fixed \(r\), not FPT
+or general polynomial time. Incomplete enumeration does not certify
+an optimum.
+
+Distance profiles in the intended implementation remain on the
+\emph{original graph}. The quotient supports classification,
+representative selection, and the equivalence proof; no fully
+contracted shortest-path solver is presumed. Classical feasible
+potentials and forward/reverse Dijkstra require \(2r+2\) profiles.
+Reverse the already reweighted graph, and retain original identities
+when coalescing parallel arcs. With \(M\) original input arcs, a
+safe preprocessing and classification bound is
+\[
+ O\!\left(nM+(r+1)(M+n)\log(n+1)+n\log(n+1)\right),
+\]
+with \(O(M+(r+1)n)\) storage. The Bellman--Ford term remains.
+
+Independent checking is a separate obligation: validate input
+binding, potential, SCCs, offsets, every aggregate slope segment
+and constant, selected representatives, required distance profiles,
+complete sweep or arrangement coverage, original feasibility,
+objective, and original normalization. A feasible witness alone
+gives only a lower bound on \(W\). No checker execution or pass is
+asserted here. Exact arithmetic bounds do not remove rational bit
+costs; real inputs require an exact-real interpretation.
+Floating-point zero tests do not certify rigid contraction.
+The result establishes no new shortest-path method, general
+polynomial or FPT algorithm, physical accuracy, or publication-level
+novelty.
