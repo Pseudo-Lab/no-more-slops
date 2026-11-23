@@ -1,6 +1,6 @@
 # skill-studies
 
-**Week 07 연구 초안:** [ProbeFlow 방법론 논문과 STN 정확 최적화 논문](outputs/week-07/README.md). 2026-11-23~29 제출이며 두 PDF와 LaTeX 원본을 제공합니다. ProbeFlow의 사후 탐색과 STN의 개발 검산을 독립 검증·투고 준비 완료로 해석하지 않습니다.
+**Week 06 연구 초안:** [ProbeFlow 방법론 논문과 STN 정확 최적화 논문](outputs/week-06/README.md). 2026-11-23 공개 판본이며 두 PDF와 LaTeX 원본을 제공합니다. ProbeFlow의 사후 탐색과 STN의 개발 검산을 독립 검증·투고 준비 완료로 해석하지 않습니다.
 
 **이전 Week 03 작업본:** [ProbeFlow 전체 논문 22쪽·보충자료 253쪽과 연구 스킬](outputs/week-03/README.md). 2026-11-02 작업 초안이며 최종 문서 검토 대기, no_gain/needs_evidence 상태입니다. 아래 Week 01 기록은 그대로 보존합니다.
 

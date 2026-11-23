@@ -1,10 +1,11 @@
-# Week 07 연구 초안 두 편
+# Week 06 연구 초안 두 편
 
 ProbeFlow에서 강한 비교법과 실패 진단이 연구 질문을 어떻게 바꾸었는지 정리한 논문과, 관계가 있는 불확실한 정답에서 비교 오차를 정확히 최적화하는 별도 STN 논문을 공유합니다. 두 연구의 자료와 성과를 합산하지 않습니다.
 
 - 제출자: 임경태 · [@darkwingduck-code](https://github.com/darkwingduck-code)
 - 트랙과 프로젝트: Auto-Paper · skill-studies
-- 주차: Week 07 · 2026-11-23~29
+- 주차: Week 06
+- 공개 판본 작성일: 2026-11-23
 - 상태: 동료 검토를 위한 연구 초안. 학회·저널 접수나 채택을 뜻하지 않습니다.
 - 이전 제출: [Week 03](../week-03/README.md) · [PR #35](https://github.com/Pseudo-Lab/no-more-slops/pull/35)
 
