@@ -2,7 +2,7 @@ skill.md — 인스타 자동화 핵심 보강
 
 작성자: 임경태 (@darkwingduck-code)
 트랙 / 프로젝트: Auto-Post / Family Reels
-제출 주간: 2026-11-23~2026-11-29 (Week 07)
+제출 주간: 2026-11-23~2026-11-29 (Week 06)
 변경 확인: 11/16~11/23 조사 범위 중 11/16~17 배포 변경
 기존 제작 스킬: tracks/auto-post/skills/instagram-reel/SKILL.md
 

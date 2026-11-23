@@ -1,4 +1,4 @@
-# Week 07 · 인스타 자동화 스킬 보강
+# Week 06 · 인스타 자동화 스킬 보강
 
 - 작성자: 임경태 · [@darkwingduck-code](https://github.com/darkwingduck-code)
 - 트랙·프로젝트: Auto-Post · Family Reels
